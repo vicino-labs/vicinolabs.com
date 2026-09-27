@@ -71,7 +71,7 @@ TXT = {
 
 def home(lang):
     t = TXT[lang]
-    apps = "".join(f'<div class="app"><b>{n}</b><p>{d}</p><a href="{u}">{l}</a></div>' for n, d, u, l in t["apps"])
+    apps = "".join(f'<div class="app"><b>{n}</b><p>{d}</p><a href="{u}" target="_blank" rel="noopener">{l}</a></div>' for n, d, u, l in t["apps"])
     return f'<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><h2 id="apps">Apps</h2><div class="apps">{apps}</div><h2>{t["contact_h"]}</h2><p>{t["contact"]}</p>'
 
 IMPRESSUM = f"""<h1>Impressum</h1>
@@ -80,7 +80,7 @@ IMPRESSUM = f"""<h1>Impressum</h1>
 <dt>Anbieter</dt><dd>Vicino Labs (Einzelunternehmen, Inh. Jeong-Hwan Lee)</dd>
 <dt>Anschrift</dt><dd>Ruhrallee 41, 44139 Dortmund, Deutschland</dd>
 <dt>E-Mail</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd>
-<dt>Kontaktformular</dt><dd><a href="https://welegato.com/kontakt/?lang=de">welegato.com/kontakt</a></dd>
+<dt>Kontaktformular</dt><dd><a href="https://welegato.com/kontakt/?lang=de" target="_blank" rel="noopener">welegato.com/kontakt</a></dd>
 <dt>Handelsregister</dt><dd>entfällt (nicht eingetragenes Einzelunternehmen)</dd>
 <dt>Umsatzsteuer</dt><dd>Kleinunternehmer gemäß § 19 UStG – es wird keine Umsatzsteuer berechnet.</dd>
 <dt>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV</dt><dd>Jeong-Hwan Lee, Anschrift wie oben</dd>
@@ -94,7 +94,7 @@ PRIVACY = f"""<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>Vicino Labs, Inh. Jeong-Hwan Lee, Ruhrallee 41, 44139 Dortmund, Deutschland · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
 <h2>Hosting</h2>
-<p>Diese Website wird über GitHub Pages bereitgestellt (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie die aufgerufene Seite, um die Website auszuliefern und vor Missbrauch zu schützen (Art. 6 Abs. 1 lit. f DSGVO). GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a>.</p>
+<p>Diese Website wird über GitHub Pages bereitgestellt (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie die aufgerufene Seite, um die Website auszuliefern und vor Missbrauch zu schützen (Art. 6 Abs. 1 lit. f DSGVO). GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
 <h2>Keine Cookies, kein Tracking</h2>
 <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Werbedienste und lädt keine Schriften oder Skripte von Drittanbietern.</p>
 <h2>Kontakt per E-Mail</h2>
