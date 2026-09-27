@@ -3,7 +3,7 @@
 올린다(무료 HTTPS). 메일(MX)은 IONOS 그대로. 고친 뒤 python3 build.py."""
 import os
 
-EMAIL = "hello@vicinolabs.com"
+EMAIL = "contact@vicinolabs.com"
 CSS = """
 :root{--bg:#f6f3ee;--paper:#fffdf9;--ink:#1b1917;--soft:#6b635b;--line:#e5ddd1;--accent:#6e1a2f;--gold:#b08d57}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141211;--paper:#1c1a18;--ink:#efe9e1;--soft:#a79d92;--line:#2e2a26;--accent:#d88a9c;--gold:#c9a66b}}
