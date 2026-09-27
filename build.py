@@ -17,7 +17,7 @@ h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:24px;ma
 .lead{font-size:18px;color:var(--soft);margin:0 0 8px}
 .apps{display:grid;gap:14px}.app{background:var(--paper);border:1px solid var(--line);padding:20px 22px;border-radius:4px}
 .app b{font-size:18px}.app p{margin:6px 0 10px;color:var(--soft)}.app a{font-weight:600;text-decoration:none}
-dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:0}dt{color:var(--soft)}dd{margin:0}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px;margin:0;font-size:14.5px;color:var(--soft)}dt{color:var(--soft)}dd{margin:0}
 @media(max-width:520px){dl{grid-template-columns:1fr}dt{margin-top:8px}}
 footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:13.5px;color:var(--soft)}
 footer a{color:var(--soft);margin-right:16px}
@@ -74,7 +74,7 @@ def home(lang):
     apps = "".join(f'<div class="app"><b>{n}</b><p>{d}</p><a href="{u}" target="_blank" rel="noopener">{l}</a></div>' for n, d, u, l in t["apps"])
     return f'<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><h2 id="apps">Apps</h2><div class="apps">{apps}</div><h2>{t["contact_h"]}</h2><p>{t["contact"]}</p>'
 
-IMPRESSUM = f"""<h1>Impressum</h1>
+IMPRESSUM = f"""<h1 style="font-size:28px">Impressum</h1>
 <p class="lead">Angaben gemäß § 5 DDG</p>
 <dl>
 <dt>Anbieter</dt><dd>Vicino Labs (Einzelunternehmen, Inh. Jeong-Hwan Lee)</dd>
