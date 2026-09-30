@@ -44,26 +44,26 @@ def page(lang, path, title, desc, body, alt=None):
 <header><div class="wrap nav"><a class="brand" href="{t['home']}"><img src="/logo.png" alt="" width="58" height="32">Vicino Labs</a>
 <nav><a href="{t['home']}#apps">{t['apps_nav']}</a><a href="/impressum/">Impressum</a><a href="{t['other_href']}">{t['other']}</a></nav></div></header>
 <main class="wrap">{body}</main>
-<footer><div class="wrap"><a href="/impressum/">Impressum</a><a href="/datenschutz/">{t['privacy']}</a><a href="mailto:{EMAIL}">{EMAIL}</a><div style="margin-top:10px">© 2026 Vicino Labs · Dortmund</div></div></footer>
+<footer><div class="wrap"><a href="/impressum/">Impressum</a><a href="/datenschutz/">{t['privacy']}</a><a href="mailto:{EMAIL}">{EMAIL}</a><div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
 </body></html>
 """
 
 TXT = {
  "de": {"home": "/", "apps_nav": "Apps", "other": "English", "other_href": "/en/", "privacy": "Datenschutz",
-  "title": "Vicino Labs — Apps aus Dortmund",
+  "title": "Vicino Labs — Apps für Musik und Alltag",
   "desc": "Vicino Labs entwickelt Apps für den Alltag und für Musikerinnen und Musiker: welegato und Nomio.",
   "h1": "Apps, die im Alltag helfen.",
-  "lead": "Vicino Labs ist ein kleines Softwarestudio aus Dortmund. Wir entwickeln Apps für Musikerinnen und Musiker und für den Alltag — mehrsprachig und mit Blick auf Datenschutz.",
+  "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker und für den Alltag — mehrsprachig und mit Blick auf Datenschutz.",
   "apps": [
    ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/", "welegato.com →"),
    ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "https://play.google.com/store/apps/details?id=app.nomio.finance", "Google Play →"),
   ],
   "contact_h": "Kontakt", "contact": f'Fragen, Kooperationen oder Presse: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
  "en": {"home": "/en/", "apps_nav": "Apps", "other": "Deutsch", "other_href": "/", "privacy": "Privacy",
-  "title": "Vicino Labs — Apps from Dortmund, Germany",
+  "title": "Vicino Labs — Apps for music and everyday life",
   "desc": "Vicino Labs builds apps for everyday life and for musicians: welegato and Nomio.",
   "h1": "Apps that help in everyday life.",
-  "lead": "Vicino Labs is a small software studio in Dortmund, Germany. We build apps for musicians and for everyday life — multilingual and privacy-minded.",
+  "lead": "Vicino Labs is a small software studio. We build apps for musicians and for everyday life — multilingual and privacy-minded.",
   "apps": [
    ("welegato", "Find music teachers, accompanists and musicians in Germany and Austria — with automatic chat translation.", "https://welegato.com/en/", "welegato.com →"),
    ("Nomio", "A budget book for income and expenses in many currencies and languages.", "https://play.google.com/store/apps/details?id=app.nomio.finance", "Google Play →"),
