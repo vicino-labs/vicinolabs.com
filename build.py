@@ -10,7 +10,7 @@ CSS = """
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}.wrap{max-width:760px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line)}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px}
-.brand{font-family:Georgia,"Times New Roman",serif;font-size:24px;letter-spacing:.01em;color:var(--ink);text-decoration:none}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:Georgia,"Times New Roman",serif;font-size:24px;letter-spacing:.01em;color:var(--ink);text-decoration:none}.brand img{height:32px;width:auto;display:block}
 .nav nav{display:flex;gap:16px;font-size:14px}.nav nav a{color:var(--soft);text-decoration:none}.nav nav a:hover{color:var(--ink)}
 h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(30px,5vw,44px);line-height:1.2;margin:56px 0 14px;letter-spacing:-.01em}
 h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:24px;margin:44px 0 14px}
@@ -36,10 +36,12 @@ def page(lang, path, title, desc, body, alt=None):
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="canonical" href="https://vicinolabs.com{path}">{alt_links}
 <meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://vicinolabs.com/icon-512.png">
 <style>{CSS}</style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="{t['home']}">Vicino Labs</a>
+<header><div class="wrap nav"><a class="brand" href="{t['home']}"><img src="/logo.png" alt="" width="58" height="32">Vicino Labs</a>
 <nav><a href="{t['home']}#apps">{t['apps_nav']}</a><a href="/impressum/">Impressum</a><a href="{t['other_href']}">{t['other']}</a></nav></div></header>
 <main class="wrap">{body}</main>
 <footer><div class="wrap"><a href="/impressum/">Impressum</a><a href="/datenschutz/">{t['privacy']}</a><a href="mailto:{EMAIL}">{EMAIL}</a><div style="margin-top:10px">© 2026 Vicino Labs · Dortmund</div></div></footer>
@@ -53,7 +55,7 @@ TXT = {
   "h1": "Apps, die im Alltag helfen.",
   "lead": "Vicino Labs ist ein kleines Softwarestudio aus Dortmund. Wir entwickeln Apps für Musikerinnen und Musiker und für den Alltag — mehrsprachig und mit Blick auf Datenschutz.",
   "apps": [
-   ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/de/", "welegato.com →"),
+   ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/", "welegato.com →"),
    ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "https://play.google.com/store/apps/details?id=app.nomio.finance", "Google Play →"),
   ],
   "contact_h": "Kontakt", "contact": f'Fragen, Kooperationen oder Presse: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
