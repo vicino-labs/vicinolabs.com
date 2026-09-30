@@ -114,7 +114,7 @@ def write(path, html):
 alt = {"de": "/", "en": "/en/"}
 for lang, path in alt.items():
     write(path, page(lang, path, TXT[lang]["title"], TXT[lang]["desc"], home(lang), alt))
-write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs, Dortmund.", IMPRESSUM))
+write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs.", IMPRESSUM))
 write("/datenschutz/", page("de", "/datenschutz/", "Datenschutzerklärung — Vicino Labs", "Datenschutzerklärung von vicinolabs.com.", PRIVACY))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w").write("vicinolabs.com\n")
 print("ok")
