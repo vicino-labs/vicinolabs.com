@@ -1,7 +1,7 @@
 """Appoggio 이용약관 본문 (ko/en/de/it) — appoggio_legal.py가 HTML로 만든다.
 
-2026-10-01 버전 3.0: vicinolabs.com으로 이전. 앱 1.2.0부터 광고·인앱결제가 없어
-유료 서비스·광고 조항을 빼고 welegato 링크 조항을 넣었다. 무료 앱이라 책임은
+2026-10-01 버전 3.0: vicinolabs.com으로 이전. 앱 1.2.0부터 광고 네트워크·인앱결제가
+없어 유료 서비스·광고 조항을 빼고, welegato 자체 배너와 링크 조항을 넣었다. 무료 앱이라 책임은
 고의·중과실과 생명·신체·건강 침해에 한정(독일법상 그 이상은 제한 불가).
 """
 
@@ -29,7 +29,7 @@ TERMS = {
 <li>훈련 리마인더 (기기 안의 로컬 알림)</li>
 <li>한국어·영어·독일어·이탈리아어, 다크 모드, 색상 테마, 타이머 스타일 등 화면 설정</li>
 </ol>
-<p>앱은 <strong>모든 기능을 무료로</strong> 제공하며 광고와 인앱결제가 없습니다.</p>"""),
+<p>앱은 <strong>모든 기능을 무료로</strong> 제공하며 인앱결제가 없습니다. 홈·연습 화면 아래에는 같은 회사 서비스인 welegato를 알리는 배너가 표시됩니다.</p>"""),
    ("건강에 관한 안내", """<ol>
 <li>앱의 호흡 훈련은 성악·보컬 연습을 위한 일반적인 안내이며, 의학적 진단·치료나 전문 보컬 선생님의 지도를 대신하지 않습니다.</li>
 <li>호흡기·심혈관 질환이 있거나 임신 중이거나 그 밖의 건강상 우려가 있으면 훈련 전에 의료 전문가와 상담하세요.</li>
@@ -73,7 +73,7 @@ TERMS = {
 <li>Training reminders (local notifications on your device)</li>
 <li>Korean, English, German and Italian, dark mode, colour themes, timer styles and other display settings</li>
 </ol>
-<p>The App provides <strong>all features free of charge</strong>, with no ads and no in-app purchases.</p>"""),
+<p>The App provides <strong>all features free of charge</strong>, with no in-app purchases. A banner for welegato, a service of the same company, is shown at the bottom of the home and training screens.</p>"""),
    ("Health notes", """<ol>
 <li>The breathing exercises are general guidance for singing practice and do not replace medical diagnosis or treatment, or lessons with a qualified voice teacher.</li>
 <li>If you have a respiratory or cardiovascular condition, are pregnant or have any other health concern, consult a medical professional before training.</li>
@@ -117,7 +117,7 @@ TERMS = {
 <li>Trainingserinnerungen (lokale Benachrichtigungen auf dem Gerät)</li>
 <li>Koreanisch, Englisch, Deutsch und Italienisch, Dunkelmodus, Farbthemen, Timer-Stile und weitere Anzeigeeinstellungen</li>
 </ol>
-<p>Die App bietet <strong>alle Funktionen kostenlos</strong>, ohne Werbung und ohne In-App-Käufe.</p>"""),
+<p>Die App bietet <strong>alle Funktionen kostenlos</strong>, ohne In-App-Käufe. Unten auf dem Start- und Trainingsbildschirm wird ein Banner für welegato, einen Dienst desselben Anbieters, angezeigt.</p>"""),
    ("Gesundheitshinweise", """<ol>
 <li>Die Atemübungen sind allgemeine Anleitungen für das Gesangstraining und ersetzen weder ärztliche Diagnose oder Behandlung noch den Unterricht bei einer qualifizierten Gesangslehrkraft.</li>
 <li>Bei Atemwegs- oder Herz-Kreislauf-Erkrankungen, in der Schwangerschaft oder bei sonstigen gesundheitlichen Bedenken fragen Sie vor dem Training ärztlichen Rat ein.</li>
@@ -161,7 +161,7 @@ TERMS = {
 <li>Promemoria di allenamento (notifiche locali sul dispositivo)</li>
 <li>Coreano, inglese, tedesco e italiano, modalità scura, temi colore, stili del timer e altre impostazioni</li>
 </ol>
-<p>L'App offre <strong>tutte le funzioni gratuitamente</strong>, senza pubblicità né acquisti in-app.</p>"""),
+<p>L'App offre <strong>tutte le funzioni gratuitamente</strong>, senza acquisti in-app. In fondo alla schermata principale e a quella di allenamento è mostrato un banner di welegato, un servizio della stessa società.</p>"""),
    ("Avvertenze sulla salute", """<ol>
 <li>Gli esercizi di respirazione sono indicazioni generali per lo studio del canto e non sostituiscono diagnosi o cure mediche, né le lezioni con un insegnante di canto qualificato.</li>
 <li>In caso di malattie respiratorie o cardiovascolari, gravidanza o altri problemi di salute, consulta un medico prima di allenarti.</li>

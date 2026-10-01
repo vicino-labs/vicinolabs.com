@@ -1,7 +1,8 @@
 """Appoggio 개인정보처리방침 본문 (ko/en/de/it) — appoggio_legal.py가 HTML로 만든다.
 
-2026-10-01 버전 3.0: vicinolabs.com으로 이전. 앱 1.2.0에서 광고(AdMob)와 인앱결제를
-없애서 그 내용을 모두 뺐다. 앱 자체는 인터넷에 연결하지 않고(INTERNET 권한 없음),
+2026-10-01 버전 3.0: vicinolabs.com으로 이전. 앱 1.2.0에서 광고 네트워크(AdMob)와
+인앱결제를 없애서 그 내용을 모두 뺐다. 남은 광고는 welegato 자체 배너 하나뿐이다
+(Play에는 "광고 포함"으로 신고 — 자사 서비스 홍보 배너도 광고로 본다). 앱 자체는 인터넷에 연결하지 않고(INTERNET 권한 없음),
 사용자가 링크를 누를 때만 브라우저가 열린다(welegato 안내 배너, 법적 문서).
 """
 
@@ -34,14 +35,14 @@ PRIVACY = {
   "title": "Appoggio 개인정보처리방침",
   "h1": "개인정보처리방침",
   "meta": [("시행일", "2026.10.01"), ("버전", "3.0"), ("운영자", "Vicino Labs")],
-  "lede": "Vicino Labs가 만든 성악가를 위한 호흡 훈련 앱 Appoggio는 개인정보를 수집하지 않습니다. 회원가입도, 광고도, 결제도, 서버도 없고, 훈련 기록은 기기 밖으로 나가지 않습니다. 아래에 그 내용을 정확하게 적어 둡니다.",
+  "lede": "Vicino Labs가 만든 성악가를 위한 호흡 훈련 앱 Appoggio는 개인정보를 수집하지 않습니다. 회원가입도, 광고 네트워크도, 결제도, 서버도 없고, 훈련 기록은 기기 밖으로 나가지 않습니다. 아래에 그 내용을 정확하게 적어 둡니다.",
   "footer": "본 방침은 2026년 10월 1일부터 시행됩니다 (버전 3.0).",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>회원가입·로그인이 없습니다. 훈련 설정, 리마인더 시각, 훈련 기록은 <strong>기기 안에만</strong> 저장되고, 저희는 이를 볼 수 없습니다.</li>
-<li><strong>광고와 인앱결제가 없습니다</strong> (버전 1.2.0부터). 광고 식별자를 쓰지 않고, 분석·추적 도구(Firebase Analytics 등)도 없습니다.</li>
+<li><strong>광고 네트워크(AdMob 등)와 인앱결제가 없습니다</strong> (버전 1.2.0부터). 앱에 표시되는 광고는 같은 회사 서비스 welegato를 알리는 자체 배너 하나뿐입니다. 광고 식별자를 쓰지 않고, 분석·추적 도구(Firebase Analytics 등)도 없습니다.</li>
 <li>앱은 스스로 인터넷에 연결하지 않습니다. 화면 아래 <strong>welegato 안내 배너</strong>나 개인정보처리방침·약관 링크를 <strong>누를 때만</strong> 브라우저가 열립니다.</li>
 <li>리마인더 알림은 기기 안에서 예약되는 로컬 알림이며, 푸시 서버를 쓰지 않습니다.</li>
 </ul></div>"""),
@@ -66,7 +67,7 @@ PRIVACY = {
 <li>감독기관에 민원을 제기할 권리 — 예: 노르트라인베스트팔렌주 정보보호·정보자유 감독관(LDI NRW) 또는 거주지 관할 감독기관</li>
 </ul>
 <p>저희는 이용자의 정보를 갖고 있지 않으므로, 기기 안의 정보는 앱(기록 초기화)이나 앱 삭제로 직접 지울 수 있습니다. 궁금한 점은 아래로 연락해 주세요.</p>"""),
-   ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있습니다. 변경 내용과 시행일은 이 페이지에 게시합니다. 이전 버전(2.0)과 달리, 버전 3.0은 광고·인앱결제가 없어진 앱 1.2.0 기준입니다.</p>"""),
+   ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있습니다. 변경 내용과 시행일은 이 페이지에 게시합니다. 이전 버전(2.0)과 달리, 버전 3.0은 광고 네트워크·인앱결제가 없어진 앱 1.2.0 기준입니다.</p>"""),
    ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
   ],
  },
@@ -74,14 +75,14 @@ PRIVACY = {
   "title": "Appoggio Privacy Policy",
   "h1": "Privacy Policy",
   "meta": [("Effective", "2026-10-01"), ("Version", "3.0"), ("Operator", "Vicino Labs")],
-  "lede": "Appoggio, a breathing-training app for singers made by Vicino Labs, does not collect personal data. There is no account, no advertising, no purchase and no server, and your training history never leaves your device. Here are the details, as precisely as we can put them.",
+  "lede": "Appoggio, a breathing-training app for singers made by Vicino Labs, does not collect personal data. There is no account, no ad network, no purchase and no server, and your training history never leaves your device. Here are the details, as precisely as we can put them.",
   "footer": "This policy is effective from 1 October 2026 (version 3.0).",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
 <li>No account or sign-in. Training settings, reminder times and training history are stored <strong>only on your device</strong> — we cannot see them.</li>
-<li><strong>No ads and no in-app purchases</strong> (since version 1.2.0). No advertising ID, and no analytics or tracking SDKs (e.g. Firebase Analytics).</li>
+<li><strong>No ad networks (such as AdMob) and no in-app purchases</strong> (since version 1.2.0). The only ad in the app is our own banner for welegato, a service of the same company. No advertising ID, and no analytics or tracking SDKs (e.g. Firebase Analytics).</li>
 <li>The app does not connect to the internet by itself. Your browser opens <strong>only when you tap</strong> the <strong>welegato banner</strong> or a link to our privacy policy or terms.</li>
 <li>Reminders are local notifications scheduled on your device — no push server is involved.</li>
 </ul></div>"""),
@@ -106,7 +107,7 @@ PRIVACY = {
 <li>Lodge a complaint with a supervisory authority — e.g. the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW) or the authority where you live</li>
 </ul>
 <p>We hold no data about you; what is on your device you can delete yourself in the app (Reset records) or by uninstalling it. For any question, please contact us below.</p>"""),
-   ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page. Unlike version 2.0, version 3.0 reflects app version 1.2.0, which no longer has ads or in-app purchases.</p>"""),
+   ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page. Unlike version 2.0, version 3.0 reflects app version 1.2.0, which no longer uses an ad network or in-app purchases.</p>"""),
    ("Contact", "<p>For questions about data processing, please contact:</p>" + _contact("Operator")),
   ],
  },
@@ -114,14 +115,14 @@ PRIVACY = {
   "title": "Appoggio Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
   "meta": [("Gültig ab", "01.10.2026"), ("Version", "3.0"), ("Anbieter", "Vicino Labs")],
-  "lede": "Appoggio, eine Atemtrainings-App für Sängerinnen und Sänger von Vicino Labs, erhebt keine personenbezogenen Daten. Es gibt kein Konto, keine Werbung, keine Käufe und keinen Server, und Ihr Trainingsverlauf verlässt Ihr Gerät nicht. Hier die Einzelheiten.",
+  "lede": "Appoggio, eine Atemtrainings-App für Sängerinnen und Sänger von Vicino Labs, erhebt keine personenbezogenen Daten. Es gibt kein Konto, kein Werbenetzwerk, keine Käufe und keinen Server, und Ihr Trainingsverlauf verlässt Ihr Gerät nicht. Hier die Einzelheiten.",
   "footer": "Diese Erklärung gilt ab dem 1. Oktober 2026 (Version 3.0).",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für eine etwaige Verarbeitung personenbezogener Daten im Zusammenhang mit dieser App.</p>"),
    ("Das Wichtigste in Kürze", """<div class="summary-box"><ul>
 <li>Kein Konto, keine Anmeldung. Trainingseinstellungen, Erinnerungszeiten und Trainingsverlauf werden <strong>nur auf Ihrem Gerät</strong> gespeichert — wir können sie nicht einsehen.</li>
-<li><strong>Keine Werbung und keine In-App-Käufe</strong> (seit Version 1.2.0). Keine Werbe-ID, keine Analyse- oder Tracking-Dienste (z. B. Firebase Analytics).</li>
+<li><strong>Keine Werbenetzwerke (wie AdMob) und keine In-App-Käufe</strong> (seit Version 1.2.0). Die einzige Werbung in der App ist unser eigenes Banner für welegato, einen Dienst desselben Anbieters. Keine Werbe-ID, keine Analyse- oder Tracking-Dienste (z. B. Firebase Analytics).</li>
 <li>Die App verbindet sich nicht selbst mit dem Internet. Ihr Browser öffnet sich <strong>nur, wenn Sie</strong> auf das <strong>welegato-Banner</strong> oder einen Link zu Datenschutzerklärung bzw. Nutzungsbedingungen <strong>tippen</strong>.</li>
 <li>Erinnerungen sind lokale Benachrichtigungen, die auf dem Gerät geplant werden — ohne Push-Server.</li>
 </ul></div>"""),
@@ -146,7 +147,7 @@ PRIVACY = {
 <li>Beschwerde bei einer Aufsichtsbehörde — z. B. der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW) oder der Behörde an Ihrem Wohnort</li>
 </ul>
 <p>Wir speichern keine Daten über Sie; was auf Ihrem Gerät liegt, können Sie selbst in der App (Aufzeichnungen zurücksetzen) oder durch Deinstallieren löschen. Bei Fragen erreichen Sie uns unten.</p>"""),
-   ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und Gültigkeitsdatum veröffentlichen wir auf dieser Seite. Anders als Version 2.0 beschreibt Version 3.0 die App-Version 1.2.0 ohne Werbung und In-App-Käufe.</p>"""),
+   ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und Gültigkeitsdatum veröffentlichen wir auf dieser Seite. Anders als Version 2.0 beschreibt Version 3.0 die App-Version 1.2.0 ohne Werbenetzwerk und In-App-Käufe.</p>"""),
    ("Kontakt", "<p>Für Fragen zur Datenverarbeitung:</p>" + _contact("Anbieter")),
   ],
  },
@@ -154,14 +155,14 @@ PRIVACY = {
   "title": "Appoggio — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
   "meta": [("In vigore dal", "01/10/2026"), ("Versione", "3.0"), ("Titolare", "Vicino Labs")],
-  "lede": "Appoggio, l'app di allenamento del respiro per cantanti realizzata da Vicino Labs, non raccoglie dati personali. Non ci sono account, pubblicità, acquisti né server, e lo storico degli allenamenti non lascia mai il tuo dispositivo. Ecco i dettagli.",
+  "lede": "Appoggio, l'app di allenamento del respiro per cantanti realizzata da Vicino Labs, non raccoglie dati personali. Non ci sono account, reti pubblicitarie, acquisti né server, e lo storico degli allenamenti non lascia mai il tuo dispositivo. Ecco i dettagli.",
   "footer": "La presente informativa è in vigore dal 1° ottobre 2026 (versione 3.0).",
   "other": "Termini di servizio →",
   "sections": [
    ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per gli eventuali dati personali trattati in relazione a questa app.</p>"),
    ("In sintesi", """<div class="summary-box"><ul>
 <li>Nessun account né login. Impostazioni, orari dei promemoria e storico degli allenamenti sono salvati <strong>solo sul tuo dispositivo</strong>: noi non possiamo vederli.</li>
-<li><strong>Nessuna pubblicità e nessun acquisto in-app</strong> (dalla versione 1.2.0). Nessun ID pubblicitario, nessuno strumento di analisi o tracciamento (es. Firebase Analytics).</li>
+<li><strong>Nessuna rete pubblicitaria (come AdMob) e nessun acquisto in-app</strong> (dalla versione 1.2.0). L'unica pubblicità nell'app è il nostro banner per welegato, un servizio della stessa società. Nessun ID pubblicitario, nessuno strumento di analisi o tracciamento (es. Firebase Analytics).</li>
 <li>L'app non si collega a Internet da sola. Il browser si apre <strong>solo quando tocchi</strong> il <strong>banner di welegato</strong> o un link all'informativa o ai termini.</li>
 <li>I promemoria sono notifiche locali programmate sul dispositivo, senza server push.</li>
 </ul></div>"""),
@@ -186,7 +187,7 @@ PRIVACY = {
 <li>Reclamo a un'autorità di controllo — ad es. l'autorità per la protezione dei dati della Renania Settentrionale-Vestfalia (LDI NRW) o il Garante del tuo paese di residenza</li>
 </ul>
 <p>Non conserviamo dati su di te; ciò che si trova sul dispositivo puoi cancellarlo da solo nell'app (Reimposta registri) o disinstallandola. Per qualsiasi domanda, contattaci qui sotto.</p>"""),
-   ("Modifiche", """<p>Potremo aggiornare questa informativa in caso di modifiche normative o dell'app; modifiche e data di entrata in vigore saranno pubblicate in questa pagina. A differenza della versione 2.0, la versione 3.0 si riferisce alla versione 1.2.0 dell'app, senza pubblicità né acquisti in-app.</p>"""),
+   ("Modifiche", """<p>Potremo aggiornare questa informativa in caso di modifiche normative o dell'app; modifiche e data di entrata in vigore saranno pubblicate in questa pagina. A differenza della versione 2.0, la versione 3.0 si riferisce alla versione 1.2.0 dell'app, senza reti pubblicitarie né acquisti in-app.</p>"""),
    ("Contatti", "<p>Per domande sul trattamento dei dati:</p>" + _contact("Titolare")),
   ],
  },

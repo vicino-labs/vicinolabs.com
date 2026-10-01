@@ -57,7 +57,7 @@ TXT = {
   "apps": [
    ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/", "welegato.com →"),
    ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "/nomio/", "Nomio · Google Play · Datenschutz →"),
-   ("Appoggio", "Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Werbung.", "/appoggio/", "Appoggio · Datenschutz →"),
+   ("Appoggio", "Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Konto.", "/appoggio/", "Appoggio · Datenschutz →"),
   ],
   "contact_h": "Kontakt", "contact": f'Fragen, Kooperationen oder Presse: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
  "en": {"home": "/en/", "apps_nav": "Apps", "other": "Deutsch", "other_href": "/", "privacy": "Privacy",
@@ -68,7 +68,7 @@ TXT = {
   "apps": [
    ("welegato", "Find music teachers, accompanists and musicians in Germany and Austria — with automatic chat translation.", "https://welegato.com/en/", "welegato.com →"),
    ("Nomio", "A budget book for income and expenses in many currencies and languages.", "/nomio/", "Nomio · Google Play · Privacy →"),
-   ("Appoggio", "Breathing training for singers — free, with no ads.", "/appoggio/", "Appoggio · Privacy →"),
+   ("Appoggio", "Breathing training for singers — free, no sign-up.", "/appoggio/", "Appoggio · Privacy →"),
   ],
   "contact_h": "Contact", "contact": f'Questions, partnerships or press: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
 }
