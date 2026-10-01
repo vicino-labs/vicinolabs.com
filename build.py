@@ -56,7 +56,7 @@ TXT = {
   "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker und für den Alltag — mehrsprachig und mit Blick auf Datenschutz.",
   "apps": [
    ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/", "welegato.com →"),
-   ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "https://play.google.com/store/apps/details?id=app.nomio.finance", "Google Play →"),
+   ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "/nomio/", "Nomio · Google Play · Datenschutz →"),
   ],
   "contact_h": "Kontakt", "contact": f'Fragen, Kooperationen oder Presse: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
  "en": {"home": "/en/", "apps_nav": "Apps", "other": "Deutsch", "other_href": "/", "privacy": "Privacy",
@@ -66,14 +66,15 @@ TXT = {
   "lead": "Vicino Labs is a small software studio. We build apps for musicians and for everyday life — multilingual and privacy-minded.",
   "apps": [
    ("welegato", "Find music teachers, accompanists and musicians in Germany and Austria — with automatic chat translation.", "https://welegato.com/en/", "welegato.com →"),
-   ("Nomio", "A budget book for income and expenses in many currencies and languages.", "https://play.google.com/store/apps/details?id=app.nomio.finance", "Google Play →"),
+   ("Nomio", "A budget book for income and expenses in many currencies and languages.", "/nomio/", "Nomio · Google Play · Privacy →"),
   ],
   "contact_h": "Contact", "contact": f'Questions, partnerships or press: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
 }
 
 def home(lang):
     t = TXT[lang]
-    apps = "".join(f'<div class="app"><b>{n}</b><p>{d}</p><a href="{u}" target="_blank" rel="noopener">{l}</a></div>' for n, d, u, l in t["apps"])
+    ext = ' target="_blank" rel="noopener"'  # 사이트 밖 링크만 새 탭
+    apps = "".join(f'<div class="app"><b>{n}</b><p>{d}</p><a href="{u}"{"" if u.startswith("/") else ext}>{l}</a></div>' for n, d, u, l in t["apps"])
     return f'<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><h2 id="apps">Apps</h2><div class="apps">{apps}</div><h2>{t["contact_h"]}</h2><p>{t["contact"]}</p>'
 
 IMPRESSUM = f"""<h1 style="font-size:28px">Impressum</h1>
@@ -116,5 +117,8 @@ for lang, path in alt.items():
     write(path, page(lang, path, TXT[lang]["title"], TXT[lang]["desc"], home(lang), alt))
 write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs.", IMPRESSUM))
 write("/datenschutz/", page("de", "/datenschutz/", "Datenschutzerklärung — Vicino Labs", "Datenschutzerklärung von vicinolabs.com.", PRIVACY))
+# Nomio 개인정보처리방침·이용약관 (/nomio/privacy/, /nomio/terms/) — nomio_legal.py
+import nomio_legal
+nomio_legal.build(os.path.dirname(os.path.abspath(__file__)))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w").write("vicinolabs.com\n")
 print("ok")
