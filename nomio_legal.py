@@ -13,6 +13,9 @@ from nomio_terms_content import TERMS
 
 LANGS = [("ko", "한국어"), ("en", "English"), ("de", "Deutsch")]
 
+# 앱마다 다른 부분 — appoggio_legal.py도 이 파일의 legal_page를 같이 쓴다.
+NOMIO = {"name": "Nomio", "home": "/nomio/", "mark": "n.", "langs": LANGS, "storage": "nomio-legal-lang"}
+
 CSS = """
 :root{--bg:#f7f2ea;--paper:#fffcf7;--ink:#1c1714;--soft:#6b5f56;--line:#e7dcca;--accent:#2a2724;--gold:#8a6a33;--tag:#efe7da}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141110;--paper:#1d1916;--ink:#f1e8da;--soft:#bfb2a2;--line:#2e2823;--accent:#e9d3a6;--gold:#d4b07a;--tag:#26201c}}
@@ -56,13 +59,13 @@ footer a{color:var(--soft);margin-right:14px}
 
 SCRIPT = """
 (function(){
-  var bar=document.querySelector('.langbar'),docs=document.querySelectorAll('.doc'),ok=['ko','en','de'];
+  var bar=document.querySelector('.langbar'),docs=document.querySelectorAll('.doc'),ok=__OK__;
   function set(l){docs.forEach(function(d){d.hidden=d.getAttribute('data-lang')!==l});
     bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===l)});
-    document.documentElement.lang=l;try{localStorage.setItem('nomio-legal-lang',l)}catch(e){}}
+    document.documentElement.lang=l;try{localStorage.setItem('__KEY__',l)}catch(e){}}
   bar.addEventListener('click',function(e){var b=e.target.closest('button[data-lang]');if(b)set(b.getAttribute('data-lang'))});
   var init='en';
-  try{var h=(location.hash||'').replace('#',''),s=localStorage.getItem('nomio-legal-lang'),n=(navigator.language||'en').slice(0,2);
+  try{var h=(location.hash||'').replace('#',''),s=localStorage.getItem('__KEY__'),n=(navigator.language||'en').slice(0,2);
     if(ok.indexOf(h)!==-1)init=h;else if(s&&ok.indexOf(s)!==-1)init=s;else if(ok.indexOf(n)!==-1)init=n;}catch(e){}
   set(init);
 })();
@@ -73,25 +76,28 @@ def _num(lang, i):
     return f"§ {i}" if lang == "de" else f"{i}."
 
 
-def _doc(lang, d, other_href, first):
+def _doc(lang, d, other_href, first, app):
     toc = "".join(f'<a href="#{lang}-{i}">{_num(lang, i)} {html.escape(t)}</a>'
                   for i, (t, _) in enumerate(d["sections"], 1))
     secs = "".join(f'<section id="{lang}-{i}"><h2>{_num(lang, i)} {html.escape(t)}</h2>{b}</section>'
                    for i, (t, b) in enumerate(d["sections"], 1))
     meta = "".join(f'<span class="tag">{k} <b>{v}</b></span>' for k, v in d["meta"])
     hidden = "" if first else " hidden"
+    mark_style = f' style="background:{app["mark_bg"]}"' if app.get("mark_bg") else ""
     return f"""<div class="doc" data-lang="{lang}"{hidden}>
-<div class="mast"><a class="app" href="/nomio/"><span class="mark">n.</span>Nomio</a><h1>{d['h1']}</h1><div class="meta">{meta}</div></div>
+<div class="mast"><a class="app" href="{app['home']}"><span class="mark"{mark_style}>{app['mark']}</span>{app['name']}</a><h1>{d['h1']}</h1><div class="meta">{meta}</div></div>
 <div class="layout"><nav class="toc"><div class="toc-label">Contents</div>{toc}</nav>
 <article><p class="lede">{d['lede']}</p>{secs}</article></div>
 <footer><span>{d['footer']}</span><span><a href="{other_href}#{lang}">{d['other']}</a><a href="/impressum/">Impressum</a></span></footer>
 </div>"""
 
 
-def legal_page(path, content, other_href, title_lang="en"):
-    docs = "".join(_doc(l, content[l], other_href, l == "en") for l, _ in LANGS)
+def legal_page(path, content, other_href, title_lang="en", app=NOMIO):
+    langs = app["langs"]
+    docs = "".join(_doc(l, content[l], other_href, l == "en", app) for l, _ in langs)
     tabs = "".join(f'<button type="button" data-lang="{l}"{" class=active" if l == "en" else ""}>{n}</button>'
-                   for l, n in LANGS)
+                   for l, n in langs)
+    script = SCRIPT.replace("__OK__", "[" + ",".join(f"'{l}'" for l, _ in langs) + "]").replace("__KEY__", app["storage"])
     t = content[title_lang]["title"]
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -108,7 +114,7 @@ def legal_page(path, content, other_href, title_lang="en"):
 <div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a>
 <div class="langbar" role="tablist" aria-label="Language">{tabs}</div></div></div>
 <main class="page">{docs}</main>
-<script>{SCRIPT}</script>
+<script>{script}</script>
 </body></html>
 """
 
