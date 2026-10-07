@@ -20,8 +20,8 @@ APPOGGIO = {
     "storage": "appoggio-legal-lang",
 }
 
-# 아직 Play 비공개 테스트 중이라 공개 스토어 페이지가 없다(404) — 공개되면
-# details?id=app.appoggio.voice 링크를 소개 페이지에 다시 넣는다.
+# 2026-10 조직 계정(Vicino Labs)에서 새 앱으로 공개 (예전 개인 계정 app.appoggio.voice는 게시 중단).
+PLAY_URL = "https://play.google.com/store/apps/details?id=com.vicinolabs.appoggio"
 
 
 def appoggio_home():
@@ -45,6 +45,7 @@ Atemtraining für Sängerinnen und Sänger.<br>
 L'arte del respiro: allenamento per cantanti.<br>
 성악가를 위한 호흡 훈련 — 모든 기능 무료, 기록은 기기에만.</p></div>
 <div style="padding:26px 0;max-width:720px">
+<p><a href="{PLAY_URL}" target="_blank" rel="noopener">Google Play →</a></p>
 <p>Privacy Policy · Datenschutzerklärung · Informativa privacy · 개인정보처리방침: <a href="/appoggio/privacy/">vicinolabs.com/appoggio/privacy</a><br>
 Terms of Service · Nutzungsbedingungen · Termini · 이용약관: <a href="/appoggio/terms/">vicinolabs.com/appoggio/terms</a><br>
 Impressum: <a href="/impressum/">vicinolabs.com/impressum</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
