@@ -51,24 +51,26 @@ def page(lang, path, title, desc, body, alt=None):
 TXT = {
  "de": {"home": "/", "apps_nav": "Apps", "other": "English", "other_href": "/en/", "privacy": "Datenschutz",
   "title": "Vicino Labs — Apps für Musik und Alltag",
-  "desc": "Vicino Labs entwickelt Apps für den Alltag und für Musikerinnen und Musiker: welegato, Nomio und Appoggio.",
+  "desc": "Vicino Labs entwickelt Apps für den Alltag und für Musikerinnen und Musiker: welegato, Nomio, Appoggio und Leggii.",
   "h1": "Apps, die im Alltag helfen.",
   "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker und für den Alltag — mehrsprachig und mit Blick auf Datenschutz.",
   "apps": [
    ("welegato", "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.", "https://welegato.com/", "welegato.com →"),
    ("Nomio", "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.", "/nomio/", "Nomio · Google Play · Datenschutz →"),
    ("Appoggio", "Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Konto.", "/appoggio/", "Appoggio · Google Play · Datenschutz →"),
+   ("Leggii", "Die einfache Noten-App: PDF-Noten, Notizen, IMSLP-Suche und Metronom.", "/leggii/", "Leggii · Google Play · Datenschutz →"),
   ],
   "contact_h": "Kontakt", "contact": f'Fragen, Kooperationen oder Presse: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
  "en": {"home": "/en/", "apps_nav": "Apps", "other": "Deutsch", "other_href": "/", "privacy": "Privacy",
   "title": "Vicino Labs — Apps for music and everyday life",
-  "desc": "Vicino Labs builds apps for everyday life and for musicians: welegato, Nomio and Appoggio.",
+  "desc": "Vicino Labs builds apps for everyday life and for musicians: welegato, Nomio, Appoggio and Leggii.",
   "h1": "Apps that help in everyday life.",
   "lead": "Vicino Labs is a small software studio. We build apps for musicians and for everyday life — multilingual and privacy-minded.",
   "apps": [
    ("welegato", "Find music teachers, accompanists and musicians in Germany and Austria — with automatic chat translation.", "https://welegato.com/en/", "welegato.com →"),
    ("Nomio", "A budget book for income and expenses in many currencies and languages.", "/nomio/", "Nomio · Google Play · Privacy →"),
    ("Appoggio", "Breathing training for singers — free, no sign-up.", "/appoggio/", "Appoggio · Google Play · Privacy →"),
+   ("Leggii", "A simple sheet music reader: PDF scores, notes, IMSLP search and a metronome.", "/leggii/", "Leggii · Google Play · Privacy →"),
   ],
   "contact_h": "Contact", "contact": f'Questions, partnerships or press: <a href="mailto:{EMAIL}">{EMAIL}</a>'},
 }
@@ -125,5 +127,8 @@ nomio_legal.build(os.path.dirname(os.path.abspath(__file__)))
 # Appoggio 개인정보처리방침·이용약관 (/appoggio/privacy/, /appoggio/terms/) — appoggio_legal.py
 import appoggio_legal
 appoggio_legal.build(os.path.dirname(os.path.abspath(__file__)))
+# Leggii(렛지 악보) 개인정보처리방침·이용약관 (/leggii/privacy/, /leggii/terms/) — leggii_legal.py
+import leggii_legal
+leggii_legal.build(os.path.dirname(os.path.abspath(__file__)))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w").write("vicinolabs.com\n")
 print("ok")
