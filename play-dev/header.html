@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:2048px;height:1152px;overflow:hidden;font-family:'Pretendard',sans-serif;background:#f6f3ef;position:relative}
+.blob{position:absolute;border-radius:50%;filter:blur(120px)}
+.wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.brand{display:flex;align-items:center;gap:44px}
+.brand img{height:96px}
+.brand span{font-size:132px;font-weight:800;letter-spacing:-.03em;color:#1a1715}
+.tag{margin-top:26px;font-size:46px;color:#5e5650}
+.apps{display:flex;gap:46px;margin-top:66px}
+.app{width:150px;text-align:center}
+.app img{width:150px;height:150px;border-radius:34px;box-shadow:0 14px 34px rgba(40,25,15,.18);display:block}
+.app b{display:block;margin-top:18px;font-size:30px;font-weight:700;color:#2a2421}
+.app i{display:block;margin-top:4px;font-style:normal;font-size:20px;font-weight:600;color:#9a8a7a;letter-spacing:.02em}
+.app i.on{visibility:hidden}
+</style></head><body>
+<div class="blob" style="width:900px;height:700px;left:-120px;top:-180px;background:#bfe3ef;opacity:.9"></div>
+<div class="blob" style="width:900px;height:700px;right:-160px;bottom:-240px;background:#f4c8d8;opacity:.85"></div>
+<div class="blob" style="width:800px;height:500px;left:620px;top:420px;background:#e6dcef;opacity:.55"></div>
+<div class="wrap">
+  <div class="brand"><img src="vl_mark.png"><span>Vicino Labs</span></div>
+  <div class="tag">Apps for music and everyday life</div>
+  <div class="apps" id="apps"></div>
+</div>
+<script>
+// 2026-10-28 최종 아이콘(welegato-marketing/brand/vicino-icons-final-2026-10-28). Leggii는 2026-10-25 출시.
+const B='file:///Users/jameslee/App/welegato-marketing/brand/';
+const F=B+'vicino-icons-final-2026-10-28/';
+const apps=[['welegato',B+'welegato-icon-2026-10-28/icon-rounded-1024.png',0],['Appoggio',F+'appoggio/icon-rounded-1024.png',0],['Leggii',F+'leggii/icon-rounded-1024.png',0],['Squillo',F+'squillo/icon-rounded-1024.png',1],['Chiave',F+'chiave/icon-rounded-1024.png',1],['Nomio',F+'nomio/icon-rounded-1024.png',0]];
+document.getElementById('apps').innerHTML=apps.map(([n,s,soon])=>`<div class="app"><img src="${s}"><b>${n}</b><i class="${soon?'':'on'}">Coming soon</i></div>`).join('');
+</script></body></html>
