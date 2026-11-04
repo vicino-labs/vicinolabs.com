@@ -11,9 +11,9 @@ TERMS = {
  "ko": {
   "title": "렛지 악보(Leggii) 이용약관",
   "h1": "이용약관",
-  "meta": [("시행일", "2026.10.22"), ("버전", "1.0"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.04"), ("버전", "1.1"), ("운영자", "Vicino Labs")],
   "lede": "본 약관은 Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)를 이용하시는 분들과 저희 사이의 약속입니다. 앱을 설치하고 이용하시면 아래 내용에 동의하신 것으로 봅니다.",
-  "footer": "본 약관은 2026년 10월 22일부터 시행됩니다 (버전 1.0).",
+  "footer": "본 약관은 2026년 11월 4일부터 시행됩니다 (버전 1.1). 이전 버전 1.0: 2026년 10월 22일.",
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 렛지 악보(Leggii, 이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
@@ -40,6 +40,12 @@ TERMS = {
 <li>IMSLP의 악보는 IMSLP가 정한 조건으로 제공되며, 저작권 보호 기간은 나라마다 다릅니다. 앱은 EU에서 보호될 수 있는 판본에 안내를 표시하지만, 최종 판단은 이용자에게 있습니다.</li>
 <li>앱은 이용자의 악보를 회사로 보내지 않으며, 회사는 그 내용을 알지 못합니다.</li>
 </ol>"""),
+   ("녹음", """<ol>
+<li>앱의 녹음 기능은 레슨·리허설·앙상블·연습을 이용자 본인의 연습과 기록을 위해 남기는 용도입니다.</li>
+<li>다른 사람(선생님, 지휘자, 함께 연주하는 사람 등)의 목소리나 연주가 녹음되는 경우, 이용자는 녹음 전에 그분들의 동의를 받아야 합니다. 동의 없이 녹음하거나 녹음을 쓰는 데 따른 책임은 이용자에게 있습니다.</li>
+<li>녹음을 다른 사람에게 보내거나 공개·배포할 때는 녹음된 사람들의 동의와 연주된 작품의 저작권·실연자 권리를 이용자가 확인해야 합니다.</li>
+<li>녹음은 이용자의 기기에만 저장됩니다. 회사는 녹음을 받거나 보관하지 않으므로 잃어버린 녹음을 되살려 드릴 수 없습니다. 중요한 녹음은 “서재 백업하기”나 보내기로 따로 보관해 주세요.</li>
+</ol>"""),
    ("welegato 및 외부 서비스", """<p>앱에는 welegato, IMSLP, Google Play 등 외부 서비스로 가는 링크와 기능이 있습니다. 이 서비스들은 앱과 별개이며 각자의 이용약관과 개인정보처리방침이 적용됩니다. 외부 서비스의 내용과 이용 가능 여부에 대해 회사는 책임지지 않습니다.</p>"""),
    ("지적재산권", """<p>앱의 로고, “Leggii·렛지” 명칭, 디자인, 문구, 소스코드에 대한 권리는 회사에 있습니다. 회사의 사전 서면 동의 없이 복제·배포·전송·출판·역설계하거나 2차적 저작물을 만들 수 없습니다.</p>"""),
    ("이용자의 의무", """<ol>
@@ -60,9 +66,9 @@ TERMS = {
  "en": {
   "title": "Leggii Terms of Service",
   "h1": "Terms of Service",
-  "meta": [("Effective", "2026-10-22"), ("Version", "1.0"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-04"), ("Version", "1.1"), ("Operator", "Vicino Labs")],
   "lede": "These terms are the agreement between you and Vicino Labs for using Leggii, a sheet music app. By installing and using the app you agree to them.",
-  "footer": "These terms are effective from 22 October 2026 (version 1.0).",
+  "footer": "These terms are effective from 4 November 2026 (version 1.1). Previous version 1.0: 22 October 2026.",
   "other": "Privacy Policy →",
   "sections": [
    ("Scope", "<p>These terms govern the use of the mobile app Leggii (the “app”) provided by Vicino Labs (the “company”).</p>"),
@@ -89,6 +95,12 @@ TERMS = {
 <li>Scores from IMSLP are provided on IMSLP's terms, and copyright terms differ by country. The app flags editions that may still be protected in the EU, but the final judgement is yours.</li>
 <li>The app does not send your scores to the company, and the company does not know their contents.</li>
 </ol>"""),
+   ("Recordings", """<ol>
+<li>The recording feature is for keeping lessons, rehearsals, ensembles and practice for your own practice and notes.</li>
+<li>If other people's voices or playing are recorded (a teacher, conductor or fellow musicians, for example), you must get their consent before recording. You are responsible for recording, or using a recording, without consent.</li>
+<li>Before you send a recording to others or publish or distribute it, you must make sure the people recorded agree and that copyright and performers' rights in the music allow it.</li>
+<li>Recordings are stored only on your device. The company does not receive or keep them and cannot restore a lost recording. Keep important recordings safe with “Back up library” or by sending them.</li>
+</ol>"""),
    ("welegato and external services", """<p>The app links to and uses external services such as welegato, IMSLP and Google Play. They are separate from the app and governed by their own terms and privacy policies. The company is not responsible for their content or availability.</p>"""),
    ("Intellectual property", """<p>The company holds the rights to the app's logo, the name “Leggii”, its design, texts and source code. You may not copy, distribute, transmit, publish, reverse-engineer or create derivative works without prior written consent.</p>"""),
    ("Your obligations", """<ol>
@@ -109,9 +121,9 @@ TERMS = {
  "de": {
   "title": "Leggii Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
-  "meta": [("Gültig ab", "22.10.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "04.11.2026"), ("Version", "1.1"), ("Betreiber", "Vicino Labs")],
   "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
-  "footer": "Diese Bedingungen gelten ab dem 22. Oktober 2026 (Version 1.0).",
+  "footer": "Diese Bedingungen gelten ab dem 4. November 2026 (Version 1.1). Vorherige Version 1.0: 22. Oktober 2026.",
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Geltungsbereich", "<p>Diese Bedingungen regeln die Nutzung der mobilen App Leggii („App“) von Vicino Labs („Anbieter“).</p>"),
@@ -138,6 +150,12 @@ TERMS = {
 <li>Noten von IMSLP werden zu den Bedingungen von IMSLP bereitgestellt; Schutzfristen sind je nach Land verschieden. Die App kennzeichnet Ausgaben, die in der EU noch geschützt sein können, die endgültige Beurteilung liegt aber bei dir.</li>
 <li>Die App sendet deine Noten nicht an den Anbieter; der Anbieter kennt ihren Inhalt nicht.</li>
 </ol>"""),
+   ("Aufnahmen", """<ol>
+<li>Die Aufnahmefunktion dient dazu, Unterricht, Proben, Ensembles und Üben für dein eigenes Üben und deine Notizen festzuhalten.</li>
+<li>Werden Stimme oder Spiel anderer Personen aufgenommen (z. B. Lehrkraft, Dirigent oder Mitmusiker), musst du vor der Aufnahme ihre Einwilligung einholen. Für Aufnahmen oder deren Nutzung ohne Einwilligung bist du verantwortlich.</li>
+<li>Bevor du eine Aufnahme weitergibst, veröffentlichst oder verbreitest, musst du sicherstellen, dass die aufgenommenen Personen einverstanden sind und Urheber- und Leistungsschutzrechte an der Musik dies erlauben.</li>
+<li>Aufnahmen werden nur auf deinem Gerät gespeichert. Der Anbieter erhält oder speichert sie nicht und kann verlorene Aufnahmen nicht wiederherstellen. Sichere wichtige Aufnahmen mit „Bibliothek sichern“ oder indem du sie sendest.</li>
+</ol>"""),
    ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, IMSLP und Google Play. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p>"""),
    ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Leggii“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt.</p>"""),
    ("Pflichten der Nutzer", """<ol>
@@ -158,9 +176,9 @@ TERMS = {
  "it": {
   "title": "Leggii — Termini di utilizzo",
   "h1": "Termini di utilizzo",
-  "meta": [("In vigore dal", "22.10.2026"), ("Versione", "1.0"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "04.11.2026"), ("Versione", "1.1"), ("Gestore", "Vicino Labs")],
   "lede": "Questi termini regolano l'uso di Leggii, un'app per spartiti di Vicino Labs. Installando e usando l'app li accetti.",
-  "footer": "Questi termini sono in vigore dal 22 ottobre 2026 (versione 1.0).",
+  "footer": "Questi termini sono in vigore dal 4 novembre 2026 (versione 1.1). Versione precedente 1.0: 22 ottobre 2026.",
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>Questi termini regolano l'uso dell'app mobile Leggii (“app”) fornita da Vicino Labs (“fornitore”).</p>"),
@@ -186,6 +204,12 @@ TERMS = {
 <li>Sei responsabile del rispetto del diritto d'autore sugli spartiti che importi, scansioni o condividi.</li>
 <li>Gli spartiti di IMSLP sono forniti alle condizioni di IMSLP e la durata della protezione varia da paese a paese. L'app segnala le edizioni che potrebbero essere ancora protette nell'UE, ma la valutazione finale spetta a te.</li>
 <li>L'app non invia i tuoi spartiti al fornitore, che non ne conosce il contenuto.</li>
+</ol>"""),
+   ("Registrazioni", """<ol>
+<li>La funzione di registrazione serve a conservare lezioni, prove, ensemble e studio per il tuo esercizio e i tuoi appunti.</li>
+<li>Se vengono registrate la voce o l'esecuzione di altre persone (ad es. insegnante, direttore o colleghi), devi ottenere il loro consenso prima di registrare. La responsabilità di registrazioni o usi senza consenso è tua.</li>
+<li>Prima di inviare una registrazione ad altri, pubblicarla o diffonderla, devi assicurarti che le persone registrate siano d'accordo e che il diritto d'autore e i diritti degli interpreti sulla musica lo consentano.</li>
+<li>Le registrazioni sono salvate solo sul tuo dispositivo. Il fornitore non le riceve né le conserva e non può recuperare registrazioni perse. Conserva quelle importanti con “Backup della libreria” o inviandole.</li>
 </ol>"""),
    ("welegato e servizi esterni", """<p>L'app collega e usa servizi esterni come welegato, IMSLP e Google Play. Sono separati dall'app e regolati dai propri termini e informative. Il fornitore non risponde del loro contenuto o della loro disponibilità.</p>"""),
    ("Proprietà intellettuale", """<p>I diritti su logo, nome “Leggii”, grafica, testi e codice sorgente dell'app appartengono al fornitore. Senza consenso scritto preventivo non è consentito copiare, distribuire, trasmettere, pubblicare, decompilare o creare opere derivate.</p>"""),
