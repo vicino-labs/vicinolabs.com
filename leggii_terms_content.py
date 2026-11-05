@@ -4,6 +4,7 @@
 처음 7일 Pro 무료 체험. 이용자가 가져온 악보의 저작권은 이용자 책임(IMSLP 판본은 나라마다 다름).
 2026-11-05 버전 1.1 (앱 1.2.0~1.4.0): 녹음, Leggii Plus 구독, AI 시간·충전, AI 레슨 분석,
 렛지에게 물어보기, 위레가토 통합 아이디(선택).
+2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus 10GB/50GB), 출시 가격 유지, Plus 종료 후 90일.
 책임 제한은 독일법상 허용 범위(고의·중과실, 생명·신체·건강, 제조물책임법은 제한 불가).
 """
 
@@ -13,9 +14,9 @@ TERMS = {
  "ko": {
   "title": "렛지 악보(Leggii) 이용약관",
   "h1": "이용약관",
-  "meta": [("시행일", "2026.11.05"), ("버전", "1.1"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.06"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
   "lede": "본 약관은 Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)를 이용하시는 분들과 저희 사이의 약속입니다. 앱을 설치하고 이용하시면 아래 내용에 동의하신 것으로 봅니다.",
-  "footer": "본 약관은 2026년 11월 5일부터 시행됩니다 (버전 1.1). 이전 버전 1.0: 2026년 10월 22일.",
+  "footer": "본 약관은 2026년 11월 6일부터 시행됩니다 (버전 1.2). 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 렛지 악보(Leggii, 이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
@@ -37,6 +38,8 @@ TERMS = {
 <li><strong>무료 체험:</strong> 앱을 처음 설치하면 <strong>7일 동안</strong> Pro 기능을 무료로 쓸 수 있고, 기기당 한 번 AI 시간 30분을 드립니다. 체험이 끝나면 자동으로 무료 버전으로 돌아가며 자동 결제는 없습니다. 체험 중에 만든 필기·기호·연결·페이지는 그대로 남습니다.</li>
 <li><strong>Pro:</strong> 앱 스토어 인앱 결제로 한 번 구매하는 <strong>평생 이용권</strong>입니다. 매월 AI 시간 30분과 처음 한 번 환영 보너스 60분이 포함됩니다. 같은 스토어 계정으로 다시 설치하면 “구매 복원”으로 되살릴 수 있습니다.</li>
 <li><strong>Leggii Plus:</strong> 월간 또는 연간 <strong>정기 구독</strong>으로, 모든 Pro 기능과 매월 AI 시간 5시간이 포함됩니다. 해지할 때까지 같은 기간으로 자동 갱신되며, Google Play(또는 App Store)의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간이 끝날 때까지 쓸 수 있고, 그 뒤에는 Pro를 구매했다면 Pro로, 아니면 무료 버전으로 돌아갑니다.</li>
+<li><strong>렛지 클라우드(Plus):</strong> 위레가토 통합 아이디로 로그인하면 악보·필기·폴더·셋리스트·개인 노트와, 이용자가 켜 둔 경우 녹음을 같은 아이디의 기기들에 맞춥니다. Plus에는 10GB가 포함되며, 더 큰 공간은 50GB 요금제로 바꿀 수 있습니다(올릴 때는 Google Play가 남은 기간의 차액만 받습니다). 공간이 차면 새로 올리는 것만 멈추고 아무것도 지우지 않습니다. 한 기기에서 지운 항목은 다른 기기와 클라우드에서도 지워집니다. Plus가 끝나면 새 업로드가 멈추고 90일 동안 내려받을 수 있으며, 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 클라우드는 이용자 본인의 기기들 사이의 동기화를 위한 것으로, 다른 사람과 공유하는 기능이 아닙니다. 중요한 자료는 “서재 백업하기”로도 따로 보관하기를 권합니다.</li>
+<li><strong>출시 가격:</strong> 2027년 12월 31일까지 Plus를 구독하면, 구독을 이어 가는 동안 그때의 가격이 유지됩니다. 그 뒤 새로 구독하는 경우에는 다른 가격이 적용될 수 있습니다.</li>
 <li><strong>AI 시간 충전:</strong> 5시간·15시간 단위로 한 번 결제하며 구독이 아닙니다. 구매일로부터 12개월 동안 쓸 수 있고, Plus 구독 여부와 상관없이 남습니다.</li>
 <li><strong>AI 시간 계산:</strong> 레슨 노트는 녹음 1분에 1분, 대화 받아 적기는 녹음 1분에 3분이 차감되며, 시작 전에 화면에 표시됩니다. 매월 주어지는 시간을 먼저 쓰고 그다음 충전 시간을 씁니다. 매월 시간은 다음 달로 넘어가지 않습니다. AI 시간은 현금으로 바꾸거나 다른 사람에게 넘길 수 없습니다.</li>
 <li><strong>통합 아이디와 구매:</strong> 로그인하면 구매와 AI 시간이 그 아이디에 연결됩니다. 하나의 구매는 처음 연결된 아이디 하나에만 속합니다.</li>
@@ -86,9 +89,9 @@ TERMS = {
  "en": {
   "title": "Leggii Terms of Service",
   "h1": "Terms of Service",
-  "meta": [("Effective", "2026-11-05"), ("Version", "1.1"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-06"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
   "lede": "These terms are the agreement between you and Vicino Labs for using Leggii, a sheet music app. By installing and using the app you agree to them.",
-  "footer": "These terms are effective from 5 November 2026 (version 1.1). Previous version 1.0: 22 October 2026.",
+  "footer": "These terms are effective from 6 November 2026 (version 1.2). Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Privacy Policy →",
   "sections": [
    ("Scope", "<p>These terms govern the use of the mobile app Leggii (the “app”) provided by Vicino Labs (the “company”).</p>"),
@@ -110,6 +113,8 @@ TERMS = {
 <li><strong>Free trial:</strong> after the first installation you can use the Pro features free for <strong>7 days</strong>, plus 30 AI minutes once per device. The trial then ends by itself; there is no automatic payment. Notes, symbols, links and pages made during the trial stay.</li>
 <li><strong>Pro:</strong> a one-time in-app purchase that is <strong>yours for life</strong>, with 30 AI minutes every month and a one-time 60-minute welcome bonus. Reinstalling with the same store account restores it with “Restore purchase”.</li>
 <li><strong>Leggii Plus:</strong> a monthly or yearly <strong>subscription</strong> with all Pro features and 5 hours of AI time every month. It renews for the same period until cancelled; cancel any time in Google Play (or the App Store) subscriptions. It keeps working until the paid period ends; afterwards you are back to Pro if you bought Pro, otherwise to the free version.</li>
+<li><strong>Leggii cloud (Plus):</strong> signed in with the welegato ID, scores, ink, folders, setlists, my notes and — if you keep it on — recordings stay the same on the devices of that ID. Plus includes 10 GB; for more space you can switch to the 50 GB plan (Google Play then charges only the difference for the rest of the period). When the cloud is full, only new uploads stop and nothing is deleted. Something deleted on one device is deleted on the other devices and in the cloud too. When Plus ends, new uploads stop, everything can be downloaded for 90 days, and after two reminder emails the cloud files are deleted. The cloud is for syncing your own devices, not for sharing with others. We recommend also keeping important material with “Back up library”.</li>
+<li><strong>Launch price:</strong> subscribe to Plus by 31 December 2027 and keep that price for as long as you stay subscribed. A different price may apply to new subscriptions after that.</li>
 <li><strong>AI time top-ups:</strong> 5 or 15 hours, paid once, not a subscription. Usable for 12 months from purchase, whether or not you subscribe to Plus.</li>
 <li><strong>How AI time is counted:</strong> lesson notes use 1 minute per recording minute, transcripts 3 minutes; the cost is shown before starting. Monthly minutes are used first, then top-ups. Monthly minutes do not carry over. AI time has no cash value and cannot be transferred.</li>
 <li><strong>welegato ID and purchases:</strong> when you sign in, purchases and AI time are linked to that ID. A purchase belongs to the first ID it was linked to.</li>
@@ -159,9 +164,9 @@ TERMS = {
  "de": {
   "title": "Leggii Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
-  "meta": [("Gültig ab", "05.11.2026"), ("Version", "1.1"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
   "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
-  "footer": "Diese Bedingungen gelten ab dem 5. November 2026 (Version 1.1). Vorherige Version 1.0: 22. Oktober 2026.",
+  "footer": "Diese Bedingungen gelten ab dem 6. November 2026 (Version 1.2). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Geltungsbereich", "<p>Diese Bedingungen regeln die Nutzung der mobilen App Leggii („App“) von Vicino Labs („Anbieter“).</p>"),
@@ -183,6 +188,8 @@ TERMS = {
 <li><strong>Testphase:</strong> Nach der ersten Installation kannst du die Pro-Funktionen <strong>7 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
 <li><strong>Pro:</strong> ein einmaliger In-App-Kauf, <strong>dauerhaft</strong> nutzbar, mit 30 KI-Minuten pro Monat und einmalig 60 Willkommensminuten. Bei Neuinstallation mit demselben Store-Konto stellt „Kauf wiederherstellen“ ihn wieder her.</li>
 <li><strong>Leggii Plus:</strong> ein monatliches oder jährliches <strong>Abo</strong> mit allen Pro-Funktionen und 5 Stunden KI-Zeit pro Monat. Es verlängert sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abos von Google Play (oder dem App Store). Es läuft bis zum Ende des bezahlten Zeitraums; danach gilt wieder Pro, wenn du Pro gekauft hast, sonst die kostenlose Version.</li>
+<li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn du es eingeschaltet lässt – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz kannst du auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich deiner eigenen Geräte, nicht dem Teilen mit anderen. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
+<li><strong>Einführungspreis:</strong> Wer Plus bis zum 31. Dezember 2027 abonniert, behält diesen Preis, solange das Abo läuft. Für spätere neue Abos kann ein anderer Preis gelten.</li>
 <li><strong>KI-Zeit-Aufladungen:</strong> 5 oder 15 Stunden, einmal bezahlt, kein Abo. Nutzbar 12 Monate ab Kauf, unabhängig von einem Plus-Abo.</li>
 <li><strong>Berechnung der KI-Zeit:</strong> Unterrichtsnotizen verbrauchen 1 Minute pro Aufnahmeminute, Mitschriften 3 Minuten; die Kosten werden vor dem Start angezeigt. Zuerst werden die Monatsminuten verbraucht, dann Aufladungen. Monatsminuten verfallen am Monatsende. KI-Zeit hat keinen Geldwert und ist nicht übertragbar.</li>
 <li><strong>welegato-ID und Käufe:</strong> Bei Anmeldung werden Käufe und KI-Zeit mit dieser ID verknüpft. Ein Kauf gehört zu der ID, mit der er zuerst verknüpft wurde.</li>
@@ -232,9 +239,9 @@ TERMS = {
  "it": {
   "title": "Leggii — Termini di utilizzo",
   "h1": "Termini di utilizzo",
-  "meta": [("In vigore dal", "05.11.2026"), ("Versione", "1.1"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "06.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
   "lede": "Questi termini regolano l'uso di Leggii, un'app per spartiti di Vicino Labs. Installando e usando l'app li accetti.",
-  "footer": "Questi termini sono in vigore dal 5 novembre 2026 (versione 1.1). Versione precedente 1.0: 22 ottobre 2026.",
+  "footer": "Questi termini sono in vigore dal 6 novembre 2026 (versione 1.2). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>Questi termini regolano l'uso dell'app mobile Leggii (“app”) fornita da Vicino Labs (“fornitore”).</p>"),
@@ -256,6 +263,8 @@ TERMS = {
 <li><strong>Prova gratuita:</strong> dopo la prima installazione puoi usare le funzioni Pro gratis per <strong>7 giorni</strong>, più 30 minuti AI una sola volta per dispositivo. Poi la prova termina da sola; non c'è alcun pagamento automatico. Annotazioni, simboli, collegamenti e pagine creati durante la prova restano.</li>
 <li><strong>Pro:</strong> un acquisto in-app unico, <strong>per sempre</strong>, con 30 minuti AI al mese e un bonus di benvenuto unico di 60 minuti. Reinstallando con lo stesso account dello store, «Ripristina acquisto» lo recupera.</li>
 <li><strong>Leggii Plus:</strong> un <strong>abbonamento</strong> mensile o annuale con tutte le funzioni Pro e 5 ore di tempo AI al mese. Si rinnova per lo stesso periodo fino alla disdetta; puoi annullarlo in qualsiasi momento negli abbonamenti di Google Play (o dell'App Store). Resta attivo fino alla fine del periodo pagato; poi torni a Pro se lo hai acquistato, altrimenti alla versione gratuita.</li>
+<li><strong>Cloud di Leggii (Plus):</strong> con il welegato ID connesso, spartiti, annotazioni, cartelle, scalette, Le mie note e – se lo lasci attivo – le registrazioni restano uguali sui dispositivi di quell'ID. Plus include 10 GB; per più spazio puoi passare al piano da 50 GB (Google Play addebita solo la differenza per il resto del periodo). Quando il cloud è pieno si fermano solo i nuovi caricamenti e nulla viene eliminato. Ciò che elimini su un dispositivo viene eliminato anche sugli altri dispositivi e nel cloud. Quando Plus termina, i nuovi caricamenti si fermano, per 90 giorni puoi scaricare tutto e, dopo due email di promemoria, i file nel cloud vengono eliminati. Il cloud serve a sincronizzare i tuoi dispositivi, non a condividere con altri. Consigliamo di conservare il materiale importante anche con “Backup della libreria”.</li>
+<li><strong>Prezzo di lancio:</strong> chi si abbona a Plus entro il 31 dicembre 2027 mantiene quel prezzo finché resta abbonato. Ai nuovi abbonamenti successivi può applicarsi un prezzo diverso.</li>
 <li><strong>Ricariche di tempo AI:</strong> 5 o 15 ore, pagate una volta, non un abbonamento. Utilizzabili per 12 mesi dall'acquisto, con o senza Plus.</li>
 <li><strong>Come si conta il tempo AI:</strong> le note della lezione usano 1 minuto per minuto di registrazione, le trascrizioni 3 minuti; il costo è mostrato prima di iniziare. Prima si usano i minuti mensili, poi le ricariche. I minuti mensili non si accumulano. Il tempo AI non ha valore in denaro e non è trasferibile.</li>
 <li><strong>welegato ID e acquisti:</strong> con l'accesso, acquisti e tempo AI vengono collegati a quell'ID. Un acquisto appartiene al primo ID a cui è stato collegato.</li>

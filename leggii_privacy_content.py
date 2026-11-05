@@ -6,6 +6,7 @@
 안드로이드 자동 백업은 설정만(악보 제외) 사용자의 Google 계정에.
 2026-11-05 버전 1.1 (앱 1.2.0~1.4.0): 레슨·리허설 녹음(기기 안에만), 녹음 재생 알림, AI 레슨 분석(Gemini, 요청 시),
 구매·구독·AI 시간 서버 확인(가명 해시), 선택 로그인(위레가토 통합 아이디), 렛지에게 물어보기, 수탁자 목록.
+2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus, Cloudflare R2), 아이디 삭제 시 클라우드 삭제, Plus 종료 후 90일.
 """
 
 from appoggio_privacy_content import EMAIL, _id_card, _contact
@@ -19,14 +20,14 @@ PRIVACY = {
  "ko": {
   "title": "렛지 악보(Leggii) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.05"), ("버전", "1.1"), ("운영자", "Vicino Labs")],
-  "lede": "Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)의 기본 기능은 회원가입 없이 기기 안에서만 동작하며, 악보·필기·녹음은 이용자의 기기에 저장됩니다. AI 레슨 분석, 구매 확인, 선택 로그인(위레가토 통합 아이디), 렛지에게 물어보기를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 5일부터 시행됩니다 (버전 1.1). 이전 버전 1.0: 2026년 10월 22일.",
+  "meta": [("시행일", "2026.11.06"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
+  "lede": "Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)의 기본 기능은 회원가입 없이 기기 안에서만 동작하며, 악보·필기·녹음은 이용자의 기기에 저장됩니다. AI 레슨 분석, 구매 확인, 선택 로그인(위레가토 통합 아이디), 렛지 클라우드(Plus), 렛지에게 물어보기를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
+  "footer": "본 방침은 2026년 11월 6일부터 시행됩니다 (버전 1.2). 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
-<li>기본 기능은 회원가입 없이 쓸 수 있고, 악보(PDF)·필기·폴더·셋리스트·녹음은 <strong>기기 안에만</strong> 저장됩니다.</li>
+<li>기본 기능은 회원가입 없이 쓸 수 있고, 악보(PDF)·필기·폴더·셋리스트·녹음은 <strong>기기 안에만</strong> 저장됩니다. Leggii Plus의 <strong>렛지 클라우드</strong>를 쓰면 같은 아이디의 기기들을 위해 클라우드(Cloudflare R2)에도 저장됩니다.</li>
 <li>광고 네트워크와 분석·추적 도구가 없습니다. 앱 아래의 배너는 같은 회사 서비스 welegato를 알리는 자체 배너입니다.</li>
 <li><strong>AI 레슨 분석</strong>은 이용자가 요청할 때만 녹음 오디오를 Google Gemini로 보내 분석하고, 분석이 끝나면 오디오를 지웁니다. 결과는 기기에 저장됩니다.</li>
 <li>구매·구독·AI 시간 확인을 위해 <strong>가명 번호</strong>로 저희 서버(EU, 독일 프랑크푸르트)를 씁니다.</li>
@@ -72,15 +73,23 @@ PRIVACY = {
 <li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Google·카카오·이메일, 계정 번호)는 <a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 렛지에서 가입하면 “렛지에서 가입함” 표시가 계정에 남고, 첫 로그인 때 환영 메일이 한 번 갑니다.</li>
 <li>렛지는 아이디를 AI 시간·구매와 연결합니다(가명 계정 번호와 아이디의 연결 기록). 그래서 다른 기기에서 로그인해도 Pro·Plus·AI 시간이 이어집니다.</li>
 <li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
-<li>설정 › 위레가토 통합 아이디 › 아이디 관리에서 아이디를 삭제하면 위레가토 계정과 렛지의 AI 계정·연결 기록이 지워집니다. 기기 안의 악보와 녹음은 남습니다.</li>
+<li>설정 › 위레가토 통합 아이디 › 아이디 관리에서 아이디를 삭제하면 위레가토 계정과 렛지의 AI 계정·연결 기록이 지워집니다. 렛지 클라우드의 파일도 함께 지워지며, 기기 안의 악보와 녹음은 남습니다.</li>
 </ul>
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
+   ("렛지 클라우드 (Leggii Plus, 선택)", """<p>Leggii Plus를 구독하고 위레가토 통합 아이디로 로그인하면, 렛지 클라우드가 같은 아이디의 모든 기기에서 서재를 똑같이 맞춥니다.</p>
+<ul>
+<li><strong>저장하는 정보:</strong> 악보 PDF, 악보 정보·필기·책갈피, 폴더와 셋리스트, 개인 노트(AI 노트 PDF), 그리고 “녹음도 클라우드에 올리기”가 켜져 있으면(기본값) 녹음 파일과 녹음 정보. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
+<li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 악보나 녹음을 열어 보지 않습니다.</li>
+<li><strong>동기화:</strong> 기본으로 Wi-Fi에서만 하며, 이용자가 모바일 데이터 동기화를 켤 수 있습니다. “이 기기에서 지우기(클라우드에 보관)”를 고르면 기기의 파일만 지우고 클라우드에는 남깁니다.</li>
+<li><strong>보관과 삭제:</strong> 한 기기에서 지운 악보·녹음은 클라우드와 다른 기기에서도 지워집니다. 아이디를 삭제하면 클라우드의 모든 파일과 기록을 지체 없이(늦어도 24시간 안에) 지웁니다. Plus가 끝나면 새 업로드만 멈추고 90일 동안 내려받을 수 있으며, 그 전에 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 기기 안의 파일은 건드리지 않습니다.</li>
+</ul>
+<p>처리 근거: 구독한 서비스의 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("렛지에게 물어보기", """<p>도우미에 질문하면 질문, 앱 언어, 지금 보고 있는 화면 이름, 최근 대화 몇 개를 저희 서버와 Google Gemini API로 보내 답을 만듭니다. <strong>질문 내용은 저장하지 않습니다.</strong> 악보 찾기는 기기 안에서만 하며 악보 제목은 보내지 않습니다.</p>
 <p>무료로 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 설치 번호의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
    ("서비스 제공자(수탁자)와 국외 이전", """<ul>
 <li><strong>Supabase</strong> — 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Google</strong> — Gemini API(AI 분석·도우미), Google Play 결제와 구매 확인, 글자 인식(ML Kit)</li>
-<li><strong>Cloudflare</strong> — 이메일 로그인의 자동 가입 방지(Turnstile)</li>
+<li><strong>Cloudflare</strong> — 렛지 클라우드의 파일 저장(R2, Plus), 이메일 로그인의 자동 가입 방지(Turnstile)</li>
 <li><strong>Apple</strong> — App Store 결제(iPhone·iPad)</li>
 </ul>
 <p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
@@ -101,14 +110,14 @@ PRIVACY = {
  "en": {
   "title": "Leggii Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-05"), ("Version", "1.1"), ("Operator", "Vicino Labs")],
-  "lede": "The basic features of Leggii, a sheet music app made by Vicino Labs, work without an account and only on your device; your scores, notes and recordings are stored there. Only AI lesson analysis, purchase checks, the optional sign-in (welegato ID) and Ask Leggii go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 5 November 2026 (version 1.1). Previous version 1.0: 22 October 2026.",
+  "meta": [("Effective", "2026-11-06"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
+  "lede": "The basic features of Leggii, a sheet music app made by Vicino Labs, work without an account and only on your device; your scores, notes and recordings are stored there. Only AI lesson analysis, purchase checks, the optional sign-in (welegato ID), the Leggii cloud (Plus) and Ask Leggii go through our server (EU) and the services below. Here is exactly what the app handles.",
+  "footer": "This policy is effective from 6 November 2026 (version 1.2). Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
-<li>The basic features need no account; scores (PDF), notes, folders, setlists and recordings stay <strong>on your device</strong>.</li>
+<li>The basic features need no account; scores (PDF), notes, folders, setlists and recordings stay <strong>on your device</strong>. With the <strong>Leggii cloud</strong> (Leggii Plus) they are also kept in the cloud (Cloudflare R2) for the devices of your ID.</li>
 <li>No ad networks and no analytics or tracking tools. The banner at the bottom is our own banner for welegato, a service of the same company.</li>
 <li><strong>AI lesson analysis</strong> sends a recording's audio to Google Gemini only when you ask, and the audio is deleted after the analysis. The results are stored on your device.</li>
 <li>Purchases, subscriptions and AI time are checked on our server (EU, Frankfurt, Germany) under <strong>pseudonymous numbers</strong>.</li>
@@ -154,15 +163,23 @@ PRIVACY = {
 <li><strong>Account data</strong> (email, name, sign-in method Google, Kakao or email, account number) is processed under the <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>. An ID created in Leggii is marked “signed up in Leggii”, and one welcome email is sent at the first sign-in.</li>
 <li>Leggii links the ID to your AI time and purchases (a record linking the pseudonymous account number to the ID), so Pro, Plus and AI time follow you to other devices.</li>
 <li>For email sign-up and sign-in, Cloudflare Turnstile checks browser signals to stop automated sign-ups (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Google and Kakao sign-in fall under those companies' policies.</li>
-<li>Deleting the ID in Settings › welegato ID › Manage ID deletes the welegato account and Leggii's AI account and links. Scores and recordings on the device stay.</li>
+<li>Deleting the ID in Settings › welegato ID › Manage ID deletes the welegato account, Leggii's AI account and links and the Leggii cloud. Scores and recordings on the device stay.</li>
 </ul>
 <p>Under welegato's terms, only people aged 16 or over can sign in. Legal basis: providing the feature you chose (b).</p>"""),
+   ("Leggii cloud (Leggii Plus, optional)", """<p>With a Leggii Plus subscription and the welegato ID signed in, the Leggii cloud keeps the same library on every device of that ID.</p>
+<ul>
+<li><strong>What is stored:</strong> score PDFs, score details, ink and bookmarks, folders and setlists, my notes (AI notes PDFs) and — while “Recordings to the cloud too” is on (the default) — recordings and their details. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
+<li><strong>Where:</strong> the files with Cloudflare R2 (Cloudflare, Inc., processor); the list of items and the space used on our server (Supabase, EU, Frankfurt, Germany). Transfers are encrypted; files go only between the app of that ID and the cloud, through signed links that are valid for a short time. We do not open your scores or recordings.</li>
+<li><strong>Syncing:</strong> on Wi-Fi only by default; you can allow mobile data. “Remove from this device (keep in cloud)” removes only the copy on the device.</li>
+<li><strong>Keeping and deleting:</strong> a score or recording deleted on one device is deleted in the cloud and on the other devices too. Deleting the ID deletes all its cloud files and records without delay (within 24 hours at the latest). When Plus ends, only new uploads stop and everything can be downloaded for 90 days; after two reminder emails the cloud files are then deleted. Files on your devices are never touched.</li>
+</ul>
+<p>Legal basis: providing the subscribed service (Art. 6(1)(b) GDPR).</p>"""),
    ("Ask Leggii", """<p>When you ask the assistant, your question, the app language, the name of the screen you are on and a few recent messages go to our server and the Google Gemini API to write the answer. <strong>Questions are not stored.</strong> Finding a score happens on the device; score titles are not sent.</p>
 <p>To keep it free with up to 30 questions a day, a hash of the install number, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
    ("Service providers (processors) and transfers", """<ul>
 <li><strong>Supabase</strong> — server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
 <li><strong>Google</strong> — Gemini API (AI analysis, assistant), Google Play payments and purchase checks, text recognition (ML Kit)</li>
-<li><strong>Cloudflare</strong> — protection against automated email sign-ups (Turnstile)</li>
+<li><strong>Cloudflare</strong> — file storage of the Leggii cloud (R2, Plus), protection against automated email sign-ups (Turnstile)</li>
 <li><strong>Apple</strong> — App Store payments (iPhone, iPad)</li>
 </ul>
 <p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
@@ -183,14 +200,14 @@ PRIVACY = {
  "de": {
   "title": "Leggii Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "05.11.2026"), ("Version", "1.1"), ("Betreiber", "Vicino Labs")],
-  "lede": "Die Grundfunktionen von Leggii, einer Noten-App von Vicino Labs, funktionieren ohne Konto und nur auf deinem Gerät; Noten, Notizen und Aufnahmen werden dort gespeichert. Nur die KI-Unterrichtsanalyse, Kaufprüfungen, die freiwillige Anmeldung (welegato-ID) und „Leggii fragen“ laufen über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 5. November 2026 (Version 1.1). Vorherige Version 1.0: 22. Oktober 2026.",
+  "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
+  "lede": "Die Grundfunktionen von Leggii, einer Noten-App von Vicino Labs, funktionieren ohne Konto und nur auf deinem Gerät; Noten, Notizen und Aufnahmen werden dort gespeichert. Nur die KI-Unterrichtsanalyse, Kaufprüfungen, die freiwillige Anmeldung (welegato-ID), die Leggii Cloud (Plus) und „Leggii fragen“ laufen über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
+  "footer": "Diese Erklärung gilt ab dem 6. November 2026 (Version 1.2). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
-<li>Die Grundfunktionen brauchen kein Konto; Noten (PDF), Notizen, Ordner, Setlists und Aufnahmen bleiben <strong>auf deinem Gerät</strong>.</li>
+<li>Die Grundfunktionen brauchen kein Konto; Noten (PDF), Notizen, Ordner, Setlists und Aufnahmen bleiben <strong>auf deinem Gerät</strong>. Mit der <strong>Leggii Cloud</strong> (Leggii Plus) liegen sie für die Geräte deiner ID auch in der Cloud (Cloudflare R2).</li>
 <li>Keine Werbenetzwerke und keine Analyse- oder Tracking-Tools. Das Banner unten ist unser eigenes Banner für welegato, einen Dienst desselben Unternehmens.</li>
 <li>Die <strong>KI-Unterrichtsanalyse</strong> sendet den Ton einer Aufnahme nur auf deinen Wunsch an Google Gemini; nach der Analyse wird der Ton gelöscht. Die Ergebnisse werden auf deinem Gerät gespeichert.</li>
 <li>Käufe, Abos und KI-Zeit werden auf unserem Server (EU, Frankfurt) unter <strong>pseudonymen Nummern</strong> geprüft.</li>
@@ -239,12 +256,20 @@ PRIVACY = {
 <li>Löschst du die ID unter Einstellungen › welegato-ID › ID verwalten, werden das welegato-Konto sowie Leggiis KI-Konto und Verknüpfungen gelöscht. Noten und Aufnahmen auf dem Gerät bleiben.</li>
 </ul>
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
+   ("Leggii Cloud (Leggii Plus, optional)", """<p>Mit einem Leggii-Plus-Abo und angemeldeter welegato-ID hält die Leggii Cloud dieselbe Bibliothek auf allen Geräten dieser ID.</p>
+<ul>
+<li><strong>Was gespeichert wird:</strong> Noten-PDFs, Angaben zu den Noten, Notizen und Lesezeichen, Ordner und Setlists, Meine Notizen (KI-Notizen als PDF) und – solange „Aufnahmen auch in die Cloud“ an ist (Standard) – Aufnahmen und ihre Angaben. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
+<li><strong>Wo:</strong> die Dateien bei Cloudflare R2 (Cloudflare, Inc., Auftragsverarbeiter), die Liste der Einträge und der belegte Speicher auf unserem Server (Supabase, EU, Frankfurt). Die Übertragung ist verschlüsselt; Dateien gehen nur zwischen der App dieser ID und der Cloud, über kurz gültige signierte Links. Wir öffnen deine Noten und Aufnahmen nicht.</li>
+<li><strong>Synchronisieren:</strong> standardmäßig nur im WLAN; mobile Daten kannst du erlauben. „Von diesem Gerät entfernen (in der Cloud behalten)“ löscht nur die Kopie auf dem Gerät.</li>
+<li><strong>Aufbewahrung und Löschung:</strong> Was auf einem Gerät gelöscht wird, wird auch in der Cloud und auf den anderen Geräten gelöscht. Beim Löschen der ID werden alle Cloud-Dateien und Einträge unverzüglich (spätestens nach 24 Stunden) gelöscht. Endet Plus, stoppen nur neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien dann gelöscht. Dateien auf deinen Geräten bleiben unberührt.</li>
+</ul>
+<p>Rechtsgrundlage: Erbringung des abonnierten Dienstes (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Leggii fragen", """<p>Wenn du den Assistenten fragst, gehen deine Frage, die App-Sprache, der Name des geöffneten Bildschirms und einige letzte Nachrichten an unseren Server und die Gemini-API von Google, um die Antwort zu schreiben. <strong>Fragen werden nicht gespeichert.</strong> Noten werden auf dem Gerät gesucht; Titel werden nicht gesendet.</p>
 <p>Damit der Dienst mit bis zu 30 Fragen pro Tag kostenlos bleibt, speichern wir zum Missbrauchsschutz einen Hash der Installationsnummer, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
 <li><strong>Supabase</strong> — Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
 <li><strong>Google</strong> — Gemini-API (KI-Analyse, Assistent), Google-Play-Zahlungen und Kaufprüfung, Texterkennung (ML Kit)</li>
-<li><strong>Cloudflare</strong> — Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
+<li><strong>Cloudflare</strong> — Dateispeicher der Leggii Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
 <li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
@@ -265,14 +290,14 @@ PRIVACY = {
  "it": {
   "title": "Leggii — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "05.11.2026"), ("Versione", "1.1"), ("Gestore", "Vicino Labs")],
-  "lede": "Le funzioni di base di Leggii, un'app per spartiti di Vicino Labs, funzionano senza account e solo sul tuo dispositivo; spartiti, annotazioni e registrazioni restano lì. Solo l'analisi AI delle lezioni, la verifica degli acquisti, l'accesso facoltativo (welegato ID) e «Chiedi a Leggii» passano dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 5 novembre 2026 (versione 1.1). Versione precedente 1.0: 22 ottobre 2026.",
+  "meta": [("In vigore dal", "06.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
+  "lede": "Le funzioni di base di Leggii, un'app per spartiti di Vicino Labs, funzionano senza account e solo sul tuo dispositivo; spartiti, annotazioni e registrazioni restano lì. Solo l'analisi AI delle lezioni, la verifica degli acquisti, l'accesso facoltativo (welegato ID), il cloud di Leggii (Plus) e «Chiedi a Leggii» passano dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
+  "footer": "Questa informativa è in vigore dal 6 novembre 2026 (versione 1.2). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
-<li>Le funzioni di base non richiedono un account; spartiti (PDF), annotazioni, cartelle, scalette e registrazioni restano <strong>sul tuo dispositivo</strong>.</li>
+<li>Le funzioni di base non richiedono un account; spartiti (PDF), annotazioni, cartelle, scalette e registrazioni restano <strong>sul tuo dispositivo</strong>. Con il <strong>cloud di Leggii</strong> (Leggii Plus) sono conservati anche nel cloud (Cloudflare R2) per i dispositivi del tuo ID.</li>
 <li>Nessuna rete pubblicitaria e nessuno strumento di analisi o tracciamento. Il banner in basso è il nostro banner per welegato, un servizio della stessa società.</li>
 <li>L'<strong>analisi AI delle lezioni</strong> invia l'audio di una registrazione a Google Gemini solo quando lo chiedi; dopo l'analisi l'audio viene cancellato. I risultati restano sul dispositivo.</li>
 <li>Acquisti, abbonamenti e tempo AI vengono verificati sul nostro server (UE, Francoforte) con <strong>numeri pseudonimi</strong>.</li>
@@ -318,15 +343,23 @@ PRIVACY = {
 <li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Google, Kakao o email, numero di account) sono trattati secondo l'<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa privacy di welegato</a>. Un ID creato in Leggii viene segnato «registrato in Leggii» e al primo accesso arriva un'email di benvenuto.</li>
 <li>Leggii collega l'ID al tuo tempo AI e ai tuoi acquisti (un dato che collega il numero di account pseudonimo all'ID), così Pro, Plus e tempo AI ti seguono su altri dispositivi.</li>
 <li>Per registrazione e accesso via email, Cloudflare Turnstile controlla segnali del browser contro le registrazioni automatiche (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">informativa di Cloudflare</a>). Per l'accesso con Google o Kakao valgono le loro informative.</li>
-<li>Eliminando l'ID in Impostazioni › welegato ID › Gestisci ID vengono cancellati l'account welegato e l'account AI e i collegamenti di Leggii. Spartiti e registrazioni sul dispositivo restano.</li>
+<li>Eliminando l'ID in Impostazioni › welegato ID › Gestisci ID vengono cancellati l'account welegato e l'account AI e i collegamenti di Leggii. Anche il cloud di Leggii viene cancellato. Spartiti e registrazioni sul dispositivo restano.</li>
 </ul>
 <p>Secondo i termini di welegato, possono accedere solo persone dai 16 anni in su. Base giuridica: fornire la funzione scelta (lett. b).</p>"""),
+   ("Cloud di Leggii (Leggii Plus, facoltativo)", """<p>Con un abbonamento Leggii Plus e il welegato ID connesso, il cloud di Leggii mantiene la stessa libreria su tutti i dispositivi di quell'ID.</p>
+<ul>
+<li><strong>Cosa viene salvato:</strong> PDF degli spartiti, dati degli spartiti, annotazioni e segnalibri, cartelle e scalette, Le mie note (PDF delle note AI) e – finché “Registrazioni anche nel cloud” è attivo (impostazione predefinita) – le registrazioni e i loro dati. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
+<li><strong>Dove:</strong> i file su Cloudflare R2 (Cloudflare, Inc., responsabile del trattamento), l'elenco degli elementi e lo spazio usato sul nostro server (Supabase, UE, Francoforte). Il trasferimento è cifrato; i file passano solo tra l'app di quell'ID e il cloud, tramite link firmati validi per poco tempo. Non apriamo i tuoi spartiti né le tue registrazioni.</li>
+<li><strong>Sincronizzazione:</strong> per impostazione predefinita solo con il Wi-Fi; puoi consentire i dati mobili. “Rimuovi da questo dispositivo (tieni nel cloud)” elimina solo la copia sul dispositivo.</li>
+<li><strong>Conservazione e cancellazione:</strong> ciò che elimini su un dispositivo viene eliminato anche nel cloud e sugli altri dispositivi. Eliminando l'ID, tutti i file e i dati nel cloud vengono cancellati senza ritardo (al più tardi entro 24 ore). Quando Plus termina, si fermano solo i nuovi caricamenti e per 90 giorni puoi scaricare tutto; dopo due email di promemoria i file nel cloud vengono cancellati. I file sui tuoi dispositivi non vengono toccati.</li>
+</ul>
+<p>Base giuridica: fornitura del servizio in abbonamento (art. 6, par. 1, lett. b GDPR).</p>"""),
    ("Chiedi a Leggii", """<p>Quando fai una domanda all'assistente, la domanda, la lingua dell'app, il nome della schermata aperta e alcuni messaggi recenti vanno al nostro server e all'API Gemini di Google per scrivere la risposta. <strong>Le domande non vengono salvate.</strong> La ricerca degli spartiti avviene sul dispositivo; i titoli non vengono inviati.</p>
 <p>Per mantenerlo gratuito con fino a 30 domande al giorno, per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash del numero di installazione, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
    ("Fornitori di servizi (responsabili) e trasferimenti", """<ul>
 <li><strong>Supabase</strong> — server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
 <li><strong>Google</strong> — API Gemini (analisi AI, assistente), pagamenti e verifica acquisti di Google Play, riconoscimento del testo (ML Kit)</li>
-<li><strong>Cloudflare</strong> — protezione dalle registrazioni email automatiche (Turnstile)</li>
+<li><strong>Cloudflare</strong> — archiviazione dei file del cloud di Leggii (R2, Plus), protezione dalle registrazioni email automatiche (Turnstile)</li>
 <li><strong>Apple</strong> — pagamenti App Store (iPhone, iPad)</li>
 </ul>
 <p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
