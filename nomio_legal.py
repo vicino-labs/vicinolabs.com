@@ -84,8 +84,11 @@ def _doc(lang, d, other_href, first, app):
     meta = "".join(f'<span class="tag">{k} <b>{v}</b></span>' for k, v in d["meta"])
     hidden = "" if first else " hidden"
     mark_style = f' style="background:{app["mark_bg"]}"' if app.get("mark_bg") else ""
+    # The app's real icon when there is one (Leggii, 2026-11-05), else the letter mark.
+    mark_html = (f'<img class="mark" src="{app["mark_img"]}" alt="" width="30" height="30" style="background:none;border:none">'
+                 if app.get("mark_img") else f'<span class="mark"{mark_style}>{app["mark"]}</span>')
     return f"""<div class="doc" data-lang="{lang}"{hidden}>
-<div class="mast"><a class="app" href="{app['home']}"><span class="mark"{mark_style}>{app['mark']}</span>{app['name']}</a><h1>{d['h1']}</h1><div class="meta">{meta}</div></div>
+<div class="mast"><a class="app" href="{app['home']}">{mark_html}{app['name']}</a><h1>{d['h1']}</h1><div class="meta">{meta}</div></div>
 <div class="layout"><nav class="toc"><div class="toc-label">Contents</div>{toc}</nav>
 <article><p class="lede">{d['lede']}</p>{secs}</article></div>
 <footer><span>{d['footer']}</span><span><a href="{other_href}#{lang}">{d['other']}</a><a href="/impressum/">Impressum</a></span></footer>
