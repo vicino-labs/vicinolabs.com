@@ -7,6 +7,7 @@
 2026-11-05 버전 1.1 (앱 1.2.0~1.4.0): 레슨·리허설 녹음(기기 안에만), 녹음 재생 알림, AI 레슨 분석(Gemini, 요청 시),
 구매·구독·AI 시간 서버 확인(가명 해시), 선택 로그인(위레가토 통합 아이디), 렛지에게 물어보기, 수탁자 목록.
 2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus, Cloudflare R2), 아이디 삭제 시 클라우드 삭제, Plus 종료 후 90일.
+  (2026-11-05 시행 전 추가: AI 답 신고 — 사용자가 신고할 때만 AI 글·의견 180일 보관, Play AI 생성 콘텐츠 정책.)
 """
 
 from appoggio_privacy_content import EMAIL, _id_card, _contact
@@ -32,7 +33,7 @@ PRIVACY = {
 <li><strong>AI 레슨 분석</strong>은 이용자가 요청할 때만 녹음 오디오를 Google Gemini로 보내 분석하고, 분석이 끝나면 오디오를 지웁니다. 결과는 기기에 저장됩니다.</li>
 <li>구매·구독·AI 시간 확인을 위해 <strong>가명 번호</strong>로 저희 서버(EU, 독일 프랑크푸르트)를 씁니다.</li>
 <li><strong>위레가토 통합 아이디</strong> 로그인은 선택입니다. 로그인하면 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
-<li><strong>렛지에게 물어보기</strong>의 질문은 답을 만들 때만 보내며 내용을 저장하지 않습니다. 악보 찾기는 기기 안에서만 합니다.</li>
+<li><strong>렛지에게 물어보기</strong>의 질문은 답을 만들 때만 보내며 내용을 저장하지 않습니다. AI 답을 직접 신고할 때만 그 글과 의견을 180일 보관합니다. 악보 찾기는 기기 안에서만 합니다.</li>
 <li>사진 스캔과 첫 페이지 글자 인식은 기기 안에서 처리됩니다. IMSLP는 이용자가 검색·다운로드할 때만 연결합니다.</li>
 </ul></div>"""),
    ("기기에 저장되는 정보", """<ul>
@@ -86,6 +87,7 @@ PRIVACY = {
 <p>처리 근거: 구독한 서비스의 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("렛지에게 물어보기", """<p>도우미에 질문하면 질문, 앱 언어, 지금 보고 있는 화면 이름, 최근 대화 몇 개를 저희 서버와 Google Gemini API로 보내 답을 만듭니다. <strong>질문 내용은 저장하지 않습니다.</strong> 악보 찾기는 기기 안에서만 하며 악보 제목은 보내지 않습니다.</p>
 <p>무료로 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 설치 번호의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
+   ("AI 답 신고", """<p>렛지에게 물어보기의 답이나 AI 레슨 분석 결과가 부적절하거나 틀렸다고 생각되면 <strong>신고</strong>할 수 있습니다. 신고할 때만 신고한 AI 글(물어보기는 질문과 답), 고른 이유, 적은 의견, 앱 언어와 버전, 설치 번호의 해시를 저희 서버로 보내고, 담당자에게 알림 메일이 갑니다. 신고는 검토와 AI 품질 개선에만 쓰며 <strong>180일</strong> 보관한 뒤 지웁니다. 남용 방지를 위해 설치당 하루 10건까지 받습니다. 처리 근거: 서비스 개선과 부적절한 AI 출력 대응을 위한 정당한 이익(f호).</p>"""),
    ("서비스 제공자(수탁자)와 국외 이전", """<ul>
 <li><strong>Supabase</strong> — 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Google</strong> — Gemini API(AI 분석·도우미), Google Play 결제와 구매 확인, 글자 인식(ML Kit)</li>
@@ -122,7 +124,7 @@ PRIVACY = {
 <li><strong>AI lesson analysis</strong> sends a recording's audio to Google Gemini only when you ask, and the audio is deleted after the analysis. The results are stored on your device.</li>
 <li>Purchases, subscriptions and AI time are checked on our server (EU, Frankfurt, Germany) under <strong>pseudonymous numbers</strong>.</li>
 <li>Signing in with a <strong>welegato ID</strong> is optional; account data then falls under the welegato privacy policy.</li>
-<li>Questions to <strong>Ask Leggii</strong> are sent only to write the answer and are not stored. Finding a score happens on the device.</li>
+<li>Questions to <strong>Ask Leggii</strong> are sent only to write the answer and are not stored. Only an AI answer you report yourself is kept, with your comment, for 180 days. Finding a score happens on the device.</li>
 <li>Photo scans and title recognition run on the device. IMSLP is contacted only when you search or download.</li>
 </ul></div>"""),
    ("Data stored on your device", """<ul>
@@ -176,6 +178,7 @@ PRIVACY = {
 <p>Legal basis: providing the subscribed service (Art. 6(1)(b) GDPR).</p>"""),
    ("Ask Leggii", """<p>When you ask the assistant, your question, the app language, the name of the screen you are on and a few recent messages go to our server and the Google Gemini API to write the answer. <strong>Questions are not stored.</strong> Finding a score happens on the device; score titles are not sent.</p>
 <p>To keep it free with up to 30 questions a day, a hash of the install number, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
+   ("Reporting an AI answer", """<p>If an Ask Leggii answer or an AI lesson analysis seems offensive or wrong, you can <strong>report</strong> it. Only then do the reported AI text (for Ask Leggii, the question and the answer), the reason you chose, your comment, the app language and version and a hash of the install number go to our server, and our team gets a notification mail. Reports are used only for review and to improve the AI, and are kept for <strong>180 days</strong>, then deleted. To prevent abuse we accept up to 10 reports a day per install. Legal basis: our legitimate interest in improving the service and handling inappropriate AI output (f).</p>"""),
    ("Service providers (processors) and transfers", """<ul>
 <li><strong>Supabase</strong> — server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
 <li><strong>Google</strong> — Gemini API (AI analysis, assistant), Google Play payments and purchase checks, text recognition (ML Kit)</li>
@@ -212,7 +215,7 @@ PRIVACY = {
 <li>Die <strong>KI-Unterrichtsanalyse</strong> sendet den Ton einer Aufnahme nur auf deinen Wunsch an Google Gemini; nach der Analyse wird der Ton gelöscht. Die Ergebnisse werden auf deinem Gerät gespeichert.</li>
 <li>Käufe, Abos und KI-Zeit werden auf unserem Server (EU, Frankfurt) unter <strong>pseudonymen Nummern</strong> geprüft.</li>
 <li>Die Anmeldung mit einer <strong>welegato-ID</strong> ist freiwillig; Kontodaten unterliegen dann der welegato-Datenschutzerklärung.</li>
-<li>Fragen an <strong>„Leggii fragen“</strong> werden nur zum Antworten gesendet und nicht gespeichert. Noten werden auf dem Gerät gesucht.</li>
+<li>Fragen an <strong>„Leggii fragen“</strong> werden nur zum Antworten gesendet und nicht gespeichert. Nur eine KI-Antwort, die du selbst meldest, wird mit deinem Kommentar 180 Tage gespeichert. Noten werden auf dem Gerät gesucht.</li>
 <li>Foto-Scans und Titelerkennung laufen auf dem Gerät. IMSLP wird nur bei Suche oder Download kontaktiert.</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
@@ -266,6 +269,7 @@ PRIVACY = {
 <p>Rechtsgrundlage: Erbringung des abonnierten Dienstes (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Leggii fragen", """<p>Wenn du den Assistenten fragst, gehen deine Frage, die App-Sprache, der Name des geöffneten Bildschirms und einige letzte Nachrichten an unseren Server und die Gemini-API von Google, um die Antwort zu schreiben. <strong>Fragen werden nicht gespeichert.</strong> Noten werden auf dem Gerät gesucht; Titel werden nicht gesendet.</p>
 <p>Damit der Dienst mit bis zu 30 Fragen pro Tag kostenlos bleibt, speichern wir zum Missbrauchsschutz einen Hash der Installationsnummer, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
+   ("KI-Antworten melden", """<p>Wenn eine Antwort von „Leggii fragen“ oder eine KI-Unterrichtsanalyse anstößig oder falsch wirkt, kannst du sie <strong>melden</strong>. Nur dann gehen der gemeldete KI-Text (bei „Leggii fragen“ Frage und Antwort), der gewählte Grund, dein Kommentar, App-Sprache und -Version sowie ein Hash der Installationsnummer an unseren Server, und unser Team erhält eine Benachrichtigung per E-Mail. Meldungen dienen nur der Prüfung und der Verbesserung der KI und werden <strong>180 Tage</strong> gespeichert und dann gelöscht. Zum Missbrauchsschutz nehmen wir bis zu 10 Meldungen pro Tag und Installation an. Rechtsgrundlage: berechtigtes Interesse an der Verbesserung des Dienstes und am Umgang mit unangemessenen KI-Ausgaben (lit. f).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
 <li><strong>Supabase</strong> — Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
 <li><strong>Google</strong> — Gemini-API (KI-Analyse, Assistent), Google-Play-Zahlungen und Kaufprüfung, Texterkennung (ML Kit)</li>
@@ -302,7 +306,7 @@ PRIVACY = {
 <li>L'<strong>analisi AI delle lezioni</strong> invia l'audio di una registrazione a Google Gemini solo quando lo chiedi; dopo l'analisi l'audio viene cancellato. I risultati restano sul dispositivo.</li>
 <li>Acquisti, abbonamenti e tempo AI vengono verificati sul nostro server (UE, Francoforte) con <strong>numeri pseudonimi</strong>.</li>
 <li>L'accesso con un <strong>welegato ID</strong> è facoltativo; i dati dell'account seguono allora l'informativa di welegato.</li>
-<li>Le domande a <strong>«Chiedi a Leggii»</strong> vengono inviate solo per rispondere e non sono salvate. La ricerca degli spartiti avviene sul dispositivo.</li>
+<li>Le domande a <strong>«Chiedi a Leggii»</strong> vengono inviate solo per rispondere e non sono salvate. Solo una risposta AI che segnali tu viene conservata, con il tuo commento, per 180 giorni. La ricerca degli spartiti avviene sul dispositivo.</li>
 <li>Scansioni e riconoscimento del titolo avvengono sul dispositivo. IMSLP viene contattato solo quando cerchi o scarichi.</li>
 </ul></div>"""),
    ("Dati salvati sul dispositivo", """<ul>
@@ -356,6 +360,7 @@ PRIVACY = {
 <p>Base giuridica: fornitura del servizio in abbonamento (art. 6, par. 1, lett. b GDPR).</p>"""),
    ("Chiedi a Leggii", """<p>Quando fai una domanda all'assistente, la domanda, la lingua dell'app, il nome della schermata aperta e alcuni messaggi recenti vanno al nostro server e all'API Gemini di Google per scrivere la risposta. <strong>Le domande non vengono salvate.</strong> La ricerca degli spartiti avviene sul dispositivo; i titoli non vengono inviati.</p>
 <p>Per mantenerlo gratuito con fino a 30 domande al giorno, per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash del numero di installazione, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
+   ("Segnalare una risposta AI", """<p>Se una risposta di «Chiedi a Leggii» o un'analisi AI della lezione ti sembra offensiva o sbagliata, puoi <strong>segnalarla</strong>. Solo allora il testo AI segnalato (per «Chiedi a Leggii», domanda e risposta), il motivo scelto, il tuo commento, lingua e versione dell'app e un hash del numero di installazione vanno al nostro server, e il nostro team riceve un'email di avviso. Le segnalazioni servono solo per la verifica e per migliorare l'AI e sono conservate per <strong>180 giorni</strong>, poi cancellate. Per prevenire abusi accettiamo fino a 10 segnalazioni al giorno per installazione. Base giuridica: legittimo interesse a migliorare il servizio e a gestire risposte AI inappropriate (lett. f).</p>"""),
    ("Fornitori di servizi (responsabili) e trasferimenti", """<ul>
 <li><strong>Supabase</strong> — server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
 <li><strong>Google</strong> — API Gemini (analisi AI, assistente), pagamenti e verifica acquisti di Google Play, riconoscimento del testo (ML Kit)</li>
