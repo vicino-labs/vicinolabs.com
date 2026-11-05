@@ -15,7 +15,7 @@ APPOGGIO = {
     "name": "Appoggio",
     "home": "/appoggio/",
     "mark": "a.",
-    "mark_bg": "#224561",  # 로고 선 색(네이비)
+    "mark_bg": "#16233d",  # 앱 아이콘 미드나잇(2026-10-28 시리즈)
     "langs": [("ko", "한국어"), ("en", "English"), ("de", "Deutsch"), ("it", "Italiano")],
     "storage": "appoggio-legal-lang",
 }
