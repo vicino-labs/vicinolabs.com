@@ -2,7 +2,7 @@
 
 2026-11-06 버전 1.0 — 2026-11-06 운영자 승인, 게시. leggii_terms_content.py의 틀과 문구를 따랐다.
 요금제는 스캔 페이지 수: 7일 체험 3페이지(모두), Free 월 1, Pro 월 20, Pro+ 월 50.
-가격은 Pro €5.99/월, Pro+ €9.99/월 (2026-11-06 운영자 결정, 출시 때 최종 확인).
+가격은 약관에 적지 않음 (스토어 결제 화면이 표시, 2026-11-06 운영자 결정).
 책임 제한은 Leggii와 같은 독일법상 허용 범위.
 """
 
@@ -35,11 +35,11 @@ TERMS = {
    ("요금제와 구독", f"""<ol>
 <li><strong>무료 체험:</strong> 모든 이용자는 처음 <strong>7일 동안 3페이지</strong>를 스캔할 수 있습니다. 체험은 기기당 한 번이며, 앱을 다시 설치해도 반복되지 않습니다. 체험이 끝나면 무료 요금제가 적용되며 자동 결제는 없습니다.</li>
 <li><strong>Free:</strong> 매월 1페이지 스캔</li>
-<li><strong>Pro:</strong> 매월 20페이지 스캔, 배너 없음 — 월 €5.99</li>
-<li><strong>Pro+:</strong> 매월 50페이지 스캔, 배너 없음 — 월 €9.99</li>
+<li><strong>Pro:</strong> 매월 20페이지 스캔, 배너 없음</li>
+<li><strong>Pro+:</strong> 매월 50페이지 스캔, 배너 없음</li>
 <li>Pro와 Pro+는 <strong>월간 정기 구독</strong>으로, Google Play 또는 App Store가 스토어에 표시된 가격으로 청구합니다. 해지할 때까지 같은 기간으로 자동 갱신되며, 스토어의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간이 끝날 때까지 쓸 수 있고, 그 뒤에는 무료 요금제로 돌아갑니다.</li>
 <li>스캔 페이지는 현금으로 바꾸거나 다른 사람에게 넘길 수 없습니다.</li>
-<li>가격은 결제 화면에 표시됩니다. 결제·환불은 각 스토어의 정책과 절차에 따릅니다. 디지털 콘텐츠의 특성상, 구매 즉시 이용이 시작되는 데 동의하면 법이 허용하는 범위에서 청약철회권이 소멸할 수 있으며, 이 경우에도 스토어의 환불 절차는 이용할 수 있습니다.</li>
+<li>가격은 구매 전에 스토어 결제 화면에 표시되며, 나라마다 다를 수 있습니다. 결제·환불은 각 스토어의 정책과 절차에 따릅니다. 디지털 콘텐츠의 특성상, 구매 즉시 이용이 시작되는 데 동의하면 법이 허용하는 범위에서 청약철회권이 소멸할 수 있으며, 이 경우에도 스토어의 환불 절차는 이용할 수 있습니다.</li>
 <li>매월 페이지 수나 요금제 조건을 바꿀 때는 미리 알리며, 이미 결제한 기간에는 적용하지 않습니다.</li>
 </ol>"""),
    ("악보 스캔", """<ol>
@@ -93,11 +93,11 @@ TERMS = {
    ("Plans and subscriptions", f"""<ol>
 <li><strong>Free trial:</strong> everyone can scan <strong>3 pages during the first 7 days</strong>. The trial is available once per device and does not restart when you reinstall the app. Afterwards the Free plan applies; there is no automatic payment.</li>
 <li><strong>Free:</strong> 1 scanned page per month</li>
-<li><strong>Pro:</strong> 20 scanned pages per month, no banner — €5.99 per month</li>
-<li><strong>Pro+:</strong> 50 scanned pages per month, no banner — €9.99 per month</li>
+<li><strong>Pro:</strong> 20 scanned pages per month, no banner</li>
+<li><strong>Pro+:</strong> 50 scanned pages per month, no banner</li>
 <li>Pro and Pro+ are <strong>monthly subscriptions</strong>, billed by Google Play or the Apple App Store at the price shown in the store. They renew for the same period until cancelled; cancel any time in the store's subscription settings. A subscription keeps working until the paid period ends; afterwards the Free plan applies.</li>
 <li>Scan pages have no cash value and cannot be transferred.</li>
-<li>Prices are shown at checkout. Payment and refunds follow each store's rules and process. For digital content, if you agree that use starts immediately, your right of withdrawal may end as far as the law allows; the store's refund process remains available.</li>
+<li>Prices are shown in the store before you buy and may differ by country. Payment and refunds follow each store's rules and process. For digital content, if you agree that use starts immediately, your right of withdrawal may end as far as the law allows; the store's refund process remains available.</li>
 <li>Changes to the monthly pages or plan terms are announced in advance and do not apply to periods already paid.</li>
 </ol>"""),
    ("Score scanning", """<ol>
@@ -151,11 +151,11 @@ TERMS = {
    ("Tarife und Abos", f"""<ol>
 <li><strong>Testphase:</strong> Alle können in den ersten <strong>7 Tagen 3 Seiten</strong> scannen. Die Testphase gibt es einmal pro Gerät; sie beginnt bei Neuinstallation nicht neu. Danach gilt der Free-Tarif; es gibt keine automatische Zahlung.</li>
 <li><strong>Free:</strong> 1 gescannte Seite pro Monat</li>
-<li><strong>Pro:</strong> 20 gescannte Seiten pro Monat, kein Banner — 5,99 € pro Monat</li>
-<li><strong>Pro+:</strong> 50 gescannte Seiten pro Monat, kein Banner — 9,99 € pro Monat</li>
+<li><strong>Pro:</strong> 20 gescannte Seiten pro Monat, kein Banner</li>
+<li><strong>Pro+:</strong> 50 gescannte Seiten pro Monat, kein Banner</li>
 <li>Pro und Pro+ sind <strong>monatliche Abos</strong>, die Google Play oder der Apple App Store zum im Store angezeigten Preis abrechnet. Sie verlängern sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abo-Einstellungen des Stores. Ein Abo läuft bis zum Ende des bezahlten Zeitraums; danach gilt der Free-Tarif.</li>
 <li>Scan-Seiten haben keinen Geldwert und sind nicht übertragbar.</li>
-<li>Preise werden an der Kasse angezeigt. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
 <li>Änderungen der monatlichen Seiten oder der Tarifbedingungen kündigen wir vorher an; sie gelten nicht für bereits bezahlte Zeiträume.</li>
 </ol>"""),
    ("Notenscan", """<ol>
@@ -209,11 +209,11 @@ TERMS = {
    ("Piani e abbonamenti", f"""<ol>
 <li><strong>Prova gratuita:</strong> tutti possono scansionare <strong>3 pagine nei primi 7 giorni</strong>. La prova vale una volta per dispositivo e non riparte reinstallando l'app. Poi si applica il piano Free; non c'è alcun pagamento automatico.</li>
 <li><strong>Free:</strong> 1 pagina scansionata al mese</li>
-<li><strong>Pro:</strong> 20 pagine scansionate al mese, niente banner — 5,99 € al mese</li>
-<li><strong>Pro+:</strong> 50 pagine scansionate al mese, niente banner — 9,99 € al mese</li>
+<li><strong>Pro:</strong> 20 pagine scansionate al mese, niente banner</li>
+<li><strong>Pro+:</strong> 50 pagine scansionate al mese, niente banner</li>
 <li>Pro e Pro+ sono <strong>abbonamenti mensili</strong>, addebitati da Google Play o dall'Apple App Store al prezzo indicato nello store. Si rinnovano per lo stesso periodo fino alla disdetta; puoi annullarli in qualsiasi momento nelle impostazioni degli abbonamenti dello store. Un abbonamento resta attivo fino alla fine del periodo pagato; poi si applica il piano Free.</li>
 <li>Le pagine di scansione non hanno valore in denaro e non sono trasferibili.</li>
-<li>I prezzi sono indicati al momento del pagamento. Pagamenti e rimborsi seguono le regole e le procedure di ciascuno store. Per i contenuti digitali, se accetti l'inizio immediato dell'uso, il diritto di recesso può estinguersi nei limiti di legge; la procedura di rimborso dello store resta disponibile.</li>
+<li>I prezzi sono indicati nello store prima dell’acquisto e possono variare da paese a paese. Pagamenti e rimborsi seguono le regole e le procedure di ciascuno store. Per i contenuti digitali, se accetti l'inizio immediato dell'uso, il diritto di recesso può estinguersi nei limiti di legge; la procedura di rimborso dello store resta disponibile.</li>
 <li>Le modifiche alle pagine mensili o alle condizioni dei piani vengono annunciate prima e non valgono per periodi già pagati.</li>
 </ol>"""),
    ("Scansione degli spartiti", """<ol>
