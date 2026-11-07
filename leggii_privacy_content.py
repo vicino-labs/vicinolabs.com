@@ -10,7 +10,29 @@
   (2026-11-05 시행 전 추가: AI 답 신고 — 사용자가 신고할 때만 AI 글·의견 180일 보관, Play AI 생성 콘텐츠 정책.)
 """
 
-from appoggio_privacy_content import EMAIL, _id_card, _contact
+from appoggio_privacy_content import EMAIL, _id_card
+
+
+# Like welegato (the user's wish, 2026-11-07): the owner's name and address
+# are not shown at the top; the first section points to the card in the last
+# section (Contact) and to the Impressum. "@END@" becomes that section's number.
+_OP_REF = {
+    "ko": '운영자의 주소와 연락처는 <a href="#ko-@END@">이 문서 맨 아래</a>와 <a href="/impressum/">Impressum</a>에 있습니다.',
+    "en": 'The operator\'s address and contact details are at <a href="#en-@END@">the end of this document</a> and in the <a href="/impressum/">Impressum</a>.',
+    "de": 'Anschrift und Kontaktdaten des Anbieters findest du <a href="#de-@END@">am Ende dieses Dokuments</a> und im <a href="/impressum/">Impressum</a>.',
+    "it": 'Indirizzo e contatti del gestore si trovano <a href="#it-@END@">alla fine di questo documento</a> e nell\'<a href="/impressum/">Impressum</a>.',
+}
+
+
+def _op_ref(lang):
+    return f'<p class="op-ref">{_OP_REF[lang]}</p>'
+
+
+def _fix_end(docs):
+    """Points the op-ref links at the last section (the contact card)."""
+    for lang, d in docs.items():
+        n = str(len(d["sections"]))
+        d["sections"] = [(h, b.replace("@END@", n)) for h, b in d["sections"]]
 
 WELEGATO_PRIVACY = "https://welegato.com/legal/"
 IMSLP_PRIVACY = "https://imslp.org/wiki/IMSLP:Privacy_Policy"
@@ -26,7 +48,7 @@ PRIVACY = {
   "footer": "본 방침은 2026년 11월 6일부터 시행됩니다 (버전 1.2). 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "이용약관 보기 →",
   "sections": [
-   ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>기본 기능은 회원가입 없이 쓸 수 있고, 악보(PDF)·필기·폴더·셋리스트·녹음은 <strong>기기 안에만</strong> 저장됩니다. Leggii Plus의 <strong>렛지 클라우드</strong>를 쓰면 같은 아이디의 기기들을 위해 클라우드(Cloudflare R2)에도 저장됩니다.</li>
 <li>광고 네트워크와 분석·추적 도구가 없습니다. 앱 아래의 배너는 같은 회사 서비스 welegato를 알리는 자체 배너입니다.</li>
@@ -106,7 +128,7 @@ PRIVACY = {
 </ul>
 <p>저희는 이용자의 정보를 갖고 있지 않으므로, 기기 안의 정보는 앱이나 앱 삭제로 직접 지울 수 있습니다. 궁금한 점은 아래로 연락해 주세요.</p>"""),
    ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다.</p>"""),
-   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -117,7 +139,7 @@ PRIVACY = {
   "footer": "This policy is effective from 6 November 2026 (version 1.2). Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Terms of Service →",
   "sections": [
-   ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
 <li>The basic features need no account; scores (PDF), notes, folders, setlists and recordings stay <strong>on your device</strong>. With the <strong>Leggii cloud</strong> (Leggii Plus) they are also kept in the cloud (Cloudflare R2) for the devices of your ID.</li>
 <li>No ad networks and no analytics or tracking tools. The banner at the bottom is our own banner for welegato, a service of the same company.</li>
@@ -197,7 +219,7 @@ PRIVACY = {
 </ul>
 <p>We hold no data about you; what is on your device you can delete in the app or by uninstalling it. For any question, please contact us below.</p>"""),
    ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page.</p>"""),
-   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _contact("Operator")),
+   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -208,7 +230,7 @@ PRIVACY = {
   "footer": "Diese Erklärung gilt ab dem 6. November 2026 (Version 1.2). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
-   ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
+   ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
 <li>Die Grundfunktionen brauchen kein Konto; Noten (PDF), Notizen, Ordner, Setlists und Aufnahmen bleiben <strong>auf deinem Gerät</strong>. Mit der <strong>Leggii Cloud</strong> (Leggii Plus) liegen sie für die Geräte deiner ID auch in der Cloud (Cloudflare R2).</li>
 <li>Keine Werbenetzwerke und keine Analyse- oder Tracking-Tools. Das Banner unten ist unser eigenes Banner für welegato, einen Dienst desselben Unternehmens.</li>
@@ -288,7 +310,7 @@ PRIVACY = {
 </ul>
 <p>Wir speichern keine Daten über dich; Daten auf deinem Gerät kannst du in der App oder durch Deinstallation löschen. Bei Fragen erreichst du uns unten.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),
-   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _contact("Betreiber")),
+   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -299,7 +321,7 @@ PRIVACY = {
   "footer": "Questa informativa è in vigore dal 6 novembre 2026 (versione 1.2). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
-   ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
+   ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
 <li>Le funzioni di base non richiedono un account; spartiti (PDF), annotazioni, cartelle, scalette e registrazioni restano <strong>sul tuo dispositivo</strong>. Con il <strong>cloud di Leggii</strong> (Leggii Plus) sono conservati anche nel cloud (Cloudflare R2) per i dispositivi del tuo ID.</li>
 <li>Nessuna rete pubblicitaria e nessuno strumento di analisi o tracciamento. Il banner in basso è il nostro banner per welegato, un servizio della stessa società.</li>
@@ -379,7 +401,9 @@ PRIVACY = {
 </ul>
 <p>Non conserviamo dati su di te; quelli sul dispositivo puoi eliminarli nell'app o disinstallandola. Per domande contattaci qui sotto.</p>"""),
    ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina.</p>"""),
-   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _contact("Gestore")),
+   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _id_card("it")),
   ],
  },
 }
+
+_fix_end(PRIVACY)
