@@ -10,12 +10,27 @@ AI 시간은 Leggii와 아이디별 공유(어느 앱이 썼는지 기록), 클�
 보관·삭제·수탁자 문구는 Leggii 1.2를 따랐다.
 """
 
-from appoggio_privacy_content import EMAIL, _id_card, _contact
+from appoggio_privacy_content import EMAIL, _id_card
 
 WELEGATO_PRIVACY = "https://welegato.com/legal/"
 GOOGLE_PRIVACY = "https://policies.google.com/privacy"
 APPLE_PRIVACY = "https://www.apple.com/legal/privacy/"
 DELETE_ID = "https://welegato.com/konto-loeschen"
+
+# Name and address only at the end (Contact) and in the Impressum, like
+# welegato (user 2026-11-07): chapter 1 points there in one line.
+_OP_REF = {
+    "ko": '운영자의 주소와 연락처는 <a href="#ko-{n}">이 문서 맨 아래</a>와 <a href="/impressum/">Impressum</a>에 있습니다.',
+    "en": 'The operator\'s address and contact details are at <a href="#en-{n}">the end of this document</a> and in the <a href="/impressum/">Impressum</a>.',
+    "de": 'Anschrift und Kontaktdaten des Anbieters finden Sie <a href="#de-{n}">am Ende dieses Dokuments</a> und im <a href="/impressum/">Impressum</a>.',
+    "it": 'Indirizzo e contatti del gestore si trovano <a href="#it-{n}">alla fine di questo documento</a> e nell\'<a href="/impressum/">Impressum</a>.',
+}
+
+
+def _op_ref(lang, n=17):
+    # n = number of the Contact section (privacy 17, terms 18).
+    return f'<p class="op-ref">{_OP_REF[lang].format(n=n)}</p>'
+
 
 PRIVACY = {
  "ko": {
@@ -26,7 +41,7 @@ PRIVACY = {
   "footer": "본 방침은 2026년 11월 7일부터 시행됩니다 (버전 1.0).",
   "other": "이용약관 보기 →",
   "sections": [
-   ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>녹음(오디오)과 영상, 테이크 정보는 <strong>기기 안에만</strong> 저장되며, 로그인하지 않으면 아무것도 저희에게 올라가지 않습니다. 녹음에는 계정이 필요 없습니다.</li>
 <li>레슨을 녹음·녹화하기 전에 앱이 선생님(미성년자는 보호자도)의 동의를 받았는지 확인합니다.</li>
@@ -98,7 +113,7 @@ PRIVACY = {
 </ul>
 <p>기기 안의 테이크는 앱에서 지우거나 앱을 삭제하면 사라집니다. 아이디와 클라우드의 정보는 <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>에서 지우거나 <a href="mailto:{EMAIL}">{EMAIL}</a>로 요청하실 수 있습니다.</p>"""),
    ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다.</p>"""),
-   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -109,7 +124,7 @@ PRIVACY = {
   "footer": "This policy is effective from 7 November 2026 (version 1.0).",
   "other": "Terms of Service →",
   "sections": [
-   ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
 <li>Audio recordings, videos and take details stay <strong>on your device</strong>; without signing in nothing is uploaded to us. Recording needs no account.</li>
 <li>Before you record or film a lesson, the app asks you to confirm that the teacher (and, for minors, a parent or guardian) has agreed.</li>
@@ -181,7 +196,7 @@ PRIVACY = {
 </ul>
 <p>Takes on your device can be deleted in the app or by uninstalling it. Your ID and cloud data can be deleted at <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> or on request to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page.</p>"""),
-   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _contact("Operator")),
+   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -192,7 +207,7 @@ PRIVACY = {
   "footer": "Diese Erklärung gilt ab dem 7. November 2026 (Version 1.0).",
   "other": "Nutzungsbedingungen →",
   "sections": [
-   ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
+   ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
 <li>Tonaufnahmen, Videos und Take-Angaben bleiben <strong>auf deinem Gerät</strong>; ohne Anmeldung wird nichts zu uns hochgeladen. Zum Aufnehmen brauchst du kein Konto.</li>
 <li>Bevor du Unterricht aufnimmst oder filmst, bittet die App dich zu bestätigen, dass die Lehrkraft (bei Minderjährigen auch die Eltern bzw. Sorgeberechtigten) einverstanden ist.</li>
@@ -264,7 +279,7 @@ PRIVACY = {
 </ul>
 <p>Takes auf deinem Gerät kannst du in der App oder durch Deinstallation löschen. ID und Cloud-Daten kannst du unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> löschen oder per E-Mail an <a href="mailto:{EMAIL}">{EMAIL}</a> löschen lassen.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),
-   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _contact("Betreiber")),
+   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -275,7 +290,7 @@ PRIVACY = {
   "footer": "Questa informativa è in vigore dal 7 novembre 2026 (versione 1.0).",
   "other": "Termini di utilizzo →",
   "sections": [
-   ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
+   ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
 <li>Registrazioni audio, video e dati delle take restano <strong>sul tuo dispositivo</strong>; senza accesso nulla viene caricato da noi. Per registrare non serve un account.</li>
 <li>Prima di registrare o filmare una lezione, l'app ti chiede di confermare che l'insegnante (e, per i minori, un genitore o tutore) è d'accordo.</li>
@@ -347,7 +362,7 @@ PRIVACY = {
 </ul>
 <p>Le take sul dispositivo puoi eliminarle nell'app o disinstallandola. ID e dati nel cloud puoi eliminarli su <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> o chiederne la cancellazione a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina.</p>"""),
-   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _contact("Gestore")),
+   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _id_card("it")),
   ],
  },
 }

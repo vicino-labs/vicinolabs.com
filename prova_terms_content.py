@@ -8,7 +8,8 @@
 책임 제한은 Leggii·Chiave와 같은 독일법상 허용 범위.
 """
 
-from appoggio_privacy_content import _id_card, _contact
+from appoggio_privacy_content import _id_card
+from prova_privacy_content import _op_ref
 
 WELEGATO_TERMS = "https://welegato.com/legal/terms/"
 DELETE_ID = "https://welegato.com/konto-loeschen"
@@ -23,7 +24,7 @@ TERMS = {
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 프로바(Prova, 이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
-   ("사업자 정보", _id_card("ko")),
+   ("사업자 정보", _op_ref("ko", 18)),
    ("약관의 효력과 변경", """<ol>
 <li>본 약관은 앱 안 또는 회사가 정한 방법으로 게시하면 효력이 생깁니다.</li>
 <li>회사는 관련 법령을 위반하지 않는 범위에서 약관을 고칠 수 있으며, 시행일과 변경 이유를 미리 알립니다.</li>
@@ -89,7 +90,7 @@ TERMS = {
 <li>클라우드를 쓰지 않으면 녹음과 영상은 기기에만 저장됩니다. 회사는 이를 보관하지 않으며 잃어버린 테이크를 되살려 드릴 수 없습니다. 기기 분실·앱 삭제·초기화에 대비해 중요한 테이크는 따로 보관해 주세요.</li>
 </ol>"""),
    ("준거법과 관할", """<p>본 약관에는 독일연방공화국 법이 적용됩니다. 소비자인 이용자가 상거소 국가(예: EU 회원국)의 강행 소비자보호 규정에 따라 갖는 권리는 영향을 받지 않습니다. 그 밖의 경우 관할 법원은 회사 소재지(독일 도르트문트)의 법원입니다.</p>"""),
-   ("문의처", "<p>약관에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>약관에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -101,7 +102,7 @@ TERMS = {
   "other": "Privacy Policy →",
   "sections": [
    ("Scope", "<p>These terms govern the use of the mobile app Prova (the “app”) provided by Vicino Labs (the “company”).</p>"),
-   ("Provider", _id_card("en")),
+   ("Provider", _op_ref("en", 18)),
    ("Validity and changes", """<ol>
 <li>These terms take effect when published in the app or in another way chosen by the company.</li>
 <li>The company may change them within the law and will announce the effective date and reason in advance.</li>
@@ -167,7 +168,7 @@ TERMS = {
 <li>Without the cloud, recordings and videos are stored only on your device. The company does not keep them and cannot restore a lost take. To protect against loss of the device, deletion or reset, please keep important takes safe yourself.</li>
 </ol>"""),
    ("Governing law and jurisdiction", """<p>German law applies. Mandatory consumer-protection rules of the country where you, as a consumer, habitually reside (e.g. an EU member state) remain unaffected. Otherwise the courts at the company's seat (Dortmund, Germany) have jurisdiction.</p>"""),
-   ("Contact", "<p>For questions about these terms, please contact us.</p>" + _contact("Operator")),
+   ("Contact", "<p>For questions about these terms, please contact us.</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -179,7 +180,7 @@ TERMS = {
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Geltungsbereich", "<p>Diese Bedingungen regeln die Nutzung der mobilen App Prova („App“) von Vicino Labs („Anbieter“).</p>"),
-   ("Anbieter", _id_card("de")),
+   ("Anbieter", _op_ref("de", 18)),
    ("Geltung und Änderungen", """<ol>
 <li>Die Bedingungen gelten ab Veröffentlichung in der App oder auf andere vom Anbieter gewählte Weise.</li>
 <li>Der Anbieter kann sie im Rahmen des Gesetzes ändern und kündigt Datum und Grund vorher an.</li>
@@ -245,7 +246,7 @@ TERMS = {
 <li>Ohne Cloud werden Aufnahmen und Videos nur auf deinem Gerät gespeichert. Der Anbieter speichert sie nicht und kann verlorene Takes nicht wiederherstellen. Sichere wichtige Takes selbst gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
 </ol>"""),
    ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem du als Verbraucher deinen gewöhnlichen Aufenthalt hast (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
-   ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _contact("Betreiber")),
+   ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -257,7 +258,7 @@ TERMS = {
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>Questi termini regolano l'uso dell'app mobile Prova (“app”) fornita da Vicino Labs (“fornitore”).</p>"),
-   ("Fornitore", _id_card("it")),
+   ("Fornitore", _op_ref("it", 18)),
    ("Validità e modifiche", """<ol>
 <li>I termini sono validi dalla pubblicazione nell'app o in altro modo scelto dal fornitore.</li>
 <li>Il fornitore può modificarli nei limiti di legge, comunicando in anticipo data e motivo.</li>
@@ -323,7 +324,7 @@ TERMS = {
 <li>Senza il cloud, registrazioni e video sono salvati solo sul dispositivo. Il fornitore non li conserva e non può recuperare take perse. Conserva tu quelle importanti, contro perdita del dispositivo, cancellazione o ripristino.</li>
 </ol>"""),
    ("Legge applicabile e foro", """<p>Si applica la legge tedesca. Restano salve le norme imperative a tutela dei consumatori del paese in cui risiedi abitualmente (ad es. uno Stato UE). Per il resto è competente il foro della sede del fornitore (Dortmund, Germania).</p>"""),
-   ("Contatti", "<p>Per domande su questi termini scrivici:</p>" + _contact("Gestore")),
+   ("Contatti", "<p>Per domande su questi termini scrivici:</p>" + _id_card("it")),
   ],
  },
 }
