@@ -1,0 +1,353 @@
+"""프로바(Prova) 개인정보처리방침 본문 (ko/en/de/it) — prova_legal.py가 HTML로 만든다.
+
+2026-11-07 버전 1.0 초안 (앱 1.0). chiave/leggii_privacy_content.py의 틀과 문구를 따랐다. 운영자 승인 전.
+앱 1.0: 오디오(AAC)·영상(mp4) 녹음·녹화는 기기 안에만, 업로드 없음, 계정 없이 사용.
+레슨 모드는 녹음 전에 선생님(미성년자는 보호자) 동의 확인(독일 형법 §201).
+영상 정지 화면은 기기의 영상 파일에서 읽음. 녹음 중 방해 금지(안드로이드, 권한 허용 시) 켰다가 원래대로.
+비행기 모드는 안내만(켜져 있는지만 읽음). 광고·분석·추적 SDK 없음.
+위레가토 통합 아이디와 함께 오는 기능(로그인할 때·쓸 때만 적용): AI 분석(오디오만, Gemini),
+AI 시간은 Leggii와 아이디별 공유(어느 앱이 썼는지 기록), 클라우드(Plus, R2, Leggii와 용량 공유), 구독.
+보관·삭제·수탁자 문구는 Leggii 1.2를 따랐다.
+"""
+
+from appoggio_privacy_content import EMAIL, _id_card, _contact
+
+WELEGATO_PRIVACY = "https://welegato.com/legal/"
+GOOGLE_PRIVACY = "https://policies.google.com/privacy"
+APPLE_PRIVACY = "https://www.apple.com/legal/privacy/"
+DELETE_ID = "https://welegato.com/konto-loeschen"
+
+PRIVACY = {
+ "ko": {
+  "title": "프로바(Prova) 개인정보처리방침",
+  "h1": "개인정보처리방침",
+  "meta": [("시행일", "2026.11.07"), ("버전", "1.0"), ("운영자", "Vicino Labs")],
+  "lede": "Vicino Labs가 만든 프로바(Prova)는 레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 오디션·콩쿠르 제출 영상을 점검하는 앱입니다. 녹음과 영상은 이용자의 기기에만 저장되며, 계정 없이 쓸 수 있습니다. 위레가토 통합 아이디로 로그인해 AI 분석, 클라우드, 구독을 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
+  "footer": "본 방침은 2026년 11월 7일부터 시행됩니다 (버전 1.0).",
+  "other": "이용약관 보기 →",
+  "sections": [
+   ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("핵심 요약", """<div class="summary-box"><ul>
+<li>녹음(오디오)과 영상, 테이크 정보는 <strong>기기 안에만</strong> 저장되며, 로그인하지 않으면 아무것도 저희에게 올라가지 않습니다. 녹음에는 계정이 필요 없습니다.</li>
+<li>레슨을 녹음·녹화하기 전에 앱이 선생님(미성년자는 보호자도)의 동의를 받았는지 확인합니다.</li>
+<li>녹음 중 방해 금지(안드로이드)는 이용자가 허용했을 때만 켜고, 녹음이 끝나면 이용자의 원래 설정으로 되돌립니다.</li>
+<li>광고, 분석·추적 도구가 없습니다.</li>
+<li><strong>위레가토 통합 아이디</strong>로 로그인해야 AI 분석, 클라우드, 구독을 쓸 수 있습니다. 로그인하면 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
+<li><strong>AI 분석</strong>은 영상이라도 <strong>소리만</strong> 보냅니다 — 기기에서 만든 오디오 발췌본을 Google Gemini가 분석하고, 분석이 끝나면 지웁니다.</li>
+<li><strong>클라우드</strong>(Plus)는 테이크의 오디오를, 영상은 이용자가 별표하거나 고른 테이크만 올립니다(Cloudflare R2).</li>
+</ul></div>"""),
+   ("기기에 저장되는 정보", """<ul>
+<li>녹음(AAC 오디오)과 영상(mp4, 전면·후면 카메라)</li>
+<li>테이크 정보 — 모드(레슨·연습 테이크·제출 영상), 날짜와 길이, 그리고 이용자가 적은 경우 작품, 구간, “함께한 사람”(선생님·반주자 이름), 메모, 별표</li>
+<li>레슨 녹음 전 동의 확인 기록</li>
+<li>설정 — 테마 색, 녹음 중 방해 금지 사용 여부와 녹음 전 이용자의 방해 금지 설정(되돌리기 위해)</li>
+</ul>
+<p>이 정보는 기기 안의 앱 전용 저장소에 있고 저희에게 전송되지 않습니다. 앱에서 테이크를 지우거나 앱을 삭제하면 사라집니다. 처리 근거: 앱 기능 제공(GDPR 제6조 제1항 b호).</p>"""),
+   ("카메라·마이크·알림", """<p>녹음할 때만 마이크 권한을, 영상을 찍을 때만 카메라 권한을 요청합니다. 녹음·녹화는 이용자가 버튼을 눌러 시작하고 직접 멈춥니다. 화면이 꺼지거나 다른 앱으로 가도 녹음이 이어지도록, 녹음 중에는 “녹음 중” 알림이 표시됩니다(이를 위해 알림 권한을 요청합니다).</p>
+<p>영상에서 소리 없는 정지 화면을 볼 때는 기기에 저장된 영상 파일에서 장면을 읽어 옵니다. 이 과정도 기기 안에서만 이루어집니다.</p>"""),
+   ("레슨 녹음과 다른 사람의 동의", """<p>다른 사람의 말을 동의 없이 녹음하는 것은 법으로 금지될 수 있습니다(예: 독일 형법 제201조). 그래서 레슨 모드에서는 녹음·녹화를 시작하기 전에 선생님이, 그리고 미성년자가 함께 녹음되는 경우 보호자가 녹음에 동의했는지 이용자에게 확인을 받습니다. 동의를 실제로 받는 것은 이용자의 책임입니다.</p>
+<p>“함께한 사람”에 적은 이름은 테이크 정보로 기기에만 저장됩니다. 로그인해 AI 분석이나 클라우드를 쓰는 경우의 처리는 아래와 같습니다.</p>"""),
+   ("녹음 중 방해 금지", """<p><strong>안드로이드:</strong> 이용자가 기기 설정에서 방해 금지 접근 권한을 한 번 허용하면, 앱은 테이크를 녹음하는 동안 휴대폰의 방해 금지를 켭니다. 전화, 메시지, 알림, 진동은 보류되고 미디어 소리는 허용됩니다. 녹음이 끝나면 이용자의 원래 방해 금지 설정으로 되돌립니다. 이 설정과 원래 상태는 기기에만 저장됩니다. 권한은 언제든 기기 설정에서 거둘 수 있습니다.</p>
+<p><strong>iPhone·iPad:</strong> 앱은 방해 금지를 바꿀 수 없으며, 녹음 전에 집중 모드를 켜도록 안내만 합니다.</p>
+<p><strong>비행기 모드:</strong> 긴급 재난 문자는 방해 금지를 통과할 수 있어, 앱이 비행기 모드를 권할 수 있습니다. 앱은 비행기 모드가 켜져 있는지만 읽으며 바꿀 수 없습니다.</p>"""),
+   ("안드로이드 자동 백업", f"""<p>안드로이드에서는 기기의 Google 백업 기능이 켜져 있으면 앱의 <strong>설정</strong>이 이용자의 Google 계정에 백업되어, 다시 설치할 때 복원될 수 있습니다. 이 백업은 Google이 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a>에 따라 처리하며 저희는 볼 수 없습니다. 기기 설정에서 끌 수 있습니다.</p>"""),
+   ("위레가토 통합 아이디 (AI·클라우드·구독에 필요)", f"""<p>녹음과 테이크 비교에는 로그인이 필요 없습니다. AI 분석, 클라우드, 구독은 위레가토 통합 아이디(같은 회사가 운영하는 위레가토의 계정, 모든 Vicino Labs 앱에서 쓰는 하나의 아이디)로 로그인해야 쓸 수 있습니다. 이 기능들은 위레가토 통합 아이디와 함께 제공되며, 아래 내용은 이용자가 로그인하거나 이 기능을 쓸 때 적용됩니다.</p>
+<ul>
+<li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Google·카카오·이메일, 계정 번호)는 <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 로그인은 Supabase Auth로 처리됩니다. 프로바에서 가입하면 “프로바에서 가입함” 표시가 계정에 남고, 첫 로그인 때 환영 메일이 한 번 갑니다.</li>
+<li>프로바는 아이디를 구독과 AI 시간에 연결합니다. 그래서 다른 기기나 안드로이드·iOS 사이에서도, 그리고 같은 아이디를 쓰는 다른 Vicino Labs 앱(예: 렛지 악보)에서도 구독과 AI 시간이 이어집니다.</li>
+<li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
+<li>앱의 아이디 관리 또는 <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>에서 아이디를 삭제하면, 이 아이디를 쓰는 모든 Vicino Labs 앱에서 계정, AI 시간과 연결 기록, 클라우드의 파일이 함께 지워집니다. 기기 안의 녹음과 영상은 남습니다.</li>
+</ul>
+<p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
+   ("AI 분석 (요청할 때만)", f"""<p>로그인한 상태에서 테이크의 “AI 분석”을 누르고, 차감될 AI 시간을 확인한 뒤 시작할 때만 동작합니다. 처음 쓸 때 이 내용을 안내하고 동의를 받습니다.</p>
+<ul>
+<li><strong>보내는 정보:</strong> <strong>소리만</strong> 보냅니다. 영상 테이크라도 화면은 보내지 않고, 기기에서 만든 오디오 발췌본(모노, 16kHz AAC)만 보냅니다. 함께 모드, 이용자가 적은 작품·구간·함께한 사람 이름, 답변 언어를 보냅니다.</li>
+<li><strong>처리:</strong> 저희 서버(Supabase, EU)가 분석을 준비하고, 오디오는 Google의 Gemini API로 올라가 분석됩니다. 유료 API로 쓰며, Google은 이 데이터를 자사 모델 학습에 쓰지 않습니다.</li>
+<li><strong>삭제:</strong> 오디오는 분석이 끝나면 지우며, 남은 경우에도 Google이 48시간 안에 자동으로 지웁니다. 결과는 이용자 기기로 돌려보내 기기에만 저장되고, 서버의 중간 결과는 분석이 끝나면 지웁니다.</li>
+<li><strong>서버에 남는 것:</strong> 남은 AI 시간 계산을 위한 기록(분석 시각, 길이, 종류, 차감된 분, 비용, 어느 앱에서 썼는지)과 가명 계정 번호. 녹음 내용과 결과는 남지 않습니다.</li>
+<li><strong>AI 시간 공유:</strong> AI 시간은 위레가토 통합 아이디별로 렛지 악보(Leggii)와 함께 씁니다. 그래서 각 사용 기록에 프로바와 렛지 중 어느 앱이 썼는지가 남습니다.</li>
+</ul>
+<p>처리 근거: 이용자가 요청한 기능의 제공(GDPR 제6조 제1항 b호). 녹음된 다른 사람의 동의는 이용자가 받아야 합니다. 만 16세 미만은 보호자의 동의를 받아 이용해 주세요. Google의 처리는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 따릅니다.</p>"""),
+   ("클라우드 (Plus, 선택)", """<p>Plus를 구독하고 위레가토 통합 아이디로 로그인하면, 클라우드가 같은 아이디의 기기들에서 테이크를 똑같이 맞춥니다.</p>
+<ul>
+<li><strong>저장하는 정보:</strong> 테이크의 오디오와 테이크 정보. 영상은 이용자가 별표하거나 직접 고른 테이크만 올립니다. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
+<li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 녹음이나 영상을 열어 보지 않습니다.</li>
+<li><strong>용량:</strong> 클라우드 용량은 아이디별로 렛지 클라우드와 함께 쓰며, 두 앱이 쓰는 양을 더해 계산합니다.</li>
+<li><strong>보관과 삭제:</strong> 한 기기에서 지운 테이크는 클라우드와 다른 기기에서도 지워집니다. 아이디를 삭제하면 클라우드의 모든 파일과 기록을 지체 없이(늦어도 24시간 안에) 지웁니다. Plus가 끝나면 새 업로드만 멈추고 90일 동안 내려받을 수 있으며, 그 전에 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 기기 안의 파일은 건드리지 않습니다.</li>
+</ul>
+<p>처리 근거: 구독한 서비스의 제공(GDPR 제6조 제1항 b호).</p>"""),
+   ("구독·구매", f"""<p>구독과 AI 시간은 Google Play 또는 App Store 결제로 삽니다. 결제와 카드 정보는 스토어가 처리하며 저희는 받지 않습니다. 구독하려면 먼저 위레가토 통합 아이디로 로그인해야 하며, 그래야 구독이 다른 Vicino Labs 앱과 안드로이드·iOS 사이에서 이어집니다.</p>
+<ul>
+<li>앱은 구매 증명(구매 토큰)을 저희 서버로 보내고, 서버가 스토어에 실제 구매인지, 구독이 유효한지 확인합니다. 서버에는 토큰 자체가 아니라 되돌릴 수 없는 <strong>해시값</strong>과 상품, 시각, 구독 만료일, 아이디와의 연결, AI 시간 기록만 저장합니다.</li>
+<li>충전 기록은 같은 구매가 두 번 지급되지 않도록, 아이디를 삭제한 뒤에도 계정과 분리된 해시로 보관합니다.</li>
+</ul>
+<p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a> 또는 <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple 개인정보 처리방침</a>이 적용됩니다.</p>"""),
+   ("서비스 제공자(수탁자)와 국외 이전", """<p>아래 업체는 로그인하거나 AI 분석·클라우드·구독을 쓸 때만 관여합니다. 로그인 없이 녹음만 하는 경우에는 어떤 업체에도 정보가 가지 않습니다.</p>
+<ul>
+<li><strong>Supabase</strong> — 로그인(Supabase Auth), 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Google</strong> — Gemini API(AI 분석), Google Play 결제와 구매 확인, Google 로그인</li>
+<li><strong>Cloudflare</strong> — 클라우드의 파일 저장(R2, Plus), 이메일 로그인의 자동 가입 방지(Turnstile)</li>
+<li><strong>Apple</strong> — App Store 결제(iPhone·iPad)</li>
+</ul>
+<p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
+   ("수집하지 않는 정보", """<p>로그인하지 않으면 이름·이메일·전화번호를 받지 않습니다. 위치, 연락처, 광고 식별자는 수집하지 않으며, 광고 네트워크와 분석·추적 SDK가 없습니다. 영상의 화면은 AI 분석에도 보내지 않습니다.</p>"""),
+   ("아동", """<p>녹음과 테이크 비교 같은 기본 기능에는 연령 제한이 없습니다. 위레가토 통합 아이디 로그인은 만 16세 이상만 할 수 있고, 만 16세 미만이 AI 분석을 쓸 때는 보호자의 동의가 필요합니다. 미성년자가 함께 녹음되는 레슨은 보호자의 동의를 받아 주세요.</p>"""),
+   ("정보주체의 권리", f"""<ul>
+<li>열람·정정·삭제·처리제한·데이터 이동·이의제기권(GDPR 제15~21조)</li>
+<li>감독기관에 민원을 제기할 권리 — 예: 노르트라인베스트팔렌주 정보보호·정보자유 감독관(LDI NRW) 또는 거주지 관할 감독기관</li>
+</ul>
+<p>기기 안의 테이크는 앱에서 지우거나 앱을 삭제하면 사라집니다. 아이디와 클라우드의 정보는 <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>에서 지우거나 <a href="mailto:{EMAIL}">{EMAIL}</a>로 요청하실 수 있습니다.</p>"""),
+   ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다.</p>"""),
+   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+  ],
+ },
+ "en": {
+  "title": "Prova Privacy Policy",
+  "h1": "Privacy Policy",
+  "meta": [("Effective", "2026-11-07"), ("Version", "1.0"), ("Operator", "Vicino Labs")],
+  "lede": "Prova, made by Vicino Labs, records and films your lessons and practice, lets you compare takes and helps you check audition and competition videos. Recordings and videos are stored only on your device, and you can use it without an account. Only when you sign in with a welegato ID to use AI analysis, the cloud or a subscription does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
+  "footer": "This policy is effective from 7 November 2026 (version 1.0).",
+  "other": "Terms of Service →",
+  "sections": [
+   ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Summary", """<div class="summary-box"><ul>
+<li>Audio recordings, videos and take details stay <strong>on your device</strong>; without signing in nothing is uploaded to us. Recording needs no account.</li>
+<li>Before you record or film a lesson, the app asks you to confirm that the teacher (and, for minors, a parent or guardian) has agreed.</li>
+<li>Do Not Disturb while recording (Android) is switched on only if you allow it, and your own setting is restored when the take ends.</li>
+<li>No ads, and no analytics or tracking tools.</li>
+<li>AI analysis, the cloud and subscriptions need a <strong>welegato ID</strong>. When you sign in, account data falls under the welegato privacy policy.</li>
+<li><strong>AI analysis</strong> sends <strong>only the sound</strong>, even for videos — an audio excerpt made on your device is analysed by Google Gemini and deleted afterwards.</li>
+<li>The <strong>cloud</strong> (Plus) uploads the audio of your takes, and video only for takes you star or choose (Cloudflare R2).</li>
+</ul></div>"""),
+   ("Data stored on your device", """<ul>
+<li>Audio recordings (AAC) and videos (mp4, front or back camera)</li>
+<li>Take details — the mode (lesson, practice takes, submission video), date and length and, if you fill them in, piece, passage, “with” (names of teacher or accompanist), notes and a star</li>
+<li>The confirmation you gave before recording a lesson</li>
+<li>Settings — theme colour, whether to use Do Not Disturb while recording, and your Do Not Disturb setting before a take (to restore it)</li>
+</ul>
+<p>This data stays in the app's private storage and is never sent to us. It is deleted when you remove a take or uninstall the app. Legal basis: providing the app's features (Art. 6(1)(b) GDPR).</p>"""),
+   ("Camera, microphone and notifications", """<p>The app asks for the microphone only to record and for the camera only to film. You start a recording with the button and stop it yourself. While recording, a “Recording” notification is shown so the recording keeps going with the screen off or in another app (for this the app asks for the notification permission).</p>
+<p>When you look at silent stills from a video, the frames are read from the video file saved on your device. This too happens only on the device.</p>"""),
+   ("Recording lessons and other people's consent", """<p>Recording other people's words without their consent can be against the law (for example § 201 of the German Criminal Code). In lesson mode the app therefore asks you to confirm, before recording or filming starts, that the teacher — and, if a minor is recorded, a parent or guardian — has agreed. Actually obtaining that consent is your responsibility.</p>
+<p>Names you enter under “with” are kept on your device as take details. What happens when you sign in and use AI analysis or the cloud is described below.</p>"""),
+   ("Do Not Disturb while recording", """<p><strong>Android:</strong> once you have granted Do Not Disturb access in your device settings, the app switches the phone's Do Not Disturb on while a take is being recorded. Calls, messages, notifications and vibration are held back; media sound is allowed. When the take ends, your own Do Not Disturb setting is restored. This setting and your previous state are stored only on the device. You can withdraw the access at any time in your device settings.</p>
+<p><strong>iPhone and iPad:</strong> the app cannot change Do Not Disturb; it only reminds you to turn on a Focus before recording.</p>
+<p><strong>Airplane mode:</strong> emergency alerts can pass Do Not Disturb, so the app may suggest airplane mode. It only reads whether airplane mode is on and cannot change it.</p>"""),
+   ("Android backup", f"""<p>On Android, if your device's Google backup is on, the app's <strong>settings</strong> may be backed up to your Google account and restored when you reinstall. Google handles this backup under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a>; we cannot see it. You can turn it off in your device settings.</p>"""),
+   ("welegato ID (needed for AI, cloud and subscriptions)", f"""<p>Recording and comparing takes need no sign-in. AI analysis, the cloud and subscriptions require signing in with a welegato ID (an account of welegato, run by the same company — one ID for all Vicino Labs apps). These features come with the welegato ID; this section applies when you sign in or use them.</p>
+<ul>
+<li><strong>Account data</strong> (email, name, sign-in method Google, Kakao or email, account number) is processed under the <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>. Sign-in is handled by Supabase Auth. An ID created in Prova is marked “signed up in Prova”, and one welcome email is sent at the first sign-in.</li>
+<li>Prova links the ID to your subscription and AI time, so they follow you to other devices, between Android and iOS, and to other Vicino Labs apps that use the same ID (such as Leggii).</li>
+<li>For email sign-up and sign-in, Cloudflare Turnstile checks browser signals to stop automated sign-ups (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Google and Kakao sign-in fall under those companies' policies.</li>
+<li>Deleting the ID in the app or at <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> deletes the account, AI time and links and the cloud files in every Vicino Labs app that uses the ID. Recordings and videos on your device stay.</li>
+</ul>
+<p>Under welegato's terms, only people aged 16 or over can sign in. Legal basis: providing the feature you chose (b).</p>"""),
+   ("AI analysis (only on request)", f"""<p>It runs only when you are signed in, tap “AI analysis” on a take, see the AI minutes it costs and start it. The first time, the app explains this and asks for your consent.</p>
+<ul>
+<li><strong>What is sent:</strong> <strong>only the sound</strong>. Even for a video take no picture is sent — only an audio excerpt made on your device (mono, 16 kHz AAC) — together with the mode, the piece, passage and names you entered, and the answer language.</li>
+<li><strong>Processing:</strong> our server (Supabase, EU) prepares the job; the audio goes to Google's Gemini API for analysis. We use the paid API; Google does not use this data to train its models.</li>
+<li><strong>Deletion:</strong> the audio is deleted once it is analysed; anything left is deleted by Google within 48 hours. The results go back to your device and are stored only there; interim results on the server are deleted when the analysis ends.</li>
+<li><strong>Kept on the server:</strong> records to count your AI time (time, length, kind, minutes used, cost, which app it was used in) with a pseudonymous account number – no recording content and no results.</li>
+<li><strong>Shared AI time:</strong> AI time is shared per welegato ID with Leggii, so each use records whether Prova or Leggii used it.</li>
+</ul>
+<p>Legal basis: providing the feature you asked for (Art. 6(1)(b) GDPR). You must get the consent of other people who are recorded. Under 16, please use it with a parent's consent. Google processes data under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>"""),
+   ("Cloud (Plus, optional)", """<p>With a Plus subscription and the welegato ID signed in, the cloud keeps your takes the same on every device of that ID.</p>
+<ul>
+<li><strong>What is stored:</strong> the audio of your takes and the take details. Video is uploaded only for takes you star or choose. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
+<li><strong>Where:</strong> the files with Cloudflare R2 (Cloudflare, Inc., processor); the list of items and the space used on our server (Supabase, EU, Frankfurt, Germany). Transfers are encrypted; files go only between the app of that ID and the cloud, through signed links that are valid for a short time. We do not open your recordings or videos.</li>
+<li><strong>Space:</strong> cloud space is shared per ID with the Leggii cloud; what both apps use is added up.</li>
+<li><strong>Keeping and deleting:</strong> a take deleted on one device is deleted in the cloud and on the other devices too. Deleting the ID deletes all its cloud files and records without delay (within 24 hours at the latest). When Plus ends, only new uploads stop and everything can be downloaded for 90 days; after two reminder emails the cloud files are then deleted. Files on your devices are never touched.</li>
+</ul>
+<p>Legal basis: providing the subscribed service (Art. 6(1)(b) GDPR).</p>"""),
+   ("Subscriptions and purchases", f"""<p>Subscriptions and AI time are bought through Google Play or the App Store. The store handles payment and card details; we never receive them. To subscribe you must first sign in with a welegato ID, so the subscription works across Vicino Labs apps and between Android and iOS.</p>
+<ul>
+<li>The app sends the proof of purchase (purchase token) to our server, which checks with the store that the purchase is real and the subscription active. The server stores an irreversible <strong>hash</strong> instead of the token, plus the product, time, subscription end date, the link to your ID and AI time records.</li>
+<li>Top-up records are kept as hashes, separated from the account, even after an ID is deleted, so the same purchase is never credited twice.</li>
+</ul>
+<p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a> or <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>"""),
+   ("Service providers (processors) and transfers", """<p>These providers are involved only when you sign in or use AI analysis, the cloud or a subscription. If you only record without signing in, no data goes to any of them.</p>
+<ul>
+<li><strong>Supabase</strong> — sign-in (Supabase Auth), server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
+<li><strong>Google</strong> — Gemini API (AI analysis), Google Play payments and purchase checks, Google sign-in</li>
+<li><strong>Cloudflare</strong> — file storage of the cloud (R2, Plus), protection against automated email sign-ups (Turnstile)</li>
+<li><strong>Apple</strong> — App Store payments (iPhone, iPad)</li>
+</ul>
+<p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
+   ("Data we don't collect", """<p>Without signing in we receive no name, email or phone number. We collect no location, contacts or advertising ID, and there are no ad networks or analytics or tracking SDKs. The picture of a video is not sent, not even for AI analysis.</p>"""),
+   ("Children", """<p>The basic features such as recording and comparing takes have no age limit. Signing in with a welegato ID is only for people aged 16 or over; under 16, AI analysis needs a parent's consent. For lessons in which a minor is recorded, please get a parent's or guardian's consent.</p>"""),
+   ("Your rights", f"""<ul>
+<li>Access, rectification, erasure, restriction of processing, data portability and objection (Art. 15–21 GDPR)</li>
+<li>Lodge a complaint with a supervisory authority — e.g. the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW) or the authority where you live</li>
+</ul>
+<p>Takes on your device can be deleted in the app or by uninstalling it. Your ID and cloud data can be deleted at <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> or on request to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
+   ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page.</p>"""),
+   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _contact("Operator")),
+  ],
+ },
+ "de": {
+  "title": "Prova Datenschutzerklärung",
+  "h1": "Datenschutzerklärung",
+  "meta": [("Gültig ab", "07.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
+  "lede": "Prova von Vicino Labs nimmt Unterricht und Üben auf und filmt sie, lässt dich Takes vergleichen und hilft beim Prüfen von Bewerbungsvideos für Vorspiele und Wettbewerbe. Aufnahmen und Videos werden nur auf deinem Gerät gespeichert; ein Konto brauchst du dafür nicht. Nur wenn du dich mit einer welegato-ID anmeldest, um KI-Analyse, Cloud oder ein Abo zu nutzen, laufen Daten über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
+  "footer": "Diese Erklärung gilt ab dem 7. November 2026 (Version 1.0).",
+  "other": "Nutzungsbedingungen →",
+  "sections": [
+   ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
+   ("Kurzfassung", """<div class="summary-box"><ul>
+<li>Tonaufnahmen, Videos und Take-Angaben bleiben <strong>auf deinem Gerät</strong>; ohne Anmeldung wird nichts zu uns hochgeladen. Zum Aufnehmen brauchst du kein Konto.</li>
+<li>Bevor du Unterricht aufnimmst oder filmst, bittet die App dich zu bestätigen, dass die Lehrkraft (bei Minderjährigen auch die Eltern bzw. Sorgeberechtigten) einverstanden ist.</li>
+<li>„Bitte nicht stören“ während der Aufnahme (Android) wird nur eingeschaltet, wenn du es erlaubst; danach wird deine eigene Einstellung wiederhergestellt.</li>
+<li>Keine Werbung und keine Analyse- oder Tracking-Tools.</li>
+<li>KI-Analyse, Cloud und Abos brauchen eine <strong>welegato-ID</strong>. Meldest du dich an, unterliegen Kontodaten der welegato-Datenschutzerklärung.</li>
+<li>Die <strong>KI-Analyse</strong> sendet auch bei Videos <strong>nur den Ton</strong> — ein auf dem Gerät erstellter Tonausschnitt wird von Google Gemini analysiert und danach gelöscht.</li>
+<li>Die <strong>Cloud</strong> (Plus) lädt den Ton deiner Takes hoch, Videos nur bei Takes, die du markierst oder auswählst (Cloudflare R2).</li>
+</ul></div>"""),
+   ("Auf dem Gerät gespeicherte Daten", """<ul>
+<li>Tonaufnahmen (AAC) und Videos (mp4, Front- oder Rückkamera)</li>
+<li>Take-Angaben — Modus (Unterricht, Übe-Takes, Bewerbungsvideo), Datum und Länge sowie, wenn du sie einträgst, Werk, Stelle, „mit“ (Namen von Lehrkraft oder Begleitung), Notizen und Stern</li>
+<li>Deine Bestätigung vor einer Unterrichtsaufnahme</li>
+<li>Einstellungen — Farbthema, ob „Bitte nicht stören“ beim Aufnehmen genutzt wird, und deine „Bitte nicht stören“-Einstellung vor einem Take (um sie wiederherzustellen)</li>
+</ul>
+<p>Diese Daten bleiben im privaten Speicher der App und werden nicht an uns übermittelt. Sie werden gelöscht, wenn du einen Take entfernst oder die App deinstallierst. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
+   ("Kamera, Mikrofon und Benachrichtigungen", """<p>Die App fragt nur zum Aufnehmen nach dem Mikrofon und nur zum Filmen nach der Kamera. Du startest eine Aufnahme mit der Taste und beendest sie selbst. Während der Aufnahme wird eine Benachrichtigung „Aufnahme läuft“ angezeigt, damit die Aufnahme auch bei ausgeschaltetem Bildschirm oder in einer anderen App weiterläuft (dafür fragt die App nach der Benachrichtigungsberechtigung).</p>
+<p>Wenn du dir stumme Standbilder aus einem Video ansiehst, werden die Bilder aus der auf deinem Gerät gespeicherten Videodatei gelesen. Auch das geschieht nur auf dem Gerät.</p>"""),
+   ("Unterrichtsaufnahmen und Einwilligung anderer", """<p>Das nichtöffentlich gesprochene Wort anderer ohne deren Einwilligung aufzunehmen, kann strafbar sein (§ 201 StGB). Im Unterrichtsmodus bittet die App dich deshalb vor Beginn der Aufnahme zu bestätigen, dass die Lehrkraft — und, wenn Minderjährige aufgenommen werden, die Eltern bzw. Sorgeberechtigten — eingewilligt haben. Die Einwilligung tatsächlich einzuholen, liegt in deiner Verantwortung.</p>
+<p>Namen, die du unter „mit“ einträgst, werden als Take-Angaben auf deinem Gerät gespeichert. Was bei Anmeldung und Nutzung von KI-Analyse oder Cloud geschieht, steht unten.</p>"""),
+   ("„Bitte nicht stören“ während der Aufnahme", """<p><strong>Android:</strong> Wenn du der App einmal in den Geräteeinstellungen den Zugriff auf „Bitte nicht stören“ erlaubt hast, schaltet sie „Bitte nicht stören“ ein, solange ein Take aufgenommen wird. Anrufe, Nachrichten, Benachrichtigungen und Vibration werden zurückgehalten; Medienton bleibt erlaubt. Nach dem Take wird deine eigene Einstellung wiederhergestellt. Diese Einstellung und dein vorheriger Zustand werden nur auf dem Gerät gespeichert. Den Zugriff kannst du jederzeit in den Geräteeinstellungen widerrufen.</p>
+<p><strong>iPhone und iPad:</strong> Die App kann „Nicht stören“ nicht ändern; sie erinnert dich nur daran, vor der Aufnahme einen Fokus einzuschalten.</p>
+<p><strong>Flugmodus:</strong> Notfallwarnungen können „Bitte nicht stören“ durchdringen, deshalb kann die App den Flugmodus empfehlen. Sie liest nur, ob der Flugmodus an ist, und kann ihn nicht ändern.</p>"""),
+   ("Android-Sicherung", f"""<p>Unter Android können, wenn die Google-Sicherung des Geräts aktiv ist, die <strong>Einstellungen</strong> der App in deinem Google-Konto gesichert und bei einer Neuinstallation wiederhergestellt werden. Google verarbeitet diese Sicherung gemäß der <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google-Datenschutzerklärung</a>; wir haben keinen Zugriff. Du kannst sie in den Geräteeinstellungen abschalten.</p>"""),
+   ("welegato-ID (nötig für KI, Cloud und Abos)", f"""<p>Aufnehmen und Takes vergleichen funktionieren ohne Anmeldung. KI-Analyse, Cloud und Abos setzen die Anmeldung mit einer welegato-ID voraus (ein Konto von welegato, einem Dienst desselben Unternehmens — eine ID für alle Apps von Vicino Labs). Diese Funktionen kommen mit der welegato-ID; dieser Abschnitt gilt, wenn du dich anmeldest oder sie nutzt.</p>
+<ul>
+<li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Die Anmeldung läuft über Supabase Auth. Eine in Prova erstellte ID wird als „in Prova registriert“ markiert; bei der ersten Anmeldung kommt eine Willkommens-E-Mail.</li>
+<li>Prova verknüpft die ID mit deinem Abo und deiner KI-Zeit, damit sie auf anderen Geräten, zwischen Android und iOS und in anderen Apps von Vicino Labs mit derselben ID (z. B. Leggii) weitergelten.</li>
+<li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browser-Signale gegen automatische Registrierungen (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Google oder Kakao gelten deren Erklärungen.</li>
+<li>Löschst du die ID in der App oder unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>, werden Konto, KI-Zeit und Verknüpfungen sowie die Cloud-Dateien in allen Apps von Vicino Labs gelöscht, die diese ID nutzen. Aufnahmen und Videos auf dem Gerät bleiben.</li>
+</ul>
+<p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
+   ("KI-Analyse (nur auf Wunsch)", f"""<p>Sie läuft nur, wenn du angemeldet bist, bei einem Take „KI-Analyse“ tippst, die Kosten in KI-Minuten siehst und sie startest. Beim ersten Mal erklärt die App das und bittet um deine Einwilligung.</p>
+<ul>
+<li><strong>Gesendet wird:</strong> <strong>nur der Ton</strong>. Auch bei einem Video-Take wird kein Bild gesendet, sondern nur ein auf dem Gerät erstellter Tonausschnitt (Mono, 16 kHz AAC) — dazu Modus, die von dir eingetragenen Werke, Stellen und Namen sowie die Antwortsprache.</li>
+<li><strong>Verarbeitung:</strong> Unser Server (Supabase, EU) bereitet die Analyse vor; der Ton geht zur Analyse an die Gemini-API von Google. Wir nutzen die kostenpflichtige API; Google verwendet diese Daten nicht zum Training seiner Modelle.</li>
+<li><strong>Löschung:</strong> Der Ton wird nach der Analyse gelöscht; Reste löscht Google spätestens nach 48 Stunden. Die Ergebnisse gehen an dein Gerät und werden nur dort gespeichert; Zwischenergebnisse auf dem Server werden nach der Analyse gelöscht.</li>
+<li><strong>Auf dem Server bleiben:</strong> Einträge zur Berechnung deiner KI-Zeit (Zeitpunkt, Länge, Art, verbrauchte Minuten, Kosten, in welcher App) mit einer pseudonymen Kontonummer – keine Inhalte der Aufnahme und keine Ergebnisse.</li>
+<li><strong>Gemeinsame KI-Zeit:</strong> Die KI-Zeit wird je welegato-ID mit Leggii geteilt; deshalb wird bei jeder Nutzung vermerkt, ob Prova oder Leggii sie verwendet hat.</li>
+</ul>
+<p>Rechtsgrundlage: Bereitstellung der gewünschten Funktion (Art. 6 Abs. 1 lit. b DSGVO). Die Einwilligung weiterer aufgenommener Personen holst du ein. Unter 16 bitte nur mit Einwilligung der Eltern. Google verarbeitet die Daten nach der <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>"""),
+   ("Cloud (Plus, optional)", """<p>Mit einem Plus-Abo und angemeldeter welegato-ID hält die Cloud deine Takes auf allen Geräten dieser ID gleich.</p>
+<ul>
+<li><strong>Was gespeichert wird:</strong> der Ton deiner Takes und die Take-Angaben. Videos werden nur bei Takes hochgeladen, die du markierst oder auswählst. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
+<li><strong>Wo:</strong> die Dateien bei Cloudflare R2 (Cloudflare, Inc., Auftragsverarbeiter), die Liste der Einträge und der belegte Speicher auf unserem Server (Supabase, EU, Frankfurt). Die Übertragung ist verschlüsselt; Dateien gehen nur zwischen der App dieser ID und der Cloud, über kurz gültige signierte Links. Wir öffnen deine Aufnahmen und Videos nicht.</li>
+<li><strong>Speicherplatz:</strong> Der Cloud-Speicher wird je ID mit der Leggii Cloud geteilt; was beide Apps belegen, wird zusammengerechnet.</li>
+<li><strong>Aufbewahrung und Löschung:</strong> Ein auf einem Gerät gelöschter Take wird auch in der Cloud und auf den anderen Geräten gelöscht. Beim Löschen der ID werden alle Cloud-Dateien und Einträge unverzüglich (spätestens nach 24 Stunden) gelöscht. Endet Plus, stoppen nur neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien dann gelöscht. Dateien auf deinen Geräten bleiben unberührt.</li>
+</ul>
+<p>Rechtsgrundlage: Erbringung des abonnierten Dienstes (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
+   ("Abos und Käufe", f"""<p>Abos und KI-Zeit kaufst du über Google Play oder den App Store. Zahlung und Kartendaten verarbeitet der Store; wir erhalten sie nicht. Für ein Abo musst du dich zuerst mit einer welegato-ID anmelden, damit es in den Apps von Vicino Labs und zwischen Android und iOS gilt.</p>
+<ul>
+<li>Die App sendet den Kaufnachweis (Kauf-Token) an unseren Server, der beim Store prüft, ob der Kauf echt und das Abo aktiv ist. Gespeichert wird statt des Tokens ein nicht umkehrbarer <strong>Hash</strong>, dazu Produkt, Zeitpunkt, Abo-Ende, die Verknüpfung mit deiner ID und KI-Zeit-Einträge.</li>
+<li>Einträge zu Aufladungen bleiben als vom Konto getrennter Hash auch nach Löschen einer ID erhalten, damit derselbe Kauf nie doppelt gutgeschrieben wird.</li>
+</ul>
+<p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> bzw. die <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>"""),
+   ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<p>Diese Anbieter sind nur beteiligt, wenn du dich anmeldest oder KI-Analyse, Cloud oder ein Abo nutzt. Nimmst du nur ohne Anmeldung auf, gehen an keinen von ihnen Daten.</p>
+<ul>
+<li><strong>Supabase</strong> — Anmeldung (Supabase Auth), Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
+<li><strong>Google</strong> — Gemini-API (KI-Analyse), Google-Play-Zahlungen und Kaufprüfung, Google-Anmeldung</li>
+<li><strong>Cloudflare</strong> — Dateispeicher der Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
+<li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
+</ul>
+<p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
+   ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht; es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-SDKs. Das Bild eines Videos wird nicht gesendet, auch nicht für die KI-Analyse.</p>"""),
+   ("Kinder", """<p>Die Grundfunktionen wie Aufnehmen und Takes vergleichen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 braucht die KI-Analyse die Einwilligung der Eltern. Bei Unterricht, in dem Minderjährige aufgenommen werden, hole bitte die Einwilligung der Eltern bzw. Sorgeberechtigten ein.</p>"""),
+   ("Deine Rechte", f"""<ul>
+<li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
+<li>Beschwerde bei einer Aufsichtsbehörde — z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde deines Wohnorts</li>
+</ul>
+<p>Takes auf deinem Gerät kannst du in der App oder durch Deinstallation löschen. ID und Cloud-Daten kannst du unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> löschen oder per E-Mail an <a href="mailto:{EMAIL}">{EMAIL}</a> löschen lassen.</p>"""),
+   ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),
+   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _contact("Betreiber")),
+  ],
+ },
+ "it": {
+  "title": "Prova — Informativa sulla privacy",
+  "h1": "Informativa sulla privacy",
+  "meta": [("In vigore dal", "07.11.2026"), ("Versione", "1.0"), ("Gestore", "Vicino Labs")],
+  "lede": "Prova, di Vicino Labs, registra e filma lezioni e studio, ti fa confrontare le take e ti aiuta a controllare i video per audizioni e concorsi. Registrazioni e video restano solo sul tuo dispositivo e puoi usarla senza account. Solo quando accedi con un welegato ID per usare l'analisi AI, il cloud o un abbonamento qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
+  "footer": "Questa informativa è in vigore dal 7 novembre 2026 (versione 1.0).",
+  "other": "Termini di utilizzo →",
+  "sections": [
+   ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
+   ("In breve", """<div class="summary-box"><ul>
+<li>Registrazioni audio, video e dati delle take restano <strong>sul tuo dispositivo</strong>; senza accesso nulla viene caricato da noi. Per registrare non serve un account.</li>
+<li>Prima di registrare o filmare una lezione, l'app ti chiede di confermare che l'insegnante (e, per i minori, un genitore o tutore) è d'accordo.</li>
+<li>Il «Non disturbare» durante la registrazione (Android) si attiva solo se lo consenti, e alla fine viene ripristinata la tua impostazione.</li>
+<li>Nessuna pubblicità e nessuno strumento di analisi o tracciamento.</li>
+<li>Analisi AI, cloud e abbonamenti richiedono un <strong>welegato ID</strong>. Quando accedi, i dati dell'account seguono l'informativa di welegato.</li>
+<li>L'<strong>analisi AI</strong> invia <strong>solo il suono</strong>, anche per i video: un estratto audio creato sul dispositivo viene analizzato da Google Gemini e poi cancellato.</li>
+<li>Il <strong>cloud</strong> (Plus) carica l'audio delle take, e il video solo per le take che contrassegni con la stella o scegli (Cloudflare R2).</li>
+</ul></div>"""),
+   ("Dati salvati sul dispositivo", """<ul>
+<li>Registrazioni audio (AAC) e video (mp4, fotocamera anteriore o posteriore)</li>
+<li>Dati della take — modalità (lezione, take di studio, video per audizione), data e durata e, se li inserisci, brano, passaggio, «con» (nomi di insegnante o accompagnatore), note e stella</li>
+<li>La conferma data prima di registrare una lezione</li>
+<li>Impostazioni — colore del tema, uso del «Non disturbare» durante la registrazione e la tua impostazione «Non disturbare» prima della take (per ripristinarla)</li>
+</ul>
+<p>Questi dati restano nella memoria privata dell'app e non ci vengono inviati. Si cancellano eliminando una take o disinstallando l'app. Base giuridica: fornitura delle funzioni dell'app (art. 6, par. 1, lett. b GDPR).</p>"""),
+   ("Fotocamera, microfono e notifiche", """<p>L'app chiede il microfono solo per registrare e la fotocamera solo per filmare. Avvii la registrazione con il pulsante e la fermi tu. Durante la registrazione compare la notifica «Registrazione in corso», così continua anche a schermo spento o in un'altra app (per questo l'app chiede il permesso per le notifiche).</p>
+<p>Quando guardi fotogrammi muti di un video, le immagini vengono lette dal file video salvato sul dispositivo. Anche questo avviene solo sul dispositivo.</p>"""),
+   ("Registrare le lezioni e il consenso degli altri", """<p>Registrare le parole di altre persone senza il loro consenso può essere vietato dalla legge (ad es. § 201 del codice penale tedesco). Nella modalità lezione l'app ti chiede quindi di confermare, prima di iniziare a registrare o filmare, che l'insegnante — e, se viene registrato un minore, un genitore o tutore — ha dato il consenso. Ottenere davvero il consenso è tua responsabilità.</p>
+<p>I nomi che inserisci in «con» restano sul dispositivo come dati della take. Cosa succede quando accedi e usi l'analisi AI o il cloud è descritto sotto.</p>"""),
+   ("«Non disturbare» durante la registrazione", """<p><strong>Android:</strong> dopo che hai concesso una volta l'accesso a «Non disturbare» nelle impostazioni del dispositivo, l'app attiva il «Non disturbare» del telefono mentre registri una take. Chiamate, messaggi, notifiche e vibrazione vengono trattenuti; l'audio multimediale è consentito. Al termine della take viene ripristinata la tua impostazione. Questa impostazione e lo stato precedente sono salvati solo sul dispositivo. Puoi revocare l'accesso in qualsiasi momento nelle impostazioni del dispositivo.</p>
+<p><strong>iPhone e iPad:</strong> l'app non può cambiare il «Non disturbare»; ti ricorda solo di attivare una modalità Full immersion prima di registrare.</p>
+<p><strong>Modalità aereo:</strong> gli avvisi di emergenza possono superare il «Non disturbare», perciò l'app può suggerire la modalità aereo. Legge solo se è attiva e non può cambiarla.</p>"""),
+   ("Backup Android", f"""<p>Su Android, se il backup Google del dispositivo è attivo, le <strong>impostazioni</strong> dell'app possono essere salvate nel tuo account Google e ripristinate in caso di reinstallazione. Google le tratta secondo la propria <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa sulla privacy</a>; noi non vi abbiamo accesso. Puoi disattivarlo nelle impostazioni del dispositivo.</p>"""),
+   ("welegato ID (necessario per AI, cloud e abbonamenti)", f"""<p>Registrare e confrontare le take non richiede l'accesso. Analisi AI, cloud e abbonamenti richiedono l'accesso con un welegato ID (un account di welegato, servizio della stessa società: un solo ID per tutte le app di Vicino Labs). Queste funzioni arrivano con il welegato ID; questa sezione si applica quando accedi o le usi.</p>
+<ul>
+<li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Google, Kakao o email, numero di account) sono trattati secondo l'<a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">informativa privacy di welegato</a>. L'accesso è gestito da Supabase Auth. Un ID creato in Prova viene segnato «registrato in Prova» e al primo accesso arriva un'email di benvenuto.</li>
+<li>Prova collega l'ID al tuo abbonamento e al tuo tempo AI, così ti seguono su altri dispositivi, tra Android e iOS e nelle altre app di Vicino Labs con lo stesso ID (ad es. Leggii).</li>
+<li>Per registrazione e accesso via email, Cloudflare Turnstile controlla segnali del browser contro le registrazioni automatiche (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">informativa di Cloudflare</a>). Per l'accesso con Google o Kakao valgono le loro informative.</li>
+<li>Eliminando l'ID nell'app o su <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> vengono cancellati account, tempo AI e collegamenti e i file nel cloud in tutte le app di Vicino Labs che usano quell'ID. Registrazioni e video sul dispositivo restano.</li>
+</ul>
+<p>Secondo i termini di welegato, possono accedere solo persone dai 16 anni in su. Base giuridica: fornire la funzione scelta (lett. b).</p>"""),
+   ("Analisi AI (solo su richiesta)", f"""<p>Funziona solo quando hai effettuato l'accesso, tocchi «Analisi AI» su una take, vedi quanti minuti AI costa e la avvii. La prima volta l'app lo spiega e chiede il tuo consenso.</p>
+<ul>
+<li><strong>Cosa viene inviato:</strong> <strong>solo il suono</strong>. Anche per una take video non viene inviata alcuna immagine, solo un estratto audio creato sul dispositivo (mono, AAC 16 kHz), insieme a modalità, brani, passaggi e nomi che hai inserito e alla lingua della risposta.</li>
+<li><strong>Trattamento:</strong> il nostro server (Supabase, UE) prepara l'analisi; l'audio va all'API Gemini di Google per l'analisi. Usiamo l'API a pagamento; Google non usa questi dati per addestrare i propri modelli.</li>
+<li><strong>Cancellazione:</strong> l'audio viene cancellato dopo l'analisi; ciò che resta viene cancellato da Google entro 48 ore. I risultati tornano al tuo dispositivo e restano solo lì; i risultati intermedi sul server vengono cancellati a fine analisi.</li>
+<li><strong>Sul server restano:</strong> i dati per calcolare il tempo AI (momento, durata, tipo, minuti usati, costo, app in cui è stato usato) con un numero di account pseudonimo – nessun contenuto della registrazione e nessun risultato.</li>
+<li><strong>Tempo AI condiviso:</strong> il tempo AI è condiviso per welegato ID con Leggii, perciò per ogni uso si registra se l'ha usato Prova o Leggii.</li>
+</ul>
+<p>Base giuridica: fornire la funzione richiesta (art. 6, par. 1, lett. b GDPR). Il consenso delle altre persone registrate spetta a te. Sotto i 16 anni, usala con il consenso di un genitore. Google tratta i dati secondo l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>"""),
+   ("Cloud (Plus, facoltativo)", """<p>Con un abbonamento Plus e il welegato ID connesso, il cloud mantiene le tue take uguali su tutti i dispositivi di quell'ID.</p>
+<ul>
+<li><strong>Cosa viene salvato:</strong> l'audio delle take e i dati delle take. Il video viene caricato solo per le take che contrassegni con la stella o scegli. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
+<li><strong>Dove:</strong> i file su Cloudflare R2 (Cloudflare, Inc., responsabile del trattamento), l'elenco degli elementi e lo spazio usato sul nostro server (Supabase, UE, Francoforte). Il trasferimento è cifrato; i file passano solo tra l'app di quell'ID e il cloud, tramite link firmati validi per poco tempo. Non apriamo le tue registrazioni né i tuoi video.</li>
+<li><strong>Spazio:</strong> lo spazio nel cloud è condiviso per ID con il cloud di Leggii; ciò che usano le due app viene sommato.</li>
+<li><strong>Conservazione e cancellazione:</strong> una take eliminata su un dispositivo viene eliminata anche nel cloud e sugli altri dispositivi. Eliminando l'ID, tutti i file e i dati nel cloud vengono cancellati senza ritardo (al più tardi entro 24 ore). Quando Plus termina, si fermano solo i nuovi caricamenti e per 90 giorni puoi scaricare tutto; dopo due email di promemoria i file nel cloud vengono cancellati. I file sui tuoi dispositivi non vengono toccati.</li>
+</ul>
+<p>Base giuridica: fornitura del servizio in abbonamento (art. 6, par. 1, lett. b GDPR).</p>"""),
+   ("Abbonamenti e acquisti", f"""<p>Abbonamenti e tempo AI si acquistano tramite Google Play o l'App Store. Il pagamento e i dati della carta li gestisce lo store; noi non li riceviamo. Per abbonarti devi prima accedere con un welegato ID, così l'abbonamento vale nelle app di Vicino Labs e tra Android e iOS.</p>
+<ul>
+<li>L'app invia la prova d'acquisto (token) al nostro server, che verifica con lo store che l'acquisto sia reale e l'abbonamento attivo. Al posto del token viene salvato un <strong>hash</strong> irreversibile, con prodotto, momento, scadenza dell'abbonamento, collegamento al tuo ID e registrazioni del tempo AI.</li>
+<li>Le registrazioni delle ricariche restano come hash separati dall'account anche dopo l'eliminazione di un ID, così lo stesso acquisto non viene accreditato due volte.</li>
+</ul>
+<p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a> o l'<a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>"""),
+   ("Fornitori di servizi (responsabili) e trasferimenti", """<p>Questi fornitori intervengono solo quando accedi o usi l'analisi AI, il cloud o un abbonamento. Se registri soltanto, senza accesso, nessun dato va a nessuno di loro.</p>
+<ul>
+<li><strong>Supabase</strong> — accesso (Supabase Auth), server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
+<li><strong>Google</strong> — API Gemini (analisi AI), pagamenti e verifica acquisti di Google Play, accesso con Google</li>
+<li><strong>Cloudflare</strong> — archiviazione dei file del cloud (R2, Plus), protezione dalle registrazioni email automatiche (Turnstile)</li>
+<li><strong>Apple</strong> — pagamenti App Store (iPhone, iPad)</li>
+</ul>
+<p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
+   ("Dati che non raccogliamo", """<p>Senza accesso non riceviamo nome, email né numero di telefono. Non raccogliamo posizione, contatti né ID pubblicitari, e non ci sono reti pubblicitarie né SDK di analisi o tracciamento. L'immagine di un video non viene inviata, nemmeno per l'analisi AI.</p>"""),
+   ("Minori", """<p>Le funzioni di base, come registrare e confrontare le take, non hanno limiti di età. L'accesso con un welegato ID è riservato a chi ha almeno 16 anni; sotto i 16 anni l'analisi AI richiede il consenso di un genitore. Per le lezioni in cui viene registrato un minore, ottieni il consenso di un genitore o tutore.</p>"""),
+   ("I tuoi diritti", f"""<ul>
+<li>Accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–21 GDPR)</li>
+<li>Reclamo a un'autorità di controllo — ad es. l'autorità per la protezione dei dati della Renania Settentrionale-Vestfalia (LDI NRW) o quella del tuo luogo di residenza</li>
+</ul>
+<p>Le take sul dispositivo puoi eliminarle nell'app o disinstallandola. ID e dati nel cloud puoi eliminarli su <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> o chiederne la cancellazione a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
+   ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina.</p>"""),
+   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _contact("Gestore")),
+  ],
+ },
+}
