@@ -10,7 +10,23 @@ Google Gemini API가 음표를 읽음. 조각 이미지·인식 결과는 서버
 빈칸 채움 2026-11-06: 기록 90일, 기기 기록 마지막 스캔 후 1년(유료 기록은 세법 기간), Gemini 유료 키.
 """
 
-from appoggio_privacy_content import EMAIL, _id_card, _contact
+from appoggio_privacy_content import EMAIL, _id_card
+
+
+# Like welegato (the user's wish): the owner's name and address are not shown
+# at the top; the first section points to the card at the end and the Impressum.
+_OP_REF = {
+    "ko": '운영자의 주소와 연락처는 <a href="#ko-{n}">이 문서 맨 아래</a>와 <a href="/impressum/">Impressum</a>에 있습니다.',
+    "en": 'The operator\'s address and contact details are at <a href="#en-{n}">the end of this document</a> and in the <a href="/impressum/">Impressum</a>.',
+    "de": 'Anschrift und Kontaktdaten des Betreibers findest du <a href="#de-{n}">am Ende dieses Dokuments</a> und im <a href="/impressum/">Impressum</a>.',
+    "it": 'Indirizzo e contatti del gestore si trovano <a href="#it-{n}">alla fine di questo documento</a> e nell\'<a href="/impressum/">Impressum</a>.',
+}
+
+
+def _op_ref(lang, n):
+    """n = number of the last section (문의처), where the card now sits."""
+    return '<p class="op-ref">' + _OP_REF[lang].replace("{n}", str(n)) + "</p>"
+
 
 WELEGATO_PRIVACY = "https://welegato.com/legal/"
 GOOGLE_PRIVACY = "https://policies.google.com/privacy"
@@ -41,7 +57,7 @@ PRIVACY = {
   "footer": "본 방침은 2026년 11월 6일부터 시행됩니다 (버전 1.0).",
   "other": "이용약관 보기 →",
   "sections": [
-   ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("처리자(운영자) 정보", _op_ref("ko", 15) + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>회원가입과 계정이 없습니다. 악보, 편집 내용, 스캔한 원본 페이지 이미지는 <strong>기기 안에만</strong> 저장되며 클라우드에 올리지 않습니다.</li>
 <li><strong>악보 스캔</strong>(선택)을 쓰면 앱이 각 페이지를 기기에서 약 2마디 크기의 작은 조각으로 잘라 저희 서버를 거쳐 Google Gemini로 보내 음표를 읽습니다. 조각 이미지와 인식 결과는 서버에 <strong>저장하지 않습니다</strong>.</li>
@@ -90,7 +106,7 @@ PRIVACY = {
 </ul>
 <p>악보와 스캔 이미지는 기기에만 있으므로 앱에서 지우거나 앱을 삭제하면 사라집니다. 서버의 기기 해시 기록은 <a href="mailto:{EMAIL}">{EMAIL}</a>로 요청하시면 지웁니다.</p>"""),
    ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다. 앞으로의 버전에서 위레가토 통합 아이디 로그인이 제공될 수 있으며, 그때 본 방침을 고쳐 알립니다.</p>"""),
-   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -101,7 +117,7 @@ PRIVACY = {
   "footer": "This policy is effective from 6 November 2026 (version 1.0).",
   "other": "Terms of Service →",
   "sections": [
-   ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Data controller", _op_ref("en", 15) + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
 <li>No sign-up and no account. Scores, edits and original scanned page images stay <strong>on your device</strong> and are not uploaded to any cloud.</li>
 <li>With <strong>score scanning</strong> (optional) the app cuts each page on your device into small strips of about 2 bars and sends them through our server to Google Gemini to read the notes. Strip images and recognised results are <strong>not stored</strong> on the server.</li>
@@ -150,7 +166,7 @@ PRIVACY = {
 </ul>
 <p>Scores and scan images are only on your device, so deleting them in the app or uninstalling the app removes them. Records of your device hash on our server are deleted on request to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page. A future version may offer sign-in with a welegato ID; this policy will then be updated.</p>"""),
-   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _contact("Operator")),
+   ("Contact", "<p>For questions about data protection, please contact us.</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -161,7 +177,7 @@ PRIVACY = {
   "footer": "Diese Erklärung gilt ab dem 6. November 2026 (Version 1.0).",
   "other": "Nutzungsbedingungen →",
   "sections": [
-   ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
+   ("Verantwortlicher", _op_ref("de", 15) + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
 <li>Keine Registrierung und kein Konto. Noten, Bearbeitungen und gescannte Originalseiten bleiben <strong>auf deinem Gerät</strong> und werden in keine Cloud hochgeladen.</li>
 <li>Beim <strong>Notenscan</strong> (freiwillig) schneidet die App jede Seite auf dem Gerät in kleine Streifen von etwa 2 Takten und sendet sie über unseren Server an Google Gemini, um die Noten zu lesen. Streifenbilder und Erkennungsergebnisse werden auf dem Server <strong>nicht gespeichert</strong>.</li>
@@ -210,7 +226,7 @@ PRIVACY = {
 </ul>
 <p>Noten und Scanbilder liegen nur auf deinem Gerät; du löschst sie in der App oder durch Deinstallation. Einträge zu deinem Geräte-Hash auf unserem Server löschen wir auf Anfrage an <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite. Eine künftige Version kann die Anmeldung mit einer welegato-ID anbieten; diese Erklärung wird dann angepasst.</p>"""),
-   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _contact("Betreiber")),
+   ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -221,7 +237,7 @@ PRIVACY = {
   "footer": "Questa informativa è in vigore dal 6 novembre 2026 (versione 1.0).",
   "other": "Termini di utilizzo →",
   "sections": [
-   ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
+   ("Titolare del trattamento", _op_ref("it", 15) + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
 <li>Nessuna registrazione e nessun account. Spartiti, modifiche e immagini originali delle pagine scansionate restano <strong>sul tuo dispositivo</strong> e non vengono caricati in alcun cloud.</li>
 <li>Con la <strong>scansione degli spartiti</strong> (facoltativa) l'app taglia sul dispositivo ogni pagina in piccole strisce di circa 2 battute e le invia, tramite il nostro server, a Google Gemini per leggere le note. Le immagini a strisce e i risultati del riconoscimento <strong>non vengono salvati</strong> sul server.</li>
@@ -270,7 +286,7 @@ PRIVACY = {
 </ul>
 <p>Spartiti e immagini scansionate sono solo sul dispositivo: li elimini nell'app o disinstallandola. I dati relativi all'hash del tuo dispositivo sul nostro server vengono cancellati su richiesta a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina. Una versione futura potrà offrire l'accesso con un welegato ID; in quel caso l'informativa sarà aggiornata.</p>"""),
-   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _contact("Gestore")),
+   ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _id_card("it")),
   ],
  },
 }
