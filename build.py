@@ -133,5 +133,8 @@ leggii_legal.build(os.path.dirname(os.path.abspath(__file__)))
 # 끼아베(Chiave) 개인정보처리방침·이용약관 (/chiave/privacy/, /chiave/terms/) — chiave_legal.py (2026-11-06 초안)
 import chiave_legal
 chiave_legal.build(os.path.dirname(os.path.abspath(__file__)))
+# Pianino 개인정보처리방침·이용약관 (/pianino/privacy/, /pianino/terms/) — pianino_legal.py (2026-11-07 초안)
+import pianino_legal
+pianino_legal.build(os.path.dirname(os.path.abspath(__file__)))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w").write("vicinolabs.com\n")
 print("ok")
