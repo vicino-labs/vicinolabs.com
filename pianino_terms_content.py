@@ -5,7 +5,8 @@
 정확도 안내, 음량(청력) 안내, 앱에 든 피아노 음원의 라이선스.
 """
 
-from appoggio_privacy_content import _id_card, _contact
+from appoggio_privacy_content import _id_card
+from pianino_privacy_content import _op_ref
 
 TERMS = {
  "ko": {
@@ -17,7 +18,7 @@ TERMS = {
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 Pianino(이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
-   ("사업자 정보", _id_card("ko")),
+   ("사업자 정보", _op_ref("ko")),
    ("약관의 효력과 변경", """<ol>
 <li>본 약관은 앱 안 또는 회사가 정한 방법으로 게시하면 효력이 생깁니다.</li>
 <li>회사는 관련 법령을 위반하지 않는 범위에서 약관을 고칠 수 있으며, 시행일과 변경 이유를 미리 알립니다.</li>
@@ -52,7 +53,7 @@ TERMS = {
 <li>설정은 기기에만 저장됩니다. 기기 분실·앱 삭제·초기화로 설정이 없어질 수 있습니다.</li>
 </ol>"""),
    ("준거법과 관할", """<p>본 약관에는 독일연방공화국 법이 적용됩니다. 소비자인 이용자가 상거소 국가(예: EU 회원국)의 강행 소비자보호 규정에 따라 갖는 권리는 영향을 받지 않습니다. 그 밖의 경우 관할 법원은 회사 소재지(독일 도르트문트)의 법원입니다.</p>"""),
-   ("문의처", "<p>약관에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>약관에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -64,7 +65,7 @@ TERMS = {
   "other": "Privacy Policy →",
   "sections": [
    ("Purpose", "<p>These Terms govern the rights and obligations between Vicino Labs (“we”, “us”) and users of the mobile app Pianino (the “App”).</p>"),
-   ("About the operator", _id_card("en")),
+   ("About the operator", _op_ref("en")),
    ("Effect and changes", """<ol>
 <li>These Terms take effect once posted in the App or by another method we designate.</li>
 <li>We may amend these Terms within the limits of applicable law and will announce the effective date and the reason in advance.</li>
@@ -99,7 +100,7 @@ TERMS = {
 <li>Your settings are stored only on your device and may be lost if the device is lost, the App is uninstalled or the device is reset.</li>
 </ol>"""),
    ("Governing law and venue", """<p>These Terms are governed by the laws of the Federal Republic of Germany. This does not affect mandatory consumer-protection rights under the law of your country of habitual residence (for example, an EU member state). Otherwise, the courts at our place of business (Dortmund, Germany) have jurisdiction.</p>"""),
-   ("Contact", "<p>For any question about these Terms, please contact:</p>" + _contact("Operator")),
+   ("Contact", "<p>For any question about these Terms, please contact:</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -111,7 +112,7 @@ TERMS = {
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Gegenstand", "<p>Diese Bedingungen regeln die Rechte und Pflichten zwischen Vicino Labs („wir“) und den Nutzerinnen und Nutzern der mobilen App Pianino („App“).</p>"),
-   ("Anbieter", _id_card("de")),
+   ("Anbieter", _op_ref("de")),
    ("Geltung und Änderungen", """<ol>
 <li>Diese Bedingungen gelten, sobald sie in der App oder auf andere von uns bestimmte Weise veröffentlicht sind.</li>
 <li>Wir können sie im Rahmen des geltenden Rechts ändern und kündigen Gültigkeitsdatum und Grund vorher an.</li>
@@ -146,7 +147,7 @@ TERMS = {
 <li>Ihre Einstellungen werden nur auf Ihrem Gerät gespeichert und können bei Geräteverlust, Deinstallation oder Zurücksetzen verloren gehen.</li>
 </ol>"""),
    ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt das Recht der Bundesrepublik Deutschland. Zwingende Verbraucherschutzvorschriften Ihres gewöhnlichen Aufenthaltsstaats (z. B. eines EU-Mitgliedstaats) bleiben unberührt. Im Übrigen sind die Gerichte an unserem Sitz (Dortmund) zuständig.</p>"""),
-   ("Kontakt", "<p>Bei Fragen zu diesen Bedingungen:</p>" + _contact("Anbieter")),
+   ("Kontakt", "<p>Bei Fragen zu diesen Bedingungen:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -158,7 +159,7 @@ TERMS = {
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>I presenti Termini disciplinano i diritti e gli obblighi tra Vicino Labs (“noi”) e gli utenti dell'app mobile Pianino (l'“App”).</p>"),
-   ("Chi siamo", _id_card("it")),
+   ("Chi siamo", _op_ref("it")),
    ("Efficacia e modifiche", """<ol>
 <li>I Termini sono efficaci dalla pubblicazione nell'App o con altra modalità da noi indicata.</li>
 <li>Possiamo modificarli nei limiti della legge, comunicando in anticipo la data di efficacia e il motivo.</li>
@@ -193,7 +194,7 @@ TERMS = {
 <li>Le impostazioni sono salvate solo sul dispositivo e possono andare perse in caso di smarrimento del dispositivo, disinstallazione o azzeramento.</li>
 </ol>"""),
    ("Legge applicabile e foro competente", """<p>Si applica la legge della Repubblica Federale di Germania. Restano salvi i diritti inderogabili dei consumatori previsti dalla legge del paese di residenza abituale (ad es. uno Stato membro dell'UE). Negli altri casi è competente il foro della nostra sede (Dortmund, Germania).</p>"""),
-   ("Contatti", "<p>Per domande sui presenti Termini:</p>" + _contact("Titolare")),
+   ("Contatti", "<p>Per domande sui presenti Termini:</p>" + _id_card("it")),
   ],
  },
 }

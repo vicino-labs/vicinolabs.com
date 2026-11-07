@@ -5,7 +5,22 @@
 계산하고 녹음·저장·전송하지 않는다. 광고는 welegato 자체 배너 하나뿐(Play "광고 포함").
 """
 
-from appoggio_privacy_content import EMAIL, WELEGATO_PRIVACY, _id_card, _contact
+from appoggio_privacy_content import EMAIL, WELEGATO_PRIVACY, _id_card
+
+
+# Like welegato (the user's wish): the owner's name and address are not shown
+# at the top; the first section points to the card at the end and the Impressum.
+_OP_REF = {
+    "ko": '운영자의 주소와 연락처는 <a href="#ko-12">이 문서 맨 아래</a>와 <a href="/impressum/">Impressum</a>에 있습니다.',
+    "en": 'The operator\'s address and contact details are at <a href="#en-12">the end of this document</a> and in the <a href="/impressum/">Impressum</a>.',
+    "de": 'Anschrift und Kontaktdaten des Anbieters finden Sie <a href="#de-12">am Ende dieses Dokuments</a> und im <a href="/impressum/">Impressum</a>.',
+    "it": 'Indirizzo e contatti del gestore si trovano <a href="#it-12">alla fine di questo documento</a> e nell\'<a href="/impressum/">Impressum</a>.',
+}
+
+
+def _op_ref(lang):
+    return f'<p class="op-ref">{_OP_REF[lang]}</p>'
+
 
 PRIVACY = {
  "ko": {
@@ -16,7 +31,7 @@ PRIVACY = {
   "footer": "본 방침은 2026년 11월 7일부터 시행됩니다 (버전 1.0).",
   "other": "이용약관 보기 →",
   "sections": [
-   ("처리자(운영자) 정보", _id_card("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>회원가입·로그인이 없습니다. 설정은 <strong>기기 안에만</strong> 저장되고, 저희는 이를 볼 수 없습니다.</li>
 <li><strong>마이크</strong>는 튜너 화면에서 듣기를 켰을 때만 쓰입니다. 소리는 기기 안에서 실시간으로 음높이만 계산하고 바로 버려지며, <strong>녹음·저장·전송되지 않습니다</strong>.</li>
@@ -53,7 +68,7 @@ PRIVACY = {
 </ul>
 <p>저희는 이용자의 정보를 갖고 있지 않으므로, 기기 안의 설정은 앱 삭제로 직접 지울 수 있습니다. 궁금한 점은 아래로 연락해 주세요.</p>"""),
    ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있습니다. 변경 내용과 시행일은 이 페이지에 게시합니다.</p>"""),
-   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _contact("운영자")),
+   ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
@@ -64,7 +79,7 @@ PRIVACY = {
   "footer": "This policy is effective from 7 November 2026 (version 1.0).",
   "other": "Terms of Service →",
   "sections": [
-   ("Data controller", _id_card("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
 <li>No account or sign-in. Your settings are stored <strong>only on your device</strong> — we cannot see them.</li>
 <li>The <strong>microphone</strong> is used only while listening is on in the tuner. The sound is analysed on the device in real time for its pitch and then discarded — it is <strong>never recorded, stored or sent</strong>.</li>
@@ -101,7 +116,7 @@ PRIVACY = {
 </ul>
 <p>We hold no data about you; the settings on your device are deleted when you uninstall the app. For any question, please contact us below.</p>"""),
    ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page.</p>"""),
-   ("Contact", "<p>For questions about data processing, please contact:</p>" + _contact("Operator")),
+   ("Contact", "<p>For questions about data processing, please contact:</p>" + _id_card("en")),
   ],
  },
  "de": {
@@ -112,7 +127,7 @@ PRIVACY = {
   "footer": "Diese Erklärung gilt ab dem 7. November 2026 (Version 1.0).",
   "other": "Nutzungsbedingungen →",
   "sections": [
-   ("Verantwortlicher", _id_card("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für eine etwaige Verarbeitung personenbezogener Daten im Zusammenhang mit dieser App.</p>"),
+   ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für eine etwaige Verarbeitung personenbezogener Daten im Zusammenhang mit dieser App.</p>"),
    ("Das Wichtigste in Kürze", """<div class="summary-box"><ul>
 <li>Kein Konto, keine Anmeldung. Ihre Einstellungen werden <strong>nur auf Ihrem Gerät</strong> gespeichert — wir können sie nicht einsehen.</li>
 <li>Das <strong>Mikrofon</strong> wird nur verwendet, solange im Stimmgerät das Zuhören eingeschaltet ist. Der Ton wird auf dem Gerät in Echtzeit auf seine Tonhöhe ausgewertet und sofort verworfen — er wird <strong>nie aufgenommen, gespeichert oder übertragen</strong>.</li>
@@ -149,7 +164,7 @@ PRIVACY = {
 </ul>
 <p>Wir speichern keine Daten über Sie; die Einstellungen auf Ihrem Gerät werden beim Deinstallieren gelöscht. Bei Fragen erreichen Sie uns unten.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und Gültigkeitsdatum veröffentlichen wir auf dieser Seite.</p>"""),
-   ("Kontakt", "<p>Für Fragen zur Datenverarbeitung:</p>" + _contact("Anbieter")),
+   ("Kontakt", "<p>Für Fragen zur Datenverarbeitung:</p>" + _id_card("de")),
   ],
  },
  "it": {
@@ -160,7 +175,7 @@ PRIVACY = {
   "footer": "La presente informativa è in vigore dal 7 novembre 2026 (versione 1.0).",
   "other": "Termini di servizio →",
   "sections": [
-   ("Titolare del trattamento", _id_card("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per gli eventuali dati personali trattati in relazione a questa app.</p>"),
+   ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per gli eventuali dati personali trattati in relazione a questa app.</p>"),
    ("In sintesi", """<div class="summary-box"><ul>
 <li>Nessun account né login. Le impostazioni sono salvate <strong>solo sul tuo dispositivo</strong>: noi non possiamo vederle.</li>
 <li>Il <strong>microfono</strong> è usato solo mentre l'ascolto dell'accordatore è attivo. Il suono viene analizzato sul dispositivo in tempo reale per ricavarne l'altezza e poi scartato: <strong>non viene mai registrato, salvato né inviato</strong>.</li>
@@ -197,7 +212,7 @@ PRIVACY = {
 </ul>
 <p>Non conserviamo dati su di te; le impostazioni sul dispositivo si cancellano disinstallando l'app. Per qualsiasi domanda, contattaci qui sotto.</p>"""),
    ("Modifiche", """<p>Potremo aggiornare questa informativa in caso di modifiche normative o dell'app; modifiche e data di entrata in vigore saranno pubblicate in questa pagina.</p>"""),
-   ("Contatti", "<p>Per domande sul trattamento dei dati:</p>" + _contact("Titolare")),
+   ("Contatti", "<p>Per domande sul trattamento dei dati:</p>" + _id_card("it")),
   ],
  },
 }
