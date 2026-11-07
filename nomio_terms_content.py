@@ -356,3 +356,8 @@ TERMS = {'ko': {'title': 'Nomio 이용약관',
                       '<p>Bei Fragen zu diesen Bedingungen wenden Sie sich bitte an:</p>\n'
                       '<div class="contact-card"><span class="role">Betreiber</span><span class="name">Vicino '
                       'Labs</span><a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></div>')]}}
+
+
+# Owner card at the end, not the top (welegato style, 2026-11-07).
+from legal_owner import card_to_end  # noqa: E402
+card_to_end(TERMS)

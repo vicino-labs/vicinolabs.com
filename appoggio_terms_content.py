@@ -185,3 +185,8 @@ TERMS = {
   ],
  },
 }
+
+
+# Owner card at the end, not the top (welegato style, 2026-11-07).
+from legal_owner import card_to_end  # noqa: E402
+card_to_end(TERMS)
