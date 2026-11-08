@@ -9,7 +9,7 @@ body{width:2048px;height:1152px;overflow:hidden;font-family:'Pretendard',sans-se
 .brand img{height:96px}
 .brand span{font-size:132px;font-weight:800;letter-spacing:-.03em;color:#1a1715}
 .tag{margin-top:26px;font-size:46px;color:#5e5650}
-.apps{display:flex;gap:46px;margin-top:66px}
+.apps{display:flex;gap:40px;margin-top:66px}
 .app{width:150px;text-align:center}
 .app img{width:150px;height:150px;border-radius:34px;box-shadow:0 14px 34px rgba(40,25,15,.18);display:block}
 .app b{display:block;margin-top:18px;font-size:30px;font-weight:700;color:#2a2421}
@@ -25,9 +25,8 @@ body{width:2048px;height:1152px;overflow:hidden;font-family:'Pretendard',sans-se
   <div class="apps" id="apps"></div>
 </div>
 <script>
-// 2026-10-28 최종 아이콘(welegato-marketing/brand/vicino-icons-final-2026-10-28). Leggii는 2026-10-25 출시.
-const B='file:///Users/jameslee/App/welegato-marketing/brand/';
-const F=B+'vicino-icons-final-2026-10-28/';
-const apps=[['welegato',B+'welegato-icon-2026-10-28/icon-rounded-1024.png',0],['Appoggio',F+'appoggio/icon-rounded-1024.png',0],['Leggii',F+'leggii/icon-rounded-1024.png',0],['Squillo',F+'squillo/icon-rounded-1024.png',1],['Chiave',F+'chiave/icon-rounded-1024.png',1],['Nomio',F+'nomio/icon-rounded-1024.png',0]];
+// 2026-11-08 최종 아이콘(/Users/jameslee/App/brand/vicino-icons-final-2026-10-28, 렛지 올리브). 출시된 앱 먼저.
+const F='file:///Users/jameslee/App/brand/vicino-icons-final-2026-10-28/';
+const apps=[['welegato','welegato',0],['Leggii','leggii',0],['Appoggio','appoggio',0],['Nomio','nomio',0],['Chiave','chiave',1],['Pianino','pianino',1],['Prova','prova',1],['Squillo','squillo',1]].map(([n,d,soon])=>[n,F+d+'/icon-rounded-1024.png',soon]);
 document.getElementById('apps').innerHTML=apps.map(([n,s,soon])=>`<div class="app"><img src="${s}"><b>${n}</b><i class="${soon?'':'on'}">Coming soon</i></div>`).join('');
 </script></body></html>

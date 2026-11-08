@@ -15,7 +15,7 @@ LEGGII = {
     "home": "/leggii/",
     "mark": "L",
     "mark_bg": "#2a2c30",  # 아이콘 차콜
-    "mark_img": "/leggii/icon.png",  # 지금 앱 아이콘(크림 악보, 2026-11-05) — 옛 "L" 글자 대신
+    "mark_img": "/leggii/icon.png",  # 최종 아이콘(올리브, 2026-11-08) 120px
     "langs": [("ko", "한국어"), ("en", "English"), ("de", "Deutsch"), ("it", "Italiano")],
     "storage": "leggii-legal-lang",
 }
