@@ -65,10 +65,10 @@ def page(lang, path, title, desc, body, alt=None, wide=False):
 
 PLAY = "https://play.google.com/store/apps/details?id="
 # 앱 순서(2026-11-08): 음악 앱(출시 → 준비 중), 노미오는 맨 끝 '일상' 묶음.
-MUSIC = ["welegato", "leggii", "appoggio", "chiave", "pianino", "prova", "squillo"]
-STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "nomio": "app.nomio.finance"}
+MUSIC = ["welegato", "leggii", "appoggio", "pianino", "chiave", "prova", "squillo"]
+STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance"}
 NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "chiave": "Chiave", "pianino": "Pianino", "prova": "Prova", "squillo": "Squillo", "nomio": "Nomio"}
-SOON = {"chiave", "pianino", "prova", "squillo"}
+SOON = {"chiave", "prova", "squillo"}
 
 TXT = {
  "de": {"home": "/", "apps_nav": "Apps", "other": "English", "other_href": "/en/", "privacy": "Datenschutz",
