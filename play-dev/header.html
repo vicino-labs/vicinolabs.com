@@ -27,6 +27,6 @@ body{width:2048px;height:1152px;overflow:hidden;font-family:'Pretendard',sans-se
 <script>
 // 2026-11-08 최종 아이콘(/Users/jameslee/App/brand/vicino-icons-final-2026-10-28, 렛지 올리브). 출시된 앱 먼저.
 const F='file:///Users/jameslee/App/brand/vicino-icons-final-2026-10-28/';
-const apps=[['welegato','welegato',0],['Leggii','leggii',0],['Appoggio','appoggio',0],['Nomio','nomio',0],['Chiave','chiave',1],['Pianino','pianino',1],['Prova','prova',1],['Squillo','squillo',1]].map(([n,d,soon])=>[n,F+d+'/icon-rounded-1024.png',soon]);
+const apps=[['welegato','welegato',0],['Leggii','leggii',0],['Appoggio','appoggio',0],['Chiave','chiave',1],['Pianino','pianino',1],['Prova','prova',1],['Squillo','squillo',1],['Nomio','nomio',0]].map(([n,d,soon])=>[n,F+d+'/icon-rounded-1024.png',soon]);
 document.getElementById('apps').innerHTML=apps.map(([n,s,soon])=>`<div class="app"><img src="${s}"><b>${n}</b><i class="${soon?'':'on'}">Coming soon</i></div>`).join('');
 </script></body></html>
