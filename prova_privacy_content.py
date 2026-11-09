@@ -9,6 +9,7 @@
 AI 시간은 Leggii와 아이디별 공유(어느 앱이 썼는지 기록), 클라우드(Plus, R2, Leggii와 용량 공유), 구독.
 보관·삭제·수탁자 문구는 Leggii 1.2를 따랐다.
 2026-11-09 버전 1.1: 위레가토 채팅으로 클라우드 녹음 7일 공유(오디오만, 링크만).
+2026-11-09 버전 1.2 초안(운영자 승인 전, 앱 1.0.0+8~): 프로바에게 물어보기(로그인 없이, 질문 저장 안 함, 남용 방지 로그 30일), AI 답·AI 분석 신고(180일).
 """
 
 from appoggio_privacy_content import EMAIL, _id_card
@@ -37,14 +38,15 @@ PRIVACY = {
  "ko": {
   "title": "프로바(Prova) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.07"), ("버전", "1.0"), ("운영자", "Vicino Labs")],
-  "lede": "Vicino Labs가 만든 프로바(Prova)는 레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 오디션·콩쿠르 제출 영상을 점검하는 앱입니다. 녹음과 영상은 이용자의 기기에만 저장되며, 계정 없이 쓸 수 있습니다. 위레가토 통합 아이디로 로그인해 AI 분석, 클라우드, 구독을 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 9일부터 시행됩니다 (버전 1.1). 이전 버전 1.0: 2026년 11월 7일.",
+  "meta": [("시행일", "2026.11.10"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
+  "lede": "Vicino Labs가 만든 프로바(Prova)는 레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 오디션·콩쿠르 제출 영상을 점검하는 앱입니다. 녹음과 영상은 이용자의 기기에만 저장되며, 계정 없이 쓸 수 있습니다. 위레가토 통합 아이디로 로그인해 AI 분석, 클라우드, 구독을 쓸 때와 “프로바에게 물어보기”를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
+  "footer": "본 방침은 2026년 11월 10일부터 시행됩니다 (버전 1.2). 이전 버전 1.1: 2026년 11월 9일, 1.0: 2026년 11월 7일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
-<li>녹음(오디오)과 영상, 테이크 정보는 <strong>기기 안에만</strong> 저장되며, 로그인하지 않으면 아무것도 저희에게 올라가지 않습니다. 녹음에는 계정이 필요 없습니다.</li>
+<li>녹음(오디오)과 영상, 테이크 정보는 <strong>기기 안에만</strong> 저장되며, 로그인하지 않으면 녹음·영상은 저희에게 올라가지 않습니다. 녹음에는 계정이 필요 없습니다.</li>
+<li><strong>프로바에게 물어보기</strong>의 질문은 답을 만들 때만 보내며 저장하지 않습니다. 이용자가 직접 신고한 AI 답과 AI 분석만 의견과 함께 180일 보관합니다.</li>
 <li>레슨을 녹음·녹화하기 전에 앱이 선생님(미성년자는 보호자도)의 동의를 받았는지 확인합니다.</li>
 <li>녹음 중 방해 금지(안드로이드)는 이용자가 허용했을 때만 켜고, 녹음이 끝나면 이용자의 원래 설정으로 되돌립니다.</li>
 <li>광고, 분석·추적 도구가 없습니다.</li>
@@ -99,16 +101,19 @@ PRIVACY = {
 <li>충전 기록은 같은 구매가 두 번 지급되지 않도록, 아이디를 삭제한 뒤에도 계정과 분리된 해시로 보관합니다.</li>
 </ul>
 <p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a> 또는 <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple 개인정보 처리방침</a>이 적용됩니다.</p>"""),
-   ("서비스 제공자(수탁자)와 국외 이전", """<p>아래 업체는 로그인하거나 AI 분석·클라우드·구독을 쓸 때만 관여합니다. 로그인 없이 녹음만 하는 경우에는 어떤 업체에도 정보가 가지 않습니다.</p>
+   ("프로바에게 물어보기", """<p>도우미에 질문하면 질문, 앱 언어, 지금 보고 있는 화면 이름, 최근 대화 몇 개를 저희 서버와 Google Gemini API로 보내 답을 만듭니다. 로그인하지 않아도 쓸 수 있고, <strong>질문 내용은 저장하지 않습니다.</strong> 녹음·영상과 테이크 제목은 보내지 않으며, 테이크 고르기는 기기 안에서만 합니다.</p>
+<p>무료로 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 설치 번호의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
+   ("AI 답 신고", """<p>프로바에게 물어보기의 답이나 AI 분석 결과가 부적절하거나 틀렸다고 생각되면 <strong>신고</strong>할 수 있습니다. 신고할 때만 신고한 AI 글(물어보기는 질문과 답), 고른 이유, 적은 의견, 앱 언어, 설치 번호의 해시를 저희 서버로 보내고, 담당자에게 알림 메일이 갑니다. 신고는 검토와 AI 품질 개선에만 쓰며 <strong>180일</strong> 보관한 뒤 지웁니다. 남용 방지를 위해 설치당 하루 10건까지 받습니다. 처리 근거: 서비스 개선과 부적절한 AI 출력 대응을 위한 정당한 이익(f호).</p>"""),
+   ("서비스 제공자(수탁자)와 국외 이전", """<p>아래 업체는 로그인하거나 AI 분석·클라우드·구독·프로바에게 물어보기를 쓸 때만 관여합니다. 로그인 없이 녹음만 하는 경우에는 어떤 업체에도 정보가 가지 않습니다.</p>
 <ul>
 <li><strong>Supabase</strong> — 로그인(Supabase Auth), 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
-<li><strong>Google</strong> — Gemini API(AI 분석), Google Play 결제와 구매 확인, Google 로그인</li>
+<li><strong>Google</strong> — Gemini API(AI 분석·도우미), Google Play 결제와 구매 확인, Google 로그인</li>
 <li><strong>Cloudflare</strong> — 클라우드의 파일 저장(R2, Plus), 이메일 로그인의 자동 가입 방지(Turnstile)</li>
 <li><strong>Apple</strong> — App Store 결제(iPhone·iPad)</li>
 </ul>
 <p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
    ("수집하지 않는 정보", """<p>로그인하지 않으면 이름·이메일·전화번호를 받지 않습니다. 위치, 연락처, 광고 식별자는 수집하지 않으며, 광고 네트워크와 분석·추적 SDK가 없습니다. 영상의 화면은 AI 분석에도 보내지 않습니다.</p>"""),
-   ("아동", """<p>녹음과 테이크 비교 같은 기본 기능에는 연령 제한이 없습니다. 위레가토 통합 아이디 로그인은 만 16세 이상만 할 수 있고, 만 16세 미만이 AI 분석을 쓸 때는 보호자의 동의가 필요합니다. 미성년자가 함께 녹음되는 레슨은 보호자의 동의를 받아 주세요.</p>"""),
+   ("아동", """<p>녹음과 테이크 비교 같은 기본 기능에는 연령 제한이 없습니다. 위레가토 통합 아이디 로그인은 만 16세 이상만 할 수 있고, 만 16세 미만이 AI 분석이나 프로바에게 물어보기를 쓸 때는 보호자의 동의가 필요합니다. 미성년자가 함께 녹음되는 레슨은 보호자의 동의를 받아 주세요.</p>"""),
    ("정보주체의 권리", f"""<ul>
 <li>열람·정정·삭제·처리제한·데이터 이동·이의제기권(GDPR 제15~21조)</li>
 <li>감독기관에 민원을 제기할 권리 — 예: 노르트라인베스트팔렌주 정보보호·정보자유 감독관(LDI NRW) 또는 거주지 관할 감독기관</li>
@@ -121,14 +126,15 @@ PRIVACY = {
  "en": {
   "title": "Prova Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-07"), ("Version", "1.0"), ("Operator", "Vicino Labs")],
-  "lede": "Prova, made by Vicino Labs, records and films your lessons and practice, lets you compare takes and helps you check audition and competition videos. Recordings and videos are stored only on your device, and you can use it without an account. Only when you sign in with a welegato ID to use AI analysis, the cloud or a subscription does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 9 November 2026 (version 1.1). Previous version 1.0: 7 November 2026.",
+  "meta": [("Effective", "2026-11-10"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
+  "lede": "Prova, made by Vicino Labs, records and films your lessons and practice, lets you compare takes and helps you check audition and competition videos. Recordings and videos are stored only on your device, and you can use it without an account. Only when you sign in with a welegato ID to use AI analysis, the cloud or a subscription, or when you use Ask Prova, does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
+  "footer": "This policy is effective from 10 November 2026 (version 1.2). Previous versions 1.1: 9 November 2026, 1.0: 7 November 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
-<li>Audio recordings, videos and take details stay <strong>on your device</strong>; without signing in nothing is uploaded to us. Recording needs no account.</li>
+<li>Audio recordings, videos and take details stay <strong>on your device</strong>; without signing in no recording or video is uploaded to us. Recording needs no account.</li>
+<li>Questions to <strong>Ask Prova</strong> are sent only to write the answer and are not stored. Only an AI answer or AI analysis you report yourself is kept, with your comment, for 180 days.</li>
 <li>Before you record or film a lesson, the app asks you to confirm that the teacher (and, for minors, a parent or guardian) has agreed.</li>
 <li>Do Not Disturb while recording (Android) is switched on only if you allow it, and your own setting is restored when the take ends.</li>
 <li>No ads, and no analytics or tracking tools.</li>
@@ -183,16 +189,19 @@ PRIVACY = {
 <li>Top-up records are kept as hashes, separated from the account, even after an ID is deleted, so the same purchase is never credited twice.</li>
 </ul>
 <p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a> or <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>"""),
-   ("Service providers (processors) and transfers", """<p>These providers are involved only when you sign in or use AI analysis, the cloud or a subscription. If you only record without signing in, no data goes to any of them.</p>
+   ("Ask Prova", """<p>When you ask the assistant, your question, the app language, the name of the screen you are on and a few recent messages go to our server and the Google Gemini API to write the answer. It works without signing in, and <strong>questions are not stored.</strong> No recordings, videos or take titles are sent; picking a take happens on the device.</p>
+<p>To keep it free with up to 30 questions a day, a hash of the install number, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
+   ("Reporting an AI answer", """<p>If an Ask Prova answer or an AI analysis seems offensive or wrong, you can <strong>report</strong> it. Only then do the reported AI text (for Ask Prova, the question and the answer), the reason you chose, your comment, the app language and a hash of the install number go to our server, and our team gets a notification mail. Reports are used only for review and to improve the AI, and are kept for <strong>180 days</strong>, then deleted. To prevent abuse we accept up to 10 reports a day per install. Legal basis: our legitimate interest in improving the service and handling inappropriate AI output (f).</p>"""),
+   ("Service providers (processors) and transfers", """<p>These providers are involved only when you sign in or use AI analysis, the cloud, a subscription or Ask Prova. If you only record without signing in, no data goes to any of them.</p>
 <ul>
 <li><strong>Supabase</strong> — sign-in (Supabase Auth), server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
-<li><strong>Google</strong> — Gemini API (AI analysis), Google Play payments and purchase checks, Google sign-in</li>
+<li><strong>Google</strong> — Gemini API (AI analysis and assistant), Google Play payments and purchase checks, Google sign-in</li>
 <li><strong>Cloudflare</strong> — file storage of the cloud (R2, Plus), protection against automated email sign-ups (Turnstile)</li>
 <li><strong>Apple</strong> — App Store payments (iPhone, iPad)</li>
 </ul>
 <p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
    ("Data we don't collect", """<p>Without signing in we receive no name, email or phone number. We collect no location, contacts or advertising ID, and there are no ad networks or analytics or tracking SDKs. The picture of a video is not sent, not even for AI analysis.</p>"""),
-   ("Children", """<p>The basic features such as recording and comparing takes have no age limit. Signing in with a welegato ID is only for people aged 16 or over; under 16, AI analysis needs a parent's consent. For lessons in which a minor is recorded, please get a parent's or guardian's consent.</p>"""),
+   ("Children", """<p>The basic features such as recording and comparing takes have no age limit. Signing in with a welegato ID is only for people aged 16 or over; under 16, AI analysis and Ask Prova need a parent's consent. For lessons in which a minor is recorded, please get a parent's or guardian's consent.</p>"""),
    ("Your rights", f"""<ul>
 <li>Access, rectification, erasure, restriction of processing, data portability and objection (Art. 15–21 GDPR)</li>
 <li>Lodge a complaint with a supervisory authority — e.g. the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW) or the authority where you live</li>
@@ -205,14 +214,15 @@ PRIVACY = {
  "de": {
   "title": "Prova Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "07.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Prova von Vicino Labs nimmt Unterricht und Üben auf und filmt sie, lässt dich Takes vergleichen und hilft beim Prüfen von Bewerbungsvideos für Vorspiele und Wettbewerbe. Aufnahmen und Videos werden nur auf deinem Gerät gespeichert; ein Konto brauchst du dafür nicht. Nur wenn du dich mit einer welegato-ID anmeldest, um KI-Analyse, Cloud oder ein Abo zu nutzen, laufen Daten über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 9. November 2026 (Version 1.1). Vorherige Version 1.0: 7. November 2026.",
+  "meta": [("Gültig ab", "10.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
+  "lede": "Prova von Vicino Labs nimmt Unterricht und Üben auf und filmt sie, lässt dich Takes vergleichen und hilft beim Prüfen von Bewerbungsvideos für Vorspiele und Wettbewerbe. Aufnahmen und Videos werden nur auf deinem Gerät gespeichert; ein Konto brauchst du dafür nicht. Nur wenn du dich mit einer welegato-ID anmeldest, um KI-Analyse, Cloud oder ein Abo zu nutzen, oder „Prova fragen“ verwendest, laufen Daten über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
+  "footer": "Diese Erklärung gilt ab dem 10. November 2026 (Version 1.2). Frühere Versionen 1.1: 9. November 2026, 1.0: 7. November 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
-<li>Tonaufnahmen, Videos und Take-Angaben bleiben <strong>auf deinem Gerät</strong>; ohne Anmeldung wird nichts zu uns hochgeladen. Zum Aufnehmen brauchst du kein Konto.</li>
+<li>Tonaufnahmen, Videos und Take-Angaben bleiben <strong>auf deinem Gerät</strong>; ohne Anmeldung werden keine Aufnahmen oder Videos zu uns hochgeladen. Zum Aufnehmen brauchst du kein Konto.</li>
+<li>Fragen an <strong>„Prova fragen“</strong> werden nur zum Antworten gesendet und nicht gespeichert. Nur eine KI-Antwort oder KI-Analyse, die du selbst meldest, wird mit deinem Kommentar 180 Tage gespeichert.</li>
 <li>Bevor du Unterricht aufnimmst oder filmst, bittet die App dich zu bestätigen, dass die Lehrkraft (bei Minderjährigen auch die Eltern bzw. Sorgeberechtigten) einverstanden ist.</li>
 <li>„Bitte nicht stören“ während der Aufnahme (Android) wird nur eingeschaltet, wenn du es erlaubst; danach wird deine eigene Einstellung wiederhergestellt.</li>
 <li>Keine Werbung und keine Analyse- oder Tracking-Tools.</li>
@@ -267,16 +277,19 @@ PRIVACY = {
 <li>Einträge zu Aufladungen bleiben als vom Konto getrennter Hash auch nach Löschen einer ID erhalten, damit derselbe Kauf nie doppelt gutgeschrieben wird.</li>
 </ul>
 <p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> bzw. die <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>"""),
-   ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<p>Diese Anbieter sind nur beteiligt, wenn du dich anmeldest oder KI-Analyse, Cloud oder ein Abo nutzt. Nimmst du nur ohne Anmeldung auf, gehen an keinen von ihnen Daten.</p>
+   ("Prova fragen", """<p>Wenn du den Assistenten fragst, gehen deine Frage, die App-Sprache, der Name des geöffneten Bildschirms und einige letzte Nachrichten an unseren Server und die Gemini-API von Google, um die Antwort zu schreiben. Das geht auch ohne Anmeldung, und <strong>Fragen werden nicht gespeichert.</strong> Aufnahmen, Videos und Take-Titel werden nicht gesendet; Takes werden auf dem Gerät ausgewählt.</p>
+<p>Damit der Dienst mit bis zu 30 Fragen pro Tag kostenlos bleibt, speichern wir zum Missbrauchsschutz einen Hash der Installationsnummer, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
+   ("KI-Antworten melden", """<p>Wenn eine Antwort von „Prova fragen“ oder eine KI-Analyse anstößig oder falsch wirkt, kannst du sie <strong>melden</strong>. Nur dann gehen der gemeldete KI-Text (bei „Prova fragen“ Frage und Antwort), der gewählte Grund, dein Kommentar, die App-Sprache sowie ein Hash der Installationsnummer an unseren Server, und unser Team erhält eine Benachrichtigung per E-Mail. Meldungen dienen nur der Prüfung und der Verbesserung der KI und werden <strong>180 Tage</strong> gespeichert und dann gelöscht. Zum Missbrauchsschutz nehmen wir bis zu 10 Meldungen pro Tag und Installation an. Rechtsgrundlage: berechtigtes Interesse an der Verbesserung des Dienstes und am Umgang mit unangemessenen KI-Ausgaben (lit. f).</p>"""),
+   ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<p>Diese Anbieter sind nur beteiligt, wenn du dich anmeldest oder KI-Analyse, Cloud, ein Abo oder „Prova fragen“ nutzt. Nimmst du nur ohne Anmeldung auf, gehen an keinen von ihnen Daten.</p>
 <ul>
 <li><strong>Supabase</strong> — Anmeldung (Supabase Auth), Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
-<li><strong>Google</strong> — Gemini-API (KI-Analyse), Google-Play-Zahlungen und Kaufprüfung, Google-Anmeldung</li>
+<li><strong>Google</strong> — Gemini-API (KI-Analyse und Assistent), Google-Play-Zahlungen und Kaufprüfung, Google-Anmeldung</li>
 <li><strong>Cloudflare</strong> — Dateispeicher der Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
 <li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
    ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht; es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-SDKs. Das Bild eines Videos wird nicht gesendet, auch nicht für die KI-Analyse.</p>"""),
-   ("Kinder", """<p>Die Grundfunktionen wie Aufnehmen und Takes vergleichen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 braucht die KI-Analyse die Einwilligung der Eltern. Bei Unterricht, in dem Minderjährige aufgenommen werden, hole bitte die Einwilligung der Eltern bzw. Sorgeberechtigten ein.</p>"""),
+   ("Kinder", """<p>Die Grundfunktionen wie Aufnehmen und Takes vergleichen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 brauchen KI-Analyse und „Prova fragen“ die Einwilligung der Eltern. Bei Unterricht, in dem Minderjährige aufgenommen werden, hole bitte die Einwilligung der Eltern bzw. Sorgeberechtigten ein.</p>"""),
    ("Deine Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
 <li>Beschwerde bei einer Aufsichtsbehörde — z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde deines Wohnorts</li>
@@ -289,14 +302,15 @@ PRIVACY = {
  "it": {
   "title": "Prova — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "07.11.2026"), ("Versione", "1.0"), ("Gestore", "Vicino Labs")],
-  "lede": "Prova, di Vicino Labs, registra e filma lezioni e studio, ti fa confrontare le take e ti aiuta a controllare i video per audizioni e concorsi. Registrazioni e video restano solo sul tuo dispositivo e puoi usarla senza account. Solo quando accedi con un welegato ID per usare l'analisi AI, il cloud o un abbonamento qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 9 novembre 2026 (versione 1.1). Versione precedente 1.0: 7 novembre 2026.",
+  "meta": [("In vigore dal", "10.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
+  "lede": "Prova, di Vicino Labs, registra e filma lezioni e studio, ti fa confrontare le take e ti aiuta a controllare i video per audizioni e concorsi. Registrazioni e video restano solo sul tuo dispositivo e puoi usarla senza account. Solo quando accedi con un welegato ID per usare l'analisi AI, il cloud o un abbonamento, o quando usi «Chiedi a Prova», qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
+  "footer": "Questa informativa è in vigore dal 10 novembre 2026 (versione 1.2). Versioni precedenti 1.1: 9 novembre 2026, 1.0: 7 novembre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
-<li>Registrazioni audio, video e dati delle take restano <strong>sul tuo dispositivo</strong>; senza accesso nulla viene caricato da noi. Per registrare non serve un account.</li>
+<li>Registrazioni audio, video e dati delle take restano <strong>sul tuo dispositivo</strong>; senza accesso nessuna registrazione o video viene caricato da noi. Per registrare non serve un account.</li>
+<li>Le domande a <strong>«Chiedi a Prova»</strong> vengono inviate solo per scrivere la risposta e non vengono salvate. Solo una risposta o un'analisi AI che segnali tu viene conservata, con il tuo commento, per 180 giorni.</li>
 <li>Prima di registrare o filmare una lezione, l'app ti chiede di confermare che l'insegnante (e, per i minori, un genitore o tutore) è d'accordo.</li>
 <li>Il «Non disturbare» durante la registrazione (Android) si attiva solo se lo consenti, e alla fine viene ripristinata la tua impostazione.</li>
 <li>Nessuna pubblicità e nessuno strumento di analisi o tracciamento.</li>
@@ -351,16 +365,19 @@ PRIVACY = {
 <li>Le registrazioni delle ricariche restano come hash separati dall'account anche dopo l'eliminazione di un ID, così lo stesso acquisto non viene accreditato due volte.</li>
 </ul>
 <p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a> o l'<a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>"""),
-   ("Fornitori di servizi (responsabili) e trasferimenti", """<p>Questi fornitori intervengono solo quando accedi o usi l'analisi AI, il cloud o un abbonamento. Se registri soltanto, senza accesso, nessun dato va a nessuno di loro.</p>
+   ("Chiedi a Prova", """<p>Quando fai una domanda all'assistente, la domanda, la lingua dell'app, il nome della schermata aperta e alcuni messaggi recenti vanno al nostro server e all'API Gemini di Google per scrivere la risposta. Funziona anche senza accesso e <strong>le domande non vengono salvate.</strong> Registrazioni, video e titoli delle take non vengono inviati; la scelta della take avviene sul dispositivo.</p>
+<p>Per mantenerlo gratuito con fino a 30 domande al giorno, per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash del numero di installazione, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
+   ("Segnalare una risposta AI", """<p>Se una risposta di «Chiedi a Prova» o un'analisi AI ti sembra offensiva o sbagliata, puoi <strong>segnalarla</strong>. Solo allora il testo AI segnalato (per «Chiedi a Prova», domanda e risposta), il motivo scelto, il tuo commento, la lingua dell'app e un hash del numero di installazione vanno al nostro server, e il nostro team riceve un'email di avviso. Le segnalazioni servono solo per la verifica e per migliorare l'AI e sono conservate per <strong>180 giorni</strong>, poi cancellate. Per prevenire abusi accettiamo fino a 10 segnalazioni al giorno per installazione. Base giuridica: legittimo interesse a migliorare il servizio e a gestire risposte AI inappropriate (lett. f).</p>"""),
+   ("Fornitori di servizi (responsabili) e trasferimenti", """<p>Questi fornitori intervengono solo quando accedi o usi l'analisi AI, il cloud o un abbonamento o «Chiedi a Prova». Se registri soltanto, senza accesso, nessun dato va a nessuno di loro.</p>
 <ul>
 <li><strong>Supabase</strong> — accesso (Supabase Auth), server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
-<li><strong>Google</strong> — API Gemini (analisi AI), pagamenti e verifica acquisti di Google Play, accesso con Google</li>
+<li><strong>Google</strong> — API Gemini (analisi AI e assistente), pagamenti e verifica acquisti di Google Play, accesso con Google</li>
 <li><strong>Cloudflare</strong> — archiviazione dei file del cloud (R2, Plus), protezione dalle registrazioni email automatiche (Turnstile)</li>
 <li><strong>Apple</strong> — pagamenti App Store (iPhone, iPad)</li>
 </ul>
 <p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
    ("Dati che non raccogliamo", """<p>Senza accesso non riceviamo nome, email né numero di telefono. Non raccogliamo posizione, contatti né ID pubblicitari, e non ci sono reti pubblicitarie né SDK di analisi o tracciamento. L'immagine di un video non viene inviata, nemmeno per l'analisi AI.</p>"""),
-   ("Minori", """<p>Le funzioni di base, come registrare e confrontare le take, non hanno limiti di età. L'accesso con un welegato ID è riservato a chi ha almeno 16 anni; sotto i 16 anni l'analisi AI richiede il consenso di un genitore. Per le lezioni in cui viene registrato un minore, ottieni il consenso di un genitore o tutore.</p>"""),
+   ("Minori", """<p>Le funzioni di base, come registrare e confrontare le take, non hanno limiti di età. L'accesso con un welegato ID è riservato a chi ha almeno 16 anni; sotto i 16 anni l'analisi AI e «Chiedi a Prova» richiedono il consenso di un genitore. Per le lezioni in cui viene registrato un minore, ottieni il consenso di un genitore o tutore.</p>"""),
    ("I tuoi diritti", f"""<ul>
 <li>Accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–21 GDPR)</li>
 <li>Reclamo a un'autorità di controllo — ad es. l'autorità per la protezione dei dati della Renania Settentrionale-Vestfalia (LDI NRW) o quella del tuo luogo di residenza</li>
