@@ -69,6 +69,7 @@ MUSIC = ["welegato", "leggii", "appoggio", "pianino", "chiave", "prova", "squill
 STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance"}
 NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "chiave": "Chiave", "pianino": "Pianino", "prova": "Prova", "squillo": "Squillo", "nomio": "Nomio"}
 SOON = {"chiave", "prova", "squillo"}
+LEGAL_ONLY = {"chiave", "prova"}  # 2026-11-09 법문 페이지만 먼저 연결
 
 TXT = {
  "de": {"home": "/", "apps_nav": "Apps", "other": "English", "other_href": "/en/", "privacy": "Datenschutz",
@@ -128,6 +129,8 @@ def card(lang, key):
         links.append(f'<a href="https://welegato.com/{"en/" if lang == "en" else ""}"{ext}>{t["site"]} →</a>')
     if key in STORE:
         links.append(f'<a href="{PLAY}{STORE[key]}"{ext}>{t["play"]}</a>')
+        links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
+    elif key in LEGAL_ONLY:  # 출시 전(Bald) 앱: 법문 링크만, Play 링크는 출시 후 STORE에 추가
         links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
     badge = f' <span class="soon">{t["soon"]}</span>' if soon else ""
     return (f'<div class="card"><img src="/apps/{key}.png" alt="" width="72" height="72" loading="lazy">'
