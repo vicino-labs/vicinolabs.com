@@ -52,7 +52,7 @@ PRIVACY = {
 <li>광고, 분석·추적 도구가 없습니다.</li>
 <li><strong>위레가토 통합 아이디</strong>로 로그인해야 AI 분석, 클라우드, 구독을 쓸 수 있습니다. 로그인하면 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
 <li><strong>AI 분석</strong>은 영상이라도 <strong>소리만</strong> 보냅니다 — 기기에서 만든 오디오 발췌본을 Google Gemini가 분석하고, 분석이 끝나면 지웁니다.</li>
-<li><strong>클라우드</strong>(Plus)는 테이크의 오디오를, 영상은 이용자가 별표하거나 고른 테이크만 올립니다(Cloudflare R2).</li>
+<li><strong>클라우드</strong>(Plus)는 이용자가 올린 테이크의 <strong>소리만</strong> 올립니다. 영상 테이크도 소리만 뽑아 올리고, 영상은 기기에만 남습니다(Cloudflare R2).</li>
 </ul></div>"""),
    ("기기에 저장되는 정보", """<ul>
 <li>녹음(AAC 오디오)과 영상(mp4, 전면·후면 카메라)</li>
@@ -88,7 +88,7 @@ PRIVACY = {
 <p>처리 근거: 이용자가 요청한 기능의 제공(GDPR 제6조 제1항 b호). 녹음된 다른 사람의 동의는 이용자가 받아야 합니다. 만 16세 미만은 보호자의 동의를 받아 이용해 주세요. Google의 처리는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 따릅니다.</p>"""),
    ("클라우드 (Plus, 선택)", """<p>Plus를 구독하고 위레가토 통합 아이디로 로그인하면, 클라우드가 같은 아이디의 기기들에서 테이크를 똑같이 맞춥니다.</p>
 <ul>
-<li><strong>저장하는 정보:</strong> 테이크의 오디오와 테이크 정보. 영상은 이용자가 별표하거나 직접 고른 테이크만 올립니다. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
+<li><strong>저장하는 정보:</strong> 이용자가 올린 테이크의 오디오와 테이크 정보. 영상 테이크는 소리만 뽑아 올리며, 영상 파일은 올리지 않습니다. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
 <li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 녹음이나 영상을 열어 보지 않습니다.</li>
 <li><strong>위레가토 채팅으로 보내기:</strong> 위레가토 채팅에서 클라우드에 있는 녹음을 골라 대화 상대에게 보내면, 상대는 보낸 때부터 7일 동안 짧게만 유효한 링크로 그 오디오를 들을 수 있습니다(영상은 보내지 않습니다). 파일은 복사되지 않고, 위레가토가 공유 기록(제목·종류·크기)을 저장합니다. 공유는 언제든 끌 수 있습니다(<a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>).</li>
 <li><strong>용량:</strong> 클라우드 용량은 아이디별로 렛지 클라우드와 함께 쓰며, 두 앱이 쓰는 양을 더해 계산합니다.</li>
@@ -140,7 +140,7 @@ PRIVACY = {
 <li>No ads, and no analytics or tracking tools.</li>
 <li>AI analysis, the cloud and subscriptions need a <strong>welegato ID</strong>. When you sign in, account data falls under the welegato privacy policy.</li>
 <li><strong>AI analysis</strong> sends <strong>only the sound</strong>, even for videos — an audio excerpt made on your device is analysed by Google Gemini and deleted afterwards.</li>
-<li>The <strong>cloud</strong> (Plus) uploads the audio of your takes, and video only for takes you star or choose (Cloudflare R2).</li>
+<li>The <strong>cloud</strong> (Plus) uploads <strong>only the sound</strong> of the takes you upload. For video takes only the sound is extracted and uploaded; the video stays on your device (Cloudflare R2).</li>
 </ul></div>"""),
    ("Data stored on your device", """<ul>
 <li>Audio recordings (AAC) and videos (mp4, front or back camera)</li>
@@ -176,7 +176,7 @@ PRIVACY = {
 <p>Legal basis: providing the feature you asked for (Art. 6(1)(b) GDPR). You must get the consent of other people who are recorded. Under 16, please use it with a parent's consent. Google processes data under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>"""),
    ("Cloud (Plus, optional)", """<p>With a Plus subscription and the welegato ID signed in, the cloud keeps your takes the same on every device of that ID.</p>
 <ul>
-<li><strong>What is stored:</strong> the audio of your takes and the take details. Video is uploaded only for takes you star or choose. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
+<li><strong>What is stored:</strong> the audio of the takes you upload and the take details. For video takes only the sound is uploaded, never the video file. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
 <li><strong>Where:</strong> the files with Cloudflare R2 (Cloudflare, Inc., processor); the list of items and the space used on our server (Supabase, EU, Frankfurt, Germany). Transfers are encrypted; files go only between the app of that ID and the cloud, through signed links that are valid for a short time. We do not open your recordings or videos.</li>
 <li><strong>Sending in welegato chat:</strong> if you pick a recording from your cloud in a welegato chat, your chat partner can listen to its audio for 7 days from sending, through links that are valid for a short time (video is not sent). The file is not copied; welegato keeps a record of the share (title, type, size). You can turn sharing off at any time (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>).</li>
 <li><strong>Space:</strong> cloud space is shared per ID with the Leggii cloud; what both apps use is added up.</li>
@@ -228,7 +228,7 @@ PRIVACY = {
 <li>Keine Werbung und keine Analyse- oder Tracking-Tools.</li>
 <li>KI-Analyse, Cloud und Abos brauchen eine <strong>welegato-ID</strong>. Meldest du dich an, unterliegen Kontodaten der welegato-Datenschutzerklärung.</li>
 <li>Die <strong>KI-Analyse</strong> sendet auch bei Videos <strong>nur den Ton</strong> — ein auf dem Gerät erstellter Tonausschnitt wird von Google Gemini analysiert und danach gelöscht.</li>
-<li>Die <strong>Cloud</strong> (Plus) lädt den Ton deiner Takes hoch, Videos nur bei Takes, die du markierst oder auswählst (Cloudflare R2).</li>
+<li>Die <strong>Cloud</strong> (Plus) lädt <strong>nur den Ton</strong> der Takes hoch, die du hochlädst. Bei Video-Takes wird nur der Ton herausgelöst und hochgeladen; das Video bleibt auf deinem Gerät (Cloudflare R2).</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
 <li>Tonaufnahmen (AAC) und Videos (mp4, Front- oder Rückkamera)</li>
@@ -264,7 +264,7 @@ PRIVACY = {
 <p>Rechtsgrundlage: Bereitstellung der gewünschten Funktion (Art. 6 Abs. 1 lit. b DSGVO). Die Einwilligung weiterer aufgenommener Personen holst du ein. Unter 16 bitte nur mit Einwilligung der Eltern. Google verarbeitet die Daten nach der <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>"""),
    ("Cloud (Plus, optional)", """<p>Mit einem Plus-Abo und angemeldeter welegato-ID hält die Cloud deine Takes auf allen Geräten dieser ID gleich.</p>
 <ul>
-<li><strong>Was gespeichert wird:</strong> der Ton deiner Takes und die Take-Angaben. Videos werden nur bei Takes hochgeladen, die du markierst oder auswählst. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
+<li><strong>Was gespeichert wird:</strong> der Ton der Takes, die du hochlädst, und die Take-Angaben. Bei Video-Takes wird nur der Ton hochgeladen, nie die Videodatei. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
 <li><strong>Wo:</strong> die Dateien bei Cloudflare R2 (Cloudflare, Inc., Auftragsverarbeiter), die Liste der Einträge und der belegte Speicher auf unserem Server (Supabase, EU, Frankfurt). Die Übertragung ist verschlüsselt; Dateien gehen nur zwischen der App dieser ID und der Cloud, über kurz gültige signierte Links. Wir öffnen deine Aufnahmen und Videos nicht.</li>
 <li><strong>Im welegato-Chat senden:</strong> Wählst du in einem welegato-Chat eine Aufnahme aus deiner Cloud, kann dein Gegenüber den Ton ab dem Senden 7 Tage lang über kurz gültige Links anhören (Videos werden nicht gesendet). Die Datei wird nicht kopiert; welegato speichert einen Eintrag zur Freigabe (Titel, Art, Größe). Du kannst die Freigabe jederzeit beenden (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a>).</li>
 <li><strong>Speicherplatz:</strong> Der Cloud-Speicher wird je ID mit der Leggii Cloud geteilt; was beide Apps belegen, wird zusammengerechnet.</li>
@@ -316,7 +316,7 @@ PRIVACY = {
 <li>Nessuna pubblicità e nessuno strumento di analisi o tracciamento.</li>
 <li>Analisi AI, cloud e abbonamenti richiedono un <strong>welegato ID</strong>. Quando accedi, i dati dell'account seguono l'informativa di welegato.</li>
 <li>L'<strong>analisi AI</strong> invia <strong>solo il suono</strong>, anche per i video: un estratto audio creato sul dispositivo viene analizzato da Google Gemini e poi cancellato.</li>
-<li>Il <strong>cloud</strong> (Plus) carica l'audio delle take, e il video solo per le take che contrassegni con la stella o scegli (Cloudflare R2).</li>
+<li>Il <strong>cloud</strong> (Plus) carica <strong>solo l'audio</strong> delle take che carichi. Per le take video viene estratto e caricato solo l'audio; il video resta sul tuo dispositivo (Cloudflare R2).</li>
 </ul></div>"""),
    ("Dati salvati sul dispositivo", """<ul>
 <li>Registrazioni audio (AAC) e video (mp4, fotocamera anteriore o posteriore)</li>
@@ -352,7 +352,7 @@ PRIVACY = {
 <p>Base giuridica: fornire la funzione richiesta (art. 6, par. 1, lett. b GDPR). Il consenso delle altre persone registrate spetta a te. Sotto i 16 anni, usala con il consenso di un genitore. Google tratta i dati secondo l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>"""),
    ("Cloud (Plus, facoltativo)", """<p>Con un abbonamento Plus e il welegato ID connesso, il cloud mantiene le tue take uguali su tutti i dispositivi di quell'ID.</p>
 <ul>
-<li><strong>Cosa viene salvato:</strong> l'audio delle take e i dati delle take. Il video viene caricato solo per le take che contrassegni con la stella o scegli. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
+<li><strong>Cosa viene salvato:</strong> l'audio delle take che carichi e i dati delle take. Per le take video viene caricato solo l'audio, mai il file video. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
 <li><strong>Dove:</strong> i file su Cloudflare R2 (Cloudflare, Inc., responsabile del trattamento), l'elenco degli elementi e lo spazio usato sul nostro server (Supabase, UE, Francoforte). Il trasferimento è cifrato; i file passano solo tra l'app di quell'ID e il cloud, tramite link firmati validi per poco tempo. Non apriamo le tue registrazioni né i tuoi video.</li>
 <li><strong>Invio nella chat di welegato:</strong> se in una chat di welegato scegli una registrazione dal tuo cloud, il tuo interlocutore può ascoltarne l'audio per 7 giorni dall'invio, tramite link validi per poco tempo (i video non vengono inviati). Il file non viene copiato; welegato conserva un registro della condivisione (titolo, tipo, dimensione). Puoi disattivare la condivisione in qualsiasi momento (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa di welegato</a>).</li>
 <li><strong>Spazio:</strong> lo spazio nel cloud è condiviso per ID con il cloud di Leggii; ciò che usano le due app viene sommato.</li>
