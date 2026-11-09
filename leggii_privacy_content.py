@@ -7,6 +7,7 @@
 2026-11-05 버전 1.1 (앱 1.2.0~1.4.0): 레슨·리허설 녹음(기기 안에만), 녹음 재생 알림, AI 레슨 분석(Gemini, 요청 시),
 구매·구독·AI 시간 서버 확인(가명 해시), 선택 로그인(위레가토 통합 아이디), 렛지에게 물어보기, 수탁자 목록.
 2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus, Cloudflare R2), 아이디 삭제 시 클라우드 삭제, Plus 종료 후 90일.
+2026-11-09 버전 1.3: 위레가토 채팅으로 클라우드 파일 7일 공유(링크만, 위레가토가 공유 기록 저장).
   (2026-11-05 시행 전 추가: AI 답 신고 — 사용자가 신고할 때만 AI 글·의견 180일 보관, Play AI 생성 콘텐츠 정책.)
 """
 
@@ -45,7 +46,7 @@ PRIVACY = {
   "h1": "개인정보처리방침",
   "meta": [("시행일", "2026.11.06"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)의 기본 기능은 회원가입 없이 기기 안에서만 동작하며, 악보·필기·녹음은 이용자의 기기에 저장됩니다. AI 레슨 분석, 구매 확인, 선택 로그인(위레가토 통합 아이디), 렛지 클라우드(Plus), 렛지에게 물어보기를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 6일부터 시행됩니다 (버전 1.2). 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
+  "footer": "본 방침은 2026년 11월 9일부터 시행됩니다 (버전 1.3). 이전 버전 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
@@ -103,6 +104,7 @@ PRIVACY = {
 <ul>
 <li><strong>저장하는 정보:</strong> 악보 PDF, 악보 정보·필기·책갈피, 폴더와 셋리스트, 개인 노트(AI 노트 PDF), 그리고 “녹음도 클라우드에 올리기”가 켜져 있으면(기본값) 녹음 파일과 녹음 정보. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
 <li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 악보나 녹음을 열어 보지 않습니다.</li>
+<li><strong>위레가토 채팅으로 보내기:</strong> 위레가토 채팅에서 클라우드에 있는 악보·레슨 노트·녹음을 골라 대화 상대에게 보내면, 상대는 보낸 때부터 7일 동안 짧게만 유효한 링크로 그 파일을 열어 볼 수 있습니다. 파일은 복사되지 않고, 위레가토가 공유 기록(제목·종류·크기)을 저장합니다. 공유는 언제든 끌 수 있습니다(<a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>).</li>
 <li><strong>동기화:</strong> 기본으로 Wi-Fi에서만 하며, 이용자가 모바일 데이터 동기화를 켤 수 있습니다. “이 기기에서 지우기(클라우드에 보관)”를 고르면 기기의 파일만 지우고 클라우드에는 남깁니다.</li>
 <li><strong>보관과 삭제:</strong> 한 기기에서 지운 악보·녹음은 클라우드와 다른 기기에서도 지워집니다. 아이디를 삭제하면 클라우드의 모든 파일과 기록을 지체 없이(늦어도 24시간 안에) 지웁니다. Plus가 끝나면 새 업로드만 멈추고 90일 동안 내려받을 수 있으며, 그 전에 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 기기 안의 파일은 건드리지 않습니다.</li>
 </ul>
@@ -136,7 +138,7 @@ PRIVACY = {
   "h1": "Privacy Policy",
   "meta": [("Effective", "2026-11-06"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
   "lede": "The basic features of Leggii, a sheet music app made by Vicino Labs, work without an account and only on your device; your scores, notes and recordings are stored there. Only AI lesson analysis, purchase checks, the optional sign-in (welegato ID), the Leggii cloud (Plus) and Ask Leggii go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 6 November 2026 (version 1.2). Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
+  "footer": "This policy is effective from 9 November 2026 (version 1.3). Previous versions 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
@@ -194,6 +196,7 @@ PRIVACY = {
 <ul>
 <li><strong>What is stored:</strong> score PDFs, score details, ink and bookmarks, folders and setlists, my notes (AI notes PDFs) and — while “Recordings to the cloud too” is on (the default) — recordings and their details. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
 <li><strong>Where:</strong> the files with Cloudflare R2 (Cloudflare, Inc., processor); the list of items and the space used on our server (Supabase, EU, Frankfurt, Germany). Transfers are encrypted; files go only between the app of that ID and the cloud, through signed links that are valid for a short time. We do not open your scores or recordings.</li>
+<li><strong>Sending in welegato chat:</strong> if you pick a score, lesson notes or a recording from your cloud in a welegato chat, your chat partner can open that file for 7 days from sending, through links that are valid for a short time. The file is not copied; welegato keeps a record of the share (title, type, size). You can turn sharing off at any time (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>).</li>
 <li><strong>Syncing:</strong> on Wi-Fi only by default; you can allow mobile data. “Remove from this device (keep in cloud)” removes only the copy on the device.</li>
 <li><strong>Keeping and deleting:</strong> a score or recording deleted on one device is deleted in the cloud and on the other devices too. Deleting the ID deletes all its cloud files and records without delay (within 24 hours at the latest). When Plus ends, only new uploads stop and everything can be downloaded for 90 days; after two reminder emails the cloud files are then deleted. Files on your devices are never touched.</li>
 </ul>
@@ -227,7 +230,7 @@ PRIVACY = {
   "h1": "Datenschutzerklärung",
   "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
   "lede": "Die Grundfunktionen von Leggii, einer Noten-App von Vicino Labs, funktionieren ohne Konto und nur auf deinem Gerät; Noten, Notizen und Aufnahmen werden dort gespeichert. Nur die KI-Unterrichtsanalyse, Kaufprüfungen, die freiwillige Anmeldung (welegato-ID), die Leggii Cloud (Plus) und „Leggii fragen“ laufen über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 6. November 2026 (Version 1.2). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
+  "footer": "Diese Erklärung gilt ab dem 9. November 2026 (Version 1.3). Vorherige Versionen 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
@@ -285,6 +288,7 @@ PRIVACY = {
 <ul>
 <li><strong>Was gespeichert wird:</strong> Noten-PDFs, Angaben zu den Noten, Notizen und Lesezeichen, Ordner und Setlists, Meine Notizen (KI-Notizen als PDF) und – solange „Aufnahmen auch in die Cloud“ an ist (Standard) – Aufnahmen und ihre Angaben. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
 <li><strong>Wo:</strong> die Dateien bei Cloudflare R2 (Cloudflare, Inc., Auftragsverarbeiter), die Liste der Einträge und der belegte Speicher auf unserem Server (Supabase, EU, Frankfurt). Die Übertragung ist verschlüsselt; Dateien gehen nur zwischen der App dieser ID und der Cloud, über kurz gültige signierte Links. Wir öffnen deine Noten und Aufnahmen nicht.</li>
+<li><strong>Im welegato-Chat senden:</strong> Wählst du in einem welegato-Chat Noten, Unterrichtsnotizen oder eine Aufnahme aus deiner Cloud, kann dein Gegenüber die Datei ab dem Senden 7 Tage lang über kurz gültige Links öffnen. Die Datei wird nicht kopiert; welegato speichert einen Eintrag zur Freigabe (Titel, Art, Größe). Du kannst die Freigabe jederzeit beenden (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a>).</li>
 <li><strong>Synchronisieren:</strong> standardmäßig nur im WLAN; mobile Daten kannst du erlauben. „Von diesem Gerät entfernen (in der Cloud behalten)“ löscht nur die Kopie auf dem Gerät.</li>
 <li><strong>Aufbewahrung und Löschung:</strong> Was auf einem Gerät gelöscht wird, wird auch in der Cloud und auf den anderen Geräten gelöscht. Beim Löschen der ID werden alle Cloud-Dateien und Einträge unverzüglich (spätestens nach 24 Stunden) gelöscht. Endet Plus, stoppen nur neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien dann gelöscht. Dateien auf deinen Geräten bleiben unberührt.</li>
 </ul>
@@ -318,7 +322,7 @@ PRIVACY = {
   "h1": "Informativa sulla privacy",
   "meta": [("In vigore dal", "06.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
   "lede": "Le funzioni di base di Leggii, un'app per spartiti di Vicino Labs, funzionano senza account e solo sul tuo dispositivo; spartiti, annotazioni e registrazioni restano lì. Solo l'analisi AI delle lezioni, la verifica degli acquisti, l'accesso facoltativo (welegato ID), il cloud di Leggii (Plus) e «Chiedi a Leggii» passano dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 6 novembre 2026 (versione 1.2). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
+  "footer": "Questa informativa è in vigore dal 9 novembre 2026 (versione 1.3). Versioni precedenti 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
@@ -376,6 +380,7 @@ PRIVACY = {
 <ul>
 <li><strong>Cosa viene salvato:</strong> PDF degli spartiti, dati degli spartiti, annotazioni e segnalibri, cartelle e scalette, Le mie note (PDF delle note AI) e – finché “Registrazioni anche nel cloud” è attivo (impostazione predefinita) – le registrazioni e i loro dati. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
 <li><strong>Dove:</strong> i file su Cloudflare R2 (Cloudflare, Inc., responsabile del trattamento), l'elenco degli elementi e lo spazio usato sul nostro server (Supabase, UE, Francoforte). Il trasferimento è cifrato; i file passano solo tra l'app di quell'ID e il cloud, tramite link firmati validi per poco tempo. Non apriamo i tuoi spartiti né le tue registrazioni.</li>
+<li><strong>Invio nella chat di welegato:</strong> se in una chat di welegato scegli uno spartito, note di lezione o una registrazione dal tuo cloud, il tuo interlocutore può aprire quel file per 7 giorni dall'invio, tramite link validi per poco tempo. Il file non viene copiato; welegato conserva un registro della condivisione (titolo, tipo, dimensione). Puoi disattivare la condivisione in qualsiasi momento (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa di welegato</a>).</li>
 <li><strong>Sincronizzazione:</strong> per impostazione predefinita solo con il Wi-Fi; puoi consentire i dati mobili. “Rimuovi da questo dispositivo (tieni nel cloud)” elimina solo la copia sul dispositivo.</li>
 <li><strong>Conservazione e cancellazione:</strong> ciò che elimini su un dispositivo viene eliminato anche nel cloud e sugli altri dispositivi. Eliminando l'ID, tutti i file e i dati nel cloud vengono cancellati senza ritardo (al più tardi entro 24 ore). Quando Plus termina, si fermano solo i nuovi caricamenti e per 90 giorni puoi scaricare tutto; dopo due email di promemoria i file nel cloud vengono cancellati. I file sui tuoi dispositivi non vengono toccati.</li>
 </ul>

@@ -8,6 +8,7 @@
 위레가토 통합 아이디와 함께 오는 기능(로그인할 때·쓸 때만 적용): AI 분석(오디오만, Gemini),
 AI 시간은 Leggii와 아이디별 공유(어느 앱이 썼는지 기록), 클라우드(Plus, R2, Leggii와 용량 공유), 구독.
 보관·삭제·수탁자 문구는 Leggii 1.2를 따랐다.
+2026-11-09 버전 1.1: 위레가토 채팅으로 클라우드 녹음 7일 공유(오디오만, 링크만).
 """
 
 from appoggio_privacy_content import EMAIL, _id_card
@@ -38,7 +39,7 @@ PRIVACY = {
   "h1": "개인정보처리방침",
   "meta": [("시행일", "2026.11.07"), ("버전", "1.0"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 프로바(Prova)는 레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 오디션·콩쿠르 제출 영상을 점검하는 앱입니다. 녹음과 영상은 이용자의 기기에만 저장되며, 계정 없이 쓸 수 있습니다. 위레가토 통합 아이디로 로그인해 AI 분석, 클라우드, 구독을 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 7일부터 시행됩니다 (버전 1.0).",
+  "footer": "본 방침은 2026년 11월 9일부터 시행됩니다 (버전 1.1). 이전 버전 1.0: 2026년 11월 7일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
@@ -87,6 +88,7 @@ PRIVACY = {
 <ul>
 <li><strong>저장하는 정보:</strong> 테이크의 오디오와 테이크 정보. 영상은 이용자가 별표하거나 직접 고른 테이크만 올립니다. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
 <li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 녹음이나 영상을 열어 보지 않습니다.</li>
+<li><strong>위레가토 채팅으로 보내기:</strong> 위레가토 채팅에서 클라우드에 있는 녹음을 골라 대화 상대에게 보내면, 상대는 보낸 때부터 7일 동안 짧게만 유효한 링크로 그 오디오를 들을 수 있습니다(영상은 보내지 않습니다). 파일은 복사되지 않고, 위레가토가 공유 기록(제목·종류·크기)을 저장합니다. 공유는 언제든 끌 수 있습니다(<a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>).</li>
 <li><strong>용량:</strong> 클라우드 용량은 아이디별로 렛지 클라우드와 함께 쓰며, 두 앱이 쓰는 양을 더해 계산합니다.</li>
 <li><strong>보관과 삭제:</strong> 한 기기에서 지운 테이크는 클라우드와 다른 기기에서도 지워집니다. 아이디를 삭제하면 클라우드의 모든 파일과 기록을 지체 없이(늦어도 24시간 안에) 지웁니다. Plus가 끝나면 새 업로드만 멈추고 90일 동안 내려받을 수 있으며, 그 전에 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 기기 안의 파일은 건드리지 않습니다.</li>
 </ul>
@@ -121,7 +123,7 @@ PRIVACY = {
   "h1": "Privacy Policy",
   "meta": [("Effective", "2026-11-07"), ("Version", "1.0"), ("Operator", "Vicino Labs")],
   "lede": "Prova, made by Vicino Labs, records and films your lessons and practice, lets you compare takes and helps you check audition and competition videos. Recordings and videos are stored only on your device, and you can use it without an account. Only when you sign in with a welegato ID to use AI analysis, the cloud or a subscription does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 7 November 2026 (version 1.0).",
+  "footer": "This policy is effective from 9 November 2026 (version 1.1). Previous version 1.0: 7 November 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
@@ -170,6 +172,7 @@ PRIVACY = {
 <ul>
 <li><strong>What is stored:</strong> the audio of your takes and the take details. Video is uploaded only for takes you star or choose. For each file its size, fingerprint (SHA-256) and time of change are kept.</li>
 <li><strong>Where:</strong> the files with Cloudflare R2 (Cloudflare, Inc., processor); the list of items and the space used on our server (Supabase, EU, Frankfurt, Germany). Transfers are encrypted; files go only between the app of that ID and the cloud, through signed links that are valid for a short time. We do not open your recordings or videos.</li>
+<li><strong>Sending in welegato chat:</strong> if you pick a recording from your cloud in a welegato chat, your chat partner can listen to its audio for 7 days from sending, through links that are valid for a short time (video is not sent). The file is not copied; welegato keeps a record of the share (title, type, size). You can turn sharing off at any time (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>).</li>
 <li><strong>Space:</strong> cloud space is shared per ID with the Leggii cloud; what both apps use is added up.</li>
 <li><strong>Keeping and deleting:</strong> a take deleted on one device is deleted in the cloud and on the other devices too. Deleting the ID deletes all its cloud files and records without delay (within 24 hours at the latest). When Plus ends, only new uploads stop and everything can be downloaded for 90 days; after two reminder emails the cloud files are then deleted. Files on your devices are never touched.</li>
 </ul>
@@ -204,7 +207,7 @@ PRIVACY = {
   "h1": "Datenschutzerklärung",
   "meta": [("Gültig ab", "07.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
   "lede": "Prova von Vicino Labs nimmt Unterricht und Üben auf und filmt sie, lässt dich Takes vergleichen und hilft beim Prüfen von Bewerbungsvideos für Vorspiele und Wettbewerbe. Aufnahmen und Videos werden nur auf deinem Gerät gespeichert; ein Konto brauchst du dafür nicht. Nur wenn du dich mit einer welegato-ID anmeldest, um KI-Analyse, Cloud oder ein Abo zu nutzen, laufen Daten über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 7. November 2026 (Version 1.0).",
+  "footer": "Diese Erklärung gilt ab dem 9. November 2026 (Version 1.1). Vorherige Version 1.0: 7. November 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
@@ -253,6 +256,7 @@ PRIVACY = {
 <ul>
 <li><strong>Was gespeichert wird:</strong> der Ton deiner Takes und die Take-Angaben. Videos werden nur bei Takes hochgeladen, die du markierst oder auswählst. Zu jeder Datei werden Größe, Prüfsumme (SHA-256) und Änderungszeit gespeichert.</li>
 <li><strong>Wo:</strong> die Dateien bei Cloudflare R2 (Cloudflare, Inc., Auftragsverarbeiter), die Liste der Einträge und der belegte Speicher auf unserem Server (Supabase, EU, Frankfurt). Die Übertragung ist verschlüsselt; Dateien gehen nur zwischen der App dieser ID und der Cloud, über kurz gültige signierte Links. Wir öffnen deine Aufnahmen und Videos nicht.</li>
+<li><strong>Im welegato-Chat senden:</strong> Wählst du in einem welegato-Chat eine Aufnahme aus deiner Cloud, kann dein Gegenüber den Ton ab dem Senden 7 Tage lang über kurz gültige Links anhören (Videos werden nicht gesendet). Die Datei wird nicht kopiert; welegato speichert einen Eintrag zur Freigabe (Titel, Art, Größe). Du kannst die Freigabe jederzeit beenden (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a>).</li>
 <li><strong>Speicherplatz:</strong> Der Cloud-Speicher wird je ID mit der Leggii Cloud geteilt; was beide Apps belegen, wird zusammengerechnet.</li>
 <li><strong>Aufbewahrung und Löschung:</strong> Ein auf einem Gerät gelöschter Take wird auch in der Cloud und auf den anderen Geräten gelöscht. Beim Löschen der ID werden alle Cloud-Dateien und Einträge unverzüglich (spätestens nach 24 Stunden) gelöscht. Endet Plus, stoppen nur neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien dann gelöscht. Dateien auf deinen Geräten bleiben unberührt.</li>
 </ul>
@@ -287,7 +291,7 @@ PRIVACY = {
   "h1": "Informativa sulla privacy",
   "meta": [("In vigore dal", "07.11.2026"), ("Versione", "1.0"), ("Gestore", "Vicino Labs")],
   "lede": "Prova, di Vicino Labs, registra e filma lezioni e studio, ti fa confrontare le take e ti aiuta a controllare i video per audizioni e concorsi. Registrazioni e video restano solo sul tuo dispositivo e puoi usarla senza account. Solo quando accedi con un welegato ID per usare l'analisi AI, il cloud o un abbonamento qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 7 novembre 2026 (versione 1.0).",
+  "footer": "Questa informativa è in vigore dal 9 novembre 2026 (versione 1.1). Versione precedente 1.0: 7 novembre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
@@ -336,6 +340,7 @@ PRIVACY = {
 <ul>
 <li><strong>Cosa viene salvato:</strong> l'audio delle take e i dati delle take. Il video viene caricato solo per le take che contrassegni con la stella o scegli. Per ogni file si conservano dimensione, impronta (SHA-256) e ora di modifica.</li>
 <li><strong>Dove:</strong> i file su Cloudflare R2 (Cloudflare, Inc., responsabile del trattamento), l'elenco degli elementi e lo spazio usato sul nostro server (Supabase, UE, Francoforte). Il trasferimento è cifrato; i file passano solo tra l'app di quell'ID e il cloud, tramite link firmati validi per poco tempo. Non apriamo le tue registrazioni né i tuoi video.</li>
+<li><strong>Invio nella chat di welegato:</strong> se in una chat di welegato scegli una registrazione dal tuo cloud, il tuo interlocutore può ascoltarne l'audio per 7 giorni dall'invio, tramite link validi per poco tempo (i video non vengono inviati). Il file non viene copiato; welegato conserva un registro della condivisione (titolo, tipo, dimensione). Puoi disattivare la condivisione in qualsiasi momento (<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa di welegato</a>).</li>
 <li><strong>Spazio:</strong> lo spazio nel cloud è condiviso per ID con il cloud di Leggii; ciò che usano le due app viene sommato.</li>
 <li><strong>Conservazione e cancellazione:</strong> una take eliminata su un dispositivo viene eliminata anche nel cloud e sugli altri dispositivi. Eliminando l'ID, tutti i file e i dati nel cloud vengono cancellati senza ritardo (al più tardi entro 24 ore). Quando Plus termina, si fermano solo i nuovi caricamenti e per 90 giorni puoi scaricare tutto; dopo due email di promemoria i file nel cloud vengono cancellati. I file sui tuoi dispositivi non vengono toccati.</li>
 </ul>
