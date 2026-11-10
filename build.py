@@ -168,6 +168,7 @@ PRIVACY = f"""<h1>Datenschutzerklärung</h1>
 def write(path, html):
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
+    html = html.replace(" Hz", "&nbsp;Hz").replace(" Гц", "&nbsp;Гц")  # 숫자와 단위가 갈라지지 않게
     open(out, "w", encoding="utf-8").write(html)
 
 alt = {l: I.home_path(l) for l in I.LANGS}
