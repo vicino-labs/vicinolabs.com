@@ -54,7 +54,7 @@ T = {'de': {'path': '/famiglia/',
                   'pianino': 'Pianino',
                   'prova': 'Prova'},
         'kicker': 'Famiglia Vicino',
-        'h1': 'Für <em>jeden</em> Moment Ihres Musikerlebens.',
+        'h1': 'Für <em>jeden</em> Moment<br>Ihres Musikerlebens.',
         'lead': 'Der Tag, an dem Sie eine Lehrerin suchen. Der Abend über den Noten. Der letzte Atemzug vor dem Auftritt. Sieben Apps, '
                 'jede für einen Moment — einzeln hilfreich, zusammen ein Ganzes.',
         'center': 'Ihre<br>Musik',
@@ -105,8 +105,8 @@ T = {'de': {'path': '/famiglia/',
         'langs': 'Sprache',
         'quote_kicker': 'we + legato',
         'quote': 'Spielen wir legato?',
-        'quote_text': 'Wie beim Legato, wo die Töne ohne Unterbrechung ineinanderfließen, verbinden die Apps von Famiglia Vicino jeden '
-                      'Moment Ihres Musikerlebens — ohne Bruch, von einer Stunde zur nächsten.',
+        'quote_text': 'Wie beim Legato, wo die Töne ohne Unterbrechung ineinanderfließen,<br class="w"> verbinden die Apps von Famiglia '
+                      'Vicino jeden Moment Ihres Musikerlebens —<br class="w"> ohne Bruch, von einer Stunde zur nächsten.',
         'quote_src': 'aus welegato',
         'end_h': 'Dann spielen wir legato.',
         'end_btn2': 'welegato öffnen',
@@ -137,7 +137,7 @@ T = {'de': {'path': '/famiglia/',
                   'pianino': 'Pianino',
                   'prova': 'Prova'},
         'kicker': 'Famiglia Vicino',
-        'h1': 'For <em>every</em> moment of your musical life.',
+        'h1': 'For <em>every</em> moment<br>of your musical life.',
         'lead': 'The day you look for a teacher. The evening over your scores. The last breath before you walk on stage. Seven apps, each '
                 'for one moment — useful on their own, whole together.',
         'center': 'Your<br>music',
@@ -186,8 +186,8 @@ T = {'de': {'path': '/famiglia/',
         'langs': 'Language',
         'quote_kicker': 'we + legato',
         'quote': 'Shall we play legato?',
-        'quote_text': 'Like legato, where notes flow on without a break, the Famiglia Vicino apps connect every moment of your musical '
-                      'life — seamlessly, from one lesson to the next.',
+        'quote_text': 'Like legato, where notes flow on without a break,<br class="w"> the Famiglia Vicino apps connect every moment of '
+                      'your musical life —<br class="w"> seamlessly, from one lesson to the next.',
         'quote_src': 'from welegato',
         'end_h': "Then let's play legato.",
         'end_btn2': 'Open welegato',
@@ -217,8 +217,9 @@ T = {'de': {'path': '/famiglia/',
                   'pianino': '피아니노',
                   'prova': '프로바'},
         'kicker': 'Famiglia Vicino',
-        'h1': '음악가의 하루, 그 <em>모든</em> 순간에.',
-        'lead': '선생님을 찾는 날, 악보를 펼치는 밤, 무대에 오르기 전 마지막 호흡까지. 일곱 개의 앱이 각자 한 순간을 맡아요. 하나씩 써도 좋지만, 함께 쓰면 비로소 하나의 흐름이 돼요.',
+        'h1': '음악가의 하루,<br>그 <em>모든</em> 순간에.',
+        'lead': '선생님을 찾는 날, 악보를 펼치는 밤, 무대에 오르기 전 마지막 호흡까지.<br class="w"> 일곱 개의 앱이 각자 한 순간을 맡아요.<br class="w"> 하나씩 써도 좋지만, 함께 쓰면 비로소 하나의 '
+                '흐름이 돼요.',
         'center': '나의<br>음악',
         'soon': '곧 출시',
         'journey_h': '레슨 일주일, 이렇게 흘러가요',
@@ -252,7 +253,7 @@ T = {'de': {'path': '/famiglia/',
         'langs': '언어',
         'quote_kicker': 'we + legato',
         'quote': '우리 레가토 할까요?',
-        'quote_text': '음을 끊지 않고 이어 연주하는 레가토처럼, Famiglia Vicino의 앱들은 음악가의 하루를 끊김 없이 이어요. 한 레슨에서 다음 레슨까지.',
+        'quote_text': '음을 끊지 않고 이어 연주하는 레가토처럼,<br class="w"> Famiglia Vicino의 앱들은 음악가의 하루를 끊김 없이 이어요.<br class="w"> 한 레슨에서 다음 레슨까지.',
         'quote_src': '위레가토에서',
         'end_h': '이제, 함께 레가토 해요.',
         'end_btn2': '위레가토 열기',
@@ -273,6 +274,9 @@ T = {'de': {'path': '/famiglia/',
 
 CSS = """
 html[lang=ko] body{word-break:keep-all}
+main h1,main h2,main h3,.fam-quote p,.fam-quote blockquote,.lead,.sub,.fam-body p,.fam-card p,.fam-glue span,.fam-loop p{text-wrap:balance}
+.fam-body p,.fam-card p,.fam-glue span{text-wrap:pretty}
+@media(max-width:820px){br.w{display:none}}
 body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-synthesis:none}
 main h1,main h2,main h3,.fam-ring .center,.fam-num,.fam-glue b{font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-weight:500}
 html[lang=ko] main h1,html[lang=ko] main h2,html[lang=ko] main h3,html[lang=ko] .fam-glue b{font-weight:600;letter-spacing:-.01em}
