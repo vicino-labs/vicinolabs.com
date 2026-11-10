@@ -26,6 +26,10 @@ WHO = {
     "squillo": (2, 0, 1), "pianino": (2, 2, 2), "prova": (2, 2, 2),
 }
 
+# 앱 정보 배지 아이콘(지구) — 스토어 배지와 같은 높이의 검은 배지(2026-11-10 사용자 요청)
+GLOBE = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.6">'
+         '<circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M3 12h18M4.6 7.2h14.8M4.6 16.8h14.8"/></svg>')
+
 LINKS = {
     "welegato": {"info": {"de": "https://welegato.com/", "en": "https://welegato.com/en/", "ko": "https://welegato.com/ko/"},
                  "play": "app.welegato.welegato", "apple": "https://welegato.com/ios/?lang={lang}"},  # 나라별 스토어로 보내는 주소
@@ -117,7 +121,9 @@ T = {'de': {'path': '/famiglia/',
               'appoggio': 'Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Konto.',
               'squillo': 'Tägliche Stimm- und Einsingübungen für Sängerinnen und Sänger.',
               'pianino': 'Klavier, Metronom und Stimmgerät in einer App — mit einstellbarem Kammerton.',
-              'prova': 'Unterricht und Üben aufnehmen, mit KI-Auswertung der Aufnahme.'}},
+              'prova': 'Unterricht und Üben aufnehmen, mit KI-Auswertung der Aufnahme.'},
+        'info_top': 'Mehr erfahren',
+        'info_main': 'App-Info'},
  'en': {'path': '/en/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — how our music apps work together',
@@ -196,7 +202,9 @@ T = {'de': {'path': '/famiglia/',
               'appoggio': 'Breathing training for singers — free, no sign-up.',
               'squillo': 'Daily vocal exercises and warm-ups for singers.',
               'pianino': 'Piano, metronome and tuner in one app — with adjustable concert pitch.',
-              'prova': 'Record lessons and practice, with AI feedback on the recording.'}},
+              'prova': 'Record lessons and practice, with AI feedback on the recording.'},
+        'info_top': 'Learn more',
+        'info_main': 'App info'},
  'ko': {'path': '/ko/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — 음악 앱들이 함께 일하는 방법',
@@ -259,7 +267,9 @@ T = {'de': {'path': '/famiglia/',
               'appoggio': '성악가를 위한 호흡 훈련 — 무료, 가입 없이.',
               'squillo': '성악가를 위한 매일의 발성 연습.',
               'pianino': '피아노·메트로놈·튜너를 한 앱에. 기준음을 맞춰 쓸 수 있어요.',
-              'prova': '레슨과 연습을 녹음하면 AI가 녹음을 분석해 줘요.'}}}
+              'prova': '레슨과 연습을 녹음하면 AI가 녹음을 분석해 줘요.'},
+        'info_top': '자세히 보기',
+        'info_main': '앱 정보'}}
 
 CSS = """
 html[lang=ko] body{word-break:keep-all}
@@ -330,7 +340,9 @@ html[lang=ko] main h1 em{font-style:normal}
 html[lang=ko] .fam-card h3{font-size:20px}
 .fam-card p{margin:4px 0 12px;color:var(--soft);font-size:15px}
 .fam-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
-.fam-links a.info{font-weight:600;font-size:14px;text-decoration:none;margin-right:4px}
+.fam-links a.badge.info{display:inline-flex;align-items:center;gap:8px;height:38px;box-sizing:border-box;padding:0 13px 0 10px;background:#000;border:1px solid #a6a6a6;border-radius:8px;color:#fff;text-decoration:none;line-height:1}
+.fam-links a.badge.info span{display:flex;flex-direction:column;gap:2px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.fam-links a.badge.info small{font-size:9px;font-weight:500;letter-spacing:.02em}
 .fam-links a.badge{display:inline-block;line-height:0}.fam-links a.badge img{height:38px;width:auto}
 .fam-links a.badge.gp{position:relative;border-radius:8px;overflow:hidden}.fam-links a.badge.gp:after{content:"";position:absolute;inset:0;border:1px solid #a6a6a6;border-radius:8px;pointer-events:none}
 .fam-links .later{font-size:12px;color:var(--faint)}
@@ -419,7 +431,8 @@ def body(lang, soon_keys):
         links = []
         info = L["info"][lang] if isinstance(L["info"], dict) else L["info"]
         if info:
-            links.append(f'<a class="info" href="{info}"{ext if info.startswith("http") else ""}>{t["info"]} →</a>')
+            links.append(f'<a class="badge info" href="{info}"{ext if info.startswith("http") else ""}>{GLOBE}'
+                         f'<span><small>{t["info_top"]}</small>{t["info_main"]}</span></a>')
         if L["play"]:
             links.append(f'<a class="badge gp" href="https://play.google.com/store/apps/details?id={L["play"]}&amp;hl={lang}"{ext}>'
                          f'<img src="/badges/google-play-{lang}.png" alt="Google Play" height="38" loading="lazy"></a>')
