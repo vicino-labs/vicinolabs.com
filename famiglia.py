@@ -344,11 +344,12 @@ html[lang=ko] main h1 em{font-style:normal}
 html[lang=ko] .fam-card h3{font-size:20px}
 .fam-card p{margin:4px 0 12px;color:var(--soft);font-size:15px}
 .fam-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
-.fam-links a.badge.info{display:inline-flex;align-items:center;gap:8px;height:38px;box-sizing:border-box;padding:0 13px 0 10px;background:#000;border:1px solid #a6a6a6;border-radius:8px;color:#fff;text-decoration:none;line-height:1}
+.fam-links a.badge{display:inline-flex;align-items:center;justify-content:center;width:136px;height:40px;box-sizing:border-box;background:#000;border:1px solid #a6a6a6;border-radius:8px;overflow:hidden;line-height:1;text-decoration:none;color:#fff}
+.fam-links a.badge img{height:38px;width:auto;max-width:134px;display:block}
+.fam-links a.badge.gp img{height:34px}
+.fam-links a.badge.info{gap:8px;padding:0 10px}
 .fam-links a.badge.info span{display:flex;flex-direction:column;gap:2px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.01em}
 .fam-links a.badge.info small{font-size:9px;font-weight:500;letter-spacing:.02em}
-.fam-links a.badge{display:inline-block;line-height:0}.fam-links a.badge img{height:38px;width:auto}
-.fam-links a.badge.gp{position:relative;border-radius:8px;overflow:hidden}.fam-links a.badge.gp:after{content:"";position:absolute;inset:0;border:1px solid #a6a6a6;border-radius:8px;pointer-events:none}
 .fam-links .later{font-size:12px;color:var(--faint)}
 @media(max-width:820px){.fam-cards{grid-template-columns:1fr}}
 .fam-all a.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
@@ -439,10 +440,10 @@ def body(lang, soon_keys):
                          f'<span><small>{t["info_top"]}</small>{t["info_main"]}</span></a>')
         if L["play"]:
             links.append(f'<a class="badge gp" href="https://play.google.com/store/apps/details?id={L["play"]}&amp;hl={lang}"{ext}>'
-                         f'<img src="/badges/google-play-{lang}.png" alt="Google Play" height="38" loading="lazy"></a>')
+                         f'<img src="/badges/google-play-{lang}-nb.png" alt="Google Play" height="38" loading="lazy"></a>')
         if L["apple"]:
             links.append(f'<a class="badge" href="{L["apple"].replace("{lang}", lang)}"{ext}>'
-                         f'<img src="/badges/app-store-{lang}.svg" alt="App Store" height="38" loading="lazy"></a>')
+                         f'<img src="/badges/app-store-{lang}-nb.svg" alt="App Store" height="38" loading="lazy"></a>')
         elif L["play"]:
             links.append(f'<span class="later">{t["apple_soon"]}</span>')
         cards.append(f'<div class="fam-card"><img class="icon" src="/apps/{k}.png" alt=""><div><h3>{t["names"][k]}{_soon(k, t, soon_keys)}</h3>'
