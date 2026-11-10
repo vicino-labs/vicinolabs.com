@@ -293,8 +293,8 @@ for _l in I.LANGS:
     for _k in ("lead", "journey_sub", "loop", "who_sub", "apps_sub", "quote_text", "d", "scen", "glue"):
         _t[_k] = I.nb(_t[_k])
     # 스퀼로 연습곡(2026-11-10 사용자: 콘코네는 한국 입시에 꼭 필요) — 지금은 파노프카만, 콘코네·바카이는 곧
-    _h, _q, _a = _t["stages"]["warmup"]; _t["stages"]["warmup"] = (_h, _q, _a + " " + I.STUDI[_l])
-    _t["d"] = dict(_t["d"]); _t["d"]["squillo"] = _t["d"]["squillo"] + " " + I.STUDI[_l]
+    _h, _q, _a = _t["stages"]["warmup"]; _t["stages"]["warmup"] = (_h, _q, _a + "<br>" + I.STUDI[_l])
+    _t["d"] = dict(_t["d"]); _t["d"]["squillo"] = _t["d"]["squillo"] + "<br>" + I.STUDI[_l]
     _t["stages"] = {k: (I.nb(h), I.nb(q), I.nb(a)) for k, (h, q, a) in _t["stages"].items()}
     _t["quote"] = I.nb(_t["quote"]); _t["loop_h"] = I.nb(_t["loop_h"])
     if _l not in ("ko", "zh"):  # 서양어 제목은 강제 줄바꿈 대신 균형 줄바꿈(끝 낱말 홀로 남지 않게)
