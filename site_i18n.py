@@ -7,6 +7,8 @@ PREP: 준비 단계 — 아리아는 원조로 부르므로 가곡·Arie antiche
 이조해야 하는 상황(사용자 2026-11-10).
 """
 
+import re
+
 LANGS = ["ko", "en", "de", "it", "fr", "zh", "es", "ru"]
 LANG_NAMES = {"ko": "한국어", "en": "English", "de": "Deutsch", "it": "Italiano", "fr": "Français",
               "zh": "中文", "es": "Español", "ru": "Русский"}
@@ -389,7 +391,7 @@ FAM_MORE = {
   "title": "Famiglia Vicino — как наши музыкальные приложения работают вместе",
   "desc": "Семь приложений, одна музыкальная жизнь: найти педагога, подготовить ноты, распеться, заниматься, записывать.",
   "kicker": "Famiglia Vicino",
-  "h1": "Для <em>каждого</em> момента<br>вашей музыкальной жизни.",
+  "h1": "Для <em>каждого</em> момента<br>вашей жизни в музыке.",
   "lead": "День, когда вы ищете педагога. Вечер над нотами. Последний вдох перед выходом на сцену. Семь приложений, каждое — для своего момента: полезны по отдельности, а вместе — единое целое.",
   "center": "Ваша<br>музыка", "soon": "Скоро",
   "journey_h": "Неделя занятий, шаг за шагом", "journey_sub": "Для каждого трудного момента есть своё приложение.",
@@ -422,7 +424,7 @@ FAM_MORE = {
 # ── 회사 첫 화면 ───────────────────────────────────────────────
 HOME = {
  "ko": {"title": "Vicino Labs — 음악과 일상을 위한 앱", "desc": "Vicino Labs는 음악가와 일상을 위한 앱을 만듭니다: 위레가토, 렛지, 아뽀조, 피아니노, 노미오, 그리고 곧 끼아베·프로바·스퀼로.",
-        "kicker": "소프트웨어 스튜디오 · 도르트문트", "h1": "음악을 위한, <em>그리고</em> 일상을 위한 앱.",
+        "kicker": "소프트웨어 스튜디오", "h1": "음악을 위한, <em>그리고</em> 일상을 위한 앱.",
         "lead": "Vicino Labs는 작은 소프트웨어 스튜디오예요. 음악가를 위한 앱, 레슨과 연습을 위한 앱을 만들어요. 여러 언어로, 단순하게, 개인정보를 아끼며.",
         "music_h": "음악가를 위해", "music_sub": "Famiglia Vicino — 서로 잘 맞는 앱 가족.", "fam_link": "앱들이 함께 일하는 방법 →",
         "life_h": "일상을 위해", "apps_nav": "앱", "privacy": "개인정보처리방침(독일어)", "privacy_l": "개인정보·약관", "site": "welegato.com",
@@ -432,7 +434,7 @@ HOME = {
                    ("개인정보 먼저", "앱에 꼭 필요한 것만 받고, 쉬운 말로 설명해요.")],
         "contact_h": "문의", "contact": "질문, 협업, 언론 문의 — 메일 주세요.", "btn": "메일 쓰기"},
  "en": {"title": "Vicino Labs — Apps for music and everyday life", "desc": "Vicino Labs builds apps for musicians and for everyday life: welegato, Leggii, Appoggio, Pianino, Nomio and soon Chiave, Prova and Squillo.",
-        "kicker": "Software studio · Dortmund", "h1": "Apps for music <em>and</em> everyday life.",
+        "kicker": "Software studio", "h1": "Apps for music <em>and</em> everyday life.",
         "lead": "Vicino Labs is a small software studio. We build apps for musicians, for lessons and practice — multilingual, simple and privacy-minded.",
         "music_h": "For musicians", "music_sub": "Famiglia Vicino — a family of apps that work together.", "fam_link": "See how the apps work together →",
         "life_h": "For everyday life", "apps_nav": "Apps", "privacy": "Privacy", "privacy_l": "Privacy", "site": "welegato.com",
@@ -442,7 +444,7 @@ HOME = {
                    ("Privacy first", "We collect only what an app really needs — and explain it in plain words.")],
         "contact_h": "Contact", "contact": "Questions, partnerships or press — we'd love to hear from you.", "btn": "Send an email"},
  "de": {"title": "Vicino Labs — Apps für Musik und Alltag", "desc": "Vicino Labs entwickelt Apps für Musikerinnen und Musiker und für den Alltag: welegato, Leggii, Appoggio, Pianino, Nomio und bald Chiave, Prova und Squillo.",
-        "kicker": "Softwarestudio · Dortmund", "h1": "Apps für die Musik <em>und</em> den Alltag.",
+        "kicker": "Softwarestudio", "h1": "Apps für die Musik <em>und</em> den Alltag.",
         "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben — mehrsprachig, schlicht und mit Blick auf Datenschutz.",
         "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino — eine Familie von Apps, die zusammenpassen.", "fam_link": "So arbeiten die Apps zusammen →",
         "life_h": "Für den Alltag", "apps_nav": "Apps", "privacy": "Datenschutz", "privacy_l": "Datenschutz", "site": "welegato.com",
@@ -452,7 +454,7 @@ HOME = {
                    ("Datenschutz zuerst", "Wir erheben nur, was eine App wirklich braucht — und erklären es verständlich.")],
         "contact_h": "Kontakt", "contact": "Fragen, Kooperationen oder Presse — wir freuen uns über Ihre Nachricht.", "btn": "E-Mail schreiben"},
  "it": {"title": "Vicino Labs — App per la musica e la vita quotidiana", "desc": "Vicino Labs sviluppa app per musicisti e per la vita quotidiana: welegato, Leggii, Appoggio, Pianino, Nomio e presto Chiave, Prova e Squillo.",
-        "kicker": "Studio software · Dortmund", "h1": "App per la musica <em>e</em> la vita quotidiana.",
+        "kicker": "Studio software", "h1": "App per la musica <em>e</em> la vita quotidiana.",
         "lead": "Vicino Labs è un piccolo studio software. Sviluppiamo app per musicisti, per le lezioni e lo studio — multilingue, semplici e attente alla privacy.",
         "music_h": "Per musicisti", "music_sub": "Famiglia Vicino — una famiglia di app che lavorano insieme.", "fam_link": "Come lavorano insieme le app →",
         "life_h": "Per la vita quotidiana", "apps_nav": "App", "privacy": "Privacy (in tedesco)", "privacy_l": "Privacy", "site": "welegato.com",
@@ -462,7 +464,7 @@ HOME = {
                    ("Prima la privacy", "Raccogliamo solo ciò che serve davvero a un'app — e lo spieghiamo con parole semplici.")],
         "contact_h": "Contatti", "contact": "Domande, collaborazioni o stampa — scrivici.", "btn": "Scrivi un'e-mail"},
  "fr": {"title": "Vicino Labs — Des apps pour la musique et le quotidien", "desc": "Vicino Labs crée des apps pour les musiciens et pour le quotidien : welegato, Leggii, Appoggio, Pianino, Nomio et bientôt Chiave, Prova et Squillo.",
-        "kicker": "Studio logiciel · Dortmund", "h1": "Des apps pour la musique <em>et</em> le quotidien.",
+        "kicker": "Studio logiciel", "h1": "Des apps pour la musique <em>et</em> le quotidien.",
         "lead": "Vicino Labs est un petit studio logiciel. Nous créons des apps pour les musiciens, pour les cours et le travail — multilingues, simples et respectueuses de la vie privée.",
         "music_h": "Pour les musiciens", "music_sub": "Famiglia Vicino — une famille d'apps qui vont ensemble.", "fam_link": "Comment les apps travaillent ensemble →",
         "life_h": "Pour le quotidien", "apps_nav": "Apps", "privacy": "Confidentialité (en allemand)", "privacy_l": "Confidentialité", "site": "welegato.com",
@@ -470,9 +472,9 @@ HOME = {
         "values": [("Multilingue", "Nos apps existent en de nombreuses langues — de l'allemand et l'anglais au coréen."),
                    ("Un seul identifiant welegato", "Un compte pour toutes les apps Vicino Labs, si vous le souhaitez. Beaucoup fonctionne sans compte."),
                    ("La vie privée d'abord", "Nous ne collectons que ce dont une app a vraiment besoin — et l'expliquons simplement.")],
-        "contact_h": "Contact", "contact": "Questions, partenariats ou presse — écrivez-nous.", "btn": "Envoyer un e-mail"},
+        "contact_h": "Contact", "contact": "Questions, partenariats ou presse — écrivez\u2011nous.", "btn": "Envoyer un e-mail"},
  "zh": {"title": "Vicino Labs — 为音乐和日常生活打造的应用", "desc": "Vicino Labs 为音乐人和日常生活开发应用：welegato、Leggii、Appoggio、Pianino、Nomio，以及即将推出的 Chiave、Prova 和 Squillo。",
-        "kicker": "软件工作室 · 多特蒙德", "h1": "为音乐，<em>也</em>为日常生活。",
+        "kicker": "软件工作室", "h1": "为音乐，<em>也</em>为日常生活。",
         "lead": "Vicino Labs 是一家小型软件工作室。我们为音乐人、为上课和练习开发应用——多语言、简洁、重视隐私。",
         "music_h": "为音乐人", "music_sub": "Famiglia Vicino——彼此配合的应用家族。", "fam_link": "看看应用如何协同工作 →",
         "life_h": "为日常生活", "apps_nav": "应用", "privacy": "隐私政策（德语）", "privacy_l": "隐私", "site": "welegato.com",
@@ -482,7 +484,7 @@ HOME = {
                    ("隐私优先", "只收集应用真正需要的信息，并用通俗的话说明。")],
         "contact_h": "联系我们", "contact": "问题、合作或媒体——欢迎来信。", "btn": "发送邮件"},
  "es": {"title": "Vicino Labs — Apps para la música y el día a día", "desc": "Vicino Labs crea apps para músicos y para el día a día: welegato, Leggii, Appoggio, Pianino, Nomio y pronto Chiave, Prova y Squillo.",
-        "kicker": "Estudio de software · Dortmund", "h1": "Apps para la música <em>y</em> el día a día.",
+        "kicker": "Estudio de software", "h1": "Apps para la música <em>y</em> el día a día.",
         "lead": "Vicino Labs es un pequeño estudio de software. Creamos apps para músicos, para las clases y el estudio — multilingües, sencillas y respetuosas con la privacidad.",
         "music_h": "Para músicos", "music_sub": "Famiglia Vicino — una familia de apps que trabajan juntas.", "fam_link": "Así trabajan juntas las apps →",
         "life_h": "Para el día a día", "apps_nav": "Apps", "privacy": "Privacidad (en alemán)", "privacy_l": "Privacidad", "site": "welegato.com",
@@ -492,7 +494,7 @@ HOME = {
                    ("Privacidad primero", "Solo recogemos lo que una app realmente necesita — y lo explicamos con palabras sencillas.")],
         "contact_h": "Contacto", "contact": "Preguntas, colaboraciones o prensa — escríbenos.", "btn": "Enviar un correo"},
  "ru": {"title": "Vicino Labs — приложения для музыки и повседневной жизни", "desc": "Vicino Labs создаёт приложения для музыкантов и для повседневной жизни: welegato, Leggii, Appoggio, Pianino, Nomio, а скоро — Chiave, Prova и Squillo.",
-        "kicker": "Студия разработки · Дортмунд", "h1": "Приложения для музыки <em>и</em> повседневной жизни.",
+        "kicker": "Студия разработки", "h1": "Приложения для музыки <em>и</em> каждого дня.",
         "lead": "Vicino Labs — небольшая студия разработки. Мы делаем приложения для музыкантов, для уроков и занятий — многоязычные, простые и бережные к личным данным.",
         "music_h": "Для музыкантов", "music_sub": "Famiglia Vicino — семья приложений, которые работают вместе.", "fam_link": "Как приложения работают вместе →",
         "life_h": "Для повседневной жизни", "apps_nav": "Приложения", "privacy": "Конфиденциальность (на немецком)", "privacy_l": "Конфиденциальность", "site": "welegato.com",
@@ -502,3 +504,29 @@ HOME = {
                    ("Сначала приватность", "Мы собираем только то, что действительно нужно приложению, и объясняем это простыми словами.")],
         "contact_h": "Контакты", "contact": "Вопросы, сотрудничество или пресса — напишите нам.", "btn": "Написать письмо"},
 }
+
+
+def nb(x, pair=None):
+    """문장 끝이 한 낱말(중국어는 한두 글자)만 다음 줄로 떨어지지 않게(2026-11-10 사용자: 줄바꿈 점검).
+    띄어쓰기 언어: 마지막 두 낱말 사이를 붙는 공백으로. 중국어: 끝 네 글자를 단어 결합 문자(U+2060)로 묶는다."""
+    if isinstance(x, str):
+        t = x.rstrip()
+        if re.search(r"[\u4e00-\u9fff]", t[-6:]) and not re.search(r"[\uac00-\ud7a3]", t):
+            if "<" in t[-8:]:
+                return x
+            head, tail = t[:-6], t[-6:]
+            return head + "\u2060".join(tail)
+        if " " not in t or "<" in t.rsplit(" ", 1)[-1]:
+            return x
+        head, tail = t.rsplit(" ", 1)
+        prev = head.rsplit(" ", 1)[-1]
+        if pair and len(prev) + 1 + len(tail) > pair:  # 큰 제목: 붙인 덩어리가 너무 길면 화면을 넘친다
+            return x
+        return head + "\u00a0" + tail if len(tail) <= 14 else x
+    if isinstance(x, tuple):
+        return tuple(nb(i) for i in x)
+    if isinstance(x, list):
+        return [nb(i) for i in x]
+    if isinstance(x, dict):
+        return {k: nb(v) for k, v in x.items()}
+    return x

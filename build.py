@@ -97,6 +97,9 @@ for _l in I.LANGS:
     _h["home"] = I.home_path(_l); _h["fam_href"] = I.fam_path(_l)
     _h["soon"] = _f["soon"]; _h["play"] = "Google Play"
     _h["d"] = dict(_f["d"]); _h["d"]["nomio"] = _h["nomio"]
+    for _k in ("lead", "music_sub", "values", "contact", "fam_link"): _h[_k] = I.nb(_h[_k])
+    _h["h1"] = I.nb(_h["h1"], pair=13)
+    _h["d"]["nomio"] = I.nb(_h["nomio"])
     TXT[_l] = _h
 
 LANG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M3 12h18"/></svg>'

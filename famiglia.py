@@ -290,6 +290,12 @@ for _l in I.LANGS:
     _t["stages"] = dict(_t["stages"]); _t["stages"]["prepare"] = I.PREP[_l]
     _t["who_h"], _t["who_sub"] = I.WHO_H[_l]
     _t["who_cols"] = I.ROLES[_l]; _t["roles"] = I.ROLES[_l]; _t["scen"] = I.SCEN[_l]
+    for _k in ("lead", "journey_sub", "loop", "who_sub", "apps_sub", "quote_text", "d", "scen", "glue"):
+        _t[_k] = I.nb(_t[_k])
+    _t["stages"] = {k: (I.nb(h), I.nb(q), I.nb(a)) for k, (h, q, a) in _t["stages"].items()}
+    _t["quote"] = I.nb(_t["quote"]); _t["loop_h"] = I.nb(_t["loop_h"])
+    if _l not in ("ko", "zh"):  # 서양어 제목은 강제 줄바꿈 대신 균형 줄바꿈(끝 낱말 홀로 남지 않게)
+        _t["h1"] = I.nb(_t["h1"].replace("<br>", " "), pair=13)
 
 CSS = """
 html[lang=ko] body{word-break:keep-all}
@@ -431,7 +437,7 @@ def body(lang, soon_keys):
     t = T[lang]
     langs = "".join(f'<a href="{T[l]["path"]}" hreflang="{l}" lang="{l}">{I.LANG_NAMES[l]}</a>' for l in I.LANGS if l != lang)
     hero = (f'<div class="fam-hero"><div><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p>'
-            f'<p class="fam-langs">{t["langs"]}: {langs}</p></div>{ring(t, soon_keys)}</div>')
+            f'</div>{ring(t, soon_keys)}</div>')
     steps = []
     for i, (key, apps) in enumerate(STAGES, 1):
         h, q, d = t["stages"][key]
