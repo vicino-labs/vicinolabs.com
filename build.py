@@ -81,7 +81,7 @@ TXT = {
   "kicker": "Softwarestudio · Dortmund",
   "h1": "Apps für die Musik <em>und</em> den Alltag.",
   "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben — mehrsprachig, schlicht und mit Blick auf Datenschutz.",
-  "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino — eine Familie von Apps, die zusammenpassen.",
+  "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino — eine Familie von Apps, die zusammenpassen.", "fam_link": "So arbeiten die Apps zusammen →", "fam_href": "/famiglia/",
   "life_h": "Für den Alltag",
   "soon": "Bald", "play": "Google Play", "privacy_l": "Datenschutz", "site": "welegato.com",
   "d": {
@@ -104,7 +104,7 @@ TXT = {
   "kicker": "Software studio · Dortmund",
   "h1": "Apps for music <em>and</em> everyday life.",
   "lead": "Vicino Labs is a small software studio. We build apps for musicians, for lessons and practice — multilingual, simple and privacy-minded.",
-  "music_h": "For musicians", "music_sub": "Famiglia Vicino — a family of apps that work together.",
+  "music_h": "For musicians", "music_sub": "Famiglia Vicino — a family of apps that work together.", "fam_link": "See how the apps work together →", "fam_href": "/en/famiglia/",
   "life_h": "For everyday life",
   "soon": "Soon", "play": "Google Play", "privacy_l": "Privacy", "site": "welegato.com",
   "d": {
@@ -122,6 +122,8 @@ TXT = {
              ("Privacy first", "We collect only what an app really needs — and explain it in plain words.")],
   "contact_h": "Contact", "contact": "Questions, partnerships or press — we'd love to hear from you.", "btn": "Send an email"},
 }
+
+TXT["ko"] = {"home": "/en/", "apps_nav": "Apps", "other": "English", "other_href": "/en/famiglia/", "privacy": "Datenschutz"}
 
 def card(lang, key):
     t = TXT[lang]
@@ -147,7 +149,7 @@ def home(lang):
     music = "".join(card(lang, k) for k in MUSIC)
     values = "".join(f'<div><b>{h}</b><span>{d}</span></div>' for h, d in t["values"])
     return (f'<div class="hero"><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><div class="icons">{strip}</div></div>'
-            f'<section id="apps"><h2>{t["music_h"]}</h2><p class="sub">{t["music_sub"]}</p><div class="grid">{music}</div></section>'
+            f'<section id="apps"><h2>{t["music_h"]}</h2><p class="sub">{t["music_sub"]} <a href="{t["fam_href"]}" style="font-weight:600;text-decoration:none">{t["fam_link"]}</a></p><div class="grid">{music}</div></section>'
             f'<section><h2>{t["life_h"]}</h2><p class="sub"></p><div class="grid">{card(lang, "nomio")}</div></section>'
             f'<div class="values">{values}</div>'
             f'<div class="contact"><h2>{t["contact_h"]}</h2><p class="sub" style="margin:0">{t["contact"]}</p><a class="btn" href="mailto:{EMAIL}">{t["btn"]}</a></div>')
@@ -190,6 +192,12 @@ def write(path, html):
 alt = {"de": "/", "en": "/en/"}
 for lang, path in alt.items():
     write(path, page(lang, path, TXT[lang]["title"], TXT[lang]["desc"], home(lang), alt, wide=True))
+# Famiglia Vicino 포트폴리오(2026-11-10) — famiglia.py
+import famiglia
+FAM_ALT = {l: famiglia.T[l]["path"] for l in ("de", "en", "ko")}
+for _l in ("de", "en", "ko"):
+    _t = famiglia.T[_l]
+    write(_t["path"], page(_l, _t["path"], _t["title"], _t["desc"], famiglia.body(_l, SOON), FAM_ALT, wide=True))
 write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs.", IMPRESSUM))
 write("/datenschutz/", page("de", "/datenschutz/", "Datenschutzerklärung — Vicino Labs", "Datenschutzerklärung von vicinolabs.com.", PRIVACY))
 # Nomio 개인정보처리방침·이용약관 (/nomio/privacy/, /nomio/terms/) — nomio_legal.py
