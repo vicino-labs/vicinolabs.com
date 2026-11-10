@@ -203,12 +203,15 @@ html[lang=ko] main h2{font-size:clamp(25px,3.3vw,33px)}
 html[lang=ko] .fam-body h3{font-size:23px}
 .fam-body .fam-q{font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-size:21px;color:var(--accent)!important;margin:0 0 6px!important;line-height:1.3}
 html[lang=ko] .fam-body .fam-q{font-size:17px;font-weight:600}
-html[lang=ko] main h1,html[lang=ko] main h2,html[lang=ko] main h3,html[lang=ko] .fam-glue b,html[lang=ko] .fam-body .fam-q,html[lang=ko] .fam-ring .center{font-family:"Noto Serif KR",Georgia,serif;font-style:normal}
+html[lang=ko] main h1,html[lang=ko] main h2,html[lang=ko] main h3,html[lang=ko] .fam-glue b,html[lang=ko] .fam-body .fam-q{font-family:"Noto Serif KR",Georgia,serif;font-style:normal}
+.fam-ring .hub img{width:100%;height:auto;border-radius:22%;box-shadow:0 10px 28px rgba(110,26,47,.35);display:block;margin-bottom:6px}
+.fam-ring .hub{position:absolute;left:50%;top:50%;width:30%;transform:translate(-50%,-46%);text-align:center;font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-size:clamp(17px,2.2vw,21px);color:var(--accent);line-height:1.2}
+html[lang=ko] .fam-ring .hub{font-family:"Noto Serif KR",Georgia,serif;font-style:normal;font-weight:600}
 html[lang=ko] main h1 em{font-style:normal}
 .fam-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 0 56px}
-.fam-ring{position:relative;width:100%;max-width:380px;aspect-ratio:1;margin:0 auto}
+.fam-ring{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:0 auto}
 .fam-ring svg{position:absolute;inset:0;width:100%;height:100%}
-.fam-ring .node{position:absolute;width:19%;transform:translate(-50%,-50%);text-align:center;font-size:12px;color:var(--soft);line-height:1.25}
+.fam-ring .node{position:absolute;width:17%;transform:translate(-50%,-50%);text-align:center;font-size:12px;color:var(--soft);line-height:1.25}
 .fam-ring .node img{width:100%;height:auto;border-radius:22%;box-shadow:0 6px 16px rgba(40,25,15,.18);display:block;margin-bottom:5px}
 .fam-ring .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(20px,3vw,27px);text-align:center;color:var(--accent);line-height:1.15}
 .fam-langs{font-size:13px;color:var(--soft);margin-top:22px}.fam-langs a{margin-right:12px;font-weight:600;text-decoration:none}
@@ -256,20 +259,30 @@ def _soon(key, t, soon_keys):
 
 
 def ring(t, soon_keys):
-    n = len(RING)
-    nodes = []
-    for i, k in enumerate(RING):
+    # 2026-11-10 사용자: 위레가토가 모든 앱의 중심 — 가운데 크게, 나머지 여섯 앱이 둘레를 돈다.
+    outer = [k for k in RING if k != "welegato"]
+    n = len(outer)
+    nodes, spokes = [], []
+    for i, k in enumerate(outer):
         a = -math.pi / 2 + 2 * math.pi * i / n
         x = 50 + 39 * math.cos(a)
         y = 50 + 39 * math.sin(a)
         mark = " ·" if k in soon_keys else ""
         nodes.append(f'<div class="node" style="left:{x:.1f}%;top:{y:.1f}%"><img src="/apps/{k}.png" alt="">{t["names"][k]}{mark}</div>')
+        # 가운데(위레가토)에서 각 앱으로 이어지는 선 — 아이콘 가장자리까지만
+        x1, y1 = 50 + 17 * math.cos(a), 50 + 17 * math.sin(a)
+        x2, y2 = 50 + 30 * math.cos(a), 50 + 30 * math.sin(a)
+        spokes.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="var(--goldl)" stroke-width=".6"/>')
     # 화살표가 도는 원(흐름이 다시 처음으로 이어진다는 뜻)
     svg = ('<svg viewBox="0 0 100 100" aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" '
-           'markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--goldl)"/></marker></defs>'
+           'markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--goldl)"/></marker>'
+           '<radialGradient id="glow"><stop offset="0" stop-color="#b8324f" stop-opacity=".22"/><stop offset="1" stop-color="#b8324f" stop-opacity="0"/></radialGradient></defs>'
+           '<circle cx="50" cy="50" r="26" fill="url(#glow)"/>'
            '<circle cx="50" cy="50" r="39" fill="none" stroke="var(--goldl)" stroke-width=".5" stroke-dasharray="1.2 1.6"/>'
-           '<path d="M 76 20 A 39 39 0 0 1 88.4 44" fill="none" stroke="var(--goldl)" stroke-width=".7" marker-end="url(#ah)"/></svg>')
-    return f'<div class="fam-ring" role="img" aria-label="Famiglia Vicino">{svg}{"".join(nodes)}<div class="center">{t["center"]}</div></div>'
+           + "".join(spokes) +
+           '<path d="M 64 18.5 A 39 39 0 0 1 82 30" fill="none" stroke="var(--goldl)" stroke-width=".7" marker-end="url(#ah)"/></svg>')
+    hub = f'<div class="hub"><img src="/apps/welegato.png" alt="">{t["names"]["welegato"]}</div>'
+    return f'<div class="fam-ring" role="img" aria-label="Famiglia Vicino">{svg}{"".join(nodes)}{hub}</div>'
 
 
 def body(lang, soon_keys):
