@@ -7,6 +7,8 @@
 2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus 10GB/50GB), 출시 가격 유지, Plus 종료 후 90일.
 2026-12-21 버전 1.3 (앱 1.5.1, 2026-11-09 공지): 위레가토 채팅으로 보내기(7일, 권리·책임·신고·한도),
 클라우드와 어긋나던 "기기에만 저장" 문장 정리. 위레가토 이용약관 1.4와 같은 날 시행.
+2026-12-21 버전 1.4 (2026-11-10 공지, 사장님 승인, 1.3과 같은 날 시행): App Store 50GB 전환(즉시·비율 환불),
+App Store 환불은 Apple(reportaproblem), 외부 서비스에 App Store, Apple 표준 EULA 함께 적용·지원 책임은 회사.
 책임 제한은 독일법상 허용 범위(고의·중과실, 생명·신체·건강, 제조물책임법은 제한 불가).
 """
 
@@ -17,9 +19,9 @@ TERMS = {
  "ko": {
   "title": "렛지 악보(Leggii) 이용약관",
   "h1": "이용약관",
-  "meta": [("시행일", "2026.12.21"), ("버전", "1.3"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.12.21"), ("버전", "1.4"), ("운영자", "Vicino Labs")],
   "lede": "본 약관은 Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)를 이용하시는 분들과 저희 사이의 약속입니다. 앱을 설치하고 이용하시면 아래 내용에 동의하신 것으로 봅니다.",
-  "footer": "본 약관은 2026년 12월 21일부터 시행됩니다 (버전 1.3, 2026년 11월 9일 공지). 그 전까지는 버전 1.2(2026년 11월 6일)가 적용됩니다. 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
+  "footer": "본 약관은 2026년 12월 21일부터 시행됩니다 (버전 1.4, 2026년 11월 10일 공지 — 2026년 11월 9일 공지한 버전 1.3에 App Store 내용을 보탬). 그 전까지는 버전 1.2(2026년 11월 6일)가 적용됩니다. 이전 버전 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 렛지 악보(Leggii, 이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
@@ -41,12 +43,12 @@ TERMS = {
 <li><strong>무료 체험:</strong> 앱을 처음 설치하면 <strong>7일 동안</strong> Pro 기능을 무료로 쓸 수 있고, 기기당 한 번 AI 시간 30분을 드립니다. 체험이 끝나면 자동으로 무료 버전으로 돌아가며 자동 결제는 없습니다. 체험 중에 만든 필기·기호·연결·페이지는 그대로 남습니다.</li>
 <li><strong>Pro:</strong> 앱 스토어 인앱 결제로 한 번 구매하는 <strong>평생 이용권</strong>입니다. 매월 AI 시간 30분과 처음 한 번 환영 보너스 60분이 포함됩니다. 같은 스토어 계정으로 다시 설치하면 “구매 복원”으로 되살릴 수 있습니다.</li>
 <li><strong>Leggii Plus:</strong> 월간 또는 연간 <strong>정기 구독</strong>으로, 모든 Pro 기능과 매월 AI 시간 5시간이 포함됩니다. 해지할 때까지 같은 기간으로 자동 갱신되며, Google Play(또는 App Store)의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간이 끝날 때까지 쓸 수 있고, 그 뒤에는 Pro를 구매했다면 Pro로, 아니면 무료 버전으로 돌아갑니다.</li>
-<li><strong>렛지 클라우드(Plus):</strong> 위레가토 통합 아이디로 로그인하면 악보·필기·폴더·셋리스트·개인 노트와, 이용자가 켜 둔 경우 녹음을 같은 아이디의 기기들에 맞춥니다. Plus에는 10GB가 포함되며, 더 큰 공간은 50GB 요금제로 바꿀 수 있습니다(올릴 때는 Google Play가 남은 기간의 차액만 받습니다). 공간이 차면 새로 올리는 것만 멈추고 아무것도 지우지 않습니다. 한 기기에서 지운 항목은 다른 기기와 클라우드에서도 지워집니다. Plus가 끝나면 새 업로드가 멈추고 90일 동안 내려받을 수 있으며, 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 클라우드는 이용자 본인의 기기들 사이의 동기화를 위한 것입니다. 다른 사람은 이용자가 아래 “위레가토 채팅으로 보내기”로 고른 파일만, 정해진 기간 동안 열어 볼 수 있습니다. 중요한 자료는 “서재 백업하기”로도 따로 보관하기를 권합니다.</li>
+<li><strong>렛지 클라우드(Plus):</strong> 위레가토 통합 아이디로 로그인하면 악보·필기·폴더·셋리스트·개인 노트와, 이용자가 켜 둔 경우 녹음을 같은 아이디의 기기들에 맞춥니다. Plus에는 10GB가 포함되며, 더 큰 공간은 50GB 요금제로 바꿀 수 있습니다(올릴 때 Google Play는 남은 기간의 차액만 받고, App Store는 바로 바꾸면서 남은 기간의 금액을 비율대로 돌려줍니다). 공간이 차면 새로 올리는 것만 멈추고 아무것도 지우지 않습니다. 한 기기에서 지운 항목은 다른 기기와 클라우드에서도 지워집니다. Plus가 끝나면 새 업로드가 멈추고 90일 동안 내려받을 수 있으며, 두 번 메일로 알린 뒤 클라우드의 파일을 지웁니다. 클라우드는 이용자 본인의 기기들 사이의 동기화를 위한 것입니다. 다른 사람은 이용자가 아래 “위레가토 채팅으로 보내기”로 고른 파일만, 정해진 기간 동안 열어 볼 수 있습니다. 중요한 자료는 “서재 백업하기”로도 따로 보관하기를 권합니다.</li>
 <li><strong>출시 가격:</strong> 2027년 12월 31일까지 Plus를 구독하면, 구독을 이어 가는 동안 그때의 가격이 유지됩니다. 그 뒤 새로 구독하는 경우에는 다른 가격이 적용될 수 있습니다.</li>
 <li><strong>AI 시간 충전:</strong> 5시간·15시간 단위로 한 번 결제하며 구독이 아닙니다. 구매일로부터 12개월 동안 쓸 수 있고, Plus 구독 여부와 상관없이 남습니다.</li>
 <li><strong>AI 시간 계산:</strong> 레슨 노트는 녹음 1분에 1분, 대화 받아 적기는 녹음 1분에 3분이 차감되며, 시작 전에 화면에 표시됩니다. 매월 주어지는 시간을 먼저 쓰고 그다음 충전 시간을 씁니다. 매월 시간은 다음 달로 넘어가지 않습니다. AI 시간은 현금으로 바꾸거나 다른 사람에게 넘길 수 없습니다.</li>
 <li><strong>통합 아이디와 구매:</strong> 로그인하면 구매와 AI 시간이 그 아이디에 연결됩니다. 하나의 구매는 처음 연결된 아이디 하나에만 속합니다.</li>
-<li>가격은 결제 화면에 표시됩니다. 결제·환불은 각 스토어의 정책과 절차에 따릅니다. 디지털 콘텐츠의 특성상, 구매 즉시 이용이 시작되는 데 동의하면 법이 허용하는 범위에서 청약철회권이 소멸할 수 있으며, 이 경우에도 스토어의 환불 절차는 이용할 수 있습니다.</li>
+<li>가격은 결제 화면에 표시됩니다. 결제·환불은 각 스토어의 정책과 절차에 따릅니다. App Store 구매의 환불은 Apple이 처리하며 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>에서 요청할 수 있습니다. 회사는 App Store 결제를 직접 환불할 수 없습니다. 디지털 콘텐츠의 특성상, 구매 즉시 이용이 시작되는 데 동의하면 법이 허용하는 범위에서 청약철회권이 소멸할 수 있으며, 이 경우에도 스토어의 환불 절차는 이용할 수 있습니다.</li>
 <li>회사는 Pro의 핵심 기능을 정당한 이유 없이 유료 이용자에게서 빼지 않습니다. 매월 AI 시간이나 충전 조건을 바꿀 때는 미리 알리며, 이미 결제한 기간과 이미 충전한 시간에는 적용하지 않습니다.</li>
 </ol>"""),
    ("악보와 저작권", """<ol>
@@ -78,7 +80,7 @@ TERMS = {
 <li>신고된 파일은 바로 닫힙니다. 회사는 검토한 뒤 권리 침해나 불법 콘텐츠로 판단하면 공유를 계속 막고, 위레가토 이용약관에 따라 이용을 제한할 수 있습니다.</li>
 <li>남용을 막기 위해 하루 20개, 한 번에 500MB까지 보낼 수 있습니다. 회사는 이 한도를 바꿀 수 있습니다.</li>
 </ol>"""),
-   ("welegato 및 외부 서비스", """<p>앱에는 welegato, IMSLP, Google Play 등 외부 서비스로 가는 링크와 기능이 있습니다. 이 서비스들은 앱과 별개이며 각자의 이용약관과 개인정보처리방침이 적용됩니다. 외부 서비스의 내용과 이용 가능 여부에 대해 회사는 책임지지 않습니다.</p>"""),
+   ("welegato 및 외부 서비스", """<p>앱에는 welegato, IMSLP, Google Play, App Store 등 외부 서비스로 가는 링크와 기능이 있습니다. 이 서비스들은 앱과 별개이며 각자의 이용약관과 개인정보처리방침이 적용됩니다. 외부 서비스의 내용과 이용 가능 여부에 대해 회사는 책임지지 않습니다.</p><p>App Store에서 받은 앱에는 Apple의 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">표준 최종 사용자 사용권 계약(Licensed Application EULA)</a>도 함께 적용됩니다. 이 약관과 다른 점이 있으면 이 약관이 앞서되, Apple의 표준 계약이 이용자에게 보장하는 권리는 줄어들지 않습니다. 앱과 그 지원에 대한 책임은 회사에 있으며 Apple에는 없습니다.</p>"""),
    ("지적재산권", """<p>앱의 로고, “Leggii·렛지” 명칭, 디자인, 문구, 소스코드에 대한 권리는 회사에 있습니다. 회사의 사전 서면 동의 없이 복제·배포·전송·출판·역설계하거나 2차적 저작물을 만들 수 없습니다.</p>"""),
    ("이용자의 의무", """<ol>
 <li>앱을 역설계·디컴파일하거나 결제를 우회하지 않습니다.</li>
@@ -99,9 +101,9 @@ TERMS = {
  "en": {
   "title": "Leggii Terms of Service",
   "h1": "Terms of Service",
-  "meta": [("Effective", "2026-12-21"), ("Version", "1.3"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-12-21"), ("Version", "1.4"), ("Operator", "Vicino Labs")],
   "lede": "These terms are the agreement between you and Vicino Labs for using Leggii, a sheet music app. By installing and using the app you agree to them.",
-  "footer": "These terms are effective from 21 December 2026 (version 1.3, announced 9 November 2026). Until then version 1.2 (6 November 2026) applies. Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
+  "footer": "These terms are effective from 21 December 2026 (version 1.4, announced 10 November 2026 — version 1.3, announced 9 November 2026, plus App Store details). Until then version 1.2 (6 November 2026) applies. Previous versions 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Privacy Policy →",
   "sections": [
    ("Scope", "<p>These terms govern the use of the mobile app Leggii (the “app”) provided by Vicino Labs (the “company”).</p>"),
@@ -123,12 +125,12 @@ TERMS = {
 <li><strong>Free trial:</strong> after the first installation you can use the Pro features free for <strong>7 days</strong>, plus 30 AI minutes once per device. The trial then ends by itself; there is no automatic payment. Notes, symbols, links and pages made during the trial stay.</li>
 <li><strong>Pro:</strong> a one-time in-app purchase that is <strong>yours for life</strong>, with 30 AI minutes every month and a one-time 60-minute welcome bonus. Reinstalling with the same store account restores it with “Restore purchase”.</li>
 <li><strong>Leggii Plus:</strong> a monthly or yearly <strong>subscription</strong> with all Pro features and 5 hours of AI time every month. It renews for the same period until cancelled; cancel any time in Google Play (or the App Store) subscriptions. It keeps working until the paid period ends; afterwards you are back to Pro if you bought Pro, otherwise to the free version.</li>
-<li><strong>Leggii cloud (Plus):</strong> signed in with the welegato ID, scores, ink, folders, setlists, my notes and — if you keep it on — recordings stay the same on the devices of that ID. Plus includes 10 GB; for more space you can switch to the 50 GB plan (Google Play then charges only the difference for the rest of the period). When the cloud is full, only new uploads stop and nothing is deleted. Something deleted on one device is deleted on the other devices and in the cloud too. When Plus ends, new uploads stop, everything can be downloaded for 90 days, and after two reminder emails the cloud files are deleted. The cloud is for syncing your own devices. Others can open only the files you choose with “Send to a welegato chat” below, and only for a limited time. We recommend also keeping important material with “Back up library”.</li>
+<li><strong>Leggii cloud (Plus):</strong> signed in with the welegato ID, scores, ink, folders, setlists, my notes and — if you keep it on — recordings stay the same on the devices of that ID. Plus includes 10 GB; for more space you can switch to the 50 GB plan (Google Play then charges only the difference for the rest of the period; the App Store switches at once and refunds the unused part of the period pro rata). When the cloud is full, only new uploads stop and nothing is deleted. Something deleted on one device is deleted on the other devices and in the cloud too. When Plus ends, new uploads stop, everything can be downloaded for 90 days, and after two reminder emails the cloud files are deleted. The cloud is for syncing your own devices. Others can open only the files you choose with “Send to a welegato chat” below, and only for a limited time. We recommend also keeping important material with “Back up library”.</li>
 <li><strong>Launch price:</strong> subscribe to Plus by 31 December 2027 and keep that price for as long as you stay subscribed. A different price may apply to new subscriptions after that.</li>
 <li><strong>AI time top-ups:</strong> 5 or 15 hours, paid once, not a subscription. Usable for 12 months from purchase, whether or not you subscribe to Plus.</li>
 <li><strong>How AI time is counted:</strong> lesson notes use 1 minute per recording minute, transcripts 3 minutes; the cost is shown before starting. Monthly minutes are used first, then top-ups. Monthly minutes do not carry over. AI time has no cash value and cannot be transferred.</li>
 <li><strong>welegato ID and purchases:</strong> when you sign in, purchases and AI time are linked to that ID. A purchase belongs to the first ID it was linked to.</li>
-<li>Prices are shown at checkout. Payment and refunds follow each store's rules and process. For digital content, if you agree that use starts immediately, your right of withdrawal may end as far as the law allows; the store's refund process remains available.</li>
+<li>Prices are shown at checkout. Payment and refunds follow each store's rules and process. Refunds for App Store purchases are handled by Apple and can be requested at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>; the company cannot refund App Store payments itself. For digital content, if you agree that use starts immediately, your right of withdrawal may end as far as the law allows; the store's refund process remains available.</li>
 <li>We will not remove core Pro features from paying users without good reason. Changes to monthly AI time or top-up terms are announced in advance and do not apply to periods already paid or time already bought.</li>
 </ol>"""),
    ("Scores and copyright", """<ol>
@@ -160,7 +162,7 @@ TERMS = {
 <li>A reported file is closed at once. If, after review, the company finds an infringement or illegal content, it may keep the sharing blocked and restrict use under the welegato terms.</li>
 <li>To prevent misuse you can send up to 20 files a day and up to 500 MB at a time. The company may change these limits.</li>
 </ol>"""),
-   ("welegato and external services", """<p>The app links to and uses external services such as welegato, IMSLP and Google Play. They are separate from the app and governed by their own terms and privacy policies. The company is not responsible for their content or availability.</p>"""),
+   ("welegato and external services", """<p>The app links to and uses external services such as welegato, IMSLP, Google Play and the App Store. They are separate from the app and governed by their own terms and privacy policies. The company is not responsible for their content or availability.</p><p>If you got the app from the App Store, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">standard Licensed Application End User License Agreement (EULA)</a> also applies. Where it differs from these terms, these terms prevail, without reducing the rights Apple's standard agreement gives you. The company, not Apple, is responsible for the app and its support.</p>"""),
    ("Intellectual property", """<p>The company holds the rights to the app's logo, the name “Leggii”, its design, texts and source code. You may not copy, distribute, transmit, publish, reverse-engineer or create derivative works without prior written consent.</p>"""),
    ("Your obligations", """<ol>
 <li>Do not reverse-engineer or decompile the app or circumvent payment.</li>
@@ -181,9 +183,9 @@ TERMS = {
  "de": {
   "title": "Leggii Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
-  "meta": [("Gültig ab", "21.12.2026"), ("Version", "1.3"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "21.12.2026"), ("Version", "1.4"), ("Betreiber", "Vicino Labs")],
   "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
-  "footer": "Diese Bedingungen gelten ab dem 21. Dezember 2026 (Version 1.3, angekündigt am 9. November 2026). Bis dahin gilt Version 1.2 (6. November 2026). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
+  "footer": "Diese Bedingungen gelten ab dem 21. Dezember 2026 (Version 1.4, angekündigt am 10. November 2026 – die am 9. November 2026 angekündigte Version 1.3 ergänzt um App-Store-Angaben). Bis dahin gilt Version 1.2 (6. November 2026). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Geltungsbereich", "<p>Diese Bedingungen regeln die Nutzung der mobilen App Leggii („App“) von Vicino Labs („Anbieter“).</p>"),
@@ -205,12 +207,12 @@ TERMS = {
 <li><strong>Testphase:</strong> Nach der ersten Installation kannst du die Pro-Funktionen <strong>7 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
 <li><strong>Pro:</strong> ein einmaliger In-App-Kauf, <strong>dauerhaft</strong> nutzbar, mit 30 KI-Minuten pro Monat und einmalig 60 Willkommensminuten. Bei Neuinstallation mit demselben Store-Konto stellt „Kauf wiederherstellen“ ihn wieder her.</li>
 <li><strong>Leggii Plus:</strong> ein monatliches oder jährliches <strong>Abo</strong> mit allen Pro-Funktionen und 5 Stunden KI-Zeit pro Monat. Es verlängert sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abos von Google Play (oder dem App Store). Es läuft bis zum Ende des bezahlten Zeitraums; danach gilt wieder Pro, wenn du Pro gekauft hast, sonst die kostenlose Version.</li>
-<li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn du es eingeschaltet lässt – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz kannst du auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich deiner eigenen Geräte. Andere können nur die Dateien öffnen, die du unten mit „An welegato-Chat senden“ auswählst, und nur für begrenzte Zeit. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
+<li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn du es eingeschaltet lässt – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz kannst du auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums; der App Store wechselt sofort und erstattet den ungenutzten Teil anteilig). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich deiner eigenen Geräte. Andere können nur die Dateien öffnen, die du unten mit „An welegato-Chat senden“ auswählst, und nur für begrenzte Zeit. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
 <li><strong>Einführungspreis:</strong> Wer Plus bis zum 31. Dezember 2027 abonniert, behält diesen Preis, solange das Abo läuft. Für spätere neue Abos kann ein anderer Preis gelten.</li>
 <li><strong>KI-Zeit-Aufladungen:</strong> 5 oder 15 Stunden, einmal bezahlt, kein Abo. Nutzbar 12 Monate ab Kauf, unabhängig von einem Plus-Abo.</li>
 <li><strong>Berechnung der KI-Zeit:</strong> Unterrichtsnotizen verbrauchen 1 Minute pro Aufnahmeminute, Mitschriften 3 Minuten; die Kosten werden vor dem Start angezeigt. Zuerst werden die Monatsminuten verbraucht, dann Aufladungen. Monatsminuten verfallen am Monatsende. KI-Zeit hat keinen Geldwert und ist nicht übertragbar.</li>
 <li><strong>welegato-ID und Käufe:</strong> Bei Anmeldung werden Käufe und KI-Zeit mit dieser ID verknüpft. Ein Kauf gehört zu der ID, mit der er zuerst verknüpft wurde.</li>
-<li>Preise werden an der Kasse angezeigt. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Preise werden an der Kasse angezeigt. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Erstattungen für App-Store-Käufe bearbeitet Apple; du kannst sie unter <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> beantragen. Der Anbieter kann App-Store-Zahlungen nicht selbst erstatten. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
 <li>Wir entfernen zahlenden Nutzern zentrale Pro-Funktionen nicht ohne triftigen Grund. Änderungen der monatlichen KI-Zeit oder der Aufladebedingungen kündigen wir vorher an; sie gelten nicht für bereits bezahlte Zeiträume oder bereits gekaufte Zeit.</li>
 </ol>"""),
    ("Noten und Urheberrecht", """<ol>
@@ -242,7 +244,7 @@ TERMS = {
 <li>Eine gemeldete Datei wird sofort geschlossen. Stellt der Anbieter nach Prüfung eine Rechtsverletzung oder rechtswidrige Inhalte fest, kann er das Teilen gesperrt lassen und die Nutzung nach den welegato-Nutzungsbedingungen einschränken.</li>
 <li>Um Missbrauch zu verhindern, kannst du bis zu 20 Dateien pro Tag und bis zu 500 MB auf einmal senden. Der Anbieter kann diese Grenzen ändern.</li>
 </ol>"""),
-   ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, IMSLP und Google Play. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p>"""),
+   ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, IMSLP, Google Play und den App Store. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p><p>Hast du die App aus dem App Store, gilt zusätzlich Apples <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard-Endbenutzer-Lizenzvertrag (Licensed Application EULA)</a>. Weicht er von diesen Bedingungen ab, gehen diese Bedingungen vor, ohne die Rechte zu schmälern, die dir Apples Standardvertrag gibt. Verantwortlich für die App und ihren Support ist der Anbieter, nicht Apple.</p>"""),
    ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Leggii“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt.</p>"""),
    ("Pflichten der Nutzer", """<ol>
 <li>Kein Reverse Engineering oder Dekompilieren der App und keine Umgehung der Bezahlung.</li>
@@ -263,9 +265,9 @@ TERMS = {
  "it": {
   "title": "Leggii — Termini di utilizzo",
   "h1": "Termini di utilizzo",
-  "meta": [("In vigore dal", "21.12.2026"), ("Versione", "1.3"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "21.12.2026"), ("Versione", "1.4"), ("Gestore", "Vicino Labs")],
   "lede": "Questi termini regolano l'uso di Leggii, un'app per spartiti di Vicino Labs. Installando e usando l'app li accetti.",
-  "footer": "Questi termini sono in vigore dal 21 dicembre 2026 (versione 1.3, annunciata il 9 novembre 2026). Fino ad allora vale la versione 1.2 (6 novembre 2026). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
+  "footer": "Questi termini sono in vigore dal 21 dicembre 2026 (versione 1.4, annunciata il 10 novembre 2026 – la versione 1.3 annunciata il 9 novembre 2026 con in più le indicazioni App Store). Fino ad allora vale la versione 1.2 (6 novembre 2026). Versioni precedenti 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>Questi termini regolano l'uso dell'app mobile Leggii (“app”) fornita da Vicino Labs (“fornitore”).</p>"),
@@ -287,12 +289,12 @@ TERMS = {
 <li><strong>Prova gratuita:</strong> dopo la prima installazione puoi usare le funzioni Pro gratis per <strong>7 giorni</strong>, più 30 minuti AI una sola volta per dispositivo. Poi la prova termina da sola; non c'è alcun pagamento automatico. Annotazioni, simboli, collegamenti e pagine creati durante la prova restano.</li>
 <li><strong>Pro:</strong> un acquisto in-app unico, <strong>per sempre</strong>, con 30 minuti AI al mese e un bonus di benvenuto unico di 60 minuti. Reinstallando con lo stesso account dello store, «Ripristina acquisto» lo recupera.</li>
 <li><strong>Leggii Plus:</strong> un <strong>abbonamento</strong> mensile o annuale con tutte le funzioni Pro e 5 ore di tempo AI al mese. Si rinnova per lo stesso periodo fino alla disdetta; puoi annullarlo in qualsiasi momento negli abbonamenti di Google Play (o dell'App Store). Resta attivo fino alla fine del periodo pagato; poi torni a Pro se lo hai acquistato, altrimenti alla versione gratuita.</li>
-<li><strong>Cloud di Leggii (Plus):</strong> con il welegato ID connesso, spartiti, annotazioni, cartelle, scalette, Le mie note e – se lo lasci attivo – le registrazioni restano uguali sui dispositivi di quell'ID. Plus include 10 GB; per più spazio puoi passare al piano da 50 GB (Google Play addebita solo la differenza per il resto del periodo). Quando il cloud è pieno si fermano solo i nuovi caricamenti e nulla viene eliminato. Ciò che elimini su un dispositivo viene eliminato anche sugli altri dispositivi e nel cloud. Quando Plus termina, i nuovi caricamenti si fermano, per 90 giorni puoi scaricare tutto e, dopo due email di promemoria, i file nel cloud vengono eliminati. Il cloud serve a sincronizzare i tuoi dispositivi. Altre persone possono aprire solo i file che scegli con «Invia a una chat welegato» qui sotto, e solo per un periodo limitato. Consigliamo di conservare il materiale importante anche con “Backup della libreria”.</li>
+<li><strong>Cloud di Leggii (Plus):</strong> con il welegato ID connesso, spartiti, annotazioni, cartelle, scalette, Le mie note e – se lo lasci attivo – le registrazioni restano uguali sui dispositivi di quell'ID. Plus include 10 GB; per più spazio puoi passare al piano da 50 GB (Google Play addebita solo la differenza per il resto del periodo; l'App Store cambia subito e rimborsa in proporzione la parte non usata). Quando il cloud è pieno si fermano solo i nuovi caricamenti e nulla viene eliminato. Ciò che elimini su un dispositivo viene eliminato anche sugli altri dispositivi e nel cloud. Quando Plus termina, i nuovi caricamenti si fermano, per 90 giorni puoi scaricare tutto e, dopo due email di promemoria, i file nel cloud vengono eliminati. Il cloud serve a sincronizzare i tuoi dispositivi. Altre persone possono aprire solo i file che scegli con «Invia a una chat welegato» qui sotto, e solo per un periodo limitato. Consigliamo di conservare il materiale importante anche con “Backup della libreria”.</li>
 <li><strong>Prezzo di lancio:</strong> chi si abbona a Plus entro il 31 dicembre 2027 mantiene quel prezzo finché resta abbonato. Ai nuovi abbonamenti successivi può applicarsi un prezzo diverso.</li>
 <li><strong>Ricariche di tempo AI:</strong> 5 o 15 ore, pagate una volta, non un abbonamento. Utilizzabili per 12 mesi dall'acquisto, con o senza Plus.</li>
 <li><strong>Come si conta il tempo AI:</strong> le note della lezione usano 1 minuto per minuto di registrazione, le trascrizioni 3 minuti; il costo è mostrato prima di iniziare. Prima si usano i minuti mensili, poi le ricariche. I minuti mensili non si accumulano. Il tempo AI non ha valore in denaro e non è trasferibile.</li>
 <li><strong>welegato ID e acquisti:</strong> con l'accesso, acquisti e tempo AI vengono collegati a quell'ID. Un acquisto appartiene al primo ID a cui è stato collegato.</li>
-<li>I prezzi sono indicati al momento del pagamento. Pagamenti e rimborsi seguono le regole e le procedure di ciascuno store. Per i contenuti digitali, se accetti l'inizio immediato dell'uso, il diritto di recesso può estinguersi nei limiti di legge; la procedura di rimborso dello store resta disponibile.</li>
+<li>I prezzi sono indicati al momento del pagamento. Pagamenti e rimborsi seguono le regole e le procedure di ciascuno store. I rimborsi degli acquisti App Store sono gestiti da Apple e si richiedono su <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>; il fornitore non può rimborsare direttamente i pagamenti App Store. Per i contenuti digitali, se accetti l'inizio immediato dell'uso, il diritto di recesso può estinguersi nei limiti di legge; la procedura di rimborso dello store resta disponibile.</li>
 <li>Non togliamo funzioni Pro essenziali agli utenti paganti senza un valido motivo. Le modifiche al tempo AI mensile o alle condizioni delle ricariche vengono annunciate prima e non valgono per periodi già pagati o tempo già acquistato.</li>
 </ol>"""),
    ("Spartiti e diritto d'autore", """<ol>
@@ -324,7 +326,7 @@ TERMS = {
 <li>Un file segnalato viene chiuso subito. Se dopo la verifica il fornitore riscontra una violazione o contenuti illeciti, può mantenere bloccata la condivisione e limitare l'uso secondo i termini di welegato.</li>
 <li>Per evitare abusi puoi inviare fino a 20 file al giorno e fino a 500 MB alla volta. Il fornitore può modificare questi limiti.</li>
 </ol>"""),
-   ("welegato e servizi esterni", """<p>L'app collega e usa servizi esterni come welegato, IMSLP e Google Play. Sono separati dall'app e regolati dai propri termini e informative. Il fornitore non risponde del loro contenuto o della loro disponibilità.</p>"""),
+   ("welegato e servizi esterni", """<p>L'app collega e usa servizi esterni come welegato, IMSLP, Google Play e l'App Store. Sono separati dall'app e regolati dai propri termini e informative. Il fornitore non risponde del loro contenuto o della loro disponibilità.</p><p>Se hai scaricato l'app dall'App Store, si applica anche il <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">contratto di licenza standard per l'utente finale di Apple (Licensed Application EULA)</a>. Dove differisce da questi termini prevalgono questi termini, senza ridurre i diritti che il contratto standard di Apple ti riconosce. Della app e della sua assistenza risponde il fornitore, non Apple.</p>"""),
    ("Proprietà intellettuale", """<p>I diritti su logo, nome “Leggii”, grafica, testi e codice sorgente dell'app appartengono al fornitore. Senza consenso scritto preventivo non è consentito copiare, distribuire, trasmettere, pubblicare, decompilare o creare opere derivate.</p>"""),
    ("Obblighi dell'utente", """<ol>
 <li>Non decompilare o analizzare l'app né aggirare il pagamento.</li>

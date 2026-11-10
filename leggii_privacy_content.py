@@ -9,6 +9,8 @@
 2026-11-06 버전 1.2 (앱 1.5.0): 렛지 클라우드(Plus, Cloudflare R2), 아이디 삭제 시 클라우드 삭제, Plus 종료 후 90일.
 2026-11-09 버전 1.3: 위레가토 채팅으로 클라우드 파일 7일 공유(링크만, 위레가토가 공유 기록 저장).
   (2026-11-05 시행 전 추가: AI 답 신고 — 사용자가 신고할 때만 AI 글·의견 180일 보관, Play AI 생성 콘텐츠 정책.)
+2026-11-10 버전 1.4 (아이폰 출시 준비, 사장님 승인): App Store 구매 확인(Apple 서명 거래 정보, appAccountToken=가명 계정 번호,
+원 거래 번호 해시), Apple 개인정보처리방침 링크, Apple로 로그인(이메일 가리기), 수탁자 Apple 줄, 외부 링크 App Store.
 """
 
 from appoggio_privacy_content import EMAIL, _id_card
@@ -44,9 +46,9 @@ PRIVACY = {
  "ko": {
   "title": "렛지 악보(Leggii) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.06"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.10"), ("버전", "1.4"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)의 기본 기능은 회원가입 없이 기기 안에서만 동작하며, 악보·필기·녹음은 이용자의 기기에 저장됩니다. AI 레슨 분석, 구매 확인, 선택 로그인(위레가토 통합 아이디), 렛지 클라우드(Plus), 렛지에게 물어보기를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 9일부터 시행됩니다 (버전 1.3). 이전 버전 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
+  "footer": "본 방침은 2026년 11월 10일부터 시행됩니다 (버전 1.4). 이전 버전 1.3: 2026년 11월 9일, 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
@@ -86,17 +88,18 @@ PRIVACY = {
    ("IMSLP 검색·다운로드", f"""<p>“IMSLP”를 고르면 앱이 공개 악보 사이트 IMSLP(imslp.org)에 검색어를 보내 곡과 파일 목록을 받아 오고, 파일을 받을 때는 IMSLP의 다운로드 페이지를 앱 안에서 엽니다. 이때 검색어와 기기의 IP 주소가 IMSLP 서버에 전달되고, IMSLP가 쿠키를 저장할 수 있습니다. 이 처리는 <a href="{IMSLP_PRIVACY}" target="_blank" rel="noopener">IMSLP 개인정보처리방침</a>을 따릅니다. 저희는 검색어나 받은 악보를 알 수 없습니다.</p>"""),
    ("구매·구독·AI 시간", """<p>Pro(한 번 구매), Leggii Plus(정기 구독), AI 시간 충전은 Google Play(또는 App Store) 결제로 삽니다. 결제와 카드 정보는 스토어가 처리하며 저희는 받지 않습니다.</p>
 <ul>
-<li>앱은 구매 증명(구매 토큰)을 저희 서버로 보내고, 서버가 Google Play 개발자 API로 실제 구매인지, 구독이 유효한지 확인합니다. 서버에는 토큰 자체가 아니라 되돌릴 수 없는 <strong>해시값</strong>과 상품, 시각, 구독 만료일, AI 시간 기록만 저장합니다.</li>
+<li>앱은 구매 증명을 저희 서버로 보냅니다. Google Play에서 산 경우 서버가 Google Play 개발자 API로, App Store에서 산 경우 Apple이 서명한 거래 정보의 서명을 확인해, 실제 구매인지와 구독이 유효한지 확인합니다. App Store 구매에는 이 확인을 위해 이용자의 계정 번호(가명)를 구매에 함께 적어 둡니다. 서버에는 토큰 자체가 아니라 되돌릴 수 없는 <strong>해시값</strong>(App Store는 원 거래 번호의 해시)과 상품, 시각, 구독 만료일, AI 시간 기록만 저장합니다.</li>
 <li>AI 시간 계정은 앱 설치 때 만든 무작위 설치 번호(해시로 저장)나 구매로 구분하며, 이름이나 이메일은 필요하지 않습니다.</li>
 <li>7일 체험의 AI 30분을 기기당 한 번만 드리기 위해 기기 식별값(Android ID / iOS 키체인 값)의 해시를 저장합니다(남용 방지, GDPR 제6조 제1항 f호).</li>
 <li>충전 기록은 같은 구매가 두 번 지급되지 않도록, 아이디를 삭제한 뒤에도 계정과 분리된 해시로 보관합니다.</li>
 </ul>
-<p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>이 적용됩니다.</p>"""),
+<p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>, App Store에서는 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>이 적용됩니다.</p>"""),
    ("위레가토 통합 아이디 (선택)", """<p>로그인하지 않아도 렛지의 모든 기본 기능을 쓸 수 있습니다. 로그인하면 같은 회사가 운영하는 위레가토의 계정(위레가토 통합 아이디)을 씁니다.</p>
 <ul>
-<li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Google·카카오·이메일, 계정 번호)는 <a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 렛지에서 가입하면 “렛지에서 가입함” 표시가 계정에 남고, 첫 로그인 때 환영 메일이 한 번 갑니다.</li>
+<li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Apple·Google·카카오·이메일, 계정 번호)는 <a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 렛지에서 가입하면 “렛지에서 가입함” 표시가 계정에 남고, 첫 로그인 때 환영 메일이 한 번 갑니다.</li>
 <li>렛지는 아이디를 AI 시간·구매와 연결합니다(가명 계정 번호와 아이디의 연결 기록). 그래서 다른 기기에서 로그인해도 Pro·Plus·AI 시간이 이어집니다.</li>
-<li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
+<li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Apple·Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
+<li>아이폰·아이패드에서 “Apple로 계속”을 고르면 Apple이 확인한 이름과 이메일을 받습니다. 이용자가 “이메일 가리기”를 고르면 Apple이 만든 중계 주소만 받습니다.</li>
 <li>설정 › 위레가토 통합 아이디 › 아이디 관리에서 아이디를 삭제하면 위레가토 계정과 렛지의 AI 계정·연결 기록이 지워집니다. 렛지 클라우드의 파일도 함께 지워지며, 기기 안의 악보와 녹음은 남습니다.</li>
 </ul>
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
@@ -116,7 +119,7 @@ PRIVACY = {
 <li><strong>Supabase</strong> — 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Google</strong> — Gemini API(AI 분석·도우미), Google Play 결제와 구매 확인, 글자 인식(ML Kit)</li>
 <li><strong>Cloudflare</strong> — 렛지 클라우드의 파일 저장(R2, Plus), 이메일 로그인의 자동 가입 방지(Turnstile)</li>
-<li><strong>Apple</strong> — App Store 결제(iPhone·iPad)</li>
+<li><strong>Apple</strong> — App Store 결제와 구매 확인, Apple로 로그인(iPhone·iPad)</li>
 </ul>
 <p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
    ("welegato 배너와 외부 링크", f"""<p>악보 목록 아래의 배너와 설정의 링크를 <strong>누를 때만</strong> 브라우저나 Google Play로 welegato(같은 회사가 운영하는 음악 플랫폼) 또는 다른 Vicino Labs 앱이 열립니다. 링크에는 “앱에서 왔다”는 표시(<code>utm_source=leggii</code>)만 붙고 이용자를 식별하는 값은 없습니다. 열린 뒤에는 해당 사이트의 방침이 적용됩니다 — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato 개인정보처리방침</a>.</p>
@@ -136,9 +139,9 @@ PRIVACY = {
  "en": {
   "title": "Leggii Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-06"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-10"), ("Version", "1.4"), ("Operator", "Vicino Labs")],
   "lede": "The basic features of Leggii, a sheet music app made by Vicino Labs, work without an account and only on your device; your scores, notes and recordings are stored there. Only AI lesson analysis, purchase checks, the optional sign-in (welegato ID), the Leggii cloud (Plus) and Ask Leggii go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 9 November 2026 (version 1.3). Previous versions 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
+  "footer": "This policy is effective from 10 November 2026 (version 1.4). Previous versions 1.3: 9 November 2026, 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
@@ -178,17 +181,18 @@ PRIVACY = {
    ("IMSLP search and downloads", f"""<p>When you use “IMSLP”, the app sends your search terms to the public sheet music library IMSLP (imslp.org) to get works and file lists, and opens IMSLP's download page inside the app when you download. Your search terms and your device's IP address reach IMSLP's servers, and IMSLP may set cookies. This is governed by the <a href="{IMSLP_PRIVACY}" target="_blank" rel="noopener">IMSLP privacy policy</a>. We do not learn what you search for or download.</p>"""),
    ("Purchases, subscriptions and AI time", """<p>Pro (one-time), Leggii Plus (subscription) and AI time top-ups are bought through Google Play (or the App Store). The store handles payment and card details; we never receive them.</p>
 <ul>
-<li>The app sends the proof of purchase (purchase token) to our server, which checks with the Google Play Developer API that the purchase is real and the subscription active. The server stores an irreversible <strong>hash</strong> instead of the token, plus the product, time, subscription end date and AI time records.</li>
+<li>The app sends the proof of purchase to our server. For Google Play purchases the server checks with the Google Play Developer API, for App Store purchases it verifies the signature of the transaction data signed by Apple, that the purchase is real and the subscription active. For this check, App Store purchases carry your pseudonymous account number. The server stores an irreversible <strong>hash</strong> instead of the token (for the App Store, of the original transaction ID), plus the product, time, subscription end date and AI time records.</li>
 <li>AI time accounts are told apart by a random install number (stored as a hash) or by the purchase – no name or email is needed.</li>
 <li>To give the trial's 30 AI minutes only once per device, a hash of the device identifier (Android ID / iOS keychain value) is stored (preventing abuse, Art. 6(1)(f) GDPR).</li>
 <li>Top-up records are kept as hashes, separated from the account, even after an ID is deleted, so the same purchase is never credited twice.</li>
 </ul>
-<p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>"""),
+<p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, in the App Store under the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>"""),
    ("welegato ID (optional)", """<p>Every basic feature of Leggii works without signing in. If you sign in, you use an account of welegato, run by the same company (the welegato ID).</p>
 <ul>
-<li><strong>Account data</strong> (email, name, sign-in method Google, Kakao or email, account number) is processed under the <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>. An ID created in Leggii is marked “signed up in Leggii”, and one welcome email is sent at the first sign-in.</li>
+<li><strong>Account data</strong> (email, name, sign-in method Apple, Google, Kakao or email, account number) is processed under the <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>. An ID created in Leggii is marked “signed up in Leggii”, and one welcome email is sent at the first sign-in.</li>
 <li>Leggii links the ID to your AI time and purchases (a record linking the pseudonymous account number to the ID), so Pro, Plus and AI time follow you to other devices.</li>
-<li>For email sign-up and sign-in, Cloudflare Turnstile checks browser signals to stop automated sign-ups (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Google and Kakao sign-in fall under those companies' policies.</li>
+<li>For email sign-up and sign-in, Cloudflare Turnstile checks browser signals to stop automated sign-ups (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Apple, Google and Kakao sign-in fall under those companies' policies.</li>
+<li>If you choose “Continue with Apple” on iPhone or iPad, we receive the name and email confirmed by Apple. If you choose “Hide My Email”, we receive only a relay address created by Apple.</li>
 <li>Deleting the ID in Settings › welegato ID › Manage ID deletes the welegato account, Leggii's AI account and links and the Leggii cloud. Scores and recordings on the device stay.</li>
 </ul>
 <p>Under welegato's terms, only people aged 16 or over can sign in. Legal basis: providing the feature you chose (b).</p>"""),
@@ -208,10 +212,10 @@ PRIVACY = {
 <li><strong>Supabase</strong> — server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
 <li><strong>Google</strong> — Gemini API (AI analysis, assistant), Google Play payments and purchase checks, text recognition (ML Kit)</li>
 <li><strong>Cloudflare</strong> — file storage of the Leggii cloud (R2, Plus), protection against automated email sign-ups (Turnstile)</li>
-<li><strong>Apple</strong> — App Store payments (iPhone, iPad)</li>
+<li><strong>Apple</strong> — App Store payments and purchase checks, Sign in with Apple (iPhone, iPad)</li>
 </ul>
 <p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
-   ("The welegato banner and external links", f"""<p>The banner below the score list and the links in Settings open welegato (a music platform of the same company) or another Vicino Labs app in your browser or Google Play <strong>only when you tap them</strong>. Links carry a tag (<code>utm_source=leggii</code>) that only says the visit came from the app, with no value that identifies you. Once open, that site's policy applies — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>.</p>
+   ("The welegato banner and external links", f"""<p>The banner below the score list and the links in Settings open welegato (a music platform of the same company) or another Vicino Labs app in your browser or Google Play (the App Store on iPhone and iPad) <strong>only when you tap them</strong>. Links carry a tag (<code>utm_source=leggii</code>) that only says the visit came from the app, with no value that identifies you. Once open, that site's policy applies — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>.</p>
 <p>When you share a photo scan as PDF from the free version, each page carries the line “Leggii Score with welegato · welegato.com”. It contains no personal data.</p>"""),
    ("Sharing and export", """<p>When you share a score or export a PDF with notes, the file goes only to the app or person you pick in your device's share sheet.</p>"""),
    ("Data we don't collect", """<p>Without signing in we receive no name, email or phone number. We collect no location, contacts or advertising ID. Recordings are sent only briefly, for an AI analysis you asked for, and are not stored. A Bluetooth pedal works like a keyboard and needs no extra permission.</p>"""),
@@ -228,9 +232,9 @@ PRIVACY = {
  "de": {
   "title": "Leggii Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "10.11.2026"), ("Version", "1.4"), ("Betreiber", "Vicino Labs")],
   "lede": "Die Grundfunktionen von Leggii, einer Noten-App von Vicino Labs, funktionieren ohne Konto und nur auf deinem Gerät; Noten, Notizen und Aufnahmen werden dort gespeichert. Nur die KI-Unterrichtsanalyse, Kaufprüfungen, die freiwillige Anmeldung (welegato-ID), die Leggii Cloud (Plus) und „Leggii fragen“ laufen über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 9. November 2026 (Version 1.3). Vorherige Versionen 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
+  "footer": "Diese Erklärung gilt ab dem 10. November 2026 (Version 1.4). Vorherige Versionen 1.3: 9. November 2026, 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
@@ -270,17 +274,18 @@ PRIVACY = {
    ("Suche und Download bei IMSLP", f"""<p>Wenn du „IMSLP“ nutzt, sendet die App deine Suchbegriffe an die öffentliche Notenbibliothek IMSLP (imslp.org), um Werke und Dateilisten abzurufen, und öffnet beim Herunterladen die Download-Seite von IMSLP in der App. Dabei erreichen Suchbegriffe und die IP-Adresse deines Geräts die Server von IMSLP; IMSLP kann Cookies setzen. Es gilt die <a href="{IMSLP_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von IMSLP</a>. Wir erfahren nicht, was du suchst oder lädst.</p>"""),
    ("Käufe, Abos und KI-Zeit", """<p>Pro (Einmalkauf), Leggii Plus (Abo) und KI-Zeit-Aufladungen kaufst du über Google Play (oder den App Store). Zahlung und Kartendaten verarbeitet der Store; wir erhalten sie nicht.</p>
 <ul>
-<li>Die App sendet den Kaufnachweis (Kauf-Token) an unseren Server, der über die Google Play Developer API prüft, ob der Kauf echt und das Abo aktiv ist. Gespeichert wird statt des Tokens ein nicht umkehrbarer <strong>Hash</strong>, dazu Produkt, Zeitpunkt, Abo-Ende und KI-Zeit-Einträge.</li>
+<li>Die App sendet den Kaufnachweis an unseren Server. Bei Käufen über Google Play prüft er über die Google Play Developer API, bei Käufen im App Store anhand der Signatur der von Apple signierten Transaktionsdaten, ob der Kauf echt und das Abo aktiv ist. Für diese Prüfung tragen App-Store-Käufe deine pseudonyme Kontonummer. Gespeichert wird statt des Tokens ein nicht umkehrbarer <strong>Hash</strong> (beim App Store der ursprünglichen Transaktionsnummer), dazu Produkt, Zeitpunkt, Abo-Ende und KI-Zeit-Einträge.</li>
 <li>KI-Zeit-Konten werden über eine zufällige Installationsnummer (als Hash gespeichert) oder den Kauf unterschieden – Name oder E-Mail sind nicht nötig.</li>
 <li>Damit die 30 KI-Minuten der Testphase nur einmal pro Gerät vergeben werden, speichern wir einen Hash der Gerätekennung (Android-ID / iOS-Schlüsselbund-Wert) (Missbrauchsschutz, Art. 6 Abs. 1 lit. f DSGVO).</li>
 <li>Einträge zu Aufladungen bleiben als vom Konto getrennter Hash auch nach Löschen einer ID erhalten, damit derselbe Kauf nie doppelt gutgeschrieben wird.</li>
 </ul>
-<p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>"""),
+<p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>, im App Store die <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>"""),
    ("welegato-ID (freiwillig)", """<p>Alle Grundfunktionen von Leggii funktionieren ohne Anmeldung. Wenn du dich anmeldest, nutzt du ein Konto von welegato, einem Dienst desselben Unternehmens (die welegato-ID).</p>
 <ul>
-<li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Eine in Leggii erstellte ID wird als „in Leggii registriert“ markiert; bei der ersten Anmeldung kommt eine Willkommens-E-Mail.</li>
+<li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Apple, Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Eine in Leggii erstellte ID wird als „in Leggii registriert“ markiert; bei der ersten Anmeldung kommt eine Willkommens-E-Mail.</li>
 <li>Leggii verknüpft die ID mit deiner KI-Zeit und deinen Käufen (Eintrag, der die pseudonyme Kontonummer mit der ID verbindet), damit Pro, Plus und KI-Zeit auf anderen Geräten weitergelten.</li>
-<li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browser-Signale gegen automatische Registrierungen (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Google oder Kakao gelten deren Erklärungen.</li>
+<li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browser-Signale gegen automatische Registrierungen (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Apple, Google oder Kakao gelten deren Erklärungen.</li>
+<li>Wählst du auf iPhone oder iPad „Mit Apple fortfahren“, erhalten wir den von Apple bestätigten Namen und die E-Mail-Adresse. Wählst du „E-Mail-Adresse verbergen“, erhalten wir nur eine von Apple erzeugte Weiterleitungsadresse.</li>
 <li>Löschst du die ID unter Einstellungen › welegato-ID › ID verwalten, werden das welegato-Konto sowie Leggiis KI-Konto und Verknüpfungen gelöscht. Noten und Aufnahmen auf dem Gerät bleiben.</li>
 </ul>
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
@@ -300,10 +305,10 @@ PRIVACY = {
 <li><strong>Supabase</strong> — Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
 <li><strong>Google</strong> — Gemini-API (KI-Analyse, Assistent), Google-Play-Zahlungen und Kaufprüfung, Texterkennung (ML Kit)</li>
 <li><strong>Cloudflare</strong> — Dateispeicher der Leggii Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
-<li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
+<li><strong>Apple</strong> — App-Store-Zahlungen und Kaufprüfung, Mit Apple anmelden (iPhone, iPad)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
-   ("welegato-Banner und externe Links", f"""<p>Das Banner unter der Notenliste und die Links in den Einstellungen öffnen welegato (eine Musikplattform desselben Unternehmens) oder eine andere App von Vicino Labs im Browser oder in Google Play <strong>nur, wenn du sie antippst</strong>. Links tragen nur die Kennung <code>utm_source=leggii</code>, die dich nicht identifiziert. Danach gilt die Erklärung der jeweiligen Seite — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>
+   ("welegato-Banner und externe Links", f"""<p>Das Banner unter der Notenliste und die Links in den Einstellungen öffnen welegato (eine Musikplattform desselben Unternehmens) oder eine andere App von Vicino Labs im Browser oder in Google Play (auf iPhone und iPad im App Store) <strong>nur, wenn du sie antippst</strong>. Links tragen nur die Kennung <code>utm_source=leggii</code>, die dich nicht identifiziert. Danach gilt die Erklärung der jeweiligen Seite — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>
 <p>Wenn du in der kostenlosen Version einen Foto-Scan als PDF teilst, steht unten auf jeder Seite „Leggii Noten mit welegato · welegato.com“. Diese Zeile enthält keine personenbezogenen Daten.</p>"""),
    ("Teilen und Export", """<p>Beim Teilen von Noten oder beim Export eines PDFs mit Notizen geht die Datei nur an die App oder Person, die du im Teilen-Dialog des Geräts wählst.</p>"""),
    ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht. Aufnahmen werden nur kurz für eine gewünschte KI-Analyse gesendet und nicht gespeichert. Ein Bluetooth-Pedal funktioniert wie eine Tastatur und braucht keine eigene Berechtigung.</p>"""),
@@ -320,9 +325,9 @@ PRIVACY = {
  "it": {
   "title": "Leggii — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "06.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "10.11.2026"), ("Versione", "1.4"), ("Gestore", "Vicino Labs")],
   "lede": "Le funzioni di base di Leggii, un'app per spartiti di Vicino Labs, funzionano senza account e solo sul tuo dispositivo; spartiti, annotazioni e registrazioni restano lì. Solo l'analisi AI delle lezioni, la verifica degli acquisti, l'accesso facoltativo (welegato ID), il cloud di Leggii (Plus) e «Chiedi a Leggii» passano dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 9 novembre 2026 (versione 1.3). Versioni precedenti 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
+  "footer": "Questa informativa è in vigore dal 10 novembre 2026 (versione 1.4). Versioni precedenti 1.3: 9 novembre 2026, 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
@@ -362,17 +367,18 @@ PRIVACY = {
    ("Ricerca e download su IMSLP", f"""<p>Quando usi “IMSLP”, l'app invia i termini di ricerca alla biblioteca musicale pubblica IMSLP (imslp.org) per ottenere opere ed elenchi di file, e apre nell'app la pagina di download di IMSLP. I termini di ricerca e l'indirizzo IP del dispositivo raggiungono i server di IMSLP, che può impostare cookie. Si applica l'<a href="{IMSLP_PRIVACY}" target="_blank" rel="noopener">informativa privacy di IMSLP</a>. Noi non sappiamo cosa cerchi o scarichi.</p>"""),
    ("Acquisti, abbonamenti e tempo AI", """<p>Pro (acquisto unico), Leggii Plus (abbonamento) e le ricariche di tempo AI si acquistano tramite Google Play (o l'App Store). Il pagamento e i dati della carta li gestisce lo store; noi non li riceviamo.</p>
 <ul>
-<li>L'app invia la prova d'acquisto (token) al nostro server, che verifica con la Google Play Developer API che l'acquisto sia reale e l'abbonamento attivo. Al posto del token viene salvato un <strong>hash</strong> irreversibile, con prodotto, momento, scadenza dell'abbonamento e registrazioni del tempo AI.</li>
+<li>L'app invia la prova d'acquisto al nostro server. Per gli acquisti su Google Play il server verifica con la Google Play Developer API, per quelli nell'App Store controlla la firma dei dati della transazione firmati da Apple, che l'acquisto sia reale e l'abbonamento attivo. Per questa verifica gli acquisti App Store riportano il tuo numero di account pseudonimo. Al posto del token viene salvato un <strong>hash</strong> irreversibile (per l'App Store, del numero della transazione originale), con prodotto, momento, scadenza dell'abbonamento e registrazioni del tempo AI.</li>
 <li>Gli account del tempo AI si distinguono con un numero di installazione casuale (salvato come hash) o con l'acquisto – non servono nome né email.</li>
 <li>Per dare i 30 minuti AI della prova una sola volta per dispositivo, salviamo un hash dell'identificativo del dispositivo (Android ID / valore del portachiavi iOS) (prevenzione degli abusi, art. 6, par. 1, lett. f GDPR).</li>
 <li>Le registrazioni delle ricariche restano come hash separati dall'account anche dopo l'eliminazione di un ID, così lo stesso acquisto non viene accreditato due volte.</li>
 </ul>
-<p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>"""),
+<p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">informativa privacy di Google</a>, nell'App Store l'<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>"""),
    ("welegato ID (facoltativo)", """<p>Tutte le funzioni di base di Leggii funzionano senza accesso. Se accedi, usi un account di welegato, servizio della stessa società (il welegato ID).</p>
 <ul>
-<li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Google, Kakao o email, numero di account) sono trattati secondo l'<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa privacy di welegato</a>. Un ID creato in Leggii viene segnato «registrato in Leggii» e al primo accesso arriva un'email di benvenuto.</li>
+<li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Apple, Google, Kakao o email, numero di account) sono trattati secondo l'<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa privacy di welegato</a>. Un ID creato in Leggii viene segnato «registrato in Leggii» e al primo accesso arriva un'email di benvenuto.</li>
 <li>Leggii collega l'ID al tuo tempo AI e ai tuoi acquisti (un dato che collega il numero di account pseudonimo all'ID), così Pro, Plus e tempo AI ti seguono su altri dispositivi.</li>
-<li>Per registrazione e accesso via email, Cloudflare Turnstile controlla segnali del browser contro le registrazioni automatiche (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">informativa di Cloudflare</a>). Per l'accesso con Google o Kakao valgono le loro informative.</li>
+<li>Per registrazione e accesso via email, Cloudflare Turnstile controlla segnali del browser contro le registrazioni automatiche (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">informativa di Cloudflare</a>). Per l'accesso con Apple, Google o Kakao valgono le loro informative.</li>
+<li>Se su iPhone o iPad scegli «Continua con Apple», riceviamo il nome e l'email confermati da Apple. Se scegli «Nascondi la mia email», riceviamo solo un indirizzo di inoltro creato da Apple.</li>
 <li>Eliminando l'ID in Impostazioni › welegato ID › Gestisci ID vengono cancellati l'account welegato e l'account AI e i collegamenti di Leggii. Anche il cloud di Leggii viene cancellato. Spartiti e registrazioni sul dispositivo restano.</li>
 </ul>
 <p>Secondo i termini di welegato, possono accedere solo persone dai 16 anni in su. Base giuridica: fornire la funzione scelta (lett. b).</p>"""),
@@ -392,10 +398,10 @@ PRIVACY = {
 <li><strong>Supabase</strong> — server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
 <li><strong>Google</strong> — API Gemini (analisi AI, assistente), pagamenti e verifica acquisti di Google Play, riconoscimento del testo (ML Kit)</li>
 <li><strong>Cloudflare</strong> — archiviazione dei file del cloud di Leggii (R2, Plus), protezione dalle registrazioni email automatiche (Turnstile)</li>
-<li><strong>Apple</strong> — pagamenti App Store (iPhone, iPad)</li>
+<li><strong>Apple</strong> — pagamenti e verifica acquisti App Store, Accedi con Apple (iPhone, iPad)</li>
 </ul>
 <p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
-   ("Banner welegato e link esterni", f"""<p>Il banner sotto l'elenco degli spartiti e i link nelle impostazioni aprono welegato (una piattaforma musicale della stessa azienda) o un'altra app di Vicino Labs nel browser o in Google Play <strong>solo quando li tocchi</strong>. I link portano solo l'indicazione <code>utm_source=leggii</code>, che non ti identifica. Poi si applica l'informativa del sito aperto — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">privacy di welegato</a>.</p>
+   ("Banner welegato e link esterni", f"""<p>Il banner sotto l'elenco degli spartiti e i link nelle impostazioni aprono welegato (una piattaforma musicale della stessa azienda) o un'altra app di Vicino Labs nel browser o in Google Play (su iPhone e iPad nell'App Store) <strong>solo quando li tocchi</strong>. I link portano solo l'indicazione <code>utm_source=leggii</code>, che non ti identifica. Poi si applica l'informativa del sito aperto — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">privacy di welegato</a>.</p>
 <p>Se nella versione gratuita condividi una scansione da foto come PDF, in fondo a ogni pagina compare “Leggii con welegato · welegato.com”. La riga non contiene dati personali.</p>"""),
    ("Condivisione ed esportazione", """<p>Quando condividi uno spartito o esporti un PDF con annotazioni, il file va solo all'app o alla persona che scegli nella finestra di condivisione del dispositivo.</p>"""),
    ("Dati che non raccogliamo", """<p>Senza accesso non riceviamo nome, email né numero di telefono. Non raccogliamo posizione, contatti né ID pubblicitari. Le registrazioni vengono inviate solo brevemente, per un'analisi AI che hai chiesto, e non vengono salvate. Un pedale Bluetooth funziona come una tastiera e non richiede permessi.</p>"""),
