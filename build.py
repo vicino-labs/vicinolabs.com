@@ -66,6 +66,9 @@ def page(lang, path, title, desc, body, alt=None, wide=False):
 PLAY = "https://play.google.com/store/apps/details?id="
 # 앱 순서(2026-11-08): 음악 앱(출시 → 준비 중), 노미오는 맨 끝 '일상' 묶음.
 MUSIC = ["welegato", "leggii", "appoggio", "pianino", "chiave", "prova", "squillo"]
+# App Store 번호(2026-11-10). 나라 없는 링크 — 아이폰은 그 사람 나라 스토어로, 컴퓨터는 미국 스토어
+# (아뽀조·피아니노는 미국에도 있음). 렛지는 승인되면 6832925566 추가.
+APPLE = {"appoggio": "6832364161", "pianino": "6832363954"}
 STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance"}
 NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "chiave": "Chiave", "pianino": "Pianino", "prova": "Prova", "squillo": "Squillo", "nomio": "Nomio"}
 SOON = {"chiave", "prova", "squillo"}
@@ -129,6 +132,8 @@ def card(lang, key):
         links.append(f'<a href="https://welegato.com/{"en/" if lang == "en" else ""}"{ext}>{t["site"]} →</a>')
     if key in STORE:
         links.append(f'<a href="{PLAY}{STORE[key]}"{ext}>{t["play"]}</a>')
+        if key in APPLE:
+            links.append(f'<a href="https://apps.apple.com/app/id{APPLE[key]}"{ext}>App Store</a>')
         links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
     elif key in LEGAL_ONLY:  # 출시 전(Bald) 앱: 법문 링크만, Play 링크는 출시 후 STORE에 추가
         links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
