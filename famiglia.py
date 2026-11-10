@@ -59,7 +59,8 @@ T = {'de': {'path': '/famiglia/',
                               'Mit Appoggio zuerst den Atem aufbauen, dann mit Squillo zur Klavierbegleitung einsingen.'),
                    'practise': ('Üben',
                                 'Intonation üben, aber kein Klavier in der Nähe?',
-                                'Pianino vereint Klavier, Metronom und Stimmgerät. Stellen Sie einfach Ihren Kammerton ein — 443 Hz wie im Orchester oder 415 Hz für Barockmusik.'),
+                                'Pianino vereint Klavier, Metronom und Stimmgerät. Stellen Sie einfach Ihren Kammerton ein — 443 Hz wie im '
+                                'Orchester oder 415 Hz für Barockmusik.'),
                    'reflect': ('Aufnehmen und auswerten',
                                'Was hat die Lehrerin noch mal gesagt?',
                                'Nehmen Sie Unterricht und Üben mit Prova auf. Die KI fasst zusammen, was gut lief und woran Sie als '
@@ -67,7 +68,7 @@ T = {'de': {'path': '/famiglia/',
         'warmup_tag': 'für Sängerinnen und Sänger',
         'loop_h': 'Und dann: die nächste Stunde',
         'loop': 'Mit allem, was Sie in der Woche erarbeitet haben, zurück in den Unterricht. Und wenn Sie eine neue Lehrerin, einen Coach '
-                'oder eine Bühne suchen, öffnet welegato die nächste Tür.',
+                'oder eine Bühne suchen, öffnet welegato die nächste Tür. So bleibt die Musik legato — ohne Unterbrechung.',
         'who_h': 'Wer braucht was?',
         'who_sub': 'Ob Gesang, Instrument oder Unterricht — kaum ein Feld bleibt leer.',
         'who_cols': ('Sängerinnen und Sänger', 'Instrumentalisten', 'Lehrkräfte'),
@@ -86,7 +87,15 @@ T = {'de': {'path': '/famiglia/',
         'all_h': 'Alle Apps ansehen',
         'all_btn': 'Zur App-Übersicht',
         'all_href': '/#apps',
-        'langs': 'Sprache'},
+        'langs': 'Sprache',
+        'quote_kicker': 'we + legato',
+        'quote': 'Spielen wir legato?',
+        'quote_text': 'Wie beim Legato, wo die Töne ohne Unterbrechung ineinanderfließen, verbinden die Apps von Famiglia Vicino jeden '
+                      'Moment Ihres Musikerlebens — ohne Bruch, von einer Stunde zur nächsten.',
+        'quote_src': 'aus welegato',
+        'end_h': 'Dann spielen wir legato.',
+        'end_btn2': 'welegato öffnen',
+        'end_href2': 'https://welegato.com/'},
  'en': {'path': '/en/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — how our music apps work together',
@@ -120,14 +129,15 @@ T = {'de': {'path': '/famiglia/',
                               'Build your breath with Appoggio first, then warm up to piano accompaniment in Squillo.'),
                    'practise': ('Practise',
                                 'Need to check your pitch, but no piano around?',
-                                'Pianino puts piano, metronome and tuner in one app. Just set your pitch — 443 Hz like the orchestra or 415 Hz for Baroque music.'),
+                                'Pianino puts piano, metronome and tuner in one app. Just set your pitch — 443 Hz like the orchestra or '
+                                '415 Hz for Baroque music.'),
                    'reflect': ('Record and reflect',
                                'What did your teacher say again?',
                                'Record lessons and practice with Prova. The AI sums up what went well and what to work on next.')},
         'warmup_tag': 'for singers',
         'loop_h': 'And then: the next lesson',
         'loop': 'Take everything you built this week back to your lesson. And when you need a new teacher, coach or stage, welegato opens '
-                'the next door.',
+                "the next door. That's how music stays legato.",
         'who_h': 'Who needs what?',
         'who_sub': 'Voice, instrument or teaching — hardly a box stays empty.',
         'who_cols': ('Singers', 'Instrumentalists', 'Teachers'),
@@ -145,7 +155,15 @@ T = {'de': {'path': '/famiglia/',
         'all_h': 'See all apps',
         'all_btn': 'Go to the app overview',
         'all_href': '/en/#apps',
-        'langs': 'Language'},
+        'langs': 'Language',
+        'quote_kicker': 'we + legato',
+        'quote': 'Shall we play legato?',
+        'quote_text': 'Like legato, where notes flow on without a break, the Famiglia Vicino apps connect every moment of your musical '
+                      'life — seamlessly, from one lesson to the next.',
+        'quote_src': 'from welegato',
+        'end_h': "Then let's play legato.",
+        'end_btn2': 'Open welegato',
+        'end_href2': 'https://welegato.com/en/'},
  'ko': {'path': '/ko/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — 음악 앱들이 함께 일하는 방법',
@@ -169,11 +187,13 @@ T = {'de': {'path': '/famiglia/',
                                '아리아가 3도 높게 쓰여 있나요?',
                                '악보는 렛지에 담아 태블릿으로. 레슨에서 적어 둔 표시도 그대로 남아요. 키가 맞지 않으면 사진 한 장이면 돼요. 끼아베가 내 음역으로 옮겨 줘요.'),
                    'warmup': ('몸 풀기', '목이 아직 덜 깨어났나요?', '아뽀조로 호흡부터 세우고, 스퀼로의 피아노 반주에 맞춰 발성을 풀어요.'),
-                   'practise': ('연습하기', '피아노 없이 음정을 잡아야 하나요?', '피아니노 하나에 피아노·메트로놈·튜너가 다 있어요. 오케스트라에서 쓰는 443Hz도, 바로크 음악의 415Hz도 원하는 기준음으로 맞춰 쓸 수 있어요.'),
+                   'practise': ('연습하기',
+                                '피아노 없이 음정을 잡아야 하나요?',
+                                '피아니노 하나에 피아노·메트로놈·튜너가 다 있어요. 오케스트라에서 쓰는 443Hz도, 바로크 음악의 415Hz도 원하는 기준음으로 맞춰 쓸 수 있어요.'),
                    'reflect': ('녹음하고 돌아보기', '레슨에서 들은 말, 벌써 흐릿한가요?', '프로바로 레슨과 연습을 녹음하세요. AI가 잘된 점과 다음에 연습할 점을 정리해 줘요.')},
         'warmup_tag': '성악가를 위해',
         'loop_h': '그리고 다시, 다음 레슨',
-        'loop': '한 주 동안 쌓은 것을 들고 다시 레슨으로. 새 선생님, 코치, 무대가 필요해지면 위레가토가 다음 문을 열어요.',
+        'loop': '한 주 동안 쌓은 것을 들고 다시 레슨으로. 새 선생님, 코치, 무대가 필요해지면 위레가토가 다음 문을 열어요. 음악은 그렇게 끊기지 않고 이어져요.',
         'who_h': '누구에게 무엇이 필요할까요?',
         'who_sub': '성악가든 연주자든 선생님이든, 비어 있는 칸이 거의 없어요.',
         'who_cols': ('성악가', '기악 연주자', '선생님'),
@@ -188,7 +208,14 @@ T = {'de': {'path': '/famiglia/',
         'all_h': '모든 앱 보기',
         'all_btn': '앱 목록으로',
         'all_href': '/en/#apps',
-        'langs': '언어'}}
+        'langs': '언어',
+        'quote_kicker': 'we + legato',
+        'quote': '우리 레가토 할까요?',
+        'quote_text': '음을 끊지 않고 이어 연주하는 레가토처럼, Famiglia Vicino의 앱들은 음악가의 하루를 끊김 없이 이어요. 한 레슨에서 다음 레슨까지.',
+        'quote_src': '위레가토에서',
+        'end_h': '이제, 함께 레가토 해요.',
+        'end_btn2': '위레가토 열기',
+        'end_href2': 'https://welegato.com/ko/'}}
 
 CSS = """
 html[lang=ko] body{word-break:keep-all}
@@ -248,6 +275,14 @@ html[lang=ko] main h1 em{font-style:normal}
 .fam-bundle .kicker{color:#e9c98f;margin-bottom:8px}
 .fam-bundle .stack{display:flex}.fam-bundle .stack img{width:44px;height:44px;border-radius:11px;border:2px solid var(--accent);margin-left:-12px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .fam-all{text-align:center;padding:48px 0 8px}
+.fam-all a.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.fam-quote{text-align:center;max-width:720px;margin:0 auto;padding:30px 0 64px}
+.fam-quote blockquote{margin:0 0 14px;font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(36px,5.6vw,58px);line-height:1.1;color:var(--accent)}
+.fam-quote blockquote:before{content:"“";color:var(--goldl);margin-right:.06em}.fam-quote blockquote:after{content:"”";color:var(--goldl);margin-left:.06em}
+.fam-quote p{color:var(--soft);font-size:clamp(16px,1.8vw,18px);margin:0}
+.fam-quote p.kicker{font-size:12px;color:var(--gold);margin:0 0 12px}
+html[lang=ko] .fam-quote blockquote{font-family:"Noto Serif KR",Georgia,serif;font-style:normal;font-weight:600;font-size:clamp(30px,4.6vw,46px)}
+.fam-ring .hub small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-style:normal;font-weight:600;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:2px}
 .fam-all a.btn{display:inline-block;margin-top:14px;background:var(--ink);color:var(--bg);text-decoration:none;padding:11px 22px;border-radius:99px;font-weight:600;font-size:15px}
 @media(max-width:820px){.fam-hero{grid-template-columns:1fr;padding:44px 0 36px}.fam-body{grid-template-columns:1fr}.fam-glue{grid-template-columns:1fr}.fam-bundle{grid-template-columns:1fr;padding:28px 22px}}
 @media(max-width:520px){.fam-step{grid-template-columns:40px 1fr;gap:12px}.fam-num{width:40px;height:40px;font-size:16px}.fam-steps:before{left:19px}.fam-loop .fam-num{font-size:20px}.fam-body{padding:16px}.fam-who th,.fam-who td{padding:10px 6px}.fam-who td:first-child img{width:24px;height:24px}.fam-who td:first-child{gap:6px;font-size:14px}.fam-ring .node{font-size:10.5px}}
@@ -281,7 +316,7 @@ def ring(t, soon_keys):
            '<circle cx="50" cy="50" r="39" fill="none" stroke="var(--goldl)" stroke-width=".5" stroke-dasharray="1.2 1.6"/>'
            + "".join(spokes) +
            '<path d="M 64 18.5 A 39 39 0 0 1 82 30" fill="none" stroke="var(--goldl)" stroke-width=".7" marker-end="url(#ah)"/></svg>')
-    hub = f'<div class="hub"><img src="/apps/welegato.png" alt="">{t["names"]["welegato"]}</div>'
+    hub = f'<div class="hub"><img src="/apps/welegato.png" alt="">{t["names"]["welegato"]}<small>we + legato</small></div>'
     return f'<div class="fam-ring" role="img" aria-label="Famiglia Vicino">{svg}{"".join(nodes)}{hub}</div>'
 
 
@@ -301,6 +336,8 @@ def body(lang, soon_keys):
     steps.append(f'<li class="fam-step fam-loop"><div class="fam-num">↻</div><div class="fam-body"><div><h3>{t["loop_h"]}</h3>'
                  f'<div class="fam-apps"><span class="fam-app"><img src="/apps/welegato.png" alt="">{t["names"]["welegato"]}</span></div></div>'
                  f'<p>{t["loop"]}</p></div></li>')
+    quote = (f'<div class="fam-quote"><p class="kicker">{t["quote_kicker"]}</p><blockquote>{t["quote"]}</blockquote>'
+             f'<p>{t["quote_text"]}</p></div>')
     journey = (f'<section><h2>{t["journey_h"]}</h2><p class="sub">{t["journey_sub"]}</p>'
                f'<ol class="fam-steps">{"".join(steps)}</ol></section>')
     head = "".join(f"<th>{c}</th>" for c in t["who_cols"])
@@ -318,7 +355,9 @@ def body(lang, soon_keys):
         stack = "".join(f'<img src="/apps/{k}.png" alt="">' for k in RING)
         bundle = (f'<section><div class="fam-bundle"><div><p class="kicker">{t["bundle_kicker"]}</p><h2>{t["bundle_h"]}</h2>'
                   f'<p>{t["bundle"]}</p></div><div class="stack">{stack}</div></div></section>')
-    all_ = f'<div class="fam-all"><h2>{t["all_h"]}</h2><a class="btn" href="{t["all_href"]}">{t["all_btn"]}</a></div>'
+    all_ = (f'<div class="fam-all"><p class="kicker">we + legato</p><h2>{t["end_h"]}</h2>'
+            f'<a class="btn" href="{t["end_href2"]}" target="_blank" rel="noopener">{t["end_btn2"]}</a> '
+            f'<a class="btn ghost" href="{t["all_href"]}">{t["all_btn"]}</a></div>')
     # 글꼴(2026-11-10): 위레가토 홈페이지와 같은 파일을 사이트 안에서(외부 불러오기 없음)
     fonts = "/fonts/fonts-v2.css" if lang == "ko" else "/fonts/fonts-v2-latin.css"
-    return f'<link rel="stylesheet" href="{fonts}"><style>{CSS}</style>{hero}{journey}{who}{glue}{bundle}{all_}'
+    return f'<link rel="stylesheet" href="{fonts}"><style>{CSS}</style>{hero}{quote}{journey}{who}{glue}{bundle}{all_}'
