@@ -26,6 +26,9 @@ def welegato_url(l):
     return "https://welegato.com/" if l == "de" else f"https://welegato.com/{l}/"
 
 
+# 스퀼로 연습곡 문장(몸 풀기 단계·앱 설명 끝에 붙임)
+STUDI = {'ko': '연습곡은 파노프카부터, 입시에 꼭 필요한 콘코네·바카이도 곧 들어와요.', 'en': 'Panofka studies first — Concone and Vaccai are on the way.', 'de': 'Zuerst die Panofka-Etüden — Concone und Vaccai folgen bald.', 'it': 'Prima gli studi di Panofka — presto anche Concone e Vaccai.', 'fr': "D'abord les études de Panofka — Concone et Vaccai arrivent bientôt.", 'zh': '练习曲从帕诺夫卡开始，孔科内和瓦卡伊也即将加入。', 'es': 'Primero los estudios de Panofka — pronto también Concone y Vaccai.', 'ru': 'Сначала этюды Панофки — скоро добавятся Конконе и Ваккаи.'}
+
 # ── 역할별 쓰임 ────────────────────────────────────────────────
 ROLES = {
     "ko": ("학생", "선생님", "반주자"),
