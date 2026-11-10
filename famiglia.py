@@ -31,7 +31,7 @@ GLOBE = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fil
          '<circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M3 12h18M4.6 7.2h14.8M4.6 16.8h14.8"/></svg>')
 
 LINKS = {
-    "welegato": {"info": {"de": "https://welegato.com/", "en": "https://welegato.com/en/", "ko": "https://welegato.com/ko/"},
+    "welegato": {"info": "WELEGATO",
                  "play": "app.welegato.welegato", "apple": "https://welegato.com/ios/?lang={lang}"},  # 나라별 스토어로 보내는 주소
     "leggii": {"info": "/leggii/", "play": "com.vicinolabs.leggii", "apple": None},
     "chiave": {"info": "/chiave/", "play": None, "apple": None},
@@ -272,6 +272,25 @@ T = {'de': {'path': '/famiglia/',
         'info_top': '자세히 보기',
         'info_main': '앱 정보'}}
 
+# ── 8개 언어(2026-11-10) — site_i18n.py 에서 합친다 ──
+import site_i18n as I
+WHO = {k: (2, 2, 2) for k in RING}  # 학생·선생님·반주자 모두(사용자: 각각 앱이 셋 모두에게 필요)
+T["ko"]["lead"] = ('선생님을 찾는 날, 악보를 펼치는 밤, 무대에 오르기 전 마지막 호흡까지.<br class="w"> '
+                   '학생에게도, 선생님에게도, 반주자에게도 — 일곱 개의 앱이 각자 한 순간을 맡아요.<br class="w"> '
+                   '하나씩 써도 좋지만, 함께 쓰면 비로소 하나의 흐름이 돼요.')
+for _l in I.LANGS:
+    if _l not in T:
+        _b = dict(T["en"]); _b.update(I.FAM_MORE[_l])
+        _b["stages"] = {**T["en"]["stages"], **I.FAM_MORE[_l]["stages"]}
+        _b["names"] = dict(T["en"]["names"])
+        T[_l] = _b
+    _t = T[_l]
+    _t["path"] = I.fam_path(_l); _t["home"] = I.home_path(_l)
+    _t["end_href2"] = I.welegato_url(_l); _t["all_href"] = I.home_path(_l) + "#apps"
+    _t["stages"] = dict(_t["stages"]); _t["stages"]["prepare"] = I.PREP[_l]
+    _t["who_h"], _t["who_sub"] = I.WHO_H[_l]
+    _t["who_cols"] = I.ROLES[_l]; _t["roles"] = I.ROLES[_l]; _t["scen"] = I.SCEN[_l]
+
 CSS = """
 html[lang=ko] body{word-break:keep-all}
 main h1,main h2,main h3,.fam-quote p,.fam-quote blockquote,.lead,.sub,.fam-body p,.fam-card p,.fam-glue span,.fam-loop p{text-wrap:balance}
@@ -363,6 +382,20 @@ html[lang=ko] .fam-quote blockquote{font-family:"Noto Serif KR",Georgia,serif;fo
 .fam-all a.btn{display:inline-block;margin-top:14px;background:var(--ink);color:var(--bg);text-decoration:none;padding:11px 22px;border-radius:99px;font-weight:600;font-size:15px}
 @media(max-width:820px){.fam-hero{grid-template-columns:1fr;padding:44px 0 36px}.fam-body{grid-template-columns:1fr}.fam-glue{grid-template-columns:1fr}.fam-bundle{grid-template-columns:1fr;padding:28px 22px}}
 @media(max-width:520px){.fam-step{grid-template-columns:40px 1fr;gap:12px}.fam-num{width:40px;height:40px;font-size:16px}.fam-steps:before{left:19px}.fam-loop .fam-num{font-size:20px}.fam-body{padding:16px}.fam-who th,.fam-who td{padding:10px 6px}.fam-who td:first-child img{width:24px;height:24px}.fam-who td:first-child{gap:6px;font-size:14px}.fam-ring .node{font-size:10.5px}}
+.fam-roles{position:relative}.fam-roles input{position:absolute;opacity:0;pointer-events:none}
+.fam-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.fam-tabs label{cursor:pointer;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:var(--paper);font-weight:600;font-size:15px;color:var(--soft)}
+#role-s:checked~.fam-tabs label[for=role-s],#role-t:checked~.fam-tabs label[for=role-t],#role-a:checked~.fam-tabs label[for=role-a]{background:var(--accent);border-color:var(--accent);color:#fbf3e8}
+#role-s:focus-visible~.fam-tabs label[for=role-s],#role-t:focus-visible~.fam-tabs label[for=role-t],#role-a:focus-visible~.fam-tabs label[for=role-a]{outline:2px solid var(--gold);outline-offset:2px}
+.fam-role{display:none;list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+#role-s:checked~.p-s,#role-t:checked~.p-t,#role-a:checked~.p-a{display:block}
+.fam-role li{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;border-top:1px solid var(--line)}.fam-role li:first-child{border-top:0}
+.fam-role img{width:40px;height:40px;border-radius:10px;flex:none;box-shadow:0 3px 9px rgba(40,25,15,.15)}
+.fam-role b{display:block;font-size:15.5px;margin-bottom:2px}.fam-role span{color:var(--soft);font-size:15px;text-wrap:pretty}
+.fam-role b .soon{margin-left:6px;vertical-align:1px}
+html[lang=zh] main h1,html[lang=zh] main h2,html[lang=zh] main h3,html[lang=zh] .fam-glue b,html[lang=zh] .fam-body .fam-q,html[lang=zh] .fam-quote blockquote,html[lang=zh] .fam-ring .center{font-family:"Noto Serif KR","Songti SC","Noto Serif SC",serif;font-style:normal;font-weight:600}
+html[lang=zh] main h1{font-size:clamp(34px,5.4vw,56px);line-height:1.2}html[lang=zh] main h1 em{font-style:normal}
+html[lang=zh] body{word-break:normal;line-break:strict}
 """
 
 
@@ -396,8 +429,7 @@ def ring(t, soon_keys):
 
 def body(lang, soon_keys):
     t = T[lang]
-    others = [(l, T[l]["path"], {"de": "Deutsch", "en": "English", "ko": "한국어"}[l]) for l in ("de", "en", "ko") if l != lang]
-    langs = "".join(f'<a href="{p}" hreflang="{l}">{name}</a>' for l, p, name in others)
+    langs = "".join(f'<a href="{T[l]["path"]}" hreflang="{l}" lang="{l}">{I.LANG_NAMES[l]}</a>' for l in I.LANGS if l != lang)
     hero = (f'<div class="fam-hero"><div><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p>'
             f'<p class="fam-langs">{t["langs"]}: {langs}</p></div>{ring(t, soon_keys)}</div>')
     steps = []
@@ -414,14 +446,16 @@ def body(lang, soon_keys):
              f'<p>{t["quote_text"]}</p></div>')
     journey = (f'<section><h2>{t["journey_h"]}</h2><p class="sub">{t["journey_sub"]}</p>'
                f'<ol class="fam-steps">{"".join(steps)}</ol></section>')
-    head = "".join(f"<th>{c}</th>" for c in t["who_cols"])
-    rows = []
-    for k in RING:
-        cells = "".join('<td><span class="dot"></span></td>' if v == 2 else ('<td><span class="dot half"></span></td>' if v == 1 else "<td></td>") for v in WHO[k])
-        rows.append(f'<tr><td><img src="/apps/{k}.png" alt="">{t["names"][k]}</td>{cells}</tr>')
-    who = (f'<section><h2>{t["who_h"]}</h2><p class="sub">{t["who_sub"]}</p>'
-           f'<table class="fam-who"><thead><tr><th></th>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table>'
-           f'<p class="fam-legend"><span class="dot half"></span>{t["who_half"]}</p></section>')
+    # 학생·선생님·반주자 탭(스크립트 없이 radio) — 앱마다 그 사람에게 필요한 상황
+    ids = ("s", "t", "a")
+    radios = "".join(f'<input type="radio" name="fam-role" id="role-{r}"{" checked" if r == "s" else ""}>' for r in ids)
+    tabs = "".join(f'<label for="role-{r}">{name}</label>' for r, name in zip(ids, t["roles"]))
+    panels = []
+    for n, r in enumerate(ids):
+        rows = "".join(f'<li><img src="/apps/{k}.png" alt=""><div><b>{t["names"][k]}{_soon(k, t, soon_keys)}</b><span>{t["scen"][k][n]}</span></div></li>' for k in RING)
+        panels.append(f'<ul class="fam-role p-{r}">{rows}</ul>')
+    who = (f'<section id="who"><h2>{t["who_h"]}</h2><p class="sub">{t["who_sub"]}</p>'
+           f'<div class="fam-roles">{radios}<div class="fam-tabs">{tabs}</div>{"".join(panels)}</div></section>')
     glue = "".join(f"<div><b>{h}</b><span>{d}</span></div>" for h, d in t["glue"])
     glue = f'<section><h2>{t["glue_h"]}</h2><p class="sub"></p><div class="fam-glue">{glue}</div></section>'
     bundle = ""
@@ -430,20 +464,21 @@ def body(lang, soon_keys):
         bundle = (f'<section><div class="fam-bundle"><div><p class="kicker">{t["bundle_kicker"]}</p><h2>{t["bundle_h"]}</h2>'
                   f'<p>{t["bundle"]}</p></div><div class="stack">{stack}</div></div></section>')
     ext = ' target="_blank" rel="noopener"'
+    blang = lang if lang in ("de", "en", "ko") else "en"
     cards = []
     for k in RING:
         L = LINKS[k]
         links = []
-        info = L["info"][lang] if isinstance(L["info"], dict) else L["info"]
+        info = I.welegato_url(lang) if L["info"] == "WELEGATO" else L["info"]
         if info:
             links.append(f'<a class="badge info" href="{info}"{ext if info.startswith("http") else ""}>{GLOBE}'
                          f'<span><small>{t["info_top"]}</small>{t["info_main"]}</span></a>')
         if L["play"]:
             links.append(f'<a class="badge gp" href="https://play.google.com/store/apps/details?id={L["play"]}&amp;hl={lang}"{ext}>'
-                         f'<img src="/badges/google-play-{lang}-nb.png" alt="Google Play" height="38" loading="lazy"></a>')
+                         f'<img src="/badges/google-play-{blang}-nb.png" alt="Google Play" height="38" loading="lazy"></a>')
         if L["apple"]:
             links.append(f'<a class="badge" href="{L["apple"].replace("{lang}", lang)}"{ext}>'
-                         f'<img src="/badges/app-store-{lang}-nb.svg" alt="App Store" height="38" loading="lazy"></a>')
+                         f'<img src="/badges/app-store-{blang}-nb.svg" alt="App Store" height="38" loading="lazy"></a>')
         elif L["play"]:
             links.append(f'<span class="later">{t["apple_soon"]}</span>')
         cards.append(f'<div class="fam-card"><img class="icon" src="/apps/{k}.png" alt=""><div><h3>{t["names"][k]}{_soon(k, t, soon_keys)}</h3>'
@@ -453,5 +488,5 @@ def body(lang, soon_keys):
     all_ = (f'<div class="fam-all"><p class="kicker">we + legato</p><h2>{t["end_h"]}</h2>'
             f'<a class="btn" href="{t["end_href2"]}" target="_blank" rel="noopener">{t["end_btn2"]}</a></div>')
     # 글꼴(2026-11-10): 위레가토 홈페이지와 같은 파일을 사이트 안에서(외부 불러오기 없음)
-    fonts = "/fonts/fonts-v2.css" if lang == "ko" else "/fonts/fonts-v2-latin.css"
+    fonts = "/fonts/fonts-v2.css" if lang in ("ko", "zh") else "/fonts/fonts-v2-latin.css"
     return f'<link rel="stylesheet" href="{fonts}"><style>{CSS}</style>{hero}{quote}{journey}{who}{glue}{bundle}{apps}{all_}'

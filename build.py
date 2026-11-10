@@ -34,8 +34,23 @@ section{padding:8px 0 56px}.sub{color:var(--soft);margin:0 0 26px}
 main.narrow h1{font-size:clamp(28px,4.4vw,40px);margin-top:48px}main.narrow h2{font-size:23px;margin:40px 0 12px}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px;margin:0;font-size:14.5px;color:var(--soft)}dt{color:var(--soft)}dd{margin:0}
 @media(max-width:520px){dl{grid-template-columns:1fr}dt{margin-top:8px}.hero{padding:48px 0 44px}.card{padding:18px;gap:14px}.card img{width:60px;height:60px;border-radius:14px}.grid{grid-template-columns:1fr}.nav nav{gap:12px}.nav nav a:first-child{display:none}.icons{gap:7px}.icons img{width:34px;height:34px;border-radius:8px}}
+.lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--soft);font-size:14px}
+.lang summary::-webkit-details-marker{display:none}.lang summary svg{width:16px;height:16px}
+.lang .menu{position:absolute;right:0;top:calc(100% + 10px);background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.18);min-width:160px;padding:6px;z-index:20}
+.lang .menu a{display:block;padding:8px 12px;border-radius:6px;font-size:14.5px;color:var(--ink)!important}.lang .menu a:hover{background:var(--bg)}.lang .menu a.on{color:var(--accent)!important;font-weight:700}
 footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:13.5px;color:var(--soft)}
 footer a{color:var(--soft);margin-right:16px}
+"""
+
+FONT_CSS = """
+body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-synthesis:none}
+h1,h2,.card h3,.values b{font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-weight:500}
+h1{font-size:clamp(40px,6.4vw,68px)}h1 em{font-style:italic}
+html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] .card h3,html[lang=ko] .values b,html[lang=zh] h1,html[lang=zh] h2,html[lang=zh] .card h3,html[lang=zh] .values b{font-family:"Noto Serif KR","Songti SC","Noto Serif SC",serif;font-style:normal;font-weight:600;letter-spacing:-.01em}
+html[lang=ko] h1,html[lang=zh] h1{font-size:clamp(32px,5vw,52px);line-height:1.2}
+html[lang=ko] h1 em,html[lang=zh] h1 em{font-style:normal}
+html[lang=ko] body{word-break:keep-all}
+h1,h2,.lead{text-wrap:balance}.card p,.values span{text-wrap:pretty}
 """
 
 def page(lang, path, title, desc, body, alt=None, wide=False):
@@ -53,11 +68,11 @@ def page(lang, path, title, desc, body, alt=None, wide=False):
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:image" content="https://vicinolabs.com/icon-512.png">
-<style>{CSS}</style>
+<link rel="stylesheet" href="/fonts/{"fonts-v2.css" if lang in ("ko", "zh") else "fonts-v2-latin.css"}"><style>{CSS}{FONT_CSS}</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="{t['home']}"><img src="/logo.png" alt="" width="58" height="32">Vicino Labs</a>
-<nav><a href="{t['home']}#apps">{t['apps_nav']}</a><a href="/impressum/">Impressum</a><a href="{t['other_href']}">{t['other']}</a></nav></div></header>
+<nav><a href="{t['home']}#apps">{t['apps_nav']}</a><a href="/impressum/">Impressum</a>{lang_menu(lang, alt)}</nav></div></header>
 <main class="wrap{'' if wide else ' narrow'}">{body}</main>
 <footer><div class="wrap"><a href="/impressum/">Impressum</a><a href="/datenschutz/">{t['privacy']}</a><a href="mailto:{EMAIL}">{EMAIL}</a><div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
 </body></html>
@@ -74,56 +89,22 @@ NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "ch
 SOON = {"chiave", "prova", "squillo"}
 LEGAL_ONLY = {"chiave", "prova"}  # 2026-11-09 법문 페이지만 먼저 연결
 
-TXT = {
- "de": {"home": "/", "apps_nav": "Apps", "other": "English", "other_href": "/en/", "privacy": "Datenschutz",
-  "title": "Vicino Labs — Apps für Musik und Alltag",
-  "desc": "Vicino Labs entwickelt Apps für Musikerinnen und Musiker und für den Alltag: welegato, Leggii, Appoggio, Nomio und bald Chiave, Pianino, Prova und Squillo.",
-  "kicker": "Softwarestudio · Dortmund",
-  "h1": "Apps für die Musik <em>und</em> den Alltag.",
-  "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben — mehrsprachig, schlicht und mit Blick auf Datenschutz.",
-  "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino — eine Familie von Apps, die zusammenpassen.", "fam_link": "So arbeiten die Apps zusammen →", "fam_href": "/famiglia/",
-  "life_h": "Für den Alltag",
-  "soon": "Bald", "play": "Google Play", "privacy_l": "Datenschutz", "site": "welegato.com",
-  "d": {
-   "welegato": "Musikunterricht, Korrepetition und Musiker in Deutschland und Österreich finden — mit automatischer Übersetzung im Chat.",
-   "leggii": "Die einfache Noten-App: PDF-Noten, Notizen, IMSLP-Suche, Metronom, Unterrichtsaufnahmen und KI-Notizen.",
-   "appoggio": "Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Konto.",
-   "chiave": "Noten fotografieren und in jede Tonart transponieren.",
-   "pianino": "Klavier, Metronom und Stimmgerät in einer App — mit einstellbarem Kammerton.",
-   "prova": "Unterricht und Üben aufnehmen, mit KI-Auswertung der Aufnahme.",
-   "squillo": "Tägliche Stimm- und Einsingübungen für Sängerinnen und Sänger.",
-   "nomio": "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.",
-  },
-  "values": [("Mehrsprachig", "Unsere Apps gibt es in vielen Sprachen — von Deutsch und Englisch bis Koreanisch."),
-             ("Eine welegato-ID", "Ein Konto für alle Apps von Vicino Labs, wenn Sie möchten. Vieles funktioniert auch ganz ohne Konto."),
-             ("Datenschutz zuerst", "Wir erheben nur, was eine App wirklich braucht — und erklären es verständlich.")],
-  "contact_h": "Kontakt", "contact": "Fragen, Kooperationen oder Presse — wir freuen uns über Ihre Nachricht.", "btn": "E-Mail schreiben"},
- "en": {"home": "/en/", "apps_nav": "Apps", "other": "Deutsch", "other_href": "/", "privacy": "Privacy",
-  "title": "Vicino Labs — Apps for music and everyday life",
-  "desc": "Vicino Labs builds apps for musicians and for everyday life: welegato, Leggii, Appoggio, Nomio and soon Chiave, Pianino, Prova and Squillo.",
-  "kicker": "Software studio · Dortmund",
-  "h1": "Apps for music <em>and</em> everyday life.",
-  "lead": "Vicino Labs is a small software studio. We build apps for musicians, for lessons and practice — multilingual, simple and privacy-minded.",
-  "music_h": "For musicians", "music_sub": "Famiglia Vicino — a family of apps that work together.", "fam_link": "See how the apps work together →", "fam_href": "/en/famiglia/",
-  "life_h": "For everyday life",
-  "soon": "Soon", "play": "Google Play", "privacy_l": "Privacy", "site": "welegato.com",
-  "d": {
-   "welegato": "Find music teachers, accompanists and musicians in Germany and Austria — with automatic chat translation.",
-   "leggii": "A simple sheet music reader: PDF scores, notes, IMSLP search, a metronome, lesson recordings and AI lesson notes.",
-   "appoggio": "Breathing training for singers — free, no sign-up.",
-   "chiave": "Photograph sheet music and transpose it into any key.",
-   "pianino": "Piano, metronome and tuner in one app — with adjustable concert pitch.",
-   "prova": "Record lessons and practice, with AI feedback on the recording.",
-   "squillo": "Daily vocal exercises and warm-ups for singers.",
-   "nomio": "A budget book for income and expenses in many currencies and languages.",
-  },
-  "values": [("Multilingual", "Our apps come in many languages — from German and English to Korean."),
-             ("One welegato ID", "One account for all Vicino Labs apps, if you want one. Much works without any account."),
-             ("Privacy first", "We collect only what an app really needs — and explain it in plain words.")],
-  "contact_h": "Contact", "contact": "Questions, partnerships or press — we'd love to hear from you.", "btn": "Send an email"},
-}
+import site_i18n as I
+import famiglia
+TXT = {}
+for _l in I.LANGS:
+    _h = dict(I.HOME[_l]); _f = famiglia.T[_l]
+    _h["home"] = I.home_path(_l); _h["fam_href"] = I.fam_path(_l)
+    _h["soon"] = _f["soon"]; _h["play"] = "Google Play"
+    _h["d"] = dict(_f["d"]); _h["d"]["nomio"] = _h["nomio"]
+    TXT[_l] = _h
 
-TXT["ko"] = {"home": "/en/", "apps_nav": "Apps", "other": "English", "other_href": "/en/famiglia/", "privacy": "Datenschutz"}
+LANG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M3 12h18"/></svg>'
+
+def lang_menu(lang, alt):
+    """언어 메뉴 — 이 페이지의 다른 언어판이 있으면 그리로, 없으면 그 언어 첫 화면으로."""
+    items = "".join(f'<a href="{(alt or {}).get(l, I.home_path(l))}" hreflang="{l}" lang="{l}"{" class=on" if l == lang else ""}>{I.LANG_NAMES[l]}</a>' for l in I.LANGS)
+    return f'<details class="lang"><summary aria-label="Language">{LANG_ICON}<span>{lang.upper()}</span></summary><div class="menu">{items}</div></details>'
 
 def card(lang, key):
     t = TXT[lang]
@@ -131,7 +112,7 @@ def card(lang, key):
     soon = key in SOON
     links = []
     if key == "welegato":
-        links.append(f'<a href="https://welegato.com/{"en/" if lang == "en" else ""}"{ext}>{t["site"]} →</a>')
+        links.append(f'<a href="{I.welegato_url(lang)}"{ext}>{t["site"]} →</a>')
     if key in STORE:
         links.append(f'<a href="{PLAY}{STORE[key]}"{ext}>{t["play"]}</a>')
         if key in APPLE:
@@ -189,13 +170,12 @@ def write(path, html):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="utf-8").write(html)
 
-alt = {"de": "/", "en": "/en/"}
+alt = {l: I.home_path(l) for l in I.LANGS}
 for lang, path in alt.items():
     write(path, page(lang, path, TXT[lang]["title"], TXT[lang]["desc"], home(lang), alt, wide=True))
-# Famiglia Vicino 포트폴리오(2026-11-10) — famiglia.py
-import famiglia
-FAM_ALT = {l: famiglia.T[l]["path"] for l in ("de", "en", "ko")}
-for _l in ("de", "en", "ko"):
+# Famiglia Vicino 포트폴리오(2026-11-10) — famiglia.py, 8개 언어
+FAM_ALT = {l: famiglia.T[l]["path"] for l in I.LANGS}
+for _l in I.LANGS:
     _t = famiglia.T[_l]
     write(_t["path"], page(_l, _t["path"], _t["title"], _t["desc"], famiglia.body(_l, SOON), FAM_ALT, wide=True))
 write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs.", IMPRESSUM))

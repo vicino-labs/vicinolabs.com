@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vicino Labs — 为音乐和日常生活打造的应用</title><meta name="description" content="Vicino Labs 为音乐人和日常生活开发应用：welegato、Leggii、Appoggio、Pianino、Nomio，以及即将推出的 Chiave、Prova 和 Squillo。">
+<link rel="canonical" href="https://vicinolabs.com/zh/"><link rel="alternate" hreflang="ko" href="https://vicinolabs.com/ko/"><link rel="alternate" hreflang="en" href="https://vicinolabs.com/en/"><link rel="alternate" hreflang="de" href="https://vicinolabs.com/"><link rel="alternate" hreflang="it" href="https://vicinolabs.com/it/"><link rel="alternate" hreflang="fr" href="https://vicinolabs.com/fr/"><link rel="alternate" hreflang="zh" href="https://vicinolabs.com/zh/"><link rel="alternate" hreflang="es" href="https://vicinolabs.com/es/"><link rel="alternate" hreflang="ru" href="https://vicinolabs.com/ru/"><link rel="alternate" hreflang="x-default" href="https://vicinolabs.com/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://vicinolabs.com/icon-512.png">
+<link rel="stylesheet" href="/fonts/fonts-v2.css"><style>
+:root{--bg:#f5f0e8;--paper:#fffcf6;--ink:#1c1714;--soft:#6b5f56;--faint:#9a8c7f;--line:#e4d9c8;--accent:#6e1a2f;--gold:#a8823f;--goldl:#d9b878}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13110f;--paper:#1c1916;--ink:#f1e8da;--soft:#bfb2a2;--faint:#8f8274;--line:#2e2823;--accent:#e2a3b1;--gold:#d4b07a;--goldl:#8a6f45}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}.narrow{max-width:760px}
+header{border-bottom:1px solid var(--line)}.nav{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px;gap:12px}
+.brand{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-family:Georgia,"Times New Roman",serif;font-size:23px;letter-spacing:.01em;color:var(--ink);text-decoration:none}.brand img{height:30px;width:auto;display:block}
+.nav nav{display:flex;gap:18px;font-size:14px}.nav nav a{color:var(--soft);text-decoration:none}.nav nav a:hover{color:var(--ink)}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(34px,6vw,60px);line-height:1.1;margin:0 0 18px;letter-spacing:-.015em}
+h1 em{font-style:italic;color:var(--accent)}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(24px,3.4vw,32px);margin:0 0 6px;letter-spacing:-.01em}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--soft);margin:0;max-width:620px}
+.hero{padding:72px 0 64px}
+.icons{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}.icons img{width:46px;height:46px;border-radius:11px;box-shadow:0 4px 12px rgba(40,25,15,.14)}
+section{padding:8px 0 56px}.sub{color:var(--soft);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:18px;align-items:flex-start}
+.card img{width:72px;height:72px;border-radius:17px;flex:none;box-shadow:0 6px 16px rgba(40,25,15,.16)}
+.card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:22px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card p{margin:4px 0 10px;color:var(--soft);font-size:15px}
+.card .links{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}.card .links a{font-weight:600;text-decoration:none}.card .links a:hover{text-decoration:underline}
+.soon{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--goldl);border-radius:99px;padding:2px 9px}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
+.values b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:19px;display:block;margin-bottom:4px}.values span{color:var(--soft);font-size:15px}
+.contact{padding:56px 0 8px}.contact a.btn{display:inline-block;margin-top:14px;background:var(--ink);color:var(--bg);text-decoration:none;padding:11px 20px;border-radius:99px;font-weight:600;font-size:15px}
+main.narrow h1{font-size:clamp(28px,4.4vw,40px);margin-top:48px}main.narrow h2{font-size:23px;margin:40px 0 12px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px;margin:0;font-size:14.5px;color:var(--soft)}dt{color:var(--soft)}dd{margin:0}
+@media(max-width:520px){dl{grid-template-columns:1fr}dt{margin-top:8px}.hero{padding:48px 0 44px}.card{padding:18px;gap:14px}.card img{width:60px;height:60px;border-radius:14px}.grid{grid-template-columns:1fr}.nav nav{gap:12px}.nav nav a:first-child{display:none}.icons{gap:7px}.icons img{width:34px;height:34px;border-radius:8px}}
+.lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--soft);font-size:14px}
+.lang summary::-webkit-details-marker{display:none}.lang summary svg{width:16px;height:16px}
+.lang .menu{position:absolute;right:0;top:calc(100% + 10px);background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.18);min-width:160px;padding:6px;z-index:20}
+.lang .menu a{display:block;padding:8px 12px;border-radius:6px;font-size:14.5px;color:var(--ink)!important}.lang .menu a:hover{background:var(--bg)}.lang .menu a.on{color:var(--accent)!important;font-weight:700}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:13.5px;color:var(--soft)}
+footer a{color:var(--soft);margin-right:16px}
+
+body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-synthesis:none}
+h1,h2,.card h3,.values b{font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-weight:500}
+h1{font-size:clamp(40px,6.4vw,68px)}h1 em{font-style:italic}
+html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] .card h3,html[lang=ko] .values b,html[lang=zh] h1,html[lang=zh] h2,html[lang=zh] .card h3,html[lang=zh] .values b{font-family:"Noto Serif KR","Songti SC","Noto Serif SC",serif;font-style:normal;font-weight:600;letter-spacing:-.01em}
+html[lang=ko] h1,html[lang=zh] h1{font-size:clamp(32px,5vw,52px);line-height:1.2}
+html[lang=ko] h1 em,html[lang=zh] h1 em{font-style:normal}
+html[lang=ko] body{word-break:keep-all}
+h1,h2,.lead{text-wrap:balance}.card p,.values span{text-wrap:pretty}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/zh/"><img src="/logo.png" alt="" width="58" height="32">Vicino Labs</a>
+<nav><a href="/zh/#apps">应用</a><a href="/impressum/">Impressum</a><details class="lang"><summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M3 12h18"/></svg><span>ZH</span></summary><div class="menu"><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/zh/" hreflang="zh" lang="zh" class=on>中文</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a></div></details></nav></div></header>
+<main class="wrap"><div class="hero"><p class="kicker">软件工作室 · 多特蒙德</p><h1>为音乐，<em>也</em>为日常生活。</h1><p class="lead">Vicino Labs 是一家小型软件工作室。我们为音乐人、为上课和练习开发应用——多语言、简洁、重视隐私。</p><div class="icons"><img src="/apps/welegato.png" alt="welegato" width="46" height="46"><img src="/apps/leggii.png" alt="Leggii" width="46" height="46"><img src="/apps/appoggio.png" alt="Appoggio" width="46" height="46"><img src="/apps/pianino.png" alt="Pianino" width="46" height="46"><img src="/apps/chiave.png" alt="Chiave" width="46" height="46"><img src="/apps/prova.png" alt="Prova" width="46" height="46"><img src="/apps/squillo.png" alt="Squillo" width="46" height="46"><img src="/apps/nomio.png" alt="Nomio" width="46" height="46"></div></div><section id="apps"><h2>为音乐人</h2><p class="sub">Famiglia Vicino——彼此配合的应用家族。 <a href="/zh/famiglia/" style="font-weight:600;text-decoration:none">看看应用如何协同工作 →</a></p><div class="grid"><div class="card"><img src="/apps/welegato.png" alt="" width="72" height="72" loading="lazy"><div><h3>welegato</h3><p>在欧洲和韩国寻找音乐老师、伴奏和音乐人——聊天自动翻译。</p><div class="links"><a href="https://welegato.com/zh/" target="_blank" rel="noopener">welegato.com →</a></div></div></div><div class="card"><img src="/apps/leggii.png" alt="" width="72" height="72" loading="lazy"><div><h3>Leggii</h3><p>简单的乐谱应用：PDF 乐谱、标注、IMSLP 搜索、节拍器、上课录音和 AI 笔记。</p><div class="links"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.leggii" target="_blank" rel="noopener">Google Play</a><a href="/leggii/">隐私</a></div></div></div><div class="card"><img src="/apps/appoggio.png" alt="" width="72" height="72" loading="lazy"><div><h3>Appoggio</h3><p>歌手的呼吸训练——免费，无需账号。</p><div class="links"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.appoggio" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/app/id6832364161" target="_blank" rel="noopener">App Store</a><a href="/appoggio/">隐私</a></div></div></div><div class="card"><img src="/apps/pianino.png" alt="" width="72" height="72" loading="lazy"><div><h3>Pianino</h3><p>钢琴、节拍器和调音器合为一个应用——标准音可调。</p><div class="links"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener">App Store</a><a href="/pianino/">隐私</a></div></div></div><div class="card"><img src="/apps/chiave.png" alt="" width="72" height="72" loading="lazy"><div><h3>Chiave <span class="soon">即将推出</span></h3><p>拍下乐谱，移到任意调。</p><div class="links"><a href="/chiave/">隐私</a></div></div></div><div class="card"><img src="/apps/prova.png" alt="" width="72" height="72" loading="lazy"><div><h3>Prova <span class="soon">即将推出</span></h3><p>录下上课和练习，AI 分析录音。</p><div class="links"><a href="/prova/">隐私</a></div></div></div><div class="card"><img src="/apps/squillo.png" alt="" width="72" height="72" loading="lazy"><div><h3>Squillo <span class="soon">即将推出</span></h3><p>歌手每天的练声。</p><div class="links"></div></div></div></div></section><section><h2>为日常生活</h2><p class="sub"></p><div class="grid"><div class="card"><img src="/apps/nomio.png" alt="" width="72" height="72" loading="lazy"><div><h3>Nomio</h3><p>支持多种货币和语言的收支记账本。</p><div class="links"><a href="https://play.google.com/store/apps/details?id=app.nomio.finance" target="_blank" rel="noopener">Google Play</a><a href="/nomio/">隐私</a></div></div></div></div></section><div class="values"><div><b>多语言</b><span>我们的应用支持多种语言——从德语、英语到韩语。</span></div><div><b>一个 welegato ID</b><span>如果你愿意，一个账号即可使用 Vicino Labs 的所有应用。很多功能无需账号。</span></div><div><b>隐私优先</b><span>只收集应用真正需要的信息，并用通俗的话说明。</span></div></div><div class="contact"><h2>联系我们</h2><p class="sub" style="margin:0">问题、合作或媒体——欢迎来信。</p><a class="btn" href="mailto:contact@vicinolabs.com">发送邮件</a></div></main>
+<footer><div class="wrap"><a href="/impressum/">Impressum</a><a href="/datenschutz/">隐私政策（德语）</a><a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a><div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
+</body></html>
