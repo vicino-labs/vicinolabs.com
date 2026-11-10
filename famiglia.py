@@ -26,6 +26,17 @@ WHO = {
     "squillo": (2, 0, 1), "pianino": (2, 2, 2), "prova": (2, 2, 2),
 }
 
+LINKS = {
+    "welegato": {"info": {"de": "https://welegato.com/", "en": "https://welegato.com/en/", "ko": "https://welegato.com/ko/"},
+                 "play": "app.welegato.welegato", "apple": "https://welegato.com/ios/?lang={lang}"},  # 나라별 스토어로 보내는 주소
+    "leggii": {"info": "/leggii/", "play": "com.vicinolabs.leggii", "apple": None},
+    "chiave": {"info": "/chiave/", "play": None, "apple": None},
+    "appoggio": {"info": "/appoggio/", "play": "com.vicinolabs.appoggio", "apple": "https://apps.apple.com/app/id6832364161"},
+    "squillo": {"info": None, "play": None, "apple": None},
+    "pianino": {"info": "/pianino/", "play": "com.vicinolabs.pianino", "apple": "https://apps.apple.com/app/id6832363954"},
+    "prova": {"info": "/prova/", "play": None, "apple": None},
+}
+
 T = {'de': {'path': '/famiglia/',
         'home': '/',
         'title': 'Famiglia Vicino — so arbeiten unsere Musik-Apps zusammen',
@@ -95,7 +106,18 @@ T = {'de': {'path': '/famiglia/',
         'quote_src': 'aus welegato',
         'end_h': 'Dann spielen wir legato.',
         'end_btn2': 'welegato öffnen',
-        'end_href2': 'https://welegato.com/'},
+        'end_href2': 'https://welegato.com/',
+        'apps_h': 'Alle Apps auf einen Blick',
+        'apps_sub': 'Infos und Downloads für jede App.',
+        'info': 'Mehr erfahren',
+        'apple_soon': 'App Store bald',
+        'd': {'welegato': 'Musiklehrkräfte, Korrepetitoren und Musiker in Europa und Korea finden — mit automatischer Übersetzung im Chat.',
+              'leggii': 'Die einfache Noten-App: PDF-Noten, Notizen, IMSLP-Suche, Metronom, Unterrichtsaufnahmen und KI-Notizen.',
+              'chiave': 'Noten fotografieren und in jede Tonart transponieren.',
+              'appoggio': 'Atemtraining für Sängerinnen und Sänger — kostenlos, ohne Konto.',
+              'squillo': 'Tägliche Stimm- und Einsingübungen für Sängerinnen und Sänger.',
+              'pianino': 'Klavier, Metronom und Stimmgerät in einer App — mit einstellbarem Kammerton.',
+              'prova': 'Unterricht und Üben aufnehmen, mit KI-Auswertung der Aufnahme.'}},
  'en': {'path': '/en/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — how our music apps work together',
@@ -163,7 +185,18 @@ T = {'de': {'path': '/famiglia/',
         'quote_src': 'from welegato',
         'end_h': "Then let's play legato.",
         'end_btn2': 'Open welegato',
-        'end_href2': 'https://welegato.com/en/'},
+        'end_href2': 'https://welegato.com/en/',
+        'apps_h': 'All apps at a glance',
+        'apps_sub': 'Details and downloads for every app.',
+        'info': 'Learn more',
+        'apple_soon': 'App Store soon',
+        'd': {'welegato': 'Find music teachers, accompanists and musicians in Europe and Korea — with automatic chat translation.',
+              'leggii': 'A simple sheet music reader: PDF scores, notes, IMSLP search, a metronome, lesson recordings and AI lesson notes.',
+              'chiave': 'Photograph sheet music and transpose it into any key.',
+              'appoggio': 'Breathing training for singers — free, no sign-up.',
+              'squillo': 'Daily vocal exercises and warm-ups for singers.',
+              'pianino': 'Piano, metronome and tuner in one app — with adjustable concert pitch.',
+              'prova': 'Record lessons and practice, with AI feedback on the recording.'}},
  'ko': {'path': '/ko/famiglia/',
         'home': '/en/',
         'title': 'Famiglia Vicino — 음악 앱들이 함께 일하는 방법',
@@ -215,7 +248,18 @@ T = {'de': {'path': '/famiglia/',
         'quote_src': '위레가토에서',
         'end_h': '이제, 함께 레가토 해요.',
         'end_btn2': '위레가토 열기',
-        'end_href2': 'https://welegato.com/ko/'}}
+        'end_href2': 'https://welegato.com/ko/',
+        'apps_h': '앱 바로가기',
+        'apps_sub': '앱마다 자세한 정보와 다운로드 링크를 모았어요.',
+        'info': '앱 정보',
+        'apple_soon': 'App Store 곧 출시',
+        'd': {'welegato': '유럽과 한국에서 음악 선생님·반주자·연주자를 찾는 앱. 채팅은 자동으로 번역돼요.',
+              'leggii': '쉬운 악보 앱: PDF 악보, 메모, IMSLP 검색, 메트로놈, 레슨 녹음과 AI 노트.',
+              'chiave': '악보를 사진으로 찍어 원하는 키로 옮겨요.',
+              'appoggio': '성악가를 위한 호흡 훈련 — 무료, 가입 없이.',
+              'squillo': '성악가를 위한 매일의 발성 연습.',
+              'pianino': '피아노·메트로놈·튜너를 한 앱에. 기준음을 맞춰 쓸 수 있어요.',
+              'prova': '레슨과 연습을 녹음하면 AI가 녹음을 분석해 줘요.'}}}
 
 CSS = """
 html[lang=ko] body{word-break:keep-all}
@@ -279,6 +323,18 @@ html[lang=ko] main h1 em{font-style:normal}
 .fam-bundle .kicker{color:#e9c98f;margin-bottom:8px}
 .fam-bundle .stack{display:flex}.fam-bundle .stack img{width:44px;height:44px;border-radius:11px;border:2px solid var(--accent);margin-left:-12px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .fam-all{text-align:center;padding:48px 0 8px}
+.fam-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.fam-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.fam-card .icon{width:64px;height:64px;border-radius:15px;flex:none;box-shadow:0 5px 14px rgba(40,25,15,.16)}
+.fam-card h3{font-size:24px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+html[lang=ko] .fam-card h3{font-size:20px}
+.fam-card p{margin:4px 0 12px;color:var(--soft);font-size:15px}
+.fam-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.fam-links a.info{font-weight:600;font-size:14px;text-decoration:none;margin-right:4px}
+.fam-links a.badge{display:inline-block;line-height:0}.fam-links a.badge img{height:38px;width:auto}
+.fam-links a.badge.gp{position:relative;border-radius:8px;overflow:hidden}.fam-links a.badge.gp:after{content:"";position:absolute;inset:0;border:1px solid #a6a6a6;border-radius:8px;pointer-events:none}
+.fam-links .later{font-size:12px;color:var(--faint)}
+@media(max-width:820px){.fam-cards{grid-template-columns:1fr}}
 .fam-all a.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .fam-quote{text-align:center;max-width:720px;margin:0 auto;padding:30px 0 64px}
 .fam-quote blockquote{margin:0 0 14px;font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(36px,5.6vw,58px);line-height:1.1;color:var(--accent)}
@@ -356,9 +412,28 @@ def body(lang, soon_keys):
         stack = "".join(f'<img src="/apps/{k}.png" alt="">' for k in RING)
         bundle = (f'<section><div class="fam-bundle"><div><p class="kicker">{t["bundle_kicker"]}</p><h2>{t["bundle_h"]}</h2>'
                   f'<p>{t["bundle"]}</p></div><div class="stack">{stack}</div></div></section>')
+    ext = ' target="_blank" rel="noopener"'
+    cards = []
+    for k in RING:
+        L = LINKS[k]
+        links = []
+        info = L["info"][lang] if isinstance(L["info"], dict) else L["info"]
+        if info:
+            links.append(f'<a class="info" href="{info}"{ext if info.startswith("http") else ""}>{t["info"]} →</a>')
+        if L["play"]:
+            links.append(f'<a class="badge gp" href="https://play.google.com/store/apps/details?id={L["play"]}&amp;hl={lang}"{ext}>'
+                         f'<img src="/badges/google-play-{lang}.png" alt="Google Play" height="38" loading="lazy"></a>')
+        if L["apple"]:
+            links.append(f'<a class="badge" href="{L["apple"].replace("{lang}", lang)}"{ext}>'
+                         f'<img src="/badges/app-store-{lang}.svg" alt="App Store" height="38" loading="lazy"></a>')
+        elif L["play"]:
+            links.append(f'<span class="later">{t["apple_soon"]}</span>')
+        cards.append(f'<div class="fam-card"><img class="icon" src="/apps/{k}.png" alt=""><div><h3>{t["names"][k]}{_soon(k, t, soon_keys)}</h3>'
+                     f'<p>{t["d"][k]}</p><div class="fam-links">{"".join(links)}</div></div></div>')
+    apps = (f'<section id="apps"><h2>{t["apps_h"]}</h2><p class="sub">{t["apps_sub"]}</p>'
+            f'<div class="fam-cards">{"".join(cards)}</div></section>')
     all_ = (f'<div class="fam-all"><p class="kicker">we + legato</p><h2>{t["end_h"]}</h2>'
-            f'<a class="btn" href="{t["end_href2"]}" target="_blank" rel="noopener">{t["end_btn2"]}</a> '
-            f'<a class="btn ghost" href="{t["all_href"]}">{t["all_btn"]}</a></div>')
+            f'<a class="btn" href="{t["end_href2"]}" target="_blank" rel="noopener">{t["end_btn2"]}</a></div>')
     # 글꼴(2026-11-10): 위레가토 홈페이지와 같은 파일을 사이트 안에서(외부 불러오기 없음)
     fonts = "/fonts/fonts-v2.css" if lang == "ko" else "/fonts/fonts-v2-latin.css"
-    return f'<link rel="stylesheet" href="{fonts}"><style>{CSS}</style>{hero}{quote}{journey}{who}{glue}{bundle}{all_}'
+    return f'<link rel="stylesheet" href="{fonts}"><style>{CSS}</style>{hero}{quote}{journey}{who}{glue}{bundle}{apps}{all_}'
