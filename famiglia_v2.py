@@ -125,7 +125,7 @@ def body(lang, soon_keys):
         return f'<a class="ic{" solo" if k == "welegato" else ""}" href="{href}"{tgt}>{inner}</a>' if href else f'<span class="ic">{inner}</span>'
     def mov(no, tempo, h, q, d, keys, tag="", more=""):
         qq = f'<p class="q">{q}</p>' if q else ""
-        d = d + (f'</p><p class="d more">{more}' if more else "")
+        d = d + (" " + more if more else "")  # 같은 문단에 이어 씀(따로 진하게 하지 않음, 사용자 2026-11-11)
         return (f'<li class="mov"><span class="no">{no}</span><div class="mb"><div class="th"><p class="tm">{tempo}</p><h3>{h}{tag}</h3></div>{qq}'
                 f'<p class="d">{d}</p></div><div class="ics">{"".join(icon(k) for k in keys)}</div></li>')
     prog, no = [], 0
@@ -239,7 +239,6 @@ html,body{overflow-x:clip}
 .fv2 .tag{font-family:Pretendard,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:1px 9px}
 .fv2 .mov .q{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;color:var(--gold);margin:0 0 4px;font-size:15px}
 .fv2 .mov .d{margin:0;color:var(--soft);font-size:15px;max-width:560px;text-wrap:pretty}
-.fv2 .mov .d.more{margin-top:8px;color:var(--ink)}
 .fv2 .ics{display:flex;gap:14px;justify-content:flex-end}
 .fv2 .ic{display:block;text-align:center;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:600;width:78px}
 .fv2 .ic img{width:64px;height:64px;border-radius:16px;display:block;margin:0 auto 6px;box-shadow:0 12px 24px -12px rgba(60,30,15,.5);transition:transform .2s}
