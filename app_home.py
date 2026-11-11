@@ -44,7 +44,7 @@ def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, can
         out = []
         if play:
             out.append(f'<a href="https://play.google.com/store/apps/details?id={play}&amp;hl={l}" target="_blank" rel="noopener" '
-                       f'aria-label="Google Play"><img src="/badges/google-play-{b}-nb.png" alt="Google Play" style="height:48px"></a>')
+                       f'aria-label="Google Play"><img src="/badges/google-play-{b}-nb.png" alt="Google Play" style="height:48px;border-radius:10px;border:1px solid #a6a6a6;box-sizing:border-box"></a>')
         if apple:
             out.append(f'<a href="{apple}" target="_blank" rel="noopener" aria-label="App Store">'
                        f'<img src="/badges/app-store-{b}.svg" alt="App Store" style="height:48px"></a>')
