@@ -91,6 +91,7 @@ LEGAL_ONLY = {"chiave", "prova"}  # 2026-11-09 법문 페이지만 먼저 연결
 
 import site_i18n as I
 import famiglia
+import famiglia_v2
 TXT = {}
 for _l in I.LANGS:
     _h = dict(I.HOME[_l]); _f = famiglia.T[_l]
@@ -181,7 +182,7 @@ for lang, path in alt.items():
 FAM_ALT = {l: famiglia.T[l]["path"] for l in I.LANGS}
 for _l in I.LANGS:
     _t = famiglia.T[_l]
-    write(_t["path"], page(_l, _t["path"], _t["title"], _t["desc"], famiglia.body(_l, SOON), FAM_ALT, wide=True))
+    write(_t["path"], page(_l, _t["path"], _t["title"], _t["desc"], famiglia_v2.body(_l, SOON), FAM_ALT, wide=True))
 write("/impressum/", page("de", "/impressum/", "Impressum — Vicino Labs", "Impressum von Vicino Labs.", IMPRESSUM))
 write("/datenschutz/", page("de", "/datenschutz/", "Datenschutzerklärung — Vicino Labs", "Datenschutzerklärung von vicinolabs.com.", PRIVACY))
 # Nomio 개인정보처리방침·이용약관 (/nomio/privacy/, /nomio/terms/) — nomio_legal.py
