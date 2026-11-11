@@ -7,6 +7,7 @@ nomio_legal.py와 같다(외부 글꼴·스크립트 없음). 한 페이지에 �
 """
 import os
 
+import app_home
 import nomio_legal
 from appoggio_privacy_content import PRIVACY, EMAIL
 from appoggio_terms_content import TERMS
@@ -25,33 +26,10 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.vicinolabs.appoggi
 
 
 def appoggio_home():
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Appoggio — Vicino Labs</title>
-<meta name="description" content="Appoggio — breathing training for singers, by Vicino Labs.">
-<link rel="canonical" href="https://vicinolabs.com/appoggio/">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<style>{nomio_legal.CSS}</style>
-</head>
-<body>
-<div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
-<main class="page"><div class="mast"><span class="app"><span class="mark" style="background:{APPOGGIO['mark_bg']}">a.</span>Appoggio</span>
-<h1>Appoggio</h1>
-<p class="lede">Breathing training for singers — the bel canto art of supporting the voice with breath.<br>
-Atemtraining für Sängerinnen und Sänger.<br>
-L'arte del respiro: allenamento per cantanti.<br>
-성악가를 위한 호흡 훈련 — 모든 기능 무료, 기록은 기기에만.</p></div>
-<div style="padding:26px 0;max-width:720px">
-<p><a href="{PLAY_URL}" target="_blank" rel="noopener">Google Play →</a> · <a href="https://apps.apple.com/app/id6832364161" target="_blank" rel="noopener">App Store →</a></p>
-<p>Privacy Policy · Datenschutzerklärung · Informativa privacy · 개인정보처리방침: <a href="/appoggio/privacy/">vicinolabs.com/appoggio/privacy</a><br>
-Terms of Service · Nutzungsbedingungen · Termini · 이용약관: <a href="/appoggio/terms/">vicinolabs.com/appoggio/terms</a><br>
-Impressum: <a href="/impressum/">vicinolabs.com/impressum</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
-</div></main>
-</body></html>
-"""
+    # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
+    return app_home.page(key='appoggio', name='Appoggio · 아뽀조', sub="Vicino Labs · Famiglia Vicino", icon="/apps/appoggio.png",
+                         ledes={'en': 'Breathing training for singers — the bel canto art of supporting the voice with breath.', 'de': 'Atemtraining für Sängerinnen und Sänger.', 'it': "L'arte del respiro: allenamento per cantanti.", 'ko': '성악가를 위한 호흡 훈련 — 모든 기능 무료, 기록은 기기에만.'},
+                         play='com.vicinolabs.appoggio', apple='https://apps.apple.com/app/id6832364161', email=EMAIL, desc='Appoggio — breathing training for singers, by Vicino Labs.', canonical="/appoggio/")
 
 
 def build(root):

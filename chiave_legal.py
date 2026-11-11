@@ -6,6 +6,7 @@ leggii_legal.py와 같은 틀(nomio_legal.legal_page). 한국어·영어·독일
 """
 import os
 
+import app_home
 import nomio_legal
 from appoggio_privacy_content import EMAIL
 from chiave_privacy_content import PRIVACY
@@ -23,33 +24,10 @@ CHIAVE = {
 
 
 def chiave_home():
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chiave — Vicino Labs</title>
-<meta name="description" content="Chiave — write, scan and transpose scores, by Vicino Labs.">
-<link rel="canonical" href="https://vicinolabs.com/chiave/">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<style>{nomio_legal.CSS}</style>
-</head>
-<body>
-<div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
-<main class="page"><div class="mast"><span class="app"><img class="mark" src="{CHIAVE['mark_img']}" alt="" width="30" height="30" style="background:none;border:none">Chiave</span>
-<h1>Chiave · 끼아베</h1>
-<p class="lede">Write, scan and transpose scores — your scores stay on your device.<br>
-Noten schreiben, scannen und transponieren – deine Noten bleiben auf deinem Gerät.<br>
-Scrivi, scansiona e trasponi spartiti: i tuoi spartiti restano sul dispositivo.<br>
-악보를 쓰고, 스캔하고, 이조하는 앱 — 악보는 기기에만.</p></div>
-<div style="padding:26px 0;max-width:720px">
-<p>Google Play · App Store — coming soon · demnächst · prossimamente · 출시 예정</p>
-<p>Privacy Policy · Datenschutzerklärung · Informativa privacy · 개인정보처리방침: <a href="/chiave/privacy/">vicinolabs.com/chiave/privacy</a><br>
-Terms of Service · Nutzungsbedingungen · Termini · 이용약관: <a href="/chiave/terms/">vicinolabs.com/chiave/terms</a><br>
-Impressum: <a href="/impressum/">vicinolabs.com/impressum</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
-</div></main>
-</body></html>
-"""
+    # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
+    return app_home.page(key='chiave', name='Chiave · 끼아베', sub="Vicino Labs · Famiglia Vicino", icon="/apps/chiave.png",
+                         ledes={'en': 'Create and edit scores with pen, photo or sound — transposition included. Your scores stay on your device.', 'de': 'Noten erstellen und bearbeiten – mit Stift, Foto oder Klang, Transponieren inklusive. Deine Noten bleiben auf deinem Gerät.', 'it': 'Crea e modifica spartiti con penna, foto o suono, trasposizione inclusa. I tuoi spartiti restano sul dispositivo.', 'ko': '펜·사진·소리로 악보를 쉽게 만들고 고치는 앱 — 이조도 함께, 악보는 기기에만.'},
+                         play=None, apple=None, email=EMAIL, desc='Chiave — create and edit scores with pen, photo or sound, by Vicino Labs.', canonical="/chiave/")
 
 
 def build(root):

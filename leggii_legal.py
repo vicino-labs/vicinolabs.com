@@ -5,6 +5,7 @@ appoggio_legal.py와 같은 틀(nomio_legal.legal_page). 한국어·영어·독�
 """
 import os
 
+import app_home
 import nomio_legal
 from appoggio_privacy_content import EMAIL
 from leggii_privacy_content import PRIVACY
@@ -24,33 +25,10 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.vicinolabs.leggii"
 
 
 def leggii_home():
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leggii — Vicino Labs</title>
-<meta name="description" content="Leggii — a simple sheet music reader for musicians, by Vicino Labs.">
-<link rel="canonical" href="https://vicinolabs.com/leggii/">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<style>{nomio_legal.CSS}</style>
-</head>
-<body>
-<div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
-<main class="page"><div class="mast"><span class="app"><img class="mark" src="{LEGGII['mark_img']}" alt="" width="30" height="30" style="background:none;border:none">Leggii</span>
-<h1>Leggii · 렛지 악보</h1>
-<p class="lede">A simple sheet music reader for musicians — PDF scores, notes, IMSLP search, metronome, lesson recordings and AI lesson notes.<br>
-Die einfache Noten-App für Musikerinnen und Musiker – mit Unterrichtsaufnahmen und KI-Notizen.<br>
-Il leggio digitale semplice per musicisti, con registrazioni e note AI delle lezioni.<br>
-음악가를 위한 간편한 악보 앱 — 레슨 녹음과 AI 레슨 노트까지, 기본 기능 무료, 악보는 기기에만.</p></div>
-<div style="padding:26px 0;max-width:720px">
-<p><a href="{PLAY_URL}" target="_blank" rel="noopener">Google Play →</a></p>
-<p>Privacy Policy · Datenschutzerklärung · Informativa privacy · 개인정보처리방침: <a href="/leggii/privacy/">vicinolabs.com/leggii/privacy</a><br>
-Terms of Service · Nutzungsbedingungen · Termini · 이용약관: <a href="/leggii/terms/">vicinolabs.com/leggii/terms</a><br>
-Impressum: <a href="/impressum/">vicinolabs.com/impressum</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
-</div></main>
-</body></html>
-"""
+    # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
+    return app_home.page(key='leggii', name='Leggii · 렛지 악보', sub="Vicino Labs · Famiglia Vicino", icon="/apps/leggii.png",
+                         ledes={'en': 'A simple sheet music reader for musicians — PDF scores, notes, IMSLP search, metronome, lesson recordings and AI lesson notes.', 'de': 'Die einfache Noten-App für Musikerinnen und Musiker – mit Unterrichtsaufnahmen und KI-Notizen.', 'it': 'Il leggio digitale semplice per musicisti, con registrazioni e note AI delle lezioni.', 'ko': '음악가를 위한 간편한 악보 앱 — 레슨 녹음과 AI 레슨 노트까지, 기본 기능 무료, 악보는 기기에만.'},
+                         play='com.vicinolabs.leggii', apple=None, email=EMAIL, desc='Leggii — a simple sheet music reader for musicians, by Vicino Labs.', canonical="/leggii/")
 
 
 def build(root):

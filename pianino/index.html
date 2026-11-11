@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pianino — Vicino Labs</title>
+<title>Pianino · 피아니노 — Vicino Labs</title>
 <meta name="description" content="Pianino — piano, metronome and tuner with one shared concert pitch, by Vicino Labs.">
 <link rel="canonical" href="https://vicinolabs.com/pianino/">
 <meta name="color-scheme" content="light dark">
@@ -46,20 +46,37 @@ p,li{font-size:15.5px}ul,ol{padding-left:22px}li{margin:4px 0}
 .contact-card .name{font-family:Georgia,serif;font-size:18px}
 footer{margin:46px 0 0;padding:22px 0 44px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;font-size:13.5px;color:var(--soft)}
 footer a{color:var(--soft);margin-right:14px}
+
+.ah{max-width:720px;margin:0 auto;padding:64px 20px 40px;text-align:center}
+.ah .ic{width:132px;height:132px;border-radius:30px;display:block;margin:0 auto 26px;box-shadow:0 26px 50px -22px rgba(60,30,15,.55)}
+.ah h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(34px,6vw,50px);line-height:1.15;margin:0 0 6px}
+.ah .sub{color:var(--gold);font-size:15px;letter-spacing:.04em;margin:0 0 22px}
+.ah .langs{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--paper);margin:0 0 20px}
+.ah .langs button{border:0;background:none;color:var(--soft);font:600 13px/1 inherit;font-family:inherit;padding:8px 14px;border-radius:99px;cursor:pointer}
+.ah .langs button.on{background:var(--ink);color:var(--bg)}
+.ah .lede{font-size:18px;color:var(--soft);margin:0 auto 30px;max-width:560px;text-wrap:balance}
+
+.ah .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:52px}
+.ah .stores a{display:block;line-height:0}.ah .stores img{height:52px;width:auto}
+.ah .soon{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:8px 18px;font-weight:600;font-size:14px}
+.ah .fam{display:inline-block;margin:34px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
+.ah .legal{margin:46px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--soft)}
+.ah .legal a{color:var(--soft)}
+.ah [data-l]:not(.on){display:none!important}
 </style>
 </head>
 <body>
 <div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
-<main class="page"><div class="mast"><span class="app"><img class="mark" src="/pianino/icon.png" alt="" width="30" height="30" style="background:none;border:none">Pianino</span>
-<h1>Pianino · 피아니노</h1>
-<p class="lede">Piano, metronome and tuner — one concert pitch (A4 415–466 Hz) for keys and tuner, free.<br>
-Klavier, Metronom und Stimmgerät – ein Kammerton für Tasten und Stimmgerät, kostenlos.<br>
-Pianoforte, metronomo e accordatore: un unico diapason per tasti e accordatore, gratis.<br>
-피아노·메트로놈·튜너 — 건반과 튜너가 같은 기준음을 쓰는 무료 앱.</p></div>
-<div style="padding:26px 0;max-width:720px">
-<p><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino" target="_blank" rel="noopener">Google Play →</a> · <a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener">App Store →</a></p>
-<p>Privacy Policy · Datenschutzerklärung · Informativa privacy · 개인정보처리방침: <a href="/pianino/privacy/">vicinolabs.com/pianino/privacy</a><br>
-Terms of Service · Nutzungsbedingungen · Termini · 이용약관: <a href="/pianino/terms/">vicinolabs.com/pianino/terms</a><br>
-Impressum: <a href="/impressum/">vicinolabs.com/impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p>
-</div></main>
+<main class="ah">
+<img class="ic" src="/apps/pianino.png" alt="Pianino · 피아니노" width="132" height="132">
+<h1>Pianino · 피아니노</h1><p class="sub">Vicino Labs · Famiglia Vicino</p>
+<div class="langs" role="group" aria-label="Language"><button type="button" data-set="ko">한국어</button><button type="button" data-set="en">English</button><button type="button" data-set="de">Deutsch</button><button type="button" data-set="it">Italiano</button></div>
+<p data-l="ko" class="lede">피아노·메트로놈·튜너 — 건반과 튜너가 같은 기준음을 쓰는 무료 앱.</p><p data-l="en" class="lede on">Piano, metronome and tuner — one concert pitch (A4 415–466 Hz) for keys and tuner, free.</p><p data-l="de" class="lede">Klavier, Metronom und Stimmgerät – ein Kammerton für Tasten und Stimmgerät, kostenlos.</p><p data-l="it" class="lede">Pianoforte, metronomo e accordatore: un unico diapason per tasti e accordatore, gratis.</p><div data-l="ko" class="stores"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino&amp;hl=ko" target="_blank" rel="noopener" aria-label="Google Play"><img src="/badges/google-play-ko.png" alt="Google Play" style="height:56px;margin:-2px 0"></a><a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener" aria-label="App Store"><img src="/badges/app-store-ko.svg" alt="App Store" style="height:44px"></a></div><div data-l="en" class="stores on"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Play"><img src="/badges/google-play-en.png" alt="Google Play" style="height:56px;margin:-2px 0"></a><a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener" aria-label="App Store"><img src="/badges/app-store-en.svg" alt="App Store" style="height:44px"></a></div><div data-l="de" class="stores"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino&amp;hl=de" target="_blank" rel="noopener" aria-label="Google Play"><img src="/badges/google-play-de.png" alt="Google Play" style="height:56px;margin:-2px 0"></a><a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener" aria-label="App Store"><img src="/badges/app-store-de.svg" alt="App Store" style="height:44px"></a></div><div data-l="it" class="stores"><a href="https://play.google.com/store/apps/details?id=com.vicinolabs.pianino&amp;hl=it" target="_blank" rel="noopener" aria-label="Google Play"><img src="/badges/google-play-en.png" alt="Google Play" style="height:56px;margin:-2px 0"></a><a href="https://apps.apple.com/app/id6832363954" target="_blank" rel="noopener" aria-label="App Store"><img src="/badges/app-store-en.svg" alt="App Store" style="height:44px"></a></div><a data-l="ko" class="fam" href="/ko/famiglia/">Famiglia Vicino의 다른 앱 보기 →</a><a data-l="en" class="fam on" href="/en/famiglia/">More apps from Famiglia Vicino →</a><a data-l="de" class="fam" href="/famiglia/">Weitere Apps der Famiglia Vicino →</a><a data-l="it" class="fam" href="/it/famiglia/">Altre app della Famiglia Vicino →</a>
+<div class="legal"><p data-l="ko"><a href="/pianino/privacy/#ko">개인정보처리방침</a> · <a href="/pianino/terms/#ko">이용약관</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="en" class="on"><a href="/pianino/privacy/#en">Privacy Policy</a> · <a href="/pianino/terms/#en">Terms of Service</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="de"><a href="/pianino/privacy/#de">Datenschutzerklärung</a> · <a href="/pianino/terms/#de">Nutzungsbedingungen</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="it"><a href="/pianino/privacy/#it">Informativa privacy</a> · <a href="/pianino/terms/#it">Termini</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p></div>
+</main>
+<script>(function(){var k="vl-app-lang",L=["ko","en","de","it"],s=null;try{s=localStorage.getItem(k)}catch(e){}
+var h=(location.hash||"").slice(1),n=(navigator.language||"en").slice(0,2),l=L.indexOf(h)>=0?h:(L.indexOf(s)>=0?s:(L.indexOf(n)>=0?n:"en"));
+function set(x){l=x;document.documentElement.lang=x;document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-l")===x)});
+document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});try{localStorage.setItem(k,x)}catch(e){}}
+document.querySelectorAll("[data-set]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-set"))})});set(l)})();</script>
 </body></html>
