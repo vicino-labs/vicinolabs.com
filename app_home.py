@@ -23,7 +23,7 @@ CSS = """
 .ah .lede{font-size:18px;color:var(--soft);margin:0 auto 30px;max-width:560px;text-wrap:balance}
 
 .ah .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:52px}
-.ah .stores a{display:block;line-height:0}.ah .stores img{height:52px;width:auto}
+.ah .stores a{display:block;line-height:0}.ah .stores img{width:auto;display:block}
 .ah .soon{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:8px 18px;font-weight:600;font-size:14px}
 .ah .fam{display:inline-block;margin:34px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
 .ah .legal{margin:46px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--soft)}
@@ -44,10 +44,10 @@ def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, can
         out = []
         if play:
             out.append(f'<a href="https://play.google.com/store/apps/details?id={play}&amp;hl={l}" target="_blank" rel="noopener" '
-                       f'aria-label="Google Play"><img src="/badges/google-play-{b}.png" alt="Google Play" style="height:56px;margin:-2px 0"></a>')
+                       f'aria-label="Google Play"><img src="/badges/google-play-{b}-nb.png" alt="Google Play" style="height:48px"></a>')
         if apple:
             out.append(f'<a href="{apple}" target="_blank" rel="noopener" aria-label="App Store">'
-                       f'<img src="/badges/app-store-{b}.svg" alt="App Store" style="height:44px"></a>')
+                       f'<img src="/badges/app-store-{b}.svg" alt="App Store" style="height:48px"></a>')
         if not (play and apple):
             out.append(f'<span class="soon">{"App Store" if play else ("Google Play" if apple else "Google Play · App Store")} — {SOON[l]}</span>')
         return "".join(out)
@@ -70,7 +70,7 @@ def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, can
 <body>
 <div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
 <main class="ah">
-<img class="ic" src="{icon}" alt="{name}" width="132" height="132">
+<img class="ic" src="{icon}" srcset="{icon.replace('/apps/', '/apps/hi/')} 2x" alt="{name}" width="132" height="132">
 <h1>{name}</h1><p class="sub">{sub}</p>
 <div class="langs" role="group" aria-label="Language">{buttons}</div>
 {lede}{store_html}{fam}
