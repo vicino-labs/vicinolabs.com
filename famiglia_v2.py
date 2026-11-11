@@ -86,6 +86,15 @@ NEW = {
                free="Вход свободный"),
 }
 
+# 끼아베 = 악보 편집 앱(작곡·편곡도) — 준비하기 악장 설명 아래 한 줄 (사용자 2026-11-11)
+CHIAVE_MORE = {'ko': '끼아베는 악보 편집 앱이라, 새 곡을 쓰거나 편곡할 때도 그대로 쓸 수 있어요.',
+    'en': 'Chiave is a score editor, so you can also use it to write your own music or make an arrangement.',
+    'de': 'Chiave ist ein Noteneditor – damit können Sie auch eigene Stücke komponieren oder arrangieren.',
+    'it': 'Chiave è un editor di partiture: puoi usarlo anche per comporre o arrangiare.',
+    'fr': "Chiave est un éditeur de partitions : vous pouvez aussi l'utiliser pour composer ou arranger.", 'zh': 'Chiave 是乐谱编辑应用，也可以用来作曲或编曲。',
+    'es': 'Chiave es un editor de partituras: también sirve para componer o hacer arreglos.',
+    'ru': 'Chiave — нотный редактор: в нём можно и сочинять, и делать аранжировки.'}
+
 
 def _lab(lat, local):
     return f'<p class="lab">{lat}{" · " + local if local else ""}</p>'
@@ -114,8 +123,9 @@ def body(lang, soon_keys):
         tgt = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
         inner = f'<img src="/apps/{k}.png" alt="" loading="lazy"><figcaption>{N[k]}</figcaption>'
         return f'<a class="ic{" solo" if k == "welegato" else ""}" href="{href}"{tgt}>{inner}</a>' if href else f'<span class="ic">{inner}</span>'
-    def mov(no, tempo, h, q, d, keys, tag=""):
+    def mov(no, tempo, h, q, d, keys, tag="", more=""):
         qq = f'<p class="q">{q}</p>' if q else ""
+        d = d + (f'</p><p class="d more">{more}' if more else "")
         return (f'<li class="mov"><span class="no">{no}</span><div class="mb"><div class="th"><p class="tm">{tempo}</p><h3>{h}{tag}</h3></div>{qq}'
                 f'<p class="d">{d}</p></div><div class="ics">{"".join(icon(k) for k in keys)}</div></li>')
     prog, no = [], 0
@@ -124,7 +134,7 @@ def body(lang, soon_keys):
         for st in stages:
             no += 1; h, q, d = t["stages"][st]
             tag = f'<span class="tag">{t["warmup_tag"]}</span>' if st == "warmup" else ""
-            prog.append(mov(no, TEMPO[st], h, q, d, STAGE_APPS[st], tag))
+            prog.append(mov(no, TEMPO[st], h, q, d, STAGE_APPS[st], tag, CHIAVE_MORE[lang] if st == "prepare" else ""))
     prog.append(mov("D.C.", "Ancora", t["loop_h"], "", t["loop"], ["welegato"]))
     ids = ("s", "t", "a")
     who = ("".join(f'<input type="radio" name="fv2r" id="fv2r-{r}"{" checked" if r == "s" else ""}>' for r in ids)
@@ -229,6 +239,7 @@ html,body{overflow-x:clip}
 .fv2 .tag{font-family:Pretendard,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:1px 9px}
 .fv2 .mov .q{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;color:var(--gold);margin:0 0 4px;font-size:15px}
 .fv2 .mov .d{margin:0;color:var(--soft);font-size:15px;max-width:560px;text-wrap:pretty}
+.fv2 .mov .d.more{margin-top:8px;color:var(--ink)}
 .fv2 .ics{display:flex;gap:14px;justify-content:flex-end}
 .fv2 .ic{display:block;text-align:center;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:600;width:78px}
 .fv2 .ic img{width:64px;height:64px;border-radius:16px;display:block;margin:0 auto 6px;box-shadow:0 12px 24px -12px rgba(60,30,15,.5);transition:transform .2s}
