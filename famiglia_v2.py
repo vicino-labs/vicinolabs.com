@@ -116,7 +116,7 @@ def body(lang, soon_keys):
         return f'<a class="ic{" solo" if k == "welegato" else ""}" href="{href}"{tgt}>{inner}</a>' if href else f'<span class="ic">{inner}</span>'
     def mov(no, tempo, h, q, d, keys, tag=""):
         qq = f'<p class="q">{q}</p>' if q else ""
-        return (f'<li class="mov"><span class="no">{no}</span><div class="mb"><p class="tm">{tempo}</p><h3>{h}{tag}</h3>{qq}'
+        return (f'<li class="mov"><span class="no">{no}</span><div class="mb"><div class="th"><p class="tm">{tempo}</p><h3>{h}{tag}</h3></div>{qq}'
                 f'<p class="d">{d}</p></div><div class="ics">{"".join(icon(k) for k in keys)}</div></li>')
     prog, no = [], 0
     for (lat, stages), sub in zip(PROG, n["parts"]):
@@ -223,8 +223,9 @@ html,body{overflow-x:clip}
 .fv2 .mov{display:grid;grid-template-columns:44px 1fr auto;gap:22px;align-items:center;padding:28px 0;border-top:1px solid var(--line)}
 .fv2 .part+.mov{border-top:0}
 .fv2 .no{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--gold);text-align:right;align-self:start;padding-top:6px}
-.fv2 .tm{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:38px;line-height:1;color:var(--accent);margin:0 0 8px}
-.fv2 .mov h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-style:normal;font-size:19px;margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fv2 .th{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 16px;margin:0 0 10px}
+.fv2 .tm{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:38px;line-height:1;color:var(--accent);margin:0}
+.fv2 .mov h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-style:normal;font-size:19px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .fv2 .tag{font-family:Pretendard,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:1px 9px}
 .fv2 .mov .q{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;color:var(--gold);margin:0 0 4px;font-size:15px}
 .fv2 .mov .d{margin:0;color:var(--soft);font-size:15px;max-width:560px;text-wrap:pretty}
