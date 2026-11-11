@@ -6,8 +6,10 @@ import famiglia as F
 import famiglia_score as FS
 
 ROWS = ["welegato", "leggii", "chiave", "appoggio", "squillo", "pianino", "prova"]
-PROG = [("Prima parte", ["welegato", "leggii", "chiave"]), ("Intervallo", ["appoggio", "squillo"]),
-        ("Seconda parte", ["pianino", "prova"])]
+TEMPO = {"find": "Andante", "prepare": "Moderato", "warmup": "Adagio", "practise": "Allegro", "reflect": "Tranquillo"}
+STAGE_APPS = {"find": ["welegato"], "prepare": ["leggii", "chiave"], "warmup": ["appoggio", "squillo"], "practise": ["pianino"], "reflect": ["prova"]}
+PROG = [("Prima parte", ["find", "prepare"]), ("Intervallo", ["warmup"]),
+        ("Seconda parte", ["practise", "reflect"])]
 
 NEW = {
     "ko": dict(subt="음악가의 일주일을 위한 일곱 곡", part="총보", score_h="일곱 개의 성부, 하나의 음악.",
@@ -105,18 +107,32 @@ def _links(k, t, lang):
 def body(lang, soon_keys):
     t = F.T[lang]; n = NEW[lang]; N = t["names"]
     svg = FS.score_svg(N, n["stages"], n["sub"], n["dc"], n["label"])
-    when = dict(zip(ROWS, n["when"]))
+    # 프로그램: 악장(빠르기말이 제목, 단계는 부제목, 물음·설명) + 오른쪽에 그 악장의 앱 아이콘 (시안 A 내용, 2026-11-11 사용자)
+    def icon(k):
+        L = F.LINKS[k]; info = F.I.welegato_url(lang) if L["info"] == "WELEGATO" else L["info"]
+        href = info or (f"https://play.google.com/store/apps/details?id={L['play']}&amp;hl={lang}" if L["play"] else "")
+        tgt = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
+        inner = f'<img src="/apps/{k}.png" alt="" loading="lazy"><figcaption>{N[k]}</figcaption>'
+        return f'<a class="ic{" solo" if k == "welegato" else ""}" href="{href}"{tgt}>{inner}</a>' if href else f'<span class="ic">{inner}</span>'
+    def mov(no, tempo, h, q, d, keys, tag=""):
+        qq = f'<p class="q">{q}</p>' if q else ""
+        return (f'<li class="mov"><span class="no">{no}</span><div class="mb"><p class="tm">{tempo}</p><h3>{h}{tag}</h3>{qq}'
+                f'<p class="d">{d}</p></div><div class="ics">{"".join(icon(k) for k in keys)}</div></li>')
     prog, no = [], 0
-    for (lat, keys), sub in zip(PROG, n["parts"]):
+    for (lat, stages), sub in zip(PROG, n["parts"]):
         prog.append(f'<li class="part"><span>{lat}</span><small>{sub}</small></li>')
-        for k in keys:
-            no += 1
-            cls = "item solo" if k == "welegato" else "item"
-            prog.append(f'<li class="{cls}"><span class="no">{no}</span><img src="/apps/{k}.png" alt="" loading="lazy"><div class="it">'
-                        f'<div class="row"><b>{N[k]}</b><i class="dots"></i><em>{when[k]}</em></div><p>{t["d"][k]}</p>'
-                        f'<nav>{_links(k, t, lang)}</nav></div></li>')
-    cast = "".join(f'<div><h3>{r}</h3><ul>' + "".join(f'<li><b>{N[k]}</b> — {t["scen"][k][i]}</li>' for k in ROWS) + "</ul></div>"
-                   for i, r in enumerate(t["roles"]))
+        for st in stages:
+            no += 1; h, q, d = t["stages"][st]
+            tag = f'<span class="tag">{t["warmup_tag"]}</span>' if st == "warmup" else ""
+            prog.append(mov(no, TEMPO[st], h, q, d, STAGE_APPS[st], tag))
+    prog.append(mov("D.C.", "Ancora", t["loop_h"], "", t["loop"], ["welegato"]))
+    ids = ("s", "t", "a")
+    who = ("".join(f'<input type="radio" name="fv2r" id="fv2r-{r}"{" checked" if r == "s" else ""}>' for r in ids)
+           + '<div class="tabs" role="tablist">' + "".join(f'<label for="fv2r-{r}">{nm}</label>' for r, nm in zip(ids, t["roles"])) + "</div>"
+           + "".join(f'<ul class="p p-{r}">' + "".join(f'<li><img src="/apps/{k}.png" alt="" loading="lazy"><div><b>{N[k]}</b>'
+                                                     f'<span>{t["scen"][k][i]}</span></div></li>' for k in ROWS) + "</ul>"
+                     for i, r in enumerate(ids)))
+    glue = "".join(f'<div><i>{"①②③"[i]}</i><b>{h}</b><span>{d}</span></div>' for i, (h, d) in enumerate(t["glue"]))
     fonts = "/fonts/fonts-v2.css" if lang in ("ko", "zh") else "/fonts/fonts-v2-latin.css"
     lead = t["lead"].replace('<br class="w">', " ")
     return f'''<link rel="stylesheet" href="{fonts}"><style>{CSS}</style><div class="fv2">
@@ -126,12 +142,13 @@ def body(lang, soon_keys):
 <div class="sheet"><div class="scroll">{svg}</div></div>
 <p class="hint"><span class="m">{n["swipe"]} </span>{n["hint"]}</p></section>
 <section class="notes">{_lab("Note di sala", n["notes"])}<h2>{t["h1"]}</h2>
-<div class="cols"><p class="drop">{lead}</p><p>{t["loop"]}</p></div></section>
+<p class="lead1"><span class="drop">{lead}</span></p></section>
 <section class="prog">{_lab("Programma", "")}<ol>{"".join(prog)}</ol></section>
 <section class="night"><p class="k">{t["quote_kicker"]}</p><blockquote>{t["quote"]}</blockquote>
 <svg class="nslur" viewBox="0 0 600 60" aria-hidden="true"><path d="M10 50 Q 300 -20 590 50 Q 300 -14 10 50Z"/></svg><p>{t["quote_text"]}</p></section>
-<section class="cast">{_lab("Interpreti", t["who_h"])}<div class="c3">{cast}</div></section>
-<section class="ticket"><div class="stub">{_lab("Ingresso libero", n["free"])}<h2>{t["end_h"]}</h2><p>{t["glue"][2][1]}</p>
+<section class="who">{_lab("Tutti", "")}<h2>{t["who_h"]}</h2><div class="roles">{who}</div></section>
+<section class="glue"><h2>{t["glue_h"]}</h2><div class="g3">{glue}</div></section>
+<section class="ticket"><div class="stub">{_lab("Ingresso libero", n["free"])}<h2>{t["end_h"]}</h2>
 <a class="btn" href="{t["end_href2"]}" target="_blank" rel="noopener">{t["end_btn2"]}</a></div><div class="tear"><span>N° 2026</span><b>W.L</b></div></section>
 </div>'''
 
@@ -185,36 +202,15 @@ html:not([lang=ko]):not([lang=zh]) .fv2 h2{font-family:"Cormorant Garamond",Geor
 .fv2 .score .band{fill:#d4b57a;fill-opacity:.16}
 .fv2 .score .hl .mus{fill:#8a1d3a}.fv2 .score .hl .ln{stroke:#8a1d3a;stroke-width:1.5}.fv2 .score .hl .beam,.fv2 .score .hl .slur{fill:#8a1d3a;stroke:#8a1d3a}
 .fv2 .hint{text-align:center;font-size:13px;color:var(--faint);margin:20px 0 0}.fv2 .hint .m{display:none}
-.fv2 .cols{columns:2;column-gap:44px;column-rule:1px solid var(--line);color:var(--soft);max-width:860px;margin:0 auto}
-.fv2 .cols p{margin:0 0 1em;text-wrap:pretty}
-.fv2 .drop:first-letter{float:left;font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:58px;line-height:1;margin:6px 10px 0 0;color:var(--accent)}
 .fv2 .prog ol{list-style:none;margin:0 auto;padding:0;max-width:860px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
 .fv2 .part{text-align:center;padding:34px 0 10px}.fv2 .part span{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:30px}
 .fv2 .part small{color:var(--gold);letter-spacing:.08em;font-size:13px}
-.fv2 .item{display:grid;grid-template-columns:34px 52px 1fr;gap:18px;align-items:start;padding:20px 0;border-top:1px solid var(--line)}
-.fv2 .part+.item{border-top:0}
-.fv2 .no{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--gold);padding-top:4px;text-align:right}
-.fv2 .item img{width:52px;height:52px;border-radius:13px;box-shadow:0 8px 18px -8px rgba(40,20,10,.5)}
-.fv2 .item.solo{grid-template-columns:34px 60px 1fr}
-.fv2 .item.solo img{width:60px;height:60px;box-shadow:0 0 0 6px rgba(184,50,79,.08),0 0 26px 4px rgba(184,50,79,.22),0 8px 18px -8px rgba(40,20,10,.5)}
-.fv2 .row{display:flex;align-items:baseline;gap:10px}
-.fv2 .row b{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:23px;white-space:nowrap}
-html:not([lang=ko]):not([lang=zh]) .fv2 .row b{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:28px}
-.fv2 .item.solo .row b{color:var(--accent)}
-.fv2 .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-6px);min-width:20px}
-.fv2 .row em{font-style:normal;font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:14.5px;color:var(--accent);text-align:right}
-html:not([lang=ko]):not([lang=zh]) .fv2 .row em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:18px;font-weight:500}
-.fv2 .it p{margin:2px 0 6px;color:var(--soft);font-size:15px}
-.fv2 .it nav{font-size:13.5px;font-weight:600}.fv2 .it nav a{color:var(--ink)}
 .fv2 .night{margin:100px calc(50% - 50vw) 0;padding:110px 24px 120px;background:radial-gradient(ellipse at 50% 0%,#3a1320 0,#1a0d12 70%);color:#f2e6d6;text-align:center}
 .fv2 .night .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#d4b57a;font-weight:700;margin:0 0 16px}
 .fv2 .night blockquote{margin:0;font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:clamp(34px,5.4vw,58px);line-height:1.2;color:#fbf1e4}
 html:not([lang=ko]):not([lang=zh]) .fv2 .night blockquote{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500}
 .fv2 .nslur{display:block;width:min(500px,80%);margin:8px auto 22px}.fv2 .nslur path{fill:#d4b57a}
 .fv2 .night p:last-child{max-width:600px;margin:0 auto;color:#cdbba7}
-.fv2 .c3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.fv2 .c3 h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-style:normal;font-size:20px;border-bottom:1px solid var(--ink);padding-bottom:6px;margin:0 0 10px}
-.fv2 .c3 ul{list-style:none;padding:0;margin:0}.fv2 .c3 li{font-size:14.5px;color:var(--soft);margin-bottom:10px}.fv2 .c3 b{color:var(--ink)}
 .fv2 .ticket{display:grid;grid-template-columns:1fr 140px;margin-top:40px;filter:drop-shadow(0 20px 30px rgba(60,30,10,.18))}
 .fv2 .stub{background:#6e1a2f;color:#f6eadb;padding:44px 40px;border-radius:14px 0 0 14px;text-align:center}
 .fv2 .stub h2{color:#fff;margin:0 0 10px}.fv2 .stub .lab{color:#e3c58e}.fv2 .stub .lab:before,.fv2 .stub .lab:after{color:rgba(255,255,255,.25)}
@@ -222,11 +218,41 @@ html:not([lang=ko]):not([lang=zh]) .fv2 .night blockquote{font-family:"Cormorant
 .fv2 .tear{background:#5a1426;border-left:2px dashed rgba(255,255,255,.35);border-radius:0 14px 14px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#e3c58e;gap:8px}
 .fv2 .tear span{writing-mode:vertical-rl;letter-spacing:.3em;font-size:12px}.fv2 .tear b{font-family:"Cormorant Garamond",serif;font-size:34px;font-style:italic}
 .fv2 .btn{display:inline-block;background:#f6eadb;color:#6e1a2f;text-decoration:none;padding:12px 28px;border-radius:99px;font-weight:700}
-.fv2 .soon{color:var(--gold)}
 html,body{overflow-x:clip}
+.fv2 .lead1{max-width:760px;margin:0 auto;color:var(--soft);font-size:17px;text-align:center;text-wrap:balance}
+.fv2 .mov{display:grid;grid-template-columns:44px 1fr auto;gap:22px;align-items:center;padding:28px 0;border-top:1px solid var(--line)}
+.fv2 .part+.mov{border-top:0}
+.fv2 .no{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--gold);text-align:right;align-self:start;padding-top:6px}
+.fv2 .tm{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:38px;line-height:1;color:var(--accent);margin:0 0 8px}
+.fv2 .mov h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-style:normal;font-size:19px;margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fv2 .tag{font-family:Pretendard,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:1px 9px}
+.fv2 .mov .q{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;color:var(--gold);margin:0 0 4px;font-size:15px}
+.fv2 .mov .d{margin:0;color:var(--soft);font-size:15px;max-width:560px;text-wrap:pretty}
+.fv2 .ics{display:flex;gap:14px;justify-content:flex-end}
+.fv2 .ic{display:block;text-align:center;text-decoration:none;color:var(--soft);font-size:12.5px;font-weight:600;width:78px}
+.fv2 .ic img{width:64px;height:64px;border-radius:16px;display:block;margin:0 auto 6px;box-shadow:0 12px 24px -12px rgba(60,30,15,.5);transition:transform .2s}
+.fv2 a.ic:hover img{transform:translateY(-3px)}
+.fv2 .ic.solo img{box-shadow:0 0 0 6px rgba(184,50,79,.08),0 0 26px 4px rgba(184,50,79,.22),0 12px 24px -12px rgba(60,30,15,.5)}
+.fv2 .ic figcaption{display:block}
+.fv2 .who h2,.fv2 .glue h2{margin-bottom:22px}
+.fv2 .roles{max-width:860px;margin:0 auto;text-align:center}
+.fv2 .roles input{position:absolute;opacity:0;pointer-events:none}
+.fv2 .tabs{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:4px;background:var(--paper);margin:0 0 22px}
+.fv2 .tabs label{cursor:pointer;padding:8px 22px;border-radius:99px;font-weight:600;color:var(--soft);font-size:15px}
+#fv2r-s:checked~.tabs [for=fv2r-s],#fv2r-t:checked~.tabs [for=fv2r-t],#fv2r-a:checked~.tabs [for=fv2r-a]{background:var(--accent);color:#fbf1e4}
+.fv2 .p{display:none;list-style:none;margin:0;padding:0;columns:2;column-gap:40px;text-align:left}
+#fv2r-s:checked~.p-s,#fv2r-t:checked~.p-t,#fv2r-a:checked~.p-a{display:block}
+.fv2 .p li{break-inside:avoid;display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.fv2 .p img{width:40px;height:40px;border-radius:10px;flex:none}
+.fv2 .p b{display:block;font-family:"Noto Serif KR",Georgia,serif;font-weight:600}.fv2 .p span{color:var(--soft);font-size:14.5px}
+.fv2 .g3{display:grid;grid-template-columns:repeat(3,1fr);max-width:860px;margin:0 auto;border-top:2px solid var(--ink)}
+.fv2 .g3 div{padding:22px 22px 4px 0}.fv2 .g3 div+div{padding-left:22px;border-left:1px solid var(--line)}
+.fv2 .g3 i{font-style:normal;color:var(--gold);font-size:20px}.fv2 .g3 b{display:block;font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:18px;margin:4px 0}
+.fv2 .g3 span{color:var(--soft);font-size:14.5px}
+.fv2 .drop:first-letter{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:1.6em;color:var(--accent)}
 @media(max-width:1180px){.fv2 .sheet{margin:0 -10px}}
-@media(max-width:700px){.fv2 .frame{padding:46px 22px}.fv2 .cols{columns:1}.fv2 .c3{grid-template-columns:1fr}
-.fv2 .item,.fv2 .item.solo{grid-template-columns:24px 44px 1fr;gap:12px}.fv2 .item img,.fv2 .item.solo img{width:44px;height:44px}
-.fv2 .row{flex-wrap:wrap;gap:2px 10px}.fv2 .dots{display:none}.fv2 .ticket{grid-template-columns:1fr 64px}.fv2 .stub{padding:34px 22px}
+@media(max-width:700px){.fv2 .frame{padding:46px 22px}
+.fv2 .mov{grid-template-columns:30px 1fr;gap:10px 14px}.fv2 .ics{grid-column:2;justify-content:flex-start}.fv2 .tm{font-size:32px}
+.fv2 .p{columns:1}.fv2 .g3{grid-template-columns:1fr}.fv2 .g3 div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}.fv2 .ticket{grid-template-columns:1fr 64px}.fv2 .stub{padding:34px 22px}
 .fv2 .hint .m{display:inline;color:var(--gold)}.fv2 .sheet{padding:14px 8px}.fv2 section{padding-top:72px}}
 """
