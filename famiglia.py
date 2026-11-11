@@ -33,7 +33,7 @@ GLOBE = ('<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fil
 LINKS = {
     "welegato": {"info": "WELEGATO",
                  "play": "app.welegato.welegato", "apple": "https://welegato.com/ios/?lang={lang}"},  # 나라별 스토어로 보내는 주소
-    "leggii": {"info": "/leggii/", "play": "com.vicinolabs.leggii", "apple": None},
+    "leggii": {"info": "/leggii/", "play": "com.vicinolabs.leggii", "apple": "https://apps.apple.com/app/id6832925566"},
     "chiave": {"info": "/chiave/", "play": None, "apple": None},
     "appoggio": {"info": "/appoggio/", "play": "com.vicinolabs.appoggio", "apple": "https://apps.apple.com/app/id6832364161"},
     "squillo": {"info": None, "play": None, "apple": None},

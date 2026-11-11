@@ -28,7 +28,7 @@ def leggii_home():
     # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
     return app_home.page(key='leggii', name='Leggii · 렛지 악보', sub="Vicino Labs · Famiglia Vicino", icon="/apps/leggii.png",
                          ledes={'en': 'A simple sheet music reader for musicians — PDF scores, notes, IMSLP search, metronome, lesson recordings and AI lesson notes.', 'de': 'Die einfache Noten-App für Musikerinnen und Musiker – mit Unterrichtsaufnahmen und KI-Notizen.', 'it': 'Il leggio digitale semplice per musicisti, con registrazioni e note AI delle lezioni.', 'ko': '음악가를 위한 간편한 악보 앱 — 레슨 녹음과 AI 레슨 노트까지, 기본 기능 무료, 악보는 기기에만.'},
-                         play='com.vicinolabs.leggii', apple=None, email=EMAIL, desc='Leggii — a simple sheet music reader for musicians, by Vicino Labs.', canonical="/leggii/")
+                         play='com.vicinolabs.leggii', apple='https://apps.apple.com/app/id6832925566', email=EMAIL, desc='Leggii — a simple sheet music reader for musicians, by Vicino Labs.', canonical="/leggii/")
 
 
 def build(root):
