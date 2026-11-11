@@ -1,5 +1,7 @@
 """Nomio 개인정보처리방침 본문 (ko/en/de) — nomio_legal.py가 HTML로 만든다.
 
+2026-11-11 버전 4.1: iPhone·iPad iCloud 백업(선택) 항목 추가 (대표님 "공개", HQ 경유).
+
 2026-10-01 버전 4.0: vicinolabs.com으로 이전하면서 실제 앱 동작과 맞지 않던
 부분을 고쳤다 (Google UMP 동의 창은 앱 1.6에서 실제로 추가, 시스템 알림 없음,
 드라이브 백업 삭제 방법, 환율 API·PDF 글꼴에 IP 주소가 전달된다는 점, GDPR 제6조
@@ -14,9 +16,9 @@ PRIVACY = {
  "ko": {
   "title": "Nomio 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.10.01"), ("버전", "4.0"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.11"), ("버전", "4.1"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 다통화 가계부 앱 Nomio는 여러분의 정보를 어떻게 다루는지 되도록 정확하게 알려드리려 합니다. 지출·수입 같은 금융 기록은 기기 밖으로 나가지 않으며, 저희는 서버를 운영하지 않습니다.",
-  "footer": "본 방침은 2026년 10월 1일부터 시행됩니다 (버전 4.0).",
+  "footer": "본 방침은 2026년 11월 11일부터 시행됩니다 (버전 4.1).",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", f"""<div class="id-card"><dt>상호</dt><dd>Vicino Labs (개인사업자, Einzelunternehmen)</dd><dt>대표자</dt><dd>Jeong-Hwan Lee</dd><dt>주소</dt><dd>Ruhrallee 41, 44139 Dortmund, Germany</dd><dt>이메일</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd><dt>Impressum</dt><dd><a href="/impressum/">vicinolabs.com/impressum</a></dd></div>
@@ -26,6 +28,7 @@ PRIVACY = {
 <li>무료 버전에는 <strong>Google AdMob</strong> 광고가 나옵니다. EU·EEA·영국·스위스에서는 광고를 불러오기 전에 Google의 동의 창으로 <strong>먼저 동의를 묻고</strong>, 설정 › 광고 개인정보 설정에서 언제든 바꿀 수 있습니다.</li>
 <li>환율은 <strong>exchangerate-api.com</strong>에서 받아옵니다. 이때 기기의 IP 주소가 그 서비스에 전달됩니다.</li>
 <li>구글드라이브 백업은 <strong>직접 실행할 때만</strong> 작동하며, 본인 드라이브의 Nomio 전용 숨김 폴더만 씁니다.</li>
+<li>iPhone·iPad의 iCloud 백업도 <strong>직접 실행할 때만</strong> 작동하며, 본인 iCloud Drive의 Nomio 폴더에 저장됩니다.</li>
 <li>행동 분석·추적 도구(Firebase Analytics 등)는 쓰지 않습니다. 알림은 앱 안에서만 보이고 푸시 알림은 없습니다.</li>
 </ul></div>"""),
    ("기기에 저장되는 정보", """<ul>
@@ -51,11 +54,17 @@ PRIVACY = {
 <li>파일은 기기와 본인 구글 계정 사이에서만 오가며, 저희 서버를 거치지 않습니다.</li>
 </ul>
 <p><strong>백업 삭제:</strong> 웹의 <a href="{DRIVE_APPS}" target="_blank" rel="noopener">Google 드라이브 설정 › 앱 관리</a>에서 Nomio의 “숨겨진 앱 데이터 삭제”를 누르면 됩니다. 앱의 접근 권한은 <a href="{GOOGLE_PERMS}" target="_blank" rel="noopener">Google 계정 › 서드파티 연결</a>에서 해제할 수 있습니다. 처리 근거: 요청한 기능 제공(GDPR 제6조 1항 b).</p>"""),
+   ("iCloud 백업(선택, iPhone·iPad)", """<p>iPhone·iPad의 설정에서 <strong>iCloud 백업·복원을 직접 실행할 때만</strong> 아래 처리가 일어납니다.</p>
+<ul>
+<li>백업 파일(거래·계좌·카테고리·예산·반복 거래·설정)을 본인 <strong>iCloud Drive의 Nomio 폴더</strong>에 저장하고 읽습니다. 이 기기에 로그인된 Apple 계정의 iCloud를 쓰며, 따로 로그인하지 않습니다.</li>
+<li>파일은 기기와 본인 iCloud 사이에서만 오가며, 저희 서버를 거치지 않고 저희가 볼 수도 없습니다. 저장과 전송은 Apple(Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, 아일랜드)이 자체 개인정보처리방침에 따라 처리합니다.</li>
+</ul>
+<p><strong>백업 삭제:</strong> iPhone·iPad의 “파일” 앱 › iCloud Drive › Nomio 폴더에서 파일을 지우거나, 설정 › Apple 계정 › iCloud › 저장 공간 관리에서 Nomio 데이터를 지우면 됩니다. 처리 근거: 요청한 기능 제공(GDPR 제6조 1항 b).</p>"""),
    ("영수증 사진과 금액 인식", """<p>카메라와 사진은 영수증을 첨부할 때 <strong>직접 고른 경우에만</strong> 사용합니다. 고른 사진은 앱 폴더에 복사해 기기에만 저장하며 업로드하지 않습니다. 사진 속 금액 인식은 기기 안에서 이루어집니다(Android: Google ML Kit, iOS: Apple Vision). Google ML Kit는 서비스 개선을 위해 기기 종류, 앱 버전, 기능 사용 여부 같은 제한된 진단 정보를 Google에 보낼 수 있지만, 사진 내용은 보내지 않습니다.</p>"""),
    ("PDF 보고서", """<p>PDF 월간 보고서를 만들 때, 여러 언어 글자를 제대로 표시하기 위해 앱이 Google Fonts(fonts.gstatic.com)에서 글꼴 파일을 내려받습니다. 이때 기기의 IP 주소가 Google에 전달됩니다. 보고서 자체는 기기에서 만들어지고, 공유할지는 직접 정합니다. 처리 근거: 요청한 기능 제공(GDPR 제6조 1항 b·f).</p>"""),
    ("앱 잠금·알림·리뷰", """<p>앱 잠금을 켜면 기기의 생체 인증(지문, Face ID 등)이나 화면 잠금을 사용합니다. 생체 정보는 기기의 보안 영역에서만 처리되고 앱은 성공/실패 결과만 받습니다. 예산 초과·반복 거래 안내는 앱 안에서만 보이며 푸시 알림이나 외부 서버를 쓰지 않습니다. 앱 평가 요청 창은 Google Play/Apple이 직접 띄우고 처리합니다.</p>"""),
-   ("받는 곳과 국외 이전", """<p>금융 기록은 누구에게도 전달하지 않습니다. 위에 설명한 경우에만 다음 서비스가 자체 정책에 따라 정보를 처리합니다: Google(광고, 인앱 결제, 드라이브 백업, ML Kit, Google Fonts), Apple(인앱 결제, iOS), ExchangeRate-API(환율). 미국 등 EU 밖으로의 전송은 EU-미국 데이터 프라이버시 프레임워크 또는 EU 표준계약조항을 근거로 이루어집니다.</p>"""),
-   ("보유 기간과 삭제", """<p>기기의 정보는 직접 지울 때(설정의 초기화, 거래 삭제, 앱 삭제)까지 보관됩니다. 구글드라이브 백업 파일은 위 방법으로 지울 때까지 본인 드라이브에 남습니다. 광고 관련 정보는 Google의 보유 정책을 따릅니다.</p>"""),
+   ("받는 곳과 국외 이전", """<p>금융 기록은 누구에게도 전달하지 않습니다. 위에 설명한 경우에만 다음 서비스가 자체 정책에 따라 정보를 처리합니다: Google(광고, 인앱 결제, 드라이브 백업, ML Kit, Google Fonts), Apple(인앱 결제, iOS, iCloud 백업), ExchangeRate-API(환율). 미국 등 EU 밖으로의 전송은 EU-미국 데이터 프라이버시 프레임워크 또는 EU 표준계약조항을 근거로 이루어집니다.</p>"""),
+   ("보유 기간과 삭제", """<p>기기의 정보는 직접 지울 때(설정의 초기화, 거래 삭제, 앱 삭제)까지 보관됩니다. 구글드라이브·iCloud 백업 파일은 위 방법으로 지울 때까지 본인 드라이브·iCloud Drive에 남습니다. 광고 관련 정보는 Google의 보유 정책을 따릅니다.</p>"""),
    ("아동", """<p>Nomio는 아동을 대상으로 하지 않습니다. 맞춤형 광고에 대한 동의는 만 16세 이상만 할 수 있습니다(GDPR 제8조, 독일 기준). 16세 미만이라면 광고 동의 창에서 동의하지 마세요.</p>"""),
    ("정보주체의 권리", f"""<ul>
 <li>열람, 정정, 삭제, 처리 제한, 데이터 이동, 이의 제기 권리(GDPR 제15~21조). 정당한 이익에 근거한 처리에는 언제든 이의를 제기할 수 있습니다.</li>
@@ -71,9 +80,9 @@ PRIVACY = {
  "en": {
   "title": "Nomio Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-10-01"), ("Version", "4.0"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-11"), ("Version", "4.1"), ("Operator", "Vicino Labs")],
   "lede": "Nomio is a multi-currency budgeting app made by Vicino Labs. We'd rather be precise than vague about how your information is handled: your financial records never leave your device, and we don't run any server.",
-  "footer": "This policy is effective as of October 1, 2026 (version 4.0).",
+  "footer": "This policy is effective as of November 11, 2026 (version 4.1).",
   "other": "View Terms of Service →",
   "sections": [
    ("Data controller", f"""<div class="id-card"><dt>Trading name</dt><dd>Vicino Labs (sole proprietorship, Einzelunternehmen)</dd><dt>Owner</dt><dd>Jeong-Hwan Lee</dd><dt>Address</dt><dd>Ruhrallee 41, 44139 Dortmund, Germany</dd><dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd><dt>Legal notice</dt><dd><a href="/impressum/">vicinolabs.com/impressum</a></dd></div>
@@ -83,6 +92,7 @@ PRIVACY = {
 <li>The free version shows <strong>Google AdMob</strong> ads. In the EU/EEA, UK and Switzerland we <strong>ask for your consent first</strong> using Google's consent form, and you can change your choice anytime in Settings › Ad privacy settings.</li>
 <li>Exchange rates come from <strong>exchangerate-api.com</strong>; your device's IP address is visible to that service.</li>
 <li>Google Drive backup runs <strong>only when you start it</strong> and uses a hidden, Nomio-only folder in your own Drive.</li>
+<li>iCloud backup on iPhone and iPad also runs <strong>only when you start it</strong> and saves to the Nomio folder in your own iCloud Drive.</li>
 <li>No analytics or tracking SDKs (e.g. Firebase Analytics). Reminders appear inside the app only — there are no push notifications.</li>
 </ul></div>"""),
    ("Data stored on your device", """<ul>
@@ -108,11 +118,17 @@ PRIVACY = {
 <li>The file travels only between your device and your Google account — never through a server of ours.</li>
 </ul>
 <p><strong>Deleting the backup:</strong> open <a href="{DRIVE_APPS}" target="_blank" rel="noopener">Google Drive settings › Manage apps</a> on the web and choose “Delete hidden app data” for Nomio. You can revoke the app's access under <a href="{GOOGLE_PERMS}" target="_blank" rel="noopener">Google Account › Third-party connections</a>. Legal basis: providing a feature you requested (Art. 6(1)(b) GDPR).</p>"""),
+   ("iCloud backup (optional, iPhone and iPad)", """<p>The following happens <strong>only when you start an iCloud backup or restore</strong> in Settings on iPhone or iPad:</p>
+<ul>
+<li>The app saves and reads a backup file (transactions, accounts, categories, budgets, recurring rules, settings) in the <strong>Nomio folder of your own iCloud Drive</strong>. It uses the iCloud of the Apple Account signed in on the device; there is no separate sign-in.</li>
+<li>The file only travels between your device and your iCloud. It never passes through our servers and we cannot see it. Storage and transfer are handled by Apple (Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, Ireland) under its own privacy policy.</li>
+</ul>
+<p><strong>Deleting the backup:</strong> delete the file in the Files app › iCloud Drive › Nomio, or delete Nomio's data under Settings › Apple Account › iCloud › Manage Storage. Legal basis: providing a feature you requested (Art. 6(1)(b) GDPR).</p>"""),
    ("Receipt photos and amount recognition", """<p>The camera and photos are used <strong>only when you choose</strong> to attach a receipt. The photo is copied into the app folder and stays on your device; it is never uploaded. Reading the amount from the photo happens on your device (Android: Google ML Kit; iOS: Apple Vision). Google ML Kit may send Google limited diagnostic information (such as device model, app version and feature usage) to improve the service, but not the content of your photos.</p>"""),
    ("PDF reports", """<p>When you create a monthly PDF report, the app downloads font files from Google Fonts (fonts.gstatic.com) so that all languages render correctly; your device's IP address is transmitted to Google in the process. The report itself is generated on your device, and you decide whether to share it. Legal basis: providing a feature you requested (Art. 6(1)(b) and (f) GDPR).</p>"""),
    ("App lock, reminders and ratings", """<p>If you turn on app lock, the app uses your device's biometrics (fingerprint, Face ID, etc.) or screen lock. Biometric data is processed only in the device's secure hardware; the app receives just a pass/fail result. Budget and recurring-transaction reminders are shown inside the app only — no push notifications and no server. The rating prompt is shown and handled by Google Play/Apple.</p>"""),
-   ("Recipients and international transfers", """<p>We don't pass your financial records to anyone. Only in the cases described above do the following services process data under their own policies: Google (ads, in-app purchase, Drive backup, ML Kit, Google Fonts), Apple (in-app purchase, iOS) and ExchangeRate-API (exchange rates). Transfers outside the EU (e.g. to the USA) rely on the EU-U.S. Data Privacy Framework or the EU Standard Contractual Clauses.</p>"""),
-   ("Retention and deletion", """<p>Data on your device is kept until you delete it (reset options, deleting entries, uninstalling the app). A Google Drive backup stays in your Drive until you delete it as described above. Ad-related data follows Google's retention policies.</p>"""),
+   ("Recipients and international transfers", """<p>We don't pass your financial records to anyone. Only in the cases described above do the following services process data under their own policies: Google (ads, in-app purchase, Drive backup, ML Kit, Google Fonts), Apple (in-app purchase, iOS, iCloud backup) and ExchangeRate-API (exchange rates). Transfers outside the EU (e.g. to the USA) rely on the EU-U.S. Data Privacy Framework or the EU Standard Contractual Clauses.</p>"""),
+   ("Retention and deletion", """<p>Data on your device is kept until you delete it (reset options, deleting entries, uninstalling the app). A Google Drive or iCloud backup stays in your Drive or iCloud Drive until you delete it as described above. Ad-related data follows Google's retention policies.</p>"""),
    ("Children", """<p>Nomio is not directed at children. Consent to personalized ads may only be given by people aged 16 or older (Art. 8 GDPR, as applied in Germany). If you are under 16, please do not consent in the ad consent form.</p>"""),
    ("Your rights", f"""<ul>
 <li>Access, rectification, erasure, restriction of processing, data portability and objection (Art. 15–21 GDPR). You may object at any time to processing based on legitimate interests.</li>
@@ -128,9 +144,9 @@ PRIVACY = {
  "de": {
   "title": "Nomio Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Stand", "01.10.2026"), ("Version", "4.0"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Stand", "11.11.2026"), ("Version", "4.1"), ("Betreiber", "Vicino Labs")],
   "lede": "Nomio ist eine Haushaltsbuch-App für mehrere Währungen von Vicino Labs. Wir möchten möglichst genau erklären, wie mit Ihren Daten umgegangen wird: Ihre Finanzdaten verlassen Ihr Gerät nicht, und wir betreiben keinen Server.",
-  "footer": "Diese Erklärung gilt ab dem 1. Oktober 2026 (Version 4.0).",
+  "footer": "Diese Erklärung gilt ab dem 11. November 2026 (Version 4.1).",
   "other": "Zu den Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", f"""<div class="id-card"><dt>Firma</dt><dd>Vicino Labs (Einzelunternehmen)</dd><dt>Inhaber</dt><dd>Jeong-Hwan Lee</dd><dt>Anschrift</dt><dd>Ruhrallee 41, 44139 Dortmund, Deutschland</dd><dt>E-Mail</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd><dt>Impressum</dt><dd><a href="/impressum/">vicinolabs.com/impressum</a></dd></div>
@@ -140,6 +156,7 @@ PRIVACY = {
 <li>Die kostenlose Version zeigt Werbung über <strong>Google AdMob</strong>. In der EU/im EWR, im Vereinigten Königreich und in der Schweiz <strong>fragen wir vorher nach Ihrer Einwilligung</strong> (Einwilligungsformular von Google); Sie können Ihre Wahl jederzeit unter Einstellungen › Datenschutz-Einstellungen für Werbung ändern.</li>
 <li>Wechselkurse kommen von <strong>exchangerate-api.com</strong>; dabei ist die IP-Adresse Ihres Geräts für diesen Dienst sichtbar.</li>
 <li>Das Google-Drive-Backup läuft <strong>nur, wenn Sie es selbst starten</strong>, und nutzt einen versteckten, nur für Nomio bestimmten Ordner in Ihrem eigenen Drive.</li>
+<li>Auch das iCloud-Backup auf iPhone und iPad läuft <strong>nur, wenn Sie es selbst starten</strong>, und speichert im Ordner Nomio Ihres eigenen iCloud Drive.</li>
 <li>Keine Analyse- oder Tracking-Tools (z. B. Firebase Analytics). Hinweise erscheinen nur in der App — es gibt keine Push-Benachrichtigungen.</li>
 </ul></div>"""),
    ("Auf Ihrem Gerät gespeicherte Daten", """<ul>
@@ -165,11 +182,17 @@ PRIVACY = {
 <li>Die Datei wird nur zwischen Ihrem Gerät und Ihrem Google-Konto übertragen — nie über einen Server von uns.</li>
 </ul>
 <p><strong>Backup löschen:</strong> Öffnen Sie im Browser <a href="{DRIVE_APPS}" target="_blank" rel="noopener">Google-Drive-Einstellungen › Apps verwalten</a> und wählen Sie bei Nomio „Ausgeblendete App-Daten löschen“. Den Zugriff der App können Sie unter <a href="{GOOGLE_PERMS}" target="_blank" rel="noopener">Google-Konto › Verbindungen zu Drittanbietern</a> entziehen. Rechtsgrundlage: Bereitstellung der von Ihnen angeforderten Funktion (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
+   ("iCloud-Backup (optional, iPhone und iPad)", """<p>Nur wenn Sie auf iPhone oder iPad in den Einstellungen <strong>selbst ein iCloud-Backup oder eine Wiederherstellung starten</strong>, geschieht Folgendes:</p>
+<ul>
+<li>Die App speichert und liest eine Backup-Datei (Buchungen, Konten, Kategorien, Budgets, wiederkehrende Buchungen, Einstellungen) im <strong>Ordner Nomio Ihres eigenen iCloud Drive</strong>. Genutzt wird das iCloud des auf dem Gerät angemeldeten Apple Accounts; eine eigene Anmeldung gibt es nicht.</li>
+<li>Die Datei wird nur zwischen Ihrem Gerät und Ihrem iCloud übertragen. Sie läuft nicht über unsere Server, und wir können sie nicht einsehen. Speicherung und Übertragung erfolgen durch Apple (Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, Irland) nach dessen eigener Datenschutzrichtlinie.</li>
+</ul>
+<p><strong>Backup löschen:</strong> Löschen Sie die Datei in der App „Dateien“ › iCloud Drive › Nomio oder die Daten von Nomio unter Einstellungen › Apple Account › iCloud › Speicher verwalten. Rechtsgrundlage: Bereitstellung der von Ihnen angeforderten Funktion (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Belegfotos und Betragserkennung", """<p>Kamera und Fotos werden <strong>nur genutzt, wenn Sie selbst</strong> einen Beleg anhängen. Das Foto wird in den App-Ordner kopiert, bleibt auf Ihrem Gerät und wird nicht hochgeladen. Das Erkennen des Betrags erfolgt auf dem Gerät (Android: Google ML Kit, iOS: Apple Vision). Google ML Kit kann eingeschränkte Diagnosedaten (z. B. Gerätemodell, App-Version, Funktionsnutzung) zur Verbesserung des Dienstes an Google senden, jedoch nicht den Inhalt Ihrer Fotos.</p>"""),
    ("PDF-Berichte", """<p>Wenn Sie einen monatlichen PDF-Bericht erstellen, lädt die App Schriftdateien von Google Fonts (fonts.gstatic.com), damit alle Sprachen korrekt dargestellt werden; dabei wird die IP-Adresse Ihres Geräts an Google übermittelt. Der Bericht selbst wird auf Ihrem Gerät erstellt, und Sie entscheiden, ob Sie ihn teilen. Rechtsgrundlage: Bereitstellung der angeforderten Funktion (Art. 6 Abs. 1 lit. b und f DSGVO).</p>"""),
    ("App-Sperre, Hinweise und Bewertungen", """<p>Wenn Sie die App-Sperre aktivieren, nutzt die App die Biometrie (Fingerabdruck, Face ID usw.) oder die Bildschirmsperre Ihres Geräts. Biometrische Daten werden nur in der sicheren Hardware des Geräts verarbeitet; die App erhält lediglich das Ergebnis (erfolgreich/nicht erfolgreich). Hinweise zu Budgets und wiederkehrenden Buchungen erscheinen nur in der App — ohne Push-Benachrichtigungen und ohne Server. Die Bewertungsanfrage wird von Google Play/Apple angezeigt und verarbeitet.</p>"""),
-   ("Empfänger und Drittlandübermittlung", """<p>Ihre Finanzdaten geben wir an niemanden weiter. Nur in den oben beschriebenen Fällen verarbeiten folgende Dienste Daten nach ihren eigenen Richtlinien: Google (Werbung, In-App-Kauf, Drive-Backup, ML Kit, Google Fonts), Apple (In-App-Kauf, iOS) und ExchangeRate-API (Wechselkurse). Übermittlungen in Länder außerhalb der EU (z. B. die USA) erfolgen auf Grundlage des EU-US Data Privacy Framework oder der EU-Standardvertragsklauseln.</p>"""),
-   ("Speicherdauer und Löschung", """<p>Daten auf Ihrem Gerät bleiben gespeichert, bis Sie sie löschen (Zurücksetzen, Buchungen löschen, App deinstallieren). Ein Google-Drive-Backup bleibt in Ihrem Drive, bis Sie es wie oben beschrieben löschen. Werbebezogene Daten unterliegen den Speicherfristen von Google.</p>"""),
+   ("Empfänger und Drittlandübermittlung", """<p>Ihre Finanzdaten geben wir an niemanden weiter. Nur in den oben beschriebenen Fällen verarbeiten folgende Dienste Daten nach ihren eigenen Richtlinien: Google (Werbung, In-App-Kauf, Drive-Backup, ML Kit, Google Fonts), Apple (In-App-Kauf, iOS, iCloud-Backup) und ExchangeRate-API (Wechselkurse). Übermittlungen in Länder außerhalb der EU (z. B. die USA) erfolgen auf Grundlage des EU-US Data Privacy Framework oder der EU-Standardvertragsklauseln.</p>"""),
+   ("Speicherdauer und Löschung", """<p>Daten auf Ihrem Gerät bleiben gespeichert, bis Sie sie löschen (Zurücksetzen, Buchungen löschen, App deinstallieren). Ein Google-Drive- oder iCloud-Backup bleibt in Ihrem Drive bzw. iCloud Drive, bis Sie es wie oben beschrieben löschen. Werbebezogene Daten unterliegen den Speicherfristen von Google.</p>"""),
    ("Kinder", """<p>Nomio richtet sich nicht an Kinder. In personalisierte Werbung können nur Personen ab 16 Jahren einwilligen (Art. 8 DSGVO). Wenn Sie jünger als 16 sind, willigen Sie im Einwilligungsformular bitte nicht ein.</p>"""),
    ("Ihre Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO). Einer Verarbeitung auf Grundlage berechtigter Interessen können Sie jederzeit widersprechen.</li>
