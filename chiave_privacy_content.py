@@ -1,12 +1,14 @@
 """끼아베(Chiave) 개인정보처리방침 본문 (ko/en/de/it) — chiave_legal.py가 HTML로 만든다.
 
-2026-11-06 버전 1.0 — 2026-11-06 운영자 승인, 게시. leggii_privacy_content.py의 틀과 문구를 따랐다.
+2026-11-06 버전 1.0 — 2026-11-06 운영자 승인, 게시.
+2026-11-12 버전 1.1 — 운영자 승인(초안대로 게시): 위레가토 통합 아이디(선택, 51), 끼아베에게 물어보기,
+AI 답 신고, 듣고 적기 마이크(기기 안에서만), 수탁자 Cloudflare·Kakao 추가. leggii_privacy_content.py의 틀과 문구를 따랐다.
 회원가입·계정 없음. 악보·편집·스캔 원본 페이지 이미지는 기기 안에만(클라우드 없음).
 악보 스캔(선택): 기기에서 페이지를 약 2마디 조각으로 잘라 서버(Supabase Edge Function, EU)로 →
 Google Gemini API가 음표를 읽음. 조각 이미지·인식 결과는 서버에 저장하지 않음.
 서버 기록: 기기 해시, 시각, 모델 이름, 성공 여부, 토큰 수 — 90일 뒤 삭제 (2026-11-06 승인).
 요금제(페이지 수) 계산과 체험 반복 방지: SHA-256("chiave:"+기기 식별값)만 서버에.
-무료 요금제에만 welegato 링크 배너(utm_source=chiave). 마이크·위치·분석 SDK·광고 네트워크 없음.
+무료 요금제에만 welegato 링크 배너(utm_source=chiave). 위치·분석 SDK·광고 네트워크 없음.
 빈칸 채움 2026-11-06: 기록 90일, 기기 기록 마지막 스캔 후 1년(유료 기록은 세법 기간), Gemini 유료 키.
 """
 
@@ -52,18 +54,20 @@ PRIVACY = {
  "ko": {
   "title": "끼아베(Chiave) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.06"), ("버전", "1.0"), ("운영자", "Vicino Labs")],
-  "lede": "Vicino Labs가 만든 끼아베(Chiave)는 악보를 쓰고, 스캔하고, 이조하는 앱입니다. 회원가입이 없고, 악보·편집 내용·스캔한 원본 페이지 이미지는 이용자의 기기에만 저장됩니다. 이용자가 악보 스캔을 쓸 때만 페이지를 잘게 나눈 조각 이미지가 저희 서버(EU)와 Google Gemini를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 6일부터 시행됩니다 (버전 1.0).",
+  "meta": [("시행일", "2026.11.12"), ("버전", "1.1"), ("운영자", "Vicino Labs")],
+  "lede": "Vicino Labs가 만든 끼아베(Chiave)는 악보를 쓰고, 스캔하고, 이조하는 앱입니다. 기본 기능은 회원가입 없이 쓸 수 있고, 악보·편집 내용·스캔한 원본 페이지 이미지는 이용자의 기기에만 저장됩니다. 악보 스캔, 끼아베에게 물어보기, 선택 로그인(위레가토 통합 아이디)을 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
+  "footer": "본 방침은 2026년 11월 12일부터 시행됩니다 (버전 1.1).",
   "other": "이용약관 보기 →",
   "sections": [
-   ("처리자(운영자) 정보", _op_ref("ko", 15) + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
+   ("처리자(운영자) 정보", _op_ref("ko", 19) + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
    ("핵심 요약", """<div class="summary-box"><ul>
-<li>회원가입과 계정이 없습니다. 악보, 편집 내용, 스캔한 원본 페이지 이미지는 <strong>기기 안에만</strong> 저장되며 클라우드에 올리지 않습니다.</li>
+<li>회원가입 없이 모든 기능을 쓸 수 있습니다. 악보, 편집 내용, 스캔한 원본 페이지 이미지는 <strong>기기 안에만</strong> 저장되며 클라우드에 올리지 않습니다.</li>
 <li><strong>악보 스캔</strong>(선택)을 쓰면 앱이 각 페이지를 기기에서 약 2마디 크기의 작은 조각으로 잘라 저희 서버를 거쳐 Google Gemini로 보내 음표를 읽습니다. 조각 이미지와 인식 결과는 서버에 <strong>저장하지 않습니다</strong>.</li>
 <li>요금제의 페이지 수를 세기 위해 기기 식별값의 <strong>해시</strong>만 서버에 저장합니다.</li>
 <li>광고 네트워크와 분석·추적 도구가 없습니다. 무료 요금제 화면 아래의 링크는 같은 회사 서비스 welegato를 알리는 자체 배너입니다.</li>
-<li>마이크와 위치 정보는 쓰지 않습니다.</li>
+<li><strong>위레가토 통합 아이디</strong> 로그인은 선택입니다. 로그인하면 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
+<li><strong>끼아베에게 물어보기</strong>에 질문하면 질문이 저희 서버와 Google Gemini를 거칩니다. 질문 내용은 저장하지 않습니다.</li>
+<li><strong>듣고 적기</strong>는 마이크 소리를 기기 안에서만 음표로 바꾸며, 소리를 보내거나 저장하지 않습니다. 위치 정보는 쓰지 않습니다.</li>
 </ul></div>"""),
    ("기기에 저장되는 정보", """<ul>
 <li>이용자가 쓰거나 스캔한 악보와 편집·이조 내용</li>
@@ -73,6 +77,7 @@ PRIVACY = {
 </ul>
 <p>이 정보는 기기 안의 앱 저장소에 있고, 악보 스캔 때 보내는 조각 이미지(아래)를 빼면 저희에게 전송되지 않습니다. 클라우드 저장이나 동기화 기능은 없습니다. 앱에서 악보를 지우거나 앱을 삭제하면 사라집니다. 다만 iPhone·iPad의 키체인에 저장한 기기 번호는 재설치 후 무료 체험이 반복되지 않도록 하기 위한 것이어서, 앱을 삭제해도 남을 수 있습니다. 처리 근거: 앱 기능 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("카메라·사진·파일", """<p>악보 스캔에서 페이지를 고를 때만 카메라 권한을 요청하거나 사진 앨범·PDF 파일을 고르게 합니다. 고른 이미지는 기기에 저장되며, 스캔을 위해 보내는 조각 이미지(아래)를 빼면 기기 밖으로 나가지 않습니다.</p>"""),
+   ("마이크 (듣고 적기)", """<p>듣고 적기(소리로 적기)를 켤 때만 마이크 권한을 요청합니다. 노래나 연주 소리는 기기 안에서 아주 짧은 조각으로 음높이와 길이만 읽어 음표로 바꾸며, 소리는 녹음 파일로 남기지 않고 저희 서버나 다른 곳으로 보내지 않습니다. 처리 근거: 이용자가 요청한 기능의 제공(b호).</p>"""),
    ("악보 스캔 (선택)", f"""<p>악보 스캔은 선택 기능이며, 이용자가 페이지(카메라, 사진 앨범, PDF)를 골라 스캔을 시작할 때만 동작합니다.</p>
 <ul>
 <li><strong>보내는 정보:</strong> 앱이 각 페이지를 기기 안에서 약 2마디 크기의 작은 조각 이미지로 자르고, 이 조각 이미지를 저희 서버로 보냅니다.</li>
@@ -81,6 +86,9 @@ PRIVACY = {
 <li><strong>서버에 남는 것:</strong> 기기 식별값의 해시, 시각, 사용한 AI 모델 이름, 성공 여부, 토큰 수만 기록합니다. 보관 기간: 90일이 지나면 지웁니다.</li>
 </ul>
 <p>처리 근거: 이용자가 요청한 기능의 제공(GDPR 제6조 제1항 b호), 서버 기록은 서비스 운영과 남용 방지를 위한 정당한 이익(f호). Google의 처리는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 따릅니다.</p>"""),
+   ("끼아베에게 물어보기", """<p>도우미에 질문하면 질문, 앱 언어, 지금 보고 있는 화면 이름, 최근 대화 몇 개, 그리고 악보 안에서 물을 때는 지금 악보의 조표·박자·음자리표와 바로 앞 음 이름을 저희 서버와 Google Gemini API로 보내 답을 만듭니다. <strong>질문 내용은 저장하지 않습니다.</strong></p>
+<p>무료로 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 기기 식별값의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
+   ("AI 답 신고", """<p>끼아베에게 물어보기의 답이 부적절하거나 틀렸다고 생각되면 <strong>신고</strong>할 수 있습니다. 신고할 때만 신고한 AI 답, 고른 이유, 적은 의견, 앱 언어와 버전, 기기 식별값의 해시를 저희 서버로 보내고, 담당자에게 알림 메일이 갑니다. 신고는 검토와 AI 품질 개선에만 쓰며 <strong>180일</strong> 보관한 뒤 지웁니다. 남용 방지를 위해 기기당 하루 10건까지 받습니다. 처리 근거: 서비스 개선과 부적절한 AI 출력 대응을 위한 정당한 이익(f호).</p>"""),
    ("요금제와 기기 식별값", f"""<p>요금제는 스캔한 악보 페이지 수로 셉니다. 페이지 수를 세고, 앱을 다시 설치해 무료 체험을 반복하는 것을 막기 위해 기기 식별값을 씁니다.</p>
 <ul>
 <li><strong>식별값:</strong> 안드로이드는 ANDROID_ID, iPhone·iPad는 키체인에 저장한 무작위 번호, 웹은 브라우저에 저장한 무작위 번호입니다.</li>
@@ -89,41 +97,54 @@ PRIVACY = {
 </ul>
 <p>처리 근거: 요금제의 제공(b호), 무료 체험 남용 방지(f호).</p>"""),
    ("구매·구독", f"""<p>Pro·Pro+ 구독은 Google Play 또는 App Store 결제로 구매합니다. 결제와 카드 정보는 스토어가 처리하며 저희는 받지 않습니다. 스토어의 처리에는 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a> 또는 <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple 개인정보 처리방침</a>이 적용됩니다.</p>"""),
+   ("위레가토 통합 아이디 (선택)", """<p>로그인하지 않아도 끼아베의 모든 기능을 쓸 수 있습니다. 로그인하면 같은 회사가 운영하는 위레가토의 계정(위레가토 통합 아이디)을 씁니다.</p>
+<ul>
+<li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Apple·Google·카카오·이메일, 계정 번호)는 <a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 끼아베에서 가입하면 “끼아베에서 가입함” 표시가 계정에 남습니다.</li>
+<li>로그인한 동안 앱은 악보 스캔 서버에 로그인 확인용 토큰을 함께 보내, 그 아이디에 따로 정해진 요금제가 있는지 확인합니다. 악보, 스캔 이미지, 편집 내용은 아이디와 연결하지 않습니다.</li>
+<li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Apple·Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
+<li>아이폰·아이패드에서 “Apple로 계속”을 고르면 Apple이 확인한 이름과 이메일을 받습니다. 이용자가 “이메일 가리기”를 고르면 Apple이 만든 중계 주소만 받습니다.</li>
+<li>설정 › 내 아이디 › 아이디 관리에서 아이디를 삭제하면 위레가토 계정이 지워집니다(모든 Vicino Labs 앱에 함께 적용됩니다). 기기 안의 악보는 남습니다.</li>
+</ul>
+<p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
    ("서비스 제공자(수탁자)와 국외 이전", """<ul>
-<li><strong>Supabase</strong> — 서버(Edge Function)와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
-<li><strong>Google</strong> — Gemini API(악보 스캔), Google Play 결제</li>
-<li><strong>Apple</strong> — App Store 결제(iPhone·iPad)</li>
+<li><strong>Supabase</strong> — 서버(Edge Function)와 데이터베이스, 로그인(위레가토 통합 아이디), EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Google</strong> — Gemini API(악보 스캔·도우미), Google Play 결제, Google 로그인</li>
+<li><strong>Apple</strong> — App Store 결제, Apple로 로그인(iPhone·iPad)</li>
+<li><strong>Kakao</strong> — 카카오 로그인</li>
+<li><strong>Cloudflare</strong> — 이메일 로그인의 자동 가입 방지(Turnstile)</li>
 </ul>
 <p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
    ("welegato 배너와 외부 링크", f"""<p>무료 요금제에서는 화면 아래에 welegato(같은 회사가 운영하는 음악 플랫폼, welegato.com)로 가는 링크가 표시됩니다. 광고 네트워크나 추적 도구가 아닌 자체 링크입니다. 설정에는 다른 Vicino Labs 앱의 스토어 페이지와 welegato.com으로 가는 링크가 있습니다.</p>
 <p>링크는 <strong>누를 때만</strong> 브라우저나 스토어에서 열립니다. 배너 링크에는 “앱에서 왔다”는 표시(<code>utm_source=chiave</code> 등 utm 값)만 붙고 이용자를 식별하는 값은 없습니다. 열린 뒤에는 해당 사이트의 방침이 적용됩니다 — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato 개인정보처리방침</a>.</p>"""),
    ("공유·내보내기", """<p>악보를 PDF, PNG 이미지, MusicXML 또는 편집 가능한 파일로 내보내면, 이용자가 고른 경우에만 기기의 공유 화면이나 파일 선택 화면을 통해 이용자가 고른 앱·위치·사람에게 전달됩니다.</p>"""),
-   ("수집하지 않는 정보", """<p>이름·이메일·전화번호 같은 계정 정보를 받지 않습니다. 마이크, 위치, 연락처, 광고 식별자는 쓰지 않으며, 분석 SDK와 광고 네트워크가 없습니다.</p>"""),
-   ("아동", """<p>계정이 없고 연령 제한도 없습니다. 만 16세 미만이 악보 스캔을 쓸 때는 보호자의 동의를 받아 주세요. 어린이가 외부 링크를 쓸 때는 보호자가 함께해 주세요.</p>"""),
+   ("수집하지 않는 정보", """<p>로그인하지 않으면 이름·이메일·전화번호 같은 계정 정보를 받지 않습니다. 위치, 연락처, 광고 식별자는 쓰지 않으며, 분석 SDK와 광고 네트워크가 없습니다.</p>"""),
+   ("아동", """<p>기본 기능에는 연령 제한이 없습니다. 위레가토 통합 아이디 로그인은 만 16세 이상만 할 수 있고, 만 16세 미만이 악보 스캔이나 끼아베에게 물어보기를 쓸 때는 보호자의 동의를 받아 주세요. 어린이가 외부 링크를 쓸 때는 보호자가 함께해 주세요.</p>"""),
    ("정보주체의 권리", f"""<ul>
 <li>열람·정정·삭제·처리제한·데이터 이동·이의제기권(GDPR 제15~21조)</li>
 <li>감독기관에 민원을 제기할 권리 — 예: 노르트라인베스트팔렌주 정보보호·정보자유 감독관(LDI NRW) 또는 거주지 관할 감독기관</li>
 </ul>
 <p>악보와 스캔 이미지는 기기에만 있으므로 앱에서 지우거나 앱을 삭제하면 사라집니다. 서버의 기기 해시 기록은 <a href="mailto:{EMAIL}">{EMAIL}</a>로 요청하시면 지웁니다.</p>"""),
-   ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다. 앞으로의 버전에서 위레가토 통합 아이디 로그인이 제공될 수 있으며, 그때 본 방침을 고쳐 알립니다.</p>"""),
+   ("방침의 변경", """<p>법령이나 앱 기능이 바뀌면 본 방침을 고칠 수 있으며, 변경 내용과 시행일을 이 페이지에 게시합니다.</p>"""),
    ("문의처", "<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>" + _id_card("ko")),
   ],
  },
  "en": {
   "title": "Chiave Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-06"), ("Version", "1.0"), ("Operator", "Vicino Labs")],
-  "lede": "Chiave, made by Vicino Labs, is an app for writing, scanning and transposing scores. There is no account; your scores, your edits and the original scanned page images are stored only on your device. Only when you use score scanning do small strip images of the pages go through our server (EU) and Google Gemini. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 6 November 2026 (version 1.0).",
+  "meta": [("Effective", "2026-11-12"), ("Version", "1.1"), ("Operator", "Vicino Labs")],
+  "lede": "Chiave, made by Vicino Labs, is an app for writing, scanning and transposing scores. Its basic features need no account; your scores, your edits and the original scanned page images are stored only on your device. Only when you use score scanning, Ask Chiave or the optional sign-in (welegato ID) does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
+  "footer": "This policy is effective from 12 November 2026 (version 1.1).",
   "other": "Terms of Service →",
   "sections": [
-   ("Data controller", _op_ref("en", 15) + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
+   ("Data controller", _op_ref("en", 19) + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
    ("Summary", """<div class="summary-box"><ul>
-<li>No sign-up and no account. Scores, edits and original scanned page images stay <strong>on your device</strong> and are not uploaded to any cloud.</li>
+<li>Every feature works without signing up. Scores, edits and original scanned page images stay <strong>on your device</strong> and are not uploaded to any cloud.</li>
 <li>With <strong>score scanning</strong> (optional) the app cuts each page on your device into small strips of about 2 bars and sends them through our server to Google Gemini to read the notes. Strip images and recognised results are <strong>not stored</strong> on the server.</li>
 <li>To count pages for your plan, only a <strong>hash</strong> of a device identifier is stored on our server.</li>
 <li>No ad networks and no analytics or tracking tools. The link at the bottom of the screen on the Free plan is our own banner for welegato, a service of the same company.</li>
-<li>The app does not use the microphone or your location.</li>
+<li>Signing in with a <strong>welegato ID</strong> is optional. If you sign in, account data is handled under the welegato privacy policy.</li>
+<li>Questions you ask <strong>Ask Chiave</strong> go through our server and Google Gemini. Questions are not stored.</li>
+<li><strong>Writing by sound</strong> turns microphone sound into notes on your device only; the sound is never sent or stored. The app does not use your location.</li>
 </ul></div>"""),
    ("Data stored on your device", """<ul>
 <li>Scores you write or scan, and your edits and transpositions</li>
@@ -133,6 +154,7 @@ PRIVACY = {
 </ul>
 <p>This data stays in the app's storage on your device and is not sent to us, except for the strip images sent for scanning (below). There is no cloud storage or sync. It is deleted when you remove a score or uninstall the app. The device number in the iPhone/iPad Keychain, however, exists to stop the free trial from being repeated after reinstalling, so it may remain after the app is deleted. Legal basis: providing the app's features (Art. 6(1)(b) GDPR).</p>"""),
    ("Camera, photos and files", """<p>The app asks for the camera, or lets you pick photos from your album or a PDF file, only when you choose pages to scan. The images you pick are stored on your device and do not leave it, except for the strip images sent for scanning (below).</p>"""),
+   ("Microphone (writing by sound)", """<p>The app asks for the microphone only when you turn on writing by sound. Your singing or playing is read on the device, in very short pieces, for pitch and length only and turned into notes; the sound is not kept as a recording and is not sent to our server or anywhere else. Legal basis: providing the feature you asked for (b).</p>"""),
    ("Score scanning (optional)", f"""<p>Score scanning is optional and runs only when you pick pages (camera, photo album, PDF) and start a scan.</p>
 <ul>
 <li><strong>What is sent:</strong> the app cuts each page on your device into small strip images of about 2 bars and sends these strips to our server.</li>
@@ -141,6 +163,9 @@ PRIVACY = {
 <li><strong>Kept on the server:</strong> only a hash of the device identifier, the time, the AI model name, a success flag and token counts. Retention period: deleted after 90 days.</li>
 </ul>
 <p>Legal basis: providing the feature you asked for (Art. 6(1)(b) GDPR); for the server log, our legitimate interest in running the service and preventing abuse (f). Google processes data under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>"""),
+   ("Ask Chiave", """<p>When you ask the assistant, your question, the app language, the name of the screen you are on, a few recent messages and, when you ask inside a score, the score's key signature, time signature, clef and the name of the note before the insert point go to our server and the Google Gemini API to write the answer. <strong>Questions are not stored.</strong></p>
+<p>To keep it free with up to 30 questions a day, a hash of the device identifier, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
+   ("Reporting an AI answer", """<p>If an Ask Chiave answer seems offensive or wrong, you can <strong>report</strong> it. Only then do the reported answer, the reason you chose, your comment, the app language and version and a hash of the device identifier go to our server, and our team gets a notification mail. Reports are used only for review and to improve the AI, and are kept for <strong>180 days</strong>, then deleted. To prevent abuse we accept up to 10 reports a day per device. Legal basis: our legitimate interest in improving the service and handling inappropriate AI output (f).</p>"""),
    ("Plans and device identifier", f"""<p>Plans are counted in scanned score pages. To count pages and to stop the free trial from being repeated by reinstalling the app, a device identifier is used.</p>
 <ul>
 <li><strong>Identifier:</strong> ANDROID_ID on Android, a random number stored in the Keychain on iPhone and iPad, a random number stored in the browser on the web.</li>
@@ -149,41 +174,54 @@ PRIVACY = {
 </ul>
 <p>Legal basis: providing your plan (b), preventing abuse of the free trial (f).</p>"""),
    ("Purchases and subscriptions", f"""<p>Pro and Pro+ subscriptions are bought through Google Play or the App Store. The store handles payment and card details; we never receive them. The store's processing falls under the <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google Privacy Policy</a> or the <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>"""),
+   ("welegato ID (optional)", """<p>Every feature of Chiave works without signing in. If you sign in, you use an account of welegato, run by the same company (the welegato ID).</p>
+<ul>
+<li><strong>Account data</strong> (email, name, sign-in method Apple, Google, Kakao or email, account number) is processed under the <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>. An ID created in Chiave is marked “signed up in Chiave”.</li>
+<li>While you are signed in, the app also sends a sign-in token to the score scanning server so it can check whether a plan has been set for that ID. Scores, scan images and edits are not linked to the ID.</li>
+<li>For email sign-up and sign-in, Cloudflare Turnstile checks browser signals to stop automated sign-ups (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Apple, Google and Kakao sign-in fall under those companies' policies.</li>
+<li>If you choose “Continue with Apple” on iPhone or iPad, we receive the name and email confirmed by Apple. If you choose “Hide My Email”, we receive only a relay address created by Apple.</li>
+<li>Deleting the ID in Settings › My ID › Manage ID deletes the welegato account (for all Vicino Labs apps). Scores on the device stay.</li>
+</ul>
+<p>Under welegato's terms, only people aged 16 or over can sign in. Legal basis: providing the feature you chose (b).</p>"""),
    ("Service providers (processors) and transfers", """<ul>
-<li><strong>Supabase</strong> — server (Edge Function) and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
-<li><strong>Google</strong> — Gemini API (score scanning), Google Play payments</li>
-<li><strong>Apple</strong> — App Store payments (iPhone, iPad)</li>
+<li><strong>Supabase</strong> — server (Edge Function), database and sign-in (welegato ID), EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
+<li><strong>Google</strong> — Gemini API (score scanning, assistant), Google Play payments, Google sign-in</li>
+<li><strong>Apple</strong> — App Store payments, Sign in with Apple (iPhone, iPad)</li>
+<li><strong>Kakao</strong> — Kakao sign-in</li>
+<li><strong>Cloudflare</strong> — protection against automated email sign-ups (Turnstile)</li>
 </ul>
 <p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
    ("The welegato banner and external links", f"""<p>On the Free plan a link to welegato (a music platform of the same company, welegato.com) is shown at the bottom of the screen. It is our own link, not an ad network or tracking tool. Settings contains links to the store pages of other Vicino Labs apps and to welegato.com.</p>
 <p>Links open in your browser or store <strong>only when you tap them</strong>. The banner link carries utm parameters (such as <code>utm_source=chiave</code>) that only say the visit came from the app, with no value that identifies you. Once open, that site's policy applies — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>.</p>"""),
    ("Sharing and export", """<p>When you export a score as PDF, PNG image, MusicXML or editable file, it goes — only if you choose to — through your device's share sheet or file picker to the app, place or person you pick.</p>"""),
-   ("Data we don't collect", """<p>We receive no account data such as name, email or phone number. The app does not use the microphone, location, contacts or advertising ID, and contains no analytics SDK and no ad network.</p>"""),
-   ("Children", """<p>There is no account and no age limit. Under 16, please use score scanning with a parent's consent. Children should use external links together with a parent.</p>"""),
+   ("Data we don't collect", """<p>Unless you sign in, we receive no account data such as name, email or phone number. The app does not use location, contacts or advertising ID, and contains no analytics SDK and no ad network.</p>"""),
+   ("Children", """<p>The basic features have no age limit. Signing in with a welegato ID is only possible from age 16; under 16, please use score scanning or Ask Chiave with a parent's consent. Children should use external links together with a parent.</p>"""),
    ("Your rights", f"""<ul>
 <li>Access, rectification, erasure, restriction of processing, data portability and objection (Art. 15–21 GDPR)</li>
 <li>Lodge a complaint with a supervisory authority — e.g. the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW) or the authority where you live</li>
 </ul>
 <p>Scores and scan images are only on your device, so deleting them in the app or uninstalling the app removes them. Records of your device hash on our server are deleted on request to <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
-   ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page. A future version may offer sign-in with a welegato ID; this policy will then be updated.</p>"""),
+   ("Changes to this policy", """<p>We may update this policy when the law or the app changes; changes and the effective date are posted on this page.</p>"""),
    ("Contact", "<p>For questions about data protection, please contact us.</p>" + _id_card("en")),
   ],
  },
  "de": {
   "title": "Chiave Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Chiave von Vicino Labs ist eine App zum Schreiben, Scannen und Transponieren von Noten. Es gibt kein Konto; deine Noten, deine Bearbeitungen und die gescannten Originalseiten werden nur auf deinem Gerät gespeichert. Nur wenn du den Notenscan nutzt, gehen kleine Streifenbilder der Seiten über unseren Server (EU) und Google Gemini. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 6. November 2026 (Version 1.0).",
+  "meta": [("Gültig ab", "12.11.2026"), ("Version", "1.1"), ("Betreiber", "Vicino Labs")],
+  "lede": "Chiave von Vicino Labs ist eine App zum Schreiben, Scannen und Transponieren von Noten. Die Grundfunktionen brauchen kein Konto; deine Noten, deine Bearbeitungen und die gescannten Originalseiten werden nur auf deinem Gerät gespeichert. Nur wenn du den Notenscan, „Chiave fragen“ oder die freiwillige Anmeldung (welegato-ID) nutzt, geht etwas über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
+  "footer": "Diese Erklärung gilt ab dem 12. November 2026 (Version 1.1).",
   "other": "Nutzungsbedingungen →",
   "sections": [
-   ("Verantwortlicher", _op_ref("de", 15) + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
+   ("Verantwortlicher", _op_ref("de", 19) + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
-<li>Keine Registrierung und kein Konto. Noten, Bearbeitungen und gescannte Originalseiten bleiben <strong>auf deinem Gerät</strong> und werden in keine Cloud hochgeladen.</li>
+<li>Alle Funktionen gehen ohne Registrierung. Noten, Bearbeitungen und gescannte Originalseiten bleiben <strong>auf deinem Gerät</strong> und werden in keine Cloud hochgeladen.</li>
 <li>Beim <strong>Notenscan</strong> (freiwillig) schneidet die App jede Seite auf dem Gerät in kleine Streifen von etwa 2 Takten und sendet sie über unseren Server an Google Gemini, um die Noten zu lesen. Streifenbilder und Erkennungsergebnisse werden auf dem Server <strong>nicht gespeichert</strong>.</li>
 <li>Um die Seiten deines Tarifs zu zählen, speichern wir nur einen <strong>Hash</strong> einer Gerätekennung.</li>
 <li>Keine Werbenetzwerke und keine Analyse- oder Tracking-Tools. Der Link unten im Bildschirm im Free-Tarif ist unser eigenes Banner für welegato, einen Dienst desselben Unternehmens.</li>
-<li>Die App nutzt weder Mikrofon noch Standort.</li>
+<li>Die Anmeldung mit einer <strong>welegato-ID</strong> ist freiwillig. Wenn du dich anmeldest, gelten für die Kontodaten die Datenschutzhinweise von welegato.</li>
+<li>Fragen an <strong>„Chiave fragen“</strong> gehen über unseren Server und Google Gemini. Fragen werden nicht gespeichert.</li>
+<li><strong>Per Klang schreiben</strong> wandelt den Mikrofonton nur auf dem Gerät in Noten um; der Ton wird weder gesendet noch gespeichert. Die App nutzt keinen Standort.</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
 <li>Von dir geschriebene oder gescannte Noten sowie deine Bearbeitungen und Transpositionen</li>
@@ -193,6 +231,7 @@ PRIVACY = {
 </ul>
 <p>Diese Daten bleiben im Speicher der App auf deinem Gerät und werden nicht an uns übermittelt – außer den Streifenbildern für den Scan (unten). Es gibt keine Cloud-Speicherung und keine Synchronisierung. Sie werden gelöscht, wenn du Noten entfernst oder die App deinstallierst. Die Gerätenummer im Schlüsselbund von iPhone/iPad dient jedoch dazu, eine Wiederholung der Testphase nach Neuinstallation zu verhindern, und kann daher nach dem Löschen der App erhalten bleiben. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Kamera, Fotos und Dateien", """<p>Die App fragt nur nach der Kamera oder lässt dich Fotos aus dem Album oder eine PDF-Datei auswählen, wenn du Seiten zum Scannen wählst. Die ausgewählten Bilder werden auf dem Gerät gespeichert und verlassen es nicht – außer den Streifenbildern für den Scan (unten).</p>"""),
+   ("Mikrofon (per Klang schreiben)", """<p>Die App fragt nur nach dem Mikrofon, wenn du „per Klang schreiben“ einschaltest. Dein Singen oder Spielen wird auf dem Gerät in sehr kurzen Stücken nur auf Tonhöhe und Dauer ausgewertet und in Noten umgewandelt; der Ton wird nicht als Aufnahme gespeichert und weder an unseren Server noch anderswohin gesendet. Rechtsgrundlage: Bereitstellung der gewünschten Funktion (lit. b).</p>"""),
    ("Notenscan (freiwillig)", f"""<p>Der Notenscan ist freiwillig und läuft nur, wenn du Seiten (Kamera, Fotoalbum, PDF) auswählst und den Scan startest.</p>
 <ul>
 <li><strong>Gesendet werden:</strong> Die App schneidet jede Seite auf deinem Gerät in kleine Streifenbilder von etwa 2 Takten und sendet diese Streifen an unseren Server.</li>
@@ -201,6 +240,9 @@ PRIVACY = {
 <li><strong>Auf dem Server bleiben:</strong> nur ein Hash der Gerätekennung, Zeitpunkt, Name des KI-Modells, Erfolgskennzeichen und Token-Anzahl. Speicherdauer: Löschung nach 90 Tagen.</li>
 </ul>
 <p>Rechtsgrundlage: Bereitstellung der gewünschten Funktion (Art. 6 Abs. 1 lit. b DSGVO); für das Server-Protokoll unser berechtigtes Interesse am Betrieb des Dienstes und am Missbrauchsschutz (lit. f). Google verarbeitet die Daten nach der <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>"""),
+   ("Chiave fragen", """<p>Wenn du den Assistenten fragst, gehen deine Frage, die App-Sprache, der Name des geöffneten Bildschirms, einige letzte Nachrichten und – wenn du in einer Partitur fragst – Vorzeichen, Taktart, Schlüssel und der Name der Note vor der Einfügestelle an unseren Server und die Gemini-API von Google, um die Antwort zu schreiben. <strong>Fragen werden nicht gespeichert.</strong></p>
+<p>Damit der Dienst mit bis zu 30 Fragen pro Tag kostenlos bleibt, speichern wir zum Missbrauchsschutz einen Hash der Gerätekennung, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
+   ("KI-Antworten melden", """<p>Wenn eine Antwort von „Chiave fragen“ anstößig oder falsch wirkt, kannst du sie <strong>melden</strong>. Nur dann gehen die gemeldete Antwort, der gewählte Grund, dein Kommentar, App-Sprache und -Version sowie ein Hash der Gerätekennung an unseren Server, und unser Team erhält eine Benachrichtigung per E-Mail. Meldungen dienen nur der Prüfung und der Verbesserung der KI und werden <strong>180 Tage</strong> gespeichert und dann gelöscht. Zum Missbrauchsschutz nehmen wir bis zu 10 Meldungen pro Tag und Gerät an. Rechtsgrundlage: berechtigtes Interesse an der Verbesserung des Dienstes und am Umgang mit unangemessenen KI-Ausgaben (lit. f).</p>"""),
    ("Tarife und Gerätekennung", f"""<p>Tarife werden in gescannten Notenseiten gezählt. Um Seiten zu zählen und zu verhindern, dass die Testphase durch Neuinstallation wiederholt wird, verwendet die App eine Gerätekennung.</p>
 <ul>
 <li><strong>Kennung:</strong> unter Android die ANDROID_ID, auf iPhone und iPad eine im Schlüsselbund gespeicherte Zufallsnummer, im Web eine im Browser gespeicherte Zufallsnummer.</li>
@@ -209,41 +251,54 @@ PRIVACY = {
 </ul>
 <p>Rechtsgrundlage: Bereitstellung deines Tarifs (lit. b), Missbrauchsschutz bei der Testphase (lit. f).</p>"""),
    ("Käufe und Abos", f"""<p>Pro- und Pro+-Abos kaufst du über Google Play oder den App Store. Zahlung und Kartendaten verarbeitet der Store; wir erhalten sie nicht. Für den Store gilt die <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> bzw. die <a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>"""),
+   ("welegato-ID (freiwillig)", """<p>Alle Funktionen von Chiave funktionieren ohne Anmeldung. Wenn du dich anmeldest, nutzt du ein Konto von welegato, einem Dienst desselben Unternehmens (die welegato-ID).</p>
+<ul>
+<li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Apple, Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Eine in Chiave erstellte ID wird als „in Chiave registriert“ markiert.</li>
+<li>Solange du angemeldet bist, sendet die App dem Notenscan-Server zusätzlich ein Anmelde-Token, damit er prüfen kann, ob für diese ID ein Tarif hinterlegt ist. Noten, Scanbilder und Bearbeitungen werden nicht mit der ID verknüpft.</li>
+<li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browser-Signale gegen automatische Registrierungen (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Apple, Google oder Kakao gelten deren Erklärungen.</li>
+<li>Wählst du auf iPhone oder iPad „Mit Apple fortfahren“, erhalten wir den von Apple bestätigten Namen und die E-Mail-Adresse. Wählst du „E-Mail-Adresse verbergen“, erhalten wir nur eine von Apple erzeugte Weiterleitungsadresse.</li>
+<li>Löschst du die ID unter Einstellungen › Meine ID › ID verwalten, wird das welegato-Konto gelöscht (für alle Apps von Vicino Labs). Noten auf dem Gerät bleiben.</li>
+</ul>
+<p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
-<li><strong>Supabase</strong> — Server (Edge Function) und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
-<li><strong>Google</strong> — Gemini-API (Notenscan), Google-Play-Zahlungen</li>
-<li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
+<li><strong>Supabase</strong> — Server (Edge Function), Datenbank und Anmeldung (welegato-ID), EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
+<li><strong>Google</strong> — Gemini-API (Notenscan, Assistent), Google-Play-Zahlungen, Google-Anmeldung</li>
+<li><strong>Apple</strong> — App-Store-Zahlungen, „Mit Apple anmelden“ (iPhone, iPad)</li>
+<li><strong>Kakao</strong> — Kakao-Anmeldung</li>
+<li><strong>Cloudflare</strong> — Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
    ("welegato-Banner und externe Links", f"""<p>Im Free-Tarif wird unten im Bildschirm ein Link zu welegato (einer Musikplattform desselben Unternehmens, welegato.com) angezeigt. Es ist unser eigener Link, kein Werbenetzwerk und kein Tracking-Tool. In den Einstellungen gibt es Links zu den Store-Seiten anderer Apps von Vicino Labs und zu welegato.com.</p>
 <p>Links öffnen sich im Browser oder Store <strong>nur, wenn du sie antippst</strong>. Der Banner-Link trägt utm-Parameter (z. B. <code>utm_source=chiave</code>), die nur sagen, dass der Besuch aus der App kommt, und dich nicht identifizieren. Danach gilt die Erklärung der jeweiligen Seite — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>"""),
    ("Teilen und Export", """<p>Wenn du Noten als PDF, PNG-Bild, MusicXML oder bearbeitbare Datei exportierst, geht die Datei – nur wenn du es willst – über den Teilen-Dialog oder die Dateiauswahl des Geräts an die App, den Ort oder die Person, die du wählst.</p>"""),
-   ("Nicht erhobene Daten", """<p>Wir erhalten keine Kontodaten wie Name, E-Mail-Adresse oder Telefonnummer. Die App nutzt weder Mikrofon, Standort, Kontakte noch Werbe-IDs und enthält kein Analyse-SDK und kein Werbenetzwerk.</p>"""),
-   ("Kinder", """<p>Es gibt kein Konto und keine Altersgrenze. Unter 16 nutze den Notenscan bitte mit Einwilligung der Eltern. Kinder sollten externe Links gemeinsam mit Eltern nutzen.</p>"""),
+   ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir keine Kontodaten wie Name, E-Mail-Adresse oder Telefonnummer. Die App nutzt weder Standort, Kontakte noch Werbe-IDs und enthält kein Analyse-SDK und kein Werbenetzwerk.</p>"""),
+   ("Kinder", """<p>Die Grundfunktionen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 nutze den Notenscan oder „Chiave fragen“ bitte mit Einwilligung der Eltern. Kinder sollten externe Links gemeinsam mit Eltern nutzen.</p>"""),
    ("Deine Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
 <li>Beschwerde bei einer Aufsichtsbehörde — z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde deines Wohnorts</li>
 </ul>
 <p>Noten und Scanbilder liegen nur auf deinem Gerät; du löschst sie in der App oder durch Deinstallation. Einträge zu deinem Geräte-Hash auf unserem Server löschen wir auf Anfrage an <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
-   ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite. Eine künftige Version kann die Anmeldung mit einer welegato-ID anbieten; diese Erklärung wird dann angepasst.</p>"""),
+   ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),
    ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _id_card("de")),
   ],
  },
  "it": {
   "title": "Chiave — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "06.11.2026"), ("Versione", "1.0"), ("Gestore", "Vicino Labs")],
-  "lede": "Chiave, di Vicino Labs, è un'app per scrivere, scansionare e trasporre spartiti. Non c'è un account; i tuoi spartiti, le tue modifiche e le immagini originali delle pagine scansionate restano solo sul tuo dispositivo. Solo quando usi la scansione degli spartiti, piccole immagini a strisce delle pagine passano dal nostro server (UE) e da Google Gemini. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 6 novembre 2026 (versione 1.0).",
+  "meta": [("In vigore dal", "12.11.2026"), ("Versione", "1.1"), ("Gestore", "Vicino Labs")],
+  "lede": "Chiave, di Vicino Labs, è un'app per scrivere, scansionare e trasporre spartiti. Le funzioni di base non richiedono un account; i tuoi spartiti, le tue modifiche e le immagini originali delle pagine scansionate restano solo sul tuo dispositivo. Solo quando usi la scansione degli spartiti, «Chiedi a Chiave» o l'accesso facoltativo (welegato ID) qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
+  "footer": "Questa informativa è in vigore dal 12 novembre 2026 (versione 1.1).",
   "other": "Termini di utilizzo →",
   "sections": [
-   ("Titolare del trattamento", _op_ref("it", 15) + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
+   ("Titolare del trattamento", _op_ref("it", 19) + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
    ("In breve", """<div class="summary-box"><ul>
-<li>Nessuna registrazione e nessun account. Spartiti, modifiche e immagini originali delle pagine scansionate restano <strong>sul tuo dispositivo</strong> e non vengono caricati in alcun cloud.</li>
+<li>Tutte le funzioni si usano senza registrazione. Spartiti, modifiche e immagini originali delle pagine scansionate restano <strong>sul tuo dispositivo</strong> e non vengono caricati in alcun cloud.</li>
 <li>Con la <strong>scansione degli spartiti</strong> (facoltativa) l'app taglia sul dispositivo ogni pagina in piccole strisce di circa 2 battute e le invia, tramite il nostro server, a Google Gemini per leggere le note. Le immagini a strisce e i risultati del riconoscimento <strong>non vengono salvati</strong> sul server.</li>
 <li>Per contare le pagine del tuo piano salviamo sul server solo un <strong>hash</strong> di un identificativo del dispositivo.</li>
 <li>Nessuna rete pubblicitaria e nessuno strumento di analisi o tracciamento. Il link in fondo allo schermo nel piano Free è il nostro banner per welegato, un servizio della stessa società.</li>
-<li>L'app non usa il microfono né la posizione.</li>
+<li>L'accesso con un <strong>welegato ID</strong> è facoltativo. Se accedi, i dati dell'account sono trattati secondo l'informativa privacy di welegato.</li>
+<li>Le domande a <strong>«Chiedi a Chiave»</strong> passano dal nostro server e da Google Gemini. Le domande non vengono salvate.</li>
+<li><strong>Scrivere col suono</strong> trasforma il suono del microfono in note solo sul dispositivo; il suono non viene mai inviato né salvato. L'app non usa la posizione.</li>
 </ul></div>"""),
    ("Dati salvati sul dispositivo", """<ul>
 <li>Gli spartiti che scrivi o scansioni, con le tue modifiche e trasposizioni</li>
@@ -253,6 +308,7 @@ PRIVACY = {
 </ul>
 <p>Questi dati restano nella memoria dell'app sul dispositivo e non ci vengono inviati, salvo le immagini a strisce inviate per la scansione (sotto). Non c'è archiviazione nel cloud né sincronizzazione. Si cancellano eliminando gli spartiti o disinstallando l'app. Il numero del dispositivo nel portachiavi di iPhone/iPad serve però a impedire che la prova gratuita si ripeta dopo una reinstallazione, quindi può restare anche dopo l'eliminazione dell'app. Base giuridica: fornitura delle funzioni dell'app (art. 6, par. 1, lett. b GDPR).</p>"""),
    ("Fotocamera, foto e file", """<p>L'app chiede la fotocamera, o ti fa scegliere foto dall'album o un file PDF, solo quando scegli le pagine da scansionare. Le immagini scelte restano sul dispositivo e non lo lasciano, salvo le immagini a strisce inviate per la scansione (sotto).</p>"""),
+   ("Microfono (scrivere col suono)", """<p>L'app chiede il microfono solo quando attivi la scrittura col suono. Il tuo canto o la tua esecuzione vengono letti sul dispositivo, in pezzi brevissimi, solo per altezza e durata e trasformati in note; il suono non viene conservato come registrazione e non viene inviato al nostro server né altrove. Base giuridica: fornire la funzione richiesta (lett. b).</p>"""),
    ("Scansione degli spartiti (facoltativa)", f"""<p>La scansione degli spartiti è facoltativa e funziona solo quando scegli delle pagine (fotocamera, album, PDF) e avvii la scansione.</p>
 <ul>
 <li><strong>Cosa viene inviato:</strong> l'app taglia sul dispositivo ogni pagina in piccole immagini a strisce di circa 2 battute e invia queste strisce al nostro server.</li>
@@ -261,6 +317,9 @@ PRIVACY = {
 <li><strong>Sul server restano:</strong> solo un hash dell'identificativo del dispositivo, il momento, il nome del modello AI, l'esito (riuscito o no) e il numero di token. Periodo di conservazione: cancellati dopo 90 giorni.</li>
 </ul>
 <p>Base giuridica: fornire la funzione richiesta (art. 6, par. 1, lett. b GDPR); per il registro del server, il nostro legittimo interesse a gestire il servizio e prevenire abusi (lett. f). Google tratta i dati secondo l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>"""),
+   ("Chiedi a Chiave", """<p>Quando fai una domanda all'assistente, la domanda, la lingua dell'app, il nome della schermata aperta, alcuni messaggi recenti e, se chiedi dentro uno spartito, armatura di chiave, tempo, chiave e il nome della nota prima del punto di inserimento vanno al nostro server e all'API Gemini di Google per scrivere la risposta. <strong>Le domande non vengono salvate.</strong></p>
+<p>Per mantenerlo gratuito con fino a 30 domande al giorno, per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash dell'identificativo del dispositivo, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
+   ("Segnalare una risposta AI", """<p>Se una risposta di «Chiedi a Chiave» ti sembra offensiva o sbagliata, puoi <strong>segnalarla</strong>. Solo allora la risposta segnalata, il motivo scelto, il tuo commento, lingua e versione dell'app e un hash dell'identificativo del dispositivo vanno al nostro server, e il nostro team riceve un'email di avviso. Le segnalazioni servono solo per la verifica e per migliorare l'AI e sono conservate per <strong>180 giorni</strong>, poi cancellate. Per prevenire abusi accettiamo fino a 10 segnalazioni al giorno per dispositivo. Base giuridica: legittimo interesse a migliorare il servizio e a gestire risposte AI inappropriate (lett. f).</p>"""),
    ("Piani e identificativo del dispositivo", f"""<p>I piani si contano in pagine di spartito scansionate. Per contare le pagine e impedire che la prova gratuita si ripeta reinstallando l'app, si usa un identificativo del dispositivo.</p>
 <ul>
 <li><strong>Identificativo:</strong> ANDROID_ID su Android, un numero casuale salvato nel portachiavi su iPhone e iPad, un numero casuale salvato nel browser sul web.</li>
@@ -269,23 +328,34 @@ PRIVACY = {
 </ul>
 <p>Base giuridica: fornire il tuo piano (lett. b), prevenire abusi della prova gratuita (lett. f).</p>"""),
    ("Acquisti e abbonamenti", f"""<p>Gli abbonamenti Pro e Pro+ si acquistano tramite Google Play o l'App Store. Il pagamento e i dati della carta li gestisce lo store; noi non li riceviamo. Per lo store vale l'<a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Google</a> o l'<a href="{APPLE_PRIVACY}" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>"""),
+   ("welegato ID (facoltativo)", """<p>Tutte le funzioni di Chiave funzionano senza accesso. Se accedi, usi un account di welegato, servizio della stessa società (il welegato ID).</p>
+<ul>
+<li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Apple, Google, Kakao o email, numero di account) sono trattati secondo l'<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa privacy di welegato</a>. Un ID creato in Chiave viene segnato «registrato in Chiave».</li>
+<li>Finché sei connesso, l'app invia al server della scansione anche un token di accesso, così può verificare se per quell'ID è previsto un piano. Spartiti, immagini scansionate e modifiche non vengono collegati all'ID.</li>
+<li>Per registrazione e accesso via email, Cloudflare Turnstile controlla segnali del browser contro le registrazioni automatiche (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">informativa di Cloudflare</a>). Per l'accesso con Apple, Google o Kakao valgono le loro informative.</li>
+<li>Se su iPhone o iPad scegli «Continua con Apple», riceviamo il nome e l'email confermati da Apple. Se scegli «Nascondi la mia email», riceviamo solo un indirizzo di inoltro creato da Apple.</li>
+<li>Eliminando l'ID in Impostazioni › Il mio ID › Gestisci ID viene cancellato l'account welegato (per tutte le app di Vicino Labs). Gli spartiti sul dispositivo restano.</li>
+</ul>
+<p>Secondo i termini di welegato, possono accedere solo persone dai 16 anni in su. Base giuridica: fornire la funzione scelta (lett. b).</p>"""),
    ("Fornitori di servizi (responsabili) e trasferimenti", """<ul>
-<li><strong>Supabase</strong> — server (Edge Function) e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
-<li><strong>Google</strong> — API Gemini (scansione degli spartiti), pagamenti Google Play</li>
-<li><strong>Apple</strong> — pagamenti App Store (iPhone, iPad)</li>
+<li><strong>Supabase</strong> — server (Edge Function), database e accesso (welegato ID), data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
+<li><strong>Google</strong> — API Gemini (scansione degli spartiti, assistente), pagamenti Google Play, accesso con Google</li>
+<li><strong>Apple</strong> — pagamenti App Store, accesso con Apple (iPhone, iPad)</li>
+<li><strong>Kakao</strong> — accesso con Kakao</li>
+<li><strong>Cloudflare</strong> — protezione dalle registrazioni email automatiche (Turnstile)</li>
 </ul>
 <p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
    ("Banner welegato e link esterni", f"""<p>Nel piano Free, in fondo allo schermo compare un link a welegato (una piattaforma musicale della stessa azienda, welegato.com). È un nostro link, non una rete pubblicitaria né uno strumento di tracciamento. Nelle impostazioni ci sono link alle pagine store delle altre app di Vicino Labs e a welegato.com.</p>
 <p>I link si aprono nel browser o nello store <strong>solo quando li tocchi</strong>. Il link del banner porta parametri utm (ad es. <code>utm_source=chiave</code>) che indicano solo che la visita arriva dall'app e non ti identificano. Poi si applica l'informativa del sito aperto — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">privacy di welegato</a>.</p>"""),
    ("Condivisione ed esportazione", """<p>Quando esporti uno spartito come PDF, immagine PNG, MusicXML o file modificabile, il file va – solo se lo scegli tu – tramite la finestra di condivisione o la selezione file del dispositivo all'app, al luogo o alla persona che scegli.</p>"""),
-   ("Dati che non raccogliamo", """<p>Non riceviamo dati di account come nome, email o numero di telefono. L'app non usa microfono, posizione, contatti né ID pubblicitari, e non contiene SDK di analisi né reti pubblicitarie.</p>"""),
-   ("Minori", """<p>Non c'è un account e non ci sono limiti di età. Sotto i 16 anni, usa la scansione degli spartiti con il consenso di un genitore. I bambini dovrebbero usare i link esterni insieme a un genitore.</p>"""),
+   ("Dati che non raccogliamo", """<p>Senza accesso non riceviamo dati di account come nome, email o numero di telefono. L'app non usa posizione, contatti né ID pubblicitari, e non contiene SDK di analisi né reti pubblicitarie.</p>"""),
+   ("Minori", """<p>Le funzioni di base non hanno limiti di età. L'accesso con un welegato ID è possibile solo dai 16 anni; sotto i 16 anni, usa la scansione degli spartiti o «Chiedi a Chiave» con il consenso di un genitore. I bambini dovrebbero usare i link esterni insieme a un genitore.</p>"""),
    ("I tuoi diritti", f"""<ul>
 <li>Accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–21 GDPR)</li>
 <li>Reclamo a un'autorità di controllo — ad es. l'autorità per la protezione dei dati della Renania Settentrionale-Vestfalia (LDI NRW) o quella del tuo luogo di residenza</li>
 </ul>
 <p>Spartiti e immagini scansionate sono solo sul dispositivo: li elimini nell'app o disinstallandola. I dati relativi all'hash del tuo dispositivo sul nostro server vengono cancellati su richiesta a <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
-   ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina. Una versione futura potrà offrire l'accesso con un welegato ID; in quel caso l'informativa sarà aggiornata.</p>"""),
+   ("Modifiche", """<p>Possiamo aggiornare questa informativa se cambiano la legge o l'app; modifiche e data di entrata in vigore sono pubblicate in questa pagina.</p>"""),
    ("Contatti", "<p>Per domande sulla protezione dei dati scrivici:</p>" + _id_card("it")),
   ],
  },
