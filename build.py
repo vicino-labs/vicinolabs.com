@@ -206,5 +206,8 @@ pianino_legal.build(os.path.dirname(os.path.abspath(__file__)))
 # Caffè Vicino(유튜브 채널) 개인정보처리방침·이용약관 (/caffevicino/privacy/, /caffevicino/terms/) — caffevicino_legal.py (2026-11-12 초안)
 import caffevicino_legal
 caffevicino_legal.build(os.path.dirname(os.path.abspath(__file__)))
+# Pausa 개인정보처리방침·이용약관 (/pausa/privacy/, /pausa/terms/) — pausa_legal.py (2026-11-13 승인·게시)
+import pausa_legal
+pausa_legal.build(os.path.dirname(os.path.abspath(__file__)))
 open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CNAME"), "w").write("vicinolabs.com\n")
 print("ok")
