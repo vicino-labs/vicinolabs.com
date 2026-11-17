@@ -276,7 +276,7 @@ function oauth(p){location.href=SB+"/auth/v1/authorize?provider="+p+
    토큰 없이는 이메일 로그인·가입·비밀번호 재설정이 모두 거부된다.
    위레가토 앱과 같은 사이트 키를 쓴다(공개 키다). 스크립트는 로그인하려는
    사람에게만 받아 온다 — 그냥 읽기만 하는 사람에게는 안 받는다. */
-var CF_ON=false,CF_KEY="0x4AAAAAAE-DPE-XNwkkeKAg",cfId=null,cfTok="",cfErr="",cfLoad=null;
+var CF_ON=true,CF_KEY="0x4AAAAAAE-DPE-XNwkkeKAg",cfId=null,cfTok="",cfErr="",cfLoad=null;
 function cfReady(){
 if(!CF_ON)return Promise.resolve();
 if(cfLoad)return cfLoad;

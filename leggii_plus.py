@@ -20,7 +20,7 @@ import leggii_site as S
 # 0x4AAAAAAE-DPE-XNwkkeKAg 의 위젯에 등록되면 True 로 바꾼다.
 # 그때까지 켜면 외부 스크립트만 싣고 로그인은 그대로 막힌다
 # (Cloudflare 오류 110200 = Domain not authorized).
-CF_ON = False
+CF_ON = True
 
 SUPABASE_URL = "https://zowwxefjkvklmzzzznvr.supabase.co"
 # 공개용 키(publishable). 비밀값이 아니다 — 브라우저에 넣으라고 만든 키다.
