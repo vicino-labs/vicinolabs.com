@@ -165,15 +165,7 @@ PRIVACY = f"""<h1>Datenschutzerklärung</h1>
 <h2>Hosting</h2>
 <p>Diese Website wird über GitHub Pages bereitgestellt (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie die aufgerufene Seite, um die Website auszuliefern und vor Missbrauch zu schützen (Art. 6 Abs. 1 lit. f DSGVO). GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
 <h2>Keine Cookies, kein Tracking</h2>
-<p>Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken, verwendet keine Analyse- oder Werbedienste und lädt keine Schriften von Drittanbietern. Eine Ausnahme ist die Abo-Seite <a href="/leggii/plus/">Leggii Plus</a>, siehe den nächsten Abschnitt.</p>
-<h2>Abo-Seite Leggii Plus</h2>
-<p>Nur auf der Seite <a href="/leggii/plus/">/leggii/plus/</a> werden Daten an Dritte übermittelt, und zwar erst, wenn Sie sich dort anmelden oder ein Abo abschließen:</p>
-<ul>
-<li><strong>Supabase</strong> – Anmeldung mit der welegato-ID und Verwaltung des Abos. Server und Datenbank im EU-Rechenzentrum Frankfurt (Supabase, Inc., USA; Auftragsverarbeiter).</li>
-<li><strong>Cloudflare Turnstile</strong> – Prüfung, ob die Anmeldung von einem Menschen kommt. Erst wenn Sie das Anmeldeformular benutzen, wird dafür ein Skript von <code>challenges.cloudflare.com</code> geladen; dabei werden Ihre IP-Adresse und technische Angaben zu Browser und Gerät an Cloudflare übermittelt (Cloudflare, Inc., USA). Turnstile setzt keine Cookies zu Werbezwecken und erstellt kein Profil. Rechtsgrundlage ist unser berechtigtes Interesse an der Abwehr automatisierter Anmeldeversuche (Art. 6 Abs. 1 lit. f DSGVO).</li>
-<li><strong>Stripe</strong> – Kartenzahlung für auf dieser Seite abgeschlossene Abos (Stripe Payments Europe, Ltd., Dublin, Irland). Kartendaten werden ausschließlich von Stripe verarbeitet; wir sehen sie nicht.</li>
-</ul>
-<p>Alle übrigen Seiten dieser Website laden nichts von Dritten.</p>
+<p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Werbedienste und lädt keine Schriften oder Skripte von Drittanbietern.</p>
 <h2>Kontakt per E-Mail</h2>
 <p>Wenn Sie uns per E-Mail schreiben, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b bzw. f DSGVO), und löschen sie, wenn sie nicht mehr erforderlich sind. Unser E-Mail-Postfach wird von IONOS SE (Montabaur, Deutschland) betrieben.</p>
 <h2>Ihre Rechte</h2>
