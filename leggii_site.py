@@ -71,6 +71,7 @@ html[lang=ko] .tile h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600
 
 /* 요금 비교표 — 한 화면에서 견주어 보게 */
 .ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plans .value{margin:18px 0 0;font-size:16px;color:var(--ink);max-width:640px;text-wrap:pretty}
 .ptab{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .ptab th,.ptab td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--line)}
 .ptab th:first-child,.ptab td:first-child{text-align:left;color:var(--soft);white-space:normal}
@@ -173,7 +174,8 @@ T = {
           ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
-"plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
+"plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량이고, 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다. 레슨 한 번 값이면 Plus를 일 년 씁니다.",
+ "plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
  "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
  "get_h": "내려받기",
  "get_p": "아이패드와 아이폰은 App Store에서, 안드로이드는 Google Play에서 받으세요.",
@@ -226,7 +228,8 @@ T = {
           ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
  "plans_h": "Plans",
  "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
-"plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
+"plans_value": "Five hours of AI a month is five one-hour lessons, and 10 GB holds over a hundred hours of recordings. A year of Plus costs about what a single lesson costs.",
+ "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
  "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
  "get_p": "On the App Store for iPad and iPhone, on Google Play for Android.",
@@ -279,7 +282,8 @@ T = {
           ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
  "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
-"plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
+"plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden, und in 10 GB passen über hundert Stunden Aufnahmen. Ein Jahr Plus kostet etwa so viel wie eine einzige Unterrichtsstunde.",
+ "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
  "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
  "get_p": "Im App Store für iPad und iPhone, bei Google Play für Android.",
@@ -369,7 +373,8 @@ def _ptab(l):
             f'<p class="sub">{t["plans_sub"]}</p>'
             f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div>'
-            f'<p class="note" style="margin-top:16px">{t["plans_note"]}</p>'
+            f'<p class="value">{t["plans_value"]}</p>'
+            f'<p class="note" style="margin-top:10px">{t["plans_note"]}</p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
             f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
 
