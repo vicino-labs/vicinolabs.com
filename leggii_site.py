@@ -54,9 +54,6 @@ html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",G
 html[lang=ko] .hero h1{font-size:clamp(30px,5.2vw,50px)}
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
 .hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:860px;text-wrap:balance}
-/* 첫 화면은 손으로 끊는다. 좁은 화면에서는 그 자리가 어색하니 자동으로 둔다. */
-@media(max-width:820px){.hero .lede br{display:none}}
-/* 끊는 자리 앞에 빈칸을 둬, br 을 숨겨도 문장이 붙지 않게 한다. */
 .shotwide{display:block;width:100%;height:auto;max-width:1000px;margin:30px auto 0;border-radius:16px}
 .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px 0 0}
 .stores a{display:block;line-height:0}
@@ -106,8 +103,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 /* 요금 */
 .plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
 .plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
-.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px}
-.plans .value .ln,.plans .sub .ln{display:block;text-wrap:balance}
+.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px;text-wrap:balance}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
 .plan{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
 .plan h3{font-size:22px;margin:0 0 4px}
@@ -145,7 +141,7 @@ T = {
  "desc": "렛지 악보는 아이패드에 맞춰 만든 악보 앱입니다. PDF·사진·IMSLP에서 악보를 가져오고, 레슨과 리허설을 녹음하면 악보가 따라 넘어가며, AI가 지적과 숙제를 정리합니다.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "악보 보며 녹음하고,<br>AI로 정리까지",
- "lede": "태블릿에 맞춰 만든 악보 앱입니다. | 녹음한 레슨을 다시 들을 때 악보가 저절로 따라 넘어가고, | AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
+ "lede": "태블릿에 맞춰 만든 악보 앱입니다. 녹음한 레슨을 다시 들을 때 악보가 저절로 따라 넘어가고, AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
  "feats": [
   (1, "악보함", "악보를 한곳에", "PDF를 가져오거나 종이 악보를 카메라로 찍으면, 삐뚤게 찍힌 사진도 반듯하게 펴 줍니다. 제목과 작곡가는 알아서 읽어 냅니다.",
    ["전체 · 최근 본 악보 · 작곡가별로 보기", "즐겨찾기와 폴더", "연주회와 레슨 순서는 연주목록로", "출판사와 페이지까지 한눈에"]),
@@ -199,7 +195,7 @@ T = {
  "desc": "Leggii is a sheet music app made for the tablet. Import PDFs, photos and IMSLP editions, record your lessons and rehearsals while the score turns with you, and let AI sort out what was said.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Record while you read,<br>let AI take the notes",
- "lede": "A sheet music app made for the tablet. | When you listen back the recording the score turns by itself, | and the AI writes down the corrections and the homework with times and pages.",
+ "lede": "A sheet music app made for the tablet. When you listen back the recording the score turns by itself, and the AI writes down the corrections and the homework with times and pages.",
  "feats": [
   (1, "Your library", "All your scores in one place", "Import PDFs or photograph paper music with the camera; tilted photos are straightened. Title and composer are recognised for you.",
    ["Browse all, recently opened or by composer", "Favourites and folders", "Setlists for concerts and lessons", "Publisher and page at a glance"]),
@@ -253,7 +249,7 @@ T = {
  "desc": "Leggii ist die Noten-App fürs Tablet: PDFs, Fotos und IMSLP-Ausgaben importieren, Unterricht und Proben aufnehmen, während die Noten mitblättern, und die KI fasst das Gesagte zusammen.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Beim Lesen aufnehmen,<br>die KI schreibt mit",
- "lede": "Die Noten-App fürs Tablet. | Beim Anhören der Aufnahme blättern die Noten von selbst mit, | und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
+ "lede": "Die Noten-App fürs Tablet. Beim Anhören der Aufnahme blättern die Noten von selbst mit, und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
  "feats": [
   (1, "Notenschrank", "Alle Noten an einem Ort", "PDFs importieren oder Papiernoten mit der Kamera abfotografieren – schiefe Fotos werden gerade gerichtet. Titel und Komponist werden erkannt.",
    ["Alle, zuletzt geöffnet oder nach Komponist", "Favoriten und Ordner", "Setlists für Konzert und Unterricht", "Verlag und Seite auf einen Blick"]),
@@ -305,18 +301,6 @@ T = {
 }
 
 
-
-def _sent(text):
-    """문장마다 제 덩어리를 준다(2026-11-17).
-
-    여러 문장을 한 문단에 넣으면 줄이 문장 가운데서 끊겨
-    둘째 줄에 두세 낱말만 남는다. 문장별로 블록을 주면
-    끊기는 자리가 늘 문장 끝이고, balance 가 줄 길이를 고른다.
-    """
-    parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", text) if x.strip()]
-    if len(parts) < 2:
-        return text
-    return "".join(f'<span class="ln">{x}</span>' for x in parts)
 
 def _on(l):
     return " on" if l == "en" else ""
@@ -462,10 +446,10 @@ def _ptab(l):
         return "".join(f"<td>{c}</td>" for c in r)
     rows = "".join("<tr>" + cells(r) + "</tr>" for r in t["ptab"])
     return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
-            f'<p class="sub">{_sent(t["plans_sub"])}</p>'
+            f'<p class="sub">{t["plans_sub"]}</p>'
             f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div>'
-            f'<p class="value">{_sent(t["plans_value"])}</p>'
+            f'<p class="value">{t["plans_value"]}</p>'
             f'<p class="punch">{t["plans_punch"]}</p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
@@ -490,7 +474,7 @@ def page():
         f'<div data-l="{l}" class="hero{_on(l)}">'
         f'<img class="ic" src="/apps/leggii.png" srcset="/apps/hi/leggii.png 2x" alt="Leggii" width="92" height="92">'
         f'<p class="kicker">{T[l]["kicker"]}</p><h1>{T[l]["h1"]}</h1>'
-        f'<p class="lede">{T[l]["lede"].replace(" | ", " <br>")}</p>'
+        f'<p class="lede">{T[l]["lede"]}</p>'
         f'<div class="stores">{badge(l)}</div>'
         f'<img class="shotwide" data-hero="1" src="/leggii/shots/en/hero.webp" alt="Leggii" '
         f'width="1700" height="956" fetchpriority="high" decoding="async"></div>'

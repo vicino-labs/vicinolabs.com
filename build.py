@@ -54,22 +54,9 @@ html[lang=ko] h1 em,html[lang=zh] h1 em{font-style:normal}
 html[lang=ko] body{word-break:keep-all}
 /* 중국어·일본어는 빈칸이 없어 keep-all 을 주면 안 끊긴다. */
 html[lang=zh] body,html[lang=ja] body{word-break:normal;line-break:strict}
-.lead .ln{display:block;text-wrap:balance}
 h1,h2,h3,.lead{text-wrap:balance}p,li,td,th,.card p,.values span{text-wrap:pretty}
 """
 
-
-def _sent(text):
-    """문장마다 제 블록을 준다(2026-11-17).
-
-    한 문단에 여러 문장을 넣으면 줄이 문장 가운데서 끊긴다.
-    폭을 넓히면 영어가 한 줄에 100자를 넘어 읽기 나빠지므로,
-    폭은 그대로 두고 끊기는 자리만 문장 끝으로 옮긴다.
-    """
-    parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", text) if x.strip()]
-    if len(parts) < 2:
-        return text
-    return "".join(f'<span class="ln">{x}</span>' for x in parts)
 
 def page(lang, path, title, desc, body, alt=None, wide=False):
     alt_links = ""
@@ -151,7 +138,7 @@ def home(lang):
     strip = "".join(f'<img src="/apps/{k}.png" alt="{NAMES[k]}" width="46" height="46">' for k in MUSIC + ["nomio"])
     music = "".join(card(lang, k) for k in MUSIC)
     values = "".join(f'<div><b>{h}</b><span>{d}</span></div>' for h, d in t["values"])
-    return (f'<div class="hero"><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{_sent(t["lead"])}</p><div class="icons">{strip}</div></div>'
+    return (f'<div class="hero"><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><div class="icons">{strip}</div></div>'
             f'<section id="apps"><h2>{t["music_h"]}</h2><p class="sub">{t["music_sub"]} <a href="{t["fam_href"]}" style="font-weight:600;text-decoration:none">{t["fam_link"]}</a></p><div class="grid">{music}</div></section>'
             f'<section><h2>{t["life_h"]}</h2><p class="sub"></p><div class="grid">{card(lang, "nomio")}</div></section>'
             f'<div class="values">{values}</div>'

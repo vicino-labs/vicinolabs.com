@@ -38,9 +38,6 @@ html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",G
 html[lang=ko] .hero h1{font-size:clamp(30px,5.2vw,50px)}
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
 .hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:860px;text-wrap:balance}
-/* 첫 화면은 손으로 끊는다. 좁은 화면에서는 그 자리가 어색하니 자동으로 둔다. */
-@media(max-width:820px){.hero .lede br{display:none}}
-/* 끊는 자리 앞에 빈칸을 둬, br 을 숨겨도 문장이 붙지 않게 한다. */
 .shotwide{display:block;width:100%;height:auto;max-width:1000px;margin:30px auto 0;border-radius:16px}
 .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px 0 0}
 .stores a{display:block;line-height:0}
@@ -90,8 +87,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 /* 요금 */
 .plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
 .plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
-.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px}
-.plans .value .ln,.plans .sub .ln{display:block;text-wrap:balance}
+.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px;text-wrap:balance}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
 .plan{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
 .plan h3{font-size:22px;margin:0 0 4px}
