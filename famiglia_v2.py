@@ -33,7 +33,7 @@ NEW = {
                intro="Wie jedes Instrument in der Partitur seine eigene Zeile hat, hat jede App ihre eigenen Takte. In jedem Takt führt eine andere App, die anderen begleiten.",
                hint="Die weinroten Noten zeigen, wer im Takt führt.", swipe="Zum Ansehen seitlich wischen.", listen="Anhören", pause="Pause",
                sub="9. Sinfonie, Finale: „An die Freude“ · für sieben Apps gesetzt", stages=["Finden", "Vorbereiten", "Einsingen", "Üben", "Rückblick"],
-               dc="Da capo — zur nächsten Stunde", label="Partitur von Famiglia Vicino: ein Stück in fünf Takten, in jedem Takt führt eine andere App",
+               dc="Da capo – zur nächsten Stunde", label="Partitur von Famiglia Vicino: ein Stück in fünf Takten, in jedem Takt führt eine andere App",
                notes="Programmheft", parts=["Erster Teil · finden und vorbereiten", "Pause · durchatmen", "Zweiter Teil · üben und zurückblicken"],
                when=["der Tag der Suche", "der Abend über den Noten", "wenn die Tonart nicht passt", "zuerst der Atem", "das Einsingen am Morgen",
                      "im Raum ohne Klavier", "nach dem Unterricht"],

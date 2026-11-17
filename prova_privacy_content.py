@@ -227,25 +227,25 @@ PRIVACY = {
 <li>„Bitte nicht stören“ während der Aufnahme (Android) wird nur eingeschaltet, wenn Sie es erlauben; danach wird Ihre eigene Einstellung wiederhergestellt.</li>
 <li>Keine Werbung und keine Analyse- oder Tracking-Tools.</li>
 <li>KI-Analyse, Cloud und Abos brauchen eine <strong>welegato-ID</strong>. Melden Sie sich an, unterliegen Kontodaten der welegato-Datenschutzerklärung.</li>
-<li>Die <strong>KI-Analyse</strong> sendet auch bei Videos <strong>nur den Ton</strong> — ein auf dem Gerät erstellter Tonausschnitt wird von Google Gemini analysiert und danach gelöscht.</li>
+<li>Die <strong>KI-Analyse</strong> sendet auch bei Videos <strong>nur den Ton</strong> – ein auf dem Gerät erstellter Tonausschnitt wird von Google Gemini analysiert und danach gelöscht.</li>
 <li>Die <strong>Cloud</strong> (Plus) lädt <strong>nur den Ton</strong> der Takes hoch, die Sie hochladen. Bei Video-Takes wird nur der Ton herausgelöst und hochgeladen; das Video bleibt auf Ihrem Gerät (Cloudflare R2).</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
 <li>Tonaufnahmen (AAC) und Videos (mp4, Front- oder Rückkamera)</li>
-<li>Take-Angaben — Modus (Unterricht, Übe-Takes, Bewerbungsvideo), Datum und Länge sowie, wenn Sie sie eintragen, Werk, Stelle, „mit“ (Namen von Lehrkraft oder Begleitung), Notizen und Stern</li>
+<li>Take-Angaben – Modus (Unterricht, Übe-Takes, Bewerbungsvideo), Datum und Länge sowie, wenn Sie sie eintragen, Werk, Stelle, „mit“ (Namen von Lehrkraft oder Begleitung), Notizen und Stern</li>
 <li>Deine Bestätigung vor einer Unterrichtsaufnahme</li>
-<li>Einstellungen — Farbthema, ob „Bitte nicht stören“ beim Aufnehmen genutzt wird, und Ihre „Bitte nicht stören“-Einstellung vor einem Take (um sie wiederherzustellen)</li>
+<li>Einstellungen – Farbthema, ob „Bitte nicht stören“ beim Aufnehmen genutzt wird, und Ihre „Bitte nicht stören“-Einstellung vor einem Take (um sie wiederherzustellen)</li>
 </ul>
 <p>Diese Daten bleiben im privaten Speicher der App und werden nicht an uns übermittelt. Sie werden gelöscht, wenn Sie einen Take entfernen oder die App deinstallieren. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Kamera, Mikrofon und Benachrichtigungen", """<p>Die App fragt nur zum Aufnehmen nach dem Mikrofon und nur zum Filmen nach der Kamera. Du startest eine Aufnahme mit der Taste und beendest sie selbst. Während der Aufnahme wird eine Benachrichtigung „Aufnahme läuft“ angezeigt, damit die Aufnahme auch bei ausgeschaltetem Bildschirm oder in einer anderen App weiterläuft (dafür fragt die App nach der Benachrichtigungsberechtigung).</p>
 <p>Wenn Sie sich stumme Standbilder aus einem Video ansehen, werden die Bilder aus der auf Ihrem Gerät gespeicherten Videodatei gelesen. Auch das geschieht nur auf dem Gerät.</p>"""),
-   ("Unterrichtsaufnahmen und Einwilligung anderer", """<p>Das nichtöffentlich gesprochene Wort anderer ohne deren Einwilligung aufzunehmen, kann strafbar sein (§ 201 StGB). Im Unterrichtsmodus bittet die App Sie deshalb vor Beginn der Aufnahme zu bestätigen, dass die Lehrkraft — und, wenn Minderjährige aufgenommen werden, die Eltern bzw. Sorgeberechtigten — eingewilligt haben. Die Einwilligung tatsächlich einzuholen, liegt in Ihrer Verantwortung.</p>
+   ("Unterrichtsaufnahmen und Einwilligung anderer", """<p>Das nichtöffentlich gesprochene Wort anderer ohne deren Einwilligung aufzunehmen, kann strafbar sein (§ 201 StGB). Im Unterrichtsmodus bittet die App Sie deshalb vor Beginn der Aufnahme zu bestätigen, dass die Lehrkraft – und, wenn Minderjährige aufgenommen werden, die Eltern bzw. Sorgeberechtigten – eingewilligt haben. Die Einwilligung tatsächlich einzuholen, liegt in Ihrer Verantwortung.</p>
 <p>Namen, die Sie unter „mit“ eintragen, werden als Take-Angaben auf Ihrem Gerät gespeichert. Was bei Anmeldung und Nutzung von KI-Analyse oder Cloud geschieht, steht unten.</p>"""),
    ("„Bitte nicht stören“ während der Aufnahme", """<p><strong>Android:</strong> Wenn Sie der App einmal in den Geräteeinstellungen den Zugriff auf „Bitte nicht stören“ erlaubt haben, schaltet sie „Bitte nicht stören“ ein, solange ein Take aufgenommen wird. Anrufe, Nachrichten, Benachrichtigungen und Vibration werden zurückgehalten; Medienton bleibt erlaubt. Nach dem Take wird Ihre eigene Einstellung wiederhergestellt. Diese Einstellung und Ihr vorheriger Zustand werden nur auf dem Gerät gespeichert. Den Zugriff können Sie jederzeit in den Geräteeinstellungen widerrufen.</p>
 <p><strong>iPhone und iPad:</strong> Die App kann „Nicht stören“ nicht ändern; sie erinnert Sie nur daran, vor der Aufnahme einen Fokus einzuschalten.</p>
 <p><strong>Flugmodus:</strong> Notfallwarnungen können „Bitte nicht stören“ durchdringen, deshalb kann die App den Flugmodus empfehlen. Sie liest nur, ob der Flugmodus an ist, und kann ihn nicht ändern.</p>"""),
    ("Android-Sicherung", f"""<p>Unter Android können, wenn die Google-Sicherung des Geräts aktiv ist, die <strong>Einstellungen</strong> der App in Ihrem Google-Konto gesichert und bei einer Neuinstallation wiederhergestellt werden. Google verarbeitet diese Sicherung gemäß der <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google-Datenschutzerklärung</a>; wir haben keinen Zugriff. Sie können sie in den Geräteeinstellungen abschalten.</p>"""),
-   ("welegato-ID (nötig für KI, Cloud und Abos)", f"""<p>Aufnehmen und Takes vergleichen funktionieren ohne Anmeldung. KI-Analyse, Cloud und Abos setzen die Anmeldung mit einer welegato-ID voraus (ein Konto von welegato, einem Dienst desselben Unternehmens — eine ID für alle Apps von Vicino Labs). Diese Funktionen kommen mit der welegato-ID; dieser Abschnitt gilt, wenn Sie sich anmelden oder sie nutzen.</p>
+   ("welegato-ID (nötig für KI, Cloud und Abos)", f"""<p>Aufnehmen und Takes vergleichen funktionieren ohne Anmeldung. KI-Analyse, Cloud und Abos setzen die Anmeldung mit einer welegato-ID voraus (ein Konto von welegato, einem Dienst desselben Unternehmens – eine ID für alle Apps von Vicino Labs). Diese Funktionen kommen mit der welegato-ID; dieser Abschnitt gilt, wenn Sie sich anmelden oder sie nutzen.</p>
 <ul>
 <li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Die Anmeldung läuft über Supabase Auth. Eine in Prova erstellte ID wird als „in Prova registriert“ markiert; bei der ersten Anmeldung kommt eine Willkommens-E-Mail.</li>
 <li>Prova verknüpft die ID mit Ihrem Abo und Ihrer KI-Zeit, damit sie auf anderen Geräten, zwischen Android und iOS und in anderen Apps von Vicino Labs mit derselben ID (z. B. Leggii) weitergelten.</li>
@@ -255,7 +255,7 @@ PRIVACY = {
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
    ("KI-Analyse (nur auf Wunsch)", f"""<p>Sie läuft nur, wenn Sie angemeldet sind, bei einem Take „KI-Analyse“ tippen, die Kosten in KI-Minuten sehen und sie starten. Beim ersten Mal erklärt die App das und bittet um Ihre Einwilligung.</p>
 <ul>
-<li><strong>Gesendet wird:</strong> <strong>nur der Ton</strong>. Auch bei einem Video-Take wird kein Bild gesendet, sondern nur ein auf dem Gerät erstellter Tonausschnitt (Mono, 16 kHz AAC) — dazu Modus, die von Ihnen eingetragenen Werke, Stellen und Namen sowie die Antwortsprache.</li>
+<li><strong>Gesendet wird:</strong> <strong>nur der Ton</strong>. Auch bei einem Video-Take wird kein Bild gesendet, sondern nur ein auf dem Gerät erstellter Tonausschnitt (Mono, 16 kHz AAC) – dazu Modus, die von Ihnen eingetragenen Werke, Stellen und Namen sowie die Antwortsprache.</li>
 <li><strong>Verarbeitung:</strong> Unser Server (Supabase, EU) bereitet die Analyse vor; der Ton geht zur Analyse an die Gemini-API von Google. Wir nutzen die kostenpflichtige API; Google verwendet diese Daten nicht zum Training seiner Modelle.</li>
 <li><strong>Löschung:</strong> Der Ton wird nach der Analyse gelöscht; Reste löscht Google spätestens nach 48 Stunden. Die Ergebnisse gehen an Ihr Gerät und werden nur dort gespeichert; Zwischenergebnisse auf dem Server werden nach der Analyse gelöscht.</li>
 <li><strong>Auf dem Server bleiben:</strong> Einträge zur Berechnung Ihrer KI-Zeit (Zeitpunkt, Länge, Art, verbrauchte Minuten, Kosten, in welcher App) mit einer pseudonymen Kontonummer – keine Inhalte der Aufnahme und keine Ergebnisse.</li>
@@ -282,17 +282,17 @@ PRIVACY = {
    ("KI-Antworten melden", """<p>Wenn eine Antwort von „Prova fragen“ oder eine KI-Analyse anstößig oder falsch wirkt, können Sie sie <strong>melden</strong>. Nur dann gehen der gemeldete KI-Text (bei „Prova fragen“ Frage und Antwort), der gewählte Grund, Ihr Kommentar, die App-Sprache sowie ein Hash der Installationsnummer an unseren Server, und unser Team erhält eine Benachrichtigung per E-Mail. Meldungen dienen nur der Prüfung und der Verbesserung der KI und werden <strong>180 Tage</strong> gespeichert und dann gelöscht. Zum Missbrauchsschutz nehmen wir bis zu 10 Meldungen pro Tag und Installation an. Rechtsgrundlage: berechtigtes Interesse an der Verbesserung des Dienstes und am Umgang mit unangemessenen KI-Ausgaben (lit. f).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<p>Diese Anbieter sind nur beteiligt, wenn Sie sich anmelden oder KI-Analyse, Cloud, ein Abo oder „Prova fragen“ nutzen. Nehmen Sie nur ohne Anmeldung auf, gehen an keinen von ihnen Daten.</p>
 <ul>
-<li><strong>Supabase</strong> — Anmeldung (Supabase Auth), Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
-<li><strong>Google</strong> — Gemini-API (KI-Analyse und Assistent), Google-Play-Zahlungen und Kaufprüfung, Google-Anmeldung</li>
-<li><strong>Cloudflare</strong> — Dateispeicher der Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
-<li><strong>Apple</strong> — App-Store-Zahlungen (iPhone, iPad)</li>
+<li><strong>Supabase</strong> – Anmeldung (Supabase Auth), Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
+<li><strong>Google</strong> – Gemini-API (KI-Analyse und Assistent), Google-Play-Zahlungen und Kaufprüfung, Google-Anmeldung</li>
+<li><strong>Cloudflare</strong> – Dateispeicher der Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
+<li><strong>Apple</strong> – App-Store-Zahlungen (iPhone, iPad)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
    ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht; es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-SDKs. Das Bild eines Videos wird nicht gesendet, auch nicht für die KI-Analyse.</p>"""),
    ("Kinder", """<p>Die Grundfunktionen wie Aufnehmen und Takes vergleichen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 brauchen KI-Analyse und „Prova fragen“ die Einwilligung der Eltern. Bei Unterricht, in dem Minderjährige aufgenommen werden, hole bitte die Einwilligung der Eltern bzw. Sorgeberechtigten ein.</p>"""),
    ("Ihre Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
-<li>Beschwerde bei einer Aufsichtsbehörde — z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde Ihres Wohnorts</li>
+<li>Beschwerde bei einer Aufsichtsbehörde – z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde Ihres Wohnorts</li>
 </ul>
 <p>Takes auf Ihrem Gerät können Sie in der App oder durch Deinstallation löschen. ID und Cloud-Daten können Sie unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> löschen oder per E-Mail an <a href="mailto:{EMAIL}">{EMAIL}</a> löschen lassen.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),

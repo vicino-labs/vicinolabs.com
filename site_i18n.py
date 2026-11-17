@@ -27,7 +27,7 @@ def welegato_url(l):
 
 
 # 스퀼로 연습곡 문장(몸 풀기 단계·앱 설명 끝에 붙임)
-STUDI = {'ko': '연습곡은 파노프카부터, 입시에 꼭 필요한 콘코네·바카이도 곧 들어와요.', 'en': 'Panofka studies first. Concone and Vaccai are on the way.', 'de': 'Zuerst die Panofka-Etüden — Concone und Vaccai folgen bald.', 'it': 'Prima gli studi di Panofka — presto anche Concone e Vaccai.', 'fr': "D'abord les études de Panofka — Concone et Vaccai arrivent bientôt.", 'zh': '练习曲从帕诺夫卡开始，孔科内和瓦卡伊也即将加入。', 'es': 'Primero los estudios de Panofka — pronto también Concone y Vaccai.', 'ru': 'Сначала этюды Панофки — скоро добавятся Конконе и Ваккаи.'}
+STUDI = {'ko': '연습곡은 파노프카부터, 입시에 꼭 필요한 콘코네·바카이도 곧 들어와요.', 'en': 'Panofka studies first. Concone and Vaccai are on the way.', 'de': 'Zuerst die Panofka-Etüden – Concone und Vaccai folgen bald.', 'it': 'Prima gli studi di Panofka — presto anche Concone e Vaccai.', 'fr': "D'abord les études de Panofka — Concone et Vaccai arrivent bientôt.", 'zh': '练习曲从帕诺夫卡开始，孔科内和瓦卡伊也即将加入。', 'es': 'Primero los estudios de Panofka — pronto también Concone y Vaccai.', 'ru': 'Сначала этюды Панофки — скоро добавятся Конконе и Ваккаи.'}
 
 # ── 역할별 쓰임 ────────────────────────────────────────────────
 ROLES = {
@@ -44,7 +44,7 @@ ROLES = {
 WHO_H = {
     "ko": ("누구에게 필요할까요?", "같은 앱도 누가 쓰느냐에 따라 쓰임이 달라요. 학생도, 선생님도, 반주자도 모두에게 필요해요."),
     "en": ("Who is it for?", "The same app does a different job depending on who uses it. Students, teachers, accompanists: everyone needs it."),
-    "de": ("Für wen?", "Dieselbe App leistet je nach Rolle etwas anderes. Lernende, Lehrkräfte, Korrepetitoren — alle brauchen sie."),
+    "de": ("Für wen?", "Dieselbe App leistet je nach Rolle etwas anderes. Lernende, Lehrkräfte, Korrepetitoren – alle brauchen sie."),
     "it": ("Per chi?", "La stessa app serve in modo diverso a seconda di chi la usa. Allievi, insegnanti, maestri collaboratori — serve a tutti."),
     "fr": ("Pour qui ?", "La même app rend un service différent selon qui l'utilise. Élèves, professeurs, accompagnateurs — tout le monde en a besoin."),
     "zh": ("谁需要？", "同一个应用，不同的人有不同的用法。学生、老师、伴奏——人人都用得上。"),
@@ -101,25 +101,25 @@ SCEN = {
             "Record the rehearsal, then listen again where the tempo wavered and where the breaths fell."),
  },
  "de": {
-  "welegato": ("Auch in einer neuen Stadt Lehrkräfte und Korrepetitoren finden und in Ihrer Sprache schreiben — der Chat übersetzt automatisch.",
+  "welegato": ("Auch in einer neuen Stadt Lehrkräfte und Korrepetitoren finden und in Ihrer Sprache schreiben – der Chat übersetzt automatisch.",
                "Legen Sie ein Profil an, und Lernende finden Sie. Beratungsanfragen erhalten und direkt im Chat antworten.",
                "Wer Begleitung sucht, sieht Ihr Profil. Anfragen für Unterricht, Vorsingen und Wettbewerbe erhalten."),
   "leggii": ("Jede Eintragung aus dem Unterricht bleibt in den Noten. Mit Unterrichtsaufnahmen und KI-Notizen wiederholen.",
-             "Für jede Schülerin ein anderes Stück — alles auf einem Tablet. Direkt aus IMSLP öffnen und im Unterricht eintragen.",
+             "Für jede Schülerin ein anderes Stück – alles auf einem Tablet. Direkt aus IMSLP öffnen und im Unterricht eintragen.",
              "Mehrere Lernende am Tag, Dutzende Stücke. Reihenfolge mit Setlisten planen und mit dem Pedal umblättern."),
   "chiave": ("Die Noten, die Sie brauchen, selbst schreiben und korrigieren – mit dem Stift, aus einem Foto oder einer gesungenen Melodie, auch in Ihrer Tonart.",
              "Übungsnoten in wenigen Minuten: mit dem Stift schreiben und direkt in die passende Tonart für die Stimme Ihrer Schüler transponieren.",
              "Noten in einer anderen Tonart bekommen? Per Foto übernehmen, mit dem Stift korrigieren und in dieselbe Tonart transponieren."),
   "appoggio": ("Ein paar Minuten am Tag, um den Atem aufzubauen. Kostenlos, ohne Konto.",
-               "Atemübungen aus dem Unterricht als Hausaufgabe — zu Hause nach derselben Methode.",
+               "Atemübungen aus dem Unterricht als Hausaufgabe – zu Hause nach derselben Methode.",
                "Gute Begleitung atmet mit der Stimme. Spüren Sie selbst, wo im Stück geatmet wird."),
   "squillo": ("Täglich zur Klavierbegleitung einsingen.",
               "Die ersten zehn Minuten Einsingen vor den Unterricht verlegen. Die Panofka-Etüden als Hausaufgabe geben.",
-              "Nicht jedes Mal Einsingskalen spielen — mit eingesungener Stimme direkt ins Repertoire."),
+              "Nicht jedes Mal Einsingskalen spielen – mit eingesungener Stimme direkt ins Repertoire."),
   "pianino": ("Auch ohne Klavier Töne finden und mit Metronom und Stimmgerät allein üben.",
               "Egal, wie das Klavier im Unterrichtsraum gestimmt ist: Bezugstöne mit 415, 430 oder 443 Hz geben.",
               "Auch im Künstlerzimmer ohne Klavier den Anfangston geben und das Tempo vorher mit dem Metronom festlegen."),
-  "prova": ("Unterricht und Üben aufnehmen — die KI fasst zusammen, was gut lief und woran Sie weiterarbeiten.",
+  "prova": ("Unterricht und Üben aufnehmen – die KI fasst zusammen, was gut lief und woran Sie weiterarbeiten.",
             "Eigenes Spiel und Unterricht als Audio oder Video aufnehmen und mit KI-Auswertung zurückblicken.",
             "Die Probe aufnehmen und nachhören, wo das Tempo wackelte und wo geatmet wurde."),
  },
@@ -247,7 +247,7 @@ PREP = {
  "en": ("Prepare", "The Lied you found is in the wrong key?",
         "Your scores live in Leggii on your tablet, with every marking from your lessons. If the Schubert song or the arie antiche only exist in another key, take a photo and open it in Chiave: it becomes an editable score you can move into your key and correct where needed. Your teacher and accompanist then see it in the same key."),
  "de": ("Vorbereiten", "Das Lied gibt es nur in der falschen Tonart?",
-        "Ihre Noten liegen in Leggii auf dem Tablet, mit allen Eintragungen aus dem Unterricht. Gibt es das Schubert-Lied oder die Arie antiche nur in einer anderen Tonart, fotografieren Sie es und öffnen es in Chiave: Daraus wird eine bearbeitbare Partitur, die Sie in Ihre Tonart setzen und wo nötig korrigieren — Lehrkraft und Korrepetitor sehen sie in derselben Tonart."),
+        "Ihre Noten liegen in Leggii auf dem Tablet, mit allen Eintragungen aus dem Unterricht. Gibt es das Schubert-Lied oder die Arie antiche nur in einer anderen Tonart, fotografieren Sie es und öffnen es in Chiave: Daraus wird eine bearbeitbare Partitur, die Sie in Ihre Tonart setzen und wo nötig korrigieren – Lehrkraft und Korrepetitor sehen sie in derselben Tonart."),
  "it": ("Preparare", "Il Lied che hai trovato non è nella tua tonalità?",
         "Gli spartiti stanno in Leggii sul tablet, con tutti i segni delle lezioni. Se il Lied di Schubert o le arie antiche esistono solo in un'altra tonalità, scatta una foto e aprila in Chiave: diventa una partitura modificabile da portare nella tua tonalità e correggere dove serve — e insegnante e maestro collaboratore la vedono nella stessa."),
  "fr": ("Préparer", "Le Lied trouvé n'est pas dans votre tonalité ?",
@@ -448,14 +448,14 @@ HOME = {
         "contact_h": "Contact", "contact": "Questions, partnerships or press: we'd love to hear from you.", "btn": "Send an email"},
  "de": {"title": "Vicino Labs — Apps für Musik und Alltag", "desc": "Vicino Labs entwickelt Apps für Musikerinnen und Musiker und für den Alltag: welegato, Leggii, Appoggio, Pianino, Nomio und bald Chiave, Prova und Squillo.",
         "kicker": "Softwarestudio für Musikerinnen und Musiker", "h1": "Apps für die Musik <em>und</em> den Alltag.",
-        "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben — mehrsprachig, schlicht und mit Blick auf Datenschutz.",
-        "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino — eine Familie von Apps, die zusammenpassen.", "fam_link": "So arbeiten die Apps zusammen →",
+        "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben – mehrsprachig, schlicht und mit Blick auf Datenschutz.",
+        "music_h": "Für Musikerinnen und Musiker", "music_sub": "Famiglia Vicino – eine Familie von Apps, die zusammenpassen.", "fam_link": "So arbeiten die Apps zusammen →",
         "life_h": "Für den Alltag", "apps_nav": "Apps", "privacy": "Datenschutz", "privacy_l": "Datenschutz", "site": "welegato.com",
         "nomio": "Haushaltsbuch für Einnahmen und Ausgaben in vielen Währungen und Sprachen.",
-        "values": [("Mehrsprachig", "Unsere Apps gibt es in vielen Sprachen — von Deutsch und Englisch bis Koreanisch."),
+        "values": [("Mehrsprachig", "Unsere Apps gibt es in vielen Sprachen – von Deutsch und Englisch bis Koreanisch."),
                    ("Eine welegato-ID", "Ein Konto für alle Apps von Vicino Labs, wenn Sie möchten. Vieles funktioniert auch ganz ohne Konto."),
-                   ("Datenschutz zuerst", "Wir erheben nur, was eine App wirklich braucht — und erklären es verständlich.")],
-        "contact_h": "Kontakt", "contact": "Fragen, Kooperationen oder Presse — wir freuen uns über Ihre Nachricht.", "btn": "E-Mail schreiben"},
+                   ("Datenschutz zuerst", "Wir erheben nur, was eine App wirklich braucht – und erklären es verständlich.")],
+        "contact_h": "Kontakt", "contact": "Fragen, Kooperationen oder Presse – wir freuen uns über Ihre Nachricht.", "btn": "E-Mail schreiben"},
  "it": {"title": "Vicino Labs — App per la musica e la vita quotidiana", "desc": "Vicino Labs sviluppa app per musicisti e per la vita quotidiana: welegato, Leggii, Appoggio, Pianino, Nomio e presto Chiave, Prova e Squillo.",
         "kicker": "Studio software per musicisti", "h1": "App per la musica <em>e</em> la vita quotidiana.",
         "lead": "Vicino Labs è un piccolo studio software. Sviluppiamo app per musicisti, per le lezioni e lo studio — multilingue, semplici e attente alla privacy.",

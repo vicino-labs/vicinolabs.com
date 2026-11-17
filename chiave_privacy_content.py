@@ -261,21 +261,21 @@ PRIVACY = {
 </ul>
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
-<li><strong>Supabase</strong> — Server (Edge Function), Datenbank und Anmeldung (welegato-ID), EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
-<li><strong>Google</strong> — Gemini-API (Notenscan, Assistent), Google-Play-Zahlungen, Google-Anmeldung</li>
-<li><strong>Apple</strong> — App-Store-Zahlungen, „Mit Apple anmelden“ (iPhone, iPad)</li>
-<li><strong>Kakao</strong> — Kakao-Anmeldung</li>
-<li><strong>Cloudflare</strong> — Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
+<li><strong>Supabase</strong> – Server (Edge Function), Datenbank und Anmeldung (welegato-ID), EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
+<li><strong>Google</strong> – Gemini-API (Notenscan, Assistent), Google-Play-Zahlungen, Google-Anmeldung</li>
+<li><strong>Apple</strong> – App-Store-Zahlungen, „Mit Apple anmelden“ (iPhone, iPad)</li>
+<li><strong>Kakao</strong> – Kakao-Anmeldung</li>
+<li><strong>Cloudflare</strong> – Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
    ("welegato-Banner und externe Links", f"""<p>Im Free-Tarif wird unten im Bildschirm ein Link zu welegato (einer Musikplattform desselben Unternehmens, welegato.com) angezeigt. Es ist unser eigener Link, kein Werbenetzwerk und kein Tracking-Tool. In den Einstellungen gibt es Links zu den Store-Seiten anderer Apps von Vicino Labs und zu welegato.com.</p>
-<p>Links öffnen sich im Browser oder Store <strong>nur, wenn Sie sie antippen</strong>. Der Banner-Link trägt utm-Parameter (z. B. <code>utm_source=chiave</code>), die nur sagen, dass der Besuch aus der App kommt, und Sie nicht identifizieren. Danach gilt die Erklärung der jeweiligen Seite — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>"""),
+<p>Links öffnen sich im Browser oder Store <strong>nur, wenn Sie sie antippen</strong>. Der Banner-Link trägt utm-Parameter (z. B. <code>utm_source=chiave</code>), die nur sagen, dass der Besuch aus der App kommt, und Sie nicht identifizieren. Danach gilt die Erklärung der jeweiligen Seite – <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>"""),
    ("Teilen und Export", """<p>Wenn Sie Noten als PDF, PNG-Bild, MusicXML oder bearbeitbare Datei exportieren, geht die Datei – nur wenn Sie es wollen – über den Teilen-Dialog oder die Dateiauswahl des Geräts an die App, den Ort oder die Person, die Sie wählen.</p>"""),
    ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir keine Kontodaten wie Name, E-Mail-Adresse oder Telefonnummer. Die App nutzt weder Standort, Kontakte noch Werbe-IDs und enthält kein Analyse-SDK und kein Werbenetzwerk.</p>"""),
    ("Kinder", """<p>Die Grundfunktionen haben keine Altersgrenze. Die Anmeldung mit einer welegato-ID ist erst ab 16 Jahren möglich; unter 16 nutze den Notenscan oder „Chiave fragen“ bitte mit Einwilligung der Eltern. Kinder sollten externe Links gemeinsam mit Eltern nutzen.</p>"""),
    ("Ihre Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
-<li>Beschwerde bei einer Aufsichtsbehörde — z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde Ihres Wohnorts</li>
+<li>Beschwerde bei einer Aufsichtsbehörde – z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde Ihres Wohnorts</li>
 </ul>
 <p>Noten und Scanbilder liegen nur auf Ihrem Gerät; Sie löschen sie in der App oder durch Deinstallation. Einträge zu Ihrem Geräte-Hash auf unserem Server löschen wir auf Anfrage an <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),

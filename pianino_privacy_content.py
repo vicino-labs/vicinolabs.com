@@ -129,16 +129,16 @@ PRIVACY = {
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für eine etwaige Verarbeitung personenbezogener Daten im Zusammenhang mit dieser App.</p>"),
    ("Das Wichtigste in Kürze", """<div class="summary-box"><ul>
-<li>Kein Konto, keine Anmeldung. Ihre Einstellungen werden <strong>nur auf Ihrem Gerät</strong> gespeichert — wir können sie nicht einsehen.</li>
-<li>Das <strong>Mikrofon</strong> wird nur verwendet, solange im Stimmgerät das Zuhören eingeschaltet ist. Der Ton wird auf dem Gerät in Echtzeit auf seine Tonhöhe ausgewertet und sofort verworfen — er wird <strong>nie aufgenommen, gespeichert oder übertragen</strong>.</li>
+<li>Kein Konto, keine Anmeldung. Ihre Einstellungen werden <strong>nur auf Ihrem Gerät</strong> gespeichert – wir können sie nicht einsehen.</li>
+<li>Das <strong>Mikrofon</strong> wird nur verwendet, solange im Stimmgerät das Zuhören eingeschaltet ist. Der Ton wird auf dem Gerät in Echtzeit auf seine Tonhöhe ausgewertet und sofort verworfen – er wird <strong>nie aufgenommen, gespeichert oder übertragen</strong>.</li>
 <li><strong>Keine Werbenetzwerke und keine In-App-Käufe.</strong> Die einzige Werbung in der App ist unser eigenes Banner für welegato, einen Dienst desselben Anbieters. Keine Werbe-ID, keine Analyse- oder Tracking-Dienste.</li>
 <li>Die App verbindet sich nicht selbst mit dem Internet. Browser oder App-Store öffnen sich <strong>nur, wenn Sie</strong> auf das welegato-Banner, „Weitere Apps für Musiker“ oder einen Link zu unseren Rechtstexten <strong>tippen</strong>.</li>
 </ul></div>"""),
    ("Auf Ihrem Gerät gespeicherte Daten", """<ul>
-<li>Klavier — Klang, Kammerton (A4), Anzahl der Tasten und Reihen, Tastenbeschriftung, sichtbarer Tonumfang</li>
-<li>Metronom — Tempo, Takt, Klickton, Betonungen, Unterteilung</li>
-<li>Stimmgerät — transponierendes Instrument</li>
-<li>Anzeige — Sprache, Notennamen, Darstellung, Farbthema</li>
+<li>Klavier – Klang, Kammerton (A4), Anzahl der Tasten und Reihen, Tastenbeschriftung, sichtbarer Tonumfang</li>
+<li>Metronom – Tempo, Takt, Klickton, Betonungen, Unterteilung</li>
+<li>Stimmgerät – transponierendes Instrument</li>
+<li>Anzeige – Sprache, Notennamen, Darstellung, Farbthema</li>
 </ul>
 <p>Diese Daten bleiben im privaten Speicher der App auf Ihrem Gerät und werden nicht an uns übertragen. Beim Deinstallieren der App werden sie gelöscht. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Mikrofon (Stimmgerät)", """<p>Wenn Sie im Stimmgerät zum ersten Mal das Zuhören einschalten, fragt die App nach der <strong>Mikrofonberechtigung</strong>.</p>
@@ -152,7 +152,7 @@ PRIVACY = {
    ("welegato-Banner und externe Links", f"""<p>Unten auf dem Bildschirm weist ein Banner auf <strong>welegato</strong> hin, eine Plattform für Musikunterricht desselben Anbieters (Vicino Labs); in den Einstellungen stellt „Weitere Apps für Musiker“ weitere Apps desselben Anbieters vor. Browser oder App-Store öffnen sich <strong>nur, wenn Sie darauf tippen</strong>; die App gibt dabei weder vorher noch nachher personenbezogene Daten weiter.</p>
 <ul>
 <li>Der Link enthält eine Kampagnenkennung (<code>utm_source=pianino</code>), die nur angibt, dass der Besuch aus Pianino kommt. Sie enthält keinen Wert, der Sie identifiziert.</li>
-<li>Sobald eine Website oder Store-Seite geöffnet ist, gilt deren Datenschutzerklärung — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a>; für diese Website (vicinolabs.com) siehe <a href="/datenschutz/">Datenschutz</a>.</li>
+<li>Sobald eine Website oder Store-Seite geöffnet ist, gilt deren Datenschutzerklärung – <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a>; für diese Website (vicinolabs.com) siehe <a href="/datenschutz/">Datenschutz</a>.</li>
 <li>Wie bei jedem Website-Besuch wird beim Laden der Seite die IP-Adresse Ihres Geräts an den Server (Hoster) dieser Website übermittelt.</li>
 </ul>"""),
    ("App-Stores", """<p>Die App wird über Google Play und den Apple App Store vertrieben. Installationen, Updates und Absturzberichte verarbeitet der jeweilige Store nach seiner eigenen Datenschutzerklärung; wir sehen nur anonyme Statistiken des Stores (z. B. Installations- und Absturzzahlen).</p>"""),
@@ -160,7 +160,7 @@ PRIVACY = {
    ("Kinder", """<p>Da die App keine personenbezogenen Daten erhebt, gibt es aus Datenschutzgründen keine Altersgrenze.</p>"""),
    ("Ihre Rechte", """<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
-<li>Beschwerde bei einer Aufsichtsbehörde — z. B. der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW) oder der Behörde an Ihrem Wohnort</li>
+<li>Beschwerde bei einer Aufsichtsbehörde – z. B. der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW) oder der Behörde an Ihrem Wohnort</li>
 </ul>
 <p>Wir speichern keine Daten über Sie; die Einstellungen auf Ihrem Gerät werden beim Deinstallieren gelöscht. Bei Fragen erreichen Sie uns unten.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und Gültigkeitsdatum veröffentlichen wir auf dieser Seite.</p>"""),

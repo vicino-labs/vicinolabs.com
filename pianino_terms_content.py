@@ -119,9 +119,9 @@ TERMS = {
 <li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die Nutzung beenden und die App löschen.</li>
 </ol>"""),
    ("Leistungen", """<ol>
-<li>Klavier — Tastatur im Querformat, Pedal, mehrere Klavierklänge, eine oder zwei Tastenreihen</li>
-<li>Metronom — Tempo, Takt, Betonungen, Unterteilung, Tipp-Tempo</li>
-<li>Stimmgerät — Tonhöhenerkennung für Stimmen und alle Instrumente, Tonhöhenkurve, Referenztöne, transponierende Instrumente</li>
+<li>Klavier – Tastatur im Querformat, Pedal, mehrere Klavierklänge, eine oder zwei Tastenreihen</li>
+<li>Metronom – Tempo, Takt, Betonungen, Unterteilung, Tipp-Tempo</li>
+<li>Stimmgerät – Tonhöhenerkennung für Stimmen und alle Instrumente, Tonhöhenkurve, Referenztöne, transponierende Instrumente</li>
 <li>Ein gemeinsamer Kammerton (A4) für Klavier und Stimmgerät, Notennamen-Systeme, acht Sprachen, Darstellung und Farbthemen</li>
 </ol>
 <p>Die App bietet <strong>alle Funktionen kostenlos</strong>, ohne In-App-Käufe. Unten auf dem Bildschirm wird ein Banner für welegato, einen Dienst desselben Anbieters, angezeigt.</p>"""),
