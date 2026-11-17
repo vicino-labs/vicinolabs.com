@@ -200,7 +200,7 @@ TERMS = {
   "title": "Leggii Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
   "meta": [("Gültig ab", "21.12.2026"), ("Version", "1.4"), ("Betreiber", "Vicino Labs")],
-  "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
+  "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmen Sie ihnen zu.",
   "footer": "Diese Bedingungen gelten ab dem 21. Dezember 2026 (Version 1.4, angekündigt am 10. November 2026 – die am 9. November 2026 angekündigte Version 1.3 ergänzt um App-Store-Angaben). Bis dahin gilt Version 1.2 (6. November 2026). Vorherige Versionen 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Datenschutzerklärung →",
   "sections": [
@@ -209,7 +209,7 @@ TERMS = {
    ("Geltung und Änderungen", """<ol>
 <li>Die Bedingungen gelten ab Veröffentlichung in der App oder auf andere vom Anbieter gewählte Weise.</li>
 <li>Der Anbieter kann sie im Rahmen des Gesetzes ändern und kündigt Datum und Grund vorher an.</li>
-<li>Wenn du geänderten Bedingungen nicht zustimmst, kannst du die App nicht mehr nutzen und löschen.</li>
+<li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die App nicht mehr nutzen und löschen sie.</li>
 </ol>"""),
    ("Leistungen", """<ol>
 <li><strong>Kostenlos:</strong> PDF-Noten lesen und blättern (auch mit Pedal), Import, Foto-Scans, IMSLP-Suche, Notenpapier, Notizen und Grundzeichen, Ordner, Setlisten, PDFs zusammenfügen, Metronom, Bibliothekssicherung u. a.</li>
@@ -220,10 +220,10 @@ TERMS = {
 <li><strong>Leggii fragen:</strong> ein KI-Assistent, der App und Tarife erklärt und bei Aktionen wie der Notensuche hilft (kostenlos, bis zu 30 Fragen pro Tag).</li>
 </ol>"""),
    ("Pro, Leggii Plus und KI-Zeit", """<ol>
-<li><strong>Testphase:</strong> Nach der ersten Installation kannst du die Pro-Funktionen <strong>7 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
+<li><strong>Testphase:</strong> Nach der ersten Installation können Sie die Pro-Funktionen <strong>7 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
 <li><strong>Pro:</strong> ein einmaliger In-App-Kauf, <strong>dauerhaft</strong> nutzbar, mit 30 KI-Minuten pro Monat und einmalig 60 Willkommensminuten. Bei Neuinstallation mit demselben Store-Konto stellt „Kauf wiederherstellen“ ihn wieder her.</li>
-<li><strong>Leggii Plus:</strong> ein monatliches oder jährliches <strong>Abo</strong> mit allen Pro-Funktionen und 5 Stunden KI-Zeit pro Monat. Es verlängert sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abos von Google Play (oder dem App Store). Es läuft bis zum Ende des bezahlten Zeitraums; danach gilt wieder Pro, wenn du Pro gekauft hast, sonst die kostenlose Version.</li>
-<li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn du es eingeschaltet lässt – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz kannst du auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums; der App Store wechselt sofort und erstattet den ungenutzten Teil anteilig). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich deiner eigenen Geräte. Andere können nur die Dateien öffnen, die du unten mit „An welegato-Chat senden“ auswählst, und nur für begrenzte Zeit. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
+<li><strong>Leggii Plus:</strong> ein monatliches oder jährliches <strong>Abo</strong> mit allen Pro-Funktionen und 5 Stunden KI-Zeit pro Monat. Es verlängert sich um denselben Zeitraum, bis Sie kündigen; kündigen können Sie jederzeit in den Abos von Google Play (oder dem App Store). Es läuft bis zum Ende des bezahlten Zeitraums; danach gilt wieder Pro, wenn Sie Pro gekauft haben, sonst die kostenlose Version.</li>
+<li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn Sie es eingeschaltet lassen – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz können Sie auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums; der App Store wechselt sofort und erstattet den ungenutzten Teil anteilig). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich Ihrer eigenen Geräte. Andere können nur die Dateien öffnen, die Sie unten mit „An welegato-Chat senden“ auswählen, und nur für begrenzte Zeit. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
 <li><strong>Auf der Website abgeschlossene Abos:</strong> Leggii Plus können Sie auch auf unserer Website (vicinolabs.com/leggii/plus/) abonnieren. Vertragspartner sind dann wir, die Kartenzahlung wickelt Stripe ab, und das Website-Abo wird <strong>nur in Europa</strong> verkauft. Anstelle der Store-Teile von 3, 4 und 9 gilt Folgendes.
 <ul>
 <li>Das Abo verlängert sich automatisch um denselben Zeitraum, bis Sie kündigen. Gekündigt wird auf der Website unter „Mein Abo“; die Kündigung wirkt <strong>zum Ende des bezahlten Zeitraums</strong>. Bis dahin läuft Plus weiter. In der App lässt sich ein Website-Abo weder ändern noch kündigen.</li>
@@ -236,39 +236,39 @@ TERMS = {
 <li><strong>KI-Zeit-Aufladungen:</strong> 5 oder 15 Stunden, einmal bezahlt, kein Abo. Nutzbar 12 Monate ab Kauf, unabhängig von einem Plus-Abo.</li>
 <li><strong>Berechnung der KI-Zeit:</strong> Unterrichtsnotizen verbrauchen 1 Minute pro Aufnahmeminute, Mitschriften 3 Minuten; die Kosten werden vor dem Start angezeigt. Zuerst werden die Monatsminuten verbraucht, dann Aufladungen. Monatsminuten verfallen am Monatsende. KI-Zeit hat keinen Geldwert und ist nicht übertragbar.</li>
 <li><strong>welegato-ID und Käufe:</strong> Bei Anmeldung werden Käufe und KI-Zeit mit dieser ID verknüpft. Ein Kauf gehört zu der ID, mit der er zuerst verknüpft wurde.</li>
-<li>Preise werden an der Kasse angezeigt. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Erstattungen für App-Store-Käufe bearbeitet Apple; du kannst sie unter <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> beantragen. Der Anbieter kann App-Store-Zahlungen nicht selbst erstatten. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Preise werden an der Kasse angezeigt. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Erstattungen für App-Store-Käufe bearbeitet Apple; Sie können sie unter <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> beantragen. Der Anbieter kann App-Store-Zahlungen nicht selbst erstatten. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn Sie dem sofortigen Beginn zustimmen; das Erstattungsverfahren des Stores bleibt möglich.</li>
 <li>Wir entfernen zahlenden Nutzern zentrale Pro-Funktionen nicht ohne triftigen Grund. Änderungen der monatlichen KI-Zeit oder der Aufladebedingungen kündigen wir vorher an; sie gelten nicht für bereits bezahlte Zeiträume oder bereits gekaufte Zeit.</li>
 </ol>"""),
    ("Noten und Urheberrecht", """<ol>
-<li>Für die Einhaltung des Urheberrechts an importierten, gescannten oder geteilten Noten bist du selbst verantwortlich.</li>
-<li>Noten von IMSLP werden zu den Bedingungen von IMSLP bereitgestellt; Schutzfristen sind je nach Land verschieden. Die App kennzeichnet Ausgaben, die in der EU noch geschützt sein können, die endgültige Beurteilung liegt aber bei dir.</li>
-<li>Ohne Leggii Cloud bleiben deine Noten auf deinem Gerät. Mit der Cloud werden sie gespeichert, um deine eigenen Geräte abzugleichen; der Anbieter sieht sich ihren Inhalt nicht an.</li>
+<li>Für die Einhaltung des Urheberrechts an importierten, gescannten oder geteilten Noten sind Sie selbst verantwortlich.</li>
+<li>Noten von IMSLP werden zu den Bedingungen von IMSLP bereitgestellt; Schutzfristen sind je nach Land verschieden. Die App kennzeichnet Ausgaben, die in der EU noch geschützt sein können, die endgültige Beurteilung liegt aber bei Ihnen.</li>
+<li>Ohne Leggii Cloud bleiben Ihre Noten auf Ihrem Gerät. Mit der Cloud werden sie gespeichert, um Ihre eigenen Geräte abzugleichen; der Anbieter sieht sich ihren Inhalt nicht an.</li>
 </ol>"""),
    ("Aufnahmen", """<ol>
-<li>Die Aufnahmefunktion dient dazu, Unterricht, Proben, Ensembles und Üben für dein eigenes Üben und deine Notizen festzuhalten.</li>
-<li>Werden Stimme oder Spiel anderer Personen aufgenommen (z. B. Lehrkraft, Dirigent oder Mitmusiker), musst du vor der Aufnahme ihre Einwilligung einholen. Für Aufnahmen oder deren Nutzung ohne Einwilligung bist du verantwortlich.</li>
-<li>Bevor du eine Aufnahme weitergibst, veröffentlichst oder verbreitest, musst du sicherstellen, dass die aufgenommenen Personen einverstanden sind und Urheber- und Leistungsschutzrechte an der Musik dies erlauben.</li>
-<li>Aufnahmen werden auf deinem Gerät gespeichert und nur dann auch in der Leggii Cloud, wenn du Aufnahmen in der Cloud einschaltest. Eine von dir gewünschte KI-Analyse verarbeitet sie nur kurz. Der Anbieter speichert die Aufnahmen auf deinem Gerät nicht und kann verlorene Aufnahmen nicht wiederherstellen. Sichere wichtige Aufnahmen mit „Bibliothek sichern“ oder indem du sie sendest.</li>
+<li>Die Aufnahmefunktion dient dazu, Unterricht, Proben, Ensembles und Üben für Ihr eigenes Üben und Ihre Notizen festzuhalten.</li>
+<li>Werden Stimme oder Spiel anderer Personen aufgenommen (z. B. Lehrkraft, Dirigent oder Mitmusiker), müssen Sie vor der Aufnahme ihre Einwilligung einholen. Für Aufnahmen oder deren Nutzung ohne Einwilligung sind Sie verantwortlich.</li>
+<li>Bevor Sie eine Aufnahme weitergeben, veröffentlichen oder verbreiten, müssen Sie sicherstellen, dass die aufgenommenen Personen einverstanden sind und Urheber- und Leistungsschutzrechte an der Musik dies erlauben.</li>
+<li>Aufnahmen werden auf Ihrem Gerät gespeichert und nur dann auch in der Leggii Cloud, wenn Sie Aufnahmen in der Cloud einschalten. Eine von Ihnen gewünschte KI-Analyse verarbeitet sie nur kurz. Der Anbieter speichert die Aufnahmen auf Ihrem Gerät nicht und kann verlorene Aufnahmen nicht wiederherstellen. Sichern Sie wichtige Aufnahmen mit „Bibliothek sichern“ oder indem Sie sie senden.</li>
 </ol>"""),
    ("KI-Unterrichtsanalyse und „Leggii fragen“", """<ol>
 <li>Ergebnisse der KI-Unterrichtsanalyse und von „Leggii fragen“ erstellt eine KI; sie <strong>können falsch oder unvollständig sein.</strong> Sie ersetzen nicht, was im Unterricht oder in der Probe gesagt wurde; bitte prüfe Wichtiges selbst.</li>
-<li>Nutze die KI-Unterrichtsanalyse nur für Aufnahmen, die du machen darfst, mit Einwilligung der aufgenommenen Personen.</li>
+<li>Nutzen Sie die KI-Unterrichtsanalyse nur für Aufnahmen, die Sie machen dürfen, mit Einwilligung der aufgenommenen Personen.</li>
 <li>„Leggii fragen“ ist kostenlos für bis zu 30 Fragen pro Tag und Gerät. Zum Schutz vor Missbrauch können wir die Nutzung begrenzen.</li>
-<li>Vorgeschlagene Aktionen, die KI-Zeit verbrauchen, starten erst nach deiner Bestätigung. Der Assistent zahlt oder kauft nie für dich.</li>
+<li>Vorgeschlagene Aktionen, die KI-Zeit verbrauchen, starten erst nach Ihrer Bestätigung. Der Assistent zahlt oder kauft nie für Sie.</li>
 </ol>"""),
    ("welegato-ID", """<ol>
 <li>Die Anmeldung ist freiwillig; alle Grundfunktionen von Leggii funktionieren ohne sie.</li>
 <li>Die ID ist ein Konto von welegato, einem Dienst desselben Unternehmens. Für Erstellung und Nutzung gelten zusätzlich die <a href="https://welegato.com/legal/terms/" target="_blank" rel="noopener">Nutzungsbedingungen von welegato</a>; anmelden können sich nur Personen ab 16 Jahren.</li>
-<li>Du kannst die ID unter Einstellungen › welegato-ID › ID verwalten löschen. Sie wird dann in allen Apps von Vicino Labs entfernt; ein Leggii-Plus-Abo musst du zusätzlich im Store kündigen, damit die Zahlungen enden.</li>
-<li>Wie du jeden Vertrag beendest, steht gesammelt unter Einstellungen › AGB & Richtlinien › Verträge hier kündigen.</li>
+<li>Sie können die ID unter Einstellungen › welegato-ID › ID verwalten löschen. Sie wird dann in allen Apps von Vicino Labs entfernt; ein Leggii-Plus-Abo müssen Sie zusätzlich im Store kündigen, damit die Zahlungen enden.</li>
+<li>Wie Sie jeden Vertrag beenden, steht gesammelt unter Einstellungen › AGB & Richtlinien › Verträge hier kündigen.</li>
 </ol>"""),
    ("An welegato-Chat senden", """<ol>
-<li>Mit der welegato-ID angemeldet kannst du Noten-PDFs, PDFs mit KI-Unterrichtsnotizen und Aufnahmen (Audio) aus deiner Leggii Cloud an jemanden senden, mit dem du auf welegato chattest. Die Datei wird nicht kopiert; die andere Person kann sie ab dem Senden 7 Tage lang öffnen. Notizen auf den Noten und KI-Analyseergebnisse werden nicht mitgesendet. Du kannst das Teilen im welegato-Chat jederzeit beenden.</li>
-<li>Du musst die nötigen Rechte an dem haben, was du sendest – einschließlich der Urheberrechte an Noten und Darbietung und der Einwilligung der aufgenommenen Personen. Ohne Erlaubnis der Rechteinhaber gescannte oder kopierte Noten oder Aufnahmen dürfen nicht gesendet werden. Für Inhalt und Rechte der Datei ist die Person verantwortlich, die sie sendet; der Anbieter prüft Dateien nicht vorab.</li>
+<li>Mit der welegato-ID angemeldet können Sie Noten-PDFs, PDFs mit KI-Unterrichtsnotizen und Aufnahmen (Audio) aus Ihrer Leggii Cloud an jemanden senden, mit dem Sie auf welegato chatten. Die Datei wird nicht kopiert; die andere Person kann sie ab dem Senden 7 Tage lang öffnen. Notizen auf den Noten und KI-Analyseergebnisse werden nicht mitgesendet. Sie können das Teilen im welegato-Chat jederzeit beenden.</li>
+<li>Sie müssen die nötigen Rechte an dem haben, was Sie senden – einschließlich der Urheberrechte an Noten und Darbietung und der Einwilligung der aufgenommenen Personen. Ohne Erlaubnis der Rechteinhaber gescannte oder kopierte Noten oder Aufnahmen dürfen nicht gesendet werden. Für Inhalt und Rechte der Datei ist die Person verantwortlich, die sie sendet; der Anbieter prüft Dateien nicht vorab.</li>
 <li>Eine gemeldete Datei wird sofort geschlossen. Stellt der Anbieter nach Prüfung eine Rechtsverletzung oder rechtswidrige Inhalte fest, kann er das Teilen gesperrt lassen und die Nutzung nach den welegato-Nutzungsbedingungen einschränken.</li>
-<li>Um Missbrauch zu verhindern, kannst du bis zu 20 Dateien pro Tag und bis zu 500 MB auf einmal senden. Der Anbieter kann diese Grenzen ändern.</li>
+<li>Um Missbrauch zu verhindern, können Sie bis zu 20 Dateien pro Tag und bis zu 500 MB auf einmal senden. Der Anbieter kann diese Grenzen ändern.</li>
 </ol>"""),
-   ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, IMSLP, Google Play und den App Store. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p><p>Hast du die App aus dem App Store, gilt zusätzlich Apples <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard-Endbenutzer-Lizenzvertrag (Licensed Application EULA)</a>. Weicht er von diesen Bedingungen ab, gehen diese Bedingungen vor, ohne die Rechte zu schmälern, die dir Apples Standardvertrag gibt. Verantwortlich für die App und ihren Support ist der Anbieter, nicht Apple.</p>"""),
+   ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, IMSLP, Google Play und den App Store. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p><p>Haben Sie die App aus dem App Store, gilt zusätzlich Apples <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard-Endbenutzer-Lizenzvertrag (Licensed Application EULA)</a>. Weicht er von diesen Bedingungen ab, gehen diese Bedingungen vor, ohne die Rechte zu schmälern, die Ihnen Apples Standardvertrag gibt. Verantwortlich für die App und ihren Support ist der Anbieter, nicht Apple.</p>"""),
    ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Leggii“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt.</p>"""),
    ("Pflichten der Nutzer", """<ol>
 <li>Kein Reverse Engineering oder Dekompilieren der App und keine Umgehung der Bezahlung.</li>
@@ -280,9 +280,9 @@ TERMS = {
    ("Haftung", """<ol>
 <li>Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei Verletzung von Leben, Körper oder Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
 <li>Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den bei Vertragsschluss vorhersehbaren, typischen Schaden.</li>
-<li>Ohne Cloud werden Noten und Notizen nur auf deinem Gerät gespeichert. Sichere sie mit „Bibliothek sichern“ gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
+<li>Ohne Cloud werden Noten und Notizen nur auf Ihrem Gerät gespeichert. Sichern Sie sie mit „Bibliothek sichern“ gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
 </ol>"""),
-   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem du als Verbraucher deinen gewöhnlichen Aufenthalt hast (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
+   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem Sie als Verbraucher Ihren gewöhnlichen Aufenthalt haben (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
    ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _id_card("de")),
   ],
  },
