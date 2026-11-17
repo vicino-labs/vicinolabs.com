@@ -129,8 +129,8 @@ T = {
  "title": "렛지 악보: 악보와 레슨 녹음, AI 레슨 노트 | Vicino Labs",
  "desc": "렛지 악보는 아이패드에 맞춰 만든 악보 앱입니다. PDF·사진·IMSLP에서 악보를 가져오고, 레슨과 리허설을 녹음하면 악보가 따라 넘어가며, AI가 지적과 숙제를 정리합니다.",
  "kicker": "Vicino Labs · Famiglia Vicino",
- "h1": "악보를 읽고,<br>레슨을 녹음하고,<br>AI가 정리합니다",
- "lede": "렛지 악보는 아이패드에 맞춰 만든 악보 앱입니다. 레슨과 리허설을 녹음해 두면 들을 때 악보가 저절로 따라 넘어가고, AI가 들은 말을 시간과 페이지로 정리해 드립니다.",
+ "h1": "악보 보며 녹음하고,<br>AI로 정리까지",
+ "lede": "아이패드에 맞춰 만든 악보 앱입니다. 다시 들을 때 악보가 저절로 따라 넘어가고, AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
  "note": "아이패드·아이폰·안드로이드 태블릿과 휴대폰에서 씁니다. 기본 기능은 무료입니다.",
  "feats": [
   (1, "악보함", "악보를 한곳에", "PDF를 가져오거나 종이 악보를 카메라로 찍으면, 삐뚤게 찍힌 사진도 반듯하게 펴 줍니다. 제목과 작곡가는 알아서 읽어 냅니다.",
@@ -188,8 +188,8 @@ T = {
  "title": "Leggii: sheet music, lesson recordings and AI lesson notes | Vicino Labs",
  "desc": "Leggii is a sheet music app made for the tablet. Import PDFs, photos and IMSLP editions, record your lessons and rehearsals while the score turns with you, and let AI sort out what was said.",
  "kicker": "Vicino Labs · Famiglia Vicino",
- "h1": "Read the score,<br>record the lesson,<br>let AI take the notes",
- "lede": "Leggii is a sheet music app made for the tablet. Record a lesson or a rehearsal and the score turns with you when you listen back, while AI sorts out what was said, with times and pages.",
+ "h1": "Record while you read,<br>let AI take the notes",
+ "lede": "A sheet music app made for the tablet. When you listen back the score turns by itself, and the AI writes down the corrections and the homework with times and pages.",
  "note": "For iPad, iPhone and Android tablets and phones. The basics are free.",
  "feats": [
   (1, "Your library", "All your scores in one place", "Import PDFs or photograph paper music with the camera; tilted photos are straightened. Title and composer are recognised for you.",
@@ -247,8 +247,8 @@ T = {
  "title": "Leggii: Noten, Unterrichtsaufnahmen und KI-Notizen | Vicino Labs",
  "desc": "Leggii ist die Noten-App fürs Tablet: PDFs, Fotos und IMSLP-Ausgaben importieren, Unterricht und Proben aufnehmen, während die Noten mitblättern, und die KI fasst das Gesagte zusammen.",
  "kicker": "Vicino Labs · Famiglia Vicino",
- "h1": "Noten lesen,<br>Unterricht aufnehmen,<br>die KI schreibt mit",
- "lede": "Leggii ist die Noten-App fürs Tablet. Nehmen Sie Unterricht und Proben auf: Beim Anhören blättern die Noten mit, und die KI ordnet das Gesagte nach Zeit und Seite.",
+ "h1": "Beim Lesen aufnehmen,<br>die KI schreibt mit",
+ "lede": "Die Noten-App fürs Tablet. Beim Anhören blättern die Noten von selbst mit, und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
  "note": "Für iPad, iPhone sowie Android-Tablets und -Handys. Die Grundfunktionen sind kostenlos.",
  "feats": [
   (1, "Notenschrank", "Alle Noten an einem Ort", "PDFs importieren oder Papiernoten mit der Kamera abfotografieren – schiefe Fotos werden gerade gerichtet. Titel und Komponist werden erkannt.",
