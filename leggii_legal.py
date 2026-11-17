@@ -5,7 +5,7 @@ appoggio_legal.py와 같은 틀(nomio_legal.legal_page). 한국어·영어·독�
 """
 import os
 
-import app_home
+import leggii_site
 import nomio_legal
 from appoggio_privacy_content import EMAIL
 from leggii_privacy_content import PRIVACY
@@ -25,10 +25,8 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.vicinolabs.leggii"
 
 
 def leggii_home():
-    # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
-    return app_home.page(key='leggii', name='Leggii · 렛지 악보', sub="Vicino Labs · Famiglia Vicino", icon="/apps/leggii.png",
-                         ledes={'en': 'A simple sheet music reader for musicians — PDF scores, notes, IMSLP search, metronome, lesson recordings and AI lesson notes.', 'de': 'Die einfache Noten-App für Musikerinnen und Musiker – mit Unterrichtsaufnahmen und KI-Notizen.', 'it': 'Il leggio digitale semplice per musicisti, con registrazioni e note AI delle lezioni.', 'ko': '음악가를 위한 간편한 악보 앱 — 레슨 녹음과 AI 레슨 노트까지, 기본 기능 무료, 악보는 기기에만.'},
-                         play='com.vicinolabs.leggii', apple='https://apps.apple.com/app/id6832925566', email=EMAIL, desc='Leggii — a simple sheet music reader for musicians, by Vicino Labs.', canonical="/leggii/")
+    # 2026-11-17: 카드형 소개 → 전용 제품 페이지(leggii_site.py). 기능마다 스크린샷.
+    return leggii_site.page()
 
 
 def build(root):
