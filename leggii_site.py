@@ -101,7 +101,7 @@ def badge(lang):
 # 앱스토어 등록 문구(listing-full.md)를 따랐다. 앱에 실제로 있는 기능만.
 T = {
 "ko": {
- "title": "렛지 악보 — 악보와 레슨 녹음, AI 레슨 노트 | Vicino Labs",
+ "title": "렛지 악보: 악보와 레슨 녹음, AI 레슨 노트 | Vicino Labs",
  "desc": "렛지 악보는 아이패드에 맞춰 만든 악보 앱입니다. PDF·사진·IMSLP에서 악보를 가져오고, 레슨과 리허설을 녹음하면 악보가 따라 넘어가며, AI가 지적과 숙제를 정리합니다.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "악보를 읽고,<br>레슨을 녹음하고,<br>AI가 정리합니다",
@@ -143,7 +143,7 @@ T = {
  "privacy": "개인정보처리방침", "terms": "이용약관",
 },
 "en": {
- "title": "Leggii — sheet music, lesson recordings and AI lesson notes | Vicino Labs",
+ "title": "Leggii: sheet music, lesson recordings and AI lesson notes | Vicino Labs",
  "desc": "Leggii is a sheet music app made for the tablet. Import PDFs, photos and IMSLP editions, record your lessons and rehearsals while the score turns with you, and let AI sort out what was said.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Read the score,<br>record the lesson,<br>let AI take the notes",
@@ -175,7 +175,7 @@ T = {
   ("Free", "from the start", ["Import scores and camera scan", "Annotation and music stamps", "Lesson and rehearsal recording with page turns", "Metronome, keyboard, IMSLP search"]),
   ("7-day trial", "right away", ["Every Pro feature", "30 AI minutes", "No card needed"]),
   ("Leggii Pro", "one-time purchase", ["Every Pro feature", "No welegato banner", "30 AI minutes a month", "60-minute welcome bonus"]),
-  ("Leggii Plus", "from €3.99 a month", ["Every Pro feature", "5 hours of AI a month", "Leggii cloud 10 GB — €3.99 a month, €39.99 a year", "50 GB — €5.99 a month, €59.99 a year"]),
+  ("Leggii Plus", "from €3.99 a month", ["Every Pro feature", "5 hours of AI a month", "Leggii cloud 10 GB: €3.99 a month, €39.99 a year", "50 GB: €5.99 a month, €59.99 a year"]),
  ],
  "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
  "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
@@ -185,7 +185,7 @@ T = {
  "privacy": "Privacy Policy", "terms": "Terms of Service",
 },
 "de": {
- "title": "Leggii — Noten, Unterrichtsaufnahmen und KI-Notizen | Vicino Labs",
+ "title": "Leggii: Noten, Unterrichtsaufnahmen und KI-Notizen | Vicino Labs",
  "desc": "Leggii ist die Noten-App fürs Tablet: PDFs, Fotos und IMSLP-Ausgaben importieren, Unterricht und Proben aufnehmen, während die Noten mitblättern, und die KI fasst das Gesagte zusammen.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Noten lesen,<br>Unterricht aufnehmen,<br>die KI schreibt mit",
@@ -217,7 +217,7 @@ T = {
   ("Kostenlos", "von Anfang an", ["Noten importieren und Kamera-Scan", "Notizen und Musikstempel", "Unterricht und Proben aufnehmen, mit Umblättern", "Metronom, Tastatur, IMSLP-Suche"]),
   ("7 Tage testen", "sofort", ["Alle Pro-Funktionen", "30 KI-Minuten", "Ohne Kreditkarte"]),
   ("Leggii Pro", "einmaliger Kauf", ["Alle Pro-Funktionen", "Kein welegato-Banner", "30 KI-Minuten im Monat", "60 Minuten Willkommensbonus"]),
-  ("Leggii Plus", "ab 3,99 € im Monat", ["Alle Pro-Funktionen", "5 Std. KI im Monat", "Leggii Cloud 10 GB — 3,99 € im Monat, 39,99 € im Jahr", "50 GB — 5,99 € im Monat, 59,99 € im Jahr"]),
+  ("Leggii Plus", "ab 3,99 € im Monat", ["Alle Pro-Funktionen", "5 Std. KI im Monat", "Leggii Cloud 10 GB: 3,99 € im Monat, 39,99 € im Jahr", "50 GB: 5,99 € im Monat, 59,99 € im Jahr"]),
  ],
  "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
  "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
@@ -254,7 +254,7 @@ def _plans(l, t):
             f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
 
 
-SCRIPT = """(function(){var k="vl-app-lang",L=["ko","en","de"],s=null;
+SCRIPT = """(function(){var META=__META__;var k="vl-app-lang",L=["ko","en","de"],s=null;
 try{s=localStorage.getItem(k)}catch(e){}
 var h=(location.hash||"").slice(1),n=(navigator.language||"en").slice(0,2),
 l=L.indexOf(h)>=0?h:(L.indexOf(s)>=0?s:(L.indexOf(n)>=0?n:"en"));
@@ -263,9 +263,19 @@ document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on
 document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});
 document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/leggii/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
 document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/leggii/shots/"+x+"/hero.webp"});
+if(META[x]){document.title=META[x][0];
+var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
+var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
+var od=document.querySelector('meta[property="og:description"]');if(od)od.setAttribute("content",META[x][1]);}
 try{localStorage.setItem(k,x)}catch(e){}}
 document.querySelectorAll("[data-set]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-set"))})});
 set(l)})();"""
+
+
+def _meta_json():
+    """언어별 탭 제목과 설명 — 언어를 바꾸면 자바스크립트가 이걸로 바꾼다."""
+    import json
+    return json.dumps({l: [T[l]["title"], T[l]["desc"]] for l, _ in LANGS}, ensure_ascii=False)
 
 
 def page():
@@ -320,6 +330,6 @@ def page():
 {get}
 </main>
 <footer><div class="wrap">{foot}<div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
-<script>{SCRIPT}</script>
+<script>{SCRIPT.replace("__META__", _meta_json())}</script>
 </body></html>
 """

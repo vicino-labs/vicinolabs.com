@@ -130,6 +130,7 @@ T = {
  "done": "변경되었습니다.",
  "back": "렛지 소개로",
  "privacy": "개인정보처리방침", "terms": "이용약관",
+ "thanks_title": "구독이 시작되었습니다 | 렛지 악보",
  "thanks_h": "구독이 시작되었습니다", "thanks_p": "영수증을 메일로 보내 드렸습니다.",
  "thanks_id": "구독한 아이디", "thanks_get": "앱 받기", "thanks_manage": "구독 관리",
 },
@@ -184,6 +185,7 @@ T = {
  "done": "Done.",
  "back": "Back to Leggii",
  "privacy": "Privacy Policy", "terms": "Terms of Service",
+ "thanks_title": "Your subscription is active | Leggii",
  "thanks_h": "Your subscription is active", "thanks_p": "We have sent the receipt to your inbox.",
  "thanks_id": "Subscribed with", "thanks_get": "Get the app", "thanks_manage": "Manage subscription",
 },
@@ -238,6 +240,7 @@ T = {
  "done": "Erledigt.",
  "back": "Zurück zu Leggii",
  "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen",
+ "thanks_title": "Ihr Abo ist aktiv | Leggii",
  "thanks_h": "Ihr Abo ist aktiv", "thanks_p": "Die Rechnung haben wir Ihnen per E-Mail geschickt.",
  "thanks_id": "Abonniert mit", "thanks_get": "App laden", "thanks_manage": "Abo verwalten",
 },
@@ -277,7 +280,7 @@ FOOT = f"""<footer><div class="wrap"><p style="margin:0">
 
 
 COMMON_JS = f"""
-var SB="{SUPABASE_URL}",KEY="{SUPABASE_KEY}",APP="leggii";
+var SB="{SUPABASE_URL}",KEY="{SUPABASE_KEY}",APP="leggii",TITLE_KEY="title";
 var T=__T__,L=["ko","en","de"],lang="en";
 function pick(){{var k="vl-app-lang",s=null;try{{s=localStorage.getItem(k)}}catch(e){{}}
 var h=(location.hash||"").slice(1).split("&")[0],n=(navigator.language||"en").slice(0,2);
@@ -287,6 +290,8 @@ try{{localStorage.setItem("vl-app-lang",x)}}catch(e){{}}
 document.querySelectorAll("[data-l]").forEach(function(e){{e.classList.toggle("on",e.getAttribute("data-l")===x)}});
 document.querySelectorAll("[data-set]").forEach(function(b){{b.classList.toggle("on",b.getAttribute("data-set")===x)}});
 document.querySelectorAll("[data-t]").forEach(function(e){{var v=T[x][e.getAttribute("data-t")];if(typeof v==="string")e.textContent=v}});
+if(T[x][TITLE_KEY])document.title=T[x][TITLE_KEY];
+var m=document.querySelector('meta[name="description"]');if(m&&T[x].desc)m.setAttribute("content",T[x].desc);
 render();}}
 /* ---- 로그인 상태는 브라우저에만 둔다 ---- */
 var SKEY="vl-session";
@@ -516,6 +521,7 @@ THANKS_BODY = """
 """
 
 THANKS_JS = """
+TITLE_KEY="thanks_title";
 var sub=null;
 function render(){var t=T[lang],s=session();
 document.getElementById("who").textContent=(sub&&sub.email)||(s&&s.email)||"—";
@@ -555,5 +561,5 @@ def buy_page():
 def thanks_page():
     body = THANKS_BODY.replace("__BADGES__", _badges())
     js = COMMON_JS.replace("__T__", _json(T)) + THANKS_JS
-    return (_head(T["en"]["thanks_h"] + " — Leggii", T["en"]["desc"], "/leggii/plus/danke/")
+    return (_head(T["en"]["thanks_title"], T["en"]["desc"], "/leggii/plus/danke/")
             + body + FOOT + f"<script>{js}</script>\n</body></html>\n")
