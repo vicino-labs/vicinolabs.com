@@ -234,9 +234,12 @@ expires_in:Number(p.expires_in||3600)});history.replaceState(null,"",location.pa
 function oauth(p){location.href=SB+"/auth/v1/authorize?provider="+p+
 "&redirect_to="+encodeURIComponent(location.origin+location.pathname);}
 
-var PRICE={"plus-10-month": "3,99 €", "plus-10-year": "39,99 €", "plus-50-month": "5,99 €", "plus-50-year": "59,99 €"},SHOW50=false,size="10",every="month",signup=false,sub=null,noEurope=false;
+var PRICE={"plus-10-month": 399, "plus-10-year": 3999, "plus-50-month": 599, "plus-50-year": 5999},SHOW50=false,size="10",every="month",signup=false,sub=null,noEurope=false;
 function product(){return "plus-"+size+"-"+every}
-function euro(p){return PRICE[p]||""}
+var MONEY={ko:"ko-KR",en:"en-GB",de:"de-DE"};
+function euro(p){var c=PRICE[p];if(c==null)return "";
+try{return new Intl.NumberFormat(MONEY[lang]||"en-GB",{style:"currency",currency:"EUR"}).format(c/100)}
+catch(e){return (c/100).toFixed(2)+" €"}}
 /* 유럽인지 대충 본다(시간대). 진짜 판단은 결제 뒤 서버가 청구 국가로 한다. */
 function europe(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
 if(/^Europe\//.test(z))return ["Europe/London","Europe/Moscow","Europe/Istanbul","Europe/Kyiv",

@@ -28,9 +28,10 @@ PLAY, APPLE, EMAIL = S.PLAY, S.APPLE, S.EMAIL
 SHOW_50 = False
 
 # 가격은 스토어와 같다(HQ, 대표님 확인 2026-11-17). 화면 표시용.
+# 센트로 둔다. 화면에서는 그 나라 꼴로 찍는다(ko/en €3.99, de 3,99 €).
 PRICES = {
-    "plus-10-month": "3,99 €", "plus-10-year": "39,99 €",
-    "plus-50-month": "5,99 €", "plus-50-year": "59,99 €",
+    "plus-10-month": 399, "plus-10-year": 3999,
+    "plus-50-month": 599, "plus-50-year": 5999,
 }
 
 CSS = S.CSS + """
@@ -395,7 +396,10 @@ BUY_BODY = """
 BUY_JS = """
 var PRICE=__PRICES__,SHOW50=__SHOW50__,size="10",every="month",signup=false,sub=null,noEurope=false;
 function product(){return "plus-"+size+"-"+every}
-function euro(p){return PRICE[p]||""}
+var MONEY={ko:"ko-KR",en:"en-GB",de:"de-DE"};
+function euro(p){var c=PRICE[p];if(c==null)return "";
+try{return new Intl.NumberFormat(MONEY[lang]||"en-GB",{style:"currency",currency:"EUR"}).format(c/100)}
+catch(e){return (c/100).toFixed(2)+" €"}}
 /* 유럽인지 대충 본다(시간대). 진짜 판단은 결제 뒤 서버가 청구 국가로 한다. */
 function europe(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
 if(/^Europe\\//.test(z))return ["Europe/London","Europe/Moscow","Europe/Istanbul","Europe/Kyiv",
