@@ -124,11 +124,20 @@ document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on
 document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});
 document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/leggii/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
 document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/leggii/shots/"+x+"/hero.webp"});
+document.querySelectorAll("[data-poster]").forEach(function(e){e.poster="/leggii/shots/"+x+"/"+e.getAttribute("data-poster")+".webp"});
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
 var od=document.querySelector('meta[property="og:description"]');if(od)od.setAttribute("content",META[x][1]);}
 try{localStorage.setItem(k,x)}catch(e){}}
 document.querySelectorAll("[data-set]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-set"))})});
-set(l)})();</script>
+set(l);
+/* 영상은 화면에 들어왔을 때만 받아서 재생한다 — 첫 화면이 느려지지 않게 */
+var vs=document.querySelectorAll("video.shot");
+if(vs.length&&"IntersectionObserver" in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(en){var v=en.target;
+if(en.isIntersecting){if(v.preload!=="auto"){v.preload="auto";v.load()}
+var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else{v.pause()}})},{threshold:.25});
+vs.forEach(function(v){io.observe(v)})}
+})();</script>
 </body></html>

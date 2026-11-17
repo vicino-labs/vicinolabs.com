@@ -24,7 +24,9 @@ GOLD = "/Users/jameslee/App/leggii/test_screenshots/goldens"
 # 첫 그림과 '녹음' 설명에 쓸 악보 화면. 렛지 세션이 goldens/hero/<이름>-<언어>.png 로
 # 후보를 뽑아 둔다(2026-11-17, 대표님: 성악가니까 성악 악보로, 토스카 「Vissi d'arte」).
 # 없으면 예전 장면(ipad/<언어>-3.png)으로 돌아간다.
-HERO_SCORE = os.environ.get("HERO_SCORE", "tosca34")
+# tosca12 = 아리아 첫 쪽. 왼쪽 위 「TOSCA / G. PUCCINI」 머리글이 보여
+# 음악을 모르는 사람도 오페라 악보임을 안다(대표님 2026-11-17).
+HERO_SCORE = os.environ.get("HERO_SCORE", "tosca12")
 
 
 def score_shot(lang):

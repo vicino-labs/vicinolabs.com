@@ -14,6 +14,8 @@
 build.py 가 leggii_legal.py 를 통해 부른다.
 """
 
+import os
+
 SHOT_LANGS = ("ko", "en", "de")  # 스크린샷이 있는 언어
 LANGS = [("ko", "한국어"), ("en", "English"), ("de", "Deutsch")]
 
@@ -314,8 +316,20 @@ def _feat(l, i, num, kicker, head, body, bullets):
     flip = " flip" if i % 2 else ""
     return (f'<div data-l="{l}" class="feat{flip}{_on(l)}">'
             f'<div class="txt"><p class="kicker">{kicker}</p><h2>{head}</h2><p>{body}</p><ul>{lis}</ul></div>'
-            f'<div><img class="shot" data-shot="d{num}" src="/leggii/shots/en/d{num}.webp" '
-            f'alt="{head}" width="1200" height="936" loading="lazy" decoding="async"></div></div>')
+            f'<div>{_media(num, head)}</div></div>')
+
+
+FOLLOW = "leggii/shots/follow.mp4"   # 악보가 따라 넘어가는 짧은 영상(장면 3)
+
+
+def _media(num, head):
+    """장면 3은 영상이 있으면 영상, 없으면 그림."""
+    if num == 3 and os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), FOLLOW)):
+        return (f'<video class="shot" data-poster="d{num}" poster="/leggii/shots/en/d{num}.webp" '
+                f'width="1200" height="936" muted loop playsinline preload="none" '
+                f'aria-label="{head}"><source src="/{FOLLOW}" type="video/mp4"></video>')
+    return (f'<img class="shot" data-shot="d{num}" src="/leggii/shots/en/d{num}.webp" '
+            f'alt="{head}" width="1200" height="936" loading="lazy" decoding="async">')
 
 
 def _plans(l, t):
@@ -339,13 +353,22 @@ document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on
 document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});
 document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/leggii/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
 document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/leggii/shots/"+x+"/hero.webp"});
+document.querySelectorAll("[data-poster]").forEach(function(e){e.poster="/leggii/shots/"+x+"/"+e.getAttribute("data-poster")+".webp"});
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
 var od=document.querySelector('meta[property="og:description"]');if(od)od.setAttribute("content",META[x][1]);}
 try{localStorage.setItem(k,x)}catch(e){}}
 document.querySelectorAll("[data-set]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-set"))})});
-set(l)})();"""
+set(l);
+/* 영상은 화면에 들어왔을 때만 받아서 재생한다 — 첫 화면이 느려지지 않게 */
+var vs=document.querySelectorAll("video.shot");
+if(vs.length&&"IntersectionObserver" in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(en){var v=en.target;
+if(en.isIntersecting){if(v.preload!=="auto"){v.preload="auto";v.load()}
+var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else{v.pause()}})},{threshold:.25});
+vs.forEach(function(v){io.observe(v)})}
+})();"""
 
 
 def _meta_json():
