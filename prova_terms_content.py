@@ -175,7 +175,7 @@ TERMS = {
   "title": "Prova Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
   "meta": [("Gültig ab", "07.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Diese Bedingungen regeln die Nutzung von Prova, einer App von Vicino Labs zum Aufnehmen von Unterricht und Üben. Mit Installation und Nutzung der App stimmst du ihnen zu.",
+  "lede": "Diese Bedingungen regeln die Nutzung von Prova, einer App von Vicino Labs zum Aufnehmen von Unterricht und Üben. Mit Installation und Nutzung der App stimmen Sie ihnen zu.",
   "footer": "Diese Bedingungen gelten ab dem 7. November 2026 (Version 1.0).",
   "other": "Datenschutzerklärung →",
   "sections": [
@@ -184,55 +184,55 @@ TERMS = {
    ("Geltung und Änderungen", """<ol>
 <li>Die Bedingungen gelten ab Veröffentlichung in der App oder auf andere vom Anbieter gewählte Weise.</li>
 <li>Der Anbieter kann sie im Rahmen des Gesetzes ändern und kündigt Datum und Grund vorher an.</li>
-<li>Wenn du geänderten Bedingungen nicht zustimmst, kannst du die App nicht mehr nutzen und löschen.</li>
+<li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die App nicht mehr nutzen und löschen sie.</li>
 </ol>"""),
    ("Leistungen", """<ol>
 <li><strong>Unterricht:</strong> Unterricht als Ton oder Video festhalten.</li>
 <li><strong>Übe-Takes:</strong> eine Stelle mehrmals aufnehmen und die Takes vergleichen.</li>
 <li><strong>Bewerbungsvideo:</strong> Videos für Vorspiele und Wettbewerbe filmen und prüfen.</li>
-<li>Aufnahmen und Videos werden nur auf deinem Gerät gespeichert; die App funktioniert ohne Konto. Sie bietet „Bitte nicht stören“ während der Aufnahme (Android) und stumme Standbilder aus Videos.</li>
+<li>Aufnahmen und Videos werden nur auf Ihrem Gerät gespeichert; die App funktioniert ohne Konto. Sie bietet „Bitte nicht stören“ während der Aufnahme (Android) und stumme Standbilder aus Videos.</li>
 <li><strong>Funktionen, die mit der welegato-ID kommen:</strong> KI-Analyse, Cloud (Plus) und Abos. Sie setzen die Anmeldung mit einer welegato-ID voraus.</li>
 <li>Die App enthält keine Werbung.</li>
 </ol>"""),
    ("Aufnahmen und Einwilligung anderer", """<ol>
-<li>Die Aufnahme- und Filmfunktionen dienen dazu, deinen eigenen Unterricht und dein Üben festzuhalten und Bewerbungsvideos vorzubereiten.</li>
-<li>Werden Wort, Stimme, Spiel oder Bild anderer Personen aufgenommen (z. B. Lehrkraft, Begleitung oder Mitmusiker), musst du vor Beginn ihre Einwilligung einholen. Werden Minderjährige aufgenommen, ist zusätzlich die Einwilligung der Eltern bzw. Sorgeberechtigten nötig. Aufnahmen ohne Einwilligung können strafbar sein (z. B. § 201 StGB).</li>
-<li>Die Abfrage der App im Unterrichtsmodus ist nur ein Hinweis. Die Einwilligung tatsächlich einzuholen sowie Aufnahmen oder deren Nutzung ohne Einwilligung liegen in deiner Verantwortung.</li>
-<li>Bevor du eine Aufnahme oder ein Video weitergibst, veröffentlichst oder einreichst, musst du sicherstellen, dass die aufgenommenen Personen einverstanden sind und Urheber- und Leistungsschutzrechte an der Musik dies erlauben.</li>
+<li>Die Aufnahme- und Filmfunktionen dienen dazu, Ihren eigenen Unterricht und Ihr Üben festzuhalten und Bewerbungsvideos vorzubereiten.</li>
+<li>Werden Wort, Stimme, Spiel oder Bild anderer Personen aufgenommen (z. B. Lehrkraft, Begleitung oder Mitmusiker), müssen Sie vor Beginn ihre Einwilligung einholen. Werden Minderjährige aufgenommen, ist zusätzlich die Einwilligung der Eltern bzw. Sorgeberechtigten nötig. Aufnahmen ohne Einwilligung können strafbar sein (z. B. § 201 StGB).</li>
+<li>Die Abfrage der App im Unterrichtsmodus ist nur ein Hinweis. Die Einwilligung tatsächlich einzuholen sowie Aufnahmen oder deren Nutzung ohne Einwilligung liegen in Ihrer Verantwortung.</li>
+<li>Bevor Sie eine Aufnahme oder ein Video weitergeben, veröffentlichen oder einreichen, müssen Sie sicherstellen, dass die aufgenommenen Personen einverstanden sind und Urheber- und Leistungsschutzrechte an der Musik dies erlauben.</li>
 </ol>"""),
-   ("Bewerbungsvideos", """<p>Die Prüfungen der App sind eine Hilfe und ersetzen nicht die Regeln eines Vorspiels oder Wettbewerbs. Die aktuellen Anforderungen des Veranstalters (Länge, keine Schnitte, Format usw.) prüfst du selbst; der Anbieter ist nicht dafür verantwortlich, ob ein Video angenommen wird.</p>"""),
+   ("Bewerbungsvideos", """<p>Die Prüfungen der App sind eine Hilfe und ersetzen nicht die Regeln eines Vorspiels oder Wettbewerbs. Die aktuellen Anforderungen des Veranstalters (Länge, keine Schnitte, Format usw.) prüfen Sie selbst; der Anbieter ist nicht dafür verantwortlich, ob ein Video angenommen wird.</p>"""),
    ("„Bitte nicht stören“ während der Aufnahme", """<ol>
-<li>Unter Android schaltet die App, wenn du es erlaubst, „Bitte nicht stören“ ein, solange ein Take aufgenommen wird, und stellt danach deine eigene Einstellung wieder her. In dieser Zeit werden Anrufe, Nachrichten und Benachrichtigungen zurückgehalten; du kannst sie also verpassen.</li>
-<li>Wird die App zwangsweise beendet oder schaltet sich das Gerät aus, wird deine Einstellung möglicherweise nicht wiederhergestellt; prüfe bei Bedarf die Geräteeinstellungen.</li>
+<li>Unter Android schaltet die App, wenn Sie es erlauben, „Bitte nicht stören“ ein, solange ein Take aufgenommen wird, und stellt danach Ihre eigene Einstellung wieder her. In dieser Zeit werden Anrufe, Nachrichten und Benachrichtigungen zurückgehalten; Sie können sie also verpassen.</li>
+<li>Wird die App zwangsweise beendet oder schaltet sich das Gerät aus, wird Ihre Einstellung möglicherweise nicht wiederhergestellt; prüfe bei Bedarf die Geräteeinstellungen.</li>
 <li>Auf iPhone und iPad kann die App „Nicht stören“ nicht ändern und erinnert nur daran, einen Fokus einzuschalten. Den Flugmodus empfiehlt die App nur; sie ändert ihn nie.</li>
 </ol>"""),
    ("welegato-ID", f"""<ol>
 <li>Aufnehmen und Takes vergleichen funktionieren ohne Anmeldung. KI-Analyse, Cloud und Abos setzen die Anmeldung mit einer welegato-ID voraus.</li>
 <li>Die ID ist ein Konto von welegato, einem Dienst desselben Unternehmens, und gilt für alle Apps von Vicino Labs. Für Erstellung und Nutzung gelten zusätzlich die <a href="{WELEGATO_TERMS}" target="_blank" rel="noopener">Nutzungsbedingungen von welegato</a>; anmelden können sich nur Personen ab 16 Jahren.</li>
-<li>Du kannst die ID in der App oder unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> löschen. Sie wird dann in allen Apps von Vicino Labs entfernt; ein Abo musst du zusätzlich im Store kündigen, damit die Zahlungen enden.</li>
+<li>Sie können die ID in der App oder unter <a href="{DELETE_ID}" target="_blank" rel="noopener">welegato.com/konto-loeschen</a> löschen. Sie wird dann in allen Apps von Vicino Labs entfernt; ein Abo müssen Sie zusätzlich im Store kündigen, damit die Zahlungen enden.</li>
 </ol>"""),
    ("Abos und KI-Zeit", """<ol>
-<li>Abos und KI-Zeit kaufst du als In-App-Kauf über Google Play oder den App Store. Für ein Abo musst du dich zuerst mit einer welegato-ID anmelden, damit es in den Apps von Vicino Labs und zwischen Android und iOS gilt.</li>
-<li>Ein Abo verlängert sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abo-Einstellungen des Stores. Es läuft bis zum Ende des bezahlten Zeitraums.</li>
+<li>Abos und KI-Zeit kaufen Sie als In-App-Kauf über Google Play oder den App Store. Für ein Abo melden Sie sich zuerst mit einer welegato-ID an, damit es in den Apps von Vicino Labs und zwischen Android und iOS gilt.</li>
+<li>Ein Abo verlängert sich um denselben Zeitraum, bis Sie kündigen; kündigen können Sie jederzeit in den Abo-Einstellungen des Stores. Es läuft bis zum Ende des bezahlten Zeitraums.</li>
 <li><strong>KI-Zeit:</strong> Die KI-Analyse verbraucht KI-Zeit (Minuten); die Kosten werden vor dem Start angezeigt. Die KI-Zeit wird je welegato-ID mit Leggii geteilt. KI-Zeit hat keinen Geldwert und ist nicht übertragbar.</li>
 <li>Es können Angebote angezeigt werden, etwa ein Rabatt für Personen, die Leggii und Prova abonnieren; die Bedingungen werden mit dem Angebot erklärt.</li>
-<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn Sie dem sofortigen Beginn zustimmen; das Erstattungsverfahren des Stores bleibt möglich.</li>
 <li>Änderungen der in einem Abo enthaltenen KI-Zeit oder des Cloud-Speichers kündigen wir vorher an; sie gelten nicht für bereits bezahlte Zeiträume oder bereits aufgeladene Zeit.</li>
 </ol>"""),
    ("Cloud (Plus)", """<ol>
-<li>Mit Plus und Anmeldung werden Ton und Angaben deiner Takes auf den Geräten deiner ID gleich gehalten. Videos werden nur bei Takes hochgeladen, die du markierst oder auswählst.</li>
+<li>Mit Plus und Anmeldung werden Ton und Angaben Ihrer Takes auf den Geräten Ihrer ID gleich gehalten. Videos werden nur bei Takes hochgeladen, die Sie markieren oder auswählen.</li>
 <li>Der Cloud-Speicher wird je ID mit der Leggii Cloud geteilt; was beide Apps belegen, wird zusammengerechnet. Ist der Speicher voll, stoppen nur neue Uploads; nichts wird gelöscht.</li>
 <li>Ein auf einem Gerät gelöschter Take wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht.</li>
-<li>Die Cloud dient der Synchronisierung zwischen deinen eigenen Geräten, nicht dem Teilen mit anderen.</li>
+<li>Die Cloud dient der Synchronisierung zwischen Ihren eigenen Geräten, nicht dem Teilen mit anderen.</li>
 </ol>"""),
    ("KI-Analyse", """<ol>
-<li>Ergebnisse der KI-Analyse erstellt eine KI; sie <strong>können falsch oder unvollständig sein.</strong> Sie ersetzen weder die Anleitung deiner Lehrkraft noch das Urteil einer Jury; bitte prüfe Wichtiges selbst.</li>
+<li>Ergebnisse der KI-Analyse erstellt eine KI; sie <strong>können falsch oder unvollständig sein.</strong> Sie ersetzen weder die Anleitung Ihrer Lehrkraft noch das Urteil einer Jury; bitte prüfe Wichtiges selbst.</li>
 <li>Die KI-Analyse wertet nur den Ton aus, nicht das Bild eines Videos.</li>
-<li>Nutze die KI-Analyse nur für Aufnahmen, die du machen darfst, mit Einwilligung der aufgenommenen Personen.</li>
+<li>Nutzen Sie die KI-Analyse nur für Aufnahmen, die Sie machen dürfen, mit Einwilligung der aufgenommenen Personen.</li>
 <li>Zum Schutz vor Missbrauch können wir die Nutzung begrenzen.</li>
 </ol>"""),
    ("Externe Dienste", """<p>Die App arbeitet mit externen Diensten wie der welegato-ID, Google Play und dem App Store. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p>"""),
-   ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Prova“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt. Die Rechte an deinen Aufnahmen und Videos bleiben bei dir (und den aufgenommenen Personen).</p>"""),
+   ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Prova“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt. Die Rechte an Ihren Aufnahmen und Videos bleiben bei Ihnen (und den aufgenommenen Personen).</p>"""),
    ("Pflichten der Nutzer", """<ol>
 <li>Kein Reverse Engineering oder Dekompilieren der App und keine Umgehung der Bezahlung oder der Nutzungsgrenzen.</li>
 <li>Keine Nutzung der App für rechtswidrige Zwecke, etwa Aufnahmen oder Filme von Personen ohne deren Einwilligung.</li>
@@ -243,9 +243,9 @@ TERMS = {
    ("Haftung", """<ol>
 <li>Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei Verletzung von Leben, Körper oder Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
 <li>Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den bei Vertragsschluss vorhersehbaren, typischen Schaden.</li>
-<li>Ohne Cloud werden Aufnahmen und Videos nur auf deinem Gerät gespeichert. Der Anbieter speichert sie nicht und kann verlorene Takes nicht wiederherstellen. Sichere wichtige Takes selbst gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
+<li>Ohne Cloud werden Aufnahmen und Videos nur auf Ihrem Gerät gespeichert. Der Anbieter speichert sie nicht und kann verlorene Takes nicht wiederherstellen. Sichern Sie wichtige Takes selbst gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
 </ol>"""),
-   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem du als Verbraucher deinen gewöhnlichen Aufenthalt hast (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
+   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem Sie als Verbraucher Ihren gewöhnlichen Aufenthalt haben (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
    ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _id_card("de")),
   ],
  },
