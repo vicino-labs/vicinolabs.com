@@ -53,7 +53,10 @@ html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",G
 .hero h1{font-size:clamp(36px,6.4vw,62px);line-height:1.12;margin:0 0 14px}
 html[lang=ko] .hero h1{font-size:clamp(30px,5.2vw,50px)}
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
-.hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:620px;text-wrap:balance}
+.hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:860px;text-wrap:balance}
+/* 첫 화면은 손으로 끊는다. 좁은 화면에서는 그 자리가 어색하니 자동으로 둔다. */
+@media(max-width:820px){.hero .lede br{display:none}}
+/* 끊는 자리 앞에 빈칸을 둬, br 을 숨겨도 문장이 붙지 않게 한다. */
 .shotwide{display:block;width:100%;height:auto;max-width:1000px;margin:30px auto 0;border-radius:16px}
 .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px 0 0}
 .stores a{display:block;line-height:0}
@@ -76,7 +79,10 @@ html[lang=ko] .tile h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600
 
 /* 요금 비교표 — 한 화면에서 견주어 보게 */
 .ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.plans .value{margin:18px 0 0;font-size:16px;color:var(--ink);max-width:640px;text-wrap:pretty}
+.plans .value{margin:18px 0 0;font-size:16px;color:var(--soft);max-width:900px;text-wrap:pretty}
+/* 가장 세게 때리는 한 줄. 다른 설명에 붙으면 묻힌다. */
+.plans .punch{margin:16px 0 0;font-size:clamp(17px,1.9vw,21px);font-weight:600;color:var(--ink);text-wrap:balance}
+html[lang=ko] .plans .punch{font-family:"Noto Serif KR",Georgia,serif;font-weight:600}
 .ptab{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .ptab th,.ptab td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--line)}
 .ptab th:first-child,.ptab td:first-child{text-align:left;color:var(--soft);white-space:normal}
@@ -100,7 +106,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 /* 요금 */
 .plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
 .plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
-.plans .sub{color:var(--soft);margin:0 0 30px;max-width:620px}
+.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px}
 .plans .value .ln,.plans .sub .ln{display:block;text-wrap:balance}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
 .plan{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
@@ -139,8 +145,7 @@ T = {
  "desc": "렛지 악보는 아이패드에 맞춰 만든 악보 앱입니다. PDF·사진·IMSLP에서 악보를 가져오고, 레슨과 리허설을 녹음하면 악보가 따라 넘어가며, AI가 지적과 숙제를 정리합니다.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "악보 보며 녹음하고,<br>AI로 정리까지",
- "lede": "아이패드에 맞춰 만든 악보 앱입니다. 다시 들을 때 악보가 저절로 따라 넘어가고, AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
- "note": "아이패드·아이폰·안드로이드 태블릿과 휴대폰에서 씁니다.",
+ "lede": "태블릿에 맞춰 만든 악보 앱입니다. | 녹음한 레슨을 다시 들을 때 악보가 저절로 따라 넘어가고, | AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
  "feats": [
   (1, "악보함", "악보를 한곳에", "PDF를 가져오거나 종이 악보를 카메라로 찍으면, 삐뚤게 찍힌 사진도 반듯하게 펴 줍니다. 제목과 작곡가는 알아서 읽어 냅니다.",
    ["전체 · 최근 본 악보 · 작곡가별로 보기", "즐겨찾기와 폴더", "연주회와 레슨 순서는 연주목록로", "출판사와 페이지까지 한눈에"]),
@@ -180,7 +185,8 @@ T = {
           ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
-"plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량입니다. 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다. 레슨 한 번 값이면 Plus를 일 년 씁니다.",
+"plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량입니다. 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다.",
+ "plans_punch": "레슨 한 번 값이면 Plus를 일 년 씁니다.",
  "plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
  "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
  "get_h": "내려받기",
@@ -193,8 +199,7 @@ T = {
  "desc": "Leggii is a sheet music app made for the tablet. Import PDFs, photos and IMSLP editions, record your lessons and rehearsals while the score turns with you, and let AI sort out what was said.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Record while you read,<br>let AI take the notes",
- "lede": "A sheet music app made for the tablet. When you listen back the score turns by itself, and the AI writes down the corrections and the homework with times and pages.",
- "note": "For iPad, iPhone and Android tablets and phones.",
+ "lede": "A sheet music app made for the tablet. | When you listen back the recording the score turns by itself, | and the AI writes down the corrections and the homework with times and pages.",
  "feats": [
   (1, "Your library", "All your scores in one place", "Import PDFs or photograph paper music with the camera; tilted photos are straightened. Title and composer are recognised for you.",
    ["Browse all, recently opened or by composer", "Favourites and folders", "Setlists for concerts and lessons", "Publisher and page at a glance"]),
@@ -234,7 +239,8 @@ T = {
           ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
  "plans_h": "Plans",
  "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
-"plans_value": "Five hours of AI a month is five one-hour lessons. 10 GB holds over a hundred hours of recordings. A year of Plus costs about what a single lesson costs.",
+"plans_value": "Five hours of AI a month is five one-hour lessons. 10 GB holds over a hundred hours of recordings.",
+ "plans_punch": "A year of Plus costs about what a single lesson costs.",
  "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
  "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
@@ -247,8 +253,7 @@ T = {
  "desc": "Leggii ist die Noten-App fürs Tablet: PDFs, Fotos und IMSLP-Ausgaben importieren, Unterricht und Proben aufnehmen, während die Noten mitblättern, und die KI fasst das Gesagte zusammen.",
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Beim Lesen aufnehmen,<br>die KI schreibt mit",
- "lede": "Die Noten-App fürs Tablet. Beim Anhören blättern die Noten von selbst mit, und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
- "note": "Für iPad, iPhone sowie Android-Tablets und -Handys.",
+ "lede": "Die Noten-App fürs Tablet. | Beim Anhören der Aufnahme blättern die Noten von selbst mit, | und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
  "feats": [
   (1, "Notenschrank", "Alle Noten an einem Ort", "PDFs importieren oder Papiernoten mit der Kamera abfotografieren – schiefe Fotos werden gerade gerichtet. Titel und Komponist werden erkannt.",
    ["Alle, zuletzt geöffnet oder nach Komponist", "Favoriten und Ordner", "Setlists für Konzert und Unterricht", "Verlag und Seite auf einen Blick"]),
@@ -288,7 +293,8 @@ T = {
           ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
  "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
-"plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen. Ein Jahr Plus kostet etwa so viel wie eine einzige Unterrichtsstunde.",
+"plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen.",
+ "plans_punch": "Ein Jahr Plus kostet etwa so viel wie eine einzige Unterrichtsstunde.",
  "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
  "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
@@ -460,6 +466,7 @@ def _ptab(l):
             f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div>'
             f'<p class="value">{_sent(t["plans_value"])}</p>'
+            f'<p class="punch">{t["plans_punch"]}</p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
             f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')
@@ -483,8 +490,8 @@ def page():
         f'<div data-l="{l}" class="hero{_on(l)}">'
         f'<img class="ic" src="/apps/leggii.png" srcset="/apps/hi/leggii.png 2x" alt="Leggii" width="92" height="92">'
         f'<p class="kicker">{T[l]["kicker"]}</p><h1>{T[l]["h1"]}</h1>'
-        f'<p class="lede">{T[l]["lede"]}</p>'
-        f'<div class="stores">{badge(l)}</div><p class="note">{T[l]["note"]}</p>'
+        f'<p class="lede">{T[l]["lede"].replace(" | ", " <br>")}</p>'
+        f'<div class="stores">{badge(l)}</div>'
         f'<img class="shotwide" data-hero="1" src="/leggii/shots/en/hero.webp" alt="Leggii" '
         f'width="1700" height="956" fetchpriority="high" decoding="async"></div>'
         for l, _ in LANGS)
