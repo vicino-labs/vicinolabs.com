@@ -172,7 +172,7 @@ T = {
           ("렛지 클라우드", "–", "–", "–", "10GB · 50GB"),
           ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
  "plans_h": "요금제",
- "plans_sub": "악보 가져오기, 필기, 녹음, 메트로놈은 무료입니다. 기간 제한 없이 그대로 쓰실 수 있습니다. AI 레슨 노트와 클라우드가 필요해지면 그때 고르시면 됩니다.",
+ "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
  "plans": [
   ("무료", "처음부터", ["악보 가져오기와 카메라 스캔", "필기와 음악 기호 스탬프", "레슨 · 리허설 녹음과 페이지 따라 넘기기", "메트로놈 · 건반 · IMSLP 검색"]),
   ("7일 체험", "가입하면 바로", ["Pro 기능 전부", "AI 30분", "카드 등록 없이"]),
@@ -231,7 +231,7 @@ T = {
           ("Leggii cloud", "–", "–", "–", "10 GB · 50 GB"),
           ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
  "plans_h": "Plans",
- "plans_sub": "Importing scores, annotating, recording and the metronome are free, with no time limit. When you want AI lesson notes and the cloud, that is when you choose a plan.",
+ "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
  "plans": [
   ("Free", "from the start", ["Import scores and camera scan", "Annotation and music stamps", "Lesson and rehearsal recording with page turns", "Metronome, keyboard, IMSLP search"]),
   ("7-day trial", "right away", ["Every Pro feature", "30 AI minutes", "No card needed"]),
@@ -290,7 +290,7 @@ T = {
           ("Leggii Cloud", "–", "–", "–", "10 GB · 50 GB"),
           ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
- "plans_sub": "Noten importieren, hineinschreiben, aufnehmen und das Metronom sind kostenlos, ohne zeitliche Begrenzung. Wenn Sie KI-Unterrichtsnotizen und die Cloud möchten, wählen Sie einen Tarif.",
+ "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
  "plans": [
   ("Kostenlos", "von Anfang an", ["Noten importieren und Kamera-Scan", "Notizen und Musikstempel", "Unterricht und Proben aufnehmen, mit Umblättern", "Metronom, Tastatur, IMSLP-Suche"]),
   ("7 Tage testen", "sofort", ["Alle Pro-Funktionen", "30 KI-Minuten", "Ohne Kreditkarte"]),
