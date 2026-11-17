@@ -23,6 +23,10 @@ SUPABASE_KEY = "sb_publishable_GWm8fIiIeGt33SiRdQbXAg_aUiwMUQz"
 LANGS = S.LANGS
 PLAY, APPLE, EMAIL = S.PLAY, S.APPLE, S.EMAIL
 
+# 50GB 는 어느 스토어에도 없는 새 상품이라 대표님 결정 전까지 화면에 내보내지 않는다
+# (HQ 2026-11-17). 서버(web-checkout)도 hidden 상품은 거절한다. 정해지면 True 로.
+SHOW_50 = False
+
 # 가격은 스토어와 같다(HQ, 대표님 확인 2026-11-17). 화면 표시용.
 PRICES = {
     "plus-10-month": "3,99 €", "plus-10-year": "39,99 €",
@@ -105,7 +109,24 @@ T = {
          "signup": "가입할 수 없습니다. 이미 가입된 이메일인지 확인해 주세요.",
          "confirm": "보낸 메일의 링크를 눌러 이메일을 확인한 뒤 로그인해 주세요.",
          "already_subscribed": "이미 구독 중입니다.", "app_store_only": "유럽에서만 홈페이지 결제를 받습니다.",
-         "other": "잠시 뒤에 다시 해 주세요."},
+         "store_subscribed": "앱 스토어에서 이미 구독 중입니다.", "no_subscription": "구독을 찾지 못했습니다.", "interval_mismatch": "같은 결제 주기로만 올릴 수 있습니다.", "other": "잠시 뒤에 다시 해 주세요."},
+  "cloud_note": "클라우드는 10GB로 시작합니다. 나중에 나의 구독 화면에서 50GB로 올리실 수 있습니다.",
+ "launch_price": "출시 가격입니다. 2027년 12월 31일까지 구독을 시작하시면 이 가격이 그대로 유지됩니다.",
+ "acc_h": "나의 구독",
+ "acc_plan": "지금 요금제",
+ "acc_next": "다음 결제",
+ "acc_ends": "이 날짜까지 쓰실 수 있습니다",
+ "acc_up": "50GB로 올리기",
+ "acc_up_note": "바로 바뀌고, 남은 기간만큼 차액만 받습니다.",
+ "acc_cancel": "해지하기",
+ "acc_cancel_note": "기간이 끝날 때 해지됩니다. 그때까지는 Plus를 그대로 쓰실 수 있습니다.",
+ "acc_resume": "해지 취소",
+ "acc_quota_note": "용량을 넘으면 새로 올리는 것만 멈춥니다. 이미 올린 파일은 지우지 않고, 기기에 있는 파일은 건드리지 않습니다.",
+ "acc_end_note": "Plus가 끝나면 90일 동안은 내려받기만 됩니다. 그 사이 두 번 알려 드리고, 그 뒤에 클라우드에서 지웁니다. 기기에 있는 악보와 녹음은 그대로 남습니다.",
+ "acc_store": "앱 스토어에서 구독 중입니다. 바꾸거나 해지하시려면 구독하신 스토어에서 하시면 됩니다.",
+ "acc_benefit": "위레가토 회원 혜택으로 Plus를 쓰고 계십니다.",
+ "acc_portal": "결제 내역 · 카드 바꾸기",
+ "done": "바뀌었습니다.",
  "back": "렛지 소개로",
  "privacy": "개인정보처리방침", "terms": "이용약관",
  "thanks_h": "구독이 시작되었습니다", "thanks_p": "영수증을 메일로 보내 드렸습니다.",
@@ -142,7 +163,24 @@ T = {
          "signup": "Could not create the account. Perhaps the email is already in use.",
          "confirm": "Check your inbox and open the link, then sign in.",
          "already_subscribed": "You are already subscribed.", "app_store_only": "Website payment is only for Europe.",
-         "other": "Something went wrong. Please try again in a moment."},
+         "store_subscribed": "You are already subscribed through an app store.", "no_subscription": "No subscription found.", "interval_mismatch": "You can only move up within the same billing period.", "other": "Something went wrong. Please try again in a moment."},
+  "cloud_note": "The cloud starts at 10 GB. You can move up to 50 GB later on your subscription page.",
+ "launch_price": "This is the launch price. Subscribe before 31 December 2027 and it stays at this price for you.",
+ "acc_h": "Your subscription",
+ "acc_plan": "Current plan",
+ "acc_next": "Next payment",
+ "acc_ends": "Runs until",
+ "acc_up": "Move up to 50 GB",
+ "acc_up_note": "It changes right away and you only pay the difference for the time left.",
+ "acc_cancel": "Cancel",
+ "acc_cancel_note": "It ends when the paid period runs out. Until then Plus keeps working.",
+ "acc_resume": "Keep the subscription",
+ "acc_quota_note": "If you go over the storage, only new uploads stop. Nothing already uploaded is deleted, and files on your device are never touched.",
+ "acc_end_note": "When Plus ends you can still download for 90 days. We write to you twice in that time, and after that the files go from the cloud. Scores and recordings on your device stay.",
+ "acc_store": "You subscribe through an app store. Changes and cancellation happen in the store you subscribed with.",
+ "acc_benefit": "You have Plus through your welegato membership.",
+ "acc_portal": "Invoices and card",
+ "done": "Done.",
  "back": "Back to Leggii",
  "privacy": "Privacy Policy", "terms": "Terms of Service",
  "thanks_h": "Your subscription is active", "thanks_p": "We have sent the receipt to your inbox.",
@@ -179,7 +217,24 @@ T = {
          "signup": "Das Konto konnte nicht angelegt werden. Vielleicht ist die E-Mail schon vergeben.",
          "confirm": "Bitte öffnen Sie den Link in Ihrer E-Mail und melden Sie sich dann an.",
          "already_subscribed": "Sie haben bereits ein Abo.", "app_store_only": "Die Zahlung über die Website gibt es nur in Europa.",
-         "other": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal."},
+         "store_subscribed": "Sie haben bereits ein Abo über einen App-Store.", "no_subscription": "Kein Abo gefunden.", "interval_mismatch": "Ein Wechsel ist nur innerhalb desselben Abrechnungszeitraums möglich.", "other": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal."},
+  "cloud_note": "Die Cloud beginnt mit 10 GB. Auf 50 GB können Sie später unter „Mein Abo“ wechseln.",
+ "launch_price": "Das ist der Einführungspreis. Wer bis zum 31. Dezember 2027 abonniert, behält ihn.",
+ "acc_h": "Mein Abo",
+ "acc_plan": "Aktueller Tarif",
+ "acc_next": "Nächste Abbuchung",
+ "acc_ends": "Läuft bis",
+ "acc_up": "Auf 50 GB wechseln",
+ "acc_up_note": "Gilt sofort; berechnet wird nur die Differenz für die restliche Zeit.",
+ "acc_cancel": "Kündigen",
+ "acc_cancel_note": "Das Abo endet mit dem bezahlten Zeitraum. Bis dahin läuft Plus weiter.",
+ "acc_resume": "Kündigung zurücknehmen",
+ "acc_quota_note": "Ist der Speicher voll, stoppen nur neue Uploads. Nichts wird gelöscht, und Dateien auf Ihrem Gerät bleiben unangetastet.",
+ "acc_end_note": "Nach dem Ende von Plus können Sie 90 Tage lang noch herunterladen. In dieser Zeit melden wir uns zweimal, danach werden die Dateien aus der Cloud entfernt. Noten und Aufnahmen auf dem Gerät bleiben.",
+ "acc_store": "Sie haben das Abo über einen App-Store. Ändern und kündigen können Sie es dort, wo Sie es abgeschlossen haben.",
+ "acc_benefit": "Sie haben Plus über Ihre welegato-Mitgliedschaft.",
+ "acc_portal": "Rechnungen und Karte",
+ "done": "Erledigt.",
  "back": "Zurück zu Leggii",
  "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen",
  "thanks_h": "Ihr Abo ist aktiv", "thanks_p": "Die Rechnung haben wir Ihnen per E-Mail geschickt.",
@@ -275,7 +330,7 @@ BUY_BODY = """
 <div id="flow">
   <div class="step">
     <h2 data-t="s1"></h2><p class="hint" data-t="s1h"></p>
-    <div class="sizes" role="group">
+    <div class="sizes__HIDE50__" role="group">
       <button type="button" data-size="10" class="on"></button><button type="button" data-size="50"></button>
     </div>
     <div class="opts">
@@ -284,6 +339,8 @@ BUY_BODY = """
     </div>
     <p class="hint" style="margin:20px 0 0" data-t="incl_h"></p>
     <ul class="incl" id="incl"></ul>
+    <p class="fine" data-t="cloud_note"></p>
+    <p class="fine" style="margin-top:4px" data-t="launch_price"></p>
   </div>
 
   <div class="step">
@@ -312,10 +369,23 @@ BUY_BODY = """
     <div id="pmsg" class="msg hidden"></div>
   </div>
 
-  <div class="step hidden" id="have">
-    <h2 data-t="have"></h2><p class="hint" id="havewhen"></p>
-    <div class="row"><button type="button" class="btn ghost" id="portal" data-t="manage"></button></div>
+</div>
+
+<div class="step hidden" id="account">
+  <h2 data-t="acc_h"></h2>
+  <p class="who" id="accplan"></p>
+  <p class="hint" id="accwhen" style="margin:4px 0 0"></p>
+  <p class="hint" id="accnote" style="margin:12px 0 0"></p>
+  <div class="row" id="accbtns">
+    <button type="button" class="btn hidden" id="up"></button>
+    <button type="button" class="btn ghost hidden" id="cancel"></button>
+    <button type="button" class="btn ghost hidden" id="resume"></button>
+    <button type="button" class="btn ghost hidden" id="portal"></button>
   </div>
+  <p class="fine" id="upnote"></p>
+  <p class="fine" data-t="acc_quota_note"></p>
+  <p class="fine" style="margin-top:4px" data-t="acc_end_note"></p>
+  <div id="accmsg" class="msg hidden"></div>
 </div>
 
 <p class="fine" style="margin-top:26px"><a href="/leggii/" data-t="back"></a></p>
@@ -323,7 +393,7 @@ BUY_BODY = """
 """
 
 BUY_JS = """
-var PRICE=__PRICES__,size="10",every="month",signup=false,sub=null;
+var PRICE=__PRICES__,SHOW50=__SHOW50__,size="10",every="month",signup=false,sub=null,noEurope=false;
 function product(){return "plus-"+size+"-"+every}
 function euro(p){return PRICE[p]||""}
 /* 유럽인지 대충 본다(시간대). 진짜 판단은 결제 뒤 서버가 청구 국가로 한다. */
@@ -335,6 +405,8 @@ return ["Atlantic/Reykjavik","Atlantic/Canary","Atlantic/Madeira","Atlantic/Azor
 }catch(e){return true}}
 function msg(el,text,bad){var e=document.getElementById(el);
 if(!text){e.classList.add("hidden");return}e.textContent=text;e.classList.toggle("bad",!!bad);e.classList.remove("hidden");}
+function planName(code){var t=T[lang];if(!code)return "—";
+return (code.indexOf("plus-50")===0?t.size50:t.size10)+" · "+(/-year$/.test(code)?t.year:t.month)}
 function render(){var t=T[lang];
 document.querySelectorAll("[data-size]").forEach(function(b){
 b.textContent=t[b.getAttribute("data-size")==="10"?"size10":"size50"];
@@ -353,11 +425,30 @@ var s=session();
 document.getElementById("anon").classList.toggle("hidden",!!s);
 document.getElementById("known").classList.toggle("hidden",!s);
 if(s)document.getElementById("who").textContent=s.email||"";
-var has=sub&&sub.subscribed;
-document.getElementById("have").classList.toggle("hidden",!has);
-document.getElementById("paystep").classList.toggle("hidden",!!has);
-if(has){var d=sub.currentPeriodEnd?new Date(sub.currentPeriodEnd).toLocaleDateString(lang):"";
-document.getElementById("havewhen").textContent=(sub.cancelAtPeriodEnd?t.ending:t.until)+": "+d;}
+var src=(sub&&sub.source)||"none",mine=src!=="none";
+document.getElementById("account").classList.toggle("hidden",!mine);
+document.getElementById("flow").classList.toggle("hidden",mine&&!noEurope);
+var el=function(id){return document.getElementById(id)};
+["up","cancel","resume","portal"].forEach(function(id){el(id).classList.add("hidden")});
+el("accnote").textContent="";el("upnote").textContent="";
+el("accplan").textContent="";el("accwhen").textContent="";
+if(src==="web"){
+el("accplan").innerHTML="<span>"+t.acc_plan+"</span>: <b>"+planName(sub.product)+"</b>";
+var d=sub.currentPeriodEnd?new Date(sub.currentPeriodEnd).toLocaleDateString(lang):"";
+el("accwhen").textContent=(sub.cancelAtPeriodEnd?t.acc_ends:t.acc_next)+": "+d;
+if(sub.upgradeTo&&!sub.cancelAtPeriodEnd){el("up").textContent=t.acc_up;el("up").classList.remove("hidden");
+el("upnote").textContent=t.acc_up_note;}
+if(sub.cancelAtPeriodEnd){el("resume").textContent=t.acc_resume;el("resume").classList.remove("hidden");}
+else{el("cancel").textContent=t.acc_cancel;el("cancel").classList.remove("hidden");
+el("accnote").textContent=t.acc_cancel_note;}
+el("portal").textContent=t.acc_portal;el("portal").classList.remove("hidden");
+}else if(src==="store"){
+el("accplan").textContent=t.acc_store;el("accwhen").textContent="";
+}else if(src==="benefit"){
+var u=sub.until?new Date(sub.until).toLocaleDateString(lang):"";
+el("accplan").textContent=t.acc_benefit;
+el("accwhen").textContent=u?t.acc_ends+": "+u:"";
+}
 }
 function refreshStatus(){if(!session()){sub=null;render();return Promise.resolve()}
 return fn("web-checkout",{app:APP,action:"status"}).then(function(r){
@@ -366,12 +457,11 @@ else if(r.j&&r.j.error==="unauthorized"){save(null);sub=null}
 render();});}
 document.addEventListener("click",function(e){
 var b=e.target.closest("[data-set]");if(b){setLang(b.getAttribute("data-set"));return}
-b=e.target.closest("[data-size]");if(b){size=b.getAttribute("data-size");render();return}
+b=e.target.closest("[data-size]");if(b){if(SHOW50)size=b.getAttribute("data-size");render();return}
 b=e.target.closest("[data-every]");if(b){every=b.getAttribute("data-every");render();return}
 b=e.target.closest("[data-p]");if(b){oauth(b.getAttribute("data-p"));return}
-if(e.target.closest("#anyway")){e.preventDefault();
-document.getElementById("outside").classList.add("hidden");
-document.getElementById("flow").classList.remove("hidden");return}
+if(e.target.closest("#anyway")){e.preventDefault();noEurope=false;
+document.getElementById("outside").classList.add("hidden");render();return}
 if(e.target.closest("#toggle")){signup=!signup;msg("amsg","");render();return}
 if(e.target.closest("#out")){save(null);sub=null;render();return}
 if(e.target.closest("#go")){
@@ -390,10 +480,16 @@ if(r.ok&&r.j.url){location.href=r.j.url;return}
 btn.disabled=false;msg("pmsg",T[lang].err[(r.j&&r.j.error)]||T[lang].err.other,true);});return}
 if(e.target.closest("#portal")){var p=document.getElementById("portal");p.disabled=true;
 fn("billing-portal",{app:APP}).then(function(r){
-if(r.ok&&r.j.url){location.href=r.j.url;return}p.disabled=false;msg("pmsg",T[lang].err.other,true);});return}
+if(r.ok&&r.j.url){location.href=r.j.url;return}p.disabled=false;msg("accmsg",T[lang].err.other,true);});return}
+var act=e.target.closest("#up")?"upgrade":(e.target.closest("#cancel")?"cancel":(e.target.closest("#resume")?"resume":""));
+if(act){var b2=e.target.closest("button");b2.disabled=true;msg("accmsg","");
+fn("web-checkout",{app:APP,action:act,product:act==="upgrade"?sub.upgradeTo:undefined}).then(function(r){
+b2.disabled=false;
+if(r.ok&&r.j.ok){msg("accmsg",T[lang].done);return refreshStatus()}
+msg("accmsg",T[lang].err[(r.j&&r.j.error)]||T[lang].err.other,true);});return}
 });
 fromHash();
-if(!europe()){document.getElementById("outside").classList.remove("hidden");
+if(!europe()){noEurope=true;document.getElementById("outside").classList.remove("hidden");
 document.getElementById("flow").classList.add("hidden");}
 setLang(pick());
 refreshStatus();
@@ -443,9 +539,10 @@ def _json(x):
 
 
 def buy_page():
-    body = BUY_BODY.replace("__BADGES__", _badges())
+    body = (BUY_BODY.replace("__BADGES__", _badges())
+        .replace("__HIDE50__", "" if SHOW_50 else " hidden"))
     js = (COMMON_JS.replace("__T__", _json(T))
-          + BUY_JS.replace("__PRICES__", _json(PRICES)))
+          + BUY_JS.replace("__PRICES__", _json(PRICES)).replace("__SHOW50__", "true" if SHOW_50 else "false"))
     return (_head(T["en"]["title"], T["en"]["desc"], "/leggii/plus/")
             + body + FOOT + f"<script>{js}</script>\n</body></html>\n")
 
