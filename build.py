@@ -49,8 +49,11 @@ h1{font-size:clamp(40px,6.4vw,68px)}h1 em{font-style:italic}
 html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] .card h3,html[lang=ko] .values b,html[lang=zh] h1,html[lang=zh] h2,html[lang=zh] .card h3,html[lang=zh] .values b{font-family:"Noto Serif KR","Songti SC","Noto Serif SC",serif;font-style:normal;font-weight:600;letter-spacing:-.01em}
 html[lang=ko] h1,html[lang=zh] h1{font-size:clamp(32px,5vw,52px);line-height:1.2}
 html[lang=ko] h1 em,html[lang=zh] h1 em{font-style:normal}
+/* 줄바꿈(2026-11-17): 한국어는 낱말 중간에서 끊기지 않게, 줄 길이는 고르게. */
 html[lang=ko] body{word-break:keep-all}
-h1,h2,.lead{text-wrap:balance}.card p,.values span{text-wrap:pretty}
+/* 중국어·일본어는 빈칸이 없어 keep-all 을 주면 안 끊긴다. */
+html[lang=zh] body,html[lang=ja] body{word-break:normal;line-break:strict}
+h1,h2,h3,.lead{text-wrap:balance}p,li,td,th,.card p,.values span{text-wrap:pretty}
 """
 
 def page(lang, path, title, desc, body, alt=None, wide=False):

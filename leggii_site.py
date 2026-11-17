@@ -15,6 +15,7 @@ build.py 가 leggii_legal.py 를 통해 부른다.
 """
 
 import os
+import re
 
 SHOT_LANGS = ("ko", "en", "de")  # 스크린샷이 있는 언어
 LANGS = [("ko", "한국어"), ("en", "English"), ("de", "Deutsch")]
@@ -29,7 +30,11 @@ CSS = """
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;
  font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-synthesis:none}
+/* 줄바꿈(2026-11-17): 한국어는 낱말 중간에서 끊기지 않게, 줄 길이는 고르게. */
 html[lang=ko] body{word-break:keep-all}
+/* 중국어·일본어는 빈칸이 없어 keep-all 을 주면 안 끊긴다. */
+html[lang=zh] body,html[lang=ja] body{word-break:normal;line-break:strict}
+h3{text-wrap:balance}p,li,td,th{text-wrap:pretty}
 a{color:var(--accent)}
 h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.01em;margin:0}
 html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600}
@@ -96,6 +101,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 .plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
 .plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
 .plans .sub{color:var(--soft);margin:0 0 30px;max-width:620px}
+.plans .value .ln,.plans .sub .ln{display:block;text-wrap:balance}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
 .plan{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
 .plan h3{font-size:22px;margin:0 0 4px}
@@ -174,7 +180,7 @@ T = {
           ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
-"plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량이고, 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다. 레슨 한 번 값이면 Plus를 일 년 씁니다.",
+"plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량입니다. 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다. 레슨 한 번 값이면 Plus를 일 년 씁니다.",
  "plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
  "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
  "get_h": "내려받기",
@@ -228,7 +234,7 @@ T = {
           ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
  "plans_h": "Plans",
  "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
-"plans_value": "Five hours of AI a month is five one-hour lessons, and 10 GB holds over a hundred hours of recordings. A year of Plus costs about what a single lesson costs.",
+"plans_value": "Five hours of AI a month is five one-hour lessons. 10 GB holds over a hundred hours of recordings. A year of Plus costs about what a single lesson costs.",
  "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
  "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
@@ -282,7 +288,7 @@ T = {
           ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
  "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
-"plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden, und in 10 GB passen über hundert Stunden Aufnahmen. Ein Jahr Plus kostet etwa so viel wie eine einzige Unterrichtsstunde.",
+"plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen. Ein Jahr Plus kostet etwa so viel wie eine einzige Unterrichtsstunde.",
  "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
  "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
@@ -292,6 +298,19 @@ T = {
 },
 }
 
+
+
+def _sent(text):
+    """문장마다 제 덩어리를 준다(2026-11-17).
+
+    여러 문장을 한 문단에 넣으면 줄이 문장 가운데서 끊겨
+    둘째 줄에 두세 낱말만 남는다. 문장별로 블록을 주면
+    끊기는 자리가 늘 문장 끝이고, balance 가 줄 길이를 고른다.
+    """
+    parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", text) if x.strip()]
+    if len(parts) < 2:
+        return text
+    return "".join(f'<span class="ln">{x}</span>' for x in parts)
 
 def _on(l):
     return " on" if l == "en" else ""
@@ -437,10 +456,10 @@ def _ptab(l):
         return "".join(f"<td>{c}</td>" for c in r)
     rows = "".join("<tr>" + cells(r) + "</tr>" for r in t["ptab"])
     return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
-            f'<p class="sub">{t["plans_sub"]}</p>'
+            f'<p class="sub">{_sent(t["plans_sub"])}</p>'
             f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div>'
-            f'<p class="value">{t["plans_value"]}</p>'
+            f'<p class="value">{_sent(t["plans_value"])}</p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
             f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')

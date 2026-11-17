@@ -20,8 +20,14 @@ CSS = """
 :root{--bg:#f7f2ea;--paper:#fffcf7;--ink:#1c1714;--soft:#6b5f56;--line:#e7dcca;--accent:#2a2724;--gold:#8a6a33;--tag:#efe7da}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141110;--paper:#1d1916;--ink:#f1e8da;--soft:#bfb2a2;--line:#2e2823;--accent:#e9d3a6;--gold:#d4b07a;--tag:#26201c}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--gold)}
+/* 줄바꿈(2026-11-17): 한국어는 낱말 중간에서 끊기지 않게, 줄 길이는 고르게. */
+html[lang=ko] body{word-break:keep-all}
+/* 중국어·일본어는 빈칸이 없어 keep-all 을 주면 안 끊긴다. */
+html[lang=zh] body,html[lang=ja] body{word-break:normal;line-break:strict}
+h1,h2,h3{text-wrap:balance}
+.doc p,.doc li,.doc td,.doc th,.lede,.meta .tag{text-wrap:pretty}
 .top{border-bottom:1px solid var(--line)}
 .top .in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .co{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:Georgia,"Times New Roman",serif;font-size:19px}
