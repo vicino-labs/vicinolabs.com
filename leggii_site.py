@@ -318,7 +318,17 @@ def _media(num, head):
             f'alt="{head}" width="1200" height="936" loading="lazy" decoding="async">')
 
 
-SCRIPT = """(function(){var META=__META__;var k="vl-app-lang",L=["ko","en","de"],s=null;
+SCRIPT = """(function(){var META=__META__,PRICE=__REGION__;
+/* 가격은 읽는 말이 아니라 사는 곳이 정한다. 시간대로 어림잡는다 —
+   틀려도 스토어에 들어가면 맞는 값이 보이고, 그 줄도 적어 두었다. */
+function region(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
+if(z==="Asia/Seoul")return "kr";
+if(/^Europe\\//.test(z))return ["Europe/Moscow","Europe/Istanbul","Europe/Kyiv","Europe/Kiev",
+"Europe/Minsk","Europe/Simferopol","Europe/Volgograd","Europe/Samara","Europe/Saratov",
+"Europe/Astrakhan","Europe/Ulyanovsk","Europe/Kirov"].indexOf(z)<0?"eu":"xx";
+if(["Atlantic/Reykjavik","Atlantic/Canary","Atlantic/Madeira","Atlantic/Azores","Atlantic/Faroe"].indexOf(z)>=0)return "eu";
+return "xx"}catch(e){return "xx"}}
+var RG=region();var k="vl-app-lang",L=["ko","en","de"],s=null;
 try{s=localStorage.getItem(k)}catch(e){}
 var h=(location.hash||"").slice(1),n=(navigator.language||"en").slice(0,2),
 l=L.indexOf(h)>=0?h:(L.indexOf(s)>=0?s:(L.indexOf(n)>=0?n:"en"));
@@ -328,6 +338,11 @@ document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("
 document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/leggii/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
 document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/leggii/shots/"+x+"/hero.webp"});
 document.querySelectorAll("[data-poster]").forEach(function(e){e.poster="/leggii/shots/"+x+"/"+e.getAttribute("data-poster")+".webp"});
+var pr=(PRICE[x]||{})[RG];
+if(pr){document.querySelectorAll('[data-price="pro"]').forEach(function(e){e.textContent=pr[0]});
+document.querySelectorAll('[data-price="plus"]').forEach(function(e){e.textContent=pr[1]});
+document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pr[2]});
+document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[3]});}
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
@@ -351,6 +366,52 @@ def _meta_json():
     return json.dumps({l: [T[l]["title"], T[l]["desc"]] for l, _ in LANGS}, ensure_ascii=False)
 
 
+# 가격은 읽는 말이 아니라 사는 곳이 정한다(대표님 2026-11-17). 유럽에 사는
+# 한국인 음악가가 우리 핵심 고객인데, 언어로 고르면 그 사람에게 한국 값이
+# 보인다. 시간대로 지역을 어림잡고, 모르는 지역에는 값을 적지 않는다 —
+# 그 나라 값을 우리가 모른다. 틀린 값보다 안 적는 게 낫다.
+REGION = {
+ "ko": {
+  "eu": ("9,99 €", "월 3,99 € 부터",
+         "결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
+         "위레가토 아이디로 가입하고 카드로 결제합니다."),
+  "kr": ("17,000원", "월 5,500원부터",
+         "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
+         "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
+  "xx": ("스토어에서 구매", "스토어에서 구독",
+         "결제는 앱 스토어·구글 플레이에서 하십니다. 나라마다 값이 달라 스토어에서 확인하실 수 있습니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
+         "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
+ },
+ "en": {
+  "eu": ("\u20ac9.99 once", "from \u20ac3.99 a month",
+         "You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
+         "Sign up with a welegato ID and pay by card."),
+  "kr": ("\u20a917,000 once", "from \u20a95,500 a month",
+         "Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
+         "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
+  "xx": ("in the store", "in the store",
+         "You pay in the App Store or on Google Play, where the price for your country is shown. AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app.",
+         "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
+ },
+ "de": {
+  "eu": ("9,99 \u20ac einmalig", "ab 3,99 \u20ac im Monat",
+         "Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
+         "Mit einer welegato-ID anmelden und per Karte zahlen."),
+  "kr": ("17.000 \u20a9 einmalig", "ab 5.500 \u20a9 im Monat",
+         "Preise f\u00fcr Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
+         "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
+  "xx": ("im Store", "im Store",
+         "Bezahlt wird im App Store oder bei Google Play, wo der Preis f\u00fcr Ihr Land steht. KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App.",
+         "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
+ },
+}
+
+
+def _region_json():
+    import json
+    return json.dumps(REGION, ensure_ascii=False)
+
+
 def _tiles(l):
     t = T[l]
     out = []
@@ -368,15 +429,21 @@ def _tiles(l):
 def _ptab(l):
     t = T[l]
     head = "".join(f"<th>{c}</th>" for c in t["ptab_cols"])
-    rows = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in t["ptab"])
+    def cells(r):
+        # 마지막 줄이 가격 — Pro·Plus 칸은 지역에 따라 자바스크립트가 채운다
+        if r is t["ptab"][-1]:
+            return (f"<td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td>"
+                    f'<td data-price="pro"></td><td data-price="plus"></td>')
+        return "".join(f"<td>{c}</td>" for c in r)
+    rows = "".join("<tr>" + cells(r) + "</tr>" for r in t["ptab"])
     return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
             f'<p class="sub">{t["plans_sub"]}</p>'
             f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div>'
             f'<p class="value">{t["plans_value"]}</p>'
-            f'<p class="note" style="margin-top:10px">{t["plans_note"]}</p>'
+            f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
-            f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
+            f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')
 
 
 def _meta_json():
@@ -446,6 +513,6 @@ def page():
 {get}
 </main>
 <footer><div class="wrap">{foot}<div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
-<script>{SCRIPT.replace("__META__", _meta_json())}</script>
+<script>{SCRIPT.replace("__META__", _meta_json()).replace("__REGION__", _region_json())}</script>
 </body></html>
 """
