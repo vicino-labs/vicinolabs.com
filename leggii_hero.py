@@ -21,6 +21,15 @@ import os
 from PIL import Image, ImageDraw, ImageFilter
 
 GOLD = "/Users/jameslee/App/leggii/test_screenshots/goldens"
+# 첫 그림과 '녹음' 설명에 쓸 악보 화면. 렛지 세션이 goldens/hero/<이름>-<언어>.png 로
+# 후보를 뽑아 둔다(2026-11-17, 대표님: 성악가니까 성악 악보로, 토스카 「Vissi d'arte」).
+# 없으면 예전 장면(ipad/<언어>-3.png)으로 돌아간다.
+HERO_SCORE = os.environ.get("HERO_SCORE", "tosca34")
+
+
+def score_shot(lang):
+    cand = f"{GOLD}/hero/{HERO_SCORE}-{lang}.png"
+    return cand if os.path.exists(cand) else f"{GOLD}/ipad/{lang}-3.png"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "leggii", "shots")
 LANGS = ("ko", "en", "de")
 
@@ -63,7 +72,7 @@ def device(canvas, shot, box, bezel, radius):
 
 
 def build(lang):
-    pad_shot = Image.open(f"{GOLD}/ipad/{lang}-3.png")
+    pad_shot = Image.open(score_shot(lang))
     phone_shot = Image.open(f"{GOLD}/iphone/{lang}-1.png")
 
     canvas = Image.new("RGB", (W, H), BG)
@@ -100,7 +109,7 @@ DEEP = (3, 4, 5)
 
 
 def deep(lang, num):
-    shot = Image.open(f"{GOLD}/ipad/{lang}-{num}.png")
+    shot = Image.open(score_shot(lang) if num == 3 else f"{GOLD}/ipad/{lang}-{num}.png")
     bezel, radius, m = 22, 34, 54
     sw = 1120
     sh_ = round(sw * shot.height / shot.width)
