@@ -16,7 +16,7 @@ NEW = {
                intro="총보에서 악기마다 자기 줄이 있듯, 앱마다 맡은 마디가 있어요. 마디마다 주인공이 바뀌고, 다른 앱들은 곁에서 받쳐 줘요.",
                hint="와인색 음표가 그 마디의 주인공이에요.", swipe="옆으로 밀어서 보세요.", listen="들어 보기", pause="멈추기",
                sub="교향곡 9번 4악장 「환희의 송가」 · 일곱 개의 앱을 위한 편곡", stages=["찾기", "준비하기", "몸 풀기", "연습하기", "돌아보기"],
-               dc="다시 처음으로 — 다음 레슨", label="베토벤 「환희의 송가」 총보: 여덟 마디 동안 일곱 개의 앱이 차례로 주제를 이어받아요",
+               dc="다시 처음으로, 다음 레슨", label="베토벤 「환희의 송가」 총보: 여덟 마디 동안 일곱 개의 앱이 차례로 주제를 이어받아요",
                notes="프로그램 노트", parts=["1부 · 찾고, 준비하고", "쉬는 시간 · 숨 고르기", "2부 · 연습하고, 돌아보고"],
                when=["찾는 날", "악보를 펼치는 밤", "내 키가 아닐 때", "숨부터", "목을 깨우는 아침", "피아노 없는 방에서", "레슨이 끝난 뒤"],
                free="무료 입장"),
@@ -24,7 +24,7 @@ NEW = {
                intro="Just as every instrument has its own line in a score, every app has its own bars. In each bar a different app takes the lead while the others accompany.",
                hint="Wine-red notes mark the lead in each bar.", swipe="Swipe sideways to see it all.", listen="Listen", pause="Pause",
                sub="Symphony No. 9, finale: “Ode to Joy” · arranged for seven apps", stages=["Find", "Prepare", "Warm up", "Practise", "Reflect"],
-               dc="Da capo — on to the next lesson", label="Full score of Beethoven’s Ode to Joy: over eight bars the seven apps pass the theme from one to the next",
+               dc="Da capo, on to the next lesson", label="Full score of Beethoven’s Ode to Joy: over eight bars the seven apps pass the theme from one to the next",
                notes="Programme notes", parts=["Part one · find and prepare", "Interval · catch your breath", "Part two · practise and reflect"],
                when=["the day you search", "the evening with your scores", "when the key is wrong", "breath first", "the morning warm-up",
                      "in a room without a piano", "after the lesson"],
@@ -147,7 +147,7 @@ def body(lang, soon_keys):
     lead = t["lead"].replace('<br class="w">', " ")
     return f'''<link rel="stylesheet" href="{fonts}"><style>{CSS}</style><div class="fv2">
 <div class="cover"><div class="frame"><p class="pre">Vicino Labs presenta</p><h1>Famiglia<br>Vicino</h1><div class="orn">❦</div>
-<p class="subt">{n["subt"]}</p><p class="season">Stagione 2026 · Frankfurt — Seoul</p></div></div>
+<p class="subt">{n["subt"]}</p><p class="season">Stagione 2026 · Frankfurt–Seoul</p></div></div>
 <section class="partitura">{_lab("Partitura", n["part"])}<h2>{n["score_h"]}</h2><p class="intro">{n["intro"]}</p>
 <div class="sheet"><div class="scroll">{svg}</div></div>
 <p class="hint"><span class="m">{n["swipe"]} </span>{n["hint"]}</p></section>

@@ -27,7 +27,7 @@ def welegato_url(l):
 
 
 # 스퀼로 연습곡 문장(몸 풀기 단계·앱 설명 끝에 붙임)
-STUDI = {'ko': '연습곡은 파노프카부터, 입시에 꼭 필요한 콘코네·바카이도 곧 들어와요.', 'en': 'Panofka studies first — Concone and Vaccai are on the way.', 'de': 'Zuerst die Panofka-Etüden — Concone und Vaccai folgen bald.', 'it': 'Prima gli studi di Panofka — presto anche Concone e Vaccai.', 'fr': "D'abord les études de Panofka — Concone et Vaccai arrivent bientôt.", 'zh': '练习曲从帕诺夫卡开始，孔科内和瓦卡伊也即将加入。', 'es': 'Primero los estudios de Panofka — pronto también Concone y Vaccai.', 'ru': 'Сначала этюды Панофки — скоро добавятся Конконе и Ваккаи.'}
+STUDI = {'ko': '연습곡은 파노프카부터, 입시에 꼭 필요한 콘코네·바카이도 곧 들어와요.', 'en': 'Panofka studies first. Concone and Vaccai are on the way.', 'de': 'Zuerst die Panofka-Etüden — Concone und Vaccai folgen bald.', 'it': 'Prima gli studi di Panofka — presto anche Concone e Vaccai.', 'fr': "D'abord les études de Panofka — Concone et Vaccai arrivent bientôt.", 'zh': '练习曲从帕诺夫卡开始，孔科内和瓦卡伊也即将加入。', 'es': 'Primero los estudios de Panofka — pronto también Concone y Vaccai.', 'ru': 'Сначала этюды Панофки — скоро добавятся Конконе и Ваккаи.'}
 
 # ── 역할별 쓰임 ────────────────────────────────────────────────
 ROLES = {
@@ -42,8 +42,8 @@ ROLES = {
 }
 
 WHO_H = {
-    "ko": ("누구에게 필요할까요?", "같은 앱도 누가 쓰느냐에 따라 쓰임이 달라요. 학생도, 선생님도, 반주자도 — 모두에게 필요해요."),
-    "en": ("Who is it for?", "The same app does a different job depending on who uses it. Students, teachers, accompanists — everyone needs it."),
+    "ko": ("누구에게 필요할까요?", "같은 앱도 누가 쓰느냐에 따라 쓰임이 달라요. 학생도, 선생님도, 반주자도 모두에게 필요해요."),
+    "en": ("Who is it for?", "The same app does a different job depending on who uses it. Students, teachers, accompanists: everyone needs it."),
     "de": ("Für wen?", "Dieselbe App leistet je nach Rolle etwas anderes. Lernende, Lehrkräfte, Korrepetitoren — alle brauchen sie."),
     "it": ("Per chi?", "La stessa app serve in modo diverso a seconda di chi la usa. Allievi, insegnanti, maestri collaboratori — serve a tutti."),
     "fr": ("Pour qui ?", "La même app rend un service différent selon qui l'utilise. Élèves, professeurs, accompagnateurs — tout le monde en a besoin."),
@@ -78,23 +78,23 @@ SCEN = {
             "리허설을 녹음해 두고 템포가 흔들린 곳, 숨 자리를 다시 들어요."),
  },
  "en": {
-  "welegato": ("Find teachers and accompanists in a new city and chat in your own language — it's translated automatically.",
+  "welegato": ("Find teachers and accompanists in a new city and chat in your own language. It's translated automatically.",
                "Put up a profile and students come to you. Get consultation requests and answer right away in the chat.",
                "Singers and students looking for an accompanist see your profile. Get requests for lessons, auditions and competitions."),
   "leggii": ("Every marking from your lesson stays on the score. Review with lesson recordings and AI notes.",
              "A different piece for every student, all on one tablet. Open it straight from IMSLP and mark it up in the lesson.",
              "Several students a day, dozens of pieces. Plan the order with setlists and turn pages with a pedal."),
-  "chiave": ("Make and fix the scores you need — write with a pen, or start from a photo or a melody you sing, and put it in your key.",
+  "chiave": ("Make and fix the scores you need: write with a pen, or start from a photo or a melody you sing, and put it in your key.",
              "Make practice scores in minutes. Write with a pen and transpose to fit each student's voice, right in the lesson.",
              "Student sent a score in another key? Bring it in from a photo, fix it with the pen and transpose to the same key."),
   "appoggio": ("A few minutes a day to build your breath. Free, no sign-up.",
-               "Turn the breathing work you explain in lessons into homework — students follow the same method at home.",
+               "Turn the breathing work you explain in lessons into homework. Students follow the same method at home.",
                "Good accompanying breathes with the singer. Feel where the breaths sit in the music yourself."),
   "squillo": ("Warm up every day to piano accompaniment.",
               "Move the first ten minutes of vocalising out of the lesson. Give the Panofka studies as homework.",
-              "No need to play warm-up scales every time — start on the repertoire with a singer who is already warmed up."),
+              "No need to play warm-up scales every time. Start on the repertoire with a singer who is already warmed up."),
   "pianino": ("Find your notes in a room without a piano, and practise on your own with metronome and tuner.",
-              "Whatever the studio piano's pitch, play reference notes at 415, 430 or 443 Hz — whatever you need.",
+              "Whatever the studio piano's pitch, play reference notes at 415, 430 or 443 Hz, whatever you need.",
               "Give the first note even in a green room without a piano, and set the tempo with the metronome beforehand."),
   "prova": ("Record lessons and practice, and the AI sums up what went well and what to work on next.",
             "Record your own playing and lessons on audio or video, and look back with AI analysis.",
@@ -245,7 +245,7 @@ PREP = {
  "ko": ("준비하기", "구한 가곡 악보가 내 키가 아닌가요?",
         "악보는 렛지에 담아 태블릿으로. 레슨에서 적어 둔 표시도 그대로 남아요. 슈베르트 가곡도, 이탈리아 고전가곡(Arie antiche)도 다른 키 악보밖에 없다면 사진을 찍어 끼아베로 불러오세요. 악보로 바뀐 뒤 내 키로 옮기고, 필요한 곳은 직접 고칠 수 있어요. 그 악보를 받은 선생님과 반주자도 같은 키로 봐요."),
  "en": ("Prepare", "The Lied you found is in the wrong key?",
-        "Your scores live in Leggii on your tablet, with every marking from your lessons. If the Schubert song or the arie antiche only exist in another key, take a photo and open it in Chiave: it becomes an editable score you can move into your key and correct where needed — and your teacher and accompanist see it in the same key."),
+        "Your scores live in Leggii on your tablet, with every marking from your lessons. If the Schubert song or the arie antiche only exist in another key, take a photo and open it in Chiave: it becomes an editable score you can move into your key and correct where needed. Your teacher and accompanist then see it in the same key."),
  "de": ("Vorbereiten", "Das Lied gibt es nur in der falschen Tonart?",
         "Ihre Noten liegen in Leggii auf dem Tablet, mit allen Eintragungen aus dem Unterricht. Gibt es das Schubert-Lied oder die Arie antiche nur in einer anderen Tonart, fotografieren Sie es und öffnen es in Chiave: Daraus wird eine bearbeitbare Partitur, die Sie in Ihre Tonart setzen und wo nötig korrigieren — Lehrkraft und Korrepetitor sehen sie in derselben Tonart."),
  "it": ("Preparare", "Il Lied che hai trovato non è nella tua tonalità?",
@@ -429,23 +429,23 @@ HOME = {
  "ko": {"title": "Vicino Labs — 음악과 일상을 위한 앱", "desc": "Vicino Labs는 음악가와 일상을 위한 앱을 만듭니다: 위레가토, 렛지, 아뽀조, 피아니노, 노미오, 그리고 곧 끼아베·프로바·스퀼로.",
         "kicker": "음악인을 위한 소프트웨어 스튜디오", "h1": "음악을 위한, <em>그리고</em> 일상을 위한 앱.",
         "lead": "Vicino Labs는 작은 소프트웨어 스튜디오예요. 음악가를 위한 앱, 레슨과 연습을 위한 앱을 만들어요. 여러 언어로, 단순하게, 개인정보를 아끼며.",
-        "music_h": "음악가를 위해", "music_sub": "Famiglia Vicino — 서로 잘 맞는 앱 가족.", "fam_link": "앱들이 함께 일하는 방법 →",
+        "music_h": "음악가를 위해", "music_sub": "Famiglia Vicino. 서로 잘 맞는 앱 가족.", "fam_link": "앱들이 함께 일하는 방법 →",
         "life_h": "일상을 위해", "apps_nav": "앱", "privacy": "개인정보처리방침(독일어)", "privacy_l": "개인정보·약관", "site": "welegato.com",
         "nomio": "여러 통화와 언어로 쓰는 가계부.",
         "values": [("여러 언어", "우리 앱은 여러 언어로 나와요. 독일어·영어부터 한국어까지."),
                    ("위레가토 아이디 하나", "원하면 아이디 하나로 Vicino Labs의 모든 앱을. 많은 기능은 가입 없이도 돼요."),
                    ("개인정보 먼저", "앱에 꼭 필요한 것만 받고, 쉬운 말로 설명해요.")],
-        "contact_h": "문의", "contact": "질문, 협업, 언론 문의 — 메일 주세요.", "btn": "메일 쓰기"},
+        "contact_h": "문의", "contact": "질문, 협업, 언론 문의는 메일 주세요.", "btn": "메일 쓰기"},
  "en": {"title": "Vicino Labs — Apps for music and everyday life", "desc": "Vicino Labs builds apps for musicians and for everyday life: welegato, Leggii, Appoggio, Pianino, Nomio and soon Chiave, Prova and Squillo.",
         "kicker": "A software studio for musicians", "h1": "Apps for music <em>and</em> everyday life.",
-        "lead": "Vicino Labs is a small software studio. We build apps for musicians, for lessons and practice — multilingual, simple and privacy-minded.",
-        "music_h": "For musicians", "music_sub": "Famiglia Vicino — a family of apps that work together.", "fam_link": "See how the apps work together →",
+        "lead": "Vicino Labs is a small software studio. We build apps for musicians, for lessons and practice: multilingual, simple and privacy-minded.",
+        "music_h": "For musicians", "music_sub": "Famiglia Vicino: a family of apps that work together.", "fam_link": "See how the apps work together →",
         "life_h": "For everyday life", "apps_nav": "Apps", "privacy": "Privacy", "privacy_l": "Privacy", "site": "welegato.com",
         "nomio": "A budget book for income and expenses in many currencies and languages.",
-        "values": [("Multilingual", "Our apps come in many languages — from German and English to Korean."),
+        "values": [("Multilingual", "Our apps come in many languages, from German and English to Korean."),
                    ("One welegato ID", "One account for all Vicino Labs apps, if you want one. Much works without any account."),
-                   ("Privacy first", "We collect only what an app really needs — and explain it in plain words.")],
-        "contact_h": "Contact", "contact": "Questions, partnerships or press — we'd love to hear from you.", "btn": "Send an email"},
+                   ("Privacy first", "We collect only what an app really needs, and explain it in plain words.")],
+        "contact_h": "Contact", "contact": "Questions, partnerships or press: we'd love to hear from you.", "btn": "Send an email"},
  "de": {"title": "Vicino Labs — Apps für Musik und Alltag", "desc": "Vicino Labs entwickelt Apps für Musikerinnen und Musiker und für den Alltag: welegato, Leggii, Appoggio, Pianino, Nomio und bald Chiave, Prova und Squillo.",
         "kicker": "Softwarestudio für Musikerinnen und Musiker", "h1": "Apps für die Musik <em>und</em> den Alltag.",
         "lead": "Vicino Labs ist ein kleines Softwarestudio. Wir entwickeln Apps für Musikerinnen und Musiker, für Unterricht und Üben — mehrsprachig, schlicht und mit Blick auf Datenschutz.",

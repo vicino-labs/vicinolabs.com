@@ -139,25 +139,25 @@ T = {'de': {'path': '/famiglia/',
         'kicker': 'Famiglia Vicino',
         'h1': 'For <em>every</em> moment<br>of your musical life.',
         'lead': 'The day you look for a teacher. The evening over your scores. The last breath before you walk on stage. Seven apps, each '
-                'for one moment — useful on their own, whole together.',
+                'for one moment. Useful on their own, whole together.',
         'center': 'Your<br>music',
         'soon': 'Soon',
         'journey_h': 'A lesson week, step by step',
         'journey_sub': "Whenever you get stuck, there's an app for that moment.",
         'stages': {'find': ('Find',
                             'New in town and looking for a teacher?',
-                            'Find teachers, accompanists and ensembles near you on welegato. Write in your own language — the chat '
+                            'Find teachers, accompanists and ensembles near you on welegato. Write in your own language. The chat '
                             'translates for both sides.'),
                    'prepare': ('Prepare',
                                'The aria sits a third too high?',
                                'Your scores live in Leggii on your tablet, with every marking from your lessons. Wrong key? One photo is '
-                               'enough — Chiave transposes it into your range.'),
+                               'enough. Chiave transposes it into your range.'),
                    'warmup': ('Warm up',
                               'Voice not awake yet?',
                               'Build your breath with Appoggio first, then warm up to piano accompaniment in Squillo.'),
                    'practise': ('Practise',
                                 'Need to check your pitch, but no piano around?',
-                                'Pianino puts piano, metronome and tuner in one app. Just set your pitch — 443 Hz like the orchestra or '
+                                'Pianino puts piano, metronome and tuner in one app. Just set your pitch: 443 Hz like the orchestra, or '
                                 '415 Hz for Baroque music.'),
                    'reflect': ('Record and reflect',
                                'What did your teacher say again?',
@@ -167,7 +167,7 @@ T = {'de': {'path': '/famiglia/',
         'loop': 'Take everything you built this week back to your lesson. And when you need a new teacher, coach or stage, welegato opens '
                 "the next door. That's how music stays legato.",
         'who_h': 'Who needs what?',
-        'who_sub': 'Voice, instrument or teaching — hardly a box stays empty.',
+        'who_sub': 'Voice, instrument or teaching: hardly a box stays empty.',
         'who_cols': ('Singers', 'Instrumentalists', 'Teachers'),
         'who_half': 'for voice teachers',
         'glue_h': 'Strong alone, better together',
@@ -187,7 +187,7 @@ T = {'de': {'path': '/famiglia/',
         'quote_kicker': 'we + legato',
         'quote': 'Shall we play legato?',
         'quote_text': 'Like legato, where notes flow on without a break,<br class="w"> the Famiglia Vicino apps connect every moment of '
-                      'your musical life —<br class="w"> seamlessly, from one lesson to the next.',
+                      'your musical life,<br class="w"> seamlessly, from one lesson to the next.',
         'quote_src': 'from welegato',
         'end_h': "Then let's play legato.",
         'end_btn2': 'Open welegato',
@@ -196,12 +196,12 @@ T = {'de': {'path': '/famiglia/',
         'apps_sub': 'Details and downloads for every app.',
         'info': 'Learn more',
         'apple_soon': 'App Store soon',
-        'd': {'welegato': 'Find music teachers, accompanists and musicians in Europe and Korea — with automatic chat translation.',
+        'd': {'welegato': 'Find music teachers, accompanists and musicians in Europe and Korea, with automatic chat translation.',
               'leggii': 'A simple sheet music reader: PDF scores, notes, IMSLP search, a metronome, lesson recordings and AI lesson notes.',
-              'chiave': 'Write and edit sheet music with ease — by pen, from a photo or a melody, in any key.',
-              'appoggio': 'Breathing training for singers — free, no sign-up.',
+              'chiave': 'Write and edit sheet music with ease: by pen, from a photo or a melody, in any key.',
+              'appoggio': 'Breathing training for singers. Free, no sign-up.',
               'squillo': 'Daily vocal exercises and warm-ups for singers.',
-              'pianino': 'Piano, metronome and tuner in one app — with adjustable concert pitch.',
+              'pianino': 'Piano, metronome and tuner in one app, with adjustable concert pitch.',
               'prova': 'Record lessons and practice, with AI feedback on the recording.'},
         'info_top': 'Learn more',
         'info_main': 'App info'},
@@ -265,7 +265,7 @@ T = {'de': {'path': '/famiglia/',
         'd': {'welegato': '유럽과 한국에서 음악 선생님·반주자·연주자를 찾는 앱. 채팅은 자동으로 번역돼요.',
               'leggii': '쉬운 악보 앱: PDF 악보, 메모, IMSLP 검색, 메트로놈, 레슨 녹음과 AI 노트.',
               'chiave': '악보를 쉽게 만들고 고쳐요. 펜으로 적고, 사진이나 소리로 불러오고, 원하는 키로도 옮겨요.',
-              'appoggio': '성악가를 위한 호흡 훈련 — 무료, 가입 없이.',
+              'appoggio': '성악가를 위한 호흡 훈련. 무료, 가입 없이.',
               'squillo': '성악가를 위한 매일의 발성 연습.',
               'pianino': '피아노·메트로놈·튜너를 한 앱에. 기준음을 맞춰 쓸 수 있어요.',
               'prova': '레슨과 연습을 녹음하면 AI가 녹음을 분석해 줘요.'},
@@ -276,7 +276,7 @@ T = {'de': {'path': '/famiglia/',
 import site_i18n as I
 WHO = {k: (2, 2, 2) for k in RING}  # 학생·선생님·반주자 모두(사용자: 각각 앱이 셋 모두에게 필요)
 T["ko"]["lead"] = ('선생님을 찾는 날, 악보를 펼치는 밤, 무대에 오르기 전 마지막 호흡까지.<br class="w"> '
-                   '학생에게도, 선생님에게도, 반주자에게도 — 일곱 개의 앱이 각자 한 순간을 맡아요.<br class="w"> '
+                   '학생에게도, 선생님에게도, 반주자에게도 일곱 개의 앱이 각자 한 순간을 맡아요.<br class="w"> '
                    '하나씩 써도 좋지만, 함께 쓰면 비로소 하나의 흐름이 돼요.')
 for _l in I.LANGS:
     if _l not in T:
