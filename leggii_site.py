@@ -133,7 +133,7 @@ T = {
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "악보 보며 녹음하고,<br>AI로 정리까지",
  "lede": "아이패드에 맞춰 만든 악보 앱입니다. 다시 들을 때 악보가 저절로 따라 넘어가고, AI는 지적과 숙제를 시간·페이지와 함께 적어 둡니다.",
- "note": "아이패드·아이폰·안드로이드 태블릿과 휴대폰에서 씁니다. 기본 기능은 무료입니다.",
+ "note": "아이패드·아이폰·안드로이드 태블릿과 휴대폰에서 씁니다.",
  "feats": [
   (1, "악보함", "악보를 한곳에", "PDF를 가져오거나 종이 악보를 카메라로 찍으면, 삐뚤게 찍힌 사진도 반듯하게 펴 줍니다. 제목과 작곡가는 알아서 읽어 냅니다.",
    ["전체 · 최근 본 악보 · 작곡가별로 보기", "즐겨찾기와 폴더", "연주회와 레슨 순서는 연주목록로", "출판사와 페이지까지 한눈에"]),
@@ -173,13 +173,7 @@ T = {
           ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
- "plans": [
-  ("무료", "처음부터", ["악보 가져오기와 카메라 스캔", "필기와 음악 기호 스탬프", "레슨 · 리허설 녹음과 페이지 따라 넘기기", "메트로놈 · 건반 · IMSLP 검색"]),
-  ("7일 체험", "가입하면 바로", ["Pro 기능 전부", "AI 30분", "카드 등록 없이"]),
-  ("Leggii Pro", "17,000원, 한 번 구매", ["Pro 기능 전부", "광고 없음", "매월 AI 30분", "첫 구매 보너스 60분"]),
-  ("Leggii Plus", "월 5,500원부터", ["Pro 기능 전부", "매월 AI 5시간", "렛지 클라우드 10GB: 월 5,500원 · 연 55,000원", "50GB: 월 8,500원 · 연 85,000원"]),
- ],
- "plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
+"plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
  "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
  "get_h": "내려받기",
  "get_p": "아이패드와 아이폰은 App Store에서, 안드로이드는 Google Play에서 받으세요.",
@@ -192,7 +186,7 @@ T = {
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Record while you read,<br>let AI take the notes",
  "lede": "A sheet music app made for the tablet. When you listen back the score turns by itself, and the AI writes down the corrections and the homework with times and pages.",
- "note": "For iPad, iPhone and Android tablets and phones. The basics are free.",
+ "note": "For iPad, iPhone and Android tablets and phones.",
  "feats": [
   (1, "Your library", "All your scores in one place", "Import PDFs or photograph paper music with the camera; tilted photos are straightened. Title and composer are recognised for you.",
    ["Browse all, recently opened or by composer", "Favourites and folders", "Setlists for concerts and lessons", "Publisher and page at a glance"]),
@@ -232,13 +226,7 @@ T = {
           ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
  "plans_h": "Plans",
  "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
- "plans": [
-  ("Free", "from the start", ["Import scores and camera scan", "Annotation and music stamps", "Lesson and rehearsal recording with page turns", "Metronome, keyboard, IMSLP search"]),
-  ("7-day trial", "right away", ["Every Pro feature", "30 AI minutes", "No card needed"]),
-  ("Leggii Pro", "one-time purchase", ["Every Pro feature", "No ads", "30 AI minutes a month", "60-minute welcome bonus"]),
-  ("Leggii Plus", "from €3.99 a month", ["Every Pro feature", "5 hours of AI a month", "Leggii cloud 10 GB: €3.99 a month, €39.99 a year", "50 GB: €5.99 a month, €59.99 a year"]),
- ],
- "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
+"plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
  "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
  "get_p": "On the App Store for iPad and iPhone, on Google Play for Android.",
@@ -251,7 +239,7 @@ T = {
  "kicker": "Vicino Labs · Famiglia Vicino",
  "h1": "Beim Lesen aufnehmen,<br>die KI schreibt mit",
  "lede": "Die Noten-App fürs Tablet. Beim Anhören blättern die Noten von selbst mit, und die KI notiert Korrekturen und Hausaufgaben mit Zeit und Seite.",
- "note": "Für iPad, iPhone sowie Android-Tablets und -Handys. Die Grundfunktionen sind kostenlos.",
+ "note": "Für iPad, iPhone sowie Android-Tablets und -Handys.",
  "feats": [
   (1, "Notenschrank", "Alle Noten an einem Ort", "PDFs importieren oder Papiernoten mit der Kamera abfotografieren – schiefe Fotos werden gerade gerichtet. Titel und Komponist werden erkannt.",
    ["Alle, zuletzt geöffnet oder nach Komponist", "Favoriten und Ordner", "Setlists für Konzert und Unterricht", "Verlag und Seite auf einen Blick"]),
@@ -291,13 +279,7 @@ T = {
           ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
  "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
- "plans": [
-  ("Kostenlos", "von Anfang an", ["Noten importieren und Kamera-Scan", "Notizen und Musikstempel", "Unterricht und Proben aufnehmen, mit Umblättern", "Metronom, Tastatur, IMSLP-Suche"]),
-  ("7 Tage testen", "sofort", ["Alle Pro-Funktionen", "30 KI-Minuten", "Ohne Kreditkarte"]),
-  ("Leggii Pro", "einmaliger Kauf", ["Alle Pro-Funktionen", "Keine Werbung", "30 KI-Minuten im Monat", "60 Minuten Willkommensbonus"]),
-  ("Leggii Plus", "ab 3,99 € im Monat", ["Alle Pro-Funktionen", "5 Std. KI im Monat", "Leggii Cloud 10 GB: 3,99 € im Monat, 39,99 € im Jahr", "50 GB: 5,99 € im Monat, 59,99 € im Jahr"]),
- ],
- "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
+"plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
  "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
  "get_p": "Im App Store für iPad und iPhone, bei Google Play für Android.",
@@ -330,18 +312,6 @@ def _media(num, head):
                 f'aria-label="{head}"><source src="/{FOLLOW}" type="video/mp4"></video>')
     return (f'<img class="shot" data-shot="d{num}" src="/leggii/shots/en/d{num}.webp" '
             f'alt="{head}" width="1200" height="936" loading="lazy" decoding="async">')
-
-
-def _plans(l, t):
-    cards = "".join(
-        f'<div class="plan"><h3>{n}</h3><p class="tagline">{tag}</p><ul>'
-        + "".join(f"<li>{b}</li>" for b in bl) + "</ul></div>"
-        for n, tag, bl in t["plans"])
-    return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
-            f'<p class="sub">{t["plans_sub"]}</p><div class="cards">{cards}</div>'
-            f'<p class="note" style="margin-top:18px">{t["plans_note"]}</p>'
-            f'<p style="margin:22px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
-            f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
 
 
 SCRIPT = """(function(){var META=__META__;var k="vl-app-lang",L=["ko","en","de"],s=null;
