@@ -131,7 +131,7 @@ TERMS = {
   "title": "Chiave Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
   "meta": [("Gültig ab", "06.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Diese Bedingungen regeln die Nutzung von Chiave, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
+  "lede": "Diese Bedingungen regeln die Nutzung von Chiave, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmen Sie ihnen zu.",
   "footer": "Diese Bedingungen gelten ab dem 6. November 2026 (Version 1.0).",
   "other": "Datenschutzerklärung →",
   "sections": [
@@ -140,33 +140,33 @@ TERMS = {
    ("Geltung und Änderungen", """<ol>
 <li>Die Bedingungen gelten ab Veröffentlichung in der App oder auf andere vom Anbieter gewählte Weise.</li>
 <li>Der Anbieter kann sie im Rahmen des Gesetzes ändern und kündigt Datum und Grund vorher an.</li>
-<li>Wenn du geänderten Bedingungen nicht zustimmst, kannst du die App nicht mehr nutzen und löschen.</li>
+<li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die App nicht mehr nutzen und löschen sie.</li>
 </ol>"""),
    ("Leistungen", """<ol>
 <li>Noten schreiben und bearbeiten, transponieren und mit Klavierklang anhören</li>
 <li><strong>Notenscan (freiwillig):</strong> Seiten aus Kamera, Fotoalbum oder PDF werden per KI gelesen und zu bearbeitbaren Noten. Gescannte Seiten werden je nach Tarif gezählt.</li>
 <li><strong>Export:</strong> PDF, PNG-Bild, MusicXML, bearbeitbare Datei</li>
 <li>Im Free-Tarif wird unten im Bildschirm ein Link zu welegato, einem Dienst desselben Anbieters, angezeigt.</li>
-<li>Es gibt keine Registrierung; Noten werden nur auf deinem Gerät gespeichert.</li>
+<li>Es gibt keine Registrierung; Noten werden nur auf Ihrem Gerät gespeichert.</li>
 </ol>"""),
    ("Tarife und Abos", f"""<ol>
 <li><strong>Testphase:</strong> Alle können in den ersten <strong>7 Tagen 3 Seiten</strong> scannen. Die Testphase gibt es einmal pro Gerät; sie beginnt bei Neuinstallation nicht neu. Danach gilt der Free-Tarif; es gibt keine automatische Zahlung.</li>
 <li><strong>Free:</strong> 1 gescannte Seite pro Monat</li>
 <li><strong>Pro:</strong> 20 gescannte Seiten pro Monat, kein Banner</li>
 <li><strong>Pro+:</strong> 50 gescannte Seiten pro Monat, kein Banner</li>
-<li>Pro und Pro+ sind <strong>monatliche Abos</strong>, die Google Play oder der Apple App Store zum im Store angezeigten Preis abrechnet. Sie verlängern sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abo-Einstellungen des Stores. Ein Abo läuft bis zum Ende des bezahlten Zeitraums; danach gilt der Free-Tarif.</li>
+<li>Pro und Pro+ sind <strong>monatliche Abos</strong>, die Google Play oder der Apple App Store zum im Store angezeigten Preis abrechnet. Sie verlängern sich um denselben Zeitraum, bis Sie kündigen; kündigen können Sie jederzeit in den Abo-Einstellungen des Stores. Ein Abo läuft bis zum Ende des bezahlten Zeitraums; danach gilt der Free-Tarif.</li>
 <li>Scan-Seiten haben keinen Geldwert und sind nicht übertragbar.</li>
-<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn Sie dem sofortigen Beginn zustimmen; das Erstattungsverfahren des Stores bleibt möglich.</li>
 <li>Änderungen der monatlichen Seiten oder der Tarifbedingungen kündigen wir vorher an; sie gelten nicht für bereits bezahlte Zeiträume.</li>
 </ol>"""),
    ("Notenscan", """<ol>
 <li>Scan-Ergebnisse liest eine KI; sie <strong>können falsche oder fehlende Noten enthalten.</strong> Bitte vergleiche sie vor Aufführung oder Veröffentlichung mit dem Original.</li>
-<li>Scanne nur Noten, die du nutzen darfst.</li>
+<li>Scannen Sie nur Noten, die Sie nutzen dürfen.</li>
 <li>Zum Schutz vor Missbrauch können wir die Nutzung begrenzen.</li>
 </ol>"""),
    ("Noten und Urheberrecht", """<ol>
-<li>Für die Einhaltung des Urheberrechts an Noten, die du in der App schreibst, scannst, transponierst, exportierst oder teilst, bist du selbst verantwortlich.</li>
-<li>Der Anbieter speichert deine Noten nicht auf seinem Server. Die für den Scan gesendeten Streifenbilder dienen nur der Notenerkennung und werden nicht gespeichert.</li>
+<li>Für die Einhaltung des Urheberrechts an Noten, die Sie in der App schreiben, scannen, transponieren, exportieren oder teilen, sind Sie selbst verantwortlich.</li>
+<li>Der Anbieter speichert Ihre Noten nicht auf seinem Server. Die für den Scan gesendeten Streifenbilder dienen nur der Notenerkennung und werden nicht gespeichert.</li>
 </ol>"""),
    ("welegato und externe Dienste", """<p>Die App verlinkt und nutzt externe Dienste wie welegato, die Store-Seiten anderer Apps von Vicino Labs, Google Play und den App Store. Sie sind von der App getrennt; es gelten deren eigene Bedingungen und Datenschutzerklärungen. Für deren Inhalte und Verfügbarkeit ist der Anbieter nicht verantwortlich.</p>"""),
    ("Geistiges Eigentum", """<p>Die Rechte an Logo, dem Namen „Chiave“, Gestaltung, Texten und Quellcode der App liegen beim Anbieter. Ohne vorherige schriftliche Zustimmung sind Vervielfältigung, Verbreitung, Übertragung, Veröffentlichung, Reverse Engineering und Bearbeitungen nicht erlaubt.</p>"""),
@@ -179,9 +179,9 @@ TERMS = {
    ("Haftung", """<ol>
 <li>Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei Verletzung von Leben, Körper oder Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
 <li>Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den bei Vertragsschluss vorhersehbaren, typischen Schaden.</li>
-<li>Noten werden nur auf deinem Gerät gespeichert; eine Cloud-Sicherung gibt es nicht. Sichere wichtige Noten per Export selbst gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
+<li>Noten werden nur auf Ihrem Gerät gespeichert; eine Cloud-Sicherung gibt es nicht. Sichern Sie wichtige Noten per Export selbst gegen Verlust des Geräts, Löschung oder Zurücksetzen.</li>
 </ol>"""),
-   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem du als Verbraucher deinen gewöhnlichen Aufenthalt hast (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
+   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem Sie als Verbraucher Ihren gewöhnlichen Aufenthalt haben (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
    ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _id_card("de")),
   ],
  },

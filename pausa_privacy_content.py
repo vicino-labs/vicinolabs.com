@@ -149,41 +149,41 @@ PRIVACY = {
   "title": "Pausa Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
   "meta": [("Gültig ab", "13.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Pausa von Vicino Labs macht Klang fürs Café, zum Lesen, für die Arbeit am Schreibtisch und vor dem Schlafen. Du kannst Musik mit Regen, Kaminfeuer, Cafégeräuschen und Wind mischen. Der Bühnen-Tab hilft dir, dich vor dem Auftritt vorzubereiten. Alles funktioniert ohne Anmeldung, alle Klänge stecken in der App, und ohne Anmeldung werden keine Daten an unsere Server gesendet. Hier steht genau, welche Daten die App verarbeitet.",
+  "lede": "Pausa von Vicino Labs macht Klang fürs Café, zum Lesen, für die Arbeit am Schreibtisch und vor dem Schlafen. Sie können Musik mit Regen, Kaminfeuer, Cafégeräuschen und Wind mischen. Der Bühnen-Tab hilft Ihnen, sich vor dem Auftritt vorzubereiten. Alles funktioniert ohne Anmeldung, alle Klänge stecken in der App, und ohne Anmeldung werden keine Daten an unsere Server gesendet. Hier steht genau, welche Daten die App verarbeitet.",
   "footer": "Diese Erklärung gilt ab dem 13. November 2026 (Version 1.0).",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de", N) + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
    ("Kurzfassung", """<div class="summary-box"><ul>
 <li>Alles funktioniert ohne Anmeldung. Die Anmeldung mit einer welegato-ID ist freiwillig; ohne sie erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer.</li>
-<li>Deine Mixe und Einstellungen bleiben <strong>auf deinem Gerät</strong>; nichts wird auf unsere Server hochgeladen.</li>
+<li>Deine Mixe und Einstellungen bleiben <strong>auf Ihrem Gerät</strong>; nichts wird auf unsere Server hochgeladen.</li>
 <li>Alle Klänge stecken in der App und laufen auch offline. Es wird nichts gestreamt.</li>
 <li>Keine Kamera, kein Standort, keine Kontakte. Das Mikrofon nutzt nur das Stimmgerät im Tab „Bühne“; nichts wird aufgenommen oder gesendet.</li>
 <li>Keine Werbung und keine Analyse- oder Tracking-Tools.</li>
 <li>Zahlungen wickeln der App Store und Google Play ab; Kartendaten erhalten wir nie.</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
-<li>Der zuletzt gehörte Mix und deine gespeicherten Mixe</li>
-<li>Die gewählte Sprache und ob du die Einführung abgeschlossen hast</li>
-<li>Beginn und Dauer deines kostenlosen Probezeitraums</li>
+<li>Der zuletzt gehörte Mix und Ihre gespeicherten Mixe</li>
+<li>Die gewählte Sprache und ob Sie die Einführung abgeschlossen haben</li>
+<li>Beginn und Dauer Ihres kostenlosen Probezeitraums</li>
 <li>Dein Abo- oder Kaufstatus (eine auf dem Gerät gespeicherte Kopie dessen, was der Store meldet)</li>
 </ul>
-<p>Diese Daten bleiben im privaten Speicher der App und werden nicht an uns übermittelt. Sie werden gelöscht, wenn du die App deinstallierst. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
-   ("Wiedergabe und Berechtigungen", """<p>Pausa fragt nicht nach Kamera, Standort oder Kontakten. Nach dem Mikrofon fragt die App nur, wenn du im Tab „Bühne“ zum ersten Mal das Stimmgerät einschaltest. Das Stimmgerät bestimmt die Tonhöhe des Gehörten direkt auf deinem Gerät und zeigt sie an; es nimmt keinen Ton auf, speichert nichts und sendet nichts. Alles andere funktioniert auch ohne diese Berechtigung. Der binaurale Ton wird direkt auf deinem Gerät erzeugt (auf jedem Ohr ein anderer Ton), alle anderen Klänge stecken in der App. Deshalb läuft die Wiedergabe auch im Hintergrund, bei ausgeschaltetem Bildschirm und ohne Internetverbindung weiter.</p>"""),
+<p>Diese Daten bleiben im privaten Speicher der App und werden nicht an uns übermittelt. Sie werden gelöscht, wenn Sie die App deinstallieren. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
+   ("Wiedergabe und Berechtigungen", """<p>Pausa fragt nicht nach Kamera, Standort oder Kontakten. Nach dem Mikrofon fragt die App nur, wenn Sie im Tab „Bühne“ zum ersten Mal das Stimmgerät einschalten. Das Stimmgerät bestimmt die Tonhöhe des Gehörten direkt auf Ihrem Gerät und zeigt sie an; es nimmt keinen Ton auf, speichert nichts und sendet nichts. Alles andere funktioniert auch ohne diese Berechtigung. Der binaurale Ton wird direkt auf Ihrem Gerät erzeugt (auf jedem Ohr ein anderer Ton), alle anderen Klänge stecken in der App. Deshalb läuft die Wiedergabe auch im Hintergrund, bei ausgeschaltetem Bildschirm und ohne Internetverbindung weiter.</p>"""),
    ("Abos und Käufe", f"""<p>Abos (jährlich und monatlich) und den einmaligen Kauf auf Lebenszeit gibt es nur über den App Store oder Google Play. Zahlung und Kartendaten verarbeitet der Store; wir erhalten sie nicht.</p>
 <ul>
-<li>Über die Kaufschnittstelle des Stores auf deinem Gerät erhält die App den Kaufstatus und den Kaufnachweis (Token), um zu entscheiden, ob kostenpflichtige Funktionen freigeschaltet werden. Diese Daten werden nicht an unsere Server gesendet.</li>
+<li>Über die Kaufschnittstelle des Stores auf Ihrem Gerät erhält die App den Kaufstatus und den Kaufnachweis (Token), um zu entscheiden, ob kostenpflichtige Funktionen freigeschaltet werden. Diese Daten werden nicht an unsere Server gesendet.</li>
 <li>Für den Store gilt die <a {_A}>Datenschutzrichtlinie von Apple</a> bzw. die <a {_G}>Datenschutzerklärung von Google</a>.</li>
 </ul>
 <p>Rechtsgrundlage: Erbringung des Gekauften (lit. b).</p>"""),
-   ("Erinnerung vor Ende des Probezeitraums", """<p>Bevor du den 7-tägigen kostenlosen Probezeitraum des Jahresabos startest, zeigt dir die App das genaue Enddatum. Wenn du Benachrichtigungen erlaubst, plant die App auf deinem Gerät eine Benachrichtigung 2 Tage vor dem Ende ein. Sie wird nur auf dem Gerät erstellt und angezeigt; wir nutzen keinen Push-Server. Benachrichtigungen kannst du jederzeit in den Geräteeinstellungen abschalten.</p>"""),
-   ("Android-Sicherung", f"""<p>Unter Android können, wenn die Google-Sicherung des Geräts aktiv ist, die <strong>Einstellungen</strong> der App in deinem Google-Konto gesichert und bei einer Neuinstallation wiederhergestellt werden. Google verarbeitet diese Sicherung gemäß der <a {_G}>Google-Datenschutzerklärung</a>; wir haben keinen Zugriff. Du kannst sie in den Geräteeinstellungen abschalten.</p>"""),
-   ("welegato-ID (freiwillig)", f"""<p>Pausa funktioniert vollständig ohne Anmeldung. Wenn du möchtest, kannst du dich in den Einstellungen mit einer welegato-ID anmelden (ein Konto von welegato, einem Dienst desselben Unternehmens: eine ID für alle Apps von Vicino Labs). Dieser Abschnitt gilt nur, wenn du dich anmeldest.</p>
+   ("Erinnerung vor Ende des Probezeitraums", """<p>Bevor Sie den 7-tägigen kostenlosen Probezeitraum des Jahresabos starten, zeigt Ihnen die App das genaue Enddatum. Wenn Sie Benachrichtigungen erlauben, plant die App auf Ihrem Gerät eine Benachrichtigung 2 Tage vor dem Ende ein. Sie wird nur auf dem Gerät erstellt und angezeigt; wir nutzen keinen Push-Server. Benachrichtigungen können Sie jederzeit in den Geräteeinstellungen abschalten.</p>"""),
+   ("Android-Sicherung", f"""<p>Unter Android können, wenn die Google-Sicherung des Geräts aktiv ist, die <strong>Einstellungen</strong> der App in Ihrem Google-Konto gesichert und bei einer Neuinstallation wiederhergestellt werden. Google verarbeitet diese Sicherung gemäß der <a {_G}>Google-Datenschutzerklärung</a>; wir haben keinen Zugriff. Sie können sie in den Geräteeinstellungen abschalten.</p>"""),
+   ("welegato-ID (freiwillig)", f"""<p>Pausa funktioniert vollständig ohne Anmeldung. Wenn Sie möchten, können Sie sich in den Einstellungen mit einer welegato-ID anmelden (ein Konto von welegato, einem Dienst desselben Unternehmens: eine ID für alle Apps von Vicino Labs). Dieser Abschnitt gilt nur, wenn Sie sich anmelden.</p>
 <ul>
 <li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Google, Kakao, Apple oder E-Mail, Kontonummer) werden nach der <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Die Anmeldung läuft über Supabase Auth. Eine in Pausa erstellte ID wird als „in Pausa registriert“ markiert.</li>
-<li>Pausa nutzt die Anmeldung bisher für nichts weiter. Deine Mixe und Einstellungen bleiben auch angemeldet auf deinem Gerät.</li>
+<li>Pausa nutzt die Anmeldung bisher für nichts weiter. Ihre Mixe und Einstellungen bleiben auch angemeldet auf Ihrem Gerät.</li>
 <li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browser-Signale gegen automatische Registrierungen (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Google, Kakao oder Apple gelten deren Erklärungen.</li>
-<li>Löschst du die ID in der App oder unter <a href="https://welegato.com/konto-loeschen" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>, wird das Konto in allen Apps von Vicino Labs gelöscht, die diese ID nutzen. Mixe und Einstellungen auf dem Gerät bleiben.</li>
+<li>Löschen Sie die ID in der App oder unter <a href="https://welegato.com/konto-loeschen" target="_blank" rel="noopener">welegato.com/konto-loeschen</a>, wird das Konto in allen Apps von Vicino Labs gelöscht, die diese ID nutzen. Mixe und Einstellungen auf dem Gerät bleiben.</li>
 </ul>
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
@@ -194,13 +194,13 @@ PRIVACY = {
 <li><strong>Cloudflare</strong>: Schutz vor automatischen E-Mail-Registrierungen (Turnstile) (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Erklärung</a>)</li>
 </ul>
 <p>Ohne Anmeldung gehen keine Daten an Supabase, Kakao oder Cloudflare. Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
-   ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht, und die App nutzt keine Kamera. Das Mikrofon nutzt nur das Stimmgerät, auf deinem Gerät, ohne Aufnahme oder Übertragung. Es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-SDKs, und außer bei der freiwilligen Anmeldung mit der welegato-ID werden keine Daten an einen von uns betriebenen Server gesendet. Wir wissen also nicht, wer du bist oder wie du die App nutzt.</p>"""),
+   ("Nicht erhobene Daten", """<p>Ohne Anmeldung erhalten wir weder Namen noch E-Mail-Adresse oder Telefonnummer. Standort, Kontakte und Werbe-IDs erheben wir nicht, und die App nutzt keine Kamera. Das Mikrofon nutzt nur das Stimmgerät, auf Ihrem Gerät, ohne Aufnahme oder Übertragung. Es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-SDKs, und außer bei der freiwilligen Anmeldung mit der welegato-ID werden keine Daten an einen von uns betriebenen Server gesendet. Wir wissen also nicht, wer Sie sind oder wie Sie die App nutzen.</p>"""),
    ("Kinder", """<p>Die App richtet sich nicht an Kinder unter 16 Jahren. Anmelden können sich nach den welegato-Bedingungen nur Personen ab 16 Jahren.</p>"""),
-   ("Deine Rechte", f"""<ul>
+   ("Ihre Rechte", f"""<ul>
 <li>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO)</li>
-<li>Beschwerde bei einer Aufsichtsbehörde, z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde deines Wohnorts</li>
+<li>Beschwerde bei einer Aufsichtsbehörde, z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit NRW (LDI NRW) oder der Behörde Ihres Wohnorts</li>
 </ul>
-<p>Wir speichern auf keinem Server Daten über dich. Daten auf deinem Gerät werden gelöscht, wenn du die App deinstallierst. Bei Fragen schreib uns an <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
+<p>Wir speichern auf keinem Server Daten über Sie. Daten auf Ihrem Gerät werden gelöscht, wenn Sie die App deinstallieren. Bei Fragen schreib uns an <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""),
    ("Änderungen", """<p>Wir können diese Erklärung anpassen, wenn sich Recht oder App ändern; Änderungen und das Datum stehen auf dieser Seite.</p>"""),
    ("Kontakt", "<p>Fragen zum Datenschutz richte bitte an:</p>" + _id_card("de")),
   ],

@@ -139,7 +139,7 @@ TERMS = {
   "title": "Pausa Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
   "meta": [("Gültig ab", "13.11.2026"), ("Version", "1.0"), ("Betreiber", "Vicino Labs")],
-  "lede": "Diese Bedingungen regeln die Nutzung von Pausa, einer Klang-App von Vicino Labs. Mit Installation und Nutzung der App stimmst du ihnen zu.",
+  "lede": "Diese Bedingungen regeln die Nutzung von Pausa, einer Klang-App von Vicino Labs. Mit Installation und Nutzung der App stimmen Sie ihnen zu.",
   "footer": "Diese Bedingungen gelten ab dem 13. November 2026 (Version 1.0).",
   "other": "Datenschutzerklärung →",
   "sections": [
@@ -148,11 +148,11 @@ TERMS = {
    ("Geltung und Änderungen", """<ol>
 <li>Die Bedingungen gelten ab Veröffentlichung in der App oder auf andere vom Anbieter gewählte Weise.</li>
 <li>Der Anbieter kann sie im Rahmen des Gesetzes ändern und kündigt Datum und Grund vorher an.</li>
-<li>Wenn du geänderten Bedingungen nicht zustimmst, kannst du die App nicht mehr nutzen und löschen.</li>
+<li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die App nicht mehr nutzen und löschen sie.</li>
 </ol>"""),
    ("Leistungen", """<ol>
-<li><strong>Mix:</strong> Musik mit Regen, Kaminfeuer, Cafégeräuschen und Wind mischen, jeweils so laut, wie du magst.</li>
-<li><strong>Binauraler Ton:</strong> wird direkt auf deinem Gerät erzeugt, auf jedem Ohr ein anderer Ton. Nur mit Kopfhörern.</li>
+<li><strong>Mix:</strong> Musik mit Regen, Kaminfeuer, Cafégeräuschen und Wind mischen, jeweils so laut, wie Sie möchten.</li>
+<li><strong>Binauraler Ton:</strong> wird direkt auf Ihrem Gerät erzeugt, auf jedem Ohr ein anderer Ton. Nur mit Kopfhörern.</li>
 <li><strong>Sleep-Timer:</strong> Nach der eingestellten Zeit wird der Klang langsam leiser und verstummt.</li>
 <li><strong>Momente:</strong> einen passenden Mix fürs Café, zum Lesen, für die Arbeit oder vor dem Schlafen wählen und eigene Mixe speichern.</li>
 <li>Alle Klänge stecken in der App; sie laufen im Hintergrund, bei ausgeschaltetem Bildschirm und offline.</li>
@@ -162,17 +162,17 @@ TERMS = {
 <li>Pausa ist kein Medizinprodukt und keine Therapie. Die App verspricht keine Wirkung auf Schlaf, Konzentration, Entspannung oder Gesundheit und dient nicht der Diagnose, Behandlung oder Vorbeugung von Krankheiten.</li>
 <li>Alle Klänge der App, auch der binaurale Ton, dienen nur der Atmosphäre.</li>
 <li>Bitte hör in angemessener Lautstärke. Langes, lautes Hören kann das Gehör schädigen.</li>
-<li>Nutze die App nicht beim Autofahren, beim Bedienen von Maschinen oder in anderen Situationen, die deine Aufmerksamkeit erfordern.</li>
+<li>Nutzen Sie die App nicht beim Autofahren, beim Bedienen von Maschinen oder in anderen Situationen, die Ihre Aufmerksamkeit erfordern.</li>
 </ol>"""),
    ("Abos, Kauf auf Lebenszeit und kostenloser Probezeitraum", """<ol>
-<li>Kostenpflichtige Funktionen kaufst du als In-App-Kauf über den App Store oder Google Play: ein Jahresabo, ein Monatsabo und einen einmaligen Kauf auf Lebenszeit.</li>
-<li>Ein Abo verlängert sich um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in den Abo-Einstellungen des Stores. Es läuft bis zum Ende des bezahlten Zeitraums.</li>
-<li><strong>Probezeitraum:</strong> Zum Jahresabo gehört ein kostenloser Probezeitraum von 7 Tagen. Vor dem Start zeigt dir die App das Enddatum. Wenn du nicht spätestens 24 Stunden vor Ende (App Store) bzw. vor Ende (Google Play) kündigst, geht er in ein kostenpflichtiges Jahresabo über. Wenn du Benachrichtigungen erlaubst, erinnert dich dein Gerät 2 Tage vor dem Ende.</li>
-<li><strong>Kauf auf Lebenszeit:</strong> wird einmal bezahlt und verlängert sich nicht. Mit demselben Store-Konto kannst du ihn in der App über „Käufe wiederherstellen“ zurückholen.</li>
-<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn zustimmst; das Erstattungsverfahren des Stores bleibt möglich.</li>
+<li>Kostenpflichtige Funktionen kaufen Sie als In-App-Kauf über den App Store oder Google Play: ein Jahresabo, ein Monatsabo und einen einmaligen Kauf auf Lebenszeit.</li>
+<li>Ein Abo verlängert sich um denselben Zeitraum, bis Sie kündigen; kündigen können Sie jederzeit in den Abo-Einstellungen des Stores. Es läuft bis zum Ende des bezahlten Zeitraums.</li>
+<li><strong>Probezeitraum:</strong> Zum Jahresabo gehört ein kostenloser Probezeitraum von 7 Tagen. Vor dem Start zeigt Ihnen die App das Enddatum. Wenn Sie nicht spätestens 24 Stunden vor Ende (App Store) bzw. vor Ende (Google Play) kündigst, geht er in ein kostenpflichtiges Jahresabo über. Wenn Sie Benachrichtigungen erlauben, erinnert Sie Ihr Gerät 2 Tage vor dem Ende.</li>
+<li><strong>Kauf auf Lebenszeit:</strong> wird einmal bezahlt und verlängert sich nicht. Mit demselben Store-Konto können Sie ihn in der App über „Käufe wiederherstellen“ zurückholen.</li>
+<li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln und Abläufen des jeweiligen Stores. Bei digitalen Inhalten kann das Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn Sie dem sofortigen Beginn zustimmen; das Erstattungsverfahren des Stores bleibt möglich.</li>
 </ol>"""),
    ("Nutzung der Musik und Klänge", """<ol>
-<li>Musik und Klänge der App sind dir nur zum privaten, nicht kommerziellen Hören in der App lizenziert. Das gilt auch mit Abo oder Kauf auf Lebenszeit.</li>
+<li>Musik und Klänge der App sind Ihnen nur zum privaten, nicht kommerziellen Hören in der App lizenziert. Das gilt auch mit Abo oder Kauf auf Lebenszeit.</li>
 <li>Das Abspielen für Kundschaft oder Publikum, etwa in Geschäften, Cafés, Restaurants oder Büros, ist nicht erlaubt. Eine solche geschäftliche Nutzung ist von diesen Bedingungen nicht umfasst.</li>
 <li>Musik und Klänge dürfen nicht aufgenommen oder herausgelöst werden, um sie anderweitig zu nutzen oder weiterzugeben.</li>
 </ol>"""),
@@ -188,9 +188,9 @@ TERMS = {
    ("Haftung", """<ol>
 <li>Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei Verletzung von Leben, Körper oder Gesundheit sowie nach dem Produkthaftungsgesetz.</li>
 <li>Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den bei Vertragsschluss vorhersehbaren, typischen Schaden.</li>
-<li>Gespeicherte Mixe und Einstellungen liegen nur auf deinem Gerät. Der Anbieter speichert sie nicht und kann Mixe, die durch Verlust des Geräts, Löschung oder Zurücksetzen verloren gehen, nicht wiederherstellen.</li>
+<li>Gespeicherte Mixe und Einstellungen liegen nur auf Ihrem Gerät. Der Anbieter speichert sie nicht und kann Mixe, die durch Verlust des Geräts, Löschung oder Zurücksetzen verloren gehen, nicht wiederherstellen.</li>
 </ol>"""),
-   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem du als Verbraucher deinen gewöhnlichen Aufenthalt hast (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
+   ("Anwendbares Recht und Gerichtsstand", """<p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften des Staates, in dem Sie als Verbraucher Ihren gewöhnlichen Aufenthalt haben (z. B. ein EU-Mitgliedstaat), bleiben unberührt. Im Übrigen ist Gerichtsstand der Sitz des Anbieters (Dortmund).</p>"""),
    ("Kontakt", "<p>Fragen zu diesen Bedingungen richte bitte an:</p>" + _id_card("de")),
   ],
  },
