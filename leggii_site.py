@@ -41,19 +41,44 @@ html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",G
 .langbar button.on{background:var(--ink);color:var(--bg)}
 
 /* 맨 위 */
-.hero{text-align:center;padding:56px 0 8px}
-.hero .ic{width:104px;height:104px;border-radius:24px;display:block;margin:0 auto 22px;box-shadow:0 22px 44px -20px rgba(60,30,15,.5)}
+.hero{text-align:center;padding:44px 0 8px}
+.hero .ic{width:92px;height:92px;border-radius:22px;display:block;margin:0 auto 18px;box-shadow:0 22px 44px -20px rgba(60,30,15,.5)}
 .hero h1{font-size:clamp(36px,6.4vw,62px);line-height:1.12;margin:0 0 14px}
 html[lang=ko] .hero h1{font-size:clamp(30px,5.2vw,50px)}
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
 .hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:620px;text-wrap:balance}
-.shotwide{display:block;width:100%;max-width:1000px;margin:34px auto 0;border-radius:16px}
+.shotwide{display:block;width:100%;height:auto;max-width:1000px;margin:30px auto 0;border-radius:16px}
 .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px 0 0}
 .stores a{display:block;line-height:0}
 .note{font-size:13.5px;color:var(--faint);margin:14px 0 0}
 
+/* 요약 판 — 여기서 한 번 스크롤에 앱 전체가 들어와야 한다 */
+.sum{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,56px) 0 0}
+.sum h2{font-size:clamp(24px,3.2vw,34px);margin:0 0 6px}
+.sum .sub{color:var(--soft);margin:0 0 26px;font-size:16px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tile img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line)}
+.tile .tx{padding:14px 16px 16px}
+.tile h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:19px;margin:0 0 3px;line-height:1.25}
+html[lang=ko] .tile h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:17px}
+.tile p{margin:0;color:var(--soft);font-size:14px;line-height:1.5;text-wrap:pretty}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.tiles{grid-template-columns:repeat(2,1fr);gap:10px}
+.tile .tx{padding:11px 12px 13px}.tile h3{font-size:15.5px}html[lang=ko] .tile h3{font-size:14.5px}.tile p{font-size:12.5px}}
+
+/* 요금 비교표 — 한 화면에서 견주어 보게 */
+.ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ptab{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ptab th,.ptab td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--line)}
+.ptab th:first-child,.ptab td:first-child{text-align:left;color:var(--soft);white-space:normal}
+.ptab thead th{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:18px;background:var(--tint);color:var(--ink)}
+html[lang=ko] .ptab thead th{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:16px}
+.ptab tbody tr:last-child td{border-bottom:0;font-weight:600;color:var(--ink)}
+@media(max-width:720px){.ptab{font-size:13.5px;min-width:520px}.ptab th,.ptab td{padding:9px 8px}}
+
 /* 기능 줄 */
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(48px,7vw,86px) 0;border-top:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:center;padding:clamp(34px,4.4vw,58px) 0;border-top:1px solid var(--line)}
 .feat.flip .txt{order:2}
 .feat h2{font-size:clamp(26px,3.4vw,38px);line-height:1.2;margin:0 0 14px}
 html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
@@ -61,11 +86,11 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 .feat ul{margin:0;padding:0;list-style:none}
 .feat li{position:relative;padding-left:20px;color:var(--soft);font-size:15.5px;margin:7px 0}
 .feat li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--goldl)}
-.shot{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 30px 60px -30px rgba(60,30,15,.55)}
-@media(max-width:820px){.feat{grid-template-columns:1fr;gap:26px;padding:44px 0}.feat.flip .txt{order:0}.shot{max-width:480px;margin:0 auto}}
+.shot{display:block;width:100%;height:auto;border-radius:10px}
+@media(max-width:820px){.feat{grid-template-columns:1fr;gap:20px;padding:32px 0}.feat.flip .txt{order:0}.shot{max-width:480px;margin:0 auto}}
 
 /* 요금 */
-.plans{border-top:1px solid var(--line);padding:clamp(48px,7vw,80px) 0 10px}
+.plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
 .plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
 .plans .sub{color:var(--soft);margin:0 0 30px;max-width:620px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
@@ -78,7 +103,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 
 /* 아래 */
 .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:13px 26px;font-weight:600;font-size:15.5px}
-.getit{text-align:center;border-top:1px solid var(--line);margin-top:clamp(40px,6vw,70px);padding:clamp(44px,6vw,76px) 0 10px}
+.getit{text-align:center;border-top:1px solid var(--line);margin-top:clamp(28px,3.4vw,44px);padding:clamp(32px,4vw,52px) 0 10px}
 .getit h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
 .getit p{color:var(--soft);margin:0 auto;max-width:560px}
 .fam{display:inline-block;margin:30px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
@@ -127,6 +152,23 @@ T = {
   (9, "Famiglia Vicino", "음악가의 하루를 함께 쓰는 앱들", "렛지는 비치노 랩스가 만드는 음악 앱 가족 가운데 하나입니다. 레슨 선생님이나 함께할 연주자를 찾고 있다면 위레가토를 만나 보세요.",
    ["위레가토: 음악 선생님과 연주자 찾기", "피아니노 · 아뽀조 · 프로바 · 끼아베 · 스퀼로"]),
  ],
+  "sum_h": "렛지가 해 주는 일",
+ "sum_sub": "여덟 가지입니다. 아래에서 셋은 더 자세히 보실 수 있습니다.",
+ "tiles": {1: "PDF·카메라·IMSLP에서 가져와 한곳에",
+           2: "펜·형광펜·음악 기호 스탬프, Apple Pencil",
+           3: "넘긴 페이지가 함께 기록돼 다시 들을 때 따라 넘어갑니다",
+           4: "지적·핵심·숙제를 시간과 페이지로",
+           6: "출판사·가사 언어·편곡자를 보고 골라 받기",
+           7: "악보를 덮지 않고 그 위에 떠 있습니다",
+           8: "말로 물으면 찾아 주고 실행 단추까지",
+           5: "Pro와 AI 시간, 클라우드가 기기마다 그대로"},
+ "ptab_cols": ["", "무료", "7일 체험", "Pro", "Plus"],
+ "ptab": [("악보·필기·녹음·메트로놈", "✓", "✓", "✓", "✓"),
+          ("Pro 기능 전부", "–", "✓", "✓", "✓"),
+          ("위레가토 배너", "있음", "없음", "없음", "없음"),
+          ("매월 AI 분석", "–", "30분", "30분", "5시간"),
+          ("렛지 클라우드", "–", "–", "–", "10GB · 50GB"),
+          ("가격", "무료", "무료", "한 번 구매", "월 3.99유로부터")],
  "plans_h": "요금제",
  "plans_sub": "악보 가져오기, 필기, 녹음, 메트로놈 같은 기본 기능은 무료입니다. AI 분석과 클라우드는 서버 비용이 들어가는 부분이라 요금제로 받습니다.",
  "plans": [
@@ -169,6 +211,23 @@ T = {
   (9, "Famiglia Vicino", "A family of apps for your musical day", "Leggii is one of the music apps Vicino Labs makes. Looking for a teacher or musicians to play with? Visit welegato.",
    ["welegato: find music teachers and players", "Pianino · Appoggio · Prova · Chiave · Squillo"]),
  ],
+  "sum_h": "What Leggii does",
+ "sum_sub": "Eight things. Three of them are shown up close below.",
+ "tiles": {1: "Bring them in from PDFs, the camera and IMSLP",
+           2: "Pen, highlighter, music stamps, Apple Pencil",
+           3: "Page turns are saved, so the score follows when you listen back",
+           4: "Corrections, key points and homework, by time and page",
+           6: "Choose by publisher, text language and arranger",
+           7: "They float above the music instead of covering it",
+           8: "Ask out loud and get the answer with a button",
+           5: "Pro, AI time and the cloud follow you to every device"},
+ "ptab_cols": ["", "Free", "7-day trial", "Pro", "Plus"],
+ "ptab": [("Scores, ink, recording, metronome", "✓", "✓", "✓", "✓"),
+          ("All Pro features", "–", "✓", "✓", "✓"),
+          ("welegato banner", "yes", "no", "no", "no"),
+          ("AI analysis a month", "–", "30 min", "30 min", "5 hours"),
+          ("Leggii cloud", "–", "–", "–", "10 GB · 50 GB"),
+          ("Price", "free", "free", "one-time", "from €3.99 a month")],
  "plans_h": "Plans",
  "plans_sub": "Importing scores, annotating, recording and the metronome are free. AI analysis and the cloud cost us server time, so those are what the plans pay for.",
  "plans": [
@@ -211,6 +270,23 @@ T = {
   (9, "Famiglia Vicino", "Apps für den musikalischen Alltag", "Leggii gehört zur Familie der Musik-Apps von Vicino Labs. Sie suchen eine Lehrkraft oder Mitspielende? Schauen Sie bei welegato vorbei.",
    ["welegato: Musiklehrkräfte und Mitspielende finden", "Pianino · Appoggio · Prova · Chiave · Squillo"]),
  ],
+  "sum_h": "Das kann Leggii",
+ "sum_sub": "Acht Dinge. Drei davon zeigen wir weiter unten genauer.",
+ "tiles": {1: "Aus PDFs, von der Kamera und aus IMSLP",
+           2: "Stift, Textmarker, Musikstempel, Apple Pencil",
+           3: "Das Umblättern wird mitgespeichert und beim Anhören blättern die Noten mit",
+           4: "Korrekturen, Kernpunkte und Hausaufgaben nach Zeit und Seite",
+           6: "Nach Verlag, Textsprache und Bearbeiter wählen",
+           7: "Sie schweben über den Noten, statt sie zu verdecken",
+           8: "Einfach fragen und die Antwort kommt samt Schaltfläche",
+           5: "Pro, KI-Zeit und Cloud begleiten Sie auf jedes Gerät"},
+ "ptab_cols": ["", "Kostenlos", "7 Tage testen", "Pro", "Plus"],
+ "ptab": [("Noten, Notizen, Aufnahme, Metronom", "✓", "✓", "✓", "✓"),
+          ("Alle Pro-Funktionen", "–", "✓", "✓", "✓"),
+          ("welegato-Banner", "ja", "nein", "nein", "nein"),
+          ("KI-Analyse im Monat", "–", "30 Min.", "30 Min.", "5 Std."),
+          ("Leggii Cloud", "–", "–", "–", "10 GB · 50 GB"),
+          ("Preis", "kostenlos", "kostenlos", "Einmalkauf", "ab 3,99 € im Monat")],
  "plans_h": "Tarife",
  "plans_sub": "Noten importieren, hineinschreiben, aufnehmen und das Metronom sind kostenlos. KI-Analyse und Cloud kosten Serverzeit – dafür sind die Tarife da.",
  "plans": [
@@ -238,8 +314,8 @@ def _feat(l, i, num, kicker, head, body, bullets):
     flip = " flip" if i % 2 else ""
     return (f'<div data-l="{l}" class="feat{flip}{_on(l)}">'
             f'<div class="txt"><p class="kicker">{kicker}</p><h2>{head}</h2><p>{body}</p><ul>{lis}</ul></div>'
-            f'<div><img class="shot" data-shot="{num}" src="/leggii/shots/en/{num}.webp" '
-            f'alt="{head}" width="1100" height="1451" loading="lazy" decoding="async"></div></div>')
+            f'<div><img class="shot" data-shot="d{num}" src="/leggii/shots/en/d{num}.webp" '
+            f'alt="{head}" width="1200" height="936" loading="lazy" decoding="async"></div></div>')
 
 
 def _plans(l, t):
@@ -278,22 +354,63 @@ def _meta_json():
     return json.dumps({l: [T[l]["title"], T[l]["desc"]] for l, _ in LANGS}, ensure_ascii=False)
 
 
+def _tiles(l):
+    t = T[l]
+    out = []
+    for num, kicker, head, body, bullets in t["feats"]:
+        if num not in t["tiles"]:
+            continue
+        out.append(
+            f'<div class="tile"><img data-shot="t{num}" src="/leggii/shots/en/t{num}.webp" '
+            f'alt="{head}" width="720" height="540" loading="lazy" decoding="async">'
+            f'<div class="tx"><h3>{head}</h3><p>{t["tiles"][num]}</p></div></div>')
+    return (f'<div data-l="{l}" class="sum{_on(l)}"><h2>{t["sum_h"]}</h2>'
+            f'<p class="sub">{t["sum_sub"]}</p><div class="tiles">{"".join(out)}</div></div>')
+
+
+def _ptab(l):
+    t = T[l]
+    head = "".join(f"<th>{c}</th>" for c in t["ptab_cols"])
+    rows = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in t["ptab"])
+    return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
+            f'<p class="sub">{t["plans_sub"]}</p>'
+            f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>'
+            f'<p class="note" style="margin-top:16px">{t["plans_note"]}</p>'
+            f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
+            f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
+
+
+def _meta_json():
+    """언어별 탭 제목과 설명 — 언어를 바꾸면 자바스크립트가 이걸로 바꾼다."""
+    import json
+    return json.dumps({l: [T[l]["title"], T[l]["desc"]] for l, _ in LANGS}, ensure_ascii=False)
+
+
+# 크게 보여 줄 것 셋 — 남들이 못 하는 것(HQ·대표님 2026-11-17).
+# 녹음하면 악보가 따라 넘어감 / AI가 레슨을 정리 / 기기끼리 맞춰짐.
+DEEP = (3, 4, 5)
+
+
 def page():
     buttons = "".join(f'<button type="button" data-set="{l}"{" class=on" if l == "en" else ""}>{n}</button>'
                       for l, n in LANGS)
     hero = "".join(
         f'<div data-l="{l}" class="hero{_on(l)}">'
-        f'<img class="ic" src="/apps/leggii.png" srcset="/apps/hi/leggii.png 2x" alt="Leggii" width="104" height="104">'
+        f'<img class="ic" src="/apps/leggii.png" srcset="/apps/hi/leggii.png 2x" alt="Leggii" width="92" height="92">'
         f'<p class="kicker">{T[l]["kicker"]}</p><h1>{T[l]["h1"]}</h1>'
         f'<p class="lede">{T[l]["lede"]}</p>'
         f'<div class="stores">{badge(l)}</div><p class="note">{T[l]["note"]}</p>'
         f'<img class="shotwide" data-hero="1" src="/leggii/shots/en/hero.webp" alt="Leggii" '
-        f'width="1700" height="957" fetchpriority="high" decoding="async"></div>'
+        f'width="1700" height="956" fetchpriority="high" decoding="async"></div>'
         for l, _ in LANGS)
-    feats = "".join("".join(_feat(l, i, *f) for i, f in enumerate(T[l]["feats"])) for l, _ in LANGS)
-    plans = "".join(_plans(l, T[l]) for l, _ in LANGS)
+    tiles = "".join(_tiles(l) for l, _ in LANGS)
+    deep = "".join(
+        "".join(_feat(l, i, *f) for i, f in enumerate(T[l]["feats"]) if f[0] in DEEP)
+        for l, _ in LANGS)
+    plans = "".join(_ptab(l) for l, _ in LANGS)
     get = "".join(
-        f'<div data-l="{l}" class="getit"><h2>{T[l]["get_h"]}</h2><p>{T[l]["get_p"]}</p>'
+        f'<div data-l="{l}" class="getit{_on(l)}"><h2>{T[l]["get_h"]}</h2><p>{T[l]["get_p"]}</p>'
         f'<div class="stores">{badge(l)}</div>'
         f'<a class="fam" href="{"/famiglia/" if l == "de" else f"/{l}/famiglia/"}">{T[l]["fam"]} →</a></div>'
         for l, _ in LANGS)
@@ -313,7 +430,7 @@ def page():
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="Leggii — sheet music, lesson recordings and AI lesson notes">
+<meta property="og:title" content="{T["en"]["title"]}">
 <meta property="og:description" content="{T["en"]["desc"]}">
 <meta property="og:image" content="https://vicinolabs.com/leggii/shots/en/hero.webp">
 <meta property="og:url" content="https://vicinolabs.com/leggii/"><meta property="og:type" content="website">
@@ -325,7 +442,8 @@ def page():
 <div class="langbar" role="group" aria-label="Language">{buttons}</div></div></div>
 <main class="wrap">
 {hero}
-{feats}
+{tiles}
+{deep}
 {plans}
 {get}
 </main>
