@@ -60,7 +60,7 @@ input[type=email],input[type=password]{width:100%;padding:12px 14px;border:1px s
 .btn[disabled]{opacity:.45;cursor:default}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
-.social{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:14px 0 0}
+.social{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 0}
 @media(max-width:480px){.social{grid-template-columns:1fr}}
 .social button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:11px 10px;font:600 14px/1 inherit;font-family:inherit;cursor:pointer}
 .sep{display:flex;align-items:center;gap:12px;color:var(--faint);font-size:12.5px;margin:18px 0 4px}
@@ -110,7 +110,11 @@ T = {
          "signup": "가입할 수 없습니다. 이미 가입된 이메일인지 확인해 주세요.",
          "confirm": "메일로 보내 드린 링크로 이메일 인증을 마친 뒤 로그인해 주세요.",
          "already_subscribed": "이미 구독 중입니다.", "app_store_only": "홈페이지 결제는 유럽에서만 받습니다.",
-         "store_subscribed": "앱 스토어에서 이미 구독 중입니다.", "no_subscription": "구독 내역을 찾을 수 없습니다.", "interval_mismatch": "월간은 월간으로, 연간은 연간으로만 변경하실 수 있습니다.", "other": "잠시 후 다시 시도해 주세요."},
+         "store_subscribed": "앱 스토어에서 이미 구독 중입니다.", "no_subscription": "구독 내역을 찾을 수 없습니다.", "interval_mismatch": "월간은 월간으로, 연간은 연간으로만 변경하실 수 있습니다.", "captcha": "사람인지 확인하는 절차를 마치지 못했습니다. 위 확인 상자를 눌러 주세요.",
+         "too_many": "시도가 너무 잦습니다. 잠시 뒤에 다시 해 주세요.",
+         "taken": "이미 가입된 이메일입니다. 로그인해 주세요.",
+         "weak": "비밀번호가 너무 짧습니다. 여섯 자 이상으로 해 주세요.",
+         "other": "잠시 후 다시 시도해 주세요."},
   "cloud_note": "클라우드는 10GB로 시작합니다. 나중에 '나의 구독'에서 50GB로 올리실 수 있습니다.",
  "launch_price": "출시 가격입니다. 2027년 12월 31일까지 구독을 시작하시면 구독하시는 동안 이 가격이 그대로 유지됩니다.",
  "acc_h": "나의 구독",
@@ -165,7 +169,11 @@ T = {
          "signup": "Could not create the account. Perhaps the email is already in use.",
          "confirm": "Check your inbox and open the link, then sign in.",
          "already_subscribed": "You are already subscribed.", "app_store_only": "Website payment is only for Europe.",
-         "store_subscribed": "You are already subscribed through an app store.", "no_subscription": "No subscription found.", "interval_mismatch": "You can only move up within the same billing period.", "other": "Something went wrong. Please try again in a moment."},
+         "store_subscribed": "You are already subscribed through an app store.", "no_subscription": "No subscription found.", "interval_mismatch": "You can only move up within the same billing period.", "captcha": "The check that you are human did not finish. Please tick the box above.",
+         "too_many": "Too many attempts. Please wait a moment and try again.",
+         "taken": "That email already has an account. Please sign in.",
+         "weak": "That password is too short. Please use at least six characters.",
+         "other": "Something went wrong. Please try again in a moment."},
   "cloud_note": "The cloud starts at 10 GB. You can move up to 50 GB later on your subscription page.",
  "launch_price": "This is the launch price: subscribe before 31 December 2027 and it stays at this price for as long as your subscription runs.",
  "acc_h": "Your subscription",
@@ -220,7 +228,11 @@ T = {
          "signup": "Das Konto konnte nicht angelegt werden. Vielleicht ist die E-Mail schon vergeben.",
          "confirm": "Bitte öffnen Sie den Link in Ihrer E-Mail und melden Sie sich dann an.",
          "already_subscribed": "Sie haben bereits ein Abo.", "app_store_only": "Die Zahlung über die Website gibt es nur in Europa.",
-         "store_subscribed": "Sie haben bereits ein Abo über einen App-Store.", "no_subscription": "Kein Abo gefunden.", "interval_mismatch": "Ein Wechsel ist nur innerhalb desselben Abrechnungszeitraums möglich.", "other": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal."},
+         "store_subscribed": "Sie haben bereits ein Abo über einen App-Store.", "no_subscription": "Kein Abo gefunden.", "interval_mismatch": "Ein Wechsel ist nur innerhalb desselben Abrechnungszeitraums möglich.", "captcha": "Die Prüfung, ob Sie ein Mensch sind, wurde nicht abgeschlossen. Bitte setzen Sie oben das Häkchen.",
+         "too_many": "Zu viele Versuche. Bitte warten Sie einen Moment.",
+         "taken": "Für diese E-Mail gibt es schon ein Konto. Bitte melden Sie sich an.",
+         "weak": "Das Passwort ist zu kurz. Bitte mindestens sechs Zeichen.",
+         "other": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal."},
   "cloud_note": "Die Cloud startet mit 10 GB. Auf 50 GB können Sie später unter „Mein Abo“ wechseln.",
  "launch_price": "Das ist der Einführungspreis: Wenn Sie bis zum 31. Dezember 2027 abonnieren, bleibt er für die Dauer Ihres Abos bestehen.",
  "acc_h": "Mein Abo",
@@ -320,6 +332,41 @@ if(p.access_token){{store({{access_token:p.access_token,refresh_token:p.refresh_
 expires_in:Number(p.expires_in||3600)}});history.replaceState(null,"",location.pathname+location.search);}}}}
 function oauth(p){{location.href=SB+"/auth/v1/authorize?provider="+p+
 "&redirect_to="+encodeURIComponent(location.origin+location.pathname);}}
+/* Cloudflare Turnstile — 이 Supabase 프로젝트는 캡차 보호가 켜져 있어,
+   토큰 없이는 이메일 로그인·가입·비밀번호 재설정이 모두 거부된다.
+   위레가토 앱과 같은 사이트 키를 쓴다(공개 키다). 스크립트는 로그인하려는
+   사람에게만 받아 온다 — 그냥 읽기만 하는 사람에게는 안 받는다. */
+var CF_KEY="0x4AAAAAAE-DPE-XNwkkeKAg",cfId=null,cfTok="",cfErr="",cfLoad=null;
+function cfReady(){{
+if(cfLoad)return cfLoad;
+cfLoad=new Promise(function(res,rej){{
+var el=document.createElement("script");
+el.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+el.async=true;el.defer=true;el.onload=res;
+el.onerror=function(){{rej(new Error("cf_load"))}};
+document.head.appendChild(el);}}).then(function(){{
+cfId=turnstile.render("#cf",{{sitekey:CF_KEY,
+callback:function(t){{cfTok=t;cfErr=""}},
+"expired-callback":function(){{cfTok=""}},
+"error-callback":function(e){{cfTok="";cfErr=String(e||"cf_error")}}}});}});
+return cfLoad;}}
+/* 토큰이 올 때까지 기다린다(최대 20초). 사람이 상자를 눌러야 할 수도 있다. */
+function captcha(){{return cfReady().then(function(){{
+if(cfTok)return cfTok;
+return new Promise(function(res,rej){{var n=0,iv=setInterval(function(){{
+if(cfTok){{clearInterval(iv);res(cfTok)}}
+else if(cfErr||++n>80){{clearInterval(iv);rej(new Error(cfErr||"cf_timeout"))}}}},250);}});}});}}
+/* 토큰은 한 번만 쓸 수 있다. 실패했으면 새로 받아야 한다. */
+function cfReset(){{cfTok="";cfErr="";if(cfId!==null&&window.turnstile)turnstile.reset(cfId);}}
+/* 서버가 하는 말을 그대로 전한다. 모르는 코드는 뭉개지 말고 함께 보여 준다. */
+function authErr(j,isSignup){{var t=T[lang].err,c=(j&&(j.error_code||j.error_description||j.error))||"";
+if(c==="captcha_failed")return t.captcha;
+if(c==="email_not_confirmed")return t.confirm;
+if(c==="over_request_rate_limit"||c==="over_email_send_rate_limit")return t.too_many;
+if(c==="user_already_exists"||c==="email_exists")return t.taken;
+if(c==="weak_password")return t.weak;
+if(c==="invalid_credentials")return t.login;
+return (isSignup?t.signup:t.login)+" ("+(c||"?")+")";}}
 """
 
 
@@ -354,11 +401,12 @@ BUY_BODY = """
     <div id="anon">
       <label class="f" for="em" data-t="email"></label><input id="em" type="email" autocomplete="email">
       <label class="f" for="pw" data-t="pw"></label><input id="pw" type="password" autocomplete="current-password">
+      <div id="cf"></div>
       <div class="row"><button type="button" class="btn" id="go"></button>
       <button type="button" class="btn ghost" id="toggle"></button></div>
       <div class="sep"><span data-t="or"></span></div>
       <div class="social"><button type="button" data-p="google">Google</button>
-      <button type="button" data-p="kakao">Kakao</button><button type="button" data-p="apple">Apple</button></div>
+      <button type="button" data-p="kakao">Kakao</button></div>
     </div>
     <div id="known" class="hidden">
       <p class="who"><span data-t="logged"></span>: <b id="who"></b></p>
@@ -477,10 +525,16 @@ if(e.target.closest("#out")){save(null);sub=null;render();return}
 if(e.target.closest("#go")){
 var em=document.getElementById("em").value.trim(),pw=document.getElementById("pw").value;
 if(!em||!pw)return;msg("amsg","");
-auth(signup?"signup":"token?grant_type=password",{email:em,password:pw}).then(function(r){
+var gob=document.getElementById("go");gob.disabled=true;msg("amsg","");
+captcha().then(function(tok){
+return auth(signup?"signup":"token?grant_type=password",
+{email:em,password:pw,gotrue_meta_security:{captcha_token:tok}});
+}).then(function(r){gob.disabled=false;cfReset();
 if(r.ok&&r.j.access_token){store(r.j);document.getElementById("pw").value="";return refreshStatus()}
 if(r.ok&&signup){msg("amsg",T[lang].err.confirm);return}
-msg("amsg",T[lang].err[signup?"signup":"login"],true);});return}
+msg("amsg",authErr(r.j,signup),true);
+},function(e){gob.disabled=false;cfReset();
+msg("amsg",T[lang].err.captcha+" ("+(e&&e.message||"?")+")",true);});return}
 if(e.target.closest("#pay")){
 if(!session()){document.getElementById("em").focus();return}
 if(!document.getElementById("waiver").checked){msg("pmsg",T[lang].err.waiver,true);return}
