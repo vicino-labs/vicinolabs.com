@@ -5,6 +5,7 @@ appoggio_legal.py와 같은 틀(nomio_legal.legal_page). 한국어·영어·독�
 """
 import os
 
+import leggii_plus
 import leggii_site
 import nomio_legal
 from appoggio_privacy_content import EMAIL
@@ -35,6 +36,9 @@ def build(root):
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, "w", encoding="utf-8").write(text)
     write("/leggii/", leggii_home())
+    # Plus 구독(홈페이지 직접 결제, 2026-11-17) — leggii_plus.py
+    write("/leggii/plus/", leggii_plus.buy_page())
+    write("/leggii/plus/danke/", leggii_plus.thanks_page())
     write("/leggii/privacy/", nomio_legal.legal_page("/leggii/privacy/", PRIVACY, "/leggii/terms/", app=LEGGII))
     write("/leggii/terms/", nomio_legal.legal_page("/leggii/terms/", TERMS, "/leggii/privacy/", app=LEGGII))
 

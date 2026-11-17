@@ -77,6 +77,7 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 .plan li::before{content:"";position:absolute;left:1px;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--goldl)}
 
 /* 아래 */
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:13px 26px;font-weight:600;font-size:15.5px}
 .getit{text-align:center;border-top:1px solid var(--line);margin-top:clamp(40px,6vw,70px);padding:clamp(44px,6vw,76px) 0 10px}
 .getit h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
 .getit p{color:var(--soft);margin:0 auto;max-width:560px}
@@ -132,9 +133,10 @@ T = {
   ("무료", "처음부터", ["악보 가져오기와 카메라 스캔", "필기와 음악 기호 스탬프", "레슨 · 리허설 녹음과 페이지 따라 넘기기", "메트로놈 · 건반 · IMSLP 검색"]),
   ("7일 체험", "가입하면 바로", ["Pro 기능 전부", "AI 30분", "카드 등록 없이"]),
   ("Leggii Pro", "한 번 구매, 평생", ["Pro 기능 전부", "위레가토 배너 없음", "매월 AI 30분", "첫 구매 보너스 60분"]),
-  ("Leggii Plus", "월간 · 연간 구독", ["Pro 기능 전부", "매월 AI 5시간", "렛지 클라우드 10GB 또는 50GB"]),
+  ("Leggii Plus", "월 3,99 € 부터", ["Pro 기능 전부", "매월 AI 5시간", "렛지 클라우드 10GB — 월 3,99 € · 연 39,99 €", "50GB — 월 5,99 € · 연 59,99 €"]),
  ],
- "plans_note": "값은 앱스토어와 플레이스토어에 적혀 있습니다. 나라마다 다릅니다. AI 시간은 5시간 · 15시간씩 따로 충전할 수도 있습니다(12개월 사용).",
+ "plans_note": "Pro 일회성 구매와 AI 시간 충전(5시간 · 15시간, 12개월 사용)은 앱 안에서 하실 수 있습니다. 나라마다 값이 다릅니다.",
+ "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "위레가토 아이디로 가입하고 카드로 결제합니다. 지금은 유럽에서만 받습니다.",
  "get_h": "내려받기",
  "get_p": "아이패드와 아이폰은 App Store에서, 안드로이드는 Google Play에서 받으세요.",
  "fam": "Famiglia Vicino의 다른 앱 보기",
@@ -173,9 +175,10 @@ T = {
   ("Free", "from the start", ["Import scores and camera scan", "Annotation and music stamps", "Lesson and rehearsal recording with page turns", "Metronome, keyboard, IMSLP search"]),
   ("7-day trial", "right away", ["Every Pro feature", "30 AI minutes", "No card needed"]),
   ("Leggii Pro", "one-time purchase", ["Every Pro feature", "No welegato banner", "30 AI minutes a month", "60-minute welcome bonus"]),
-  ("Leggii Plus", "monthly or yearly", ["Every Pro feature", "5 hours of AI a month", "Leggii cloud, 10 GB or 50 GB"]),
+  ("Leggii Plus", "from €3.99 a month", ["Every Pro feature", "5 hours of AI a month", "Leggii cloud 10 GB — €3.99 a month, €39.99 a year", "50 GB — €5.99 a month, €59.99 a year"]),
  ],
- "plans_note": "Prices are shown in the App Store and on Google Play and differ by country. AI time can also be topped up in 5-hour and 15-hour blocks, valid for 12 months.",
+ "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
+ "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
  "get_p": "On the App Store for iPad and iPhone, on Google Play for Android.",
  "fam": "More apps from Famiglia Vicino",
@@ -214,9 +217,10 @@ T = {
   ("Kostenlos", "von Anfang an", ["Noten importieren und Kamera-Scan", "Notizen und Musikstempel", "Unterricht und Proben aufnehmen, mit Umblättern", "Metronom, Tastatur, IMSLP-Suche"]),
   ("7 Tage testen", "sofort", ["Alle Pro-Funktionen", "30 KI-Minuten", "Ohne Kreditkarte"]),
   ("Leggii Pro", "einmaliger Kauf", ["Alle Pro-Funktionen", "Kein welegato-Banner", "30 KI-Minuten im Monat", "60 Minuten Willkommensbonus"]),
-  ("Leggii Plus", "monatlich oder jährlich", ["Alle Pro-Funktionen", "5 Std. KI im Monat", "Leggii Cloud, 10 GB oder 50 GB"]),
+  ("Leggii Plus", "ab 3,99 € im Monat", ["Alle Pro-Funktionen", "5 Std. KI im Monat", "Leggii Cloud 10 GB — 3,99 € im Monat, 39,99 € im Jahr", "50 GB — 5,99 € im Monat, 59,99 € im Jahr"]),
  ],
- "plans_note": "Die Preise stehen im App Store und bei Google Play und unterscheiden sich je nach Land. KI-Zeit lässt sich zusätzlich in Paketen von 5 und 15 Stunden aufladen (12 Monate gültig).",
+ "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
+ "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
  "get_p": "Im App Store für iPad und iPhone, bei Google Play für Android.",
  "fam": "Weitere Apps der Famiglia Vicino",
@@ -245,7 +249,9 @@ def _plans(l, t):
         for n, tag, bl in t["plans"])
     return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
             f'<p class="sub">{t["plans_sub"]}</p><div class="cards">{cards}</div>'
-            f'<p class="note" style="margin-top:18px">{t["plans_note"]}</p></div>')
+            f'<p class="note" style="margin-top:18px">{t["plans_note"]}</p>'
+            f'<p style="margin:22px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
+            f'<p class="note" style="margin-top:8px">{t["plans_cta_note"]}</p></div>')
 
 
 SCRIPT = """(function(){var k="vl-app-lang",L=["ko","en","de"],s=null;
