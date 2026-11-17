@@ -93,7 +93,17 @@ PRIVACY = {
 <li>7일 체험의 AI 30분을 기기당 한 번만 드리기 위해 기기 식별값(Android ID / iOS 키체인 값)의 해시를 저장합니다(남용 방지, GDPR 제6조 제1항 f호).</li>
 <li>충전 기록은 같은 구매가 두 번 지급되지 않도록, 아이디를 삭제한 뒤에도 계정과 분리된 해시로 보관합니다.</li>
 </ul>
-<p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>, App Store에서는 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>이 적용됩니다.</p>"""),
+<p>처리 근거: 구매한 서비스의 제공(b호), 남용 방지(f호). 스토어의 처리에는 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>, App Store에서는 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>이 적용됩니다.</p>
+<p><strong>홈페이지에서 산 구독</strong></p>
+<p>Leggii Plus는 저희 홈페이지(vicinolabs.com/leggii/plus/)에서도 구독하실 수 있습니다. 홈페이지 결제는 유럽에서만 받습니다. 이때는 위레가토 통합 아이디로 로그인하셔야 하며, 카드 결제는 Stripe Payments Europe, Ltd.(아일랜드 더블린)가 처리합니다. 카드 번호는 Stripe가 직접 받고 저희는 보지 않습니다.</p>
+<ul>
+<li>저희 서버에는 구독 번호와 고객 번호, 상품, 금액, 결제 주기, 구독 상태와 기간, 그리고 청구 국가(두 글자 국가 코드)를 저장합니다.</li>
+<li>청구 국가는 두 가지에 씁니다. 유럽 밖 결제를 막기 위해서, 그리고 나라별 매출 합계를 세어 부가가치세 의무가 생기는지 보기 위해서입니다. 주소 전체는 저장하지 않습니다.</li>
+<li>영수증은 가입하신 이메일로 한 통 보내 드립니다(독일 민법 제312f조).</li>
+<li>결제 기록은 상법·조세기본법에 따라 <strong>10년간</strong> 보관합니다.</li>
+<li>홈페이지에서 구독하신 경우 요금제 변경과 해지는 홈페이지(vicinolabs.com/leggii/plus/)에서 하십니다. 앱에서는 바꿀 수 없습니다.</li>
+</ul>
+<p>처리 근거: 계약의 이행(제6조 제1항 b호), 법적 의무(c호), 남용 방지(f호). Stripe의 처리에는 <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe 개인정보처리방침</a>이 적용됩니다.</p>"""),
    ("위레가토 통합 아이디 (선택)", """<p>로그인하지 않아도 렛지의 모든 기본 기능을 쓸 수 있습니다. 로그인하면 같은 회사가 운영하는 위레가토의 계정(위레가토 통합 아이디)을 씁니다.</p>
 <ul>
 <li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Apple·Google·카카오·이메일, 계정 번호)는 <a href="https://welegato.com/legal/" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 렛지에서 가입하면 “렛지에서 가입함” 표시가 계정에 남고, 첫 로그인 때 환영 메일이 한 번 갑니다.</li>
@@ -120,6 +130,7 @@ PRIVACY = {
 <li><strong>Google</strong> — Gemini API(AI 분석·도우미), Google Play 결제와 구매 확인, 글자 인식(ML Kit)</li>
 <li><strong>Cloudflare</strong> — 렛지 클라우드의 파일 저장(R2, Plus), 이메일 로그인의 자동 가입 방지(Turnstile)</li>
 <li><strong>Apple</strong> — App Store 결제와 구매 확인, Apple로 로그인(iPhone·iPad)</li>
+<li><strong>Stripe</strong> — 홈페이지에서 산 구독의 카드 결제, Stripe Payments Europe, Ltd.(아일랜드 더블린) (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 </ul>
 <p>이 업체들이 EU 밖(예: 미국)에서 처리하는 경우, EU 표준계약조항 또는 EU-미국 데이터 프라이버시 프레임워크를 근거로 합니다.</p>"""),
    ("welegato 배너와 외부 링크", f"""<p>악보 목록 아래의 배너와 설정의 링크를 <strong>누를 때만</strong> 브라우저나 Google Play로 welegato(같은 회사가 운영하는 음악 플랫폼) 또는 다른 Vicino Labs 앱이 열립니다. 링크에는 “앱에서 왔다”는 표시(<code>utm_source=leggii</code>)만 붙고 이용자를 식별하는 값은 없습니다. 열린 뒤에는 해당 사이트의 방침이 적용됩니다 — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato 개인정보처리방침</a>.</p>
@@ -186,7 +197,17 @@ PRIVACY = {
 <li>To give the trial's 30 AI minutes only once per device, a hash of the device identifier (Android ID / iOS keychain value) is stored (preventing abuse, Art. 6(1)(f) GDPR).</li>
 <li>Top-up records are kept as hashes, separated from the account, even after an ID is deleted, so the same purchase is never credited twice.</li>
 </ul>
-<p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, in the App Store under the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>"""),
+<p>Legal basis: providing what you bought (b), preventing abuse (f). The store's processing falls under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, in the App Store under the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>
+<p><strong>Subscriptions bought on our website</strong></p>
+<p>You can also subscribe to Leggii Plus on our website (vicinolabs.com/leggii/plus/). Website payment is available in Europe only. You sign in with your welegato ID, and the card payment is handled by Stripe Payments Europe, Ltd. (Dublin, Ireland). Stripe receives your card number directly; we never see it.</p>
+<ul>
+<li>Our server stores the Stripe subscription and customer reference, the product, the amount, the billing period, the status and the period end, and the billing country (two-letter code).</li>
+<li>We need the billing country for two things: to refuse payments from outside Europe, and to count sales per country so we can see whether VAT duties arise. We do not store the full address.</li>
+<li>We send the receipt once to your email address (§ 312f German Civil Code).</li>
+<li>Payment records are kept for <strong>10 years</strong>, as German commercial and tax law require.</li>
+<li>If you subscribed on the website, you change the plan or cancel on the website (vicinolabs.com/leggii/plus/). It cannot be changed in the app.</li>
+</ul>
+<p>Legal bases: performance of the contract (Art. 6(1)(b)), legal obligation (c), preventing abuse (f). Stripe's processing is covered by the <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe privacy policy</a>.</p>"""),
    ("welegato ID (optional)", """<p>Every basic feature of Leggii works without signing in. If you sign in, you use an account of welegato, run by the same company (the welegato ID).</p>
 <ul>
 <li><strong>Account data</strong> (email, name, sign-in method Apple, Google, Kakao or email, account number) is processed under the <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato privacy policy</a>. An ID created in Leggii is marked “signed up in Leggii”, and one welcome email is sent at the first sign-in.</li>
@@ -213,6 +234,7 @@ PRIVACY = {
 <li><strong>Google</strong> — Gemini API (AI analysis, assistant), Google Play payments and purchase checks, text recognition (ML Kit)</li>
 <li><strong>Cloudflare</strong> — file storage of the Leggii cloud (R2, Plus), protection against automated email sign-ups (Turnstile)</li>
 <li><strong>Apple</strong> — App Store payments and purchase checks, Sign in with Apple (iPhone, iPad)</li>
+<li><strong>Stripe</strong> — card payments for subscriptions bought on our website, Stripe Payments Europe, Ltd. (Dublin, Ireland) (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
 </ul>
 <p>Where these providers process data outside the EU (e.g. in the USA), this is based on the EU Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>"""),
    ("The welegato banner and external links", f"""<p>The banner below the score list and the links in Settings open welegato (a music platform of the same company) or another Vicino Labs app in your browser or Google Play (the App Store on iPhone and iPad) <strong>only when you tap them</strong>. Links carry a tag (<code>utm_source=leggii</code>) that only says the visit came from the app, with no value that identifies you. Once open, that site's policy applies — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>.</p>
@@ -279,7 +301,17 @@ PRIVACY = {
 <li>Damit die 30 KI-Minuten der Testphase nur einmal pro Gerät vergeben werden, speichern wir einen Hash der Gerätekennung (Android-ID / iOS-Schlüsselbund-Wert) (Missbrauchsschutz, Art. 6 Abs. 1 lit. f DSGVO).</li>
 <li>Einträge zu Aufladungen bleiben als vom Konto getrennter Hash auch nach Löschen einer ID erhalten, damit derselbe Kauf nie doppelt gutgeschrieben wird.</li>
 </ul>
-<p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>, im App Store die <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>"""),
+<p>Rechtsgrundlage: Erbringung des Gekauften (lit. b), Missbrauchsschutz (lit. f). Für den Store gilt die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>, im App Store die <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
+<p><strong>Auf unserer Website abgeschlossene Abos</strong></p>
+<p>Leggii Plus können Sie auch auf unserer Website (vicinolabs.com/leggii/plus/) abonnieren. Die Zahlung über die Website nehmen wir nur in Europa entgegen. Dafür melden Sie sich mit Ihrer welegato-ID an; die Kartenzahlung wickelt Stripe Payments Europe, Ltd. (Dublin, Irland) ab. Ihre Kartennummer erhält Stripe direkt, wir sehen sie nie.</p>
+<ul>
+<li>Auf unserem Server speichern wir die Abo- und Kundennummer von Stripe, das Produkt, den Betrag, den Abrechnungsrhythmus, den Status und das Ende des Zeitraums sowie das Rechnungsland (zweistelliger Ländercode).</li>
+<li>Das Rechnungsland brauchen wir für zwei Dinge: um Zahlungen außerhalb Europas abzulehnen und um die Umsätze je Land zu zählen, damit wir sehen, ob umsatzsteuerliche Pflichten entstehen. Die vollständige Anschrift speichern wir nicht.</li>
+<li>Die Rechnung schicken wir einmal an Ihre E-Mail-Adresse (§ 312f BGB).</li>
+<li>Zahlungsbelege bewahren wir nach handels- und steuerrechtlichen Vorgaben <strong>10 Jahre</strong> auf.</li>
+<li>Wenn Sie auf der Website abonniert haben, ändern oder kündigen Sie das Abo auf der Website (vicinolabs.com/leggii/plus/). In der App ist das nicht möglich.</li>
+</ul>
+<p>Rechtsgrundlagen: Vertragserfüllung (Art. 6 Abs. 1 lit. b), rechtliche Verpflichtung (lit. c), Missbrauchsabwehr (lit. f). Für die Verarbeitung durch Stripe gilt die <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Stripe</a>.</p>"""),
    ("welegato-ID (freiwillig)", """<p>Alle Grundfunktionen von Leggii funktionieren ohne Anmeldung. Wenn du dich anmeldest, nutzt du ein Konto von welegato, einem Dienst desselben Unternehmens (die welegato-ID).</p>
 <ul>
 <li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeweg Apple, Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="https://welegato.com/legal/" target="_blank" rel="noopener">welegato-Datenschutzerklärung</a> verarbeitet. Eine in Leggii erstellte ID wird als „in Leggii registriert“ markiert; bei der ersten Anmeldung kommt eine Willkommens-E-Mail.</li>
@@ -306,6 +338,7 @@ PRIVACY = {
 <li><strong>Google</strong> — Gemini-API (KI-Analyse, Assistent), Google-Play-Zahlungen und Kaufprüfung, Texterkennung (ML Kit)</li>
 <li><strong>Cloudflare</strong> — Dateispeicher der Leggii Cloud (R2, Plus), Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
 <li><strong>Apple</strong> — App-Store-Zahlungen und Kaufprüfung, Mit Apple anmelden (iPhone, iPad)</li>
+<li><strong>Stripe</strong> — Kartenzahlungen für auf der Website abgeschlossene Abos, Stripe Payments Europe, Ltd. (Dublin, Irland) (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
 </ul>
 <p>Verarbeiten diese Anbieter Daten außerhalb der EU (z. B. in den USA), geschieht das auf Grundlage der EU-Standardvertragsklauseln oder des EU-U.S. Data Privacy Framework.</p>"""),
    ("welegato-Banner und externe Links", f"""<p>Das Banner unter der Notenliste und die Links in den Einstellungen öffnen welegato (eine Musikplattform desselben Unternehmens) oder eine andere App von Vicino Labs im Browser oder in Google Play (auf iPhone und iPad im App Store) <strong>nur, wenn du sie antippst</strong>. Links tragen nur die Kennung <code>utm_source=leggii</code>, die dich nicht identifiziert. Danach gilt die Erklärung der jeweiligen Seite — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato-Datenschutz</a>.</p>
@@ -372,7 +405,17 @@ PRIVACY = {
 <li>Per dare i 30 minuti AI della prova una sola volta per dispositivo, salviamo un hash dell'identificativo del dispositivo (Android ID / valore del portachiavi iOS) (prevenzione degli abusi, art. 6, par. 1, lett. f GDPR).</li>
 <li>Le registrazioni delle ricariche restano come hash separati dall'account anche dopo l'eliminazione di un ID, così lo stesso acquisto non viene accreditato due volte.</li>
 </ul>
-<p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">informativa privacy di Google</a>, nell'App Store l'<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>"""),
+<p>Base giuridica: fornire quanto acquistato (lett. b), prevenire abusi (lett. f). Per lo store vale l'<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">informativa privacy di Google</a>, nell'App Store l'<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">informativa privacy di Apple</a>.</p>
+<p><strong>Abbonamenti sottoscritti sul nostro sito</strong></p>
+<p>Può abbonarsi a Leggii Plus anche sul nostro sito (vicinolabs.com/leggii/plus/). Il pagamento sul sito è disponibile solo in Europa. Deve accedere con il suo ID welegato; il pagamento con carta è gestito da Stripe Payments Europe, Ltd. (Dublino, Irlanda). Il numero della carta lo riceve direttamente Stripe, noi non lo vediamo mai.</p>
+<ul>
+<li>Sul nostro server conserviamo il riferimento dell'abbonamento e del cliente di Stripe, il prodotto, l'importo, la periodicità, lo stato e la fine del periodo, oltre al paese di fatturazione (codice di due lettere).</li>
+<li>Il paese di fatturazione ci serve per due cose: rifiutare i pagamenti da fuori Europa e contare il fatturato per paese, così da vedere se sorgono obblighi IVA. Non conserviamo l'indirizzo completo.</li>
+<li>La ricevuta le arriva una volta all'indirizzo e-mail con cui si è registrato (§ 312f del Codice civile tedesco).</li>
+<li>I documenti di pagamento sono conservati per <strong>10 anni</strong>, come prevedono le norme commerciali e fiscali tedesche.</li>
+<li>Se si è abbonato sul sito, il cambio di piano e la disdetta avvengono sul sito (vicinolabs.com/leggii/plus/). Dall'app non è possibile.</li>
+</ul>
+<p>Basi giuridiche: esecuzione del contratto (art. 6, par. 1, lett. b), obbligo legale (lett. c), prevenzione degli abusi (lett. f). Al trattamento di Stripe si applica l'<a href="https://stripe.com/privacy" target="_blank" rel="noopener">informativa privacy di Stripe</a>.</p>"""),
    ("welegato ID (facoltativo)", """<p>Tutte le funzioni di base di Leggii funzionano senza accesso. Se accedi, usi un account di welegato, servizio della stessa società (il welegato ID).</p>
 <ul>
 <li>I <strong>dati dell'account</strong> (email, nome, modo di accesso Apple, Google, Kakao o email, numero di account) sono trattati secondo l'<a href="https://welegato.com/legal/" target="_blank" rel="noopener">informativa privacy di welegato</a>. Un ID creato in Leggii viene segnato «registrato in Leggii» e al primo accesso arriva un'email di benvenuto.</li>
@@ -399,6 +442,7 @@ PRIVACY = {
 <li><strong>Google</strong> — API Gemini (analisi AI, assistente), pagamenti e verifica acquisti di Google Play, riconoscimento del testo (ML Kit)</li>
 <li><strong>Cloudflare</strong> — archiviazione dei file del cloud di Leggii (R2, Plus), protezione dalle registrazioni email automatiche (Turnstile)</li>
 <li><strong>Apple</strong> — pagamenti e verifica acquisti App Store, Accedi con Apple (iPhone, iPad)</li>
+<li><strong>Stripe</strong> — pagamenti con carta per gli abbonamenti sottoscritti sul sito, Stripe Payments Europe, Ltd. (Dublino, Irlanda) (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
 </ul>
 <p>Se questi fornitori trattano dati fuori dall'UE (ad es. negli USA), ciò avviene in base alle Clausole contrattuali standard UE o all'EU-U.S. Data Privacy Framework.</p>"""),
    ("Banner welegato e link esterni", f"""<p>Il banner sotto l'elenco degli spartiti e i link nelle impostazioni aprono welegato (una piattaforma musicale della stessa azienda) o un'altra app di Vicino Labs nel browser o in Google Play (su iPhone e iPad nell'App Store) <strong>solo quando li tocchi</strong>. I link portano solo l'indicazione <code>utm_source=leggii</code>, che non ti identifica. Poi si applica l'informativa del sito aperto — <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">privacy di welegato</a>.</p>
