@@ -8,6 +8,7 @@ import os
 
 import app_home
 import nomio_legal
+import prova_site
 from appoggio_privacy_content import EMAIL
 from prova_privacy_content import PRIVACY
 from prova_terms_content import TERMS
@@ -24,10 +25,9 @@ PROVA = {
 
 
 def prova_home():
-    # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
-    return app_home.page(key='prova', name='Prova · 프로바', sub="Vicino Labs · Famiglia Vicino", icon="/apps/prova.png",
-                         ledes={'en': 'Record and film your lessons and practice, compare takes, check submission videos — AI analyses the sound.', 'de': 'Unterricht und Üben aufnehmen und filmen, Takes vergleichen, Bewerbungsvideos prüfen – die KI analysiert den Klang.', 'it': "Registra e filma lezioni e studio, confronta le take, controlla i video per audizioni – l'AI analizza il suono.", 'ko': '레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 제출 영상을 점검하세요 — AI는 소리를 분석합니다.'},
-                         play=None, apple=None, email=EMAIL, desc='Prova — lesson and practice recording and filming with AI analysis, by Vicino Labs.', canonical="/prova/")
+    # 2026-11-18: 얇은 카드(app_home.page) → 전용 소개 페이지(prova_site.py).
+    # 대표님 지시 "렛지처럼 한 번에 무엇을 하는 앱인지 알게".
+    return prova_site.page()
 
 
 def build(root):

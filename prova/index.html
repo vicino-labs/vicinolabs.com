@@ -2,87 +2,154 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Prova · 프로바 — Vicino Labs</title>
-<meta name="description" content="Prova — lesson and practice recording and filming with AI analysis, by Vicino Labs.">
+<title>Prova: lesson and practice recording with AI | Vicino Labs</title>
+<meta name="description" content="Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Compare takes and check audition videos.">
 <link rel="canonical" href="https://vicinolabs.com/prova/">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Prova: lesson and practice recording with AI | Vicino Labs">
+<meta property="og:description" content="Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Compare takes and check audition videos.">
+<meta property="og:image" content="https://vicinolabs.com/prova/shots/en/hero.webp">
+<meta property="og:url" content="https://vicinolabs.com/prova/"><meta property="og:type" content="website">
+<link rel="stylesheet" href="/fonts/fonts-v2.css">
 <style>
-:root{--bg:#f7f2ea;--paper:#fffcf7;--ink:#1c1714;--soft:#6b5f56;--line:#e7dcca;--accent:#2a2724;--gold:#8a6a33;--tag:#efe7da}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141110;--paper:#1d1916;--ink:#f1e8da;--soft:#bfb2a2;--line:#2e2823;--accent:#e9d3a6;--gold:#d4b07a;--tag:#26201c}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--gold)}
+:root{--bg:#f5f0e8;--paper:#fffcf6;--ink:#1c1714;--soft:#6b5f56;--faint:#9a8c7f;--line:#e4d9c8;--accent:#6e1a2f;--gold:#a8823f;--goldl:#d9b878;--tint:#efe7da}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13110f;--paper:#1c1916;--ink:#f1e8da;--soft:#bfb2a2;--faint:#8f8274;--line:#2e2823;--accent:#e2a3b1;--gold:#d4b07a;--goldl:#8a6f45;--tint:#241f1b}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;
+ font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-synthesis:none}
 /* 줄바꿈(2026-11-17): 한국어는 낱말 중간에서 끊기지 않게, 줄 길이는 고르게. */
 html[lang=ko] body{word-break:keep-all}
 /* 중국어·일본어는 빈칸이 없어 keep-all 을 주면 안 끊긴다. */
 html[lang=zh] body,html[lang=ja] body{word-break:normal;line-break:strict}
-h1,h2,h3{text-wrap:balance}
-.doc p,.doc li,.doc td,.doc th,.lede,.meta .tag{text-wrap:pretty}
-.top{border-bottom:1px solid var(--line)}
+h3{text-wrap:balance}p,li,td,th{text-wrap:pretty}
+a{color:var(--accent)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.01em;margin:0}
+html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);background:var(--bg)}
 .top .in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.co{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:Georgia,"Times New Roman",serif;font-size:19px}
+.co{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:Georgia,serif;font-size:19px}
 .co img{height:26px;width:auto}
-.langbar{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
-.langbar button{border:0;background:transparent;color:var(--soft);font:600 13px/1 inherit;font-family:inherit;padding:8px 14px;cursor:pointer}
-.langbar button.active{background:var(--ink);color:var(--bg)}
-.page{max-width:1080px;margin:0 auto;padding:0 20px}
-.mast{padding:40px 0 22px;border-bottom:1px solid var(--line)}
-.app{display:inline-flex;align-items:center;gap:10px;color:var(--soft);text-decoration:none;font-weight:600;font-size:14px}
-.mark{width:30px;height:30px;border-radius:8px;background:#2a2724;color:#d4b07a;display:grid;place-items:center;font:italic 600 19px Georgia,serif;border:1px solid rgba(212,176,122,.35)}
-h1{font-family:Georgia,"Times New Roman","Nanum Myeongjo",serif;font-weight:500;font-size:clamp(30px,5vw,42px);line-height:1.2;margin:16px 0 14px;letter-spacing:-.01em}
-.meta{display:flex;gap:8px;flex-wrap:wrap}
-.tag{background:var(--tag);border-radius:999px;padding:4px 12px;font-size:12.5px;color:var(--soft)}.tag b{color:var(--ink);font-weight:600}
-.layout{display:grid;grid-template-columns:220px 1fr;gap:44px;padding:30px 0 10px}
-@media(max-width:860px){.layout{grid-template-columns:1fr;gap:10px}.toc{position:static!important;max-height:none!important;border:1px solid var(--line);border-radius:10px;padding:14px 16px!important;background:var(--paper)}}
-.toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;padding-top:4px}
-.toc-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}
-.toc a{display:block;color:var(--soft);text-decoration:none;font-size:13.5px;padding:4px 0;line-height:1.4}.toc a:hover{color:var(--ink)}
-article{min-width:0;max-width:720px}
-.lede{font-size:17px;color:var(--soft);margin:0 0 8px}
-section{padding-top:14px}
-h2{font-family:Georgia,"Times New Roman","Nanum Myeongjo",serif;font-weight:500;font-size:23px;margin:28px 0 10px;scroll-margin-top:16px}
-p,li{font-size:15.5px}ul,ol{padding-left:22px}li{margin:4px 0}
-.summary-box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:6px 20px}
-.id-card{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:6px 0 12px;font-size:15px}
-.id-card dt{color:var(--soft)}.id-card dd{margin:0}
-@media(max-width:520px){.id-card{grid-template-columns:1fr}.id-card dt{margin-top:6px}}
-.contact-card{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-top:8px}
-.contact-card .role{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-.contact-card .name{font-family:Georgia,serif;font-size:18px}
-footer{margin:46px 0 0;padding:22px 0 44px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 20px;font-size:13.5px;color:var(--soft)}
-footer a{color:var(--soft);margin-right:14px}
+.langbar{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--paper)}
+.langbar button{border:0;background:transparent;color:var(--soft);font:600 13px/1 inherit;font-family:inherit;padding:8px 14px;border-radius:999px;cursor:pointer}
+.langbar button.on{background:var(--ink);color:var(--bg)}
 
-.ah{max-width:720px;margin:0 auto;padding:64px 20px 40px;text-align:center}
-.ah .ic{width:132px;height:132px;border-radius:30px;display:block;margin:0 auto 26px;box-shadow:0 26px 50px -22px rgba(60,30,15,.55)}
-.ah h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(34px,6vw,50px);line-height:1.15;margin:0 0 6px}
-.ah .sub{color:var(--gold);font-size:15px;letter-spacing:.04em;margin:0 0 22px}
-.ah .langs{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--paper);margin:0 0 20px}
-.ah .langs button{border:0;background:none;color:var(--soft);font:600 13px/1 inherit;font-family:inherit;padding:8px 14px;border-radius:99px;cursor:pointer}
-.ah .langs button.on{background:var(--ink);color:var(--bg)}
-.ah .lede{font-size:18px;color:var(--soft);margin:0 auto 30px;max-width:560px;text-wrap:balance}
+/* 맨 위 */
+.hero{text-align:center;padding:44px 0 8px}
+.hero .ic{width:92px;height:92px;border-radius:22px;display:block;margin:0 auto 18px;box-shadow:0 22px 44px -20px rgba(60,30,15,.5)}
+.hero h1{font-size:clamp(36px,6.4vw,62px);line-height:1.12;margin:0 0 14px}
+html[lang=ko] .hero h1{font-size:clamp(30px,5.2vw,50px)}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+.hero .lede{font-size:clamp(17px,2vw,20px);color:var(--soft);margin:0 auto;max-width:860px;text-wrap:balance}
+.shotwide{display:block;width:100%;height:auto;max-width:1000px;margin:30px auto 0;border-radius:16px}
+.stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px 0 0}
+.stores a{display:block;line-height:0}
+.note{font-size:13.5px;color:var(--faint);margin:14px 0 0}
 
-.ah .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:52px}
-.ah .stores a{display:block;line-height:0}.ah .stores img{width:auto;display:block}
-.ah .soon{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:8px 18px;font-weight:600;font-size:14px}
-.ah .fam{display:inline-block;margin:34px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
-.ah .legal{margin:46px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--soft)}
-.ah .legal a{color:var(--soft)}
-.ah [data-l]:not(.on){display:none!important}
+/* 요약 판 — 여기서 한 번 스크롤에 앱 전체가 들어와야 한다 */
+.sum{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,56px) 0 0}
+.sum h2{font-size:clamp(24px,3.2vw,34px);margin:0 0 6px}
+.sum .sub{color:var(--soft);margin:0 0 26px;font-size:16px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tile img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line)}
+.tile .tx{padding:14px 16px 16px}
+.tile h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:19px;margin:0 0 3px;line-height:1.25}
+html[lang=ko] .tile h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:17px}
+.tile p{margin:0;color:var(--soft);font-size:14px;line-height:1.5;text-wrap:pretty}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.tiles{grid-template-columns:repeat(2,1fr);gap:10px}
+.tile .tx{padding:11px 12px 13px}.tile h3{font-size:15.5px}html[lang=ko] .tile h3{font-size:14.5px}.tile p{font-size:12.5px}}
+
+/* 요금 비교표 — 한 화면에서 견주어 보게 */
+.ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.plans .value{margin:18px 0 0;font-size:16px;color:var(--soft);max-width:900px;text-wrap:pretty}
+/* 가장 세게 때리는 한 줄. 다른 설명에 붙으면 묻힌다. */
+.plans .punch{margin:16px 0 0;font-size:clamp(17px,1.9vw,21px);font-weight:600;color:var(--ink);text-wrap:balance}
+html[lang=ko] .plans .punch{font-family:"Noto Serif KR",Georgia,serif;font-weight:600}
+.ptab{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ptab th,.ptab td{padding:12px 14px;text-align:center;border-bottom:1px solid var(--line)}
+.ptab th:first-child,.ptab td:first-child{text-align:left;color:var(--soft);white-space:normal}
+.ptab thead th{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:18px;background:var(--tint);color:var(--ink)}
+html[lang=ko] .ptab thead th{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:16px}
+.ptab tbody tr:last-child td{border-bottom:0;font-weight:600;color:var(--ink)}
+@media(max-width:720px){.ptab{font-size:13.5px;min-width:520px}.ptab th,.ptab td{padding:9px 8px}}
+
+/* 기능 줄 */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:center;padding:clamp(34px,4.4vw,58px) 0;border-top:1px solid var(--line)}
+.feat.flip .txt{order:2}
+.feat h2{font-size:clamp(26px,3.4vw,38px);line-height:1.2;margin:0 0 14px}
+html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
+.feat p{color:var(--soft);font-size:16.5px;margin:0 0 16px;text-wrap:pretty}
+.feat ul{margin:0;padding:0;list-style:none}
+.feat li{position:relative;padding-left:20px;color:var(--soft);font-size:15.5px;margin:7px 0}
+.feat li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--goldl)}
+.shot{display:block;width:100%;height:auto;border-radius:10px}
+@media(max-width:820px){.feat{grid-template-columns:1fr;gap:20px;padding:32px 0}.feat.flip .txt{order:0}.shot{max-width:480px;margin:0 auto}}
+
+/* 요금 */
+.plans{border-top:1px solid var(--line);padding:clamp(34px,4.4vw,58px) 0 10px}
+.plans h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
+.plans .sub{color:var(--soft);margin:0 0 30px;max-width:900px;text-wrap:balance}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
+.plan{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
+.plan h3{font-size:22px;margin:0 0 4px}
+.plan .tagline{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.04em;margin:0 0 12px}
+.plan ul{margin:0;padding:0;list-style:none}
+.plan li{position:relative;padding-left:18px;color:var(--soft);font-size:15px;margin:6px 0}
+.plan li::before{content:"";position:absolute;left:1px;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--goldl)}
+
+/* 아래 */
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:13px 26px;font-weight:600;font-size:15.5px}
+.getit{text-align:center;border-top:1px solid var(--line);margin-top:clamp(28px,3.4vw,44px);padding:clamp(32px,4vw,52px) 0 10px}
+.getit h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
+.getit p{color:var(--soft);margin:0 auto;max-width:560px}
+.fam{display:inline-block;margin:30px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
+footer{border-top:1px solid var(--line);margin-top:54px;padding:24px 0 44px;font-size:13.5px;color:var(--soft)}
+footer a{color:var(--soft);margin-right:16px}
+[data-l]:not(.on){display:none!important}
+
+.soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
+border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
+.pri{max-width:820px;margin:52px auto 0;padding:22px 24px;border:1px solid var(--line);
+border-radius:16px;background:var(--paper)}
+.pri h2{font-size:clamp(20px,2.2vw,25px);margin:0 0 10px}
+.pri p{margin:0;color:var(--soft);font-size:16px}
 </style>
 </head>
 <body>
-<div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
-<main class="ah">
-<img class="ic" src="/apps/prova.png" srcset="/apps/hi/prova.png 2x" alt="Prova · 프로바" width="132" height="132">
-<h1>Prova · 프로바</h1><p class="sub">Vicino Labs · Famiglia Vicino</p>
-<div class="langs" role="group" aria-label="Language"><button type="button" data-set="ko">한국어</button><button type="button" data-set="en">English</button><button type="button" data-set="de">Deutsch</button><button type="button" data-set="it">Italiano</button></div>
-<p data-l="ko" class="lede">레슨과 연습을 녹음·녹화하고, 테이크를 비교하고, 제출 영상을 점검하세요 — AI는 소리를 분석합니다.</p><p data-l="en" class="lede on">Record and film your lessons and practice, compare takes, check submission videos — AI analyses the sound.</p><p data-l="de" class="lede">Unterricht und Üben aufnehmen und filmen, Takes vergleichen, Bewerbungsvideos prüfen – die KI analysiert den Klang.</p><p data-l="it" class="lede">Registra e filma lezioni e studio, confronta le take, controlla i video per audizioni – l'AI analizza il suono.</p><div data-l="ko" class="stores"><span class="soon">Google Play · App Store — 출시 예정</span></div><div data-l="en" class="stores on"><span class="soon">Google Play · App Store — Coming soon</span></div><div data-l="de" class="stores"><span class="soon">Google Play · App Store — Demnächst</span></div><div data-l="it" class="stores"><span class="soon">Google Play · App Store — Prossimamente</span></div><a data-l="ko" class="fam" href="/ko/famiglia/">Famiglia Vicino의 다른 앱 보기 →</a><a data-l="en" class="fam on" href="/en/famiglia/">More apps from Famiglia Vicino →</a><a data-l="de" class="fam" href="/famiglia/">Weitere Apps der Famiglia Vicino →</a><a data-l="it" class="fam" href="/it/famiglia/">Altre app della Famiglia Vicino →</a>
-<div class="legal"><p data-l="ko"><a href="/prova/privacy/#ko">개인정보처리방침</a> · <a href="/prova/terms/#ko">이용약관</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="en" class="on"><a href="/prova/privacy/#en">Privacy Policy</a> · <a href="/prova/terms/#en">Terms of Service</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="de"><a href="/prova/privacy/#de">Datenschutzerklärung</a> · <a href="/prova/terms/#de">Nutzungsbedingungen</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="it"><a href="/prova/privacy/#it">Informativa privacy</a> · <a href="/prova/terms/#it">Termini</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p></div>
+<div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a>
+<div class="langbar" role="group" aria-label="Language"><button type="button" data-set="ko">한국어</button><button type="button" data-set="en" class=on>English</button><button type="button" data-set="de">Deutsch</button></div></div></div>
+<main class="wrap">
+<div data-l="ko" class="hero"><img class="ic" src="/apps/prova.png" srcset="/apps/hi/prova.png 2x" alt="Prova" width="92" height="92"><p class="kicker">VICINO LABS · FAMIGLIA VICINO</p><h1>레슨을 녹음하면 AI가 듣고 정리합니다</h1><p class="lede">선생님이 짚어 주신 곳과 숙제가 시간 순서로 적힙니다. 시간을 누르면 그 부분부터 다시 들립니다. 녹음은 이 기기에 남습니다.</p><p class="soon">iOS 심사 중입니다. 안드로이드는 내부 테스트 중입니다.</p><img class="shotwide" data-hero="1" src="/prova/shots/en/hero.webp" alt="Prova" width="1680" height="1120" fetchpriority="high" decoding="async"></div><div data-l="en" class="hero on"><img class="ic" src="/apps/prova.png" srcset="/apps/hi/prova.png 2x" alt="Prova" width="92" height="92"><p class="kicker">VICINO LABS · FAMIGLIA VICINO</p><h1>Record the lesson and the AI writes it up</h1><p class="lede">The corrections and the homework are written down in the order they came. Tap a time and that passage plays again. The recordings stay on your device.</p><p class="soon">In review on iOS. In internal testing on Android.</p><img class="shotwide" data-hero="1" src="/prova/shots/en/hero.webp" alt="Prova" width="1680" height="1120" fetchpriority="high" decoding="async"></div><div data-l="de" class="hero"><img class="ic" src="/apps/prova.png" srcset="/apps/hi/prova.png 2x" alt="Prova" width="92" height="92"><p class="kicker">VICINO LABS · FAMIGLIA VICINO</p><h1>Die Stunde aufnehmen, die KI hört zu</h1><p class="lede">Korrekturen und Hausaufgaben stehen in der Reihenfolge da, in der sie kamen. Ein Tippen auf die Zeit, und die Stelle läuft wieder. Die Aufnahmen bleiben auf Ihrem Gerät.</p><p class="soon">Bei Apple in Prüfung. Bei Android im internen Test.</p><img class="shotwide" data-hero="1" src="/prova/shots/en/hero.webp" alt="Prova" width="1680" height="1120" fetchpriority="high" decoding="async"></div>
+<section data-l="ko" class="sum"><div class="tiles"><div class="tile"><img class="shot" data-tile="t1" src="/prova/shots/en/t1.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>레슨과 리허설</h3><p>선생님 시범과 지적, 지휘자의 지시까지 소리로 또는 영상으로</p></div></div><div class="tile"><img class="shot" data-tile="t2" src="/prova/shots/en/t2.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>AI 레슨 노트</h3><p>짚어 주신 곳, 칭찬, 숙제가 시간과 함께 적힙니다</p></div></div><div class="tile"><img class="shot" data-tile="t3" src="/prova/shots/en/t3.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>연습 녹음</h3><p>같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다</p></div></div><div class="tile"><img class="shot" data-tile="t4" src="/prova/shots/en/t4.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>두 녹음 비교</h3><p>지난번과 나란히 틀어 무엇이 달라졌는지 봅니다</p></div></div><div class="tile"><div class="tx"><h3>AI 연주 점검</h3><p>음정·박자·템포·음색·셈여림·프레이징을 마디와 시간으로</p></div></div><div class="tile"><div class="tx"><h3>제출 영상</h3><p>오디션·콩쿠르 영상을 찍고 보내기 전에 점검합니다</p></div></div><div class="tile"><div class="tx"><h3>녹음하는 동안</h3><p>안드로이드에서는 방해 금지를 켜고, 끝나면 되돌립니다</p></div></div><div class="tile"><div class="tx"><h3>내 성부와 기준음</h3><p>성부와 악기, 기준음을 정해 두면 AI가 그에 맞춰 봅니다</p></div></div></div></section><section data-l="en" class="sum on"><div class="tiles"><div class="tile"><img class="shot" data-tile="t1" src="/prova/shots/en/t1.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Lessons and rehearsals</h3><p>What your teacher plays and corrects, and what the conductor asks for, in sound or on video</p></div></div><div class="tile"><img class="shot" data-tile="t2" src="/prova/shots/en/t2.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>AI lesson notes</h3><p>The corrections, the praise and the homework, each with its time</p></div></div><div class="tile"><img class="shot" data-tile="t3" src="/prova/shots/en/t3.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Practice takes</h3><p>Record the same passage again and it is numbered: first run, second run</p></div></div><div class="tile"><img class="shot" data-tile="t4" src="/prova/shots/en/t4.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Two takes side by side</h3><p>Play them together and hear what changed</p></div></div><div class="tile"><div class="tx"><h3>AI listens to the playing</h3><p>Intonation, rhythm, tempo, tone, dynamics and phrasing, by bar and by time</p></div></div><div class="tile"><div class="tx"><h3>Audition videos</h3><p>Film the audition or competition video and check it before you send it</p></div></div><div class="tile"><div class="tx"><h3>While you record</h3><p>On Android it turns on Do Not Disturb and puts it back afterwards</p></div></div><div class="tile"><div class="tx"><h3>Your part and your pitch</h3><p>Set the voice or instrument and the reference pitch and the AI judges by that</p></div></div></div></section><section data-l="de" class="sum"><div class="tiles"><div class="tile"><img class="shot" data-tile="t1" src="/prova/shots/en/t1.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Unterricht und Proben</h3><p>Was die Lehrkraft vormacht und korrigiert und was der Dirigent verlangt, als Ton oder Video</p></div></div><div class="tile"><img class="shot" data-tile="t2" src="/prova/shots/en/t2.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>KI-Notizen zur Stunde</h3><p>Korrekturen, Lob und Hausaufgaben, jeweils mit der Zeit</p></div></div><div class="tile"><img class="shot" data-tile="t3" src="/prova/shots/en/t3.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Übe-Aufnahmen</h3><p>Dieselbe Stelle noch einmal, und sie wird nummeriert: Durchlauf 1, Durchlauf 2</p></div></div><div class="tile"><img class="shot" data-tile="t4" src="/prova/shots/en/t4.webp" alt="" width="520" height="1097" loading="lazy" decoding="async"><div class="tx"><h3>Zwei Aufnahmen nebeneinander</h3><p>Zusammen abspielen und hören, was sich geändert hat</p></div></div><div class="tile"><div class="tx"><h3>Die KI hört das Spiel</h3><p>Intonation, Rhythmus, Tempo, Klang, Dynamik und Phrasierung, nach Takt und Zeit</p></div></div><div class="tile"><div class="tx"><h3>Bewerbungsvideos</h3><p>Das Video für Vorspiel oder Wettbewerb aufnehmen und vor dem Abschicken prüfen</p></div></div><div class="tile"><div class="tx"><h3>Während der Aufnahme</h3><p>Unter Android wird „Nicht stören“ eingeschaltet und danach zurückgestellt</p></div></div><div class="tile"><div class="tx"><h3>Ihre Stimme, Ihr Kammerton</h3><p>Stimmlage oder Instrument und Kammerton einstellen, danach urteilt die KI</p></div></div></div></section>
+<section data-l="ko" class="feat"><div class="tx"><p class="kicker">AI 레슨 노트</p><h2>레슨이 끝나면 적혀 있습니다</h2><p>한 시간 넘는 레슨은 앞부분부터 잊힙니다. 녹음해 두고 AI 분석을 누르면 선생님이 하신 말씀, 고쳐 주신 곳, 칭찬, 숙제가 시간 순서로 정리됩니다.</p><ul><li>시간을 누르면 그 부분부터 다시 들립니다</li><li>외국어로 받은 레슨도 적어 둡니다</li></ul></div><div class="pic"><img class="shot" data-shot="d3" src="/prova/shots/en/d3.webp" alt="레슨이 끝나면 적혀 있습니다" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="ko" class="feat flip"><div class="tx"><p class="kicker">연습 테이크</p><h2>지난번과 나란히 들어 봅니다</h2><p>같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다. 두 녹음을 나란히 틀면 무엇이 달라졌는지 귀로 바로 압니다.</p><ul><li>곡과 구간별로 모여 있습니다</li><li>파형 위의 점을 누르면 그 자리부터 들립니다</li></ul></div><div class="pic"><img class="shot" data-shot="d4" src="/prova/shots/en/d4.webp" alt="지난번과 나란히 들어 봅니다" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="ko" class="feat"><div class="tx"><p class="kicker">AI 연주 점검</p><h2>잘된 곳과 다듬을 곳을 짚습니다</h2><p>AI가 음정, 박자, 템포, 음색, 셈여림, 프레이징, 호흡, 발음을 마디와 시간으로 짚어 줍니다. 초록은 잘된 곳, 주황은 연습할 곳입니다.</p><ul><li>성부와 기준음(440·442·443Hz)을 정해 두면 그에 맞춰 봅니다</li><li>영상은 크게 보면서 그 자리의 메모를 함께 봅니다</li></ul></div><div class="pic"><img class="shot" data-shot="d2" src="/prova/shots/en/d2.webp" alt="잘된 곳과 다듬을 곳을 짚습니다" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="en" class="feat on"><div class="tx"><p class="kicker">AI lesson notes</p><h2>The lesson ends and it is already written up</h2><p>An hour of teaching fades from the beginning. Record it, press analyse, and what your teacher said, corrected and praised, and the homework, are in the order they came.</p><ul><li>Tap a time and that passage plays again</li><li>A lesson in another language is written down too</li></ul></div><div class="pic"><img class="shot" data-shot="d3" src="/prova/shots/en/d3.webp" alt="The lesson ends and it is already written up" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="en" class="feat flip on"><div class="tx"><p class="kicker">Practice takes</p><h2>Hear last time and this time together</h2><p>Record the same passage again and it is numbered: first run, second run. Play two takes together and your ear tells you what changed.</p><ul><li>Gathered by piece and by passage</li><li>Tap a mark on the waveform and it plays from there</li></ul></div><div class="pic"><img class="shot" data-shot="d4" src="/prova/shots/en/d4.webp" alt="Hear last time and this time together" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="en" class="feat on"><div class="tx"><p class="kicker">The AI listens to the playing</p><h2>What went well and what to work on</h2><p>The AI marks intonation, rhythm, tempo, tone, dynamics, phrasing, breathing and diction by bar and by time. Green went well, orange is to work on.</p><ul><li>Set your part and your pitch (440, 442, 443 Hz) and it judges by that</li><li>Watch the video large with the notes for that moment beside it</li></ul></div><div class="pic"><img class="shot" data-shot="d2" src="/prova/shots/en/d2.webp" alt="What went well and what to work on" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="de" class="feat"><div class="tx"><p class="kicker">KI-Notizen zur Stunde</p><h2>Die Stunde ist vorbei und steht schon da</h2><p>Nach einer Stunde Unterricht verblasst der Anfang zuerst. Nehmen Sie auf, tippen Sie auf Analysieren, und was gesagt, korrigiert und gelobt wurde und was aufgegeben ist, steht in der Reihenfolge da, in der es kam.</p><ul><li>Ein Tippen auf die Zeit, und die Stelle läuft wieder</li><li>Auch eine Stunde in einer anderen Sprache wird mitgeschrieben</li></ul></div><div class="pic"><img class="shot" data-shot="d3" src="/prova/shots/en/d3.webp" alt="Die Stunde ist vorbei und steht schon da" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="de" class="feat flip"><div class="tx"><p class="kicker">Übe-Aufnahmen</p><h2>Das letzte Mal und dieses Mal zusammen hören</h2><p>Dieselbe Stelle noch einmal aufnehmen, und sie wird nummeriert: Durchlauf 1, Durchlauf 2. Zwei Aufnahmen zusammen abspielen, und das Ohr merkt sofort, was sich geändert hat.</p><ul><li>Nach Stück und Stelle gesammelt</li><li>Auf eine Marke in der Wellenform tippen, und es läuft von dort</li></ul></div><div class="pic"><img class="shot" data-shot="d4" src="/prova/shots/en/d4.webp" alt="Das letzte Mal und dieses Mal zusammen hören" width="1100" height="1447" loading="lazy" decoding="async"></div></section><section data-l="de" class="feat"><div class="tx"><p class="kicker">Die KI hört das Spiel</p><h2>Was gelungen ist und woran Sie arbeiten</h2><p>Die KI markiert Intonation, Rhythmus, Tempo, Klang, Dynamik, Phrasierung, Atem und Aussprache nach Takt und Zeit. Grün ist gelungen, Orange ist zum Üben.</p><ul><li>Stimmlage und Kammerton (440, 442, 443 Hz) einstellen, danach urteilt sie</li><li>Das Video groß ansehen, daneben die Notizen zu dieser Stelle</li></ul></div><div class="pic"><img class="shot" data-shot="d2" src="/prova/shots/en/d2.webp" alt="Was gelungen ist und woran Sie arbeiten" width="1100" height="1447" loading="lazy" decoding="async"></div></section>
+<section data-l="ko" class="pri"><h2>녹음은 이 기기에 남습니다</h2><p>녹음과 영상은 기기에 저장됩니다. AI 분석에는 소리만 보내고, 분석이 끝나면 지웁니다. 영상의 화면은 보내지 않습니다.</p></section><section data-l="en" class="pri on"><h2>The recordings stay on your device</h2><p>Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.</p></section><section data-l="de" class="pri"><h2>Die Aufnahmen bleiben auf Ihrem Gerät</h2><p>Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.</p></section>
+<div data-l="ko" class="getit"><h2>내려받기</h2><p>녹음과 듣기, 비교는 로그인 없이 씁니다. AI 분석과 클라우드는 위레가토 아이디로 로그인해서 씁니다.</p><p class="soon">iOS 심사 중입니다. 안드로이드는 내부 테스트 중입니다.</p><a class="fam" href="/ko/famiglia/">앱들이 함께 일하는 방법 →</a></div><div data-l="en" class="getit on"><h2>Get Prova</h2><p>Recording, listening and comparing need no account. The AI analysis and the cloud work when you sign in with your welegato ID.</p><p class="soon">In review on iOS. In internal testing on Android.</p><a class="fam" href="/en/famiglia/">How the apps work together →</a></div><div data-l="de" class="getit"><h2>Prova laden</h2><p>Aufnehmen, Anhören und Vergleichen brauchen kein Konto. Die KI-Analyse und die Cloud nutzen Sie mit Ihrer welegato-ID.</p><p class="soon">Bei Apple in Prüfung. Bei Android im internen Test.</p><a class="fam" href="/famiglia/">Wie die Apps zusammenarbeiten →</a></div>
 </main>
-<script>(function(){var k="vl-app-lang",L=["ko","en","de","it"],s=null;try{s=localStorage.getItem(k)}catch(e){}
-var h=(location.hash||"").slice(1),n=(navigator.language||"en").slice(0,2),l=L.indexOf(h)>=0?h:(L.indexOf(s)>=0?s:(L.indexOf(n)>=0?n:"en"));
-function set(x){l=x;document.documentElement.lang=x;document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-l")===x)});
-document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});try{localStorage.setItem(k,x)}catch(e){}}
-document.querySelectorAll("[data-set]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-set"))})});set(l)})();</script>
+<footer><div class="wrap"><p data-l="ko" style="margin:0"><a href="/prova/privacy/#ko">개인정보처리방침</a><a href="/prova/terms/#ko">이용약관</a><a href="/impressum/">Impressum</a><a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="en" class=on style="margin:0"><a href="/prova/privacy/#en">Privacy</a><a href="/prova/terms/#en">Terms</a><a href="/impressum/">Impressum</a><a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><p data-l="de" style="margin:0"><a href="/prova/privacy/#de">Datenschutz</a><a href="/prova/terms/#de">Nutzungsbedingungen</a><a href="/impressum/">Impressum</a><a href="mailto:contact@vicinolabs.com">contact@vicinolabs.com</a></p><div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
+<script>(function(){var META={"ko": {"t": "프로바: 레슨·연습 녹음과 AI 분석 | Vicino Labs", "d": "레슨과 연습을 녹음하면 AI가 소리를 듣고 지적과 숙제를 시간과 함께 적어 둡니다. 테이크를 견주고 제출 영상을 점검합니다."}, "en": {"t": "Prova: lesson and practice recording with AI | Vicino Labs", "d": "Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Compare takes and check audition videos."}, "de": {"t": "Prova: Unterricht und Üben aufnehmen, mit KI | Vicino Labs", "d": "Nehmen Sie Unterricht und Üben auf. Die KI hört zu und schreibt Korrekturen und Hausaufgaben mit der Zeit auf. Takes vergleichen, Bewerbungsvideos prüfen."}};
+var KEY="vl-app-lang",langs=["ko","en","de"];
+function pick(){try{var s=localStorage.getItem(KEY);if(s&&langs.indexOf(s)>=0)return s}catch(e){}
+var l=(navigator.languages||[navigator.language||"en"]);
+for(var i=0;i<l.length;i++){var c=String(l[i]).toLowerCase().split("-")[0];
+if(langs.indexOf(c)>=0)return c}return "en"}
+function set(x){var m=META[x]||META.en;
+document.documentElement.lang=x;
+document.title=m.t;
+var d=document.querySelector('meta[name=description]');if(d)d.content=m.d;
+var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.content=m.t;
+var od=document.querySelector('meta[property="og:description"]');if(od)od.content=m.d;
+document.querySelectorAll("[data-l]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-l")===x)});
+document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-set")===x)});
+/* 화면 그림도 그 언어로 */
+document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/prova/shots/"+x+"/hero.webp"});
+document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/prova/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
+document.querySelectorAll("[data-tile]").forEach(function(e){e.src="/prova/shots/"+x+"/"+e.getAttribute("data-tile")+".webp"});
+try{localStorage.setItem(KEY,x)}catch(e){}}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-set]");
+if(b){set(b.getAttribute("data-set"))}});
+set(pick());})();</script>
 </body></html>
