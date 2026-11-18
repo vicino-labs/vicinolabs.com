@@ -138,9 +138,11 @@ def card(lang, key):
         links.append(f'<a href="{PLAY}{STORE[key]}"{ext}>{t["play"]}</a>')
         if key in APPLE:
             links.append(f'<a href="https://apps.apple.com/app/id{APPLE[key]}"{ext}>App Store</a>')
-        links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
+        # /{key}/ 는 앱 소개 페이지다(법문은 그 페이지 맨 아래에 있다).
+        # 2026-11-18 까지 "개인정보·약관"이라고 적혀 있어 이름이 맞지 않았다.
+        links.append(f'<a href="/{key}/">{t["about_l"]}</a>')
     elif key in LEGAL_ONLY:  # 출시 전(Bald) 앱: 법문 링크만, Play 링크는 출시 후 STORE에 추가
-        links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
+        links.append(f'<a href="/{key}/">{t["about_l"]}</a>')
     badge = f' <span class="soon">{t["soon"]}</span>' if soon else ""
     return (f'<div class="card"><img src="/apps/{key}.png" alt="" width="72" height="72" loading="lazy">'
             f'<div><h3>{app_name(lang, key)}{badge}</h3><p>{t["d"][key]}</p><div class="links">{"".join(links)}</div></div></div>')
