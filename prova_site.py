@@ -36,6 +36,10 @@ APPLE = ""   # 출시 때 App Store 주소
 DEEP = (4, 2)
 
 CSS = leggii_site.CSS + """
+/* 요약 판: 그림이 있는 칸과 글만 있는 칸이 섞인다. 늘리지 않고 칸마다
+   제 높이를 갖게 둔다. 안 그러면 글만 있는 칸이 같은 줄의 그림 칸 높이에
+   맞춰 늘어나 아래가 500px 넘게 비어 보인다(2026-11-18). */
+.tiles{align-items:start}
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
 .pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
@@ -216,18 +220,27 @@ def _stores(l):
     return '<div class="stores">' + "".join(out) + "</div>"
 
 
-def _tiles(l):
-    """요약 판: 여덟 칸, 글만.
+# 요약 판 칸마다 어느 화면 그림을 붙일지. 칸 차례(0부터)에 맞춘다.
+# 아이폰 스토어 그림: 1 홈 · 2 AI 연주 점검 · 3 AI 레슨 노트 · 4 두 녹음 비교
+#                    5 보관함(다크, 기기가 아래로 잘려 있어 안 쓴다) · 6 Famiglia
+# "제출 영상"(2번 칸)과 "연습 녹음"(3번 칸)은 아직 맞는 그림이 없다.
+# 프로바 세션에 촬영 화면을 부탁해 두었고, 오면 여기에 넣는다.
+TILE_IMG = {0: 1, 1: 3, 4: 4, 5: 2}
 
-    2026-11-18: 앞 네 칸에 아이폰 그림을 넣었다가 뺐다. 스토어 스크린샷의
-    아이폰은 **기기 아래가 화면 밖으로 잘려 있어서**, 잘라 쓰면 폰이 중간에서
-    뚝 끊겨 보인다(대표님 지적). 아이패드 그림은 아래까지 온전해서 깊이
-    보는 세 장면에는 그대로 쓴다. 프로바 세션에 기기 테두리 없는 순수
-    화면 캡처와 촬영 화면을 부탁해 두었다. 받으면 여기에 다시 넣는다.
+
+def _tiles(l):
+    """요약 판 여덟 칸. 그림이 있는 칸에만 붙인다.
+
+    2026-11-18: 한 번 뺐다가 되살렸다. 스토어 아이폰 그림의 기기가 아래로
+    잘렸다고 봤는데, 재어 보니 잘린 것은 5번 한 장뿐이고 나머지는 위아래가
+    온전하다. 제가 앱 화면 안에서 잘린 글줄을 기기가 잘린 것으로 읽었다.
     """
     cells = []
-    for head, body in T[l]["tiles"]:
-        cells.append(f'<div class="tile"><div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
+    for i, (head, body) in enumerate(T[l]["tiles"]):
+        n = TILE_IMG.get(i)
+        img = (f'<img class="shot" data-tile="t{n}" src="/prova/shots/en/t{n}.webp" '
+               f'alt="" width="520" height="1097" loading="lazy" decoding="async">') if n else ""
+        cells.append(f'<div class="tile">{img}<div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
     return (f'<section data-l="{l}" class="sum{_on(l)}">'
             f'<div class="tiles">{"".join(cells)}</div></section>')
 
