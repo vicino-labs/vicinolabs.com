@@ -49,7 +49,19 @@ CSS = leggii_site.CSS + """
    자리가 없다. 첫 화면과 깊이 보는 장면이 이미 그 모양이고 거기는 깔끔했다. */
 .tile{background:none;border:0;border-radius:0;overflow:visible}
 .tile img{background:none;border-bottom:0}
+/* 히어로 폰에는 기기 둘레에 부드러운 그림자가 구워져 있다. 요약 판과 깊이
+   보는 장면의 기기에도 같은 그림자를 준다. drop-shadow 는 그림의 투명한
+   모서리를 따라가므로 둥근 테두리 모양 그대로 떨어진다(2026-11-18). */
+.tile img,.feat .shot{filter:drop-shadow(0 10px 18px rgba(60,35,18,.28))}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tile img,
+  :root:not([data-theme="light"]) .feat .shot{filter:drop-shadow(0 10px 20px rgba(0,0,0,.55))}}
 .tile .tx{padding:14px 2px 0}
+/* 아래 줄: 거드는 설명들. 작게 두어 위의 장면들과 무게를 가른다. */
+.tiles.more{margin-top:30px}
+.tiles.more .tx{padding:0 2px}
+.tiles.more h3{font-size:16px}
+html[lang=ko] .tiles.more h3{font-size:15px}
+.tiles.more p{font-size:13.5px}
 @media(max-width:720px){.tile .tx{padding:10px 2px 0}}
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
@@ -240,20 +252,29 @@ TILE_IMG = {0: 1, 1: 3, 4: 4, 5: 2}
 
 
 def _tiles(l):
-    """요약 판 여덟 칸. 그림이 있는 칸에만 붙인다.
+    """요약 판. 그림 있는 칸과 글만 있는 칸을 **따로 묶는다**.
 
-    2026-11-18: 한 번 뺐다가 되살렸다. 스토어 아이폰 그림의 기기가 아래로
-    잘렸다고 봤는데, 재어 보니 잘린 것은 5번 한 장뿐이고 나머지는 위아래가
-    온전하다. 제가 앱 화면 안에서 잘린 글줄을 기기가 잘린 것으로 읽었다.
+    2026-11-18: 한 격자에 섞었더니 같은 줄에서 한쪽은 594px, 한쪽은 98px 이라
+    옆이 휑하게 비었다(대표님 "제출영상, 연습녹음은 왜저래?"). 늘리면 아래가
+    500px 비고 안 늘리면 옆이 빈다. 섞은 것 자체가 원인이라 나눈다.
+
+    아래 줄에 남는 것들은 성격도 다르다. "녹음하는 동안", "내 성부와 기준음"은
+    거드는 설명이지 보여 줄 장면이 아니다. 작게 두는 편이 글의 무게에도 맞다.
+    촬영 화면이 오면 "제출 영상"이 위로 올라간다.
     """
-    cells = []
+    big, small = [], []
     for i, (head, body) in enumerate(T[l]["tiles"]):
         n = TILE_IMG.get(i)
-        img = (f'<img class="shot" data-tile="t{n}" src="/prova/shots/en/t{n}.webp" '
-               f'alt="" width="520" height="1097" loading="lazy" decoding="async">') if n else ""
-        cells.append(f'<div class="tile">{img}<div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
+        if n:
+            big.append(f'<div class="tile">'
+                       f'<img class="shot" data-tile="t{n}" src="/prova/shots/en/t{n}.webp" '
+                       f'alt="" width="517" height="1097" loading="lazy" decoding="async">'
+                       f'<div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
+        else:
+            small.append(f'<div class="tile"><div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
     return (f'<section data-l="{l}" class="sum{_on(l)}">'
-            f'<div class="tiles">{"".join(cells)}</div></section>')
+            f'<div class="tiles">{"".join(big)}</div>'
+            f'<div class="tiles more">{"".join(small)}</div></section>')
 
 
 def _feat(l, i, num, kicker, head, body, bullets):
