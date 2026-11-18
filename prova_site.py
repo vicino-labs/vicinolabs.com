@@ -40,6 +40,12 @@ CSS = leggii_site.CSS + """
    제 높이를 갖게 둔다. 안 그러면 글만 있는 칸이 같은 줄의 그림 칸 높이에
    맞춰 늘어나 아래가 500px 넘게 비어 보인다(2026-11-18). */
 .tiles{align-items:start}
+/* 그림의 둥근 모서리는 투명이다. 그 뒤로 카드 배경(--paper, 거의 흰색)이
+   비쳐 모서리 바깥이 밝은 자국으로 보였다(대표님 2026-11-18 "기기모서리
+   뒤에 자국있어"). 히어로는 카드 밖이라 페이지 배경이 비쳐 깔끔했다.
+   그림 자리만 페이지 배경색으로 깔아 히어로와 같게 한다. 색을 글자로
+   박지 않고 var(--bg) 를 쓰므로 어두울 때도 따라간다. */
+.tile img{background:var(--bg)}
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
 .pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
