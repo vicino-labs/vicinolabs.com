@@ -40,12 +40,17 @@ CSS = leggii_site.CSS + """
    제 높이를 갖게 둔다. 안 그러면 글만 있는 칸이 같은 줄의 그림 칸 높이에
    맞춰 늘어나 아래가 500px 넘게 비어 보인다(2026-11-18). */
 .tiles{align-items:start}
-/* 그림의 둥근 모서리는 투명이다. 그 뒤로 카드 배경(--paper, 거의 흰색)이
-   비쳐 모서리 바깥이 밝은 자국으로 보였다(대표님 2026-11-18 "기기모서리
-   뒤에 자국있어"). 히어로는 카드 밖이라 페이지 배경이 비쳐 깔끔했다.
-   그림 자리만 페이지 배경색으로 깔아 히어로와 같게 한다. 색을 글자로
-   박지 않고 var(--bg) 를 쓰므로 어두울 때도 따라간다. */
-.tile img{background:var(--bg)}
+/* 요약 판에서 카드 테두리와 배경을 걷어낸다.
+   카드 배경(--paper, 거의 흰색)과 페이지 배경(상아색)이 다르면, 색을 어디에
+   칠하든 둘이 만나는 자리에 선이 생긴다. 그림 뒤를 페이지색으로 바꿨더니
+   이번에는 카드 테두리가 그림 둘레를 두르는 선으로 보였다
+   (대표님 2026-11-18 "바깥 라인도").
+   그래서 상자를 아예 없앤다. 기기가 페이지 위에 바로 놓이므로 경계가 생길
+   자리가 없다. 첫 화면과 깊이 보는 장면이 이미 그 모양이고 거기는 깔끔했다. */
+.tile{background:none;border:0;border-radius:0;overflow:visible}
+.tile img{background:none;border-bottom:0}
+.tile .tx{padding:14px 2px 0}
+@media(max-width:720px){.tile .tx{padding:10px 2px 0}}
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
 .pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
