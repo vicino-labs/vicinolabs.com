@@ -103,7 +103,11 @@ html[lang=ko] .feat h2{font-size:clamp(23px,2.8vw,32px)}
 .getit p{color:var(--soft);margin:0 auto;max-width:560px}
 .fam{display:inline-block;margin:30px 0 0;font-weight:600;font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line)}
 footer{border-top:1px solid var(--line);margin-top:54px;padding:24px 0 44px;font-size:13.5px;color:var(--soft)}
-footer a{color:var(--soft);margin-right:16px}
+/* inline-block 이라야 좁은 폭에서 줄이 넘어간다. 바닥글 링크는 사이에
+   공백 없이 붙어 나오고(</a><a>), 여기 글은 word-break:keep-all 이라
+   브라우저가 끊을 자리를 못 찾는다. 420px 에서 메일 주소가 화면 밖으로
+   18px 나갔다(2026-11-18). 덩어리끼리는 공백이 없어도 줄이 넘어간다. */
+footer a{color:var(--soft);margin-right:16px;display:inline-block}
 [data-l]:not(.on){display:none!important}
 
 .buy{max-width:720px;margin:0 auto;padding:44px 0 0}

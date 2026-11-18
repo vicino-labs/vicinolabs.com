@@ -70,8 +70,16 @@ CSS = leggii_site.CSS + """
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tile img,
   :root:not([data-theme="light"]) .feat .shot{filter:drop-shadow(0 10px 20px rgba(0,0,0,.55))}}
 .tile .tx{padding:14px 2px 0}
-/* 아래 줄: 거드는 설명들. 작게 두어 위의 장면들과 무게를 가른다. */
-.tiles.more{margin-top:30px}
+/* 아래 줄: 거드는 설명들. 작게 두어 위의 장면들과 무게를 가른다.
+   두 줄 사이를 벌린다. 30px 은 격자 줄 간격 16px 의 두 배도 안 돼서 여덟
+   칸이 한 덩어리로 읽혔다(대표님 2026-11-18 "여기 줄이 너무 붙어있다").
+   56px 은 이 페이지가 쓰는 간격 그대로다 — 요약 판 위가 56, 깊이 보는
+   장면 안쪽이 58. 줄 간격(16)은 그대로 두고 아래 줄에만 위 여백을 준다.
+   줄 간격을 키우면 폭이 좁아져 칸이 세 줄, 두 줄로 접힐 때 그 사이까지
+   같이 벌어진다. 좁은 폭에서는 줄 간격이 10까지 내려가니 함께 줄인다. */
+.tiles.more{margin-top:56px}
+@media(max-width:1000px){.tiles.more{margin-top:40px}}
+@media(max-width:720px){.tiles.more{margin-top:28px}}
 .tiles.more .tx{padding:0 2px}
 .tiles.more h3{font-size:16px}
 html[lang=ko] .tiles.more h3{font-size:15px}
