@@ -104,6 +104,10 @@ T = {
  "login": "로그인", "signup": "가입하기", "or": "또는",
  "toggle_signup": "처음이신가요? 가입하기", "toggle_login": "이미 아이디가 있으신가요? 로그인",
  "logged": "로그인했습니다", "logout": "로그아웃",
+ "wg": "위레가토는 Vicino Labs가 만드는 음악 사이트입니다. 선생님과 연주자를 찾고 연락하는 곳이고, 렛지와 아이디를 함께 씁니다.",
+ "wg_link": "welegato.com 둘러보기 →",
+ "acc_settings": "계정 설정", "acc_pw": "비밀번호 바꾸기", "acc_delete": "회원 탈퇴",
+ "acc_store_apple": "App Store에서 구독 관리", "acc_store_google": "Google Play에서 구독 관리",
  "s3": "3. 결제", "s3h": "카드 결제는 스트라이프가 처리합니다.",
  "waiver": "지금 바로 구독을 시작하는 데 동의하며, 그에 따라 청약철회권이 사라진다는 점을 확인합니다(독일 민법 제356조 제5항).",
  "pay": "구독하기",
@@ -164,6 +168,10 @@ T = {
  "login": "Sign in", "signup": "Create account", "or": "or",
  "toggle_signup": "New here? Create an account", "toggle_login": "Already have a welegato ID? Sign in",
  "logged": "Signed in", "logout": "Sign out",
+ "wg": "welegato is the music site Vicino Labs builds. It is where you find and contact teachers and musicians, and it shares its ID with Leggii.",
+ "wg_link": "Have a look at welegato.com →",
+ "acc_settings": "Account settings", "acc_pw": "Change password", "acc_delete": "Delete account",
+ "acc_store_apple": "Manage on the App Store", "acc_store_google": "Manage on Google Play",
  "s3": "3. Payment", "s3h": "Stripe handles the card payment.",
  "waiver": "I want the subscription to start right away and understand that my right of withdrawal lapses (§ 356(5) German Civil Code).",
  "pay": "Subscribe",
@@ -224,6 +232,10 @@ T = {
  "login": "Anmelden", "signup": "Konto erstellen", "or": "oder",
  "toggle_signup": "Noch keine welegato-ID? Konto erstellen", "toggle_login": "Sie haben schon eine welegato-ID? Anmelden",
  "logged": "Angemeldet", "logout": "Abmelden",
+ "wg": "welegato ist die Musikseite von Vicino Labs. Dort finden Sie Lehrkräfte und Musikerinnen und Musiker und schreiben ihnen, und sie teilt sich die ID mit Leggii.",
+ "wg_link": "welegato.com ansehen →",
+ "acc_settings": "Kontoeinstellungen", "acc_pw": "Passwort ändern", "acc_delete": "Konto löschen",
+ "acc_store_apple": "Im App Store verwalten", "acc_store_google": "Bei Google Play verwalten",
  "s3": "3. Bezahlen", "s3h": "Die Kartenzahlung übernimmt Stripe.",
  "waiver": "Ich verlange ausdrücklich, dass Sie vor Ablauf der Widerrufsfrist mit der Leistung beginnen. Mir ist bekannt, dass ich damit mein Widerrufsrecht verliere (§ 356 Abs. 5 BGB).",
  "pay": "Zahlungspflichtig abonnieren",
@@ -394,6 +406,17 @@ BUY_BODY = """
   <p style="margin:16px 0 0"><a href="#" id="anyway" data-t="out_link"></a></p>
 </div>
 
+<!-- 로그인한 사람에게 언제나 보이는 칸. flow 안에 두면 이미 구독 중인
+     사람에게 통째로 감춰져 로그아웃조차 못 하게 된다(2026-11-18). -->
+<div class="step hidden" id="me">
+  <p class="who"><span data-t="logged"></span>: <b id="whome"></b></p>
+  <div class="row"><button type="button" class="btn ghost" data-out data-t="logout"></button></div>
+  <p class="fine" style="margin-top:14px">
+    <a href="https://app.welegato.com/" target="_blank" rel="noopener" data-t="acc_settings"></a> ·
+    <a href="https://app.welegato.com/" target="_blank" rel="noopener" data-t="acc_pw"></a> ·
+    <a href="https://welegato.com/konto-loeschen/" target="_blank" rel="noopener" data-t="acc_delete"></a></p>
+</div>
+
 <div id="flow">
   <div class="step">
     <h2 data-t="s1"></h2><p class="hint" data-t="s1h"></p>
@@ -412,6 +435,8 @@ BUY_BODY = """
 
   <div class="step">
     <h2 data-t="s2"></h2><p class="hint" data-t="s2h"></p>
+    <p class="fine" style="margin:-8px 0 16px"><span data-t="wg"></span>
+    <a href="https://welegato.com/" target="_blank" rel="noopener" data-t="wg_link"></a></p>
     <div id="anon">
       <label class="f" for="em" data-t="email"></label><input id="em" type="email" autocomplete="email">
       <label class="f" for="pw" data-t="pw"></label><input id="pw" type="password" autocomplete="current-password">
@@ -424,7 +449,7 @@ BUY_BODY = """
     </div>
     <div id="known" class="hidden">
       <p class="who"><span data-t="logged"></span>: <b id="who"></b></p>
-      <div class="row"><button type="button" class="btn ghost" id="out" data-t="logout"></button></div>
+      <div class="row"><button type="button" class="btn ghost" data-out data-t="logout"></button></div>
     </div>
     <div id="amsg" class="msg hidden"></div>
   </div>
@@ -499,7 +524,11 @@ document.getElementById("known").classList.toggle("hidden",!s);
 if(s)document.getElementById("who").textContent=s.email||"";
 var src=(sub&&sub.source)||"none",mine=src!=="none";
 document.getElementById("account").classList.toggle("hidden",!mine);
-document.getElementById("flow").classList.toggle("hidden",mine&&!noEurope);
+var flowHidden=mine&&!noEurope;
+document.getElementById("flow").classList.toggle("hidden",flowHidden);
+/* 단계 2 가 감춰지면 로그아웃도 같이 사라지므로 여기서 받아 준다 */
+document.getElementById("me").classList.toggle("hidden",!(s&&flowHidden));
+if(s)document.getElementById("whome").textContent=s.email||"";
 var el=function(id){return document.getElementById(id)};
 ["up","cancel","resume","portal"].forEach(function(id){el(id).classList.add("hidden")});
 el("accnote").textContent="";el("upnote").textContent="";
@@ -515,7 +544,10 @@ else{el("cancel").textContent=t.acc_cancel;el("cancel").classList.remove("hidden
 el("accnote").textContent=t.acc_cancel_note;}
 el("portal").textContent=t.acc_portal;el("portal").classList.remove("hidden");
 }else if(src==="store"){
-el("accplan").textContent=t.acc_store;el("accwhen").textContent="";
+el("accplan").textContent=t.acc_store;
+el("accwhen").innerHTML='<a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">'
++t.acc_store_apple+'</a> &middot; <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">'
++t.acc_store_google+'</a>';
 }else if(src==="benefit"){
 var u=sub.until?new Date(sub.until).toLocaleDateString(lang):"";
 el("accplan").textContent=t.acc_benefit;
@@ -535,7 +567,7 @@ b=e.target.closest("[data-p]");if(b){oauth(b.getAttribute("data-p"));return}
 if(e.target.closest("#anyway")){e.preventDefault();noEurope=false;
 document.getElementById("outside").classList.add("hidden");render();return}
 if(e.target.closest("#toggle")){signup=!signup;msg("amsg","");render();return}
-if(e.target.closest("#out")){save(null);sub=null;render();return}
+if(e.target.closest("[data-out]")){save(null);sub=null;render();return}
 if(e.target.closest("#go")){
 var em=document.getElementById("em").value.trim(),pw=document.getElementById("pw").value;
 if(!em||!pw)return;msg("amsg","");
