@@ -28,7 +28,12 @@ STORES = True
 PLAY = "https://play.google.com/store/apps/details?id=com.vicinolabs.prova"
 APPLE = ""   # 출시 때 App Store 주소
 
-DEEP = (3, 4, 2)   # 깊이 보는 세 장면: 레슨 노트 · 연습 비교 · 연주 점검
+# 깊이 보는 장면은 **프로바에만 있는 것**으로 채운다(대표님 2026-11-18
+# "그런 차별이 없으면 렛지만 사면 되지 프로바가 쓸모없어져").
+# 레슨 녹음과 AI 레슨 노트는 렛지에도 있다. 그건 여덟 칸 요약에 두고
+# 여기에는 연습 비교(4)와 AI 연주 점검(2)만 둔다. 촬영은 화면 그림이
+# 오는 대로 세 번째로 넣는다.
+DEEP = (4, 2)
 
 CSS = leggii_site.CSS + """
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
@@ -42,11 +47,11 @@ border-radius:16px;background:var(--paper);display:grid;grid-template-columns:1f
 
 T = {
 "ko": {
- "title": "프로바: 레슨·연습 녹음과 AI 분석 | Vicino Labs",
- "desc": "레슨과 연습을 녹음하면 AI가 소리를 듣고 지적과 숙제를 시간과 함께 적어 둡니다. 두 녹음을 나란히 견주고 제출 영상을 점검합니다.",
+ "title": "프로바: 연습 비교와 제출 영상, AI 연주 점검 | Vicino Labs",
+ "desc": "같은 구간을 여러 번 녹음해 지난번과 나란히 견주고, 제출 영상을 찍어 점검합니다. AI가 음정·박자·템포·셈여림을 마디와 시간으로 짚어 줍니다.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "녹음하거나 찍어 두면 AI가 듣고 정리합니다",
- "lede": "레슨은 소리로, 제출 영상은 카메라로 남깁니다. 선생님이 짚어 주신 곳과 숙제는 시간 순서로 적히고, 시간을 누르면 그 부분부터 다시 들립니다.",
+ "h1": "AI가 내 연주를 듣고 짚어 줍니다",
+ "lede": "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙고, 지난번과 나란히 틀어 봅니다. 제출 영상은 카메라로 찍어 보내기 전에 점검합니다.",
  "soon": "iOS 심사 중입니다. 안드로이드는 내부 테스트 중입니다.",
  "tiles": [
   ("레슨과 리허설", "선생님 시범과 지적, 지휘자의 지시까지 소리로 또는 영상으로"),
@@ -81,11 +86,11 @@ T = {
  "privacy": "개인정보처리방침", "terms": "이용약관",
 },
 "en": {
- "title": "Prova: lesson and practice recording with AI | Vicino Labs",
- "desc": "Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Play two runs side by side and check audition videos.",
+ "title": "Prova: compare your runs, film auditions, AI on your playing | Vicino Labs",
+ "desc": "Record the same passage again and play it beside last time. Film the audition video and check it. The AI marks intonation, rhythm, tempo and dynamics by bar and by time.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "Record it or film it, the AI writes it up",
- "lede": "Lessons as sound, audition videos on camera. The corrections and the homework are written down in the order they came, and tapping a time plays that passage again.",
+ "h1": "The AI listens to your playing",
+ "lede": "Record the same passage again and it is numbered Run 1, Run 2, then play two of them together. Film the audition video and check it before you send it.",
  "soon": "In review on iOS. In internal testing on Android.",
  "tiles": [
   ("Lessons and rehearsals", "What your teacher plays and corrects, and what the conductor asks for, in sound or on video"),
@@ -120,11 +125,11 @@ T = {
  "privacy": "Privacy", "terms": "Terms",
 },
 "de": {
- "title": "Prova: Unterricht und Üben aufnehmen, mit KI | Vicino Labs",
- "desc": "Nehmen Sie Unterricht und Üben auf. Die KI hört zu und schreibt Korrekturen und Hausaufgaben mit der Zeit auf. Zwei Durchläufe nebeneinander hören, Bewerbungsvideos prüfen.",
+ "title": "Prova: Durchläufe vergleichen, Videos prüfen, KI zum Spiel | Vicino Labs",
+ "desc": "Dieselbe Stelle noch einmal aufnehmen und neben die letzte legen. Das Bewerbungsvideo filmen und prüfen. Die KI markiert Intonation, Rhythmus, Tempo und Dynamik nach Takt und Zeit.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "Aufnehmen oder filmen, die KI hört zu",
- "lede": "Die Stunde als Ton, das Bewerbungsvideo mit der Kamera. Korrekturen und Hausaufgaben stehen in der Reihenfolge da, in der sie kamen, und ein Tippen auf die Zeit lässt die Stelle wieder laufen.",
+ "h1": "Die KI hört Ihr Spiel",
+ "lede": "Dieselbe Stelle noch einmal aufnehmen, Durchlauf 1, Durchlauf 2, und beide zusammen abspielen. Das Bewerbungsvideo filmen und vor dem Abschicken prüfen.",
  "soon": "Bei Apple in Prüfung. Bei Android im internen Test.",
  "tiles": [
   ("Unterricht und Proben", "Was die Lehrkraft vormacht und korrigiert und was der Dirigent verlangt, als Ton oder Video"),
@@ -251,7 +256,8 @@ def page():
         for l, _ in LANGS)
     tiles = "".join(_tiles(l) for l, _ in LANGS)
     deep = "".join(
-        "".join(_feat(l, i, *f) for i, f in enumerate(T[l]["feats"]))
+        "".join(_feat(l, i, *f)
+                for i, f in enumerate(x for x in T[l]["feats"] if x[0] in DEEP))
         for l, _ in LANGS)
     pri = "".join(
         f'<section data-l="{l}" class="pri{_on(l)}">'
