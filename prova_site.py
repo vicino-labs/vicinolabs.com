@@ -91,8 +91,9 @@ border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size
    (2026-11-18 에 그렇게 만들었다가 그림이 아예 안 나왔다). */
 .feat .shot{width:100%;height:auto;max-width:370px}
 /* 폰은 세로로 길다(2.12:1). 아이패드와 같은 폭을 주면 높이가 780px 이 넘어
-   글(약 350px)과 다시 벌어진다. 폰만 더 좁게 눌러 높이를 맞춘다. */
-.feat .shot.ph{max-width:262px}
+   글(약 350px)과 다시 벌어진다. 폰만 더 좁게 눌러 높이를 맞춘다.
+   240 이면 높이 508: 글이 330~361 이니 위아래가 74~89 로 남는다. */
+.feat .shot.ph{max-width:240px}
 /* 좌우 번갈아 놓기. 렛지 CSS 의 .flip 은 .txt 를 집는데 이 페이지의 글 칸은
    .tx 라 여태 걸리지 않았다(가운데 장면도 그림이 오른쪽에 있었다).
    칸 너비도 함께 뒤집어야 글 칸이 넓어지지 않는다. */
@@ -138,7 +139,8 @@ T = {
     "외국어로 받은 레슨도 적어 둬요"]),
   (4, "연습 녹음", "지난번과 나란히 들어 봐요",
    "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙어요. 두 녹음을 나란히 틀면 무엇이 달라졌는지 귀로 바로 알아요.",
-   ["곡과 구간별로 모여 있어요",
+   ["같은 곡·구간에 녹음이 둘 이상 쌓이면 비교 탭이 열려요",
+    "곡과 구간별로 모여 있어요",
     "별표를 달아 두면 중요한 녹음만 모아 봐요",
     "파형 위의 점을 누르면 그 자리부터 들려요"]),
   (2, "AI 연주 점검", "잘된 곳과 다듬을 곳을 짚어 줘요",
@@ -184,7 +186,8 @@ T = {
     "A lesson in another language is written down too"]),
   (4, "Practice runs", "Hear last time and this time together",
    "Record the same passage again and it is numbered: Run 1, Run 2. Play two of them together and your ear tells you what changed.",
-   ["Gathered by piece and by passage",
+   ["Two or more takes of a piece and passage, and the compare tab opens",
+    "Gathered by piece and by passage",
     "Star the ones that matter and see only those",
     "Tap a mark on the waveform and it plays from there"]),
   (2, "The AI listens to the playing", "What went well and what to work on",
@@ -230,7 +233,8 @@ T = {
     "Auch eine Stunde in einer anderen Sprache wird mitgeschrieben"]),
   (4, "Übe-Aufnahmen", "Das letzte Mal und dieses Mal zusammen hören",
    "Dieselbe Stelle noch einmal aufnehmen, und sie wird nummeriert: Durchlauf 1, Durchlauf 2. Zwei Aufnahmen zusammen abspielen, und das Ohr merkt sofort, was sich geändert hat.",
-   ["Nach Stück und Stelle gesammelt",
+   ["Zwei Aufnahmen zu Stück und Stelle, und der Vergleich öffnet sich",
+    "Nach Stück und Stelle gesammelt",
     "Wichtige mit einem Stern markieren und nur diese sehen",
     "Auf eine Marke in der Wellenform tippen, und es läuft von dort"]),
   (2, "Die KI hört das Spiel", "Was gelungen ist und woran Sie arbeiten",
