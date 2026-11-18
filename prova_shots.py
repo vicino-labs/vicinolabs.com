@@ -81,16 +81,24 @@ def place(canvas, dev, x, y, radius):
 
 
 def hero(lang):
-    """아이패드 옆에 아이폰. 가로로 넓은 첫 그림."""
-    pad = device(f"{SRC}/{lang}/ipad/screenshot-2.png", IPAD, 1000, IPAD_R)
-    pho = device(f"{SRC}/{lang}/iphone/screenshot-3.png", IPHONE, 700, IPHONE_R)
+    """폰이 앞에 크게, 아이패드가 뒤에 작게.
+
+    프로바는 **폰으로 쓰는 앱**이다(대표님 2026-11-18 "프로바는 패드보단
+    휴대폰으로 많이 쓰겠지?"). 레슨실에서 폰을 세워 두고 녹음하고, 입시
+    영상도 폰으로 찍는다. 아이패드는 집에 와서 넓게 펼쳐 볼 때다.
+    렛지와 정반대인 자리라 첫 그림부터 그렇게 보여야 한다.
+    """
+    pho = device(f"{SRC}/{lang}/iphone/screenshot-1.png", IPHONE, 980, IPHONE_R)
+    pad = device(f"{SRC}/{lang}/ipad/screenshot-3.png", IPAD, 740, IPAD_R)
     W, H = 1680, 1120
     c = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    px = (W - pad.width) // 2 + 150
-    # 줄인 뒤 비율에 맞춰 그림자 반경도 줄인다
-    place(c, pad, px, (H - pad.height) // 2, round(IPAD_R * pad.height / (IPAD[3] - IPAD[1])))
-    place(c, pho, px - pho.width + 60, H - pho.height - 60,
-          round(IPHONE_R * pho.height / (IPHONE[3] - IPHONE[1])))
+    overlap = 110
+    x0 = (W - (pho.width + pad.width - overlap)) // 2
+    py = (H - pho.height) // 2
+    # 줄인 뒤 비율에 맞춰 그림자 반경도 줄인다. 아이패드를 먼저 놓아 뒤로 보낸다.
+    place(c, pad, x0 + pho.width - overlap, py + pho.height - pad.height - 60,
+          round(IPAD_R * pad.height / (IPAD[3] - IPAD[1])))
+    place(c, pho, x0, py, round(IPHONE_R * pho.height / (IPHONE[3] - IPHONE[1])))
     return c
 
 
@@ -105,10 +113,15 @@ def build():
         d = os.path.join(OUT, lang)
         os.makedirs(d, exist_ok=True)
         hero(lang).save(os.path.join(d, "hero.webp"), quality=86, method=6)
-        # 깊이 보는 세 장면: 2 AI 연주 점검 · 3 AI 레슨 노트 · 4 두 녹음 비교
-        for n in (2, 3, 4):
-            crop(lang, ("ipad", n), IPAD, 1100, IPAD_R).save(
-                os.path.join(d, f"d{n}.webp"), quality=84, method=6)
+        # 깊이 보는 장면. 프로바에만 있는 것 둘은 **폰**으로 보여 준다.
+        #   dp4 두 녹음 비교 · dp2 AI 연주 점검
+        for n in (2, 4):
+            crop(lang, ("iphone", n), IPHONE, 620, IPHONE_R).save(
+                os.path.join(d, f"dp{n}.webp"), quality=84, method=6)
+        # 아이패드는 한 장면만. 넓은 화면에서 목록과 녹음이 나란히 놓이는 자리다.
+        # 보관함 그림(5번)이 더 맞지만 기기가 아래로 잘려 있어 1번을 쓴다.
+        crop(lang, ("ipad", 1), IPAD, 1100, IPAD_R).save(
+            os.path.join(d, "dwide.webp"), quality=84, method=6)
         # 요약 판 타일: 아이폰 네 장면
         for n in (1, 2, 3, 4):
             crop(lang, ("iphone", n), IPHONE, 520, IPHONE_R).save(

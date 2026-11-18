@@ -32,8 +32,22 @@ APPLE = ""   # 출시 때 App Store 주소
 # "그런 차별이 없으면 렛지만 사면 되지 프로바가 쓸모없어져").
 # 레슨 녹음과 AI 레슨 노트는 렛지에도 있다. 그건 여덟 칸 요약에 두고
 # 여기에는 연습 비교(4)와 AI 연주 점검(2)만 둔다. 촬영은 화면 그림이
-# 오는 대로 세 번째로 넣는다.
-DEEP = (4, 2)
+# 오는 대로 넣는다.
+#
+# 9 는 그 둘 뒤에 붙는 "넓은 화면" 장면이다. 번호가 아니라 자리표다.
+DEEP = (4, 2, 9)
+
+# 장면마다 어떤 기기로 보여 줄지. **프로바는 폰으로 쓰는 앱이다**
+# (대표님 2026-11-18 "프로바는 패드보단 휴대폰으로 많이 쓰겠지?").
+# 레슨실에서 폰을 세워 두고 녹음하고, 입시 영상도 폰으로 찍는다.
+# 렛지가 "태블릿 기본"인 것과 정반대 자리라, 셋 다 아이패드로 두면
+# "이건 패드 앱인가" 로 읽힌다. 아이패드는 **거드는 자리** 하나만 둔다.
+#   (파일이름, 덧붙일 class, 폭, 높이)
+SHOT = {
+    4: ("dp4", " ph", 617, 1308),
+    2: ("dp2", " ph", 617, 1308),
+    9: ("dwide", "", 1098, 1447),
+}
 
 CSS = leggii_site.CSS + """
 /* 요약 판: 그림이 있는 칸과 글만 있는 칸이 섞인다. 늘리지 않고 칸마다
@@ -76,8 +90,17 @@ border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size
    사라져 불러오기 전 크기가 0x0 이 되고, 그러면 lazy 가 영영 안 걸린다
    (2026-11-18 에 그렇게 만들었다가 그림이 아예 안 나왔다). */
 .feat .shot{width:100%;height:auto;max-width:370px}
+/* 폰은 세로로 길다(2.12:1). 아이패드와 같은 폭을 주면 높이가 780px 이 넘어
+   글(약 350px)과 다시 벌어진다. 폰만 더 좁게 눌러 높이를 맞춘다. */
+.feat .shot.ph{max-width:262px}
+/* 좌우 번갈아 놓기. 렛지 CSS 의 .flip 은 .txt 를 집는데 이 페이지의 글 칸은
+   .tx 라 여태 걸리지 않았다(가운데 장면도 그림이 오른쪽에 있었다).
+   칸 너비도 함께 뒤집어야 글 칸이 넓어지지 않는다. */
+.feat.flip{grid-template-columns:minmax(0,1.22fr) minmax(0,0.78fr)}
+.feat.flip .tx{order:2}
 @media(max-width:820px){.feat{grid-template-columns:1fr}
-.feat .shot{max-width:460px}}
+.feat .shot{max-width:460px}
+.feat .shot.ph{max-width:300px}}
 
 .pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
 border-radius:16px;background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:26px}
@@ -118,7 +141,12 @@ T = {
    "AI가 음정, 박자, 템포, 음색, 셈여림, 프레이징, 호흡, 발음을 마디와 시간으로 짚어 줍니다. 초록은 잘된 곳, 주황은 연습할 곳입니다.",
    ["성부와 기준음(440·442·443Hz)을 정해 두면 그에 맞춰 봅니다",
     "쓰는 시간을 미리 알려 주고, 분석이 실패하면 깎지 않습니다",
-    "영상은 크게 보면서 그 자리의 메모를 함께 봅니다"])],
+    "영상은 크게 보면서 그 자리의 메모를 함께 봅니다"]),
+  (9, "넓은 화면", "아이패드에서는 양쪽으로 펼쳐 봅니다",
+   "녹음은 폰으로 합니다. 레슨실에 들고 가는 것도, 입시 영상을 찍는 것도 폰입니다. 집에 와서 아이패드로 열면 왼쪽에 목록, 오른쪽에 열린 녹음이 놓입니다.",
+   ["보관함이 곡과 구간별로 묶입니다",
+    "파형 위에 AI가 짚은 자리가 점으로 떠서, 누르면 그 자리부터 들립니다",
+    "펼친 폴더블 폰도 같습니다. 접으면 보던 녹음이 그대로 남습니다"])],
  "pri_h": "녹음은 이 기기에 남습니다",
  "pri_p": "녹음과 영상은 기기에 저장됩니다. AI 분석에는 소리만 보내고, 분석이 끝나면 지웁니다. 영상의 화면은 보내지 않습니다.",
  "con_h": "녹음하기 전에",
@@ -159,7 +187,12 @@ T = {
    "The AI marks intonation, rhythm, tempo, tone, dynamics, phrasing, breathing and diction by bar and by time. Green went well, orange is to work on.",
    ["Set your part and your pitch (440, 442, 443 Hz) and it judges by that",
     "It tells you the minutes before it starts, and charges nothing if it fails",
-    "Watch the video large with the notes for that moment beside it"])],
+    "Watch the video large with the notes for that moment beside it"]),
+  (9, "A wide screen", "On an iPad it opens out to both sides",
+   "The recording happens on the phone. The phone is what goes to the lesson, and what films the audition. Open it on the iPad at home and the list sits on the left, the take on the right.",
+   ["The library groups takes by piece and by passage",
+    "The AI's marks sit as dots above the waveform; tap one and it plays from there",
+    "An unfolded foldable is the same. Fold it shut and the open take stays"])],
  "pri_h": "The recordings stay on your device",
  "pri_p": "Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.",
  "con_h": "Before you record",
@@ -200,7 +233,12 @@ T = {
    "Die KI markiert Intonation, Rhythmus, Tempo, Klang, Dynamik, Phrasierung, Atem und Aussprache nach Takt und Zeit. Grün ist gelungen, Orange ist zum Üben.",
    ["Stimmlage und Kammerton (440, 442, 443 Hz) einstellen, danach urteilt sie",
     "Die Minuten stehen vorher da, und bei einem Fehlschlag wird nichts abgezogen",
-    "Das Video groß ansehen, daneben die Notizen zu dieser Stelle"])],
+    "Das Video groß ansehen, daneben die Notizen zu dieser Stelle"]),
+  (9, "Großer Bildschirm", "Auf dem iPad klappt es nach beiden Seiten auf",
+   "Aufgenommen wird mit dem Telefon. Das Telefon geht mit in die Stunde, und es filmt das Vorspiel. Zu Hause auf dem iPad geöffnet, steht links die Liste und rechts die offene Aufnahme.",
+   ["Das Archiv gruppiert nach Stück und Stelle",
+    "Die Marken der KI sitzen als Punkte über der Wellenform; ein Tippen, und es läuft von dort",
+    "Ein aufgeklapptes Foldable genauso. Zugeklappt bleibt die offene Aufnahme stehen"])],
  "pri_h": "Die Aufnahmen bleiben auf Ihrem Gerät",
  "pri_p": "Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.",
  "con_h": "Vor der Aufnahme",
@@ -297,14 +335,19 @@ def _tiles(l):
             f'<div class="tiles more">{"".join(small)}</div></section>')
 
 
+def _shot(num, head):
+    name, cls, w, h = SHOT[num]
+    return (f'<img class="shot{cls}" data-shot="{name}" src="/prova/shots/en/{name}.webp" '
+            f'alt="{head}" width="{w}" height="{h}" loading="lazy" decoding="async">')
+
+
 def _feat(l, i, num, kicker, head, body, bullets):
     lis = "".join(f"<li>{b}</li>" for b in bullets)
     flip = " flip" if i % 2 else ""
     return (f'<section data-l="{l}" class="feat{flip}{_on(l)}">'
             f'<div class="tx"><p class="kicker">{kicker}</p><h2>{head}</h2>'
             f'<p>{body}</p><ul>{lis}</ul></div>'
-            f'<div class="pic"><img class="shot" data-shot="d{num}" src="/prova/shots/en/d{num}.webp" '
-            f'alt="{head}" width="1100" height="1447" loading="lazy" decoding="async"></div></section>')
+            f'<div class="pic">{_shot(num, head)}</div></section>')
 
 
 def page():
