@@ -78,6 +78,13 @@ CSS = leggii_site.CSS + """
    줄 간격을 키우면 폭이 좁아져 칸이 세 줄, 두 줄로 접힐 때 그 사이까지
    같이 벌어진다. 좁은 폭에서는 줄 간격이 10까지 내려가니 함께 줄인다. */
 .tiles.more{margin-top:56px}
+/* 글 칸 바로 밑에 구분선이 붙어 있었다(대표님 2026-11-18 "글 밑에 줄이 너무
+   붙어있다"). 요약 판은 아래 여백이 0 인데 바로 다음 장면이 border-top 을
+   달고 온다. 그래서 "보내기 전에 점검해요" 다음 줄이 곧장 선이었다.
+   렛지에서는 마지막 줄이 테두리 있는 카드라 눈에 안 띄었다. 여기는 상자를
+   걷어낸 글이라 선이 글에 달라붙는다. 선 아래가 58(장면 안쪽 여백)이니
+   위도 그만큼 띄운다. */
+.sum{padding-bottom:56px}
 @media(max-width:1000px){.tiles.more{margin-top:40px}}
 @media(max-width:720px){.tiles.more{margin-top:28px}}
 .tiles.more .tx{padding:0 2px}
