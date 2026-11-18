@@ -45,16 +45,16 @@ T = {
  "title": "프로바: 레슨·연습 녹음과 AI 분석 | Vicino Labs",
  "desc": "레슨과 연습을 녹음하면 AI가 소리를 듣고 지적과 숙제를 시간과 함께 적어 둡니다. 두 녹음을 나란히 견주고 제출 영상을 점검합니다.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "레슨을 녹음하면 AI가 듣고 정리합니다",
- "lede": "선생님이 짚어 주신 곳과 숙제가 시간 순서로 적힙니다. 시간을 누르면 그 부분부터 다시 들립니다. 녹음은 이 기기에 남습니다.",
+ "h1": "녹음하거나 찍어 두면 AI가 듣고 정리합니다",
+ "lede": "레슨은 소리로, 제출 영상은 카메라로 남깁니다. 선생님이 짚어 주신 곳과 숙제는 시간 순서로 적히고, 시간을 누르면 그 부분부터 다시 들립니다.",
  "soon": "iOS 심사 중입니다. 안드로이드는 내부 테스트 중입니다.",
  "tiles": [
   ("레슨과 리허설", "선생님 시범과 지적, 지휘자의 지시까지 소리로 또는 영상으로"),
   ("AI 레슨 노트", "짚어 주신 곳, 칭찬, 숙제가 시간과 함께 적힙니다"),
+  ("제출 영상", "오디션·콩쿠르 영상을 0.6·1·2배 줌으로 찍고 보내기 전에 점검합니다"),
   ("연습 녹음", "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다"),
   ("두 녹음 비교", "지난번과 나란히 틀어 무엇이 달라졌는지 봅니다"),
   ("AI 연주 점검", "음정·박자·템포·음색·셈여림·프레이징을 마디와 시간으로"),
-  ("제출 영상", "오디션·콩쿠르 영상을 0.6·1·2배 줌으로 찍고 보내기 전에 점검합니다"),
   ("녹음하는 동안", "안드로이드에서는 방해 금지를 켜고, 끝나면 되돌립니다"),
   ("내 성부와 기준음", "성부와 악기, 기준음을 정해 두면 AI가 그에 맞춰 봅니다")],
  "feats": [
@@ -84,16 +84,16 @@ T = {
  "title": "Prova: lesson and practice recording with AI | Vicino Labs",
  "desc": "Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Play two runs side by side and check audition videos.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "Record the lesson and the AI writes it up",
- "lede": "The corrections and the homework are written down in the order they came. Tap a time and that passage plays again. The recordings stay on your device.",
+ "h1": "Record it or film it, the AI writes it up",
+ "lede": "Lessons as sound, audition videos on camera. The corrections and the homework are written down in the order they came, and tapping a time plays that passage again.",
  "soon": "In review on iOS. In internal testing on Android.",
  "tiles": [
   ("Lessons and rehearsals", "What your teacher plays and corrects, and what the conductor asks for, in sound or on video"),
   ("AI lesson notes", "The corrections, the praise and the homework, each with its time"),
+  ("Audition videos", "Film at 0.6×, 1× or 2× and check the video before you send it"),
   ("Practice runs", "Record the same passage again and it is numbered: Run 1, Run 2"),
   ("Two runs side by side", "Play them together and hear what changed"),
   ("AI listens to the playing", "Intonation, rhythm, tempo, tone, dynamics and phrasing, by bar and by time"),
-  ("Audition videos", "Film at 0.6×, 1× or 2× and check the video before you send it"),
   ("While you record", "On Android it turns on Do Not Disturb and puts it back afterwards"),
   ("Your part and your pitch", "Set the voice or instrument and the reference pitch and the AI judges by that")],
  "feats": [
@@ -123,16 +123,16 @@ T = {
  "title": "Prova: Unterricht und Üben aufnehmen, mit KI | Vicino Labs",
  "desc": "Nehmen Sie Unterricht und Üben auf. Die KI hört zu und schreibt Korrekturen und Hausaufgaben mit der Zeit auf. Zwei Durchläufe nebeneinander hören, Bewerbungsvideos prüfen.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
- "h1": "Die Stunde aufnehmen, die KI hört zu",
- "lede": "Korrekturen und Hausaufgaben stehen in der Reihenfolge da, in der sie kamen. Ein Tippen auf die Zeit, und die Stelle läuft wieder. Die Aufnahmen bleiben auf Ihrem Gerät.",
+ "h1": "Aufnehmen oder filmen, die KI hört zu",
+ "lede": "Die Stunde als Ton, das Bewerbungsvideo mit der Kamera. Korrekturen und Hausaufgaben stehen in der Reihenfolge da, in der sie kamen, und ein Tippen auf die Zeit lässt die Stelle wieder laufen.",
  "soon": "Bei Apple in Prüfung. Bei Android im internen Test.",
  "tiles": [
   ("Unterricht und Proben", "Was die Lehrkraft vormacht und korrigiert und was der Dirigent verlangt, als Ton oder Video"),
   ("KI-Notizen zur Stunde", "Korrekturen, Lob und Hausaufgaben, jeweils mit der Zeit"),
+  ("Bewerbungsvideos", "Mit 0,6×, 1× oder 2× filmen und das Video vor dem Abschicken prüfen"),
   ("Übe-Aufnahmen", "Dieselbe Stelle noch einmal, und sie wird nummeriert: Durchlauf 1, Durchlauf 2"),
   ("Zwei Aufnahmen nebeneinander", "Zusammen abspielen und hören, was sich geändert hat"),
   ("Die KI hört das Spiel", "Intonation, Rhythmus, Tempo, Klang, Dynamik und Phrasierung, nach Takt und Zeit"),
-  ("Bewerbungsvideos", "Mit 0,6×, 1× oder 2× filmen und das Video vor dem Abschicken prüfen"),
   ("Während der Aufnahme", "Unter Android wird „Nicht stören“ eingeschaltet und danach zurückgestellt"),
   ("Ihre Stimme, Ihr Kammerton", "Stimmlage oder Instrument und Kammerton einstellen, danach urteilt die KI")],
  "feats": [
@@ -212,12 +212,17 @@ def _stores(l):
 
 
 def _tiles(l):
-    # 요약 판: 여덟 칸. 앞 네 칸에만 그림을 둔다(그림이 네 장이다).
+    """요약 판: 여덟 칸, 글만.
+
+    2026-11-18: 앞 네 칸에 아이폰 그림을 넣었다가 뺐다. 스토어 스크린샷의
+    아이폰은 **기기 아래가 화면 밖으로 잘려 있어서**, 잘라 쓰면 폰이 중간에서
+    뚝 끊겨 보인다(대표님 지적). 아이패드 그림은 아래까지 온전해서 깊이
+    보는 세 장면에는 그대로 쓴다. 프로바 세션에 기기 테두리 없는 순수
+    화면 캡처와 촬영 화면을 부탁해 두었다. 받으면 여기에 다시 넣는다.
+    """
     cells = []
-    for i, (head, body) in enumerate(T[l]["tiles"]):
-        img = (f'<img class="shot" data-tile="t{i + 1}" src="/prova/shots/en/t{i + 1}.webp" '
-               f'alt="" width="520" height="1097" loading="lazy" decoding="async">') if i < 4 else ""
-        cells.append(f'<div class="tile">{img}<div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
+    for head, body in T[l]["tiles"]:
+        cells.append(f'<div class="tile"><div class="tx"><h3>{head}</h3><p>{body}</p></div></div>')
     return (f'<section data-l="{l}" class="sum{_on(l)}">'
             f'<div class="tiles">{"".join(cells)}</div></section>')
 
