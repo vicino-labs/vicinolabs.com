@@ -89,10 +89,10 @@ MUSIC = ["welegato", "leggii", "appoggio", "pianino", "chiave", "prova", "squill
 # App Store 번호(2026-11-10). 나라 없는 링크 — 아이폰은 그 사람 나라 스토어로, 컴퓨터는 미국 스토어
 # (아뽀조·피아니노는 미국에도 있음). 렛지는 승인되면 6832925566 추가.
 APPLE = {"appoggio": "6832364161", "pianino": "6832363954"}
-STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance"}
+STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance", "prova": "com.vicinolabs.prova"}
 NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "chiave": "Chiave", "pianino": "Pianino", "prova": "Prova", "squillo": "Squillo", "nomio": "Nomio"}
-SOON = {"chiave", "prova", "squillo"}
-LEGAL_ONLY = {"chiave", "prova"}  # 2026-11-09 법문 페이지만 먼저 연결
+SOON = {"chiave", "squillo"}
+LEGAL_ONLY = {"chiave"}  # 출시 전 앱: 법문 링크만. 프로바는 2026-11-18 Play 출시로 STORE 로 옮김
 
 import site_i18n as I
 import famiglia

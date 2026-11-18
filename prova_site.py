@@ -24,7 +24,7 @@ EMAIL = "contact@vicinolabs.com"
 LANGS = [("ko", "한국어"), ("en", "English"), ("de", "Deutsch")]
 
 # 출시하면 True. 그때까지는 "곧 나옵니다" 한 줄만 보인다.
-STORES = False
+STORES = True
 PLAY = "https://play.google.com/store/apps/details?id=com.vicinolabs.prova"
 APPLE = ""   # 출시 때 App Store 주소
 
@@ -33,16 +33,17 @@ DEEP = (3, 4, 2)   # 깊이 보는 세 장면: 레슨 노트 · 연습 비교 ·
 CSS = leggii_site.CSS + """
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
-.pri{max-width:820px;margin:52px auto 0;padding:22px 24px;border:1px solid var(--line);
-border-radius:16px;background:var(--paper)}
-.pri h2{font-size:clamp(20px,2.2vw,25px);margin:0 0 10px}
-.pri p{margin:0;color:var(--soft);font-size:16px}
+.pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
+border-radius:16px;background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:720px){.pri{grid-template-columns:1fr;gap:22px}}
+.pri h2{font-size:clamp(19px,2vw,23px);margin:0 0 10px}
+.pri p{margin:0;color:var(--soft);font-size:15.5px}
 """
 
 T = {
 "ko": {
  "title": "프로바: 레슨·연습 녹음과 AI 분석 | Vicino Labs",
- "desc": "레슨과 연습을 녹음하면 AI가 소리를 듣고 지적과 숙제를 시간과 함께 적어 둡니다. 테이크를 견주고 제출 영상을 점검합니다.",
+ "desc": "레슨과 연습을 녹음하면 AI가 소리를 듣고 지적과 숙제를 시간과 함께 적어 둡니다. 두 녹음을 나란히 견주고 제출 영상을 점검합니다.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "레슨을 녹음하면 AI가 듣고 정리합니다",
  "lede": "선생님이 짚어 주신 곳과 숙제가 시간 순서로 적힙니다. 시간을 누르면 그 부분부터 다시 들립니다. 녹음은 이 기기에 남습니다.",
@@ -53,15 +54,16 @@ T = {
   ("연습 녹음", "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다"),
   ("두 녹음 비교", "지난번과 나란히 틀어 무엇이 달라졌는지 봅니다"),
   ("AI 연주 점검", "음정·박자·템포·음색·셈여림·프레이징을 마디와 시간으로"),
-  ("제출 영상", "오디션·콩쿠르 영상을 찍고 보내기 전에 점검합니다"),
+  ("제출 영상", "오디션·콩쿠르 영상을 0.6·1·2배 줌으로 찍고 보내기 전에 점검합니다"),
   ("녹음하는 동안", "안드로이드에서는 방해 금지를 켜고, 끝나면 되돌립니다"),
   ("내 성부와 기준음", "성부와 악기, 기준음을 정해 두면 AI가 그에 맞춰 봅니다")],
  "feats": [
   (3, "AI 레슨 노트", "레슨이 끝나면 적혀 있습니다",
    "한 시간 넘는 레슨은 앞부분부터 잊힙니다. 녹음해 두고 AI 분석을 누르면 선생님이 하신 말씀, 고쳐 주신 곳, 칭찬, 숙제가 시간 순서로 정리됩니다.",
    ["시간을 누르면 그 부분부터 다시 들립니다",
+    "리허설에서는 지휘자와 코치의 지시만 역할별로 적습니다",
     "외국어로 받은 레슨도 적어 둡니다"]),
-  (4, "연습 테이크", "지난번과 나란히 들어 봅니다",
+  (4, "연습 녹음", "지난번과 나란히 들어 봅니다",
    "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다. 두 녹음을 나란히 틀면 무엇이 달라졌는지 귀로 바로 압니다.",
    ["곡과 구간별로 모여 있습니다",
     "파형 위의 점을 누르면 그 자리부터 들립니다"]),
@@ -71,14 +73,16 @@ T = {
     "영상은 크게 보면서 그 자리의 메모를 함께 봅니다"])],
  "pri_h": "녹음은 이 기기에 남습니다",
  "pri_p": "녹음과 영상은 기기에 저장됩니다. AI 분석에는 소리만 보내고, 분석이 끝나면 지웁니다. 영상의 화면은 보내지 않습니다.",
+ "con_h": "녹음하기 전에",
+ "con_p": "레슨을 녹음할 때는 선생님과 함께 녹음되는 분들의 동의를 먼저 받아 주세요. 18세 미만이면 보호자의 동의도 필요합니다. 앱이 녹음을 시작하기 전에 확인합니다.",
  "get_h": "내려받기",
- "get_p": "녹음과 듣기, 비교는 로그인 없이 씁니다. AI 분석과 클라우드는 위레가토 아이디로 로그인해서 씁니다.",
+ "get_p": "녹음과 듣기, 비교는 로그인 없이 씁니다. AI 분석과 클라우드는 위레가토 아이디로 로그인해서 씁니다. 처음 로그인하시면 AI 30분이 7일 동안 열립니다.",
  "fam": "앱들이 함께 일하는 방법",
  "privacy": "개인정보처리방침", "terms": "이용약관",
 },
 "en": {
  "title": "Prova: lesson and practice recording with AI | Vicino Labs",
- "desc": "Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Compare takes and check audition videos.",
+ "desc": "Record a lesson or your practice and the AI listens, writing the corrections and the homework down with the time. Play two runs side by side and check audition videos.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "Record the lesson and the AI writes it up",
  "lede": "The corrections and the homework are written down in the order they came. Tap a time and that passage plays again. The recordings stay on your device.",
@@ -86,19 +90,20 @@ T = {
  "tiles": [
   ("Lessons and rehearsals", "What your teacher plays and corrects, and what the conductor asks for, in sound or on video"),
   ("AI lesson notes", "The corrections, the praise and the homework, each with its time"),
-  ("Practice takes", "Record the same passage again and it is numbered: first run, second run"),
-  ("Two takes side by side", "Play them together and hear what changed"),
+  ("Practice runs", "Record the same passage again and it is numbered: Run 1, Run 2"),
+  ("Two runs side by side", "Play them together and hear what changed"),
   ("AI listens to the playing", "Intonation, rhythm, tempo, tone, dynamics and phrasing, by bar and by time"),
-  ("Audition videos", "Film the audition or competition video and check it before you send it"),
+  ("Audition videos", "Film at 0.6×, 1× or 2× and check the video before you send it"),
   ("While you record", "On Android it turns on Do Not Disturb and puts it back afterwards"),
   ("Your part and your pitch", "Set the voice or instrument and the reference pitch and the AI judges by that")],
  "feats": [
   (3, "AI lesson notes", "The lesson ends and it is already written up",
    "An hour of teaching fades from the beginning. Record it, press analyse, and what your teacher said, corrected and praised, and the homework, are in the order they came.",
    ["Tap a time and that passage plays again",
+    "In a rehearsal it lists only what the conductor or coach said, by role",
     "A lesson in another language is written down too"]),
-  (4, "Practice takes", "Hear last time and this time together",
-   "Record the same passage again and it is numbered: first run, second run. Play two takes together and your ear tells you what changed.",
+  (4, "Practice runs", "Hear last time and this time together",
+   "Record the same passage again and it is numbered: Run 1, Run 2. Play two of them together and your ear tells you what changed.",
    ["Gathered by piece and by passage",
     "Tap a mark on the waveform and it plays from there"]),
   (2, "The AI listens to the playing", "What went well and what to work on",
@@ -107,14 +112,16 @@ T = {
     "Watch the video large with the notes for that moment beside it"])],
  "pri_h": "The recordings stay on your device",
  "pri_p": "Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.",
+ "con_h": "Before you record",
+ "con_p": "Ask the teacher, and everyone else who will be recorded, before you record a lesson. For anyone under 18 a parent has to agree as well. Prova asks you to confirm this before it starts.",
  "get_h": "Get Prova",
- "get_p": "Recording, listening and comparing need no account. The AI analysis and the cloud work when you sign in with your welegato ID.",
+ "get_p": "Recording, listening and comparing need no account. The AI analysis and the cloud work when you sign in with your welegato ID. Your first sign-in opens 30 AI minutes for seven days.",
  "fam": "How the apps work together",
  "privacy": "Privacy", "terms": "Terms",
 },
 "de": {
  "title": "Prova: Unterricht und Üben aufnehmen, mit KI | Vicino Labs",
- "desc": "Nehmen Sie Unterricht und Üben auf. Die KI hört zu und schreibt Korrekturen und Hausaufgaben mit der Zeit auf. Takes vergleichen, Bewerbungsvideos prüfen.",
+ "desc": "Nehmen Sie Unterricht und Üben auf. Die KI hört zu und schreibt Korrekturen und Hausaufgaben mit der Zeit auf. Zwei Durchläufe nebeneinander hören, Bewerbungsvideos prüfen.",
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "Die Stunde aufnehmen, die KI hört zu",
  "lede": "Korrekturen und Hausaufgaben stehen in der Reihenfolge da, in der sie kamen. Ein Tippen auf die Zeit, und die Stelle läuft wieder. Die Aufnahmen bleiben auf Ihrem Gerät.",
@@ -125,13 +132,14 @@ T = {
   ("Übe-Aufnahmen", "Dieselbe Stelle noch einmal, und sie wird nummeriert: Durchlauf 1, Durchlauf 2"),
   ("Zwei Aufnahmen nebeneinander", "Zusammen abspielen und hören, was sich geändert hat"),
   ("Die KI hört das Spiel", "Intonation, Rhythmus, Tempo, Klang, Dynamik und Phrasierung, nach Takt und Zeit"),
-  ("Bewerbungsvideos", "Das Video für Vorspiel oder Wettbewerb aufnehmen und vor dem Abschicken prüfen"),
+  ("Bewerbungsvideos", "Mit 0,6×, 1× oder 2× filmen und das Video vor dem Abschicken prüfen"),
   ("Während der Aufnahme", "Unter Android wird „Nicht stören“ eingeschaltet und danach zurückgestellt"),
   ("Ihre Stimme, Ihr Kammerton", "Stimmlage oder Instrument und Kammerton einstellen, danach urteilt die KI")],
  "feats": [
   (3, "KI-Notizen zur Stunde", "Die Stunde ist vorbei und steht schon da",
    "Nach einer Stunde Unterricht verblasst der Anfang zuerst. Nehmen Sie auf, tippen Sie auf Analysieren, und was gesagt, korrigiert und gelobt wurde und was aufgegeben ist, steht in der Reihenfolge da, in der es kam.",
    ["Ein Tippen auf die Zeit, und die Stelle läuft wieder",
+    "Bei einer Probe steht nur, was Dirigent oder Coach gesagt hat, nach Rolle",
     "Auch eine Stunde in einer anderen Sprache wird mitgeschrieben"]),
   (4, "Übe-Aufnahmen", "Das letzte Mal und dieses Mal zusammen hören",
    "Dieselbe Stelle noch einmal aufnehmen, und sie wird nummeriert: Durchlauf 1, Durchlauf 2. Zwei Aufnahmen zusammen abspielen, und das Ohr merkt sofort, was sich geändert hat.",
@@ -143,8 +151,10 @@ T = {
     "Das Video groß ansehen, daneben die Notizen zu dieser Stelle"])],
  "pri_h": "Die Aufnahmen bleiben auf Ihrem Gerät",
  "pri_p": "Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.",
+ "con_h": "Vor der Aufnahme",
+ "con_p": "Holen Sie vor einer Aufnahme in der Stunde das Einverständnis der Lehrkraft und aller ein, die mit aufgenommen werden. Bei unter 18-Jährigen muss auch ein Elternteil einverstanden sein. Prova fragt vor dem Start danach.",
  "get_h": "Prova laden",
- "get_p": "Aufnehmen, Anhören und Vergleichen brauchen kein Konto. Die KI-Analyse und die Cloud nutzen Sie mit Ihrer welegato-ID.",
+ "get_p": "Aufnehmen, Anhören und Vergleichen brauchen kein Konto. Die KI-Analyse und die Cloud nutzen Sie mit Ihrer welegato-ID. Die erste Anmeldung öffnet 30 KI-Minuten für sieben Tage.",
  "fam": "Wie die Apps zusammenarbeiten",
  "privacy": "Datenschutz", "terms": "Nutzungsbedingungen",
 },
@@ -184,11 +194,20 @@ def _meta_json():
 
 
 def _stores(l):
+    """스토어 배지. 렛지 페이지와 같은 그림·크기를 쓴다.
+
+    App Store 는 아직 심사 중이라 APPLE 이 비어 있고, 그동안은 Play 만
+    나온다. 승인되면 APPLE 에 번호만 넣으면 배지가 하나 더 붙는다.
+    """
     if not STORES:
         return f'<p class="soon">{T[l]["soon"]}</p>'
-    out = [f'<a href="{PLAY}"><img src="/badges/play-{l}.png" alt="Google Play" height="52"></a>']
+    b = l if l in ("ko", "de", "en") else "en"
+    out = [f'<a href="{PLAY}&amp;hl={l}" target="_blank" rel="noopener" aria-label="Google Play">'
+           f'<img src="/badges/google-play-{b}-nb.png" alt="Google Play" width="162" height="48" '
+           f'style="height:48px;width:auto;border-radius:10px;border:1px solid #a6a6a6;box-sizing:border-box"></a>']
     if APPLE:
-        out.append(f'<a href="{APPLE}"><img src="/badges/apple-{l}.svg" alt="App Store" height="52"></a>')
+        out.append(f'<a href="https://apps.apple.com/app/id{APPLE}" target="_blank" rel="noopener" aria-label="App Store">'
+                   f'<img src="/badges/app-store-{b}.svg" alt="App Store" width="144" height="48" style="height:48px;width:auto"></a>')
     return '<div class="stores">' + "".join(out) + "</div>"
 
 
@@ -230,8 +249,10 @@ def page():
         "".join(_feat(l, i, *f) for i, f in enumerate(T[l]["feats"]))
         for l, _ in LANGS)
     pri = "".join(
-        f'<section data-l="{l}" class="pri{_on(l)}"><h2>{T[l]["pri_h"]}</h2>'
-        f'<p>{T[l]["pri_p"]}</p></section>' for l, _ in LANGS)
+        f'<section data-l="{l}" class="pri{_on(l)}">'
+        f'<div><h2>{T[l]["pri_h"]}</h2><p>{T[l]["pri_p"]}</p></div>'
+        f'<div><h2>{T[l]["con_h"]}</h2><p>{T[l]["con_p"]}</p></div></section>'
+        for l, _ in LANGS)
     get = "".join(
         f'<div data-l="{l}" class="getit{_on(l)}"><h2>{T[l]["get_h"]}</h2><p>{T[l]["get_p"]}</p>'
         f'{_stores(l)}'
