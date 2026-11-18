@@ -24,6 +24,22 @@ PLAY = "https://play.google.com/store/apps/details?id=com.vicinolabs.leggii"
 APPLE = "https://apps.apple.com/app/id6832925566"
 EMAIL = "contact@vicinolabs.com"
 
+PLANS_CSS = """
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:2px}
+.pcard.hi{border-color:var(--goldl);box-shadow:0 10px 30px rgba(40,25,15,.10)}
+.pcard h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:26px;margin:0}
+html[lang=ko] .pcard h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:22px}
+.pcard .tag{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;min-height:17px}
+.pcard .pr{font-size:21px;font-weight:600;margin-top:8px;line-height:1.3}
+.pcard .pr2{font-size:14.5px;color:var(--soft);min-height:21px}
+.pcard ul{list-style:none;margin:14px 0 0;padding:0;font-size:14.5px;color:var(--soft);display:flex;flex-direction:column;gap:7px}
+.pcard ul li.up{color:var(--ink);font-weight:600}
+.pcard .foot{margin-top:12px;font-size:13.5px;color:var(--soft)}
+.trial{margin:14px 0 0;font-size:14px;color:var(--soft)}
+@media(max-width:860px){.pcards{grid-template-columns:1fr}}
+"""
+
 CSS = """
 :root{--bg:#f5f0e8;--paper:#fffcf6;--ink:#1c1714;--soft:#6b5f56;--faint:#9a8c7f;--line:#e4d9c8;--accent:#6e1a2f;--gold:#a8823f;--goldl:#d9b878;--tint:#efe7da}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13110f;--paper:#1c1916;--ink:#f1e8da;--soft:#bfb2a2;--faint:#8f8274;--line:#2e2823;--accent:#e2a3b1;--gold:#d4b07a;--goldl:#8a6f45;--tint:#241f1b}}
@@ -158,7 +174,7 @@ T = {
   (6, "IMSLP", "판본을 골라서 받습니다", "곡을 검색하면 출판사, 가사 언어, 편곡자, 미리보기를 보고 고를 수 있습니다. 성악가라면 가사 언어가 맞는 판본을, 반주자라면 필요한 조의 악보를 골라 받으세요.",
    ["출판사 · 가사 언어 · 편곡자로 추리기", "받기 전에 미리보기", "받으면 바로 악보함에"]),
   (7, "연습 도구", "메트로놈과 건반을 악보 위에", "악보를 가리지 않고 그 위에 떠 있습니다. 음을 찾을 때도, 박을 맞출 때도 악보에서 눈을 떼지 않아도 됩니다.",
-   ["아이패드 가로 화면에서 두 쪽 나란히", "야간 · 세피아 · 어둡게 읽기", "블루투스 페달이나 화면을 눌러 넘기기"]),
+   ["아이패드 가로 화면에서 두 쪽 나란히", "야간 · 세피아 · 어둡게 읽기", "화면을 눌러 넘기기, Pro에서는 블루투스 페달로도"]),
   (8, "렛지에게 물어보기", "물어보면 찾아 줍니다", "“토스카 악보 어디 있지?”, “오늘 녹음 분석해 줘”처럼 물어보면 바로 찾아 주고, 실행하는 버튼까지 함께 보여 줍니다.",
    ["악보 찾기 · 녹음 분석 · 설정까지", "앱 쓰는 법도 물어보세요"]),
   (5, "위레가토 아이디와 클라우드", "기기를 바꿔도 그대로", "위레가토 아이디로 로그인하면 Pro와 AI 시간이 모든 기기에서 이어집니다. 로그인하지 않아도 렛지의 기본 기능은 다 쓸 수 있습니다.",
@@ -176,19 +192,14 @@ T = {
            7: "악보를 가리지 않고 그 위에 떠 있습니다",
            8: "물어보면 찾아 주고 실행 버튼까지",
            5: "Pro와 AI 시간, 클라우드가 기기마다 그대로"},
- "ptab_cols": ["", "무료", "7일 체험", "Pro", "Plus"],
- "ptab": [("악보·필기·녹음·메트로놈", "✓", "✓", "✓", "✓"),
-          ("Pro 기능 전부", "–", "✓", "✓", "✓"),
-          ("광고 배너", "있음", "없음", "없음", "없음"),
-          ("매월 AI 분석", "–", "30분", "30분", "5시간"),
-          ("렛지 클라우드", "–", "–", "–", "10GB · 50GB"),
-          ("가격", "무료", "무료", "17,000원", "월 5,500원부터")],
+ "cards": [('무료', '', '0원', '', ['악보 보기·가져오기·IMSLP', '기본 필기·녹음', '연주목록 3개'], ''), ('Pro', '한 번 구매', '@pro', '평생 사용', ['+ 무료의 모든 기능', '펜·스탬프·링크·페이지 편집·내보내기·피아노', '페달로 넘기기, 연주목록 제한 없음, 광고 없음, 깔끔한 스캔'], 'AI와 클라우드는 Plus에 있어요'), ('Plus', '구독 · 2개월 절약', '@plusm', '@plusy', ['+ Pro의 모든 기능', 'AI 레슨 분석 매월 5시간', '클라우드 10GB'], '@plusmo')],
+ "trial": '처음 설치하면 7일 동안 Pro 기능을 무료로 쓰실 수 있어요',
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",
 "plans_value": "매월 AI 5시간은 한 시간짜리 레슨 다섯 번 분량입니다. 클라우드 10GB에는 녹음이 100시간 넘게 들어갑니다.",
  "plans_punch": "레슨 한 번 값이면 Plus를 일 년 씁니다.",
  "plans_note": "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
- "plans_cta": "여기서 바로 Plus 구독하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
+ "plans_cta": "여기서 바로 시작하기", "plans_cta_note": "홈페이지 결제는 유럽에서만 됩니다. 한국에서는 위 가격으로 앱 스토어·구글 플레이에서 구독해 주세요.",
  "get_h": "내려받기",
  "get_p": "아이패드와 아이폰은 App Store에서, 안드로이드는 Google Play에서 받으세요.",
  "fam": "Famiglia Vicino의 다른 앱 보기",
@@ -207,12 +218,12 @@ T = {
    ["Dynamics, accidentals, articulation, fingering", "Stamps for repeats, D.C. and the rest", "Your ink stays where you put it, page by page"]),
   (3, "Record", "Record, and the score follows", "Hit record while you are reading. It keeps going with the screen off, and which page you turned to, and when, is saved with the audio. Play it back and the pages turn with you.",
    ["Lessons and rehearsals as they happened", "Playback continues on other screens and in the background", "Tap a moment to jump straight to that passage"]),
-  (4, "AI lesson notes", "What was said, by time and page", "What was said in the lesson, sorted into key points, corrections and homework. After an hour or more the beginning has already slipped away, and in a language you are still learning more of it goes past you. Read it back once the lesson is over.",
+  (4, "AI lesson analysis", "What was said, by time and page", "What was said in the lesson, sorted into key points, corrections and homework. After an hour or more the beginning has already slipped away, and in a language you are still learning more of it goes past you. Read it back once the lesson is over.",
    ["Lesson notes: corrections, key points, homework", "Word-for-word transcript, with translation", "Save the result as a PDF and write on it", "Runs only when you ask, and shows the AI time first"]),
   (6, "IMSLP", "Choose the edition you want", "Search a work and choose by publisher, text language, arranger and preview. Singers can pick the language they sing in, accompanists the key they need.",
    ["Filter by publisher, text language and arranger", "Preview before you download", "Straight into your library"]),
   (7, "Practice tools", "Metronome and keys right on the score", "They float above the music instead of covering it, so you keep your eyes where they belong.",
-   ["Two pages side by side on iPad in landscape", "Night, sepia and dimmed reading", "Turn pages with a Bluetooth pedal or a tap"]),
+   ["Two pages side by side on iPad in landscape", "Night, sepia and dimmed reading", "Turn pages with a tap, and with a Bluetooth pedal in Pro"]),
   (8, "Ask Leggii", "Just ask", "Ask “Where is my Tosca score?” or “Analyse today's recording” and you get the answer with a button that does it.",
    ["Find scores, analyse recordings, open settings", "It also explains how the app works"]),
   (5, "welegato ID and cloud", "Change device, keep everything", "Sign in with your welegato ID and your Pro and AI time follow you to every device. Without signing in, all of Leggii's basics still work.",
@@ -230,19 +241,14 @@ T = {
            7: "They float above the music instead of covering it",
            8: "Type a question and get the answer with a button",
            5: "Pro, AI time and the cloud follow you to every device"},
- "ptab_cols": ["", "Free", "7-day trial", "Pro", "Plus"],
- "ptab": [("Scores, ink, recording, metronome", "✓", "✓", "✓", "✓"),
-          ("All Pro features", "–", "✓", "✓", "✓"),
-          ("Ads", "yes", "no", "no", "no"),
-          ("AI analysis a month", "–", "30 min", "30 min", "5 hours"),
-          ("Leggii cloud", "–", "–", "–", "10 GB · 50 GB"),
-          ("Price", "free", "free", "€9.99 once", "from €3.99 a month")],
+ "cards": [('Free', '', '0', '', ['Read, import, IMSLP', 'Basic notes and recording', '3 setlists'], ''), ('Pro', 'One-time purchase', '@pro', 'yours to keep', ['+ Everything in Free', 'Pens, stamps, links, page editing, export, piano', 'Pedal page turns, unlimited setlists, no ads, clean scans'], 'AI and the cloud are in Plus'), ('Plus', 'Subscription · 2 months free', '@plusm', '@plusy', ['+ Everything in Pro', 'AI lesson analysis, 5 hours a month', '10 GB cloud'], '@plusmo')],
+ "trial": 'The Pro features are free for your first 7 days',
  "plans_h": "Plans",
  "plans_sub": "The lesson ends and the key points, the corrections and the homework are already written up. Scores, ink and recordings are the same on every device.",
 "plans_value": "Five hours of AI a month is five one-hour lessons. 10 GB holds over a hundred hours of recordings.",
  "plans_punch": "A year of Plus costs about one lesson.",
  "plans_note": "The one-time Pro purchase and AI time top-ups (5 and 15 hours, valid 12 months) are available inside the app. Prices differ by country.",
- "plans_cta": "Subscribe to Plus here", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
+ "plans_cta": "Get Plus", "plans_cta_note": "Sign up with a welegato ID and pay by card. For Europe at the moment.",
  "get_h": "Get Leggii",
  "get_p": "On the App Store for iPad and iPhone, on Google Play for Android.",
  "fam": "More apps from Famiglia Vicino",
@@ -261,12 +267,12 @@ T = {
    ["Dynamik, Vorzeichen, Artikulation, Fingersatz", "Stempel für Wiederholungen, D.C. und mehr", "Ihre Notizen bleiben Seite für Seite erhalten"]),
   (3, "Aufnahme", "Aufnehmen – die Noten blättern mit", "Tippen Sie beim Lesen einfach auf Aufnahme. Auch bei ausgeschaltetem Bildschirm läuft sie weiter, und wann Sie auf welche Seite geblättert haben, wird mitgespeichert. Beim Anhören blättern die Noten mit.",
    ["Unterricht und Proben, so wie sie waren", "Wiedergabe läuft auf anderen Seiten und im Hintergrund weiter", "Auf eine Stelle tippen und direkt dorthin springen"]),
-  (4, "KI-Unterrichtsnotizen", "Das Gesagte nach Zeit und Seite", "Was im Unterricht gesagt wurde, sortiert nach Kernpunkten, Korrekturen und Hausaufgaben. Nach einer Stunde ist der Anfang längst weg, und in einer Sprache, die man noch lernt, geht noch mehr unter. Nach der Stunde lesen Sie alles in Ruhe nach.",
+  (4, "KI-Unterrichtsanalyse", "Das Gesagte nach Zeit und Seite", "Was im Unterricht gesagt wurde, sortiert nach Kernpunkten, Korrekturen und Hausaufgaben. Nach einer Stunde ist der Anfang längst weg, und in einer Sprache, die man noch lernt, geht noch mehr unter. Nach der Stunde lesen Sie alles in Ruhe nach.",
    ["Unterrichtsnotizen: Korrekturen, Kernpunkte, Hausaufgaben", "Mitschrift Wort für Wort, mit Übersetzung", "Ergebnis als PDF speichern und darauf schreiben", "Läuft nur auf Ihren Wunsch und zeigt vorher die KI-Zeit"]),
   (6, "IMSLP", "Die passende Ausgabe wählen", "Werk suchen und nach Verlag, Textsprache, Bearbeiter und Vorschau auswählen. Sängerinnen und Sänger finden die richtige Sprachfassung, Korrepetitoren die gebrauchte Tonart.",
    ["Nach Verlag, Textsprache und Bearbeiter filtern", "Vorschau vor dem Laden", "Direkt in den Notenschrank"]),
   (7, "Zum Üben", "Metronom und Tastatur auf den Noten", "Beides schwebt über den Noten, statt sie zu verdecken – der Blick bleibt, wo er hingehört.",
-   ["Zwei Seiten nebeneinander auf dem iPad im Querformat", "Nacht-, Sepia- und gedimmte Ansicht", "Blättern per Bluetooth-Pedal oder Tippen"]),
+   ["Zwei Seiten nebeneinander auf dem iPad im Querformat", "Nacht-, Sepia- und gedimmte Ansicht", "Blättern per Tippen, mit Pro auch per Bluetooth-Pedal"]),
   (8, "Leggii fragen", "Einfach fragen", "„Wo sind meine Tosca-Noten?“ oder „Analysiere die Aufnahme von heute“ – Sie bekommen die Antwort samt Schaltfläche, die es erledigt.",
    ["Noten finden, Aufnahmen analysieren, Einstellungen öffnen", "Erklärt auch, wie die App funktioniert"]),
   (5, "welegato-ID und Cloud", "Gerät wechseln, alles behalten", "Mit der welegato-ID angemeldet begleiten Sie Pro und KI-Zeit auf jedes Gerät. Ohne Anmeldung funktionieren alle Grundfunktionen von Leggii.",
@@ -284,19 +290,14 @@ T = {
            7: "Sie schweben über den Noten, statt sie zu verdecken",
            8: "Einfach fragen und die Antwort kommt samt Schaltfläche",
            5: "Pro, KI-Zeit und Cloud begleiten Sie auf jedes Gerät"},
- "ptab_cols": ["", "Kostenlos", "7 Tage testen", "Pro", "Plus"],
- "ptab": [("Noten, Notizen, Aufnahme, Metronom", "✓", "✓", "✓", "✓"),
-          ("Alle Pro-Funktionen", "–", "✓", "✓", "✓"),
-          ("Werbung", "ja", "nein", "nein", "nein"),
-          ("KI-Analyse im Monat", "–", "30 Min.", "30 Min.", "5 Std."),
-          ("Leggii Cloud", "–", "–", "–", "10 GB · 50 GB"),
-          ("Preis", "kostenlos", "kostenlos", "9,99 € einmalig", "ab 3,99 € im Monat")],
+ "cards": [('Gratis', '', '0 €', '', ['Lesen, importieren, IMSLP', 'Einfache Notizen und Aufnahme', '3 Setlists'], ''), ('Pro', 'Einmalkauf', '@pro', 'dauerhaft', ['+ Alles aus Gratis', 'Stifte, Stempel, Links, Seiten bearbeiten, Export, Klavier', 'Umblättern mit Pedal, unbegrenzt viele Setlists, keine Werbung, saubere Scans'], 'KI und Cloud gibt es in Plus'), ('Plus', 'Abo · 2 Monate geschenkt', '@plusm', '@plusy', ['+ Alles aus Pro', 'KI-Unterrichtsanalyse, 5 Stunden im Monat', '10 GB Cloud'], '@plusmo')],
+ "trial": 'In den ersten 7 Tagen sind die Pro-Funktionen kostenlos',
  "plans_h": "Tarife",
  "plans_sub": "Die Stunde ist vorbei, und Kernpunkte, Korrekturen und Hausaufgaben stehen schon da. Noten, Notizen und Aufnahmen sind auf jedem Gerät dieselben.",
 "plans_value": "Fünf Stunden KI im Monat sind fünf Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen.",
  "plans_punch": "Ein Jahr Plus kostet so viel wie eine Unterrichtsstunde.",
  "plans_note": "Den einmaligen Pro-Kauf und KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) gibt es in der App. Die Preise unterscheiden sich je nach Land.",
- "plans_cta": "Plus hier abonnieren", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
+ "plans_cta": "Plus starten", "plans_cta_note": "Mit einer welegato-ID anmelden und per Karte zahlen. Derzeit für Europa.",
  "get_h": "Leggii laden",
  "get_p": "Im App Store für iPad und iPhone, bei Google Play für Android.",
  "fam": "Weitere Apps der Famiglia Vicino",
@@ -354,8 +355,10 @@ document.querySelectorAll("[data-poster]").forEach(function(e){e.poster="/leggii
 var pr=(PRICE[x]||{})[RG];
 if(pr){document.querySelectorAll('[data-price="pro"]').forEach(function(e){e.textContent=pr[0]});
 document.querySelectorAll('[data-price="plus"]').forEach(function(e){e.textContent=pr[1]});
-document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pr[2]});
-document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[3]});}
+document.querySelectorAll('[data-price="plusyear"]').forEach(function(e){e.textContent=pr[2]});
+document.querySelectorAll('[data-price="plusmonth"]').forEach(function(e){e.textContent=pr[3]});
+document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pr[4]});
+document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[5]});}
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
@@ -385,35 +388,35 @@ def _meta_json():
 # 그 나라 값을 우리가 모른다. 틀린 값보다 안 적는 게 낫다.
 REGION = {
  "ko": {
-  "eu": ("9,99 €", "월 3,99 € 부터",
+  "eu": ("9,99 €", "월 3,33 €", "연 39,99 €, 1년에 한 번 결제", "월간은 월 3,99 €",
          "결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
          "위레가토 아이디로 가입하고 카드로 결제합니다."),
-  "kr": ("17,000원", "월 5,500원부터",
+  "kr": ("17,000원", "월 4,583원", "연 55,000원, 1년에 한 번 결제", "월간은 월 5,500원",
          "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
          "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
-  "xx": ("스토어에서 구매", "스토어에서 구독",
+  "xx": ("스토어에서 구매", "스토어에서 구독", "", "",
          "결제는 앱 스토어·구글 플레이에서 하십니다. 나라마다 값이 달라 스토어에서 확인하실 수 있습니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
          "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
  },
  "en": {
-  "eu": ("\u20ac9.99 once", "from \u20ac3.99 a month",
+  "eu": ("\u20ac9.99 once", "\u20ac3.33/mo", "\u20ac39.99 billed once a year", "or \u20ac3.99/mo billed monthly",
          "You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
          "Sign up with a welegato ID and pay by card."),
-  "kr": ("\u20a917,000 once", "from \u20a95,500 a month",
+  "kr": ("\u20a917,000 once", "\u20a94,583/mo", "\u20a955,000 billed once a year", "or \u20a95,500/mo billed monthly",
          "Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
          "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
-  "xx": ("in the store", "in the store",
+  "xx": ("in the store", "in the store", "", "",
          "You pay in the App Store or on Google Play, where the price for your country is shown. AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app.",
          "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
  },
  "de": {
-  "eu": ("9,99 \u20ac einmalig", "ab 3,99 \u20ac im Monat",
+  "eu": ("9,99 \u20ac einmalig", "3,33 \u20ac/Monat", "39,99 \u20ac einmal im Jahr", "oder 3,99 \u20ac/Monat bei monatlicher Zahlung",
          "Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
          "Mit einer welegato-ID anmelden und per Karte zahlen."),
-  "kr": ("17.000 \u20a9 einmalig", "ab 5.500 \u20a9 im Monat",
+  "kr": ("17.000 \u20a9 einmalig", "4.583 \u20a9/Monat", "55.000 \u20a9 einmal im Jahr", "oder 5.500 \u20a9/Monat bei monatlicher Zahlung",
          "Preise f\u00fcr Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
          "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
-  "xx": ("im Store", "im Store",
+  "xx": ("im Store", "im Store", "", "",
          "Bezahlt wird im App Store oder bei Google Play, wo der Preis f\u00fcr Ihr Land steht. KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App.",
          "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
  },
@@ -441,22 +444,32 @@ def _tiles(l):
 
 def _ptab(l):
     t = T[l]
-    head = "".join(f"<th>{c}</th>" for c in t["ptab_cols"])
-    def cells(r):
-        # 마지막 줄이 가격 — Pro·Plus 칸은 지역에 따라 자바스크립트가 채운다
-        if r is t["ptab"][-1]:
-            return (f"<td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td>"
-                    f'<td data-price="pro"></td><td data-price="plus"></td>')
-        return "".join(f"<td>{c}</td>" for c in r)
-    rows = "".join("<tr>" + cells(r) + "</tr>" for r in t["ptab"])
+    out = []
+    for i, (name, tag, pr, pr2, bullets, foot) in enumerate(t["cards"]):
+        pa = {"@pro": ' data-price="pro"', "@plusm": ' data-price="plus"',
+              "@plusy": ' data-price="plusyear"', "@plusmo": ' data-price="plusmonth"'}
+        def cell(v, cls):
+            if v in pa:
+                return f'<div class="{cls}"{pa[v]}></div>'
+            return f'<div class="{cls}">{v}</div>' if v else f'<div class="{cls}"></div>'
+        lis = "".join(
+            f'<li class="up">{b}</li>' if b.startswith("+ ") else f"<li>{b}</li>"
+            for b in bullets)
+        out.append(
+            f'<div class="pcard{" hi" if i == 2 else ""}"><h3>{name}</h3>'
+            f'<div class="tag">{tag}</div>'
+            + cell(pr, "pr") + cell(pr2, "pr2")
+            + f"<ul>{lis}</ul>"
+            + (cell(foot, "foot") if foot else "")
+            + "</div>")
     return (f'<div data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
             f'<p class="sub">{t["plans_sub"]}</p>'
-            f'<div class="ptabwrap"><table class="ptab"><thead><tr>{head}</tr></thead>'
-            f'<tbody>{rows}</tbody></table></div>'
+            f'<div class="pcards">{"".join(out)}</div>'
+            f'<p class="note trial">{t["trial"]}</p>'
             f'<p class="value">{t["plans_value"]}</p>'
             f'<p class="punch">{t["plans_punch"]}</p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
-            f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} →</a></p>'
+            f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} \u2192</a></p>'
             f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')
 
 
@@ -517,7 +530,7 @@ def page():
 <meta property="og:image" content="https://vicinolabs.com/leggii/shots/en/hero.webp">
 <meta property="og:url" content="https://vicinolabs.com/leggii/"><meta property="og:type" content="website">
 <link rel="stylesheet" href="/fonts/fonts-v2.css">
-<style>{CSS}</style>
+<style>{CSS}{PLANS_CSS}</style>
 </head>
 <body>
 <div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a>

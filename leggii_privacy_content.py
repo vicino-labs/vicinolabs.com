@@ -46,9 +46,9 @@ PRIVACY = {
  "ko": {
   "title": "렛지 악보(Leggii) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.10"), ("버전", "1.4"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.19"), ("버전", "1.5"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)의 기본 기능은 회원가입 없이 기기 안에서만 동작하며, 악보·필기·녹음은 이용자의 기기에 저장됩니다. AI 레슨 분석, 구매 확인, 선택 로그인(위레가토 통합 아이디), 렛지 클라우드(Plus), 렛지에게 물어보기를 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
-  "footer": "본 방침은 2026년 11월 10일부터 시행됩니다 (버전 1.4). 이전 버전 1.3: 2026년 11월 9일, 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
+  "footer": "본 방침은 2026년 11월 19일부터 시행됩니다 (버전 1.5: 한국어 “서재”를 “보관함”으로). 이전 버전 1.4: 2026년 11월 10일, 1.3: 2026년 11월 9일, 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "이용약관 보기 →",
   "sections": [
    ("처리자(운영자) 정보", _op_ref("ko") + "<p>Vicino Labs는 EU 일반개인정보보호규정(GDPR)상 이 앱과 관련된 개인정보 처리의 “컨트롤러(controller)”입니다.</p>"),
@@ -69,11 +69,11 @@ PRIVACY = {
 <li>설정 — 언어, 펜, 메트로놈, 보기 효과, 무료 체험 시작일, Pro 구매 여부 등</li>
 <li>AI 분석 결과와 그 PDF(개인 노트), 남은 AI 시간 표시, 앱 설치 때 만든 무작위 설치 번호(AI 분석·구매 확인·도우미를 쓸 때만 서버로 전송, 아래 참고)</li>
 </ul>
-<p>이 정보는 기기 안의 앱 전용 저장소에 있고 저희에게 전송되지 않습니다. 앱에서 악보를 지우거나 앱을 삭제하면 사라집니다. “서재 백업하기”로 만든 파일은 이용자가 고른 곳(드라이브, 컴퓨터 등)에만 저장됩니다. 처리 근거: 앱 기능 제공(GDPR 제6조 제1항 b호).</p>"""),
+<p>이 정보는 기기 안의 앱 전용 저장소에 있고 저희에게 전송되지 않습니다. 앱에서 악보를 지우거나 앱을 삭제하면 사라집니다. “보관함 백업”으로 만든 파일은 이용자가 고른 곳(드라이브, 컴퓨터 등)에만 저장됩니다. 처리 근거: 앱 기능 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("안드로이드 자동 백업", f"""<p>안드로이드에서는 기기의 Google 백업 기능이 켜져 있으면 앱의 <strong>설정</strong>(악보 파일은 제외)이 이용자의 Google 계정에 백업되어, 다시 설치할 때 복원됩니다. 이 백업은 Google이 <a href="{GOOGLE_PRIVACY}" target="_blank" rel="noopener">Google 개인정보처리방침</a>에 따라 처리하며 저희는 볼 수 없습니다. 기기 설정에서 끌 수 있습니다.</p>"""),
    ("카메라·사진", """<p>“사진으로 PDF 만들기”를 쓸 때만 카메라 권한을 요청하거나 사진을 고르게 합니다. 촬영·선택한 사진은 기기 안에서 PDF로 바뀌며 저희에게 보내지지 않습니다.</p>"""),
    ("마이크·녹음", """<p>레슨·리허설·앙상블·연습을 녹음할 때만 마이크 권한을 요청합니다. 녹음은 이용자가 녹음 버튼을 눌러 시작하고 직접 멈춥니다. 화면이 꺼지거나 다른 앱으로 가도 녹음이 이어지도록, 녹음 중에는 “녹음 중” 알림이 표시됩니다. 소리를 깎지 않도록 자동 음량 조절은 쓰지 않습니다.</p>
-<p>녹음 파일과 녹음 정보는 <strong>기기 안에만</strong> 저장되며, 이용자가 요청한 AI 레슨 분석(아래)의 경우를 빼면 저희에게 전송되지 않습니다. 안드로이드 자동 백업에는 들어가지 않고, 이용자가 만드는 “서재 백업하기” 파일에는 함께 들어갑니다. 녹음을 보내면(오디오 파일 또는 페이지 기록이 담긴 렛지 녹음 파일) 기기의 공유 화면에서 이용자가 고른 앱·사람에게만 전달됩니다.</p>
+<p>녹음 파일과 녹음 정보는 <strong>기기 안에만</strong> 저장되며, 이용자가 요청한 AI 레슨 분석(아래)의 경우를 빼면 저희에게 전송되지 않습니다. 안드로이드 자동 백업에는 들어가지 않고, 이용자가 만드는 “보관함 백업” 파일에는 함께 들어갑니다. 녹음을 보내면(오디오 파일 또는 페이지 기록이 담긴 렛지 녹음 파일) 기기의 공유 화면에서 이용자가 고른 앱·사람에게만 전달됩니다.</p>
 <p>녹음을 다시 들을 때는 다른 화면이나 백그라운드에서도 이어지도록 재생 알림(재생·일시정지·정지)이 표시됩니다.</p>
 <p>다른 사람이 함께 녹음되는 경우, 녹음 전에 그분들의 동의를 받는 것은 이용자의 책임입니다. 앱은 처음 녹음할 때 이를 안내하고 확인을 받습니다.</p>"""),
    ("AI 레슨 분석 (요청할 때만)", """<p>녹음에서 “AI 분석”을 누르고, 차감될 AI 시간을 확인한 뒤 시작할 때만 동작합니다. 처음 쓸 때 이 내용을 안내하고 동의를 받습니다.</p>
@@ -113,7 +113,7 @@ PRIVACY = {
 <li>설정 › 위레가토 통합 아이디 › 아이디 관리에서 아이디를 삭제하면 위레가토 계정과 렛지의 AI 계정·연결 기록이 지워집니다. 렛지 클라우드의 파일도 함께 지워지며, 기기 안의 악보와 녹음은 남습니다.</li>
 </ul>
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
-   ("렛지 클라우드 (Leggii Plus, 선택)", """<p>Leggii Plus를 구독하고 위레가토 통합 아이디로 로그인하면, 렛지 클라우드가 같은 아이디의 모든 기기에서 서재를 똑같이 맞춥니다.</p>
+   ("렛지 클라우드 (Leggii Plus, 선택)", """<p>Leggii Plus를 구독하고 위레가토 통합 아이디로 로그인하면, 렛지 클라우드가 같은 아이디의 모든 기기에서 보관함을 똑같이 맞춥니다.</p>
 <ul>
 <li><strong>저장하는 정보:</strong> 악보 PDF, 악보 정보·필기·책갈피, 폴더와 연주목록, 개인 노트(AI 노트 PDF), 그리고 “녹음도 클라우드에 올리기”가 켜져 있으면(기본값) 녹음 파일과 녹음 정보. 파일마다 크기와 지문값(SHA-256), 바뀐 시각을 함께 저장합니다.</li>
 <li><strong>저장 위치:</strong> 파일은 Cloudflare R2(Cloudflare, Inc., 수탁자)에, 목록과 용량 기록은 저희 서버(Supabase, EU 독일 프랑크푸르트)에 저장됩니다. 전송은 암호화되며, 파일은 짧게만 유효한 서명된 주소로 해당 아이디의 앱에서만 주고받습니다. 저희는 이용자의 악보나 녹음을 열어 보지 않습니다.</li>
@@ -123,7 +123,7 @@ PRIVACY = {
 </ul>
 <p>처리 근거: 구독한 서비스의 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("렛지에게 물어보기", """<p>도우미에 질문하면 질문, 앱 언어, 지금 보고 있는 화면 이름, 최근 대화 몇 개를 저희 서버와 Google Gemini API로 보내 답을 만듭니다. <strong>질문 내용은 저장하지 않습니다.</strong> 악보 찾기는 기기 안에서만 하며 악보 제목은 보내지 않습니다.</p>
-<p>무료로 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 설치 번호의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
+<p>무료 버전은 하루 10회, Pro·Plus·무료 체험은 하루 30회까지 쓸 수 있도록, 남용 방지를 위해 설치 번호의 해시, 시각, 질문 길이, 언어, 제안된 동작의 종류를 <strong>30일</strong> 보관한 뒤 지웁니다. 처리 근거: 요청한 기능의 제공(b호), 남용 방지(f호).</p>"""),
    ("AI 답 신고", """<p>렛지에게 물어보기의 답이나 AI 레슨 분석 결과가 부적절하거나 틀렸다고 생각되면 <strong>신고</strong>할 수 있습니다. 신고할 때만 신고한 AI 글(물어보기는 질문과 답), 고른 이유, 적은 의견, 앱 언어와 버전, 설치 번호의 해시를 저희 서버로 보내고, 담당자에게 알림 메일이 갑니다. 신고는 검토와 AI 품질 개선에만 쓰며 <strong>180일</strong> 보관한 뒤 지웁니다. 남용 방지를 위해 설치당 하루 10건까지 받습니다. 처리 근거: 서비스 개선과 부적절한 AI 출력 대응을 위한 정당한 이익(f호).</p>"""),
    ("서비스 제공자(수탁자)와 국외 이전", """<ul>
 <li><strong>Supabase</strong> — 서버와 데이터베이스, EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
@@ -150,9 +150,9 @@ PRIVACY = {
  "en": {
   "title": "Leggii Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-10"), ("Version", "1.4"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-19"), ("Version", "1.5"), ("Operator", "Vicino Labs")],
   "lede": "The basic features of Leggii, a sheet music app made by Vicino Labs, work without an account and only on your device; your scores, notes and recordings are stored there. Only AI lesson analysis, purchase checks, the optional sign-in (welegato ID), the Leggii cloud (Plus) and Ask Leggii go through our server (EU) and the services below. Here is exactly what the app handles.",
-  "footer": "This policy is effective from 10 November 2026 (version 1.4). Previous versions 1.3: 9 November 2026, 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
+  "footer": "This policy is effective from 19 November 2026 (version 1.5: wording only). Previous versions 1.4: 10 November 2026, 1.3: 9 November 2026, 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Terms of Service →",
   "sections": [
    ("Data controller", _op_ref("en") + "<p>Vicino Labs is the “controller” under the EU General Data Protection Regulation (GDPR) for any personal data processed in connection with this app.</p>"),
@@ -227,7 +227,7 @@ PRIVACY = {
 </ul>
 <p>Legal basis: providing the subscribed service (Art. 6(1)(b) GDPR).</p>"""),
    ("Ask Leggii", """<p>When you ask the assistant, your question, the app language, the name of the screen you are on and a few recent messages go to our server and the Google Gemini API to write the answer. <strong>Questions are not stored.</strong> Finding a score happens on the device; score titles are not sent.</p>
-<p>To keep it free with up to 30 questions a day, a hash of the install number, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
+<p>To keep it free with 10 questions a day (30 with Pro, Plus or the trial), a hash of the install number, the time, the question length, the language and the kinds of suggested actions are kept for <strong>30 days</strong> to prevent abuse, then deleted. Legal basis: providing the feature you asked for (b), preventing abuse (f).</p>"""),
    ("Reporting an AI answer", """<p>If an Ask Leggii answer or an AI lesson analysis seems offensive or wrong, you can <strong>report</strong> it. Only then do the reported AI text (for Ask Leggii, the question and the answer), the reason you chose, your comment, the app language and version and a hash of the install number go to our server, and our team gets a notification mail. Reports are used only for review and to improve the AI, and are kept for <strong>180 days</strong>, then deleted. To prevent abuse we accept up to 10 reports a day per install. Legal basis: our legitimate interest in improving the service and handling inappropriate AI output (f).</p>"""),
    ("Service providers (processors) and transfers", """<ul>
 <li><strong>Supabase</strong> — server and database, EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
@@ -254,9 +254,9 @@ PRIVACY = {
  "de": {
   "title": "Leggii Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "10.11.2026"), ("Version", "1.4"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "19.11.2026"), ("Version", "1.5"), ("Betreiber", "Vicino Labs")],
   "lede": "Die Grundfunktionen von Leggii, einer Noten-App von Vicino Labs, funktionieren ohne Konto und nur auf Ihrem Gerät; Noten, Notizen und Aufnahmen werden dort gespeichert. Nur die KI-Unterrichtsanalyse, Kaufprüfungen, die freiwillige Anmeldung (welegato-ID), die Leggii Cloud (Plus) und „Leggii fragen“ laufen über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
-  "footer": "Diese Erklärung gilt ab dem 10. November 2026 (Version 1.4). Vorherige Versionen 1.3: 9. November 2026, 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
+  "footer": "Diese Erklärung gilt ab dem 19. November 2026 (Version 1.5: nur Formulierung). Vorherige Versionen 1.4: 10. November 2026, 1.3: 9. November 2026, 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Nutzungsbedingungen →",
   "sections": [
    ("Verantwortlicher", _op_ref("de") + "<p>Vicino Labs ist Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für Verarbeitungen im Zusammenhang mit dieser App.</p>"),
@@ -331,7 +331,7 @@ PRIVACY = {
 </ul>
 <p>Rechtsgrundlage: Erbringung des abonnierten Dienstes (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Leggii fragen", """<p>Wenn Sie den Assistenten fragen, gehen Ihre Frage, die App-Sprache, der Name des geöffneten Bildschirms und einige letzte Nachrichten an unseren Server und die Gemini-API von Google, um die Antwort zu schreiben. <strong>Fragen werden nicht gespeichert.</strong> Noten werden auf dem Gerät gesucht; Titel werden nicht gesendet.</p>
-<p>Damit der Dienst mit bis zu 30 Fragen pro Tag kostenlos bleibt, speichern wir zum Missbrauchsschutz einen Hash der Installationsnummer, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
+<p>Damit der Dienst kostenlos bleibt (10 Fragen pro Tag, mit Pro, Plus oder der Testphase 30), speichern wir zum Missbrauchsschutz einen Hash der Installationsnummer, Zeitpunkt, Länge der Frage, Sprache und die Art der vorgeschlagenen Aktionen für <strong>30 Tage</strong> und löschen sie dann. Rechtsgrundlage: Bereitstellung der Funktion (lit. b), Missbrauchsschutz (lit. f).</p>"""),
    ("KI-Antworten melden", """<p>Wenn eine Antwort von „Leggii fragen“ oder eine KI-Unterrichtsanalyse anstößig oder falsch wirkt, können Sie sie <strong>melden</strong>. Nur dann gehen der gemeldete KI-Text (bei „Leggii fragen“ Frage und Antwort), der gewählte Grund, Ihr Kommentar, App-Sprache und -Version sowie ein Hash der Installationsnummer an unseren Server, und unser Team erhält eine Benachrichtigung per E-Mail. Meldungen dienen nur der Prüfung und der Verbesserung der KI und werden <strong>180 Tage</strong> gespeichert und dann gelöscht. Zum Missbrauchsschutz nehmen wir bis zu 10 Meldungen pro Tag und Installation an. Rechtsgrundlage: berechtigtes Interesse an der Verbesserung des Dienstes und am Umgang mit unangemessenen KI-Ausgaben (lit. f).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
 <li><strong>Supabase</strong> – Server und Datenbank, EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
@@ -358,9 +358,9 @@ PRIVACY = {
  "it": {
   "title": "Leggii — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "10.11.2026"), ("Versione", "1.4"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "19.11.2026"), ("Versione", "1.5"), ("Gestore", "Vicino Labs")],
   "lede": "Le funzioni di base di Leggii, un'app per spartiti di Vicino Labs, funzionano senza account e solo sul tuo dispositivo; spartiti, annotazioni e registrazioni restano lì. Solo l'analisi AI delle lezioni, la verifica degli acquisti, l'accesso facoltativo (welegato ID), il cloud di Leggii (Plus) e «Chiedi a Leggii» passano dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
-  "footer": "Questa informativa è in vigore dal 10 novembre 2026 (versione 1.4). Versioni precedenti 1.3: 9 novembre 2026, 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
+  "footer": "Questa informativa è in vigore dal 19 novembre 2026 (versione 1.5: solo formulazione). Versioni precedenti 1.4: 10 novembre 2026, 1.3: 9 novembre 2026, 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Termini di utilizzo →",
   "sections": [
    ("Titolare del trattamento", _op_ref("it") + "<p>Vicino Labs è il titolare del trattamento ai sensi del Regolamento generale sulla protezione dei dati (GDPR) per i dati trattati in relazione a questa app.</p>"),
@@ -435,7 +435,7 @@ PRIVACY = {
 </ul>
 <p>Base giuridica: fornitura del servizio in abbonamento (art. 6, par. 1, lett. b GDPR).</p>"""),
    ("Chiedi a Leggii", """<p>Quando fai una domanda all'assistente, la domanda, la lingua dell'app, il nome della schermata aperta e alcuni messaggi recenti vanno al nostro server e all'API Gemini di Google per scrivere la risposta. <strong>Le domande non vengono salvate.</strong> La ricerca degli spartiti avviene sul dispositivo; i titoli non vengono inviati.</p>
-<p>Per mantenerlo gratuito con fino a 30 domande al giorno, per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash del numero di installazione, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
+<p>Per mantenerlo gratuito con 10 domande al giorno (30 con Pro, Plus o la prova), per prevenire abusi conserviamo per <strong>30 giorni</strong> un hash del numero di installazione, il momento, la lunghezza della domanda, la lingua e il tipo di azioni proposte, poi li cancelliamo. Base giuridica: fornire la funzione (lett. b), prevenire abusi (lett. f).</p>"""),
    ("Segnalare una risposta AI", """<p>Se una risposta di «Chiedi a Leggii» o un'analisi AI della lezione ti sembra offensiva o sbagliata, puoi <strong>segnalarla</strong>. Solo allora il testo AI segnalato (per «Chiedi a Leggii», domanda e risposta), il motivo scelto, il tuo commento, lingua e versione dell'app e un hash del numero di installazione vanno al nostro server, e il nostro team riceve un'email di avviso. Le segnalazioni servono solo per la verifica e per migliorare l'AI e sono conservate per <strong>180 giorni</strong>, poi cancellate. Per prevenire abusi accettiamo fino a 10 segnalazioni al giorno per installazione. Base giuridica: legittimo interesse a migliorare il servizio e a gestire risposte AI inappropriate (lett. f).</p>"""),
    ("Fornitori di servizi (responsabili) e trasferimenti", """<ul>
 <li><strong>Supabase</strong> — server e database, data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
