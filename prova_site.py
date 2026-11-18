@@ -278,7 +278,10 @@ def page():
         f'<div><h2>{T[l]["con_h"]}</h2><p>{T[l]["con_p"]}</p></div></section>'
         for l, _ in LANGS)
     get = "".join(
-        f'<div data-l="{l}" class="getit{_on(l)}"><h2>{T[l]["get_h"]}</h2><p>{T[l]["get_p"]}</p>'
+        # 제목을 빼 둔다. 바로 아래 스토어 배지가 "여기서 받으세요"라는
+        # 뜻이라 "내려받기"를 또 적으면 같은 말을 두 번 한다
+        # (대표님 2026-11-18 "없어도 배지 있으니 다 알지").
+        f'<div data-l="{l}" class="getit{_on(l)}"><p>{T[l]["get_p"]}</p>'
         f'{_stores(l)}'
         f'<a class="fam" href="{"/famiglia/" if l == "de" else f"/{l}/famiglia/"}">{T[l]["fam"]} →</a></div>'
         for l, _ in LANGS)
