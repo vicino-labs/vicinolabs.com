@@ -65,6 +65,20 @@ html[lang=ko] .tiles.more h3{font-size:15px}
 @media(max-width:720px){.tile .tx{padding:10px 2px 0}}
 .soon{display:inline-block;margin:26px 0 0;padding:9px 16px;border-radius:999px;
 border:1px solid var(--line);background:var(--paper);color:var(--soft);font-size:14px}
+/* 깊이 보는 장면: 글과 그림의 높이 차이를 줄인다.
+   반반(492:492)에 가운데 정렬이라 짧은 글 위아래가 206px 씩 비었다
+   (대표님 2026-11-18 "여백"). 정렬만 바꾸면 빈자리가 위아래로 옮겨갈 뿐이라
+   높이 차이 자체를 줄인다. 글 칸을 좁혀 자연스럽게 길어지게 하고(글줄
+   길이도 같이 나아진다), 그림은 넓히되 높이를 눌러 둔다. */
+.feat{grid-template-columns:minmax(0,0.78fr) minmax(0,1.22fr)}
+.feat .pic{display:flex;justify-content:center}
+/* 폭으로 누른다. 높이로 누르면서 width:auto 를 주면 그림의 비율 상자가
+   사라져 불러오기 전 크기가 0x0 이 되고, 그러면 lazy 가 영영 안 걸린다
+   (2026-11-18 에 그렇게 만들었다가 그림이 아예 안 나왔다). */
+.feat .shot{width:100%;height:auto;max-width:370px}
+@media(max-width:820px){.feat{grid-template-columns:1fr}
+.feat .shot{max-width:460px}}
+
 .pri{max-width:980px;margin:52px auto 0;padding:24px 26px;border:1px solid var(--line);
 border-radius:16px;background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:26px}
 @media(max-width:720px){.pri{grid-template-columns:1fr;gap:22px}}
@@ -98,10 +112,12 @@ T = {
   (4, "연습 녹음", "지난번과 나란히 들어 봅니다",
    "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙습니다. 두 녹음을 나란히 틀면 무엇이 달라졌는지 귀로 바로 압니다.",
    ["곡과 구간별로 모여 있습니다",
+    "별표를 달아 두면 중요한 녹음만 모아 봅니다",
     "파형 위의 점을 누르면 그 자리부터 들립니다"]),
   (2, "AI 연주 점검", "잘된 곳과 다듬을 곳을 짚습니다",
    "AI가 음정, 박자, 템포, 음색, 셈여림, 프레이징, 호흡, 발음을 마디와 시간으로 짚어 줍니다. 초록은 잘된 곳, 주황은 연습할 곳입니다.",
    ["성부와 기준음(440·442·443Hz)을 정해 두면 그에 맞춰 봅니다",
+    "쓰는 시간을 미리 알려 주고, 분석이 실패하면 깎지 않습니다",
     "영상은 크게 보면서 그 자리의 메모를 함께 봅니다"])],
  "pri_h": "녹음은 이 기기에 남습니다",
  "pri_p": "녹음과 영상은 기기에 저장됩니다. AI 분석에는 소리만 보내고, 분석이 끝나면 지웁니다. 영상의 화면은 보내지 않습니다.",
@@ -137,10 +153,12 @@ T = {
   (4, "Practice runs", "Hear last time and this time together",
    "Record the same passage again and it is numbered: Run 1, Run 2. Play two of them together and your ear tells you what changed.",
    ["Gathered by piece and by passage",
+    "Star the ones that matter and see only those",
     "Tap a mark on the waveform and it plays from there"]),
   (2, "The AI listens to the playing", "What went well and what to work on",
    "The AI marks intonation, rhythm, tempo, tone, dynamics, phrasing, breathing and diction by bar and by time. Green went well, orange is to work on.",
    ["Set your part and your pitch (440, 442, 443 Hz) and it judges by that",
+    "It tells you the minutes before it starts, and charges nothing if it fails",
     "Watch the video large with the notes for that moment beside it"])],
  "pri_h": "The recordings stay on your device",
  "pri_p": "Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.",
@@ -176,10 +194,12 @@ T = {
   (4, "Übe-Aufnahmen", "Das letzte Mal und dieses Mal zusammen hören",
    "Dieselbe Stelle noch einmal aufnehmen, und sie wird nummeriert: Durchlauf 1, Durchlauf 2. Zwei Aufnahmen zusammen abspielen, und das Ohr merkt sofort, was sich geändert hat.",
    ["Nach Stück und Stelle gesammelt",
+    "Wichtige mit einem Stern markieren und nur diese sehen",
     "Auf eine Marke in der Wellenform tippen, und es läuft von dort"]),
   (2, "Die KI hört das Spiel", "Was gelungen ist und woran Sie arbeiten",
    "Die KI markiert Intonation, Rhythmus, Tempo, Klang, Dynamik, Phrasierung, Atem und Aussprache nach Takt und Zeit. Grün ist gelungen, Orange ist zum Üben.",
    ["Stimmlage und Kammerton (440, 442, 443 Hz) einstellen, danach urteilt sie",
+    "Die Minuten stehen vorher da, und bei einem Fehlschlag wird nichts abgezogen",
     "Das Video groß ansehen, daneben die Notizen zu dieser Stelle"])],
  "pri_h": "Die Aufnahmen bleiben auf Ihrem Gerät",
  "pri_p": "Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.",
