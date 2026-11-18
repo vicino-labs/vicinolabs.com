@@ -91,6 +91,18 @@ MUSIC = ["welegato", "leggii", "appoggio", "pianino", "chiave", "prova", "squill
 APPLE = {"appoggio": "6832364161", "pianino": "6832363954"}
 STORE = {"leggii": "com.vicinolabs.leggii", "appoggio": "com.vicinolabs.appoggio", "pianino": "com.vicinolabs.pianino", "nomio": "app.nomio.finance", "prova": "com.vicinolabs.prova"}
 NAMES = {"welegato": "welegato", "leggii": "Leggii", "appoggio": "Appoggio", "chiave": "Chiave", "pianino": "Pianino", "prova": "Prova", "squillo": "Squillo", "nomio": "Nomio"}
+# 한국어에서는 한글 이름을 앞에 쓰고 라틴 이름을 괄호에 넣는다
+# (대표님 2026-11-18 "모두 프로바(Prova) 이런 식으로"). 다른 언어는
+# 라틴 이름 그대로다. 중국어·러시아어의 고유 표기는 아직 정해진 것이 없다.
+NAMES_KO = {"welegato": "위레가토", "leggii": "렛지", "appoggio": "아뽀조",
+            "chiave": "끼아베", "pianino": "피아니노", "prova": "프로바",
+            "squillo": "스퀼로", "nomio": "노미오"}
+
+
+def app_name(lang, key):
+    if lang == "ko":
+        return f"{NAMES_KO[key]}({NAMES[key]})"
+    return NAMES[key]
 SOON = {"chiave", "squillo"}
 LEGAL_ONLY = {"chiave"}  # 출시 전 앱: 법문 링크만. 프로바는 2026-11-18 Play 출시로 STORE 로 옮김
 
@@ -131,11 +143,11 @@ def card(lang, key):
         links.append(f'<a href="/{key}/">{t["privacy_l"]}</a>')
     badge = f' <span class="soon">{t["soon"]}</span>' if soon else ""
     return (f'<div class="card"><img src="/apps/{key}.png" alt="" width="72" height="72" loading="lazy">'
-            f'<div><h3>{NAMES[key]}{badge}</h3><p>{t["d"][key]}</p><div class="links">{"".join(links)}</div></div></div>')
+            f'<div><h3>{app_name(lang, key)}{badge}</h3><p>{t["d"][key]}</p><div class="links">{"".join(links)}</div></div></div>')
 
 def home(lang):
     t = TXT[lang]
-    strip = "".join(f'<img src="/apps/{k}.png" alt="{NAMES[k]}" width="46" height="46">' for k in MUSIC + ["nomio"])
+    strip = "".join(f'<img src="/apps/{k}.png" alt="{app_name(lang, k)}" width="46" height="46">' for k in MUSIC + ["nomio"])
     music = "".join(card(lang, k) for k in MUSIC)
     values = "".join(f'<div><b>{h}</b><span>{d}</span></div>' for h, d in t["values"])
     return (f'<div class="hero"><p class="kicker">{t["kicker"]}</p><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><div class="icons">{strip}</div></div>'

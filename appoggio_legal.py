@@ -27,7 +27,7 @@ PLAY_URL = "https://play.google.com/store/apps/details?id=com.vicinolabs.appoggi
 
 def appoggio_home():
     # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
-    return app_home.page(key='appoggio', name='Appoggio · 아뽀조', sub="Vicino Labs · Famiglia Vicino", icon="/apps/appoggio.png",
+    return app_home.page(key='appoggio', name={'ko': '아뽀조(Appoggio)', 'en': 'Appoggio', 'de': 'Appoggio', 'it': 'Appoggio'}, sub="Vicino Labs · Famiglia Vicino", icon="/apps/appoggio.png",
                          ledes={'en': 'Breathing training for singers — the bel canto art of supporting the voice with breath.', 'de': 'Atemtraining für Sängerinnen und Sänger.', 'it': "L'arte del respiro: allenamento per cantanti.", 'ko': '성악가를 위한 호흡 훈련 — 모든 기능 무료, 기록은 기기에만.'},
                          play='com.vicinolabs.appoggio', apple='https://apps.apple.com/app/id6832364161', email=EMAIL, desc='Appoggio — breathing training for singers, by Vicino Labs.', canonical="/appoggio/")
 

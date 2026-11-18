@@ -25,7 +25,7 @@ CHIAVE = {
 
 def chiave_home():
     # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
-    return app_home.page(key='chiave', name='Chiave · 끼아베', sub="Vicino Labs · Famiglia Vicino", icon="/apps/chiave.png",
+    return app_home.page(key='chiave', name={'ko': '끼아베(Chiave)', 'en': 'Chiave', 'de': 'Chiave', 'it': 'Chiave'}, sub="Vicino Labs · Famiglia Vicino", icon="/apps/chiave.png",
                          ledes={'en': 'Create and edit scores with pen, photo or sound — transposition included. Your scores stay on your device.', 'de': 'Noten erstellen und bearbeiten – mit Stift, Foto oder Klang, Transponieren inklusive. Deine Noten bleiben auf deinem Gerät.', 'it': 'Crea e modifica spartiti con penna, foto o suono, trasposizione inclusa. I tuoi spartiti restano sul dispositivo.', 'ko': '펜·사진·소리로 악보를 쉽게 만들고 고치는 앱 — 이조도 함께, 악보는 기기에만.'},
                          play=None, apple=None, email=EMAIL, desc='Chiave — create and edit scores with pen, photo or sound, by Vicino Labs.', canonical="/chiave/")
 

@@ -37,7 +37,15 @@ def ON(l):
 
 
 def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, canonical):
-    """ledes: {lang: 한 줄}. play: 패키지 이름, apple: App Store 주소(없으면 출시 예정)."""
+    """ledes: {lang: 한 줄}. play: 패키지 이름, apple: App Store 주소(없으면 출시 예정).
+
+    name 은 글자열이거나 {언어: 이름} 이다. 사전이면 제목이 언어를 따라간다
+    (대표님 2026-11-18: 한국어는 "프로바(Prova)" 처럼 한글을 앞에).
+    """
+    names = name if isinstance(name, dict) else {l: name for l, _ in LANGS}
+    plain = names.get("en") or next(iter(names.values()))
+    title = ("".join(f'<span data-l="{l}"{" class=on" if l == "en" else ""}>{names[l]}</span>'
+                     for l, _ in LANGS) if isinstance(name, dict) else plain)
     lede = "".join(f'<p data-l="{l}" class="lede{" on" if l == "en" else ""}">{ledes[l]}</p>' for l, _ in LANGS)
     def stores(l):
         b = l if l in ("ko", "de", "en") else "en"
@@ -60,7 +68,7 @@ def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, can
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{name} — Vicino Labs</title>
+<title>{plain} — Vicino Labs</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="https://vicinolabs.com{canonical}">
 <meta name="color-scheme" content="light dark">
@@ -70,8 +78,8 @@ def page(*, key, name, sub, icon, ledes, play=None, apple=None, email, desc, can
 <body>
 <div class="top"><div class="in"><a class="co" href="/"><img src="/logo.png" alt="" width="47" height="26">Vicino Labs</a></div></div>
 <main class="ah">
-<img class="ic" src="{icon}" srcset="{icon.replace('/apps/', '/apps/hi/')} 2x" alt="{name}" width="132" height="132">
-<h1>{name}</h1><p class="sub">{sub}</p>
+<img class="ic" src="{icon}" srcset="{icon.replace('/apps/', '/apps/hi/')} 2x" alt="{plain}" width="132" height="132">
+<h1>{title}</h1><p class="sub">{sub}</p>
 <div class="langs" role="group" aria-label="Language">{buttons}</div>
 {lede}{store_html}{fam}
 <div class="legal">{legal}</div>

@@ -25,7 +25,7 @@ PIANINO = {
 
 def pianino_home():
     # 공통 틀 app_home.page (2026-11-11): 큰 아이콘·언어별 한 줄·공식 스토어 배지
-    return app_home.page(key='pianino', name='Pianino · 피아니노', sub="Vicino Labs · Famiglia Vicino", icon="/apps/pianino.png",
+    return app_home.page(key='pianino', name={'ko': '피아니노(Pianino)', 'en': 'Pianino', 'de': 'Pianino', 'it': 'Pianino'}, sub="Vicino Labs · Famiglia Vicino", icon="/apps/pianino.png",
                          ledes={'en': 'Piano, metronome and tuner — one concert pitch (A4 415–466 Hz) for keys and tuner, free.', 'de': 'Klavier, Metronom und Stimmgerät – ein Kammerton für Tasten und Stimmgerät, kostenlos.', 'it': 'Pianoforte, metronomo e accordatore: un unico diapason per tasti e accordatore, gratis.', 'ko': '피아노·메트로놈·튜너 — 건반과 튜너가 같은 기준음을 쓰는 무료 앱.'},
                          play='com.vicinolabs.pianino', apple='https://apps.apple.com/app/id6832363954', email=EMAIL, desc='Pianino — piano, metronome and tuner with one shared concert pitch, by Vicino Labs.', canonical="/pianino/")
 

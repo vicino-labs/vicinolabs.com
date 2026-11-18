@@ -25,7 +25,7 @@ PAUSA = {
 
 
 def pausa_home():
-    return app_home.page(key='pausa', name='Pausa · 파우사', sub="Vicino Labs · Famiglia Vicino", icon="/apps/pausa.png",
+    return app_home.page(key='pausa', name={'ko': '파우사(Pausa)', 'en': 'Pausa', 'de': 'Pausa', 'it': 'Pausa'}, sub="Vicino Labs · Famiglia Vicino", icon="/apps/pausa.png",
                          ledes={'en': 'For the café, reading, desk work and bedtime: mix music with rain, fireplace, café murmur and wind into a sound of your own.',
                                 'de': 'Fürs Café, zum Lesen, für die Arbeit am Schreibtisch und vor dem Schlafen: Musik mit Regen, Kaminfeuer, Cafégeräuschen und Wind zu deinem eigenen Klang mischen.',
                                 'it': 'Per il bar, la lettura, il lavoro alla scrivania e la sera prima di dormire: mescola musica, pioggia, camino, brusio del caffè e vento nel tuo sottofondo.',
