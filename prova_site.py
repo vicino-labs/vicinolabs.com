@@ -326,7 +326,12 @@ if(["Atlantic/Reykjavik","Atlantic/Canary","Atlantic/Madeira","Atlantic/Azores",
 return "xx"}catch(e){return "xx"}}
 var RG=region();
 var KEY="vl-app-lang",langs=["ko","en","de"];
-function pick(){try{var s=localStorage.getItem(KEY);if(s&&langs.indexOf(s)>=0)return s}catch(e){}
+/* 차례: 주소 뒤의 #ko/#en/#de → 전에 고른 언어 → 브라우저 언어.
+   회사 사이트에서 읽던 언어가 주소에 실려 온다. 브라우저가 한국어라도
+   독일어로 읽고 있었다면 독일어가 맞다(대표님 2026-11-19). */
+function pick(){var h=(location.hash||"").slice(1);
+if(langs.indexOf(h)>=0)return h;
+try{var s=localStorage.getItem(KEY);if(s&&langs.indexOf(s)>=0)return s}catch(e){}
 var l=(navigator.languages||[navigator.language||"en"]);
 for(var i=0;i<l.length;i++){var c=String(l[i]).toLowerCase().split("-")[0];
 if(langs.indexOf(c)>=0)return c}return "en"}

@@ -127,6 +127,24 @@ def lang_menu(lang, alt):
     items = "".join(f'<a href="{(alt or {}).get(l, I.home_path(l))}" hreflang="{l}" lang="{l}"{" class=on" if l == lang else ""}>{I.LANG_NAMES[l]}</a>' for l in I.LANGS)
     return f'<details class="lang"><summary aria-label="Language">{LANG_ICON}<span>{lang.upper()}</span></summary><div class="menu">{items}</div></details>'
 
+# 앱 소개 페이지는 회사 사이트보다 적은 언어를 가진다(렛지·프로바는 ko/en/de,
+# 얇은 카드 페이지는 거기에 it 까지). 그래서 회사 사이트에서 넘어갈 때
+# **읽던 언어를 주소 뒤에 달아 준다**.
+#
+# 안 그러면 독일어 회사 사이트에서 눌렀는데 한국어 페이지가 나온다. 앱 쪽
+# 페이지가 브라우저 언어로 고르기 때문이다(대표님 2026-11-19 "같은 회사사이트
+# 독일어, 영어로 바꿨을 때도 한국어로 나오면 안 되겠지"). 그 페이지가 없는
+# 언어로 보고 있었다면 영어로 보낸다. 브라우저 언어보다 **방금 고른 언어**가
+# 그 사람의 뜻에 가깝다.
+APP_LANGS = {"leggii": ("ko", "en", "de"), "prova": ("ko", "en", "de")}
+APP_LANGS_DEFAULT = ("ko", "en", "de", "it")
+
+
+def about_href(lang, key):
+    ls = APP_LANGS.get(key, APP_LANGS_DEFAULT)
+    return f'/{key}/#{lang if lang in ls else "en"}'
+
+
 def card(lang, key):
     t = TXT[lang]
     ext = ' target="_blank" rel="noopener"'  # 사이트 밖 링크만 새 탭
@@ -140,9 +158,9 @@ def card(lang, key):
             links.append(f'<a href="https://apps.apple.com/app/id{APPLE[key]}"{ext}>App Store</a>')
         # /{key}/ 는 앱 소개 페이지다(법문은 그 페이지 맨 아래에 있다).
         # 2026-11-18 까지 "개인정보·약관"이라고 적혀 있어 이름이 맞지 않았다.
-        links.append(f'<a href="/{key}/">{t["about_l"]}</a>')
+        links.append(f'<a href="{about_href(lang, key)}">{t["about_l"]}</a>')
     elif key in LEGAL_ONLY:  # 출시 전(Bald) 앱: 법문 링크만, Play 링크는 출시 후 STORE에 추가
-        links.append(f'<a href="/{key}/">{t["about_l"]}</a>')
+        links.append(f'<a href="{about_href(lang, key)}">{t["about_l"]}</a>')
     badge = f' <span class="soon">{t["soon"]}</span>' if soon else ""
     return (f'<div class="card"><img src="/apps/{key}.png" alt="" width="72" height="72" loading="lazy">'
             f'<div><h3>{app_name(lang, key)}{badge}</h3><p>{t["d"][key]}</p><div class="links">{"".join(links)}</div></div></div>')
