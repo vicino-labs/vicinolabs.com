@@ -8,6 +8,7 @@ import os
 
 import app_home
 import nomio_legal
+import prova_plus
 import prova_site
 from appoggio_privacy_content import EMAIL
 from prova_privacy_content import PRIVACY
@@ -38,6 +39,9 @@ def build(root):
     write("/prova/", prova_home())
     write("/prova/privacy/", nomio_legal.legal_page("/prova/privacy/", PRIVACY, "/prova/terms/", app=PROVA))
     write("/prova/terms/", nomio_legal.legal_page("/prova/terms/", TERMS, "/prova/privacy/", app=PROVA))
+    # Plus 구독(홈페이지 직접 결제, 2026-11-19) — prova_plus.py
+    write("/prova/plus/", prova_plus.buy_page())
+    write("/prova/plus/danke/", prova_plus.thanks_page())
 
 
 if __name__ == "__main__":
