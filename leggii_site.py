@@ -399,7 +399,7 @@ REGION = {
    '월간은 월 3,99 €',
    '결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
    '위레가토 아이디로 가입하고 카드로 결제합니다.',
-   '12월 1일부터 Pro는 12,99 €가 됩니다. 그 전에 사시면 계속 쓰실 수 있습니다.',
+   '출시 기념가입니다. Google Play 는 11월 30일까지, App Store 는 코드 LEGGII999 로 12월 31일까지. 그 뒤에는 12,99 €입니다.',
   ),
   'kr': (
    '17,000원',
@@ -408,7 +408,7 @@ REGION = {
    '월간은 월 5,500원',
    '한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
    '홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요.',
-   '12월 1일부터 Pro 값이 오릅니다. 그 전에 사시면 계속 쓰실 수 있습니다.',
+   '출시 기념가입니다. Google Play 는 11월 30일까지, App Store 는 코드 LEGGII999 로 12월 31일까지. 그 뒤에는 22,000원입니다.',
   ),
   'xx': (
    '스토어에서 구매',
@@ -428,7 +428,7 @@ REGION = {
    'or €3.99/mo billed monthly',
    'You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
    'Sign up with a welegato ID and pay by card.',
-   'From 1 December 2026, Pro will be €12.99. Buy before then and it stays yours.',
+   'Launch price. On Google Play until 30 November, on the App Store with code LEGGII999 until 31 December. After that it is €12.99.',
   ),
   'kr': (
    '₩17,000 once',
@@ -437,7 +437,7 @@ REGION = {
    'or ₩5,500/mo billed monthly',
    'Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
    'Website payment is for Europe only. Subscribe on the App Store or Google Play.',
-   'Pro goes up on 1 December 2026. Buy before then and it stays yours.',
+   'Launch price. On Google Play until 30 November, on the App Store with code LEGGII999 until 31 December. After that it is ₩22,000.',
   ),
   'xx': (
    'in the store',
@@ -457,7 +457,7 @@ REGION = {
    'oder 3,99 €/Monat bei monatlicher Zahlung',
    'Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
    'Mit einer welegato-ID anmelden und per Karte zahlen.',
-   'Ab 1. Dezember 2026 kostet Leggii Pro 12,99 €. Wer vorher kauft, behält es.',
+   'Einführungspreis. Bei Google Play bis zum 30. November, im App Store mit dem Code LEGGII999 bis zum 31. Dezember. Danach 12,99 €.',
   ),
   'kr': (
    '17.000 ₩ einmalig',
@@ -466,7 +466,7 @@ REGION = {
    'oder 5.500 ₩/Monat bei monatlicher Zahlung',
    'Preise für Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
    'Die Zahlung über die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play.',
-   'Am 1. Dezember 2026 steigt der Preis für Leggii Pro. Wer vorher kauft, behält es.',
+   'Einführungspreis. Bei Google Play bis zum 30. November, im App Store mit dem Code LEGGII999 bis zum 31. Dezember. Danach 22.000 ₩.',
   ),
   'xx': (
    'im Store',
