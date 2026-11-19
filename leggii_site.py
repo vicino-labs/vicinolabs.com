@@ -361,7 +361,8 @@ document.querySelectorAll('[data-price="plus"]').forEach(function(e){e.textConte
 document.querySelectorAll('[data-price="plusyear"]').forEach(function(e){e.textContent=pr[2]});
 document.querySelectorAll('[data-price="plusmonth"]').forEach(function(e){e.textContent=pr[3]});
 document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pr[4]});
-document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[5]});}
+document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[5]});
+document.querySelectorAll("[data-pricesoon]").forEach(function(e){var v=pr[6]||"";e.textContent=v;e.style.display=v?"":"none"});}
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
@@ -390,38 +391,92 @@ def _meta_json():
 # 보인다. 시간대로 지역을 어림잡고, 모르는 지역에는 값을 적지 않는다 —
 # 그 나라 값을 우리가 모른다. 틀린 값보다 안 적는 게 낫다.
 REGION = {
- "ko": {
-  "eu": ("9,99 €", "월 3,33 €", "연 39,99 €, 1년에 한 번 결제", "월간은 월 3,99 €",
-         "결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
-         "위레가토 아이디로 가입하고 카드로 결제합니다."),
-  "kr": ("17,000원", "월 4,583원", "연 55,000원, 1년에 한 번 결제", "월간은 월 5,500원",
-         "한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.",
-         "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
-  "xx": ("스토어에서 구매", "스토어에서 구독", "", "",
-         "결제는 앱 스토어·구글 플레이에서 하십니다. 나라마다 값이 달라 스토어에서 확인하실 수 있습니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.",
-         "홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요."),
+ 'ko': {
+  'eu': (
+   '9,99 €',
+   '월 3,33 €',
+   '연 39,99 €, 1년에 한 번 결제',
+   '월간은 월 3,99 €',
+   '결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
+   '위레가토 아이디로 가입하고 카드로 결제합니다.',
+   '12월 1일부터 Pro는 12,99 €가 됩니다. 그 전에 사시면 계속 쓰실 수 있습니다.',
+  ),
+  'kr': (
+   '17,000원',
+   '월 4,583원',
+   '연 55,000원, 1년에 한 번 결제',
+   '월간은 월 5,500원',
+   '한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
+   '홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요.',
+   '12월 1일부터 Pro 값이 오릅니다. 그 전에 사시면 계속 쓰실 수 있습니다.',
+  ),
+  'xx': (
+   '스토어에서 구매',
+   '스토어에서 구독',
+   '',
+   '',
+   '결제는 앱 스토어·구글 플레이에서 하십니다. 나라마다 값이 달라 스토어에서 확인하실 수 있습니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.',
+   '홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요.',
+   '',
+  ),
  },
- "en": {
-  "eu": ("\u20ac9.99 once", "\u20ac3.33/mo", "\u20ac39.99 billed once a year", "or \u20ac3.99/mo billed monthly",
-         "You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
-         "Sign up with a welegato ID and pay by card."),
-  "kr": ("\u20a917,000 once", "\u20a94,583/mo", "\u20a955,000 billed once a year", "or \u20a95,500/mo billed monthly",
-         "Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.",
-         "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
-  "xx": ("in the store", "in the store", "", "",
-         "You pay in the App Store or on Google Play, where the price for your country is shown. AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app.",
-         "Website payment is for Europe only. Subscribe on the App Store or Google Play."),
+ 'en': {
+  'eu': (
+   '€9.99 once',
+   '€3.33/mo',
+   '€39.99 billed once a year',
+   'or €3.99/mo billed monthly',
+   'You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
+   'Sign up with a welegato ID and pay by card.',
+   'From 1 December 2026, Pro will be €12.99. Buy before then and it stays yours.',
+  ),
+  'kr': (
+   '₩17,000 once',
+   '₩4,583/mo',
+   '₩55,000 billed once a year',
+   'or ₩5,500/mo billed monthly',
+   'Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
+   'Website payment is for Europe only. Subscribe on the App Store or Google Play.',
+   'Pro goes up on 1 December 2026. Buy before then and it stays yours.',
+  ),
+  'xx': (
+   'in the store',
+   'in the store',
+   '',
+   '',
+   'You pay in the App Store or on Google Play, where the price for your country is shown. AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app.',
+   'Website payment is for Europe only. Subscribe on the App Store or Google Play.',
+   '',
+  ),
  },
- "de": {
-  "eu": ("9,99 \u20ac einmalig", "3,33 \u20ac/Monat", "39,99 \u20ac einmal im Jahr", "oder 3,99 \u20ac/Monat bei monatlicher Zahlung",
-         "Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
-         "Mit einer welegato-ID anmelden und per Karte zahlen."),
-  "kr": ("17.000 \u20a9 einmalig", "4.583 \u20a9/Monat", "55.000 \u20a9 einmal im Jahr", "oder 5.500 \u20a9/Monat bei monatlicher Zahlung",
-         "Preise f\u00fcr Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.",
-         "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
-  "xx": ("im Store", "im Store", "", "",
-         "Bezahlt wird im App Store oder bei Google Play, wo der Preis f\u00fcr Ihr Land steht. KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate g\u00fcltig) kaufen Sie in der App.",
-         "Die Zahlung \u00fcber die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play."),
+ 'de': {
+  'eu': (
+   '9,99 € einmalig',
+   '3,33 €/Monat',
+   '39,99 € einmal im Jahr',
+   'oder 3,99 €/Monat bei monatlicher Zahlung',
+   'Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
+   'Mit einer welegato-ID anmelden und per Karte zahlen.',
+   'Ab 1. Dezember 2026 kostet Leggii Pro 12,99 €. Wer vorher kauft, behält es.',
+  ),
+  'kr': (
+   '17.000 ₩ einmalig',
+   '4.583 ₩/Monat',
+   '55.000 ₩ einmal im Jahr',
+   'oder 5.500 ₩/Monat bei monatlicher Zahlung',
+   'Preise für Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
+   'Die Zahlung über die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play.',
+   'Am 1. Dezember 2026 steigt der Preis für Leggii Pro. Wer vorher kauft, behält es.',
+  ),
+  'xx': (
+   'im Store',
+   'im Store',
+   '',
+   '',
+   'Bezahlt wird im App Store oder bei Google Play, wo der Preis für Ihr Land steht. KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App.',
+   'Die Zahlung über die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play.',
+   '',
+  ),
  },
 }
 
@@ -471,6 +526,7 @@ def _ptab(l):
             f'<p class="note trial">{t["trial"]}</p>'
             f'<p class="value">{t["plans_value"]}</p>'
             f'<p class="punch">{t["plans_punch"]}</p>'
+            f'<p class="punch" data-pricesoon style="display:none"></p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} \u2192</a></p>'
             f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')
