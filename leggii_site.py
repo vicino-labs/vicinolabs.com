@@ -25,19 +25,22 @@ APPLE = "https://apps.apple.com/app/id6832925566"
 EMAIL = "contact@vicinolabs.com"
 
 PLANS_CSS = """
-.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
 .pcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:2px}
 .pcard.hi{border-color:var(--goldl);box-shadow:0 10px 30px rgba(40,25,15,.10)}
 .pcard h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:26px;margin:0}
 html[lang=ko] .pcard h3{font-family:"Noto Serif KR",Georgia,serif;font-weight:600;font-size:22px}
 .pcard .tag{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;min-height:17px}
-.pcard .pr{font-size:21px;font-weight:600;margin-top:8px;line-height:1.3}
+.pcard .pr{font-size:21px;font-weight:600;margin-top:8px;line-height:1.3;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
 .pcard .pr2{font-size:14.5px;color:var(--soft);min-height:21px}
 .pcard ul{list-style:none;margin:14px 0 0;padding:0;font-size:14.5px;color:var(--soft);display:flex;flex-direction:column;gap:7px}
 .pcard ul li.up{color:var(--ink);font-weight:600}
-.pcard .foot{margin-top:12px;font-size:13.5px;color:var(--soft)}
+.pcard .foot{margin-top:auto;padding-top:12px;font-size:13.5px;color:var(--soft)}
 .trial{margin:14px 0 0;font-size:14px;color:var(--soft)}
-@media(max-width:860px){.pcards{grid-template-columns:1fr}}
+@media(max-width:860px){.pcards{grid-template-columns:1fr}
+.pcard .tag:empty,.pcard .pr2:empty{display:none}
+.pcard .tag,.pcard .pr2{min-height:0}
+.pcard .foot{margin-top:12px;padding-top:0}}
 """
 
 CSS = """
@@ -192,7 +195,7 @@ T = {
            7: "악보를 가리지 않고 그 위에 떠 있습니다",
            8: "물어보면 찾아 주고 실행 버튼까지",
            5: "Pro와 AI 시간, 클라우드가 기기마다 그대로"},
- "cards": [('무료', '', '0원', '', ['악보 보기·가져오기·IMSLP', '기본 필기·녹음', '연주목록 3개'], ''), ('Pro', '한 번 구매', '@pro', '평생 사용', ['+ 무료의 모든 기능', '펜·스탬프·링크·페이지 편집·내보내기·피아노', '페달로 넘기기, 연주목록 제한 없음, 광고 없음, 깔끔한 스캔'], 'AI와 클라우드는 Plus에 있어요'), ('Plus', '구독 · 2개월 절약', '@plusm', '@plusy', ['+ Pro의 모든 기능', 'AI 레슨 분석 매월 5시간', '클라우드 10GB'], '@plusmo')],
+ "cards": [('무료', '', '0원', '', ['악보 보기·가져오기·IMSLP', '기본 필기·녹음', '연주목록 3개'], ''), ('Pro', '한 번 구매', '@pro', '평생 사용', ['+ 무료의 모든 기능', '펜·스탬프·링크·페이지 편집·내보내기·피아노', '페달로 넘기기, 연주목록 제한 없음, 광고 없음, 깔끔한 스캔'], 'AI와 클라우드는 Plus에 있어요'), ('Plus', '구독 · 2개월 무료', '@plusm', '@plusy', ['+ Pro의 모든 기능', 'AI 레슨 분석 매월 5시간', '클라우드 10GB'], '@plusmo')],
  "trial": '처음 설치하면 7일 동안 Pro 기능을 무료로 쓰실 수 있어요',
  "plans_h": "요금제",
  "plans_sub": "레슨이 끝나면 핵심과 지적, 숙제가 정리되어 있습니다. 악보와 필기, 녹음은 어느 기기에서나 그대로입니다.",

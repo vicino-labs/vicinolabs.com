@@ -54,9 +54,9 @@ CSS = S.CSS + """
 @media(max-width:560px){.opts{grid-template-columns:1fr}}
 .opt{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--bg);cursor:pointer;text-align:left;font:inherit;color:inherit;display:block;width:100%}
 .opt.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
-.opt b{display:block;font-family:Georgia,serif;font-size:21px;font-weight:500}
+.opt b{display:block;font-size:22px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
 .opt span{display:block;color:var(--soft);font-size:13.5px;margin-top:2px}
-.opt .save{color:var(--gold);font-weight:600}
+.opt .save{color:var(--gold);font-weight:600;display:block;margin-top:2px}
 .incl{margin:16px 0 0;padding:0;list-style:none}
 .incl li{position:relative;padding-left:18px;color:var(--soft);font-size:15px;margin:6px 0}
 .incl li::before{content:"";position:absolute;left:1px;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--goldl)}
@@ -95,8 +95,8 @@ T = {
  "lede": "레슨은 AI가 정리하고, 악보와 녹음은 어느 기기에서나 그대로입니다. 여기서 구독하신 뒤 앱에서 같은 위레가토 아이디로 로그인하시면 됩니다.",
  "s1": "1. 요금제 고르기", "s1h": "결제 주기를 고르세요. 가격은 앱 스토어·구글 플레이와 같습니다.",
  "size10": "클라우드 10GB", "size50": "클라우드 50GB",
- "month": "월간", "year": "연간", "per_month": "월", "per_year": "년",
- "save": "2개월 무료",
+ "month": "월간", "year": "연간", "per_month": "월", "per_year": "연",
+ "save": "2개월 무료", "per_month_is": "월 {p}",
  "incl_h": "Plus에 들어 있는 것",
  "incl": ["Pro 기능 전부, 광고 없음", "매월 AI 레슨 분석 5시간", "렛지 클라우드: 악보·필기·폴더·연주목록·녹음이 모든 기기에서 똑같이 유지됩니다"],
  "s2": "2. 위레가토 아이디", "s2h": "위레가토 아이디 하나로 Vicino Labs 앱을 모두 쓰실 수 있습니다. 이미 있으시면 그대로 로그인하세요.",
@@ -108,9 +108,9 @@ T = {
  "wg_link": "welegato.com 둘러보기 →",
  "acc_settings": "계정 설정", "acc_pw": "비밀번호 바꾸기", "acc_delete": "회원 탈퇴",
  "acc_store_apple": "App Store에서 구독 관리", "acc_store_google": "Google Play에서 구독 관리",
- "s3": "3. 결제", "s3h": "카드 결제는 스트라이프가 처리합니다.",
+ "s3": "3. 결제", "s3h": "",
  "waiver": "지금 바로 구독을 시작하는 데 동의하며, 그에 따라 청약철회권이 사라진다는 점을 확인합니다(독일 민법 제356조 제5항).",
- "pay": "구독하기",
+ "agree": "구독하시면 아래에 동의하시는 것으로 봅니다.", "pay": "구독하기",
  "vat": "소규모사업자로 부가가치세는 붙지 않습니다(독일 부가가치세법 제19조).",
  "renew": "결제가 끝나면 바로 이용하실 수 있습니다. 구독은 자동으로 갱신되며, 다음 결제일 전까지 언제든 해지하실 수 있습니다.",
  "have": "이 아이디로 이미 Plus를 쓰고 있습니다.",
@@ -160,7 +160,7 @@ T = {
  "s1": "1. Choose a plan", "s1h": "Monthly or yearly. The price is the same as on the App Store and Google Play.",
  "size10": "10 GB cloud", "size50": "50 GB cloud",
  "month": "Monthly", "year": "Yearly", "per_month": "a month", "per_year": "a year",
- "save": "Two months free",
+ "save": "2 months free", "per_month_is": "{p}/mo",
  "incl_h": "What Plus includes",
  "incl": ["Every Pro feature, no ads", "5 hours of AI lesson analysis a month", "Leggii cloud: scores, ink, folders, setlists and recordings in sync on every device"],
  "s2": "2. welegato ID", "s2h": "One welegato ID for the Vicino Labs apps. Already have one? Just sign in.",
@@ -172,9 +172,9 @@ T = {
  "wg_link": "Have a look at welegato.com →",
  "acc_settings": "Account settings", "acc_pw": "Change password", "acc_delete": "Delete account",
  "acc_store_apple": "Manage on the App Store", "acc_store_google": "Manage on Google Play",
- "s3": "3. Payment", "s3h": "Stripe handles the card payment.",
+ "s3": "3. Payment", "s3h": "",
  "waiver": "I want the subscription to start right away and understand that my right of withdrawal lapses (§ 356(5) German Civil Code).",
- "pay": "Subscribe",
+ "agree": "By subscribing you agree to:", "pay": "Subscribe",
  "vat": "No VAT is charged (small business, § 19 German VAT Act).",
  "renew": "You can start as soon as the payment goes through. The subscription renews automatically and you can cancel any time before the next billing date.",
  "have": "This ID already has Plus.",
@@ -224,7 +224,7 @@ T = {
  "s1": "1. Tarif wählen", "s1h": "Monatlich oder jährlich. Der Preis ist derselbe wie im App Store und bei Google Play.",
  "size10": "10 GB Cloud", "size50": "50 GB Cloud",
  "month": "Monatlich", "year": "Jährlich", "per_month": "im Monat", "per_year": "im Jahr",
- "save": "2 Monate gratis",
+ "save": "2 Monate geschenkt", "per_month_is": "{p}/Monat",
  "incl_h": "In Plus enthalten",
  "incl": ["Alle Pro-Funktionen, keine Werbung", "5 Stunden KI-Unterrichtsanalyse im Monat", "Leggii Cloud: Noten, Notizen, Ordner, Setlists und Aufnahmen auf allen Geräten synchron"],
  "s2": "2. welegato-ID", "s2h": "Mit einer welegato-ID nutzen Sie alle Apps von Vicino Labs. Wenn Sie schon eine haben, melden Sie sich einfach an.",
@@ -236,9 +236,9 @@ T = {
  "wg_link": "welegato.com ansehen →",
  "acc_settings": "Kontoeinstellungen", "acc_pw": "Passwort ändern", "acc_delete": "Konto löschen",
  "acc_store_apple": "Im App Store verwalten", "acc_store_google": "Bei Google Play verwalten",
- "s3": "3. Bezahlen", "s3h": "Die Kartenzahlung übernimmt Stripe.",
+ "s3": "3. Bezahlen", "s3h": "",
  "waiver": "Ich verlange ausdrücklich, dass Sie vor Ablauf der Widerrufsfrist mit der Leistung beginnen. Mir ist bekannt, dass ich damit mein Widerrufsrecht verliere (§ 356 Abs. 5 BGB).",
- "pay": "Zahlungspflichtig abonnieren",
+ "agree": "Mit dem Abo stimmen Sie zu:", "pay": "Zahlungspflichtig abonnieren",
  "vat": "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmer).",
  "renew": "Nach der Zahlung steht Ihnen Plus sofort zur Verfügung. Das Abo verlängert sich automatisch und ist jederzeit bis zur nächsten Abbuchung kündbar.",
  "have": "Diese ID hat Plus bereits.",
@@ -424,8 +424,8 @@ BUY_BODY = """
       <button type="button" data-size="10" class="on"></button><button type="button" data-size="50"></button>
     </div>
     <div class="opts">
-      <button type="button" class="opt on" data-every="month"><b id="pm"></b><span id="lm"></span></button>
-      <button type="button" class="opt" data-every="year"><b id="py"></b><span id="ly"></span></button>
+      <button type="button" class="opt on" data-every="year"><b id="py"></b><span id="ly"></span></button>
+      <button type="button" class="opt" data-every="month"><b id="pm"></b><span id="lm"></span></button>
     </div>
     <p class="hint" style="margin:20px 0 0" data-t="incl_h"></p>
     <ul class="incl" id="incl"></ul>
@@ -457,6 +457,11 @@ BUY_BODY = """
   <div class="step" id="paystep">
     <h2 data-t="s3"></h2><p class="hint" data-t="s3h"></p>
     <label class="waiver"><input type="checkbox" id="waiver"><span data-t="waiver"></span></label>
+    <p class="fine" style="margin:10px 0 0">
+      <span data-t="agree"></span>
+      <a href="/leggii/terms/" target="_blank" rel="noopener" data-t="terms"></a> ·
+      <a href="/leggii/privacy/" target="_blank" rel="noopener" data-t="privacy"></a>
+    </p>
     <div class="row"><button type="button" class="btn" id="pay" data-t="pay"></button></div>
     <p class="fine"><span data-t="renew"></span> <span data-t="vat"></span></p>
     <div id="pmsg" class="msg hidden"></div>
@@ -486,9 +491,12 @@ BUY_BODY = """
 """
 
 BUY_JS = """
-var PRICE=__PRICES__,SHOW50=__SHOW50__,size="10",every="month",signup=false,sub=null,noEurope=false;
+var PRICE=__PRICES__,SHOW50=__SHOW50__,size="10",every="year",signup=false,sub=null,noEurope=false;
 function product(){return "plus-"+size+"-"+every}
 var MONEY={ko:"ko-KR",en:"en-GB",de:"de-DE"};
+function euroC(c){if(c==null)return "";
+try{return new Intl.NumberFormat(MONEY[lang]||"en-GB",{style:"currency",currency:"EUR"}).format(c/100)}
+catch(e){return (c/100).toFixed(2)+" \u20ac"}}
 function euro(p){var c=PRICE[p];if(c==null)return "";
 try{return new Intl.NumberFormat(MONEY[lang]||"en-GB",{style:"currency",currency:"EUR"}).format(c/100)}
 catch(e){return (c/100).toFixed(2)+" €"}}
@@ -509,11 +517,15 @@ b.textContent=t[b.getAttribute("data-size")==="10"?"size10":"size50"];
 b.classList.toggle("on",b.getAttribute("data-size")===size)});
 document.querySelectorAll("[data-every]").forEach(function(b){
 b.classList.toggle("on",b.getAttribute("data-every")===every)});
-var sep=lang==="ko"?" / ":" ";
-document.getElementById("pm").textContent=euro("plus-"+size+"-month")+sep+t.per_month;
-document.getElementById("py").textContent=euro("plus-"+size+"-year")+sep+t.per_year;
+var pre=lang==="ko";var sep=" ";
+var em=euro("plus-"+size+"-month"),ey=euro("plus-"+size+"-year");
+document.getElementById("pm").textContent=pre?t.per_month+sep+em:em+sep+t.per_month;
+document.getElementById("py").textContent=pre?t.per_year+sep+ey:ey+sep+t.per_year;
 document.getElementById("lm").textContent=t.month;
-document.getElementById("ly").textContent=t.year+" · "+t.save;
+// 연간은 한 해 값만 적으면 월간보다 열 배 비싸 보인다. 월로 환산해 나란히 둔다.
+var yc=PRICE["plus-"+size+"-year"];
+document.getElementById("ly").innerHTML=t.year+(yc==null?"":" · "+t.per_month_is.replace("{p}",euroC(Math.round(yc/12))))
++'<span class="save">'+t.save+"</span>";
 document.getElementById("incl").innerHTML=t.incl.map(function(x){
 return "<li>"+x.replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})+"</li>"}).join("");
 document.getElementById("go").textContent=signup?t.signup:t.login;
