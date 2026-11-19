@@ -191,6 +191,7 @@ T = {
  "plans_sub": "녹음과 녹화, 듣기와 비교는 로그인 없이 써요. Plus는 AI와 클라우드예요.",
  "plans_value": "매월 AI 10시간은 한 시간짜리 레슨 열 번 분량이에요. 클라우드 10GB에는 녹음이 100시간 넘게 들어가요. 영상은 자리를 많이 차지해서, 영상이 많으면 50GB가 편해요.",
  "plans_punch": "레슨 한 번 값이면 Plus를 일 년 써요.",
+ "plans_cta": "여기서 바로 시작하기",
  "pri_h": "녹음은 이 기기에 남아요",
  "pri_p": "녹음과 영상은 기기에 저장돼요. AI 분석에는 소리만 보내고, 분석이 끝나면 지워요. 영상의 화면은 보내지 않아요.",
  "con_h": "녹음하기 전에",
@@ -247,6 +248,7 @@ T = {
  "plans_sub": "Recording, filming, listening and comparing need no account. Plus is the AI and the cloud.",
  "plans_value": "Ten hours of AI a month is ten one-hour lessons. 10 GB holds over a hundred hours of recordings. Video fills it much faster, so 50 GB is the easier one if you film a lot.",
  "plans_punch": "A year of Plus costs about one lesson.",
+ "plans_cta": "Get Plus",
  "pri_h": "The recordings stay on your device",
  "pri_p": "Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.",
  "con_h": "Before you record",
@@ -303,6 +305,7 @@ T = {
  "plans_sub": "Aufnehmen, filmen, anhören und vergleichen brauchen kein Konto. Plus sind die KI und die Cloud.",
  "plans_value": "Zehn KI-Stunden im Monat sind zehn Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen. Videos füllen sie viel schneller. Wer viel filmt, fährt mit 50 GB leichter.",
  "plans_punch": "Ein Jahr Plus kostet so viel wie eine Unterrichtsstunde.",
+ "plans_cta": "Plus starten",
  "pri_h": "Die Aufnahmen bleiben auf Ihrem Gerät",
  "pri_p": "Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.",
  "con_h": "Vor der Aufnahme",
@@ -349,7 +352,8 @@ document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/prova/shots
 document.querySelectorAll("[data-tile]").forEach(function(e){e.src="/prova/shots/"+x+"/"+e.getAttribute("data-tile")+".webp"});
 var pp=(PRICE[x]||{})[RG];
 if(pp){document.querySelectorAll("[data-pp]").forEach(function(e){e.textContent=pp[+e.getAttribute("data-pp")]||""});
-document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pp[6]})}
+document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pp[6]});
+document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pp[8]})}
 try{localStorage.setItem(KEY,x)}catch(e){}}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-set]");
 if(b){set(b.getAttribute("data-set"))}});
@@ -370,7 +374,7 @@ REGION = {
  "ko": {
   "eu": ("월 4,17 €", "연 49,99 €, 1년에 한 번 결제", "월간은 월 4,99 €",
          "월 5,83 €", "연 69,99 €, 1년에 한 번 결제", "월간은 월 6,99 €",
-         "결제는 앱 스토어·구글 플레이에서 해요. 값은 스토어에서 확인하실 수 있어요."),
+         "값은 스토어와 같아요. 여기서 바로 결제하셔도 되고, 앱 스토어·구글 플레이에서 구독하셔도 돼요."),
   "kr": ("월 5,750원", "연 69,000원, 1년에 한 번 결제", "월간은 월 6,900원",
          "월 8,250원", "연 99,000원, 1년에 한 번 결제", "월간은 월 9,900원",
          "한국 가격이에요. 결제는 앱 스토어·구글 플레이에서 해요."),
@@ -380,7 +384,7 @@ REGION = {
  "en": {
   "eu": ("€4.17/mo", "€49.99 billed once a year", "or €4.99/mo billed monthly",
          "€5.83/mo", "€69.99 billed once a year", "or €6.99/mo billed monthly",
-         "You pay in the App Store or on Google Play. The store always shows the current price."),
+         "The same price as in the stores. Pay here, or subscribe on the App Store or Google Play."),
   "kr": ("₩5,750/mo", "₩69,000 billed once a year", "or ₩6,900/mo billed monthly",
          "₩8,250/mo", "₩99,000 billed once a year", "or ₩9,900/mo billed monthly",
          "Prices for Korea. You pay in the App Store or on Google Play."),
@@ -390,7 +394,7 @@ REGION = {
  "de": {
   "eu": ("4,17 €/Monat", "49,99 € einmal im Jahr", "oder 4,99 €/Monat bei monatlicher Zahlung",
          "5,83 €/Monat", "69,99 € einmal im Jahr", "oder 6,99 €/Monat bei monatlicher Zahlung",
-         "Bezahlt wird im App Store oder bei Google Play. Den aktuellen Preis zeigt immer der Store."),
+         "Derselbe Preis wie in den Stores. Sie können hier zahlen oder im App Store bzw. bei Google Play abonnieren."),
   "kr": ("5.750 ₩/Monat", "69.000 ₩ einmal im Jahr", "oder 6.900 ₩/Monat bei monatlicher Zahlung",
          "8.250 ₩/Monat", "99.000 ₩ einmal im Jahr", "oder 9.900 ₩/Monat bei monatlicher Zahlung",
          "Preise für Korea. Bezahlt wird im App Store oder bei Google Play."),
@@ -403,10 +407,24 @@ PRICE_SLOT = {"@p10m": 0, "@p10y": 1, "@p10mo": 2, "@p50m": 3, "@p50y": 4, "@p50
 
 # 7번 자리: 무료 칸의 값. 유럽에서 "0원"이 "월 4,17 €" 옆에 서면
 # 어긋나 보여서 이것도 지역에 맞춘다.
+# 8번 자리: 단추 아래 줄. 홈페이지 결제는 유럽만이라 지역마다 달라야 한다.
+# 유럽 밖에서 단추를 눌렀다가 "유럽에서만 받아요"를 보는 것보다 먼저 아는 게 낫다.
+CTA_NOTE = {
+ "ko": {"eu": "위레가토 아이디로 가입하고 카드로 결제해요.",
+        "kr": "홈페이지 결제는 유럽에서만 돼요. 한국에서는 위 값으로 앱 스토어·구글 플레이에서 구독해 주세요.",
+        "xx": "홈페이지 결제는 지금 유럽에서만 돼요. 다른 곳에서는 앱 스토어·구글 플레이에서 구독해 주세요."},
+ "en": {"eu": "Sign up with a welegato ID and pay by card.",
+        "kr": "Website payment is for Europe only. In Korea please subscribe on the App Store or Google Play at the prices above.",
+        "xx": "Website payment is for Europe at the moment. Elsewhere please subscribe on the App Store or Google Play."},
+ "de": {"eu": "Mit einer welegato-ID anmelden und per Karte zahlen.",
+        "kr": "Über die Webseite zahlen geht nur in Europa. In Korea bitte im App Store oder bei Google Play zu den Preisen oben abonnieren.",
+        "xx": "Über die Webseite zahlen geht derzeit nur in Europa. Sonst bitte im App Store oder bei Google Play abonnieren."},
+}
+
 FREE = {"ko": {"eu": "0 €", "kr": "0원", "xx": "무료"}, "en": {"eu": "€0", "kr": "₩0", "xx": "Free"}, "de": {"eu": "0 €", "kr": "0 ₩", "xx": "Kostenlos"}}
 for _l, _rs in REGION.items():
     for _rg in _rs:
-        _rs[_rg] = _rs[_rg] + (FREE[_l][_rg],)
+        _rs[_rg] = _rs[_rg] + (FREE[_l][_rg], CTA_NOTE[_l][_rg])
 
 
 
@@ -433,7 +451,9 @@ def _plans(l):
             f'<p class="note trial">{t["trial"]}</p>'
             f'<p class="value">{t["plans_value"]}</p>'
             f'<p class="punch">{t["plans_punch"]}</p>'
-            f'<p class="note" style="margin-top:10px" data-pricenote></p></section>')
+            f'<p class="note" style="margin-top:10px" data-pricenote></p>'
+            f'<p style="margin:20px 0 0"><a class="cta" href="/prova/plus/">{t["plans_cta"]} \u2192</a></p>'
+            f'<p class="note" style="margin-top:10px" data-pricecta></p></section>')
 
 
 def _on(l):
