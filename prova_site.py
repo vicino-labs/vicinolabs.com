@@ -3,7 +3,7 @@
 예전에는 app_home.page() 로 찍던 얇은 카드였다. 대표님 지시로 렛지처럼
 한 번 훑으면 앱이 무엇을 하는지 알 수 있는 페이지로 바꾼다.
 
-아직 출시 전이다(iOS 심사 중, Play 내부 테스트). 스토어 배지는 STORES 가
+Play 는 2026-11-18 프로덕션으로 나갔고 iOS 는 심사 중이다. 스토어 배지는 STORES 가
 True 가 될 때만 나온다. 출시하면 그 한 줄만 바꾸면 된다.
 
 CSS 는 leggii_site 의 것을 그대로 쓴다. 같은 사이트의 같은 자리이고,
@@ -49,7 +49,8 @@ SHOT = {
     9: ("dwide", "", 1098, 1447),
 }
 
-CSS = leggii_site.CSS + """
+# 요금 카드 CSS 는 렛지 것을 그대로 쓴다(leggii_site.PLANS_CSS).
+CSS = leggii_site.CSS + leggii_site.PLANS_CSS + """
 /* 요약 판: 그림이 있는 칸과 글만 있는 칸이 섞인다. 늘리지 않고 칸마다
    제 높이를 갖게 둔다. 안 그러면 글만 있는 칸이 같은 줄의 그림 칸 높이에
    맞춰 늘어나 아래가 500px 넘게 비어 보인다(2026-11-18). */
@@ -146,7 +147,7 @@ T = {
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "AI가 내 연주를 듣고 짚어 줘요",
  "lede": "같은 구간을 여러 번 녹음하면 1번째, 2번째로 번호가 붙어요. 지난번 녹음과 함께 들어보세요. 제출 영상은 카메라로 찍어 두고 보내기 전에 점검해요.",
- "soon": "iOS는 심사 중이고, 안드로이드는 내부 테스트 중이에요.",
+ "soon": "iOS는 심사 중이에요. 안드로이드는 Google Play에서 받으세요.",
  "tiles": [
   ("레슨과 리허설", "선생님 시범과 지적, 지휘자의 지시까지 소리로 또는 영상으로"),
   ("AI 레슨 노트", "짚어 주신 곳, 칭찬, 숙제가 시간과 함께 적혀요"),
@@ -178,6 +179,18 @@ T = {
    ["보관함이 곡과 구간별로 묶여요",
     "파형 위에 AI가 짚은 자리가 점으로 떠요. 누르면 그 자리부터 들려요",
     "펼친 폴더블 폰도 같아요. 접으면 보던 녹음이 그대로 남아요"])],
+ # 요금제 (2026-11-19). 값은 두 스토어와 같다(HQ 확정 2026-11-12).
+ # 월 AI 분 수는 서버 leggii_ai_config.monthly_minutes_prova 의 sub=600 을
+ # 그대로 옮긴 것이다. 10GB 와 50GB 의 AI 시간은 같고 클라우드만 다르다.
+ "cards": [
+  ('무료', '', '@free', '', ['녹음과 녹화', '듣고 두 녹음 함께 틀기', '곡과 구간별 보관함'], '로그인 없이 써요'),
+  ('Plus', '구독 · 2개월 무료', '@p10m', '@p10y', ['+ 무료의 모든 기능', 'AI 레슨 노트와 AI 연주 점검 매월 10시간', '클라우드 10GB'], '@p10mo'),
+  ('Plus 50GB', '영상이 쌓이면', '@p50m', '@p50y', ['+ Plus의 모든 기능', '클라우드 50GB', 'AI 시간은 10시간으로 같아요'], '@p50mo')],
+ "trial": '위레가토 아이디로 처음 로그인하면 AI 30분을 7일 동안 무료로 써 보실 수 있어요',
+ "plans_h": "요금제",
+ "plans_sub": "녹음과 녹화, 듣기와 비교는 로그인 없이 써요. Plus는 AI와 클라우드예요.",
+ "plans_value": "매월 AI 10시간은 한 시간짜리 레슨 열 번 분량이에요. 클라우드 10GB에는 녹음이 100시간 넘게 들어가요. 영상은 자리를 많이 차지해서, 영상이 많으면 50GB가 편해요.",
+ "plans_punch": "레슨 한 번 값이면 Plus를 일 년 써요.",
  "pri_h": "녹음은 이 기기에 남아요",
  "pri_p": "녹음과 영상은 기기에 저장돼요. AI 분석에는 소리만 보내고, 분석이 끝나면 지워요. 영상의 화면은 보내지 않아요.",
  "con_h": "녹음하기 전에",
@@ -193,7 +206,7 @@ T = {
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "The AI listens to your playing",
  "lede": "Record the same passage again and it is numbered Run 1, Run 2, then play two of them together. Film the audition video and check it before you send it.",
- "soon": "In review on iOS. In internal testing on Android.",
+ "soon": "In review on iOS. On Android, get it on Google Play.",
  "tiles": [
   ("Lessons and rehearsals", "What your teacher plays and corrects, and what the conductor asks for, in sound or on video"),
   ("AI lesson notes", "The corrections, the praise and the homework, each with its time"),
@@ -225,6 +238,15 @@ T = {
    ["The library groups takes by piece and by passage",
     "The AI's marks sit as dots above the waveform; tap one and it plays from there",
     "An unfolded foldable is the same. Fold it shut and the open take stays"])],
+ "cards": [
+  ('Free', '', '@free', '', ['Recording and video', 'Playing two recordings together', 'Library by piece and passage'], 'No account needed'),
+  ('Plus', 'Subscription · 2 months free', '@p10m', '@p10y', ['+ Everything in Free', 'AI lesson notes and AI performance check, 10 hours a month', '10 GB cloud'], '@p10mo'),
+  ('Plus 50 GB', 'When the videos pile up', '@p50m', '@p50y', ['+ Everything in Plus', '50 GB cloud', 'The same 10 hours of AI'], '@p50mo')],
+ "trial": 'Your first sign-in with a welegato ID opens 30 AI minutes for seven days',
+ "plans_h": "Plans",
+ "plans_sub": "Recording, filming, listening and comparing need no account. Plus is the AI and the cloud.",
+ "plans_value": "Ten hours of AI a month is ten one-hour lessons. 10 GB holds over a hundred hours of recordings. Video fills it much faster, so 50 GB is the easier one if you film a lot.",
+ "plans_punch": "A year of Plus costs about one lesson.",
  "pri_h": "The recordings stay on your device",
  "pri_p": "Recordings and videos are kept on the device. Only the sound goes out for the AI analysis, and it is deleted when the analysis is done. The picture never leaves the device.",
  "con_h": "Before you record",
@@ -240,7 +262,7 @@ T = {
  "kicker": "VICINO LABS · FAMIGLIA VICINO",
  "h1": "Die KI hört Ihr Spiel",
  "lede": "Dieselbe Stelle noch einmal aufnehmen, Durchlauf 1, Durchlauf 2, und beide zusammen abspielen. Das Bewerbungsvideo filmen und vor dem Abschicken prüfen.",
- "soon": "Bei Apple in Prüfung. Bei Android im internen Test.",
+ "soon": "Bei Apple in Prüfung. Für Android bei Google Play.",
  "tiles": [
   ("Unterricht und Proben", "Was die Lehrkraft vormacht und korrigiert und was der Dirigent verlangt, als Ton oder Video"),
   ("KI-Notizen zur Stunde", "Korrekturen, Lob und Hausaufgaben, jeweils mit der Zeit"),
@@ -272,6 +294,15 @@ T = {
    ["Das Archiv gruppiert nach Stück und Stelle",
     "Die Marken der KI sitzen als Punkte über der Wellenform; ein Tippen, und es läuft von dort",
     "Ein aufgeklapptes Foldable genauso. Zugeklappt bleibt die offene Aufnahme stehen"])],
+ "cards": [
+  ('Gratis', '', '@free', '', ['Aufnehmen und filmen', 'Zwei Aufnahmen zusammen abspielen', 'Archiv nach Stück und Stelle'], 'Ohne Konto'),
+  ('Plus', 'Abo · 2 Monate geschenkt', '@p10m', '@p10y', ['+ Alles aus Gratis', 'KI-Unterrichtsnotizen und KI-Spielanalyse, 10 Stunden im Monat', '10 GB Cloud'], '@p10mo'),
+  ('Plus 50 GB', 'Wenn die Videos sich häufen', '@p50m', '@p50y', ['+ Alles aus Plus', '50 GB Cloud', 'Dieselben 10 KI-Stunden'], '@p50mo')],
+ "trial": 'Die erste Anmeldung mit der welegato-ID öffnet 30 KI-Minuten für sieben Tage',
+ "plans_h": "Tarife",
+ "plans_sub": "Aufnehmen, filmen, anhören und vergleichen brauchen kein Konto. Plus sind die KI und die Cloud.",
+ "plans_value": "Zehn KI-Stunden im Monat sind zehn Unterrichtsstunden. In 10 GB passen über hundert Stunden Aufnahmen. Videos füllen sie viel schneller. Wer viel filmt, fährt mit 50 GB leichter.",
+ "plans_punch": "Ein Jahr Plus kostet so viel wie eine Unterrichtsstunde.",
  "pri_h": "Die Aufnahmen bleiben auf Ihrem Gerät",
  "pri_p": "Aufnahmen und Videos liegen auf dem Gerät. Für die KI-Analyse geht nur der Ton hinaus, und er wird nach der Analyse gelöscht. Das Bild verlässt das Gerät nicht.",
  "con_h": "Vor der Aufnahme",
@@ -283,7 +314,17 @@ T = {
 },
 }
 
-SCRIPT = """(function(){var META=__META__;
+SCRIPT = """(function(){var META=__META__,PRICE=__REGION__;
+/* 값은 읽는 말이 아니라 사는 곳이 정한다. 시간대로 어림잡는다.
+   틀려도 스토어에 들어가면 맞는 값이 보이고, 그 줄도 적어 두었다. */
+function region(){try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
+if(z==="Asia/Seoul")return "kr";
+if(/^Europe\\//.test(z))return ["Europe/Moscow","Europe/Istanbul","Europe/Kyiv","Europe/Kiev",
+"Europe/Minsk","Europe/Simferopol","Europe/Volgograd","Europe/Samara","Europe/Saratov",
+"Europe/Astrakhan","Europe/Ulyanovsk","Europe/Kirov"].indexOf(z)<0?"eu":"xx";
+if(["Atlantic/Reykjavik","Atlantic/Canary","Atlantic/Madeira","Atlantic/Azores","Atlantic/Faroe"].indexOf(z)>=0)return "eu";
+return "xx"}catch(e){return "xx"}}
+var RG=region();
 var KEY="vl-app-lang",langs=["ko","en","de"];
 function pick(){try{var s=localStorage.getItem(KEY);if(s&&langs.indexOf(s)>=0)return s}catch(e){}
 var l=(navigator.languages||[navigator.language||"en"]);
@@ -301,10 +342,93 @@ document.querySelectorAll("[data-set]").forEach(function(b){b.classList.toggle("
 document.querySelectorAll("[data-hero]").forEach(function(e){e.src="/prova/shots/"+x+"/hero.webp"});
 document.querySelectorAll("[data-shot]").forEach(function(e){e.src="/prova/shots/"+x+"/"+e.getAttribute("data-shot")+".webp"});
 document.querySelectorAll("[data-tile]").forEach(function(e){e.src="/prova/shots/"+x+"/"+e.getAttribute("data-tile")+".webp"});
+var pp=(PRICE[x]||{})[RG];
+if(pp){document.querySelectorAll("[data-pp]").forEach(function(e){e.textContent=pp[+e.getAttribute("data-pp")]||""});
+document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pp[6]})}
 try{localStorage.setItem(KEY,x)}catch(e){}}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-set]");
 if(b){set(b.getAttribute("data-set"))}});
 set(pick());})();"""
+
+
+
+# 가격은 읽는 말이 아니라 사는 곳이 정한다(렛지 페이지와 같은 규칙,
+# 대표님 2026-11-17). 유럽에 사는 한국인 음악가가 우리 핵심 고객이라
+# 언어로 고르면 그 사람에게 한국 값이 보인다. 시간대로 지역을 어림잡고,
+# 모르는 지역에는 값을 적지 않는다. 틀린 값보다 안 적는 게 낫다.
+#
+# 자리: (10GB 큰 값, 10GB 작은 값, 10GB 아래 줄, 50GB 큰 값, 50GB 작은 값,
+#        50GB 아래 줄, 값 설명 한 줄)
+# 큰 값은 연간을 열두 달로 나눈 값이다(49,99/12 = 4,17). 연간을 앞에
+# 세우는 것은 렛지에서 정한 방식이다(2026-11-19).
+REGION = {
+ "ko": {
+  "eu": ("월 4,17 €", "연 49,99 €, 1년에 한 번 결제", "월간은 월 4,99 €",
+         "월 5,83 €", "연 69,99 €, 1년에 한 번 결제", "월간은 월 6,99 €",
+         "결제는 앱 스토어·구글 플레이에서 해요. 값은 스토어에서 확인하실 수 있어요."),
+  "kr": ("월 5,750원", "연 69,000원, 1년에 한 번 결제", "월간은 월 6,900원",
+         "월 8,250원", "연 99,000원, 1년에 한 번 결제", "월간은 월 9,900원",
+         "한국 가격이에요. 결제는 앱 스토어·구글 플레이에서 해요."),
+  "xx": ("스토어에서 구독", "", "", "스토어에서 구독", "", "",
+         "나라마다 값이 달라서 스토어에서 확인하실 수 있어요."),
+ },
+ "en": {
+  "eu": ("€4.17/mo", "€49.99 billed once a year", "or €4.99/mo billed monthly",
+         "€5.83/mo", "€69.99 billed once a year", "or €6.99/mo billed monthly",
+         "You pay in the App Store or on Google Play. The store always shows the current price."),
+  "kr": ("₩5,750/mo", "₩69,000 billed once a year", "or ₩6,900/mo billed monthly",
+         "₩8,250/mo", "₩99,000 billed once a year", "or ₩9,900/mo billed monthly",
+         "Prices for Korea. You pay in the App Store or on Google Play."),
+  "xx": ("In the store", "", "", "In the store", "", "",
+         "Prices differ by country, and the store shows yours."),
+ },
+ "de": {
+  "eu": ("4,17 €/Monat", "49,99 € einmal im Jahr", "oder 4,99 €/Monat bei monatlicher Zahlung",
+         "5,83 €/Monat", "69,99 € einmal im Jahr", "oder 6,99 €/Monat bei monatlicher Zahlung",
+         "Bezahlt wird im App Store oder bei Google Play. Den aktuellen Preis zeigt immer der Store."),
+  "kr": ("5.750 ₩/Monat", "69.000 ₩ einmal im Jahr", "oder 6.900 ₩/Monat bei monatlicher Zahlung",
+         "8.250 ₩/Monat", "99.000 ₩ einmal im Jahr", "oder 9.900 ₩/Monat bei monatlicher Zahlung",
+         "Preise für Korea. Bezahlt wird im App Store oder bei Google Play."),
+  "xx": ("Im Store", "", "", "Im Store", "", "",
+         "Die Preise unterscheiden sich je nach Land, der Store zeigt Ihren."),
+ },
+}
+PRICE_SLOT = {"@p10m": 0, "@p10y": 1, "@p10mo": 2, "@p50m": 3, "@p50y": 4, "@p50mo": 5,
+              "@free": 7}
+
+# 7번 자리: 무료 칸의 값. 유럽에서 "0원"이 "월 4,17 €" 옆에 서면
+# 어긋나 보여서 이것도 지역에 맞춘다.
+FREE = {"ko": {"eu": "0 €", "kr": "0원", "xx": "무료"}, "en": {"eu": "€0", "kr": "₩0", "xx": "Free"}, "de": {"eu": "0 €", "kr": "0 ₩", "xx": "Kostenlos"}}
+for _l, _rs in REGION.items():
+    for _rg in _rs:
+        _rs[_rg] = _rs[_rg] + (FREE[_l][_rg],)
+
+
+
+def _plans(l):
+    """요금제 카드 셋. 값은 자바스크립트가 지역에 맞게 채운다."""
+    t = T[l]
+    out = []
+    for i, (name, tag, pr, pr2, bullets, foot) in enumerate(t["cards"]):
+        def cell(v, cls):
+            if v in PRICE_SLOT:
+                return f'<div class="{cls}" data-pp="{PRICE_SLOT[v]}"></div>'
+            return f'<div class="{cls}">{v}</div>' if v else f'<div class="{cls}"></div>'
+        lis = "".join(f'<li class="up">{b}</li>' if b.startswith("+ ") else f"<li>{b}</li>"
+                      for b in bullets)
+        out.append(f'<div class="pcard{" hi" if i == 1 else ""}"><h3>{name}</h3>'
+                   f'<div class="tag">{tag}</div>'
+                   + cell(pr, "pr") + cell(pr2, "pr2")
+                   + f"<ul>{lis}</ul>"
+                   + (cell(foot, "foot") if foot else "")
+                   + "</div>")
+    return (f'<section data-l="{l}" class="plans{_on(l)}"><h2>{t["plans_h"]}</h2>'
+            f'<p class="sub">{t["plans_sub"]}</p>'
+            f'<div class="pcards">{"".join(out)}</div>'
+            f'<p class="note trial">{t["trial"]}</p>'
+            f'<p class="value">{t["plans_value"]}</p>'
+            f'<p class="punch">{t["plans_punch"]}</p>'
+            f'<p class="note" style="margin-top:10px" data-pricenote></p></section>')
 
 
 def _on(l):
@@ -400,6 +524,7 @@ def page():
         "".join(_feat(l, i, *f)
                 for i, f in enumerate(x for x in T[l]["feats"] if x[0] in DEEP))
         for l, _ in LANGS)
+    plans = "".join(_plans(l) for l, _ in LANGS)
     pri = "".join(
         f'<section data-l="{l}" class="pri{_on(l)}">'
         f'<div><h2>{T[l]["pri_h"]}</h2><p>{T[l]["pri_p"]}</p></div>'
@@ -443,10 +568,11 @@ def page():
 {hero}
 {tiles}
 {deep}
+{plans}
 {pri}
 {get}
 </main>
 <footer><div class="wrap">{foot}<div style="margin-top:10px">© 2026 Vicino Labs</div></div></footer>
-<script>{SCRIPT.replace("__META__", _meta_json())}</script>
+<script>{SCRIPT.replace("__META__", _meta_json()).replace("__REGION__", json.dumps(REGION, ensure_ascii=False))}</script>
 </body></html>
 """
