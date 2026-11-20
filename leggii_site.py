@@ -362,7 +362,8 @@ document.querySelectorAll('[data-price="plusyear"]').forEach(function(e){e.textC
 document.querySelectorAll('[data-price="plusmonth"]').forEach(function(e){e.textContent=pr[3]});
 document.querySelectorAll("[data-pricenote]").forEach(function(e){e.textContent=pr[4]});
 document.querySelectorAll("[data-pricecta]").forEach(function(e){e.textContent=pr[5]});
-document.querySelectorAll("[data-pricesoon]").forEach(function(e){var v=pr[6]||"";e.textContent=v;e.style.display=v?"":"none"});}
+document.querySelectorAll("[data-pricesoon]").forEach(function(e){var v=pr[6]||"";e.textContent=v;e.style.display=v?"":"none"});
+document.querySelectorAll("[data-pricelink]").forEach(function(e){var v=pr[7]||"";e.textContent=v;e.parentNode.style.display=v?"":"none"});}
 if(META[x]){document.title=META[x][0];
 var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute("content",META[x][1]);
 var ot=document.querySelector('meta[property="og:title"]');if(ot)ot.setAttribute("content",META[x][0]);
@@ -400,6 +401,7 @@ REGION = {
    '결제는 앱 스토어·구글 플레이에서 하십니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
    '위레가토 아이디로 가입하고 카드로 결제합니다.',
    '출시 기념가입니다. Google Play 는 11월 30일까지, App Store 는 코드 LEGGIISTART 로 12월 31일까지. 그 뒤에는 12,99 €입니다.',
+   'App Store 에서 코드 받기',
   ),
   'kr': (
    '17,000원',
@@ -409,6 +411,7 @@ REGION = {
    '한국 가격입니다. 결제는 앱 스토어·구글 플레이에서 하시며, AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다. 값은 스토어에서 확인하실 수 있습니다.',
    '홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요.',
    '출시 기념가입니다. Google Play 는 11월 30일까지, App Store 는 코드 LEGGIISTART 로 12월 31일까지. 그 뒤에는 22,000원입니다.',
+   'App Store 에서 코드 받기',
   ),
   'xx': (
    '스토어에서 구매',
@@ -417,6 +420,7 @@ REGION = {
    '',
    '결제는 앱 스토어·구글 플레이에서 하십니다. 나라마다 값이 달라 스토어에서 확인하실 수 있습니다. AI 시간 충전(5시간 · 15시간, 12개월 사용)도 앱 안에서 하실 수 있습니다.',
    '홈페이지 결제는 유럽에서만 됩니다. 앱 스토어·구글 플레이에서 구독해 주세요.',
+   '',
    '',
   ),
  },
@@ -429,6 +433,7 @@ REGION = {
    'You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
    'Sign up with a welegato ID and pay by card.',
    'Launch price. On Google Play until 30 November, on the App Store with code LEGGIISTART until 31 December. After that it is €12.99.',
+   'Redeem the code on the App Store',
   ),
   'kr': (
    '₩17,000 once',
@@ -438,6 +443,7 @@ REGION = {
    'Prices for Korea. You pay in the App Store or on Google Play, and AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app. The store always shows the current price.',
    'Website payment is for Europe only. Subscribe on the App Store or Google Play.',
    'Launch price. On Google Play until 30 November, on the App Store with code LEGGIISTART until 31 December. After that it is ₩22,000.',
+   'Redeem the code on the App Store',
   ),
   'xx': (
    'in the store',
@@ -446,6 +452,7 @@ REGION = {
    '',
    'You pay in the App Store or on Google Play, where the price for your country is shown. AI time top-ups (5 and 15 hours, valid 12 months) are bought in the app.',
    'Website payment is for Europe only. Subscribe on the App Store or Google Play.',
+   '',
    '',
   ),
  },
@@ -458,6 +465,7 @@ REGION = {
    'Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
    'Mit einer welegato-ID anmelden und per Karte zahlen.',
    'Einführungspreis. Bei Google Play bis zum 30. November, im App Store mit dem Code LEGGIISTART bis zum 31. Dezember. Danach 12,99 €.',
+   'Code im App Store einlösen',
   ),
   'kr': (
    '17.000 ₩ einmalig',
@@ -467,6 +475,7 @@ REGION = {
    'Preise für Korea. Bezahlt wird im App Store oder bei Google Play; KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App. Den aktuellen Preis zeigt immer der Store.',
    'Die Zahlung über die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play.',
    'Einführungspreis. Bei Google Play bis zum 30. November, im App Store mit dem Code LEGGIISTART bis zum 31. Dezember. Danach 22.000 ₩.',
+   'Code im App Store einlösen',
   ),
   'xx': (
    'im Store',
@@ -475,6 +484,7 @@ REGION = {
    '',
    'Bezahlt wird im App Store oder bei Google Play, wo der Preis für Ihr Land steht. KI-Zeit zum Aufladen (5 und 15 Stunden, 12 Monate gültig) kaufen Sie in der App.',
    'Die Zahlung über die Website gibt es nur in Europa. Abonnieren Sie im App Store oder bei Google Play.',
+   '',
    '',
   ),
  },
@@ -527,6 +537,10 @@ def _ptab(l):
             f'<p class="value">{t["plans_value"]}</p>'
             f'<p class="punch">{t["plans_punch"]}</p>'
             f'<p class="punch" data-pricesoon style="display:none"></p>'
+            f'<p style="margin:14px 0 0;display:none">'
+            f'<a class="cta" data-pricelink '
+            f'href="https://apps.apple.com/redeem?ctx=offercodes'
+            f'&amp;id=6832925566&amp;code=LEGGIISTART"></a></p>'
             f'<p class="note" style="margin-top:10px" data-pricenote></p>'
             f'<p style="margin:20px 0 0"><a class="cta" href="/leggii/plus/">{t["plans_cta"]} \u2192</a></p>'
             f'<p class="note" style="margin-top:8px" data-pricecta></p></div>')
