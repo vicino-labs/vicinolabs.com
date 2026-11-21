@@ -1,6 +1,11 @@
 """끼아베(Chiave) 개인정보처리방침 본문 (ko/en/de/it) — chiave_legal.py가 HTML로 만든다.
 
 2026-11-06 버전 1.0 — 2026-11-06 운영자 승인, 게시.
+2026-11-21 버전 1.2 — 녹음 피아노 듣기(서버)와 쪽 전체 읽기 서버를 적음. 1.1 은 "듣고 적기는
+기기 안에서만, 보내지 않음"이라고만 적어 사실과 달라졌다(피아노는 Cloud Run 으로 간다).
+고친 곳: 핵심 요약 마지막 줄, 「마이크·녹음 (소리로 적기)」 절 전체(기기 안 / 서버 / 녹음 파일 /
+서버 기록으로 나눔), 「악보 스캔」 절에 쪽 전체 읽기(Audiveris·homr, Gemini 아님) 추가,
+수탁자 Google 줄에 Cloud Run(EU 벨기에) 추가. 4개 언어 모두. 끼아베 출시 전 필수 항목이었다.
 2026-11-12 버전 1.1 — 운영자 승인(초안대로 게시): 위레가토 통합 아이디(선택, 51), 끼아베에게 물어보기,
 AI 답 신고, 듣고 적기 마이크(기기 안에서만), 수탁자 Cloudflare·Kakao 추가. leggii_privacy_content.py의 틀과 문구를 따랐다.
 회원가입·계정 없음. 악보·편집·스캔 원본 페이지 이미지는 기기 안에만(클라우드 없음).
@@ -54,7 +59,7 @@ PRIVACY = {
  "ko": {
   "title": "끼아베(Chiave) 개인정보처리방침",
   "h1": "개인정보처리방침",
-  "meta": [("시행일", "2026.11.12"), ("버전", "1.1"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.21"), ("버전", "1.2"), ("운영자", "Vicino Labs")],
   "lede": "Vicino Labs가 만든 끼아베(Chiave)는 악보를 쓰고, 스캔하고, 이조하는 앱입니다. 기본 기능은 회원가입 없이 쓸 수 있고, 악보·편집 내용·스캔한 원본 페이지 이미지는 이용자의 기기에만 저장됩니다. 악보 스캔, 끼아베에게 물어보기, 선택 로그인(위레가토 통합 아이디)을 쓸 때만 저희 서버(EU)와 아래 서비스를 거칩니다. 앱이 다루는 정보를 정확하게 적어 둡니다.",
   "footer": "본 방침은 2026년 11월 12일부터 시행됩니다 (버전 1.1).",
   "other": "이용약관 보기 →",
@@ -67,7 +72,7 @@ PRIVACY = {
 <li>광고 네트워크와 분석·추적 도구가 없습니다. 무료 요금제 화면 아래의 링크는 같은 회사 서비스 welegato를 알리는 자체 배너입니다.</li>
 <li><strong>위레가토 통합 아이디</strong> 로그인은 선택입니다. 로그인하면 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
 <li><strong>끼아베에게 물어보기</strong>에 질문하면 질문이 저희 서버와 Google Gemini를 거칩니다. 질문 내용은 저장하지 않습니다.</li>
-<li><strong>듣고 적기</strong>는 마이크 소리를 기기 안에서만 음표로 바꾸며, 소리를 보내거나 저장하지 않습니다. 위치 정보는 쓰지 않습니다.</li>
+<li><strong>소리로 적기</strong>는 노래나 한 줄 악기를 기기 안에서만 음표로 바꿉니다. <strong>피아노</strong>를 고를 때만 녹음이 저희 듣기 서버(EU)를 거치고, 서버는 녹음을 저장하지 않습니다. 위치 정보는 쓰지 않습니다.</li>
 </ul></div>"""),
    ("기기에 저장되는 정보", """<ul>
 <li>이용자가 쓰거나 스캔한 악보와 편집·이조 내용</li>
@@ -77,11 +82,19 @@ PRIVACY = {
 </ul>
 <p>이 정보는 기기 안의 앱 저장소에 있고, 악보 스캔 때 보내는 조각 이미지(아래)를 빼면 저희에게 전송되지 않습니다. 클라우드 저장이나 동기화 기능은 없습니다. 앱에서 악보를 지우거나 앱을 삭제하면 사라집니다. 다만 iPhone·iPad의 키체인에 저장한 기기 번호는 재설치 후 무료 체험이 반복되지 않도록 하기 위한 것이어서, 앱을 삭제해도 남을 수 있습니다. 처리 근거: 앱 기능 제공(GDPR 제6조 제1항 b호).</p>"""),
    ("카메라·사진·파일", """<p>악보 스캔에서 페이지를 고를 때만 카메라 권한을 요청하거나 사진 앨범·PDF 파일을 고르게 합니다. 고른 이미지는 기기에 저장되며, 스캔을 위해 보내는 조각 이미지(아래)를 빼면 기기 밖으로 나가지 않습니다.</p>"""),
-   ("마이크 (듣고 적기)", """<p>듣고 적기(소리로 적기)를 켤 때만 마이크 권한을 요청합니다. 노래나 연주 소리는 기기 안에서 아주 짧은 조각으로 음높이와 길이만 읽어 음표로 바꾸며, 소리는 녹음 파일로 남기지 않고 저희 서버나 다른 곳으로 보내지 않습니다. 처리 근거: 이용자가 요청한 기능의 제공(b호).</p>"""),
+   ("마이크·녹음 (소리로 적기)", """<p>소리로 적기나 오디오 녹음을 쓸 때만 마이크 권한을 요청합니다. 무엇이 기기 안에 머무르고 무엇이 서버를 거치는지 나누어 적습니다.</p>
+<ul>
+<li><strong>노래·한 줄 악기(기기 안):</strong> 노래나 연주 소리를 기기 안에서 아주 짧은 조각으로 음높이와 길이만 읽어 음표로 바꿉니다. 소리는 녹음 파일로 남기지 않고 저희 서버나 다른 곳으로 <strong>보내지 않습니다</strong>.</li>
+<li><strong>피아노(서버):</strong> 화음과 두 손을 함께 읽으려면 기기 안에서 할 수 없어서, 녹음을 저희 듣기 서버(Google Cloud Run, EU 벨기에)로 보냅니다. 서버는 녹음에서 음높이·길이만 읽어 기기로 돌려보내고 <strong>녹음을 저장하지 않습니다</strong>(처리 직후 지웁니다). 피아노를 고르기 전에 앱이 이 사실을 알립니다.</li>
+<li><strong>녹음 파일:</strong> 기기에 있는 녹음 파일(WAV·M4A·MP3·AAC·FLAC)을 골라 쓸 수도 있습니다. 파일을 읽는 것은 기기 안에서 하고, 그 뒤는 위와 같습니다.</li>
+<li><strong>서버에 남는 것:</strong> 기기 식별값의 해시, 시각, 녹음 길이(초), 성공 여부만 기록합니다. 분량을 세고 남용을 막기 위한 것입니다. 보관 기간: 90일이 지나면 지웁니다.</li>
+</ul>
+<p>처리 근거: 이용자가 요청한 기능의 제공(GDPR 제6조 제1항 b호), 서버 기록은 서비스 운영과 남용 방지를 위한 정당한 이익(f호).</p>"""),
    ("악보 스캔 (선택)", f"""<p>악보 스캔은 선택 기능이며, 이용자가 페이지(카메라, 사진 앨범, PDF)를 골라 스캔을 시작할 때만 동작합니다.</p>
 <ul>
 <li><strong>보내는 정보:</strong> 앱이 각 페이지를 기기 안에서 약 2마디 크기의 작은 조각 이미지로 자르고, 이 조각 이미지를 저희 서버로 보냅니다.</li>
 <li><strong>처리:</strong> 저희 서버(Supabase Edge Function, EU)가 각 조각을 Google의 Gemini API로 전달해 음표를 읽고, 인식 결과를 이용자의 기기로 돌려보냅니다. 유료 API로 쓰며, Google은 이 데이터를 자사 모델 학습에 쓰지 않습니다.</li>
+<li><strong>쪽 전체를 한 번에 읽는 길:</strong> 악보에 따라 앱이 쪽을 조각내지 않고 쪽 이미지를 저희 악보 읽기 서버(Google Cloud Run, EU 벨기에)로 보내기도 합니다. 그 서버에서는 Gemini가 아니라 공개 소프트웨어(Audiveris, homr)가 음표를 읽습니다. 쪽 이미지는 읽는 동안만 쓰고 <strong>저장하지 않습니다</strong>.</li>
 <li><strong>저장하지 않는 것:</strong> 조각 이미지와 인식 결과는 저희 서버에 저장하지 않습니다.</li>
 <li><strong>서버에 남는 것:</strong> 기기 식별값의 해시, 시각, 사용한 AI 모델 이름, 성공 여부, 토큰 수만 기록합니다. 보관 기간: 90일이 지나면 지웁니다.</li>
 </ul>
@@ -108,7 +121,7 @@ PRIVACY = {
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
    ("서비스 제공자(수탁자)와 국외 이전", """<ul>
 <li><strong>Supabase</strong> — 서버(Edge Function)와 데이터베이스, 로그인(위레가토 통합 아이디), EU(독일 프랑크푸르트) 데이터센터 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
-<li><strong>Google</strong> — Gemini API(악보 스캔·도우미), Google Play 결제, Google 로그인</li>
+<li><strong>Google</strong> — Gemini API(악보 스캔·도우미), Cloud Run(악보 읽기 서버와 녹음 듣기 서버, EU 벨기에), Google Play 결제, Google 로그인</li>
 <li><strong>Apple</strong> — App Store 결제, Apple로 로그인(iPhone·iPad)</li>
 <li><strong>Kakao</strong> — 카카오 로그인</li>
 <li><strong>Cloudflare</strong> — 이메일 로그인의 자동 가입 방지(Turnstile)</li>
@@ -131,7 +144,7 @@ PRIVACY = {
  "en": {
   "title": "Chiave Privacy Policy",
   "h1": "Privacy Policy",
-  "meta": [("Effective", "2026-11-12"), ("Version", "1.1"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-21"), ("Version", "1.2"), ("Operator", "Vicino Labs")],
   "lede": "Chiave, made by Vicino Labs, is an app for writing, scanning and transposing scores. Its basic features need no account; your scores, your edits and the original scanned page images are stored only on your device. Only when you use score scanning, Ask Chiave or the optional sign-in (welegato ID) does anything go through our server (EU) and the services below. Here is exactly what the app handles.",
   "footer": "This policy is effective from 12 November 2026 (version 1.1).",
   "other": "Terms of Service →",
@@ -144,7 +157,7 @@ PRIVACY = {
 <li>No ad networks and no analytics or tracking tools. The link at the bottom of the screen on the Free plan is our own banner for welegato, a service of the same company.</li>
 <li>Signing in with a <strong>welegato ID</strong> is optional. If you sign in, account data is handled under the welegato privacy policy.</li>
 <li>Questions you ask <strong>Ask Chiave</strong> go through our server and Google Gemini. Questions are not stored.</li>
-<li><strong>Writing by sound</strong> turns microphone sound into notes on your device only; the sound is never sent or stored. The app does not use your location.</li>
+<li><strong>Writing by sound</strong> turns a voice or single-line instrument into notes on your device only. Only when you choose <strong>piano</strong> does the recording go through our listening server (EU), which does not store it. The app does not use your location.</li>
 </ul></div>"""),
    ("Data stored on your device", """<ul>
 <li>Scores you write or scan, and your edits and transpositions</li>
@@ -154,11 +167,19 @@ PRIVACY = {
 </ul>
 <p>This data stays in the app's storage on your device and is not sent to us, except for the strip images sent for scanning (below). There is no cloud storage or sync. It is deleted when you remove a score or uninstall the app. The device number in the iPhone/iPad Keychain, however, exists to stop the free trial from being repeated after reinstalling, so it may remain after the app is deleted. Legal basis: providing the app's features (Art. 6(1)(b) GDPR).</p>"""),
    ("Camera, photos and files", """<p>The app asks for the camera, or lets you pick photos from your album or a PDF file, only when you choose pages to scan. The images you pick are stored on your device and do not leave it, except for the strip images sent for scanning (below).</p>"""),
-   ("Microphone (writing by sound)", """<p>The app asks for the microphone only when you turn on writing by sound. Your singing or playing is read on the device, in very short pieces, for pitch and length only and turned into notes; the sound is not kept as a recording and is not sent to our server or anywhere else. Legal basis: providing the feature you asked for (b).</p>"""),
+   ("Microphone and recording (writing by sound)", """<p>The app asks for the microphone only when you use writing by sound or audio recording. What stays on the device and what goes through a server differs:</p>
+<ul>
+<li><strong>Voice or single-line instrument (on the device):</strong> your singing or playing is read on the device, in very short pieces, for pitch and length only and turned into notes. The sound is not kept as a recording and is <strong>not sent</strong> to our server or anywhere else.</li>
+<li><strong>Piano (server):</strong> reading chords and both hands at once cannot be done on the device, so the recording is sent to our listening server (Google Cloud Run, EU, Belgium). The server reads only pitch and length and sends the notes back to your device; it <strong>does not store the recording</strong> (it is deleted right after processing). The app tells you this before you choose piano.</li>
+<li><strong>Recording files:</strong> you can also pick a recording you already have (WAV, M4A, MP3, AAC, FLAC). Reading the file happens on the device; after that the above applies.</li>
+<li><strong>Kept on the server:</strong> only a hash of the device identifier, the time, the length of the recording in seconds and a success flag, to count your allowance and prevent abuse. Retention period: deleted after 90 days.</li>
+</ul>
+<p>Legal basis: providing the feature you asked for (Art. 6(1)(b) GDPR); for the server log, our legitimate interest in running the service and preventing abuse (f).</p>"""),
    ("Score scanning (optional)", f"""<p>Score scanning is optional and runs only when you pick pages (camera, photo album, PDF) and start a scan.</p>
 <ul>
 <li><strong>What is sent:</strong> the app cuts each page on your device into small strip images of about 2 bars and sends these strips to our server.</li>
 <li><strong>Processing:</strong> our server (Supabase Edge Function, EU) forwards each strip to Google's Gemini API, which reads the notes; the result is sent back to your device. We use the paid API; Google does not use this data to train its models.</li>
+<li><strong>Reading a whole page at once:</strong> for some scores the app does not cut the page up but sends the page image to our score-reading server (Google Cloud Run, EU, Belgium). There the notes are read by open-source software (Audiveris, homr), not by Gemini. The page image is used only while it is being read and is <strong>not stored</strong>.</li>
 <li><strong>Not stored:</strong> strip images and recognised results are not stored on our server.</li>
 <li><strong>Kept on the server:</strong> only a hash of the device identifier, the time, the AI model name, a success flag and token counts. Retention period: deleted after 90 days.</li>
 </ul>
@@ -185,7 +206,7 @@ PRIVACY = {
 <p>Under welegato's terms, only people aged 16 or over can sign in. Legal basis: providing the feature you chose (b).</p>"""),
    ("Service providers (processors) and transfers", """<ul>
 <li><strong>Supabase</strong> — server (Edge Function), database and sign-in (welegato ID), EU data centre (Frankfurt, Germany) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">policy</a>)</li>
-<li><strong>Google</strong> — Gemini API (score scanning, assistant), Google Play payments, Google sign-in</li>
+<li><strong>Google</strong> — Gemini API (score scanning, assistant), Cloud Run (the score-reading and recording-listening servers, EU, Belgium), Google Play payments, Google sign-in</li>
 <li><strong>Apple</strong> — App Store payments, Sign in with Apple (iPhone, iPad)</li>
 <li><strong>Kakao</strong> — Kakao sign-in</li>
 <li><strong>Cloudflare</strong> — protection against automated email sign-ups (Turnstile)</li>
@@ -208,7 +229,7 @@ PRIVACY = {
  "de": {
   "title": "Chiave Datenschutzerklärung",
   "h1": "Datenschutzerklärung",
-  "meta": [("Gültig ab", "12.11.2026"), ("Version", "1.1"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "21.11.2026"), ("Version", "1.2"), ("Betreiber", "Vicino Labs")],
   "lede": "Chiave von Vicino Labs ist eine App zum Schreiben, Scannen und Transponieren von Noten. Die Grundfunktionen brauchen kein Konto; Ihre Noten, Ihre Bearbeitungen und die gescannten Originalseiten werden nur auf Ihrem Gerät gespeichert. Nur wenn Sie den Notenscan, „Chiave fragen“ oder die freiwillige Anmeldung (welegato-ID) nutzen, geht etwas über unseren Server (EU) und die unten genannten Dienste. Hier steht genau, welche Daten die App verarbeitet.",
   "footer": "Diese Erklärung gilt ab dem 12. November 2026 (Version 1.1).",
   "other": "Nutzungsbedingungen →",
@@ -221,7 +242,7 @@ PRIVACY = {
 <li>Keine Werbenetzwerke und keine Analyse- oder Tracking-Tools. Der Link unten im Bildschirm im Free-Tarif ist unser eigenes Banner für welegato, einen Dienst desselben Unternehmens.</li>
 <li>Die Anmeldung mit einer <strong>welegato-ID</strong> ist freiwillig. Wenn Sie sich anmelden, gelten für die Kontodaten die Datenschutzhinweise von welegato.</li>
 <li>Fragen an <strong>„Chiave fragen“</strong> gehen über unseren Server und Google Gemini. Fragen werden nicht gespeichert.</li>
-<li><strong>Per Klang schreiben</strong> wandelt den Mikrofonton nur auf dem Gerät in Noten um; der Ton wird weder gesendet noch gespeichert. Die App nutzt keinen Standort.</li>
+<li><strong>Per Klang schreiben</strong> wandelt Gesang oder ein einstimmiges Instrument nur auf dem Gerät in Noten um. Nur wenn Sie <strong>Klavier</strong> wählen, läuft die Aufnahme über unseren Hörserver (EU), der sie nicht speichert. Die App nutzt keinen Standort.</li>
 </ul></div>"""),
    ("Auf dem Gerät gespeicherte Daten", """<ul>
 <li>Von Ihnen geschriebene oder gescannte Noten sowie Ihre Bearbeitungen und Transpositionen</li>
@@ -231,11 +252,19 @@ PRIVACY = {
 </ul>
 <p>Diese Daten bleiben im Speicher der App auf Ihrem Gerät und werden nicht an uns übermittelt – außer den Streifenbildern für den Scan (unten). Es gibt keine Cloud-Speicherung und keine Synchronisierung. Sie werden gelöscht, wenn Sie Noten entfernen oder die App deinstallieren. Die Gerätenummer im Schlüsselbund von iPhone/iPad dient jedoch dazu, eine Wiederholung der Testphase nach Neuinstallation zu verhindern, und kann daher nach dem Löschen der App erhalten bleiben. Rechtsgrundlage: Bereitstellung der App-Funktionen (Art. 6 Abs. 1 lit. b DSGVO).</p>"""),
    ("Kamera, Fotos und Dateien", """<p>Die App fragt nur nach der Kamera oder lässt Sie Fotos aus dem Album oder eine PDF-Datei auswählen, wenn Sie Seiten zum Scannen wählen. Die ausgewählten Bilder werden auf dem Gerät gespeichert und verlassen es nicht – außer den Streifenbildern für den Scan (unten).</p>"""),
-   ("Mikrofon (per Klang schreiben)", """<p>Die App fragt nur nach dem Mikrofon, wenn Sie „per Klang schreiben“ einschalten. Dein Singen oder Spielen wird auf dem Gerät in sehr kurzen Stücken nur auf Tonhöhe und Dauer ausgewertet und in Noten umgewandelt; der Ton wird nicht als Aufnahme gespeichert und weder an unseren Server noch anderswohin gesendet. Rechtsgrundlage: Bereitstellung der gewünschten Funktion (lit. b).</p>"""),
+   ("Mikrofon und Aufnahme (per Klang schreiben)", """<p>Die App fragt nur nach dem Mikrofon, wenn Sie „per Klang schreiben“ oder die Audioaufnahme nutzen. Was auf dem Gerät bleibt und was über einen Server läuft, ist unterschiedlich:</p>
+<ul>
+<li><strong>Gesang oder einstimmiges Instrument (auf dem Gerät):</strong> Ihr Singen oder Spielen wird auf dem Gerät in sehr kurzen Stücken nur auf Tonhöhe und Dauer ausgewertet und in Noten umgewandelt. Der Ton wird nicht als Aufnahme gespeichert und <strong>weder an unseren Server noch anderswohin gesendet</strong>.</li>
+<li><strong>Klavier (Server):</strong> Akkorde und beide Hände zugleich zu lesen ist auf dem Gerät nicht möglich; die Aufnahme geht daher an unseren Hörserver (Google Cloud Run, EU, Belgien). Der Server liest nur Tonhöhe und Dauer und sendet die Noten an Ihr Gerät zurück; er <strong>speichert die Aufnahme nicht</strong> (sie wird direkt nach der Verarbeitung gelöscht). Die App weist darauf hin, bevor Sie „Klavier“ wählen.</li>
+<li><strong>Aufnahmedateien:</strong> Sie können auch eine vorhandene Aufnahme wählen (WAV, M4A, MP3, AAC, FLAC). Das Lesen der Datei geschieht auf dem Gerät; danach gilt das Obige.</li>
+<li><strong>Auf dem Server gespeichert:</strong> nur ein Hash der Gerätekennung, der Zeitpunkt, die Länge der Aufnahme in Sekunden und ein Erfolgskennzeichen — für die Verbrauchszählung und zur Missbrauchsvermeidung. Speicherdauer: Löschung nach 90 Tagen.</li>
+</ul>
+<p>Rechtsgrundlage: Bereitstellung der gewünschten Funktion (Art. 6 Abs. 1 lit. b DSGVO); für das Serverprotokoll unser berechtigtes Interesse am Betrieb des Dienstes und an der Missbrauchsvermeidung (lit. f).</p>"""),
    ("Notenscan (freiwillig)", f"""<p>Der Notenscan ist freiwillig und läuft nur, wenn Sie Seiten (Kamera, Fotoalbum, PDF) auswählen und den Scan starten.</p>
 <ul>
 <li><strong>Gesendet werden:</strong> Die App schneidet jede Seite auf Ihrem Gerät in kleine Streifenbilder von etwa 2 Takten und sendet diese Streifen an unseren Server.</li>
 <li><strong>Verarbeitung:</strong> Unser Server (Supabase Edge Function, EU) leitet jeden Streifen an die Gemini-API von Google weiter, die die Noten liest; das Ergebnis geht zurück an Ihr Gerät. Wir nutzen die kostenpflichtige API; Google verwendet diese Daten nicht zum Training seiner Modelle.</li>
+<li><strong>Eine ganze Seite auf einmal lesen:</strong> Bei manchen Noten schneidet die App die Seite nicht auf, sondern sendet das Seitenbild an unseren Notenleseserver (Google Cloud Run, EU, Belgien). Dort lesen freie Programme (Audiveris, homr) die Noten, nicht Gemini. Das Seitenbild wird nur während des Lesens verwendet und <strong>nicht gespeichert</strong>.</li>
 <li><strong>Nicht gespeichert:</strong> Streifenbilder und Erkennungsergebnisse werden auf unserem Server nicht gespeichert.</li>
 <li><strong>Auf dem Server bleiben:</strong> nur ein Hash der Gerätekennung, Zeitpunkt, Name des KI-Modells, Erfolgskennzeichen und Token-Anzahl. Speicherdauer: Löschung nach 90 Tagen.</li>
 </ul>
@@ -262,7 +291,7 @@ PRIVACY = {
 <p>Nach den welegato-Bedingungen können sich nur Personen ab 16 Jahren anmelden. Rechtsgrundlage: Bereitstellung der gewählten Funktion (lit. b).</p>"""),
    ("Dienstleister (Auftragsverarbeiter) und Übermittlungen", """<ul>
 <li><strong>Supabase</strong> – Server (Edge Function), Datenbank und Anmeldung (welegato-ID), EU-Rechenzentrum (Frankfurt) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">Erklärung</a>)</li>
-<li><strong>Google</strong> – Gemini-API (Notenscan, Assistent), Google-Play-Zahlungen, Google-Anmeldung</li>
+<li><strong>Google</strong> – Gemini-API (Notenscan, Assistent), Cloud Run (Notenlese- und Hörserver, EU, Belgien), Google-Play-Zahlungen, Google-Anmeldung</li>
 <li><strong>Apple</strong> – App-Store-Zahlungen, „Mit Apple anmelden“ (iPhone, iPad)</li>
 <li><strong>Kakao</strong> – Kakao-Anmeldung</li>
 <li><strong>Cloudflare</strong> – Schutz vor automatischen E-Mail-Registrierungen (Turnstile)</li>
@@ -285,7 +314,7 @@ PRIVACY = {
  "it": {
   "title": "Chiave — Informativa sulla privacy",
   "h1": "Informativa sulla privacy",
-  "meta": [("In vigore dal", "12.11.2026"), ("Versione", "1.1"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "21.11.2026"), ("Versione", "1.2"), ("Gestore", "Vicino Labs")],
   "lede": "Chiave, di Vicino Labs, è un'app per scrivere, scansionare e trasporre spartiti. Le funzioni di base non richiedono un account; i tuoi spartiti, le tue modifiche e le immagini originali delle pagine scansionate restano solo sul tuo dispositivo. Solo quando usi la scansione degli spartiti, «Chiedi a Chiave» o l'accesso facoltativo (welegato ID) qualcosa passa dal nostro server (UE) e dai servizi indicati sotto. Ecco esattamente quali dati tratta l'app.",
   "footer": "Questa informativa è in vigore dal 12 novembre 2026 (versione 1.1).",
   "other": "Termini di utilizzo →",
@@ -298,7 +327,7 @@ PRIVACY = {
 <li>Nessuna rete pubblicitaria e nessuno strumento di analisi o tracciamento. Il link in fondo allo schermo nel piano Free è il nostro banner per welegato, un servizio della stessa società.</li>
 <li>L'accesso con un <strong>welegato ID</strong> è facoltativo. Se accedi, i dati dell'account sono trattati secondo l'informativa privacy di welegato.</li>
 <li>Le domande a <strong>«Chiedi a Chiave»</strong> passano dal nostro server e da Google Gemini. Le domande non vengono salvate.</li>
-<li><strong>Scrivere col suono</strong> trasforma il suono del microfono in note solo sul dispositivo; il suono non viene mai inviato né salvato. L'app non usa la posizione.</li>
+<li><strong>Scrivere col suono</strong> trasforma il canto o uno strumento a una voce in note solo sul dispositivo. Solo se scegli il <strong>pianoforte</strong> la registrazione passa dal nostro server di ascolto (UE), che non la conserva. L'app non usa la posizione.</li>
 </ul></div>"""),
    ("Dati salvati sul dispositivo", """<ul>
 <li>Gli spartiti che scrivi o scansioni, con le tue modifiche e trasposizioni</li>
@@ -308,11 +337,19 @@ PRIVACY = {
 </ul>
 <p>Questi dati restano nella memoria dell'app sul dispositivo e non ci vengono inviati, salvo le immagini a strisce inviate per la scansione (sotto). Non c'è archiviazione nel cloud né sincronizzazione. Si cancellano eliminando gli spartiti o disinstallando l'app. Il numero del dispositivo nel portachiavi di iPhone/iPad serve però a impedire che la prova gratuita si ripeta dopo una reinstallazione, quindi può restare anche dopo l'eliminazione dell'app. Base giuridica: fornitura delle funzioni dell'app (art. 6, par. 1, lett. b GDPR).</p>"""),
    ("Fotocamera, foto e file", """<p>L'app chiede la fotocamera, o ti fa scegliere foto dall'album o un file PDF, solo quando scegli le pagine da scansionare. Le immagini scelte restano sul dispositivo e non lo lasciano, salvo le immagini a strisce inviate per la scansione (sotto).</p>"""),
-   ("Microfono (scrivere col suono)", """<p>L'app chiede il microfono solo quando attivi la scrittura col suono. Il tuo canto o la tua esecuzione vengono letti sul dispositivo, in pezzi brevissimi, solo per altezza e durata e trasformati in note; il suono non viene conservato come registrazione e non viene inviato al nostro server né altrove. Base giuridica: fornire la funzione richiesta (lett. b).</p>"""),
+   ("Microfono e registrazione (scrivere col suono)", """<p>L'app chiede il microfono solo quando usi la scrittura col suono o la registrazione audio. Ciò che resta sul dispositivo e ciò che passa da un server è diverso:</p>
+<ul>
+<li><strong>Canto o strumento a una voce (sul dispositivo):</strong> il tuo canto o la tua esecuzione vengono letti sul dispositivo, in pezzi brevissimi, solo per altezza e durata e trasformati in note. Il suono non viene conservato come registrazione e <strong>non viene inviato</strong> al nostro server né altrove.</li>
+<li><strong>Pianoforte (server):</strong> leggere accordi e due mani insieme non è possibile sul dispositivo, quindi la registrazione viene inviata al nostro server di ascolto (Google Cloud Run, UE, Belgio). Il server legge solo altezza e durata e rimanda le note al tuo dispositivo; <strong>non conserva la registrazione</strong> (viene cancellata subito dopo l'elaborazione). L'app te lo dice prima che scelga «pianoforte».</li>
+<li><strong>File di registrazione:</strong> puoi anche scegliere una registrazione che hai già (WAV, M4A, MP3, AAC, FLAC). La lettura del file avviene sul dispositivo; dopo vale quanto sopra.</li>
+<li><strong>Conservato sul server:</strong> solo un hash dell'identificativo del dispositivo, l'ora, la durata della registrazione in secondi e un indicatore di esito, per contare il consumo e prevenire abusi. Periodo di conservazione: cancellazione dopo 90 giorni.</li>
+</ul>
+<p>Base giuridica: fornire la funzione richiesta (art. 6, par. 1, lett. b GDPR); per il registro del server, il nostro legittimo interesse a gestire il servizio e prevenire abusi (lett. f).</p>"""),
    ("Scansione degli spartiti (facoltativa)", f"""<p>La scansione degli spartiti è facoltativa e funziona solo quando scegli delle pagine (fotocamera, album, PDF) e avvii la scansione.</p>
 <ul>
 <li><strong>Cosa viene inviato:</strong> l'app taglia sul dispositivo ogni pagina in piccole immagini a strisce di circa 2 battute e invia queste strisce al nostro server.</li>
 <li><strong>Trattamento:</strong> il nostro server (Supabase Edge Function, UE) inoltra ogni striscia all'API Gemini di Google, che legge le note; il risultato torna al tuo dispositivo. Usiamo l'API a pagamento; Google non usa questi dati per addestrare i propri modelli.</li>
+<li><strong>Leggere una pagina intera in una volta:</strong> per alcuni spartiti l'app non taglia la pagina ma invia l'immagine della pagina al nostro server di lettura (Google Cloud Run, UE, Belgio). Lì le note vengono lette da software libero (Audiveris, homr), non da Gemini. L'immagine della pagina viene usata solo durante la lettura e <strong>non viene conservata</strong>.</li>
 <li><strong>Non salvato:</strong> le immagini a strisce e i risultati del riconoscimento non vengono salvati sul nostro server.</li>
 <li><strong>Sul server restano:</strong> solo un hash dell'identificativo del dispositivo, il momento, il nome del modello AI, l'esito (riuscito o no) e il numero di token. Periodo di conservazione: cancellati dopo 90 giorni.</li>
 </ul>
@@ -339,7 +376,7 @@ PRIVACY = {
 <p>Secondo i termini di welegato, possono accedere solo persone dai 16 anni in su. Base giuridica: fornire la funzione scelta (lett. b).</p>"""),
    ("Fornitori di servizi (responsabili) e trasferimenti", """<ul>
 <li><strong>Supabase</strong> — server (Edge Function), database e accesso (welegato ID), data center UE (Francoforte) (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">informativa</a>)</li>
-<li><strong>Google</strong> — API Gemini (scansione degli spartiti, assistente), pagamenti Google Play, accesso con Google</li>
+<li><strong>Google</strong> — API Gemini (scansione degli spartiti, assistente), Cloud Run (server di lettura degli spartiti e di ascolto delle registrazioni, UE, Belgio), pagamenti Google Play, accesso con Google</li>
 <li><strong>Apple</strong> — pagamenti App Store, accesso con Apple (iPhone, iPad)</li>
 <li><strong>Kakao</strong> — accesso con Kakao</li>
 <li><strong>Cloudflare</strong> — protezione dalle registrazioni email automatiche (Turnstile)</li>
