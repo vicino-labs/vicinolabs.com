@@ -13,6 +13,8 @@ App Store 환불은 Apple(reportaproblem), 외부 서비스에 App Store, Apple 
 2026-11-19 버전 1.5 (앱 1.5.4, 대표님 지시로 같은 날 시행): 무료 기능 축소(페달은 Pro, 연주목록 3개,
 사진 스캔에 작은 렛지 표시), 악보·녹음 개수 제한 없음 명시, Pro의 매월 AI 30분은 Leggii Plus로
 (1.5.4 전 구매자는 그대로), 한국어 “서재”를 “보관함”으로.
+2026-11-25 버전 1.6 (앱 1.5.5, 대표님 지시로 같은 날 시행): 무료 체험 7일 → 3일,
+무료 버전의 악보 5개·녹음 3분·스캔 사진 5장 한도 명시(1.5의 "악보·녹음 제한 없음"을 대신함).
 """
 
 from appoggio_privacy_content import _id_card
@@ -22,9 +24,9 @@ TERMS = {
  "ko": {
   "title": "렛지 악보(Leggii) 이용약관",
   "h1": "이용약관",
-  "meta": [("시행일", "2026.11.19"), ("버전", "1.5"), ("운영자", "Vicino Labs")],
+  "meta": [("시행일", "2026.11.25"), ("버전", "1.6"), ("운영자", "Vicino Labs")],
   "lede": "본 약관은 Vicino Labs가 만든 악보 앱 렛지 악보(Leggii)를 이용하시는 분들과 저희 사이의 약속입니다. 앱을 설치하고 이용하시면 아래 내용에 동의하신 것으로 봅니다.",
-  "footer": "본 약관은 2026년 11월 19일부터 시행됩니다 (버전 1.5: 무료 요금제 범위 변경, AI 시간은 Leggii Plus로). 이전 버전 1.4: 2026년 11월 10일 공지(App Store 내용), 1.3: 2026년 11월 9일 공지, 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
+  "footer": "본 약관은 2026년 11월 25일부터 시행됩니다 (버전 1.6: 무료 체험 3일, 무료 버전의 악보·녹음·스캔 한도 명시). 이전 버전 1.5: 2026년 11월 19일(무료 요금제 범위 변경, AI 시간은 Leggii Plus로), 1.4: 2026년 11월 10일 공지(App Store 내용), 1.3: 2026년 11월 9일 공지, 1.2: 2026년 11월 6일, 1.1: 2026년 11월 5일, 1.0: 2026년 10월 22일.",
   "other": "개인정보처리방침 보기 →",
   "sections": [
    ("목적", "<p>본 약관은 Vicino Labs(이하 “회사”)가 제공하는 모바일 앱 렛지 악보(Leggii, 이하 “앱”)의 이용에 관한 회사와 이용자의 권리·의무를 정합니다.</p>"),
@@ -35,7 +37,7 @@ TERMS = {
 <li>변경된 약관에 동의하지 않으면 앱 이용을 멈추고 삭제할 수 있습니다.</li>
 </ol>"""),
    ("서비스 내용", """<ol>
-<li><strong>무료 기능:</strong> PDF 악보 보기와 화면을 눌러 페이지 넘기기, 가져오기·사진 스캔(새로 만드는 스캔에는 작은 렛지 표시가 들어감)·IMSLP 검색, 오선지 만들기, 필기·기본 기호, 폴더·연주목록 3개까지·PDF 합치기, 메트로놈, 보관함 백업 등. 악보와 녹음은 개수 제한이 없습니다.</li>
+<li><strong>무료 기능:</strong> PDF 악보 보기와 화면을 눌러 페이지 넘기기, 가져오기·사진 스캔(새로 만드는 스캔에는 작은 렛지 표시가 들어감)·IMSLP 검색, 오선지 만들기, 필기·기본 기호, 폴더·연주목록 3개까지·PDF 합치기, 메트로놈, 보관함 백업 등. 무료 버전은 악보 5개까지, 녹음은 한 번에 3분까지, 한 악보에 넣는 스캔 사진은 5장까지입니다.</li>
 <li><strong>Pro 기능:</strong> 블루투스 페달로 페이지 넘기기, 연주목록 개수 제한 없음, 표시 없는 사진 스캔, 배너 없음, 사진 스캔 PDF 공유 시 하단 문구 없음, 나만의 펜, 추가 기호, 반복·D.C. 연결, 페이지 편집, 필기 포함 PDF 내보내기와 앞으로 Pro에 추가되는 기능</li>
 <li>무료 버전에는 같은 회사 서비스 welegato를 알리는 배너가 표시됩니다.</li>
 <li>무료 범위가 줄어도 이용자가 만든 연주목록·악보·필기는 지우지 않습니다. 무료 범위를 넘는 연주목록은 잠긴 채로 남고, 이용자가 열어 둘 3개를 고를 수 있으며, Pro나 Plus를 쓰면 바로 다시 열립니다.</li>
@@ -44,7 +46,7 @@ TERMS = {
 <li><strong>렛지에게 물어보기:</strong> 앱 사용법과 요금제를 답하고 악보 찾기 같은 동작을 도와주는 AI 도우미(무료 버전은 하루 10회, Pro·Plus·무료 체험은 하루 30회까지).</li>
 </ol>"""),
    ("Pro, Leggii Plus와 AI 시간", """<ol>
-<li><strong>무료 체험:</strong> 앱을 처음 설치하면 <strong>7일 동안</strong> Pro 기능을 무료로 쓸 수 있고, 기기당 한 번 AI 시간 30분을 드립니다. 체험이 끝나면 자동으로 무료 버전으로 돌아가며 자동 결제는 없습니다. 체험 중에 만든 필기·기호·연결·페이지는 그대로 남습니다.</li>
+<li><strong>무료 체험:</strong> 앱을 처음 설치하면 <strong>3일 동안</strong> Pro 기능을 무료로 쓸 수 있고, 기기당 한 번 AI 시간 30분을 드립니다. 체험이 끝나면 자동으로 무료 버전으로 돌아가며 자동 결제는 없습니다. 체험 중에 만든 필기·기호·연결·페이지는 그대로 남습니다.</li>
 <li><strong>Pro:</strong> 앱 스토어 인앱 결제로 한 번 구매하는 <strong>평생 이용권</strong>입니다. AI 시간과 렛지 클라우드는 Leggii Plus에 들어 있습니다. 1.5.4판이 나오기 전에 Pro를 구매하신 분께는 매월 AI 시간 30분을 그대로 드립니다. 같은 스토어 계정으로 다시 설치하면 “구매 복원”으로 되살릴 수 있습니다.</li>
 <li><strong>Leggii Plus:</strong> 월간 또는 연간 <strong>정기 구독</strong>으로, 모든 Pro 기능과 매월 AI 시간 5시간이 포함됩니다. 해지할 때까지 같은 기간으로 자동 갱신되며, Google Play(또는 App Store)의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간이 끝날 때까지 쓸 수 있고, 그 뒤에는 Pro를 구매했다면 Pro로, 아니면 무료 버전으로 돌아갑니다.</li>
 <li><strong>렛지 클라우드(Plus):</strong> 위레가토 통합 아이디로 로그인하면 악보·필기·폴더·연주목록·개인 노트와, 이용자가 켜 둔 경우 녹음을 같은 아이디의 기기들에 맞춥니다. Plus에는 10GB가 포함되며, 더 큰 공간은 50GB 요금제로 바꿀 수 있습니다(올릴 때 Google Play는 남은 기간의 차액만 받고, App Store는 바로 바꾸면서 남은 기간의 금액을 비율대로 돌려줍니다). 저장 공간이 차면 새로 올리는 것만 멈추고 이미 올린 파일은 지우지 않습니다. 한 기기에서 지운 항목은 다른 기기와 클라우드에서도 지워집니다. Plus가 끝나면 새로 올리는 것은 멈추고 90일 동안 내려받으실 수 있으며, 메일로 두 번 알려 드린 뒤 클라우드의 파일을 지웁니다. 클라우드는 이용자 본인의 기기들 사이의 동기화를 위한 것입니다. 다른 사람은 이용자가 아래 “위레가토 채팅으로 보내기”로 고른 파일만, 정해진 기간 동안 열어 볼 수 있습니다. 중요한 자료는 “보관함 백업”으로도 따로 보관하기를 권합니다.</li>
@@ -113,9 +115,9 @@ TERMS = {
  "en": {
   "title": "Leggii Terms of Service",
   "h1": "Terms of Service",
-  "meta": [("Effective", "2026-11-19"), ("Version", "1.5"), ("Operator", "Vicino Labs")],
+  "meta": [("Effective", "2026-11-25"), ("Version", "1.6"), ("Operator", "Vicino Labs")],
   "lede": "These terms are the agreement between you and Vicino Labs for using Leggii, a sheet music app. By installing and using the app you agree to them.",
-  "footer": "These terms are effective from 19 November 2026 (version 1.5: the free plan changes, AI time moves to Leggii Plus). Previous versions 1.4: announced 10 November 2026 (App Store details), 1.3: announced 9 November 2026, 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
+  "footer": "These terms are effective from 25 November 2026 (version 1.6: a 3-day free trial, and the free version's score, recording and scan limits spelled out). Previous versions 1.5: 19 November 2026 (the free plan changes, AI time moves to Leggii Plus), 1.4: announced 10 November 2026 (App Store details), 1.3: announced 9 November 2026, 1.2: 6 November 2026, 1.1: 5 November 2026, 1.0: 22 October 2026.",
   "other": "Privacy Policy →",
   "sections": [
    ("Scope", "<p>These terms govern the use of the mobile app Leggii (the “app”) provided by Vicino Labs (the “company”).</p>"),
@@ -126,7 +128,7 @@ TERMS = {
 <li>If you do not agree to changed terms, you may stop using and delete the app.</li>
 </ol>"""),
    ("What the app offers", """<ol>
-<li><strong>Free:</strong> reading PDF scores and turning pages by tap, importing, photo scans (new scans get a small Leggii mark), IMSLP search, staff paper, notes and basic symbols, folders, up to 3 setlists, merging PDFs, metronome, library backup and more. Scores and recordings have no limit.</li>
+<li><strong>Free:</strong> reading PDF scores and turning pages by tap, importing, photo scans (new scans get a small Leggii mark), IMSLP search, staff paper, notes and basic symbols, folders, up to 3 setlists, merging PDFs, metronome, library backup and more. The free version holds up to 5 scores, records up to 3 minutes at a time, and takes up to 5 photos in one scan.</li>
 <li><strong>Pro:</strong> page turns by Bluetooth pedal, unlimited setlists, photo scans without the mark, no banner, no credit line on shared photo scans, your own pens, more symbols, repeat and D.C. jumps, page editing, PDF export with notes, and Pro features added later</li>
 <li>The free version shows a banner for welegato, a service of the same company.</li>
 <li>If the free plan gets smaller, we never delete your setlists, scores or notes. Setlists above the free limit stay, locked; you choose which 3 stay open, and Pro or Plus opens them all again at once.</li>
@@ -135,7 +137,7 @@ TERMS = {
 <li><strong>Ask Leggii:</strong> an AI assistant that answers how the app and plans work and helps with actions such as finding a score (free: 10 questions a day, or 30 a day with Pro, Plus or the trial).</li>
 </ol>"""),
    ("Pro, Leggii Plus and AI time", """<ol>
-<li><strong>Free trial:</strong> after the first installation you can use the Pro features free for <strong>7 days</strong>, plus 30 AI minutes once per device. The trial then ends by itself; there is no automatic payment. Notes, symbols, links and pages made during the trial stay.</li>
+<li><strong>Free trial:</strong> after the first installation you can use the Pro features free for <strong>3 days</strong>, plus 30 AI minutes once per device. The trial then ends by itself; there is no automatic payment. Notes, symbols, links and pages made during the trial stay.</li>
 <li><strong>Pro:</strong> a one-time in-app purchase that is <strong>yours for life</strong>. AI time and the Leggii cloud are part of Leggii Plus. If you bought Pro before version 1.5.4, you keep your 30 AI minutes every month. Reinstalling with the same store account restores it with “Restore purchase”.</li>
 <li><strong>Leggii Plus:</strong> a monthly or yearly <strong>subscription</strong> with all Pro features and 5 hours of AI time every month. It renews for the same period until cancelled; cancel any time in Google Play (or the App Store) subscriptions. It keeps working until the paid period ends; afterwards you are back to Pro if you bought Pro, otherwise to the free version.</li>
 <li><strong>Leggii cloud (Plus):</strong> signed in with the welegato ID, scores, ink, folders, setlists, my notes and — if you keep it on — recordings stay the same on the devices of that ID. Plus includes 10 GB; for more space you can switch to the 50 GB plan (Google Play then charges only the difference for the rest of the period; the App Store switches at once and refunds the unused part of the period pro rata). When the cloud is full, only new uploads stop and nothing is deleted. Something deleted on one device is deleted on the other devices and in the cloud too. When Plus ends, new uploads stop, everything can be downloaded for 90 days, and after two reminder emails the cloud files are deleted. The cloud is for syncing your own devices. Others can open only the files you choose with “Send to a welegato chat” below, and only for a limited time. We recommend also keeping important material with “Back up library”.</li>
@@ -168,7 +170,7 @@ TERMS = {
    ("AI lesson analysis and Ask Leggii", """<ol>
 <li>Results of the AI lesson analysis and Ask Leggii are made by AI and <strong>can be wrong or incomplete.</strong> They do not replace what was said in the lesson or rehearsal; please check what matters.</li>
 <li>Use the AI lesson analysis only for recordings you may make, with the consent of the people recorded.</li>
-<li>Ask Leggii gives you 10 questions a day per device on the free version, and 30 a day with Pro, Plus or the 7-day trial. We may limit use to prevent abuse.</li>
+<li>Ask Leggii gives you 10 questions a day per device on the free version, and 30 a day with Pro, Plus or the 3-day trial. We may limit use to prevent abuse.</li>
 <li>Suggested actions that use AI time run only after you confirm them. The assistant never pays or buys for you.</li>
 </ol>"""),
    ("welegato ID", """<ol>
@@ -204,9 +206,9 @@ TERMS = {
  "de": {
   "title": "Leggii Nutzungsbedingungen",
   "h1": "Nutzungsbedingungen",
-  "meta": [("Gültig ab", "19.11.2026"), ("Version", "1.5"), ("Betreiber", "Vicino Labs")],
+  "meta": [("Gültig ab", "25.11.2026"), ("Version", "1.6"), ("Betreiber", "Vicino Labs")],
   "lede": "Diese Bedingungen regeln die Nutzung von Leggii, einer Noten-App von Vicino Labs. Mit Installation und Nutzung der App stimmen Sie ihnen zu.",
-  "footer": "Diese Bedingungen gelten ab dem 19. November 2026 (Version 1.5: Änderung des kostenlosen Umfangs, KI-Zeit gehört zu Leggii Plus). Vorherige Versionen 1.4: angekündigt am 10. November 2026 (App-Store-Angaben), 1.3: angekündigt am 9. November 2026, 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
+  "footer": "Diese Bedingungen gelten ab dem 25. November 2026 (Version 1.6: dreitägige Testphase; die Grenzen der kostenlosen Version für Noten, Aufnahmen und Scans ausdrücklich genannt). Vorherige Versionen 1.5: 19. November 2026 (Änderung des kostenlosen Umfangs, KI-Zeit gehört zu Leggii Plus), 1.4: angekündigt am 10. November 2026 (App-Store-Angaben), 1.3: angekündigt am 9. November 2026, 1.2: 6. November 2026, 1.1: 5. November 2026, 1.0: 22. Oktober 2026.",
   "other": "Datenschutzerklärung →",
   "sections": [
    ("Geltungsbereich", "<p>Diese Bedingungen regeln die Nutzung der mobilen App Leggii („App“) von Vicino Labs („Anbieter“).</p>"),
@@ -217,7 +219,7 @@ TERMS = {
 <li>Wenn Sie geänderten Bedingungen nicht zustimmen, können Sie die App nicht mehr nutzen und löschen sie.</li>
 </ol>"""),
    ("Leistungen", """<ol>
-<li><strong>Kostenlos:</strong> PDF-Noten lesen und per Tippen blättern, Import, Foto-Scans (neue Scans erhalten ein kleines Leggii-Zeichen), IMSLP-Suche, Notenpapier, Notizen und Grundzeichen, Ordner, bis zu 3 Setlists, PDFs zusammenfügen, Metronom, Bibliothekssicherung u. a. Noten und Aufnahmen sind nicht begrenzt.</li>
+<li><strong>Kostenlos:</strong> PDF-Noten lesen und per Tippen blättern, Import, Foto-Scans (neue Scans erhalten ein kleines Leggii-Zeichen), IMSLP-Suche, Notenpapier, Notizen und Grundzeichen, Ordner, bis zu 3 Setlists, PDFs zusammenfügen, Metronom, Bibliothekssicherung u. a. Die kostenlose Version umfasst bis zu 5 Noten, Aufnahmen bis 3 Minuten und bis zu 5 Fotos pro Scan.</li>
 <li><strong>Pro:</strong> Umblättern per Bluetooth-Pedal, beliebig viele Setlists, Foto-Scans ohne Zeichen, kein Banner, keine Hinweiszeile in geteilten Foto-Scans, eigene Stifte, weitere Zeichen, Wiederholungs- und D.C.-Sprünge, Seitenbearbeitung, PDF-Export mit Notizen sowie später hinzukommende Pro-Funktionen</li>
 <li>Die kostenlose Version zeigt ein Banner für welegato, einen Dienst desselben Anbieters.</li>
 <li>Wird der kostenlose Umfang kleiner, löschen wir keine Setlists, Noten oder Notizen. Setlists über der Grenze bleiben gesperrt erhalten; Sie wählen, welche 3 offen bleiben, und mit Pro oder Plus sind sofort wieder alle offen.</li>
@@ -226,7 +228,7 @@ TERMS = {
 <li><strong>Leggii fragen:</strong> ein KI-Assistent, der App und Tarife erklärt und bei Aktionen wie der Notensuche hilft (kostenlos 10 Fragen pro Tag, mit Pro, Plus oder der Testphase 30 pro Tag).</li>
 </ol>"""),
    ("Pro, Leggii Plus und KI-Zeit", """<ol>
-<li><strong>Testphase:</strong> Nach der ersten Installation können Sie die Pro-Funktionen <strong>7 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
+<li><strong>Testphase:</strong> Nach der ersten Installation können Sie die Pro-Funktionen <strong>3 Tage</strong> kostenlos nutzen, dazu einmal pro Gerät 30 KI-Minuten. Danach endet die Testphase von selbst; es gibt keine automatische Zahlung. Während der Testphase erstellte Notizen, Zeichen, Verknüpfungen und Seiten bleiben erhalten.</li>
 <li><strong>Pro:</strong> ein einmaliger In-App-Kauf, <strong>dauerhaft</strong> nutzbar. KI-Zeit und die Leggii Cloud gehören zu Leggii Plus. Wer Pro vor Version 1.5.4 gekauft hat, behält die 30 KI-Minuten pro Monat. Bei Neuinstallation mit demselben Store-Konto stellt „Kauf wiederherstellen“ ihn wieder her.</li>
 <li><strong>Leggii Plus:</strong> ein monatliches oder jährliches <strong>Abo</strong> mit allen Pro-Funktionen und 5 Stunden KI-Zeit pro Monat. Es verlängert sich um denselben Zeitraum, bis Sie kündigen; kündigen können Sie jederzeit in den Abos von Google Play (oder dem App Store). Es läuft bis zum Ende des bezahlten Zeitraums; danach gilt wieder Pro, wenn Sie Pro gekauft haben, sonst die kostenlose Version.</li>
 <li><strong>Leggii Cloud (Plus):</strong> Mit der welegato-ID angemeldet sind Noten, Notizen, Ordner, Setlists, Meine Notizen und – wenn Sie es eingeschaltet lassen – Aufnahmen auf den Geräten dieser ID gleich. Plus enthält 10 GB; für mehr Platz können Sie auf den 50-GB-Tarif wechseln (Google Play berechnet dann nur die Differenz für den Rest des Zeitraums; der App Store wechselt sofort und erstattet den ungenutzten Teil anteilig). Ist die Cloud voll, stoppen nur neue Uploads, es wird nichts gelöscht. Was auf einem Gerät gelöscht wird, wird auch auf den anderen Geräten und in der Cloud gelöscht. Endet Plus, stoppen neue Uploads; 90 Tage lang kann alles heruntergeladen werden, nach zwei Erinnerungs-E-Mails werden die Cloud-Dateien gelöscht. Die Cloud dient dem Abgleich Ihrer eigenen Geräte. Andere können nur die Dateien öffnen, die Sie unten mit „An welegato-Chat senden“ auswählen, und nur für begrenzte Zeit. Wir empfehlen, Wichtiges zusätzlich mit „Bibliothek sichern“ aufzubewahren.</li>
@@ -259,7 +261,7 @@ TERMS = {
    ("KI-Unterrichtsanalyse und „Leggii fragen“", """<ol>
 <li>Ergebnisse der KI-Unterrichtsanalyse und von „Leggii fragen“ erstellt eine KI; sie <strong>können falsch oder unvollständig sein.</strong> Sie ersetzen nicht, was im Unterricht oder in der Probe gesagt wurde; bitte prüfe Wichtiges selbst.</li>
 <li>Nutzen Sie die KI-Unterrichtsanalyse nur für Aufnahmen, die Sie machen dürfen, mit Einwilligung der aufgenommenen Personen.</li>
-<li>„Leggii fragen“ bietet in der kostenlosen Version 10 Fragen pro Tag und Gerät, mit Pro, Plus oder der 7-tägigen Testphase 30 pro Tag. Zum Schutz vor Missbrauch können wir die Nutzung begrenzen.</li>
+<li>„Leggii fragen“ bietet in der kostenlosen Version 10 Fragen pro Tag und Gerät, mit Pro, Plus oder der 3-tägigen Testphase 30 pro Tag. Zum Schutz vor Missbrauch können wir die Nutzung begrenzen.</li>
 <li>Vorgeschlagene Aktionen, die KI-Zeit verbrauchen, starten erst nach Ihrer Bestätigung. Der Assistent zahlt oder kauft nie für Sie.</li>
 </ol>"""),
    ("welegato-ID", """<ol>
@@ -295,9 +297,9 @@ TERMS = {
  "it": {
   "title": "Leggii — Termini di utilizzo",
   "h1": "Termini di utilizzo",
-  "meta": [("In vigore dal", "19.11.2026"), ("Versione", "1.5"), ("Gestore", "Vicino Labs")],
+  "meta": [("In vigore dal", "25.11.2026"), ("Versione", "1.6"), ("Gestore", "Vicino Labs")],
   "lede": "Questi termini regolano l'uso di Leggii, un'app per spartiti di Vicino Labs. Installando e usando l'app li accetti.",
-  "footer": "Questi termini sono in vigore dal 19 novembre 2026 (versione 1.5: cambia la versione gratuita, il tempo AI fa parte di Leggii Plus). Versioni precedenti 1.4: annunciata il 10 novembre 2026 (indicazioni App Store), 1.3: annunciata il 9 novembre 2026, 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
+  "footer": "Questi termini sono in vigore dal 25 novembre 2026 (versione 1.6: prova gratuita di 3 giorni e limiti della versione gratuita per spartiti, registrazioni e scansioni indicati espressamente). Versioni precedenti 1.5: 19 novembre 2026 (cambia la versione gratuita, il tempo AI fa parte di Leggii Plus), 1.4: annunciata il 10 novembre 2026 (indicazioni App Store), 1.3: annunciata il 9 novembre 2026, 1.2: 6 novembre 2026, 1.1: 5 novembre 2026, 1.0: 22 ottobre 2026.",
   "other": "Informativa sulla privacy →",
   "sections": [
    ("Oggetto", "<p>Questi termini regolano l'uso dell'app mobile Leggii (“app”) fornita da Vicino Labs (“fornitore”).</p>"),
@@ -308,7 +310,7 @@ TERMS = {
 <li>Se non accetti i termini modificati puoi smettere di usare l'app ed eliminarla.</li>
 </ol>"""),
    ("Cosa offre l'app", """<ol>
-<li><strong>Gratis:</strong> lettura di spartiti PDF e cambio pagina con un tocco, importazione, scansioni da foto (le nuove scansioni hanno un piccolo segno Leggii), ricerca IMSLP, carta pentagrammata, annotazioni e simboli di base, cartelle, fino a 3 scalette, unione di PDF, metronomo, backup della libreria e altro. Spartiti e registrazioni non hanno limiti.</li>
+<li><strong>Gratis:</strong> lettura di spartiti PDF e cambio pagina con un tocco, importazione, scansioni da foto (le nuove scansioni hanno un piccolo segno Leggii), ricerca IMSLP, carta pentagrammata, annotazioni e simboli di base, cartelle, fino a 3 scalette, unione di PDF, metronomo, backup della libreria e altro. La versione gratuita comprende fino a 5 spartiti, registrazioni fino a 3 minuti e fino a 5 foto per scansione.</li>
 <li><strong>Pro:</strong> cambio pagina con pedale Bluetooth, scalette illimitate, scansioni senza segno, niente banner, nessuna riga di credito sulle scansioni condivise, penne personali, altri simboli, salti per ritornelli e D.C., modifica delle pagine, esportazione PDF con annotazioni e le funzioni Pro future</li>
 <li>La versione gratuita mostra un banner di welegato, un servizio dello stesso fornitore.</li>
 <li>Se la versione gratuita si riduce, non cancelliamo mai scalette, spartiti o annotazioni. Le scalette oltre il limite restano, bloccate; scegli tu quali 3 tenere aperte e con Pro o Plus si riaprono subito tutte.</li>
@@ -317,7 +319,7 @@ TERMS = {
 <li><strong>Chiedi a Leggii:</strong> un assistente AI che spiega l'app e i piani e aiuta con azioni come trovare uno spartito (gratuito: 10 domande al giorno, 30 con Pro, Plus o la prova).</li>
 </ol>"""),
    ("Pro, Leggii Plus e tempo AI", """<ol>
-<li><strong>Prova gratuita:</strong> dopo la prima installazione puoi usare le funzioni Pro gratis per <strong>7 giorni</strong>, più 30 minuti AI una sola volta per dispositivo. Poi la prova termina da sola; non c'è alcun pagamento automatico. Annotazioni, simboli, collegamenti e pagine creati durante la prova restano.</li>
+<li><strong>Prova gratuita:</strong> dopo la prima installazione puoi usare le funzioni Pro gratis per <strong>3 giorni</strong>, più 30 minuti AI una sola volta per dispositivo. Poi la prova termina da sola; non c'è alcun pagamento automatico. Annotazioni, simboli, collegamenti e pagine creati durante la prova restano.</li>
 <li><strong>Pro:</strong> un acquisto in-app unico, <strong>per sempre</strong>. Il tempo AI e il cloud di Leggii fanno parte di Leggii Plus. Chi ha acquistato Pro prima della versione 1.5.4 mantiene i 30 minuti AI al mese. Reinstallando con lo stesso account dello store, «Ripristina acquisto» lo recupera.</li>
 <li><strong>Leggii Plus:</strong> un <strong>abbonamento</strong> mensile o annuale con tutte le funzioni Pro e 5 ore di tempo AI al mese. Si rinnova per lo stesso periodo fino alla disdetta; puoi annullarlo in qualsiasi momento negli abbonamenti di Google Play (o dell'App Store). Resta attivo fino alla fine del periodo pagato; poi torni a Pro se lo hai acquistato, altrimenti alla versione gratuita.</li>
 <li><strong>Cloud di Leggii (Plus):</strong> con il welegato ID connesso, spartiti, annotazioni, cartelle, scalette, Le mie note e – se lo lasci attivo – le registrazioni restano uguali sui dispositivi di quell'ID. Plus include 10 GB; per più spazio puoi passare al piano da 50 GB (Google Play addebita solo la differenza per il resto del periodo; l'App Store cambia subito e rimborsa in proporzione la parte non usata). Quando il cloud è pieno si fermano solo i nuovi caricamenti e nulla viene eliminato. Ciò che elimini su un dispositivo viene eliminato anche sugli altri dispositivi e nel cloud. Quando Plus termina, i nuovi caricamenti si fermano, per 90 giorni puoi scaricare tutto e, dopo due email di promemoria, i file nel cloud vengono eliminati. Il cloud serve a sincronizzare i tuoi dispositivi. Altre persone possono aprire solo i file che scegli con «Invia a una chat welegato» qui sotto, e solo per un periodo limitato. Consigliamo di conservare il materiale importante anche con “Backup della libreria”.</li>
@@ -350,7 +352,7 @@ TERMS = {
    ("Analisi AI delle lezioni e «Chiedi a Leggii»", """<ol>
 <li>I risultati dell'analisi AI e di «Chiedi a Leggii» sono generati da un'AI e <strong>possono essere errati o incompleti.</strong> Non sostituiscono quanto detto a lezione o in prova; verifica ciò che è importante.</li>
 <li>Usa l'analisi AI solo per registrazioni che puoi fare, con il consenso delle persone registrate.</li>
-<li>«Chiedi a Leggii» offre 10 domande al giorno per dispositivo nella versione gratuita e 30 al giorno con Pro, Plus o la prova di 7 giorni. Possiamo limitarne l'uso per prevenire abusi.</li>
+<li>«Chiedi a Leggii» offre 10 domande al giorno per dispositivo nella versione gratuita e 30 al giorno con Pro, Plus o la prova di 3 giorni. Possiamo limitarne l'uso per prevenire abusi.</li>
 <li>Le azioni proposte che usano tempo AI partono solo dopo la tua conferma. L'assistente non paga né acquista mai al posto tuo.</li>
 </ol>"""),
    ("welegato ID", """<ol>
