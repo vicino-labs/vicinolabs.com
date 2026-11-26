@@ -7,7 +7,7 @@ leggii_privacy_content.py(클라우드 R2)를 따랐다.
 그리고 2026-11-26 코드 확인(App/squillo e080e09):
 - 로그인은 선택(위레가토 통합 아이디: 이메일·Google·카카오·Apple, Turnstile, signup_app=Squillo).
   로그인하지 않아도 무료 범위(기본 발성 8곡, 곡집마다 앞 2곡)는 그대로 쓴다.
-- 3일 체험은 처음 설치부터, 로그인 없이(대표님 2026-11-26 바로잡음). 재설치 반복 막기 방식은 미정(정해지면 이 절 고칠 것). 구독 기록 squillo_subscriptions.
+- 3일 체험은 처음 설치부터, 로그인 없이(대표님 2026-11-26). 재설치 반복은 기기 해시 서버로 막음(대표님 결정, 끼아베와 같은 방식, 0180 squillo_devices, 마지막 확인 후 1년 보관). 구독 기록 squillo_subscriptions.
 - 백업(Pro, 1GB)은 leggii-cloud 함수와 같은 길(Cloudflare R2 + Supabase 목록). 아직 앱에 연결 전.
   보관 기간 "Pro 종료 후 90일"은 렛지와 같게 둔 가정이다 — 운영자 확인 필요.
 - 무료 악보 찾기: R2 공개 버킷에서 내려받기만.
@@ -60,7 +60,7 @@ PRIVACY = {
 </ul>
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
    ("무료 체험과 구독", f"""<ul>
-<li><strong>3일 무료 체험:</strong> 앱을 처음 설치하면 로그인 없이 3일 동안 모든 기능이 열립니다. 체험 시작 시각은 기기에 저장합니다.</li>
+<li><strong>3일 무료 체험:</strong> 앱을 처음 설치하면 로그인 없이 3일 동안 모든 기능이 열립니다. 앱을 다시 설치해 체험을 되풀이하지 않도록 기기 식별값(안드로이드는 ANDROID_ID, iPhone·iPad는 키체인에 저장한 무작위 번호)을 씁니다. 서버에는 식별값 자체가 아니라 되돌릴 수 없는 SHA-256 해시(“squillo:” + 식별값)와 처음·마지막으로 확인한 시각만 저장합니다. 이름·이메일은 필요하지 않습니다. 보관 기간: 마지막으로 확인한 날부터 1년이 지나면 지웁니다. iPhone·iPad의 키체인 번호는 앱을 삭제해도 남을 수 있습니다.</li>
 <li><strong>구독:</strong> Pro 구독은 Google Play 또는 App Store 결제로 삽니다. 결제와 카드 정보는 스토어가 처리하며 저희는 받지 않습니다. 구독이 유효한지 확인하기 위해 아이디 번호, 상품 이름, 상태, 만료 시각, 스토어의 구매 확인 값을 저장합니다.</li>
 <li><strong>보관 기간:</strong> 결제와 관련된 기록은 세법상 보관 의무 기간(최대 10년) 동안 보관합니다.</li>
 </ul>
@@ -127,7 +127,7 @@ PRIVACY = {
 </ul>
 <p>Under the welegato terms, sign-in is for people aged 16 and over. Legal basis: providing the feature you chose (Art. 6(1)(b)).</p>"""),
    ("Free trial and subscription", f"""<ul>
-<li><strong>3-day free trial:</strong> when you first install the app, all features are open for 3 days without signing in. The trial start time is stored on your device.</li>
+<li><strong>3-day free trial:</strong> when you first install the app, all features are open for 3 days without signing in. So the trial cannot be repeated by reinstalling, the app uses a device identifier (ANDROID_ID on Android, a random number stored in the Keychain on iPhone and iPad). Our server stores not the identifier itself but only an irreversible SHA-256 hash (“squillo:” + identifier) with the first and last time it was checked. No name or email is needed. Retention: deleted one year after it was last checked. The Keychain number on iPhone and iPad may remain after the app is deleted.</li>
 <li><strong>Subscription:</strong> Pro is bought through Google Play or the App Store. The store handles payment and card details; we do not receive them. To check that a subscription is valid we store the account number, product name, status, expiry time and the store's purchase confirmation value.</li>
 <li><strong>Retention:</strong> payment-related records are kept for the period required by tax law (up to 10 years).</li>
 </ul>
@@ -194,7 +194,7 @@ PRIVACY = {
 </ul>
 <p>Nach den welegato-Bedingungen ist die Anmeldung ab 16 Jahren möglich. Rechtsgrundlage: Bereitstellung der von dir gewählten Funktion (lit. b).</p>"""),
    ("Testphase und Abo", f"""<ul>
-<li><strong>3 Tage kostenlos testen:</strong> Nach der ersten Installation sind 3 Tage lang alle Funktionen ohne Anmeldung offen. Der Beginn der Testphase wird auf deinem Gerät gespeichert.</li>
+<li><strong>3 Tage kostenlos testen:</strong> Nach der ersten Installation sind 3 Tage lang alle Funktionen ohne Anmeldung offen. Damit sich die Testphase durch Neuinstallation nicht wiederholt, nutzt die App eine Gerätekennung (unter Android die ANDROID_ID, auf iPhone und iPad eine im Schlüsselbund gespeicherte Zufallsnummer). Unser Server speichert nicht die Kennung selbst, sondern nur einen nicht umkehrbaren SHA-256-Hash („squillo:“ + Kennung) sowie den Zeitpunkt der ersten und letzten Prüfung. Name oder E-Mail sind nicht nötig. Speicherdauer: Löschung ein Jahr nach der letzten Prüfung. Die Nummer im Schlüsselbund von iPhone und iPad kann nach dem Löschen der App erhalten bleiben.</li>
 <li><strong>Abo:</strong> Pro wird über Google Play oder den App Store gekauft. Zahlung und Kartendaten verarbeitet der Store, wir erhalten sie nicht. Um zu prüfen, ob ein Abo gültig ist, speichern wir Kontonummer, Produktname, Status, Ablaufzeit und den Kaufnachweis des Stores.</li>
 <li><strong>Speicherdauer:</strong> Zahlungsbezogene Daten bewahren wir so lange auf, wie es das Steuerrecht verlangt (bis zu 10 Jahre).</li>
 </ul>
@@ -261,7 +261,7 @@ PRIVACY = {
 </ul>
 <p>Secondo i termini di welegato l'accesso è consentito dai 16 anni in su. Base giuridica: fornitura della funzione scelta (lett. b).</p>"""),
    ("Prova gratuita e abbonamento", f"""<ul>
-<li><strong>Prova gratuita di 3 giorni:</strong> alla prima installazione tutte le funzioni sono aperte per 3 giorni, senza accesso. L'inizio della prova è salvato sul dispositivo.</li>
+<li><strong>Prova gratuita di 3 giorni:</strong> alla prima installazione tutte le funzioni sono aperte per 3 giorni, senza accesso. Perché la prova non si ripeta reinstallando l'app, usiamo un identificativo del dispositivo (ANDROID_ID su Android, un numero casuale salvato nel Portachiavi su iPhone e iPad). Il nostro server non salva l'identificativo ma solo un hash SHA-256 non reversibile (“squillo:” + identificativo) con l'ora del primo e dell'ultimo controllo. Non servono nome né email. Conservazione: eliminato un anno dopo l'ultimo controllo. Il numero nel Portachiavi di iPhone e iPad può restare anche dopo l'eliminazione dell'app.</li>
 <li><strong>Abbonamento:</strong> Pro si acquista tramite Google Play o App Store. Pagamento e dati della carta sono gestiti dallo store e non li riceviamo. Per verificare che l'abbonamento sia valido salviamo numero di account, nome del prodotto, stato, scadenza e la conferma d'acquisto dello store.</li>
 <li><strong>Conservazione:</strong> i dati legati ai pagamenti sono conservati per il periodo richiesto dalla legge fiscale (fino a 10 anni).</li>
 </ul>
