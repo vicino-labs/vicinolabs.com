@@ -7,7 +7,7 @@ leggii_privacy_content.py(클라우드 R2)를 따랐다.
 그리고 2026-11-26 코드 확인(App/squillo e080e09):
 - 로그인은 선택(위레가토 통합 아이디: 이메일·Google·카카오·Apple, Turnstile, signup_app=Squillo).
   로그인하지 않아도 무료 범위(기본 발성 8곡, 곡집마다 앞 2곡)는 그대로 쓴다.
-- 3일 체험은 아이디별(squillo_trials: user_id, started_at). 구독 기록 squillo_subscriptions.
+- 3일 체험은 처음 설치부터, 로그인 없이(대표님 2026-11-26 바로잡음). 재설치 반복 막기 방식은 미정(정해지면 이 절 고칠 것). 구독 기록 squillo_subscriptions.
 - 백업(Pro, 1GB)은 leggii-cloud 함수와 같은 길(Cloudflare R2 + Supabase 목록). 아직 앱에 연결 전.
   보관 기간 "Pro 종료 후 90일"은 렛지와 같게 둔 가정이다 — 운영자 확인 필요.
 - 무료 악보 찾기: R2 공개 버킷에서 내려받기만.
@@ -39,7 +39,7 @@ PRIVACY = {
    ("핵심 요약", """<div class="summary-box"><ul>
 <li>기본 발성 연습과 무료 연습곡은 <strong>로그인 없이</strong> 쓸 수 있습니다. 설정과 「나의 연습」 악보는 <strong>기기 안에</strong> 저장됩니다.</li>
 <li>앱은 <strong>마이크, 카메라, 사진, 위치, 연락처를 쓰지 않습니다.</strong> 노래를 녹음하거나 연습 기록을 서버로 보내지 않습니다.</li>
-<li><strong>위레가토 통합 아이디</strong> 로그인은 선택입니다. 3일 무료 체험, Pro 구독, Pro 백업을 쓰려면 로그인이 필요합니다. 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
+<li><strong>위레가토 통합 아이디</strong> 로그인은 선택입니다. Pro 구독과 Pro 백업을 쓰려면 로그인이 필요합니다(처음 설치 뒤 3일 체험에는 필요하지 않습니다). 계정 정보는 위레가토 개인정보처리방침에 따라 처리됩니다.</li>
 <li><strong>Pro 백업</strong>을 쓰면 「나의 연습」 악보가 같은 아이디의 기기들을 위해 클라우드(Cloudflare R2)에 저장됩니다.</li>
 <li>광고 네트워크와 분석·추적 도구가 없습니다. 화면의 welegato 링크는 같은 회사 서비스를 알리는 자체 배너입니다.</li>
 </ul></div>"""),
@@ -56,11 +56,11 @@ PRIVACY = {
 <li><strong>계정 정보</strong>(이메일, 이름, 로그인 방식 Apple·Google·카카오·이메일, 계정 번호)는 <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">위레가토 개인정보처리방침</a>에 따라 처리됩니다. 스퀼로에서 가입하면 “스퀼로에서 가입함” 표시가 계정에 남습니다.</li>
 <li>이메일 가입·로그인에서는 자동 가입을 막기 위해 Cloudflare Turnstile이 브라우저 정보를 확인합니다(<a href="{CF_PRIVACY}" target="_blank" rel="noopener">Cloudflare 개인정보처리방침</a>). Apple·Google·카카오 로그인에는 각 회사의 방침이 적용됩니다.</li>
 <li>아이폰·아이패드에서 “Apple로 계속”을 고르면 Apple이 확인한 이름과 이메일을 받습니다. 이용자가 “이메일 가리기”를 고르면 Apple이 만든 중계 주소만 받습니다.</li>
-<li><strong>아이디 삭제:</strong> 설정 › 내 아이디 › 아이디 관리 › 아이디 삭제(탈퇴)에서 언제든 지울 수 있습니다. 위레가토 계정이 지워지며 모든 Vicino Labs 앱에 함께 적용됩니다. 스퀼로의 체험 기록과 Pro 백업 파일도 함께 지워집니다(세법상 보관해야 하는 결제 기록은 아래와 같습니다). 기기 안의 설정과 악보는 남습니다.</li>
+<li><strong>아이디 삭제:</strong> 설정 › 내 아이디 › 아이디 관리 › 아이디 삭제(탈퇴)에서 언제든 지울 수 있습니다. 위레가토 계정이 지워지며 모든 Vicino Labs 앱에 함께 적용됩니다. 스퀼로의 Pro 백업 파일도 함께 지워집니다(세법상 보관해야 하는 결제 기록은 아래와 같습니다). 기기 안의 설정과 악보는 남습니다.</li>
 </ul>
 <p>위레가토 약관에 따라 로그인은 만 16세 이상만 할 수 있습니다. 처리 근거: 이용자가 선택한 기능의 제공(b호).</p>"""),
    ("무료 체험과 구독", f"""<ul>
-<li><strong>3일 무료 체험:</strong> 로그인한 아이디마다 처음 한 번, 3일 동안 Pro 기능이 열립니다. 체험이 반복되지 않도록 아이디 번호와 체험 시작 시각을 저장합니다. 아이디를 지우면 함께 지워집니다.</li>
+<li><strong>3일 무료 체험:</strong> 앱을 처음 설치하면 로그인 없이 3일 동안 모든 기능이 열립니다. 체험 시작 시각은 기기에 저장합니다.</li>
 <li><strong>구독:</strong> Pro 구독은 Google Play 또는 App Store 결제로 삽니다. 결제와 카드 정보는 스토어가 처리하며 저희는 받지 않습니다. 구독이 유효한지 확인하기 위해 아이디 번호, 상품 이름, 상태, 만료 시각, 스토어의 구매 확인 값을 저장합니다.</li>
 <li><strong>보관 기간:</strong> 결제와 관련된 기록은 세법상 보관 의무 기간(최대 10년) 동안 보관합니다.</li>
 </ul>
@@ -106,7 +106,7 @@ PRIVACY = {
    ("Summary", """<div class="summary-box"><ul>
 <li>The basic warm-ups and the free studies work <strong>without signing in</strong>. Settings and My pieces scores are stored <strong>on your device</strong>.</li>
 <li>The app <strong>does not use the microphone, camera, photos, location or contacts.</strong> It does not record your singing or send practice history to a server.</li>
-<li>Signing in with a <strong>welegato ID</strong> is optional. You need it for the 3-day free trial, a Pro subscription and Pro backup. Account data is handled under the welegato privacy policy.</li>
+<li>Signing in with a <strong>welegato ID</strong> is optional. You need it for a Pro subscription and Pro backup (not for the 3-day trial after install). Account data is handled under the welegato privacy policy.</li>
 <li>With <strong>Pro backup</strong>, your My pieces scores are stored in the cloud (Cloudflare R2) for the devices signed in with the same ID.</li>
 <li>There are no ad networks and no analytics or tracking tools. The welegato link in the app is our own banner for a service of the same company.</li>
 </ul></div>"""),
@@ -123,11 +123,11 @@ PRIVACY = {
 <li><strong>Account data</strong> (email, name, sign-in method Apple, Google, Kakao or email, account number) is processed under the <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">welegato privacy policy</a>. If you sign up in Squillo, the account notes “signed up in Squillo”.</li>
 <li>For email sign-up and sign-in, Cloudflare Turnstile checks browser information to stop automated sign-ups (<a href="{CF_PRIVACY}" target="_blank" rel="noopener">Cloudflare privacy policy</a>). Sign-in with Apple, Google or Kakao is subject to each company's policy.</li>
 <li>If you choose “Continue with Apple” on iPhone or iPad, we receive the name and email confirmed by Apple. If you choose “Hide My Email”, we receive only Apple's relay address.</li>
-<li><strong>Deleting your ID:</strong> you can delete it at any time under Settings › My ID › Manage ID › Delete ID. This deletes the welegato account and applies to all Vicino Labs apps. Your Squillo trial record and Pro backup files are deleted with it (payment records we must keep for tax purposes are described below). Settings and scores on your device remain.</li>
+<li><strong>Deleting your ID:</strong> you can delete it at any time under Settings › My ID › Manage ID › Delete ID. This deletes the welegato account and applies to all Vicino Labs apps. Your Squillo Pro backup files are deleted with it (payment records we must keep for tax purposes are described below). Settings and scores on your device remain.</li>
 </ul>
 <p>Under the welegato terms, sign-in is for people aged 16 and over. Legal basis: providing the feature you chose (Art. 6(1)(b)).</p>"""),
    ("Free trial and subscription", f"""<ul>
-<li><strong>3-day free trial:</strong> each signed-in ID gets Pro features once, for 3 days. So the trial cannot be repeated, we store the account number and the trial start time. They are deleted with the ID.</li>
+<li><strong>3-day free trial:</strong> when you first install the app, all features are open for 3 days without signing in. The trial start time is stored on your device.</li>
 <li><strong>Subscription:</strong> Pro is bought through Google Play or the App Store. The store handles payment and card details; we do not receive them. To check that a subscription is valid we store the account number, product name, status, expiry time and the store's purchase confirmation value.</li>
 <li><strong>Retention:</strong> payment-related records are kept for the period required by tax law (up to 10 years).</li>
 </ul>
@@ -173,7 +173,7 @@ PRIVACY = {
    ("Das Wichtigste", """<div class="summary-box"><ul>
 <li>Grundübungen und kostenlose Etüden funktionieren <strong>ohne Anmeldung</strong>. Einstellungen und Noten unter „Meine Stücke“ werden <strong>auf deinem Gerät</strong> gespeichert.</li>
 <li>Die App <strong>nutzt weder Mikrofon noch Kamera, Fotos, Standort oder Kontakte.</strong> Sie nimmt deinen Gesang nicht auf und schickt keinen Übungsverlauf an einen Server.</li>
-<li>Die Anmeldung mit einer <strong>welegato-ID</strong> ist freiwillig. Du brauchst sie für die 3-tägige Testphase, ein Pro-Abo und das Pro-Backup. Kontodaten werden nach der Datenschutzerklärung von welegato verarbeitet.</li>
+<li>Die Anmeldung mit einer <strong>welegato-ID</strong> ist freiwillig. Du brauchst sie für ein Pro-Abo und das Pro-Backup (nicht für die 3-tägige Testphase nach der Installation). Kontodaten werden nach der Datenschutzerklärung von welegato verarbeitet.</li>
 <li>Mit dem <strong>Pro-Backup</strong> werden deine Noten unter „Meine Stücke“ für alle Geräte mit derselben ID in der Cloud (Cloudflare R2) gespeichert.</li>
 <li>Es gibt keine Werbenetzwerke und keine Analyse- oder Tracking-Tools. Der welegato-Link in der App ist unser eigenes Banner für einen Dienst desselben Unternehmens.</li>
 </ul></div>"""),
@@ -190,11 +190,11 @@ PRIVACY = {
 <li><strong>Kontodaten</strong> (E-Mail, Name, Anmeldeart Apple, Google, Kakao oder E-Mail, Kontonummer) werden nach der <a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von welegato</a> verarbeitet. Registrierst du dich in Squillo, vermerkt das Konto „in Squillo registriert“.</li>
 <li>Bei Registrierung und Anmeldung per E-Mail prüft Cloudflare Turnstile Browserinformationen, um automatische Registrierungen zu verhindern (<a href="{CF_PRIVACY}" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>). Für die Anmeldung mit Apple, Google oder Kakao gelten die Richtlinien des jeweiligen Unternehmens.</li>
 <li>Wählst du auf iPhone oder iPad „Mit Apple fortfahren“, erhalten wir den von Apple bestätigten Namen und die E-Mail-Adresse. Wählst du „E-Mail-Adresse verbergen“, erhalten wir nur Apples Weiterleitungsadresse.</li>
-<li><strong>ID löschen:</strong> jederzeit unter Einstellungen › Meine ID › ID verwalten › ID löschen. Damit wird das welegato-Konto gelöscht, für alle Apps von Vicino Labs. Dein Squillo-Testphasen-Eintrag und deine Pro-Backup-Dateien werden mitgelöscht (steuerlich aufzubewahrende Zahlungsdaten siehe unten). Einstellungen und Noten auf deinem Gerät bleiben erhalten.</li>
+<li><strong>ID löschen:</strong> jederzeit unter Einstellungen › Meine ID › ID verwalten › ID löschen. Damit wird das welegato-Konto gelöscht, für alle Apps von Vicino Labs. Deine Pro-Backup-Dateien von Squillo werden mitgelöscht (steuerlich aufzubewahrende Zahlungsdaten siehe unten). Einstellungen und Noten auf deinem Gerät bleiben erhalten.</li>
 </ul>
 <p>Nach den welegato-Bedingungen ist die Anmeldung ab 16 Jahren möglich. Rechtsgrundlage: Bereitstellung der von dir gewählten Funktion (lit. b).</p>"""),
    ("Testphase und Abo", f"""<ul>
-<li><strong>3 Tage kostenlos testen:</strong> Jede angemeldete ID erhält einmalig 3 Tage lang alle Pro-Funktionen. Damit sich die Testphase nicht wiederholt, speichern wir die Kontonummer und den Beginn der Testphase. Beides wird mit der ID gelöscht.</li>
+<li><strong>3 Tage kostenlos testen:</strong> Nach der ersten Installation sind 3 Tage lang alle Funktionen ohne Anmeldung offen. Der Beginn der Testphase wird auf deinem Gerät gespeichert.</li>
 <li><strong>Abo:</strong> Pro wird über Google Play oder den App Store gekauft. Zahlung und Kartendaten verarbeitet der Store, wir erhalten sie nicht. Um zu prüfen, ob ein Abo gültig ist, speichern wir Kontonummer, Produktname, Status, Ablaufzeit und den Kaufnachweis des Stores.</li>
 <li><strong>Speicherdauer:</strong> Zahlungsbezogene Daten bewahren wir so lange auf, wie es das Steuerrecht verlangt (bis zu 10 Jahre).</li>
 </ul>
@@ -240,7 +240,7 @@ PRIVACY = {
    ("In breve", """<div class="summary-box"><ul>
 <li>I vocalizzi di base e gli studi gratuiti funzionano <strong>senza accesso</strong>. Impostazioni e spartiti di “I miei brani” sono salvati <strong>sul tuo dispositivo</strong>.</li>
 <li>L'app <strong>non usa microfono, fotocamera, foto, posizione né contatti.</strong> Non registra il tuo canto e non invia la cronologia dello studio a un server.</li>
-<li>L'accesso con un <strong>ID welegato</strong> è facoltativo. Serve per la prova gratuita di 3 giorni, l'abbonamento Pro e il backup Pro. I dati dell'account sono trattati secondo l'informativa di welegato.</li>
+<li>L'accesso con un <strong>ID welegato</strong> è facoltativo. Serve per l'abbonamento Pro e il backup Pro (non per la prova di 3 giorni dopo l'installazione). I dati dell'account sono trattati secondo l'informativa di welegato.</li>
 <li>Con il <strong>backup Pro</strong> gli spartiti di “I miei brani” vengono salvati nel cloud (Cloudflare R2) per i dispositivi con lo stesso ID.</li>
 <li>Non ci sono reti pubblicitarie né strumenti di analisi o tracciamento. Il link a welegato nell'app è un nostro banner per un servizio della stessa azienda.</li>
 </ul></div>"""),
@@ -257,11 +257,11 @@ PRIVACY = {
 <li>I <strong>dati dell'account</strong> (email, nome, metodo di accesso Apple, Google, Kakao o email, numero di account) sono trattati secondo l'<a href="{WELEGATO_PRIVACY}" target="_blank" rel="noopener">informativa sulla privacy di welegato</a>. Se ti registri in Squillo, l'account riporta “registrato in Squillo”.</li>
 <li>Per la registrazione e l'accesso via email, Cloudflare Turnstile controlla alcune informazioni del browser per bloccare le registrazioni automatiche (<a href="{CF_PRIVACY}" target="_blank" rel="noopener">informativa di Cloudflare</a>). All'accesso con Apple, Google o Kakao si applica l'informativa di ciascuna azienda.</li>
 <li>Se su iPhone o iPad scegli “Continua con Apple”, riceviamo il nome e l'email confermati da Apple. Se scegli “Nascondi la mia email”, riceviamo solo l'indirizzo di inoltro di Apple.</li>
-<li><strong>Eliminare l'ID:</strong> in qualsiasi momento da Impostazioni › Il mio ID › Gestisci ID › Elimina ID. L'account welegato viene eliminato, per tutte le app di Vicino Labs. Vengono eliminati anche il dato della prova di Squillo e i file del backup Pro (per i dati di pagamento da conservare per legge vedi sotto). Impostazioni e spartiti sul dispositivo restano.</li>
+<li><strong>Eliminare l'ID:</strong> in qualsiasi momento da Impostazioni › Il mio ID › Gestisci ID › Elimina ID. L'account welegato viene eliminato, per tutte le app di Vicino Labs. Vengono eliminati anche i file del backup Pro di Squillo (per i dati di pagamento da conservare per legge vedi sotto). Impostazioni e spartiti sul dispositivo restano.</li>
 </ul>
 <p>Secondo i termini di welegato l'accesso è consentito dai 16 anni in su. Base giuridica: fornitura della funzione scelta (lett. b).</p>"""),
    ("Prova gratuita e abbonamento", f"""<ul>
-<li><strong>Prova gratuita di 3 giorni:</strong> ogni ID con accesso ottiene una sola volta tutte le funzioni Pro per 3 giorni. Perché la prova non si ripeta, salviamo il numero di account e l'inizio della prova. Vengono eliminati con l'ID.</li>
+<li><strong>Prova gratuita di 3 giorni:</strong> alla prima installazione tutte le funzioni sono aperte per 3 giorni, senza accesso. L'inizio della prova è salvato sul dispositivo.</li>
 <li><strong>Abbonamento:</strong> Pro si acquista tramite Google Play o App Store. Pagamento e dati della carta sono gestiti dallo store e non li riceviamo. Per verificare che l'abbonamento sia valido salviamo numero di account, nome del prodotto, stato, scadenza e la conferma d'acquisto dello store.</li>
 <li><strong>Conservazione:</strong> i dati legati ai pagamenti sono conservati per il periodo richiesto dalla legge fiscale (fino a 10 anni).</li>
 </ul>

@@ -3,7 +3,7 @@
 2026-11-26 버전 1.0 초안 (운영자 승인 전). chiave_terms_content.py의 틀(구독·책임)과
 pianino_terms_content.py의 음원 라이선스 조항을 따랐다.
 요금제(대표님 확정 2026-11-26): 무료 = 기본 발성 8곡 + 곡집마다 앞 2곡, Pro = 연습곡 전부 +
-나의 연습 + 백업 1GB, 아이디별 3일 체험, 체험 뒤 자동 결제 없음. 월·연 구독.
+나의 연습 + 백업 1GB, 처음 설치 뒤 3일 체험(로그인 없이, 대표님 2026-11-26), 체험 뒤 자동 결제 없음. 월·연 구독.
 가격은 약관에 적지 않음(스토어 결제 화면이 표시, 끼아베와 같은 결정).
 저자 표시(CC BY 3.0): Salamander Grand Piano v3(Alexander Holm), 바카이 3–22번 MusicXML(Mark Probert, vaccai.info).
 """
@@ -38,7 +38,7 @@ TERMS = {
    ("요금제와 구독", """<ol>
 <li><strong>무료:</strong> 기본 발성 연습 전부와, 연습곡 곡집마다 앞 2곡을 로그인 없이 무료로 쓸 수 있습니다.</li>
 <li><strong>Pro:</strong> 연습곡 전부, 「나의 연습」, Pro 백업(아이디당 1GB)이 열립니다.</li>
-<li><strong>3일 무료 체험:</strong> 위레가토 통합 아이디로 로그인하면 아이디마다 한 번, 3일 동안 Pro를 무료로 쓸 수 있습니다. 체험이 끝나면 자동으로 결제되지 않고 무료 범위로 돌아갑니다.</li>
+<li><strong>3일 무료 체험:</strong> 앱을 처음 설치하면 로그인 없이 3일 동안 모든 기능을 무료로 쓸 수 있습니다. 체험이 끝나도 자동으로 결제되지 않고 무료 범위로 돌아갑니다. Pro를 계속 쓰려면 위레가토 통합 아이디로 가입하거나 로그인한 뒤 구독합니다.</li>
 <li>Pro는 <strong>월간 또는 연간 정기 구독</strong>으로, Google Play 또는 App Store가 스토어에 표시된 가격으로 청구합니다. 해지할 때까지 같은 기간으로 자동 갱신되며, 스토어의 구독 관리에서 언제든 해지할 수 있습니다. 해지해도 이미 결제한 기간이 끝날 때까지 쓸 수 있고, 그 뒤에는 무료 범위로 돌아갑니다.</li>
 <li>가격은 구매 전에 스토어 결제 화면에 표시되며, 나라마다 다를 수 있습니다. 결제·환불은 각 스토어의 정책과 절차에 따릅니다. 디지털 콘텐츠의 특성상, 구매 즉시 이용이 시작되는 데 동의하면 법이 허용하는 범위에서 청약철회권이 소멸할 수 있으며, 이 경우에도 스토어의 환불 절차는 이용할 수 있습니다.</li>
 <li>다른 기기에서 산 구독은 같은 스토어 계정으로 앱의 “구매 복원”을 눌러 다시 열 수 있습니다.</li>
@@ -101,7 +101,7 @@ TERMS = {
    ("Plans and subscriptions", """<ol>
 <li><strong>Free:</strong> all basic warm-ups and the first 2 pieces of each study collection, without signing in.</li>
 <li><strong>Pro:</strong> all studies, My pieces and Pro backup (1 GB per ID).</li>
-<li><strong>3-day free trial:</strong> when you sign in with a welegato ID, each ID can use Pro free for 3 days, once. When the trial ends nothing is charged and you return to the free plan.</li>
+<li><strong>3-day free trial:</strong> when you first install the app, all features are free for 3 days without signing in. When the trial ends nothing is charged and you return to the free plan. To keep Pro, sign up or sign in with a welegato ID and subscribe.</li>
 <li>Pro is a <strong>monthly or yearly subscription</strong> charged by Google Play or the App Store at the price shown in the store. It renews automatically for the same period until cancelled, and you can cancel at any time in the store's subscription settings. After cancelling you keep Pro until the end of the period already paid, then return to the free plan.</li>
 <li>Prices are shown in the store before purchase and may differ by country. Payments and refunds follow each store's policies. Because this is digital content, if you agree that use starts immediately, your right of withdrawal may expire to the extent the law allows; the store's refund process remains available.</li>
 <li>A subscription bought on another device can be restored with “Restore purchases” in the app, using the same store account.</li>
@@ -164,7 +164,7 @@ TERMS = {
    ("Tarife und Abos", """<ol>
 <li><strong>Kostenlos:</strong> alle Grundübungen und die ersten 2 Stücke jeder Etüdensammlung, ohne Anmeldung.</li>
 <li><strong>Pro:</strong> alle Etüden, „Meine Stücke“ und das Pro-Backup (1 GB pro ID).</li>
-<li><strong>3 Tage kostenlos testen:</strong> Mit einer welegato-ID kann jede ID Pro einmalig 3 Tage kostenlos nutzen. Danach wird nichts abgebucht, und du kehrst zum kostenlosen Tarif zurück.</li>
+<li><strong>3 Tage kostenlos testen:</strong> Nach der ersten Installation kannst du 3 Tage lang alle Funktionen ohne Anmeldung kostenlos nutzen. Danach wird nichts abgebucht, und du kehrst zum kostenlosen Tarif zurück. Für Pro registrierst du dich mit einer welegato-ID oder meldest dich an und schließt ein Abo ab.</li>
 <li>Pro ist ein <strong>monatliches oder jährliches Abo</strong>, das Google Play oder der App Store zum im Store angezeigten Preis abrechnet. Es verlängert sich automatisch um denselben Zeitraum, bis du kündigst; kündigen kannst du jederzeit in der Aboverwaltung des Stores. Nach der Kündigung bleibt Pro bis zum Ende des bezahlten Zeitraums aktiv, danach gilt wieder der kostenlose Tarif.</li>
 <li>Preise werden vor dem Kauf im Store angezeigt und können je nach Land abweichen. Zahlung und Erstattung richten sich nach den Regeln des jeweiligen Stores. Da es sich um digitale Inhalte handelt, kann dein Widerrufsrecht im gesetzlich zulässigen Umfang erlöschen, wenn du dem sofortigen Beginn der Nutzung zustimmst; das Erstattungsverfahren des Stores bleibt davon unberührt.</li>
 <li>Ein auf einem anderen Gerät gekauftes Abo kannst du mit „Käufe wiederherstellen“ in der App mit demselben Store-Konto wieder freischalten.</li>
@@ -227,7 +227,7 @@ TERMS = {
    ("Piani e abbonamenti", """<ol>
 <li><strong>Gratis:</strong> tutti i vocalizzi di base e i primi 2 brani di ogni raccolta di studi, senza accesso.</li>
 <li><strong>Pro:</strong> tutti gli studi, “I miei brani” e il backup Pro (1 GB per ID).</li>
-<li><strong>Prova gratuita di 3 giorni:</strong> accedendo con un ID welegato, ogni ID può usare Pro gratis per 3 giorni, una sola volta. Alla fine della prova non viene addebitato nulla e torni al piano gratuito.</li>
+<li><strong>Prova gratuita di 3 giorni:</strong> alla prima installazione puoi usare gratis tutte le funzioni per 3 giorni, senza accesso. Alla fine della prova non viene addebitato nulla e torni al piano gratuito. Per continuare con Pro registrati o accedi con un ID welegato e abbonati.</li>
 <li>Pro è un <strong>abbonamento mensile o annuale</strong> addebitato da Google Play o App Store al prezzo indicato nello store. Si rinnova automaticamente per lo stesso periodo fino alla disdetta, che puoi fare in qualsiasi momento nella gestione abbonamenti dello store. Dopo la disdetta Pro resta attivo fino alla fine del periodo pagato, poi torni al piano gratuito.</li>
 <li>I prezzi sono indicati nello store prima dell'acquisto e possono variare da paese a paese. Pagamenti e rimborsi seguono le regole di ciascuno store. Trattandosi di contenuti digitali, se accetti che l'uso inizi subito il diritto di recesso può estinguersi nei limiti di legge; la procedura di rimborso dello store resta disponibile.</li>
 <li>Un abbonamento acquistato su un altro dispositivo si riattiva con “Ripristina acquisti” nell'app, usando lo stesso account dello store.</li>
