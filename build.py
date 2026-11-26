@@ -245,6 +245,12 @@ chiave_legal.build(os.path.dirname(os.path.abspath(__file__)))
 # 프로바(Prova) 개인정보처리방침·이용약관 (/prova/privacy/, /prova/terms/) — prova_legal.py (2026-11-07 초안)
 import prova_legal
 prova_legal.build(os.path.dirname(os.path.abspath(__file__)))
+# 스퀼로(Squillo) 개인정보처리방침·이용약관·지원 (/squillo/, /squillo/privacy/, /squillo/terms/) — squillo_legal.py (2026-11-26 초안)
+# 대표님 OK 전에는 게시하지 않는다: 승인되면 True 로 바꾸고 본문의 초안 표시(_draft)를 뺀다.
+SQUILLO_LEGAL_READY = False
+if SQUILLO_LEGAL_READY:
+    import squillo_legal
+    squillo_legal.build(os.path.dirname(os.path.abspath(__file__)))
 # Pianino 개인정보처리방침·이용약관 (/pianino/privacy/, /pianino/terms/) — pianino_legal.py (2026-11-07 초안)
 import pianino_legal
 pianino_legal.build(os.path.dirname(os.path.abspath(__file__)))
